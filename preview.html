@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Рим для своїх — макет каналу</title>
+<style>
+  :root{
+    --navy:#0A1424;
+    --navy-2:#132844;
+    --navy-3:#274B78;
+    --gold:#F2C14E;
+    --gold-soft:#FFDD8A;
+    --blue:#0057B7;
+    --yellow:#FFD700;
+    --tg-bg:#17212b;
+    --tg-bubble:#182533;
+    --tg-text:#e9edf0;
+    --tg-muted:#7f91a4;
+    --tg-link:#64b5ef;
+    --line:#1e3346;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Inter,Roboto,Arial,sans-serif;
+    color:#e8eef5;
+    background:
+      radial-gradient(900px 520px at 12% -10%, #1b3352 0%, transparent 60%),
+      radial-gradient(760px 480px at 92% 0%, #2a2340 0%, transparent 58%),
+      #0b0f14;
+    padding:48px 24px 90px;
+  }
+  .wrap{max-width:1180px;margin:0 auto}
+  .kicker{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:#9fc3e2;background:#12202e;border:1px solid var(--line);
+    padding:8px 14px;border-radius:999px;font-weight:700;
+  }
+  h1{font-size:42px;line-height:1.05;margin:20px 0 8px;letter-spacing:-.03em}
+  h1 .dot{color:var(--gold)}
+  .sub{color:#93a6b8;font-size:15px;line-height:1.55;max-width:680px;margin:0}
+  .top{display:flex;gap:40px;flex-wrap:wrap;align-items:flex-start;margin-top:38px}
+
+  /* ---------- profile card ---------- */
+  .profile{
+    flex:1 1 420px;min-width:340px;
+    background:linear-gradient(180deg,#101c2b,#0d1621);
+    border:1px solid var(--line);border-radius:22px;padding:30px;
+    box-shadow:0 30px 70px -30px rgba(0,0,0,.8);
+  }
+  .avatar-xl{
+    width:132px;height:132px;border-radius:50%;
+    border:3px solid rgba(242,193,78,.35);
+    box-shadow:0 14px 40px -12px rgba(0,0,0,.9);
+    display:block;
+  }
+  .p-name{font-size:26px;font-weight:800;margin:20px 0 4px;letter-spacing:-.02em}
+  .p-user{color:var(--tg-link);font-size:15px;font-weight:600}
+  .p-meta{color:var(--tg-muted);font-size:13px;margin-top:10px;display:flex;gap:14px;flex-wrap:wrap}
+  .p-meta b{color:#cfdae6;font-weight:600}
+  .p-desc{
+    margin-top:18px;padding-top:18px;border-top:1px solid var(--line);
+    color:#c2d1df;font-size:14.5px;line-height:1.6;
+  }
+  .p-actions{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+  .btn{
+    border-radius:12px;padding:11px 18px;font-size:14px;font-weight:700;border:1px solid transparent;
+    display:inline-flex;align-items:center;gap:8px;
+  }
+  .btn.primary{background:#3390ec;color:#fff}
+  .btn.ghost{background:#12202e;border-color:var(--line);color:#bcd0e2}
+  .copy{
+    margin-top:18px;background:#0a1420;border:1px solid #17293c;border-radius:12px;
+    padding:12px 14px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:12.5px;line-height:1.6;color:#9fd0ff;position:relative;
+  }
+  .copy span{color:#4f6579;display:block;font-family:inherit;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+  .copy .link{color:#cfe0ef;word-break:break-all}
+
+  /* ---------- phone ---------- */
+  .phone-col{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:14px}
+  .phone-label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7f95a9;font-weight:700}
+  .phone{
+    width:392px;min-height:720px;background:var(--tg-bg);border:9px solid #05080b;
+    border-radius:44px;overflow:hidden;position:relative;
+    box-shadow:0 40px 80px -20px rgba(0,0,0,.75), 0 0 0 1px #1b2a38 inset;
+    display:flex;flex-direction:column;
+  }
+  .notch{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:118px;height:20px;background:#05080b;border-radius:0 0 16px 16px;z-index:5}
+  .status{display:flex;justify-content:space-between;padding:14px 24px 6px;font-size:11.5px;font-weight:600;color:#cfdae6}
+  .tg-head{display:flex;align-items:center;gap:10px;padding:10px 14px 12px;border-bottom:1px solid #101a24}
+  .tg-head img{width:38px;height:38px;border-radius:50%}
+  .chan-name{font-size:15px;font-weight:700;color:#fff;line-height:1.1}
+  .chan-sub{font-size:12px;color:var(--tg-muted);margin-top:2px}
+  .head-actions{margin-left:auto;color:#6f8398;font-size:15px;letter-spacing:3px}
+  .chat{padding:14px 12px;display:flex;flex-direction:column;gap:10px;flex:1}
+  .pin{
+    display:flex;align-items:center;gap:7px;color:var(--tg-muted);font-size:12px;
+    padding:2px 4px 0;
+  }
+  .post{background:var(--tg-bubble);border-radius:14px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.25)}
+  .cap{padding:11px 13px 9px;font-size:13.5px;line-height:1.5;color:var(--tg-text)}
+  .cap b{color:#fff}
+  .cap .t{font-size:15px;display:block;margin-bottom:7px;line-height:1.3}
+  .cap p{margin:0 0 7px}
+  .cap .muted{color:#c9d6e2}
+  .hash{color:var(--tg-link)}
+  .meta{display:flex;justify-content:flex-end;gap:8px;padding:0 13px 9px;font-size:11px;color:#7f91a4}
+  .cover{
+    height:190px;position:relative;overflow:hidden;
+    background:linear-gradient(160deg,#FFD166 0%,#FF8A5B 46%,#6C4AB6 100%);
+    display:flex;flex-direction:column;justify-content:flex-end;padding:18px;
+  }
+  .cover:before{
+    content:"";position:absolute;right:-30px;top:-30px;width:170px;height:170px;border-radius:50%;
+    background:rgba(255,241,184,.9);filter:blur(1px);
+  }
+  .cover .tag{
+    position:relative;z-index:2;align-self:flex-start;background:rgba(43,27,69,.82);
+    color:#FFE9A8;font-size:10.5px;font-weight:800;letter-spacing:.14em;padding:6px 11px;border-radius:999px;
+    margin-bottom:auto;
+  }
+  .cover h3{position:relative;z-index:2;margin:0;color:#fff;font-size:32px;line-height:1.02;letter-spacing:-.02em}
+  .cover .date{position:relative;z-index:2;margin-top:9px;align-self:flex-start;background:var(--gold);color:#2B1B45;font-size:12px;font-weight:800;padding:7px 13px;border-radius:999px}
+  .composer{display:flex;align-items:center;gap:9px;padding:10px 12px 16px;color:#6f8398}
+  .composer .pill{flex:1;background:#101a24;border-radius:18px;padding:8px 13px;font-size:12.5px}
+
+  /* ---------- sections ---------- */
+  section{margin-top:64px}
+  h2{font-size:22px;margin:0 0 6px;letter-spacing:-.01em}
+  .hint{color:#93a6b8;font-size:14px;margin:0 0 22px;line-height:1.55}
+  .sizes{display:flex;align-items:flex-end;gap:34px;flex-wrap:wrap;background:#0f1720;border:1px solid var(--line);border-radius:18px;padding:28px}
+  .size{display:flex;flex-direction:column;align-items:center;gap:10px}
+  .size img{border-radius:50%;display:block;border:1px solid rgba(242,193,78,.25)}
+  .size span{font-size:11.5px;color:#7f95a9;font-family:ui-monospace,Menlo,monospace}
+  .covers-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+  .covers-grid figure{margin:0;background:#0f1720;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .covers-grid img{display:block;width:100%;height:auto}
+  .covers-grid figcaption{padding:10px 13px;font-size:12.5px;color:#93a6b8}
+  .palette{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+  .swatch{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#0f1720}
+  .swatch .color{height:74px}
+  .swatch .info{padding:11px 13px;font-size:12px;line-height:1.45}
+  .swatch .info b{display:block;font-size:12.5px;margin-bottom:2px}
+  .swatch .info code{color:#7f95a9;font-size:11.5px}
+
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;counter-reset:step}
+  .step{
+    background:#0f1720;border:1px solid var(--line);border-radius:14px;padding:18px 18px 18px 52px;
+    position:relative;font-size:13.5px;line-height:1.55;color:#b9cadb;
+  }
+  .step:before{
+    counter-increment:step;content:counter(step);
+    position:absolute;left:16px;top:16px;width:24px;height:24px;border-radius:50%;
+    background:var(--gold);color:#2B1B45;font-weight:800;font-size:12px;
+    display:grid;place-items:center;
+  }
+  .step b{color:#eef4fa;display:block;margin-bottom:3px;font-size:14px}
+  .note{
+    margin-top:22px;border-left:3px solid var(--gold);background:#141b16;
+    padding:14px 18px;border-radius:0 12px 12px 0;color:#d7c79a;font-size:13.5px;line-height:1.6;
+  }
+  footer{margin-top:56px;color:#5f7386;font-size:12.5px;line-height:1.6}
+  @media (max-width:900px){
+    body{padding:32px 16px 64px}
+    h1{font-size:34px}
+    .phone{width:100%;max-width:392px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Пакет запуску · 09.11.2026</div>
+  <h1>Рим для своїх<span class="dot">.</span></h1>
+  <p class="sub">Макет публічного каналу: аватар, назва, опис, закріплений пост і перша публікація. Усе, що нижче, можна скопіювати в Telegram.</p>
+
+  <div class="top">
+
+    <!-- PROFILE -->
+    <div class="profile">
+      <img class="avatar-xl" src="brand/avatar.png" alt="Аватар каналу Рим для своїх">
+      <div class="p-name">Рим для своїх</div>
+      <div class="p-user">@rim_dlia_svoih</div>
+      <div class="p-meta">
+        <span><b>Публічний</b> канал</span>
+        <span>🇺🇦 🇮🇹</span>
+        <span>старт 09.11.2026</span>
+      </div>
+      <div class="p-desc">
+        Щотижневий дайджест для українців у Римі: події, транспорт, житло, робота, здоров'я, безпека. Без паніки, з джерелами.
+      </div>
+      <div class="p-actions">
+        <span class="btn primary">Підписатися</span>
+        <span class="btn ghost">Поділитися</span>
+      </div>
+      <div class="copy">
+        <span>Публічне посилання</span>
+        <div class="link">https://t.me/rim_dlia_svoih</div>
+      </div>
+    </div>
+
+    <!-- PHONE -->
+    <div class="phone-col">
+      <div class="phone-label">Як це виглядає в Telegram</div>
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="status"><span>9:41</span><span>▮▮▮ &nbsp;⌁&nbsp; 100%</span></div>
+
+        <div class="tg-head">
+          <img src="brand/avatar.png" alt="">
+          <div>
+            <div class="chan-name">Рим для своїх</div>
+            <div class="chan-sub">канал · 1 підписник</div>
+          </div>
+          <div class="head-actions">⌕ ⋮</div>
+        </div>
+
+        <div class="chat">
+          <div class="pin">📌 Закріплене повідомлення</div>
+
+          <div class="post">
+            <div class="cap">
+              <b class="t">«Рим для своїх» — щотижневий дайджест для українців у Римі</b>
+              <p>Тут буде:</p>
+              <p class="muted">🗓 Події та виставки<br>🚇 Транспорт: страйки й ремонти<br>🏠 Житло й робота<br>🏥 Здоров'я<br>⚠️ Безпека<br>🇺🇦 Україна і світ — коротко</p>
+              <p class="muted">Без образ і політичних сварок. Джерело й дата — завжди.</p>
+              <p class="muted">Ми не офіційна установа. Просто сусіди, які вже трохи орієнтуються.</p>
+              <p class="hash">#Рим #УкраїнціВРимі #старт</p>
+            </div>
+            <div class="meta"><span>9:00</span><span>👁 1</span></div>
+          </div>
+
+          <div class="post">
+            <div class="cover">
+              <div class="tag">РИМ · ВИХІДНІ</div>
+              <h3>КУДИ<br>З ДІТЬМИ</h3>
+              <div class="date">14–15 ЛИСТОПАДА</div>
+            </div>
+            <div class="cap">
+              <b class="t">Куди з дітьми у Римі: 14–15 листопада 🎠</b>
+              <p class="muted">🇯🇵 Japan Days · Capannelle · безкоштовно<br>🪀 Giochi di strada · Villa Ada · безкоштовно<br>🎭 Romaeuropa Kids · Mattatoio<br>🔍 «Ogni favola un Giallo» · Pigneto</p>
+              <p class="hash">#Рим #здітьми #вихідні</p>
+            </div>
+            <div class="meta"><span>18:30</span><span>👁 1</span><span>❤️</span></div>
+          </div>
+        </div>
+
+        <div class="composer">
+          <span>😊</span><span class="pill">Повідомлення</span><span>📎</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- AVATAR SIZES -->
+  <section>
+    <h2>Аватар у різних розмірах</h2>
+    <p class="hint">Один файл <code style="color:#9fd0ff">brand/avatar.png</code> 512×512. Telegram сам зменшує його до потрібного розміру — перевірте, щоб Колізей читався навіть у маленькому колі.</p>
+    <div class="sizes">
+      <div class="size"><img src="brand/avatar.png" width="132" height="132" alt=""><span>132 px · профіль</span></div>
+      <div class="size"><img src="brand/avatar.png" width="96" height="96" alt=""><span>96 px</span></div>
+      <div class="size"><img src="brand/avatar.png" width="64" height="64" alt=""><span>64 px · список чатів</span></div>
+      <div class="size"><img src="brand/avatar.png" width="40" height="40" alt=""><span>40 px · стрічка</span></div>
+      <div class="size"><img src="brand/avatar.png" width="28" height="28" alt=""><span>28 px · коментар</span></div>
+    </div>
+  </section>
+
+  <!-- COVERS -->
+  <section>
+    <h2>Готові обкладинки</h2>
+    <p class="hint">Чотири файли 1080×810 у папці <code style="color:#9fd0ff">covers/</code>. Той самий стиль, що й аватар: темно-синій, золото, великий заголовок і дата.</p>
+    <div class="covers-grid">
+      <figure><img src="covers/2026-11-10-transport.png" alt="Обкладинка: транспорт"><figcaption>Транспорт · 10.11</figcaption></figure>
+      <figure><img src="covers/2026-11-11-kids.png" alt="Обкладинка: діти"><figcaption>Діти · 11.11</figcaption></figure>
+      <figure><img src="covers/2026-11-12-exhibitions.png" alt="Обкладинка: виставки"><figcaption>Виставки · 12.11</figcaption></figure>
+      <figure><img src="covers/2026-11-14-weekend.png" alt="Обкладинка: вихідні"><figcaption>Вихідні · 14.11</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- PALETTE -->
+  <section>
+    <h2>Палітра</h2>
+    <p class="hint">Три кольори для обкладинок і аватара. Тримайтеся їх, щоб канал виглядав цілісно.</p>
+    <div class="palette">
+      <div class="swatch"><div class="color" style="background:#0A1424"></div><div class="info"><b>Ночі</b><code>#0A1424</code></div></div>
+      <div class="swatch"><div class="color" style="background:#132844"></div><div class="info"><b>Глибина</b><code>#132844</code></div></div>
+      <div class="swatch"><div class="color" style="background:#F2C14E"></div><div class="info"><b>Золото</b><code>#F2C14E</code></div></div>
+      <div class="swatch"><div class="color" style="background:#0057B7"></div><div class="info"><b>Синій</b><code>#0057B7</code></div></div>
+      <div class="swatch"><div class="color" style="background:#FFD700"></div><div class="info"><b>Жовтий</b><code>#FFD700</code></div></div>
+    </div>
+  </section>
+
+  <!-- STEPS -->
+  <section>
+    <h2>Запуск за 5 кроків</h2>
+    <p class="hint">Єдине, що потрібно від вас — акаунт Telegram і номер телефону. Решта вже підготовлена.</p>
+    <div class="steps">
+      <div class="step"><b>Створити канал</b>Telegram → ☰ → Новий канал. Назва: «Рим для своїх».</div>
+      <div class="step"><b>Вставити опис</b>Текст зі сторінки профілю вище, до 255 символів.</div>
+      <div class="step"><b>Задати юзернейм</b><code style="color:#9fd0ff">rim_dlia_svoih</code> — ваш канал.</div>
+      <div class="step"><b>Завантажити аватар</b>Файл <code style="color:#9fd0ff">brand/avatar.png</code>, 512×512.</div>
+      <div class="step"><b>Опублікувати й закріпити</b>Текст з <code style="color:#9fd0ff">content/00-pinned-post.md</code> → Закріпити.</div>
+    </div>
+    <div class="note">
+      ⚠️ Створити канал, завантажити аватар і опублікувати пости може лише власник акаунта: Telegram прив'язує канал до номера телефону й вимагає код підтвердження. Я підготував усі тексти, дизайн і календар — вам залишаються натискання.
+    </div>
+  </section>
+
+  <footer>
+    Файли пакета: <code style="color:#9fd0ff">README.md</code> · <code style="color:#9fd0ff">brand/avatar.png</code> · <code style="color:#9fd0ff">content/00-pinned-post.md</code> · <code style="color:#9fd0ff">content/01-first-week.md</code> · <code style="color:#9fd0ff">content/02-templates.md</code> · <code style="color:#9fd0ff">content/03-calendar.md</code> · <code style="color:#9fd0ff">content/04-sources.md</code>
+  </footer>
+
+</div>
+</body>
+</html>
