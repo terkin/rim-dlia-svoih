@@ -249,7 +249,7 @@ def page_shell(title: str, description: str, canonical: str, body: str, extra_he
 <meta name="twitter:description" content="{esc(description)}">
 <meta name="twitter:image" content="{SITE_URL}/covers/2026-11-09-intro.png">
 <link rel="alternate" type="application/rss+xml" title="{esc(CHANNEL_TITLE)}" href="{SITE_URL}/rss.xml">
-<link rel="icon" type="image/png" href="{SITE_URL}/covers/2026-11-09-intro.png">
+<link rel="icon" type="image/png" href="{SITE_URL}/avatar.png">
 <style>{CSS}</style>
 {extra_head}
 </head>
@@ -257,7 +257,7 @@ def page_shell(title: str, description: str, canonical: str, body: str, extra_he
 <a class="skip" href="#main">Перейти до змісту</a>
 <header class="site">
   <div class="wrap">
-    <img src="{SITE_URL}/covers/2026-11-09-intro.png" alt="Аватар каналу «Рим для своїх»" width="38" height="38">
+    <img src="{SITE_URL}/avatar.png" alt="Аватар каналу «Рим для своїх»" width="38" height="38">
     <span class="brand">Рим для своїх</span>
     <nav>
       <a href="{SITE_URL}/#topics">Теми</a>
@@ -288,7 +288,7 @@ def org_schema() -> str:
         f'"url":{json_str(SITE_URL)},'
         f'"sameAs":[{json_str(CHANNEL_URL)}],'
         f'"description":{json_str(CHANNEL_DESC)},'
-        f'"logo":{json_str(SITE_URL + "/covers/2026-11-09-intro.png")}'
+        f'"logo":{json_str(SITE_URL + "/avatar.png")}'
         "}"
     )
 
@@ -466,7 +466,7 @@ def post_page(post: dict, prev: dict | None, nxt: dict | None) -> str:
         "publisher": {
             "@type": "Organization",
             "name": "Рим для своїх",
-            "logo": {"@type": "ImageObject", "url": f"{SITE_URL}/covers/2026-11-09-intro.png"},
+            "logo": {"@type": "ImageObject", "url": f"{SITE_URL}/avatar.png"},
         },
         "mainEntityOfPage": {"@type": "WebPage", "@id": post["url"]},
     }
@@ -578,6 +578,10 @@ def main() -> None:
 
     for cover in COVERS.glob("*.png"):
         shutil.copy2(cover, DOCS / "covers" / cover.name)
+
+    avatar = ROOT / "brand/avatar.png"
+    if avatar.exists():
+        shutil.copy2(avatar, DOCS / "avatar.png")
 
     (DOCS / ".nojekyll").write_text("", encoding="utf-8")
     (DOCS / "index.html").write_text(index_page(posts), encoding="utf-8")
