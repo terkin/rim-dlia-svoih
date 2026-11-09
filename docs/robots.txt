@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://terkin.github.io/rim-dlia-svoih/sitemap.xml
+Sitemap: https://ucrainiroma.it/sitemap.xml

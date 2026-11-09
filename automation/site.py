@@ -32,7 +32,7 @@ COVERS = ROOT / "covers"
 CONTENT = ROOT / "content/01-first-week.md"
 KEY_FILE = ROOT / "automation/indexnow.key"
 
-SITE_URL = os.environ.get("SITE_URL", "https://terkin.github.io/rim-dlia-svoih").rstrip("/")
+SITE_URL = os.environ.get("SITE_URL", "https://ucrainiroma.it").rstrip("/")
 CHANNEL_URL = "https://t.me/rim_dlia_svoih"
 CHANNEL_HANDLE = "@rim_dlia_svoih"
 CHANNEL_TITLE = "Рим для своїх | Українці в Римі"

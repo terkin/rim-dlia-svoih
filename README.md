@@ -34,7 +34,7 @@
 
 **Назва:**
 ```
-Рим для своїх
+Рим для своїх | Українці в Римі
 ```
 
 **Юзернейм (ваш канал):**
@@ -144,6 +144,11 @@ cd covers && python3 generate.py && for f in *.svg; do rsvg-convert -w 1080 -h 8
 | `python3 automation/collect.py --per-source 3` | не більше 3 новин з одного джерела |
 | `python3 automation/report.py` | перегляди, реакції, пересилання → `automation/report.json` |
 | `python3 automation/report.py --json` | те саме у JSON |
+| `python3 automation/site.py` | генерує SEO-сайт у `docs/` (index, пости, sitemap, robots, rss, IndexNow-ключ) |
+| `python3 automation/indexnow.py` | надсилає URL сайту в IndexNow (Bing, Yandex, Seznam, Naver) |
+| `python3 publish.py text content/promo-ukrtelegram.txt` | публікує текст із файлу |
+
+**Сайт:** https://terkin.github.io/rim-dlia-svoih/ · репозиторій `terkin/rim-dlia-svoih` · GitHub Pages з папки `/docs`.
 
 Повна архітектура AI-автопілота — у `ai-promotion.md`. Наступні модулі: `draft.py` (LLM-редактор) і `approve.py` (бот погодження). Для `draft.py` потрібен ключ LLM API у `.env`.
 

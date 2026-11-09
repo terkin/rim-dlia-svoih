@@ -14,6 +14,7 @@
 | **telegramdirectory.it** | Форма «Segnala canale» (італ. каталог) | ✅ Заявку прийнято | Ручна редакційна перевірка, кілька днів |
 | **ua.intelegram.one** | `POST /send` → категорія «Новини та ЗМІ» | ✅ Надіслано на модерацію | Чекати схвалення |
 | **ukrtg.com.ua** | Перевірка через форму | ✅ Канал уже є в каталозі | Нічого не робити |
+| **ukrtelegram.com** | Опубліковано промо-текст (пост 11) → `PUT /catalogue` | ✅ Заявку прийнято (HTTP 200) | Розгляд до 7 днів |
 
 > Формула «подав і забув» тут працює: більшість каталогів самі витягують назву, опис і аватар із Telegram.
 
@@ -71,18 +72,12 @@ eventi, trasporti, casa, lavoro, salute e sicurezza. Con fonti e senza allarmism
 
 ### 4.1. Назва каналу
 
-Зараз: `Рим для своїх`.
-
-Проблема: за запитом «українці Рим» канал не знайдеться — цих слів у назві немає.
-
-**Рекомендація:** `Рим для своїх | Українці в Римі`
+Було: `Рим для своїх`. **Змінено на:** `Рим для своїх | Українці в Римі` ✅
 
 - бренд «Рим для своїх» залишається першим;
-- додаються ключі «Українці» і «Рим»;
-- довжина в межах ліміту Telegram;
-- username **не змінюється**.
-
-Змінити можна в Telegram: *Канал → Редагувати → Назва*. Це зворотна дія, ризику немає.
+- додано ключі «Українці» і «Рим»;
+- username **не змінювався** — `@rim_dlia_svoih`;
+- змінено через Bot API (`setChatTitle`), це зворотна дія.
 
 ### 4.2. Опис
 
@@ -124,15 +119,21 @@ Telegram-канал сам по собі індексується погано. 
 
 ### 5.2. Домен
 
-Варіант безкоштовно: `https://terkin.github.io/rim-dlia-svoih/`.
-Варіант із власним доменом: ~€10/рік, але це вже не «безкоштовно».
+Сайт уже працює: **https://terkin.github.io/rim-dlia-svoih/** ✅
+
+- репозиторій: `https://github.com/terkin/rim-dlia-svoih` (публічний)
+- GitHub Pages: гілка `main`, папка `/docs`
+- генератор: `python3 automation/site.py`
+- варіант із власним доменом: ~€10/рік, але це вже не «безкоштовно».
 
 ### 5.3. Індексація
 
-1. **Google Search Console** — додати сайт, надіслати `sitemap.xml`.
-2. **IndexNow** — один пінг розсилає URL у Bing, Yandex, Seznam, Naver.
-3. **Bing Webmaster Tools** — додати сайт (IndexNow працює саме з Bing).
+1. ✅ **IndexNow** — 8 URL надіслано (`HTTP 200`), файл ключа на сайті.
+2. ⏳ **Google Search Console** — додати сайт вручну, надіслати `sitemap.xml` (потрібен Google-акаунт).
+3. ⏳ **Bing Webmaster Tools** — додати сайт вручну (IndexNow уже працює, але панель дає статистику).
 4. Перевірити через 3–7 днів: `site:terkin.github.io/rim-dlia-svoih`.
+
+Lighthouse на живому сайті: **Accessibility 100 · Best Practices 100 · SEO 100**.
 
 ### 5.4. Backlinks
 
@@ -142,25 +143,22 @@ Telegram-канал сам по собі індексується погано. 
 
 ## 6. Що робити в якому порядку
 
-### Сьогодні (5 хвилин)
+### Зроблено
 
-- [ ] Вирішити, чи міняти назву на `Рим для своїх | Українці в Римі`
-- [ ] Якщо так — змінити в Telegram
+- [x] Назва змінена на `Рим для своїх | Українці в Римі`
+- [x] Опубліковано промо-текст ukrtelegram.com (пост 11) і подано канал
+- [x] Згенеровано статичний сайт (`automation/site.py`)
+- [x] Створено публічний репозиторій `terkin/rim-dlia-svoih`
+- [x] Увімкнено GitHub Pages → https://terkin.github.io/rim-dlia-svoih/
+- [x] Надіслано `sitemap.xml` через IndexNow (8 URL, HTTP 200)
 
-### Цього тижня (15 хвилин)
+### Цього тижня (15 хвилин, вручну)
 
 - [ ] TGStat: `https://tgstat.com/add/channel` → `@rim_dlia_svoih`, Італія, українська
 - [ ] TGlist: `https://tglist.com.ua/tgadd` → заповнити картку
 - [ ] Містограм: `https://mistogram.com.ua/add`
-- [ ] ukrtelegram.com: опублікувати промо-текст → подати канал
-
-### Далі (1–2 години)
-
-- [ ] Зібрати статичний сайт (`automation/site.py`)
-- [ ] Створити публічний репозиторій `terkin/rim-dlia-svoih`
-- [ ] Увімкнути GitHub Pages
-- [ ] Додати сайт у Google Search Console і Bing Webmaster Tools
-- [ ] Надіслати `sitemap.xml` через IndexNow
+- [ ] Google Search Console: додати сайт і надіслати `sitemap.xml`
+- [ ] Bing Webmaster Tools: додати сайт
 
 ---
 

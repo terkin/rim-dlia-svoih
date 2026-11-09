@@ -22,7 +22,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
 KEY_FILE = ROOT / "automation/indexnow.key"
-SITE_URL = os.environ.get("SITE_URL", "https://terkin.github.io/rim-dlia-svoih").rstrip("/")
+SITE_URL = os.environ.get("SITE_URL", "https://ucrainiroma.it").rstrip("/")
 ENDPOINT = "https://api.indexnow.org/indexnow"
 
 

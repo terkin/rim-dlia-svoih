@@ -1,0 +1,294 @@
+{
+  "project": "Рим для своїх (@rim_dlia_svoih)",
+  "analysis_type": "demand_analysis",
+  "generated_at": "2026-11-09T14:03:29.615072",
+  "telegram_competitors": {
+    "analyzed_at": "2026-11-09T14:03:29.614909",
+    "keywords_searched": [
+      "українці Рим",
+      "ukrainians Rome",
+      "Рим українці",
+      "ukrainians Italy",
+      "українці Італія"
+    ],
+    "competitors": [],
+    "method": "Manual fill or integrate with directory APIs (TGStat, Telemetr)",
+    "recommendation": "Add 5-10 competitors manually from tgstat.com catalog search"
+  },
+  "keyword_research": {
+    "analyzed_at": "2026-11-09T14:03:29.615067",
+    "ukrainian_keywords": [
+      {
+        "keyword": "українці в Римі",
+        "language": "uk",
+        "search_volume": null,
+        "competition": null,
+        "cpc": null,
+        "trend": null,
+        "source": null,
+        "note": "Потрібно перевірити вручну на https://ahrefs.com/keyword-generator"
+      },
+      {
+        "keyword": "українці Рим телеграм",
+        "language": "uk",
+        "search_volume": null,
+        "competition": null,
+        "cpc": null,
+        "trend": null,
+        "source": null,
+        "note": "Потрібно перевірити вручну на https://ahrefs.com/keyword-generator"
+      },
+      {
+        "keyword": "Рим довідник укр",
+        "language": "uk",
+        "search_volume": null,
+        "competition": null,
+        "cpc": null,
+        "trend": null,
+        "source": null,
+        "note": "Потрібно перевірити вручну на https://ahrefs.com/keyword-generator"
+      },
+      {
+        "keyword": "codice fiscale Roma українською",
+        "language": "uk",
+        "search_volume": null,
+        "competition": null,
+        "cpc": null,
+        "trend": null,
+        "source": null,
+        "note": "Потрібно перевірити вручну на https://ahrefs.com/keyword-generator"
+      },
+      {
+        "keyword": "tessera sanitaria Рим українці",
+        "language": "uk",
+        "search_volume": null,
+        "competition": null,
+        "cpc": null,
+        "trend": null,
+        "source": null,
+        "note": "Потрібно перевірити вручну на https://ahrefs.com/keyword-generator"
+      },
+      {
+        "keyword": "робота в Римі укр",
+        "language": "uk",
+        "search_volume": null,
+        "competition": null,
+        "cpc": null,
+        "trend": null,
+        "source": null,
+        "note": "Потрібно перевірити вручну на https://ahrefs.com/keyword-generator"
+      },
+      {
+        "keyword": "оренда житла Рим українці",
+        "language": "uk",
+        "search_volume": null,
+        "competition": null,
+        "cpc": null,
+        "trend": null,
+        "source": null,
+        "note": "Потрібно перевірити вручну на https://ahrefs.com/keyword-generator"
+      },
+      {
+        "keyword": "події Рим вихідні укр",
+        "language": "uk",
+        "search_volume": null,
+        "competition": null,
+        "cpc": null,
+        "trend": null,
+        "source": null,
+        "note": "Потрібно перевірити вручну на https://ahrefs.com/keyword-generator"
+      },
+      {
+        "keyword": "українці Італія",
+        "language": "uk",
+        "search_volume": null,
+        "competition": null,
+        "cpc": null,
+        "trend": null,
+        "source": null,
+        "note": "Потрібно перевірити вручну на https://ahrefs.com/keyword-generator"
+      },
+      {
+        "keyword": "ukrainians in Rome telegram",
+        "language": "uk",
+        "search_volume": null,
+        "competition": null,
+        "cpc": null,
+        "trend": null,
+        "source": null,
+        "note": "Потрібно перевірити вручну на https://ahrefs.com/keyword-generator"
+      },
+      {
+        "keyword": "ukrainians in Italy",
+        "language": "uk",
+        "search_volume": null,
+        "competition": null,
+        "cpc": null,
+        "trend": null,
+        "source": null,
+        "note": "Потрібно перевірити вручну на https://ahrefs.com/keyword-generator"
+      },
+      {
+        "keyword": "ukrainian community Rome",
+        "language": "uk",
+        "search_volume": null,
+        "competition": null,
+        "cpc": null,
+        "trend": null,
+        "source": null,
+        "note": "Потрібно перевірити вручну на https://ahrefs.com/keyword-generator"
+      }
+    ],
+    "italian_keywords": [
+      {
+        "keyword": "ucraini a Roma telegram",
+        "language": "it",
+        "search_volume": null,
+        "competition": null,
+        "cpc": null,
+        "trend": null,
+        "source": null,
+        "note": "Потрібно перевірити вручну на https://ahrefs.com/keyword-generator"
+      },
+      {
+        "keyword": "ukraini Roma eventi",
+        "language": "it",
+        "search_volume": null,
+        "competition": null,
+        "cpc": null,
+        "trend": null,
+        "source": null,
+        "note": "Потрібно перевірити вручну на https://ahrefs.com/keyword-generator"
+      },
+      {
+        "keyword": "comunità ucraina Roma",
+        "language": "it",
+        "search_volume": null,
+        "competition": null,
+        "cpc": null,
+        "trend": null,
+        "source": null,
+        "note": "Потрібно перевірити вручну на https://ahrefs.com/keyword-generator"
+      }
+    ],
+    "how_to_fill": "Відкрийте https://ahrefs.com/keyword-generator, введіть кожне слово (або пакетно до 10) і скопіюйте 'Search volume' у поле search_volume",
+    "expected_insights": [
+      "Якщо 'українці в Римі' має >100 запитів/міс - попит є",
+      "Якщо 'codice fiscale Roma укр' має >50 запитів/міс - потрібні практичні гайди",
+      "Тренди показують, чи зростає інтерес (переезд після 2022)"
+    ]
+  },
+  "facebook_groups": {
+    "analyzed_at": "2026-11-09T14:03:29.615070",
+    "groups": [
+      {
+        "search_term": "Українці в Римі",
+        "found": false,
+        "name": null,
+        "url": null,
+        "members": null,
+        "posts_per_week": null,
+        "activity_level": null,
+        "note": "Виконати пошук вручну в Facebook"
+      },
+      {
+        "search_term": "Українці в Італії",
+        "found": false,
+        "name": null,
+        "url": null,
+        "members": null,
+        "posts_per_week": null,
+        "activity_level": null,
+        "note": "Виконати пошук вручну в Facebook"
+      },
+      {
+        "search_term": "Українці в Італії Рим",
+        "found": false,
+        "name": null,
+        "url": null,
+        "members": null,
+        "posts_per_week": null,
+        "activity_level": null,
+        "note": "Виконати пошук вручну в Facebook"
+      },
+      {
+        "search_term": "Робота в Італії Рим",
+        "found": false,
+        "name": null,
+        "url": null,
+        "members": null,
+        "posts_per_week": null,
+        "activity_level": null,
+        "note": "Виконати пошук вручну в Facebook"
+      },
+      {
+        "search_term": "Оренда житла Рим українці",
+        "found": false,
+        "name": null,
+        "url": null,
+        "members": null,
+        "posts_per_week": null,
+        "activity_level": null,
+        "note": "Виконати пошук вручну в Facebook"
+      },
+      {
+        "search_term": "Українці в Лаціо",
+        "found": false,
+        "name": null,
+        "url": null,
+        "members": null,
+        "posts_per_week": null,
+        "activity_level": null,
+        "note": "Виконати пошук вручну в Facebook"
+      },
+      {
+        "search_term": "Українці Esquilino",
+        "found": false,
+        "name": null,
+        "url": null,
+        "members": null,
+        "posts_per_week": null,
+        "activity_level": null,
+        "note": "Виконати пошук вручну в Facebook"
+      },
+      {
+        "search_term": "Ukrainians in Rome",
+        "found": false,
+        "name": null,
+        "url": null,
+        "members": null,
+        "posts_per_week": null,
+        "activity_level": null,
+        "note": "Виконати пошук вручну в Facebook"
+      },
+      {
+        "search_term": "Ukrainians in Italy",
+        "found": false,
+        "name": null,
+        "url": null,
+        "members": null,
+        "posts_per_week": null,
+        "activity_level": null,
+        "note": "Виконати пошук вручну в Facebook"
+      }
+    ],
+    "method": "Manual search in Facebook"
+  },
+  "survey": {
+    "analyzed_at": "2026-11-09T14:03:29.615071",
+    "survey_published": false,
+    "responses_collected": 0,
+    "results": {},
+    "status": "Опитування ще не опубліковане"
+  },
+  "conclusion": {
+    "status": "needs_manual_verification",
+    "next_steps": [
+      "1. Перевірити ключові запити на https://ahrefs.com/keyword-generator",
+      "2. Знайти 5-10 конкурентів через tgstat.com",
+      "3. Опублікувати опитування в 3-5 FB-групах",
+      "4. Заповнити дані в цьому звіті",
+      "5. Оцінити попит: якщо >10 відповідей + ключові запити >100/міс - попит є"
+    ]
+  }
+}
