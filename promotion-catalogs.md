@@ -129,7 +129,7 @@ Telegram-канал сам по собі індексується погано. 
 
 ### 5.3. Індексація
 
-1. ✅ **IndexNow** — 9 URL надіслано на `ucrainiroma.it` (`HTTP 202`), файл ключа на сайті.
+1. ✅ **IndexNow** — 15 URL (укр. + іт. версії) надіслано на `ucrainiroma.it` (`HTTP 200`), файл ключа на сайті.
 2. ⏳ **Google Search Console** — додати сайт вручну, надіслати `sitemap.xml` (потрібен Google-акаунт).
 3. ⏳ **Bing Webmaster Tools** — додати сайт вручну (IndexNow уже працює, але панель дає статистику).
 4. Перевірити через 3–7 днів: `site:ucrainiroma.it`.
@@ -164,7 +164,7 @@ Lighthouse на живому сайті: **Accessibility 100 · Best Practices 1
 - [x] Створено публічний репозиторій `terkin/rim-dlia-svoih`
 - [x] Увімкнено GitHub Pages
 - [x] Підключено домен `ucrainiroma.it` (DNS + HTTPS) → https://ucrainiroma.it/
-- [x] Надіслано `sitemap.xml` через IndexNow (9 URL, HTTP 202)
+- [x] Надіслано `sitemap.xml` через IndexNow (15 URL, HTTP 200)
 
 ### Цього тижня (15 хвилин, вручну)
 
