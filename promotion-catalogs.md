@@ -119,19 +119,20 @@ Telegram-канал сам по собі індексується погано. 
 
 ### 5.2. Домен
 
-Сайт уже працює: **https://terkin.github.io/rim-dlia-svoih/** ✅
+Сайт працює на власному домені: **https://ucrainiroma.it/** ✅
 
+- домен: `ucrainiroma.it` (register.it, до 09.11.2027)
+- DNS: A/AAAA → GitHub Pages, HTTPS-сертифікат видано, `https://` віддає 200
 - репозиторій: `https://github.com/terkin/rim-dlia-svoih` (публічний)
-- GitHub Pages: гілка `main`, папка `/docs`
+- GitHub Pages: гілка `main`, папка `/docs`, `docs/CNAME` = `ucrainiroma.it`
 - генератор: `python3 automation/site.py`
-- варіант із власним доменом: ~€10/рік, але це вже не «безкоштовно».
 
 ### 5.3. Індексація
 
-1. ✅ **IndexNow** — 8 URL надіслано (`HTTP 200`), файл ключа на сайті.
+1. ✅ **IndexNow** — 9 URL надіслано на `ucrainiroma.it` (`HTTP 202`), файл ключа на сайті.
 2. ⏳ **Google Search Console** — додати сайт вручну, надіслати `sitemap.xml` (потрібен Google-акаунт).
 3. ⏳ **Bing Webmaster Tools** — додати сайт вручну (IndexNow уже працює, але панель дає статистику).
-4. Перевірити через 3–7 днів: `site:terkin.github.io/rim-dlia-svoih`.
+4. Перевірити через 3–7 днів: `site:ucrainiroma.it`.
 
 Lighthouse на живому сайті: **Accessibility 100 · Best Practices 100 · SEO 100**.
 
@@ -149,8 +150,9 @@ Lighthouse на живому сайті: **Accessibility 100 · Best Practices 1
 - [x] Опубліковано промо-текст ukrtelegram.com (пост 11) і подано канал
 - [x] Згенеровано статичний сайт (`automation/site.py`)
 - [x] Створено публічний репозиторій `terkin/rim-dlia-svoih`
-- [x] Увімкнено GitHub Pages → https://terkin.github.io/rim-dlia-svoih/
-- [x] Надіслано `sitemap.xml` через IndexNow (8 URL, HTTP 200)
+- [x] Увімкнено GitHub Pages
+- [x] Підключено домен `ucrainiroma.it` (DNS + HTTPS) → https://ucrainiroma.it/
+- [x] Надіслано `sitemap.xml` через IndexNow (9 URL, HTTP 202)
 
 ### Цього тижня (15 хвилин, вручну)
 

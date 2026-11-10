@@ -147,8 +147,17 @@ cd covers && python3 generate.py && for f in *.svg; do rsvg-convert -w 1080 -h 8
 | `python3 automation/site.py` | генерує SEO-сайт у `docs/` (index, пости, sitemap, robots, rss, IndexNow-ключ) |
 | `python3 automation/indexnow.py` | надсилає URL сайту в IndexNow (Bing, Yandex, Seznam, Naver) |
 | `python3 publish.py text content/promo-ukrtelegram.txt` | публікує текст із файлу |
+| `python3 publish.py file content/extra/<slug>.md` | публікує пост з обкладинкою `covers/<slug>.png` |
 
-**Сайт:** https://terkin.github.io/rim-dlia-svoih/ · репозиторій `terkin/rim-dlia-svoih` · GitHub Pages з папки `/docs`.
+**Сайт:** https://ucrainiroma.it/ · репозиторій `terkin/rim-dlia-svoih` · GitHub Pages з папки `/docs`.
+
+### Окремі пости поза тижневим планом
+
+1. Текст → `content/extra/YYYY-MM-DD-slug.md` (один пост, без код-блоків, підтримує `**жирний**`).
+2. Обкладинка → додати запис у `covers/generate.py`, згенерувати `python3 covers/generate.py` і конвертувати:
+   `rsvg-convert -w 1080 -h 810 covers/YYYY-MM-DD-slug.svg -o covers/YYYY-MM-DD-slug.png`.
+3. Публікація → `python3 publish.py file content/extra/YYYY-MM-DD-slug.md`.
+4. Сайт → `python3 automation/site.py` → commit → push → `python3 automation/indexnow.py`.
 
 Повна архітектура AI-автопілота — у `ai-promotion.md`. Наступні модулі: `draft.py` (LLM-редактор) і `approve.py` (бот погодження). Для `draft.py` потрібен ключ LLM API у `.env`.
 
