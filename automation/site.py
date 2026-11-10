@@ -42,28 +42,133 @@ CHANNEL_DESC = (
     "Щотижневий дайджест для українців у Римі: події, транспорт, житло, "
     "робота, здоров'я, безпека. Без паніки, з джерелами. 🇺🇦🇮🇹"
 )
+CHANNEL_DESC_IT = (
+    "Digest settimanale per gli ucraini a Roma: eventi, trasporti, casa, "
+    "lavoro, salute, sicurezza. Senza allarmismi, con le fonti. 🇺🇦🇮🇹"
+)
 
-TOPICS = [
-    ("🗓", "Події та виставки", "Куди піти цього тижня: безкоштовні події, виставки, що закриваються, ярмарки."),
-    ("🚇", "Транспорт", "Страйки, ремонти, закриття станцій, зміни маршрутів Roma-Lido, метро й автобусів."),
-    ("🏠", "Житло й робота", "Оренда без посередників, вакансії, курси італійської, легальне працевлаштування."),
-    ("🏥", "Здоров'я", "Лікарі, аналізи, SSN, невідкладна допомога, де шукати україномовного лікаря."),
-    ("⚠️", "Безпека", "Шахрайство, фішинг, райони, що робити в складній ситуації."),
-    ("🇺🇦", "Україна і світ", "Коротко про головне — без паніки й без клікбейту."),
-]
+# Перекладений контент: content/it/<slug>.md (той самий slug, що й обкладинка)
+IT_CONTENT = ROOT / "content/it"
 
-STEPS = [
-    ("1", "Відкрийте канал", "Натисніть кнопку «Відкрити в Telegram» — канал публічний, читати можна без акаунта у вебверсії."),
-    ("2", "Підпишіться", "Один дайджест на тиждень. Нічого зайвого: лише те, що стосується життя в Римі."),
-    ("3", "Повертайтеся", "Якщо загубили пост — усі матеріали зібрані на цьому сайті."),
-]
+LANGS = ("uk", "it")
 
-FAQ = [
-    ("Це офіційний канал?", "Ні. Це незалежний дайджест для українців, які нещодавно переїхали до Риму. Ми не установа й не посередник."),
-    ("Скільки коштує підписка?", "Нічого. Канал безкоштовний, без реклами й без платних підписок."),
-    ("Звідки беруться новини?", "З відкритих джерел: ANSA, Corriere Roma, Il Messaggero, Il Tempo, AGI, Adnkronos, Il Sole 24 Ore, Il Fatto Quotidiano та офіційних сайтів."),
-    ("Чи можна писати вам?", "Так, у коментарях під постами. Питання й пропозиції допомагають робити дайджест кориснішим."),
-]
+BRAND = {"uk": "Рим для своїх", "it": "Rim per i nostri"}
+SITE_NAME = {"uk": CHANNEL_TITLE, "it": "Rim per i nostri | Ucraini a Roma"}
+LOCALE = {"uk": "uk_UA", "it": "it_IT"}
+FOOTER = {
+    "uk": "© 2026 «Рим для своїх». Незалежний дайджест для українців у Римі.",
+    "it": "© 2026 «Rim per i nostri». Digest indipendente per gli ucraini a Roma.",
+}
+
+TOPICS = {
+    "uk": [
+        ("🗓", "Події та виставки", "Куди піти цього тижня: безкоштовні події, виставки, що закриваються, ярмарки."),
+        ("🚇", "Транспорт", "Страйки, ремонти, закриття станцій, зміни маршрутів Roma-Lido, метро й автобусів."),
+        ("🏠", "Житло й робота", "Оренда без посередників, вакансії, курси італійської, легальне працевлаштування."),
+        ("🏥", "Здоров'я", "Лікарі, аналізи, SSN, невідкладна допомога, де шукати україномовного лікаря."),
+        ("⚠️", "Безпека", "Шахрайство, фішинг, райони, що робити в складній ситуації."),
+        ("🇺🇦", "Україна і світ", "Коротко про головне — без паніки й без клікбейту."),
+    ],
+    "it": [
+        ("🗓", "Eventi e mostre", "Dove andare questa settimana: eventi gratuiti, mostre in chiusura, mercatini."),
+        ("🚇", "Trasporti", "Scioperi, cantieri, stazioni chiuse, cambi di percorso su Roma-Lido, metro e bus."),
+        ("🏠", "Casa e lavoro", "Affitti senza intermediari, offerte di lavoro, corsi di italiano, lavoro regolare."),
+        ("🏥", "Salute", "Medici, analisi, SSN, pronto soccorso e dove trovare un medico che parli ucraino."),
+        ("⚠️", "Sicurezza", "Truffe, phishing, zone da conoscere e cosa fare in una situazione difficile."),
+        ("🇺🇦", "Ucraina e mondo", "L'essenziale in breve: senza allarmismi e senza clickbait."),
+    ],
+}
+
+STEPS = {
+    "uk": [
+        ("1", "Відкрийте канал", "Натисніть кнопку «Відкрити в Telegram» — канал публічний, читати можна без акаунта у вебверсії."),
+        ("2", "Підпишіться", "Один дайджест на тиждень. Нічого зайвого: лише те, що стосується життя в Римі."),
+        ("3", "Повертайтеся", "Якщо загубили пост — усі матеріали зібрані на цьому сайті."),
+    ],
+    "it": [
+        ("1", "Apri il canale", "Premi «Apri in Telegram»: il canale è pubblico, si legge anche senza account nella versione web."),
+        ("2", "Iscriviti", "Un digest a settimana. Niente di superfluo: solo ciò che riguarda la vita a Roma."),
+        ("3", "Torna quando vuoi", "Se hai perso un post, tutti i materiali sono raccolti su questo sito."),
+    ],
+}
+
+FAQ = {
+    "uk": [
+        ("Це офіційний канал?", "Ні. Це незалежний дайджест для українців, які нещодавно переїхали до Риму. Ми не установа й не посередник."),
+        ("Скільки коштує підписка?", "Нічого. Канал безкоштовний, без реклами й без платних підписок."),
+        ("Звідки беруться новини?", "З відкритих джерел: ANSA, Corriere Roma, Il Messaggero, Il Tempo, AGI, Adnkronos, Il Sole 24 Ore, Il Fatto Quotidiano та офіційних сайтів."),
+        ("Чи можна писати вам?", "Так, у коментарях під постами. Питання й пропозиції допомагають робити дайджест кориснішим."),
+    ],
+    "it": [
+        ("È un canale ufficiale?", "No. È un digest indipendente per gli ucraini arrivati da poco a Roma. Non siamo un ente né un intermediario."),
+        ("Quanto costa l'iscrizione?", "Niente. Il canale è gratuito, senza pubblicità e senza abbonamenti."),
+        ("Da dove arrivano le notizie?", "Da fonti aperte: ANSA, Corriere Roma, Il Messaggero, Il Tempo, AGI, Adnkronos, Il Sole 24 Ore, Il Fatto Quotidiano e siti istituzionali."),
+        ("Si può scrivervi?", "Sì, nei commenti sotto i post. Domande e proposte aiutano a rendere il digest più utile."),
+    ],
+}
+
+TEXT = {
+    "uk": {
+        "badge": "🇺🇦🇮🇹 Телеграм-канал для українців у Римі",
+        "h1": "Рим для своїх — щотижневий дайджест для українців у Римі",
+        "lead": "Події, транспорт, житло, робота, здоров'я й безпека. Коротко, з джерелами, без паніки. Для тих, хто нещодавно переїхав до Риму або вже живе тут.",
+        "cta": "Відкрити в Telegram →",
+        "cta2": "Останні пости",
+        "meta": ["📅 Один дайджест на тиждень", "🔗 Джерела в кожному пості", "🆓 Безкоштовно"],
+        "topics_h2": "Що всередині",
+        "topics_sub": "Шість рубрик, які закривають перші місяці життя в Римі.",
+        "posts_h2": "Останні пости",
+        "posts_sub": "Ті самі матеріали, що виходять у каналі — зручно читати й пересилати.",
+        "read": "Читати →",
+        "how_h2": "Як це працює",
+        "how_sub": "Три кроки — і ви нічого не пропустите.",
+        "faq_h2": "Часті питання",
+        "faq_sub": "Коротко про формат і правила.",
+        "band_h2": "Приєднуйтеся до «Рим для своїх»",
+        "band_p": "Щотижня — найважливіше для українців у Римі. Без паніки, з джерелами.",
+        "home": "Головна",
+        "posts_crumb": "Пости",
+        "read_tg": "Читати в Telegram →",
+        "nav_topics": "Теми",
+        "nav_posts": "Пости",
+        "nav_faq": "Питання",
+        "nav_tg": "Telegram",
+        "switch": "Italiano",
+        "only_translated": "Інші пости доступні українською.",
+        "title_index": "Рим для своїх — телеграм-канал для українців у Римі",
+        "desc_index": "Щотижневий дайджест для українців у Римі: події, транспорт, житло, робота, здоров'я, безпека. Без паніки, з джерелами.",
+    },
+    "it": {
+        "badge": "🇺🇦🇮🇹 Canale Telegram per gli ucraini a Roma",
+        "h1": "Ucraini a Roma — il digest settimanale in italiano",
+        "lead": "Eventi, trasporti, casa, lavoro, salute e sicurezza. In breve, con le fonti, senza allarmismi. Per chi è arrivato da poco a Roma o ci vive già.",
+        "cta": "Apri in Telegram →",
+        "cta2": "Ultimi post",
+        "meta": ["📅 Un digest a settimana", "🔗 Fonti in ogni post", "🆓 Gratuito"],
+        "topics_h2": "Di cosa parliamo",
+        "topics_sub": "Sei rubriche che coprono i primi mesi di vita a Roma.",
+        "posts_h2": "Ultimi post",
+        "posts_sub": "Gli stessi materiali del canale — comodi da leggere e inoltrare.",
+        "read": "Leggi →",
+        "how_h2": "Come funziona",
+        "how_sub": "Tre passi e non perdi niente.",
+        "faq_h2": "Domande frequenti",
+        "faq_sub": "In breve: formato e regole.",
+        "band_h2": "Unisciti a «Rim per i nostri»",
+        "band_p": "Ogni settimana l'essenziale per gli ucraini a Roma. Senza allarmismi, con le fonti.",
+        "home": "Home",
+        "posts_crumb": "Post",
+        "read_tg": "Leggi in Telegram →",
+        "nav_topics": "Temi",
+        "nav_posts": "Post",
+        "nav_faq": "Domande",
+        "nav_tg": "Telegram",
+        "switch": "Українська",
+        "only_translated": "Gli altri post sono disponibili in ucraino.",
+        "title_index": "Ucraini a Roma — eventi, trasporti, casa e lavoro | Rim per i nostri",
+        "desc_index": "Digest settimanale per gli ucraini a Roma: eventi, trasporti, affitti, lavoro, salute e sicurezza. Con le fonti, senza allarmismi.",
+    },
+}
 
 MONTHS = {
     1: "січня", 2: "лютого", 3: "березня", 4: "квітня",
@@ -148,6 +253,17 @@ def paragraphs(text: str) -> str:
     return "\n".join(out)
 
 
+def italian_texts() -> dict[str, str]:
+    """Переклади постів: content/it/<slug>.md → текст."""
+    if not IT_CONTENT.exists():
+        return {}
+    return {
+        path.stem: path.read_text(encoding="utf-8").strip()
+        for path in sorted(IT_CONTENT.glob("*.md"))
+        if path.read_text(encoding="utf-8").strip()
+    }
+
+
 def load_posts() -> list[dict]:
     texts = code_blocks(CONTENT)
     covers = cover_files()
@@ -155,28 +271,41 @@ def load_posts() -> list[dict]:
         raise SystemExit(
             f"Постів {len(texts)}, обкладинок {len(covers)} — кількість має збігатися."
         )
+    translations = italian_texts()
     posts = []
     for text, cover in zip(texts, covers):
-        posts.append(make_post(text, cover))
-    posts.extend(extra_posts())
+        posts.append(make_post(text, cover, translations.get(cover.stem)))
+    posts.extend(extra_posts(translations))
     posts.sort(key=lambda post: (post["date"], post["slug"]))
+    unknown = set(translations) - {post["slug"] for post in posts}
+    if unknown:
+        raise SystemExit(
+            "Переклад без відповідного поста: " + ", ".join(sorted(unknown))
+        )
     return posts
 
 
-def make_post(text: str, cover: Path) -> dict:
-    return {
+def make_post(text: str, cover: Path, text_it: str | None = None) -> dict:
+    slug = slug_from_cover(cover)
+    post = {
         "text": text,
         "cover": cover,
-        "slug": slug_from_cover(cover),
+        "slug": slug,
         "date": post_date(cover),
         "title": first_line(text),
         "excerpt": body_excerpt(text),
-        "url": f"{SITE_URL}/posts/{slug_from_cover(cover)}.html",
+        "url": f"{SITE_URL}/posts/{slug}.html",
+        "text_it": text_it or "",
+        "title_it": first_line(text_it) if text_it else "",
+        "excerpt_it": body_excerpt(text_it) if text_it else "",
+        "url_it": f"{SITE_URL}/it/posts/{slug}.html",
     }
+    return post
 
 
-def extra_posts() -> list[dict]:
+def extra_posts(translations: dict[str, str] | None = None) -> list[dict]:
     """Окремі пости з content/extra/<slug>.md + covers/<slug>.png."""
+    translations = translations or {}
     posts = []
     for path in sorted(EXTRA.glob("*.md")):
         cover = COVERS / f"{path.stem}.png"
@@ -185,7 +314,7 @@ def extra_posts() -> list[dict]:
         text = path.read_text(encoding="utf-8").strip()
         if not text:
             continue
-        posts.append(make_post(text, cover))
+        posts.append(make_post(text, cover, translations.get(path.stem)))
     return posts
 
 
@@ -210,6 +339,7 @@ header.site img{width:38px;height:38px;border-radius:50%}
 header.site .brand{font-weight:700;letter-spacing:-.01em}
 header.site nav{margin-left:auto;display:flex;gap:18px;font-size:14px}
 header.site nav a{color:var(--ink2)}
+header.site nav a.lang{color:var(--accent);font-weight:700}
 .hero{padding:64px 0 40px}
 .hero .badge{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;
   background:#fff7ed;color:#9a3412;border:1px solid #fed7aa;padding:6px 12px;border-radius:999px}
@@ -274,43 +404,59 @@ def page_shell(
     body: str,
     extra_head: str = "",
     image: str | None = None,
+    lang: str = "uk",
+    alts: list[tuple[str, str]] | None = None,
+    switch: tuple[str, str] | None = None,
 ) -> str:
     og_image = image or f"{SITE_URL}/covers/2026-11-09-intro.png"
+    t = TEXT[lang]
+    base = SITE_URL if lang == "uk" else f"{SITE_URL}/it"
+    alts = alts or []
+    hreflang = "".join(
+        f'<link rel="alternate" hreflang="{code}" href="{esc(url)}">\n'
+        for code, url in alts
+    )
+    switch_link = (
+        f'<a class="lang" href="{esc(switch[0])}" hreflang="{esc(switch[1])}">{esc(t["switch"])}</a>'
+        if switch
+        else ""
+    )
     return f"""<!DOCTYPE html>
-<html lang="uk">
+<html lang="{lang}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(description)}">
 <link rel="canonical" href="{esc(canonical)}">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="{esc(CHANNEL_TITLE)}">
+{hreflang}<meta property="og:type" content="website">
+<meta property="og:site_name" content="{esc(SITE_NAME[lang])}">
 <meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(description)}">
 <meta property="og:url" content="{esc(canonical)}">
 <meta property="og:image" content="{og_image}">
-<meta property="og:locale" content="uk_UA">
+<meta property="og:locale" content="{LOCALE[lang]}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{esc(title)}">
 <meta name="twitter:description" content="{esc(description)}">
 <meta name="twitter:image" content="{og_image}">
-<link rel="alternate" type="application/rss+xml" title="{esc(CHANNEL_TITLE)}" href="{SITE_URL}/rss.xml">
+<link rel="alternate" type="application/rss+xml" title="{esc(SITE_NAME[lang])}" href="{SITE_URL}/rss.xml">
 <link rel="icon" type="image/png" href="{SITE_URL}/avatar.png">
 <style>{CSS}</style>
 {extra_head}
 </head>
 <body>
-<a class="skip" href="#main">Перейти до змісту</a>
+<a class="skip" href="#main">{"Перейти до змісту" if lang == "uk" else "Vai al contenuto"}</a>
 <header class="site">
   <div class="wrap">
-    <img src="{SITE_URL}/avatar.png" alt="Аватар каналу «Рим для своїх»" width="38" height="38">
-    <span class="brand">Рим для своїх</span>
+    <img src="{SITE_URL}/avatar.png" alt="{esc(BRAND[lang])}" width="38" height="38">
+    <span class="brand">{esc(BRAND[lang])}</span>
     <nav>
-      <a href="{SITE_URL}/#topics">Теми</a>
-      <a href="{SITE_URL}/#posts">Пости</a>
-      <a href="{SITE_URL}/#faq">Питання</a>
-      <a href="{CHANNEL_URL}" rel="noopener">Telegram</a>
+      <a href="{base}/#topics">{esc(t["nav_topics"])}</a>
+      <a href="{base}/#posts">{esc(t["nav_posts"])}</a>
+      <a href="{base}/#faq">{esc(t["nav_faq"])}</a>
+      <a href="{CHANNEL_URL}" rel="noopener">{esc(t["nav_tg"])}</a>
+      {switch_link}
     </nav>
   </div>
 </header>
@@ -319,7 +465,7 @@ def page_shell(
 </main>
 <footer class="site">
   <div class="wrap">
-    <span>© 2026 «Рим для своїх». Незалежний дайджест для українців у Римі.</span>
+    <span>{esc(FOOTER[lang])}</span>
     <span><a href="{CHANNEL_URL}" rel="noopener">t.me/rim_dlia_svoih</a> · <a href="{SITE_URL}/rss.xml">RSS</a></span>
   </div>
 </footer>
@@ -346,20 +492,35 @@ def json_str(value: str) -> str:
     return json.dumps(value, ensure_ascii=False)
 
 
-def index_page(posts: list[dict]) -> str:
+MONTHS_IT = {
+    1: "gennaio", 2: "febbraio", 3: "marzo", 4: "aprile",
+    5: "maggio", 6: "giugno", 7: "luglio", 8: "agosto",
+    9: "settembre", 10: "ottobre", 11: "novembre", 12: "dicembre",
+}
+
+
+def human_date_lang(value: datetime, lang: str) -> str:
+    if lang == "it":
+        return f"{value.day} {MONTHS_IT[value.month]} {value.year}"
+    return human_date(value)
+
+
+def index_page(posts: list[dict], lang: str = "uk") -> str:
     import json
 
+    t = TEXT[lang]
+    shown = [p for p in posts if lang == "uk" or p["text_it"]]
     cards = "\n".join(
         f"""<article class="post">
-  <a href="{SITE_URL}/posts/{p['slug']}.html"><img src="{SITE_URL}/covers/{p['cover'].name}" alt="{esc(p['title'])}" loading="lazy" width="640" height="480"></a>
+  <a href="{(p['url'] if lang == 'uk' else p['url_it'])}"><img src="{SITE_URL}/covers/{p['cover'].name}" alt="{esc(p['title'] if lang == 'uk' else p['title_it'])}" loading="lazy" width="640" height="480"></a>
   <div class="body">
-    <time datetime="{p['date'].strftime('%Y-%m-%d')}">{human_date(p['date'])}</time>
-    <h3><a href="{SITE_URL}/posts/{p['slug']}.html">{esc(p['title'])}</a></h3>
-    <p>{esc(p['excerpt'])}</p>
-    <a class="more" href="{SITE_URL}/posts/{p['slug']}.html">Читати →</a>
+    <time datetime="{p['date'].strftime('%Y-%m-%d')}">{human_date_lang(p['date'], lang)}</time>
+    <h3><a href="{(p['url'] if lang == 'uk' else p['url_it'])}">{esc(p['title'] if lang == 'uk' else p['title_it'])}</a></h3>
+    <p>{esc(p['excerpt'] if lang == 'uk' else p['excerpt_it'])}</p>
+    <a class="more" href="{(p['url'] if lang == 'uk' else p['url_it'])}">{t['read']}</a>
   </div>
 </article>"""
-        for p in posts
+        for p in reversed(shown)
     )
 
     topics = "\n".join(
@@ -368,7 +529,7 @@ def index_page(posts: list[dict]) -> str:
   <h3>{esc(title)}</h3>
   <p>{esc(text)}</p>
 </div>"""
-        for icon, title, text in TOPICS
+        for icon, title, text in TOPICS[lang]
     )
 
     steps = "\n".join(
@@ -377,14 +538,15 @@ def index_page(posts: list[dict]) -> str:
   <h3>{esc(title)}</h3>
   <p>{esc(text)}</p>
 </div>"""
-        for n, title, text in STEPS
+        for n, title, text in STEPS[lang]
     )
 
     faq = "\n".join(
         f"<details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>"
-        for q, a in FAQ
+        for q, a in FAQ[lang]
     )
 
+    base = SITE_URL if lang == "uk" else f"{SITE_URL}/it"
     item_list = {
         "@context": "https://schema.org",
         "@type": "ItemList",
@@ -392,41 +554,48 @@ def index_page(posts: list[dict]) -> str:
             {
                 "@type": "ListItem",
                 "position": i,
-                "url": p["url"],
-                "name": p["title"],
+                "url": p["url"] if lang == "uk" else p["url_it"],
+                "name": p["title"] if lang == "uk" else p["title_it"],
             }
-            for i, p in enumerate(posts, 1)
+            for i, p in enumerate(reversed(shown), 1)
         ],
     }
     website = {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": CHANNEL_TITLE,
-        "url": SITE_URL,
-        "inLanguage": "uk",
-        "description": CHANNEL_DESC,
+        "name": SITE_NAME[lang],
+        "url": base + "/",
+        "inLanguage": lang,
+        "description": CHANNEL_DESC if lang == "uk" else CHANNEL_DESC_IT,
     }
+
+    other = ""
+    if lang == "it":
+        other = (
+            f'<p class="sub">{t["only_translated"]} '
+            f'<a href="{SITE_URL}/">Рим для своїх →</a></p>'
+        )
 
     body = f"""
 <div class="wrap">
   <section class="hero">
-    <span class="badge">🇺🇦🇮🇹 Телеграм-канал для українців у Римі</span>
-    <h1>Рим для своїх — щотижневий дайджест для українців у Римі</h1>
-    <p class="lead">Події, транспорт, житло, робота, здоров'я й безпека. Коротко, з джерелами, без паніки. Для тих, хто нещодавно переїхав до Риму або вже живе тут.</p>
-    <a class="cta" href="{CHANNEL_URL}" rel="noopener">Відкрити в Telegram →</a>
-    <a class="cta secondary" href="{SITE_URL}/#posts">Останні пости</a>
+    <span class="badge">{t["badge"]}</span>
+    <h1>{t["h1"]}</h1>
+    <p class="lead">{t["lead"]}</p>
+    <a class="cta" href="{CHANNEL_URL}" rel="noopener">{t["cta"]}</a>
+    <a class="cta secondary" href="{base}/#posts">{t["cta2"]}</a>
     <div class="meta">
-      <span>📅 Один дайджест на тиждень</span>
-      <span>🔗 Джерела в кожному пості</span>
-      <span>🆓 Безкоштовно</span>
+      <span>{t["meta"][0]}</span>
+      <span>{t["meta"][1]}</span>
+      <span>{t["meta"][2]}</span>
     </div>
   </section>
 </div>
 
 <section id="topics">
   <div class="wrap">
-    <h2>Що всередині</h2>
-    <p class="sub">Шість рубрик, які закривають перші місяці життя в Римі.</p>
+    <h2>{t["topics_h2"]}</h2>
+    <p class="sub">{t["topics_sub"]}</p>
     <div class="grid topics">
 {topics}
     </div>
@@ -435,18 +604,19 @@ def index_page(posts: list[dict]) -> str:
 
 <section id="posts">
   <div class="wrap">
-    <h2>Останні пости</h2>
-    <p class="sub">Ті самі матеріали, що виходять у каналі — зручно читати й пересилати.</p>
+    <h2>{t["posts_h2"]}</h2>
+    <p class="sub">{t["posts_sub"]}</p>
     <div class="grid posts">
 {cards}
     </div>
+    {other}
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <h2>Як це працює</h2>
-    <p class="sub">Три кроки — і ви нічого не пропустите.</p>
+    <h2>{t["how_h2"]}</h2>
+    <p class="sub">{t["how_sub"]}</p>
     <div class="grid steps">
 {steps}
     </div>
@@ -455,8 +625,8 @@ def index_page(posts: list[dict]) -> str:
 
 <section id="faq">
   <div class="wrap">
-    <h2>Часті питання</h2>
-    <p class="sub">Коротко про формат і правила.</p>
+    <h2>{t["faq_h2"]}</h2>
+    <p class="sub">{t["faq_sub"]}</p>
     <div class="faq">
 {faq}
     </div>
@@ -467,10 +637,10 @@ def index_page(posts: list[dict]) -> str:
   <div class="wrap">
     <div class="band">
       <div>
-        <h2>Приєднуйтеся до «Рим для своїх»</h2>
-        <p>Щотижня — найважливіше для українців у Римі. Без паніки, з джерелами.</p>
+        <h2>{t["band_h2"]}</h2>
+        <p>{t["band_p"]}</p>
       </div>
-      <a class="cta" href="{CHANNEL_URL}" rel="noopener">Відкрити Telegram →</a>
+      <a class="cta" href="{CHANNEL_URL}" rel="noopener">{t["cta"]}</a>
     </div>
   </div>
 </section>
@@ -480,82 +650,121 @@ def index_page(posts: list[dict]) -> str:
         f'<script type="application/ld+json">{json.dumps(item_list, ensure_ascii=False)}</script>\n'
         f'<script type="application/ld+json">{org_schema()}</script>'
     )
+    alts = [("uk", SITE_URL + "/"), ("it", f"{SITE_URL}/it/"), ("x-default", SITE_URL + "/")]
+    switch = (f"{SITE_URL}/it/", "it") if lang == "uk" else (SITE_URL + "/", "uk")
     return page_shell(
-        "Рим для своїх — телеграм-канал для українців у Римі",
-        "Щотижневий дайджест для українців у Римі: події, транспорт, житло, робота, здоров'я, безпека. Без паніки, з джерелами.",
-        SITE_URL + "/",
+        t["title_index"],
+        t["desc_index"],
+        base + "/",
         body,
         extra,
+        lang=lang,
+        alts=alts,
+        switch=switch,
     )
 
 
-def post_page(post: dict, prev: dict | None, nxt: dict | None) -> str:
+def post_page(post: dict, prev: dict | None, nxt: dict | None, lang: str = "uk") -> str:
     import json
+
+    t = TEXT[lang]
+    it = lang == "it"
+    title = post["title_it"] if it else post["title"]
+    text = post["text_it"] if it else post["text"]
+    url = post["url_it"] if it else post["url"]
+    excerpt = post["excerpt_it"] if it else post["excerpt"]
+    base = f"{SITE_URL}/it" if it else SITE_URL
+    post_url = lambda p: p["url_it"] if it else p["url"]
+    post_title = lambda p: p["title_it"] if it else p["title"]
 
     pager = []
     if prev:
-        pager.append(f'<a href="{SITE_URL}/posts/{prev["slug"]}.html">← {esc(prev["title"])}</a>')
+        pager.append(f'<a href="{post_url(prev)}">← {esc(post_title(prev))}</a>')
     else:
         pager.append("<span></span>")
     if nxt:
-        pager.append(f'<a href="{SITE_URL}/posts/{nxt["slug"]}.html">{esc(nxt["title"])} →</a>')
+        pager.append(f'<a href="{post_url(nxt)}">{esc(post_title(nxt))} →</a>')
 
     article = {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": post["title"],
-        "description": post["excerpt"],
+        "headline": title,
+        "description": excerpt,
         "datePublished": post["date"].strftime("%Y-%m-%d"),
         "dateModified": post["date"].strftime("%Y-%m-%d"),
-        "inLanguage": "uk",
+        "inLanguage": lang,
         "image": f"{SITE_URL}/covers/{post['cover'].name}",
-        "author": {"@type": "Organization", "name": "Рим для своїх"},
+        "author": {"@type": "Organization", "name": BRAND[lang]},
         "publisher": {
             "@type": "Organization",
-            "name": "Рим для своїх",
+            "name": BRAND[lang],
             "logo": {"@type": "ImageObject", "url": f"{SITE_URL}/avatar.png"},
         },
-        "mainEntityOfPage": {"@type": "WebPage", "@id": post["url"]},
+        "mainEntityOfPage": {"@type": "WebPage", "@id": url},
     }
+
+    alts = [("uk", post["url"])]
+    if post["text_it"]:
+        alts += [("it", post["url_it"]), ("x-default", post["url"])]
+    switch = (post["url"], "uk") if it else ((post["url_it"], "it") if post["text_it"] else None)
 
     body = f"""
 <div class="wrap post-page">
-  <div class="crumbs"><a href="{SITE_URL}/">Головна</a> · <a href="{SITE_URL}/#posts">Пости</a></div>
-  <h1>{esc(post["title"])}</h1>
-  <time datetime="{post['date'].strftime('%Y-%m-%d')}">{human_date(post['date'])}</time>
+  <div class="crumbs"><a href="{base}/">{t["home"]}</a> · <a href="{base}/#posts">{t["posts_crumb"]}</a></div>
+  <h1>{esc(title)}</h1>
+  <time datetime="{post['date'].strftime('%Y-%m-%d')}">{human_date_lang(post['date'], lang)}</time>
   <div class="cover">
-    <img src="{SITE_URL}/covers/{post['cover'].name}" alt="{esc(post['title'])}" width="1080" height="810">
+    <img src="{SITE_URL}/covers/{post['cover'].name}" alt="{esc(title)}" width="1080" height="810">
   </div>
-  <div class="post-text">{paragraphs(post["text"])}</div>
-  <p style="margin-top:24px"><a class="cta" href="{CHANNEL_URL}" rel="noopener">Читати в Telegram →</a></p>
+  <div class="post-text">{paragraphs(text)}</div>
+  <p style="margin-top:24px"><a class="cta" href="{CHANNEL_URL}" rel="noopener">{t["read_tg"]}</a></p>
   <nav class="pager">{"".join(pager)}</nav>
 </div>
 """
     return page_shell(
-        f"{post['title']} — Рим для своїх",
-        post["excerpt"],
-        post["url"],
+        f"{title} — {BRAND[lang]}",
+        excerpt,
+        url,
         body,
         f'<script type="application/ld+json">{json.dumps(article, ensure_ascii=False)}</script>',
         image=f"{SITE_URL}/covers/{post['cover'].name}",
+        lang=lang,
+        alts=alts,
+        switch=switch,
     )
 
 
 def sitemap(posts: list[dict]) -> str:
-    urls = [
-        (SITE_URL + "/", posts[-1]["date"] if posts else datetime.now(timezone.utc)),
-    ] + [(p["url"], p["date"]) for p in posts]
-    rows = "\n".join(
-        f"  <url><loc>{xml_escape(url)}</loc>"
-        f"<lastmod>{date.strftime('%Y-%m-%d')}</lastmod>"
-        f"<changefreq>{'weekly' if url.endswith('/') else 'monthly'}</changefreq>"
-        f"<priority>{'1.0' if url.endswith('/') else '0.8'}</priority></url>"
-        for url, date in urls
-    )
+    last = posts[-1]["date"] if posts else datetime.now(timezone.utc)
+    it_posts = [p for p in posts if p["text_it"]]
+
+    def row(url: str, date: datetime, changefreq: str, priority: str, alts: list[tuple[str, str]]) -> str:
+        links = "".join(
+            f'<xhtml:link rel="alternate" hreflang="{code}" href="{xml_escape(href)}"/>'
+            for code, href in alts
+        )
+        return (
+            f"  <url><loc>{xml_escape(url)}</loc>"
+            f"<lastmod>{date.strftime('%Y-%m-%d')}</lastmod>"
+            f"<changefreq>{changefreq}</changefreq>"
+            f"<priority>{priority}</priority>{links}</url>"
+        )
+
+    rows = []
+    home_alts = [("uk", SITE_URL + "/")] + ([("it", SITE_URL + "/it/")] if it_posts else [])
+    rows.append(row(SITE_URL + "/", last, "weekly", "1.0", home_alts))
+    if it_posts:
+        rows.append(row(f"{SITE_URL}/it/", last, "weekly", "1.0", home_alts + [("x-default", SITE_URL + "/")]))
+    for post in posts:
+        rows.append(row(post["url"], post["date"], "monthly", "0.8", [("uk", post["url"])] + ([("it", post["url_it"])] if post["text_it"] else [])))
+        if post["text_it"]:
+            rows.append(row(post["url_it"], post["date"], "monthly", "0.8", [("uk", post["url"]), ("it", post["url_it"]), ("x-default", post["url"])]))
+    body = "\n".join(rows)
     return (
         '<?xml version="1.0" encoding="UTF-8"?>\n'
-        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-        f"{rows}\n</urlset>\n"
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
+        'xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
+        f"{body}\n</urlset>\n"
     )
 
 
@@ -622,6 +831,7 @@ def main() -> None:
     if DOCS.exists():
         shutil.rmtree(DOCS)
     (DOCS / "posts").mkdir(parents=True)
+    (DOCS / "it" / "posts").mkdir(parents=True)
     (DOCS / "covers").mkdir(parents=True)
 
     for cover in COVERS.glob("*.png"):
@@ -634,7 +844,7 @@ def main() -> None:
     (DOCS / ".nojekyll").write_text("", encoding="utf-8")
     # GitHub Pages: кастомний домен зберігається у docs/CNAME
     (DOCS / "CNAME").write_text(urlparse(SITE_URL).netloc + "\n", encoding="utf-8")
-    (DOCS / "index.html").write_text(index_page(posts), encoding="utf-8")
+    (DOCS / "index.html").write_text(index_page(posts, "uk"), encoding="utf-8")
     (DOCS / "404.html").write_text(not_found(), encoding="utf-8")
     (DOCS / "sitemap.xml").write_text(sitemap(posts), encoding="utf-8")
     (DOCS / "robots.txt").write_text(robots(), encoding="utf-8")
@@ -644,14 +854,25 @@ def main() -> None:
         prev = posts[i - 1] if i > 0 else None
         nxt = posts[i + 1] if i + 1 < len(posts) else None
         (DOCS / "posts" / f"{post['slug']}.html").write_text(
-            post_page(post, prev, nxt), encoding="utf-8"
+            post_page(post, prev, nxt, "uk"), encoding="utf-8"
         )
+
+    it_posts = [post for post in posts if post["text_it"]]
+    if it_posts:
+        (DOCS / "it" / "index.html").write_text(index_page(posts, "it"), encoding="utf-8")
+        for i, post in enumerate(it_posts):
+            prev = it_posts[i - 1] if i > 0 else None
+            nxt = it_posts[i + 1] if i + 1 < len(it_posts) else None
+            (DOCS / "it" / "posts" / f"{post['slug']}.html").write_text(
+                post_page(post, prev, nxt, "it"), encoding="utf-8"
+            )
 
     key = indexnow_key()
     (DOCS / f"{key}.txt").write_text(key + "\n", encoding="utf-8")
 
     print(f"Сайт згенеровано → {DOCS}")
     print(f"  index.html · {len(posts)} постів · sitemap.xml · robots.txt · rss.xml")
+    print(f"  it/: {len(it_posts)} перекладених постів")
     print(f"  IndexNow key: {key} → docs/{key}.txt")
     print(f"  SITE_URL: {SITE_URL}")
 

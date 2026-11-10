@@ -114,8 +114,8 @@ Telegram-канал сам по собі індексується погано. 
 - Останні 10–20 постів (генеруються з `content/`).
 - `sitemap.xml`, `robots.txt`, `rss.xml`.
 - Schema.org: `Organization` + `WebSite` + `ItemList` постів.
-- `hreflang="uk"`.
-- Open Graph / Twitter Card із обкладинкою.
+- `hreflang="uk"` + `hreflang="it"` + `x-default` (двомовна версія, див. 5.5).
+- Open Graph / Twitter Card із обкладинкою (своя для кожного поста).
 
 ### 5.2. Домен
 
@@ -139,6 +139,18 @@ Lighthouse на живому сайті: **Accessibility 100 · Best Practices 1
 ### 5.4. Backlinks
 
 Кожен каталог із розділу 1–2 — це безкоштовне посилання на сайт/канал. Після лістингу перевірте, чи є на ньому `https://t.me/rim_dlia_svoih`.
+
+### 5.5. Італійська версія `/it/`
+
+Двомовна структура: українська в корені, італійська в `/it/`, сторінки зв'язані `hreflang`
+(`uk` / `it` / `x-default` → українська), у шапці — перемикач мови, `sitemap.xml` містить обидві версії з `<xhtml:link>`.
+
+- переклад: `content/it/<slug>.md` (той самий slug, що й обкладинка) → `/it/posts/<slug>.html`;
+- італійська головна: `https://ucrainiroma.it/it/`;
+- перекладаємо насамперед evergreen-запити: «codice fiscale», «affitto Roma», «medico di base», «scuola per ucraini Roma»;
+- новинні пости тижня можна не перекладати — вони швидко втрачають актуальність.
+
+Навіщо: українці в Римі часто гуглять італійською, бо вся офіційна термінологія італійська. Це той самий пошуковий попит, але ширший.
 
 ---
 
