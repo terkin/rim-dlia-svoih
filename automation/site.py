@@ -111,6 +111,17 @@ def excerpt(text: str, limit: int = 180) -> str:
     return cut + "…"
 
 
+def body_excerpt(text: str, limit: int = 180) -> str:
+    """Опис без першого рядка-заголовка (щоб не дублювати h1)."""
+    lines = text.splitlines()
+    start = 0
+    for i, line in enumerate(lines):
+        if line.strip():
+            start = i + 1
+            break
+    return excerpt("\n".join(lines[start:]), limit)
+
+
 def esc(value: str) -> str:
     return html.escape(value, quote=True)
 
@@ -159,7 +170,7 @@ def make_post(text: str, cover: Path) -> dict:
         "slug": slug_from_cover(cover),
         "date": post_date(cover),
         "title": first_line(text),
-        "excerpt": excerpt(text),
+        "excerpt": body_excerpt(text),
         "url": f"{SITE_URL}/posts/{slug_from_cover(cover)}.html",
     }
 
@@ -256,7 +267,15 @@ footer.site .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-bet
 """
 
 
-def page_shell(title: str, description: str, canonical: str, body: str, extra_head: str = "") -> str:
+def page_shell(
+    title: str,
+    description: str,
+    canonical: str,
+    body: str,
+    extra_head: str = "",
+    image: str | None = None,
+) -> str:
+    og_image = image or f"{SITE_URL}/covers/2026-11-09-intro.png"
     return f"""<!DOCTYPE html>
 <html lang="uk">
 <head>
@@ -270,12 +289,12 @@ def page_shell(title: str, description: str, canonical: str, body: str, extra_he
 <meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(description)}">
 <meta property="og:url" content="{esc(canonical)}">
-<meta property="og:image" content="{SITE_URL}/covers/2026-11-09-intro.png">
+<meta property="og:image" content="{og_image}">
 <meta property="og:locale" content="uk_UA">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{esc(title)}">
 <meta name="twitter:description" content="{esc(description)}">
-<meta name="twitter:image" content="{SITE_URL}/covers/2026-11-09-intro.png">
+<meta name="twitter:image" content="{og_image}">
 <link rel="alternate" type="application/rss+xml" title="{esc(CHANNEL_TITLE)}" href="{SITE_URL}/rss.xml">
 <link rel="icon" type="image/png" href="{SITE_URL}/avatar.png">
 <style>{CSS}</style>
@@ -518,6 +537,7 @@ def post_page(post: dict, prev: dict | None, nxt: dict | None) -> str:
         post["url"],
         body,
         f'<script type="application/ld+json">{json.dumps(article, ensure_ascii=False)}</script>',
+        image=f"{SITE_URL}/covers/{post['cover'].name}",
     )
 
 
