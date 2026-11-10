@@ -25,6 +25,7 @@ import shutil
 from datetime import datetime, timezone
 from pathlib import Path
 from xml.sax.saxutils import escape as xml_escape
+from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
@@ -611,6 +612,8 @@ def main() -> None:
         shutil.copy2(avatar, DOCS / "avatar.png")
 
     (DOCS / ".nojekyll").write_text("", encoding="utf-8")
+    # GitHub Pages: кастомний домен зберігається у docs/CNAME
+    (DOCS / "CNAME").write_text(urlparse(SITE_URL).netloc + "\n", encoding="utf-8")
     (DOCS / "index.html").write_text(index_page(posts), encoding="utf-8")
     (DOCS / "404.html").write_text(not_found(), encoding="utf-8")
     (DOCS / "sitemap.xml").write_text(sitemap(posts), encoding="utf-8")
