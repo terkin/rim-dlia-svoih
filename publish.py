@@ -146,12 +146,14 @@ def pinned_post() -> str:
 
 
 def html_caption(text: str) -> str:
-    """Екранує HTML і робить перший рядок жирним."""
+    """Екранує HTML, підтримує **жирний** і робить перший рядок жирним."""
     escaped = text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+    escaped = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", escaped, flags=re.S)
     lines = escaped.split("\n")
     for index, line in enumerate(lines):
         if line.strip():
-            lines[index] = f"<b>{line}</b>"
+            if "<b>" not in line:
+                lines[index] = f"<b>{line}</b>"
             break
     return "\n".join(lines)
 
@@ -271,6 +273,25 @@ def cmd_text(args) -> None:
     print(f"  message_id={message_id}")
 
 
+def cmd_file(args) -> None:
+    path = Path(args.file)
+    if not path.is_absolute():
+        path = ROOT / path
+    if not path.exists():
+        sys.exit(f"Немає файлу: {path}")
+    text = path.read_text(encoding="utf-8").strip()
+    cover = Path(args.cover) if args.cover else ROOT / "covers" / f"{path.stem}.png"
+    if not cover.is_absolute():
+        cover = ROOT / cover
+    if not cover.exists():
+        sys.exit(f"Немає обкладинки: {cover}")
+    print(f"Пост: {len(text)} символів · {path.name} · обкладинка {cover.name}")
+    if len(text) > 1024:
+        sys.exit(f"Підпис {len(text)} символів — більше ліміту 1024.")
+    message_id = send_photo(text, cover, args.dry_run)
+    print(f"  message_id={message_id}")
+
+
 def cmd_pin(args) -> None:
     if args.dry_run:
         print(f"  [dry-run] pinChatMessage · message_id={args.message_id}")
@@ -312,6 +333,12 @@ def main() -> None:
     p_all = sub.add_parser("all", help="опублікувати всі 7 постів")
     p_all.add_argument("--dry-run", action="store_true")
     p_all.set_defaults(func=cmd_all)
+
+    p_file = sub.add_parser("file", help="опублікувати пост із .md з обкладинкою")
+    p_file.add_argument("file", help="шлях до .md з текстом поста")
+    p_file.add_argument("--cover", help="шлях до обкладинки (типово covers/<назва>.png)")
+    p_file.add_argument("--dry-run", action="store_true")
+    p_file.set_defaults(func=cmd_file)
 
     p_text = sub.add_parser("text", help="опублікувати текст із файлу")
     p_text.add_argument("file", help="шлях до .txt або .md з текстом")

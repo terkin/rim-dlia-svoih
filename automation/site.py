@@ -30,6 +30,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
 COVERS = ROOT / "covers"
 CONTENT = ROOT / "content/01-first-week.md"
+EXTRA = ROOT / "content/extra"
 KEY_FILE = ROOT / "automation/indexnow.key"
 
 SITE_URL = os.environ.get("SITE_URL", "https://ucrainiroma.it").rstrip("/")
@@ -75,8 +76,13 @@ def code_blocks(path: Path) -> list[str]:
     return [block.strip("\n") for block in re.findall(r"```\n(.*?)\n```", text, re.S)]
 
 
+def extra_stems() -> set[str]:
+    return {path.stem for path in EXTRA.glob("*.md")}
+
+
 def cover_files() -> list[Path]:
-    return sorted(COVERS.glob("2026-*.png"))
+    planned = extra_stems()
+    return [path for path in sorted(COVERS.glob("2026-*.png")) if path.stem not in planned]
 
 
 def slug_from_cover(cover: Path) -> str:
@@ -92,11 +98,12 @@ def human_date(value: datetime) -> str:
 
 
 def first_line(text: str) -> str:
-    return next((line.strip() for line in text.splitlines() if line.strip()), "Без назви")
+    line = next((line.strip() for line in text.splitlines() if line.strip()), "Без назви")
+    return line.replace("**", "")
 
 
 def excerpt(text: str, limit: int = 180) -> str:
-    body = " ".join(line.strip() for line in text.splitlines() if line.strip())
+    body = " ".join(line.strip() for line in text.splitlines() if line.strip()).replace("**", "")
     if len(body) <= limit:
         return body
     cut = body[:limit].rsplit(" ", 1)[0]
@@ -108,7 +115,10 @@ def esc(value: str) -> str:
 
 
 def paragraphs(text: str) -> str:
-    """Перший рядок — жирний, решта — як є, зі збереженням переносів."""
+    """Перший рядок — жирний, решта — як є, зі збереженням переносів.
+
+    Підтримує **жирний** усередині рядка (markdown-файли з content/extra).
+    """
     lines = text.splitlines()
     out: list[str] = []
     first_done = False
@@ -117,12 +127,12 @@ def paragraphs(text: str) -> str:
         if not stripped:
             out.append("")
             continue
-        safe = esc(line)
-        if not first_done:
+        safe = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", esc(line))
+        if not first_done and "<strong>" not in safe:
             out.append(f"<strong>{safe}</strong>")
-            first_done = True
         else:
             out.append(safe)
+        first_done = True
     return "\n".join(out)
 
 
@@ -135,18 +145,35 @@ def load_posts() -> list[dict]:
         )
     posts = []
     for text, cover in zip(texts, covers):
-        date = post_date(cover)
-        posts.append(
-            {
-                "text": text,
-                "cover": cover,
-                "slug": slug_from_cover(cover),
-                "date": date,
-                "title": first_line(text),
-                "excerpt": excerpt(text),
-                "url": f"{SITE_URL}/posts/{slug_from_cover(cover)}.html",
-            }
-        )
+        posts.append(make_post(text, cover))
+    posts.extend(extra_posts())
+    posts.sort(key=lambda post: (post["date"], post["slug"]))
+    return posts
+
+
+def make_post(text: str, cover: Path) -> dict:
+    return {
+        "text": text,
+        "cover": cover,
+        "slug": slug_from_cover(cover),
+        "date": post_date(cover),
+        "title": first_line(text),
+        "excerpt": excerpt(text),
+        "url": f"{SITE_URL}/posts/{slug_from_cover(cover)}.html",
+    }
+
+
+def extra_posts() -> list[dict]:
+    """Окремі пости з content/extra/<slug>.md + covers/<slug>.png."""
+    posts = []
+    for path in sorted(EXTRA.glob("*.md")):
+        cover = COVERS / f"{path.stem}.png"
+        if not cover.exists():
+            raise SystemExit(f"Немає обкладинки {cover.name} для content/extra/{path.name}")
+        text = path.read_text(encoding="utf-8").strip()
+        if not text:
+            continue
+        posts.append(make_post(text, cover))
     return posts
 
 

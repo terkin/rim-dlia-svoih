@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="810" viewBox="0 0 1080 810">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A1424"/>
+      <stop offset="0.55" stop-color="#132844"/>
+      <stop offset="1" stop-color="#1B3352"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="82%" cy="18%" r="55%">
+      <stop offset="0" stop-color="#FFB86B" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#FFB86B" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1080" height="810" fill="url(#bg)"/>
+  <rect width="1080" height="810" fill="url(#glow)"/>
+  <rect x="30" y="30" width="1020" height="750" rx="28" fill="none" stroke="#FFB86B" stroke-opacity="0.28" stroke-width="2"/>
+
+  <g font-family="PT Sans, Arial, sans-serif">
+    <circle cx="86" cy="92" r="9" fill="#FFB86B"/>
+    <text x="110" y="100" font-size="22" font-weight="700" fill="#DCE8F4" letter-spacing="5">РИМ ДЛЯ СВОЇХ</text>
+    <text x="994" y="100" text-anchor="end" font-size="20" font-weight="600" fill="#7F95A9" letter-spacing="3">РИМ · ІТАЛІЯ</text>
+
+    <text x="80" y="230" font-size="24" font-weight="700" fill="#FFB86B" letter-spacing="5">ЖИТЛО Й ГРОШІ</text>
+    <text x="80" y="330" font-family="PT Sans, Arial, sans-serif" font-size="112" font-weight="800" fill="#FFFFFF" letter-spacing="-3">СКІЛЬКИ</text><text x="80" y="452" font-family="PT Sans, Arial, sans-serif" font-size="112" font-weight="800" fill="#FFFFFF" letter-spacing="-3">КОШТУЄ РИМ</text>
+    <text x="82" y="582" font-size="31" font-weight="500" fill="#C9D6E2">Оренда · ярмарок · здоров&#x27;я · культура</text>
+
+    <rect x="80" y="638" width="268" height="66" rx="33" fill="#FFB86B"/>
+    <text x="112" y="682" font-size="27" font-weight="800" fill="#0A1424" letter-spacing="1">10 ЛИСТОПАДА</text>
+
+    <text x="80" y="752" font-size="18" font-weight="600" fill="#7F95A9" letter-spacing="3">t.me/rim_dlia_svoih</text>
+  </g>
+
+  <g opacity="0.10" fill="none" stroke="#FFB86B" stroke-width="4"><path d="M690 790 L690 742 Q712 716 734 742 L734 790"/><path d="M754 790 L754 742 Q776 716 798 742 L798 790"/><path d="M818 790 L818 742 Q840 716 862 742 L862 790"/><path d="M882 790 L882 742 Q904 716 926 742 L926 790"/><path d="M946 790 L946 742 Q968 716 990 742 L990 790"/><path d="M1010 790 L1010 742 Q1032 716 1054 742 L1054 790"/></g>
+  <circle cx="862" cy="545" r="112" fill="none" stroke="#FFB86B" stroke-opacity="0.45" stroke-width="2"/><rect x="792" y="499" width="140" height="92" rx="14" fill="none" stroke="#FFB86B" stroke-width="4"/><path d="M792 529 L932 529" stroke="#FFB86B" stroke-width="3" stroke-opacity="0.5"/><rect x="884" y="539" width="48" height="32" rx="8" fill="#FFB86B"/><circle cx="908" cy="555" r="5" fill="#0A1424"/>
+</svg>
