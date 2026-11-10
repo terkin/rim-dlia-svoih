@@ -52,6 +52,15 @@ COVERS = [
         "icon": "doc",
     },
     {
+        "file": "2026-11-10-italy-military-aid",
+        "kicker": "УКРАЇНА І СВІТ",
+        "title": ["13-Й ПАКЕТ", "ДОПОМОГИ"],
+        "sub": "Італія підтвердила нову військову підтримку",
+        "date": "10 ЛИСТОПАДА",
+        "accent": "#6EC1FF",
+        "icon": "shield",
+    },
+    {
         "file": "2026-11-11-kids",
         "kicker": "ВИХІДНІ З ДІТЬМИ",
         "title": ["КУДИ", "З ДІТЬМИ"],
@@ -143,6 +152,11 @@ def icon(kind: str, accent: str) -> str:
             f'<line x1="{cx-28}" y1="{cy-16}" x2="{cx+32}" y2="{cy-16}" stroke="{accent}" stroke-width="5" stroke-linecap="round"/>'
             f'<line x1="{cx-28}" y1="{cy+8}" x2="{cx+32}" y2="{cy+8}" stroke="{accent}" stroke-width="5" stroke-linecap="round"/>'
             f'<line x1="{cx-28}" y1="{cy+32}" x2="{cx+12}" y2="{cy+32}" stroke="{accent}" stroke-width="5" stroke-linecap="round"/>'
+        )
+    if kind == "shield":
+        return base + (
+            f'<path d="M{cx} {cy-78} L{cx+66} {cy-48} L{cx+66} {cy+4} C{cx+66} {cy+42} {cx+28} {cy+68} {cx} {cy+84} C{cx-28} {cy+68} {cx-66} {cy+42} {cx-66} {cy+4} L{cx-66} {cy-48} Z" fill="none" stroke="{accent}" stroke-width="4" stroke-linejoin="round"/>'
+            f'<path d="M{cx-24} {cy} L{cx-6} {cy+20} L{cx+28} {cy-18}" fill="none" stroke="{accent}" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>'
         )
     if kind == "mail":
         return base + (
