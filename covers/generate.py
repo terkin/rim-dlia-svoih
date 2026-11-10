@@ -43,6 +43,15 @@ COVERS = [
         "icon": "pin",
     },
     {
+        "file": "2026-11-10-codice-fiscale",
+        "kicker": "ДОКУМЕНТИ",
+        "title": ["CODICE", "FISCALE"],
+        "sub": "16 символів, без яких нічого не оформити",
+        "date": "БЕЗКОШТОВНО",
+        "accent": "#7FB2F0",
+        "icon": "doc",
+    },
+    {
         "file": "2026-11-11-kids",
         "kicker": "ВИХІДНІ З ДІТЬМИ",
         "title": ["КУДИ", "З ДІТЬМИ"],
@@ -126,6 +135,14 @@ def icon(kind: str, accent: str) -> str:
             f'<path d="M{cx-70} {cy-16} L{cx+70} {cy-16}" stroke="{accent}" stroke-width="3" stroke-opacity="0.5"/>'
             f'<rect x="{cx+22}" y="{cy-6}" width="48" height="32" rx="8" fill="{accent}"/>'
             f'<circle cx="{cx+46}" cy="{cy+10}" r="5" fill="#0A1424"/>'
+        )
+    if kind == "doc":
+        return base + (
+            f'<path d="M{cx-52} {cy-72} L{cx+24} {cy-72} L{cx+56} {cy-40} L{cx+56} {cy+72} L{cx-52} {cy+72} Z" fill="none" stroke="{accent}" stroke-width="4" stroke-linejoin="round"/>'
+            f'<path d="M{cx+24} {cy-72} L{cx+24} {cy-40} L{cx+56} {cy-40}" fill="none" stroke="{accent}" stroke-width="4" stroke-linejoin="round"/>'
+            f'<line x1="{cx-28}" y1="{cy-16}" x2="{cx+32}" y2="{cy-16}" stroke="{accent}" stroke-width="5" stroke-linecap="round"/>'
+            f'<line x1="{cx-28}" y1="{cy+8}" x2="{cx+32}" y2="{cy+8}" stroke="{accent}" stroke-width="5" stroke-linecap="round"/>'
+            f'<line x1="{cx-28}" y1="{cy+32}" x2="{cx+12}" y2="{cy+32}" stroke="{accent}" stroke-width="5" stroke-linecap="round"/>'
         )
     if kind == "mail":
         return base + (
