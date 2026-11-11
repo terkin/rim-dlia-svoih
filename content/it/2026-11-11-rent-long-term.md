@@ -42,7 +42,7 @@ Regola unica: **non pagare niente prima della visita in persona e della firma de
 • **3+2** (canone concordato) — più economico, canoni definiti dagli accordi comunali.
 • **Transitorio** (1–18 mesi) — non è a lungo termine; per legge senza cauzione. Usalo solo come soluzione provvisoria.
 • Il deposito (cauzione) per legge non può superare le tre mensilità (art. 11 L. 392/1978). Produce interessi e viene restituito alla partenza, salvo danni reali documentati.
-• Il contratto **va registrato all'Agenzia delle Entrate entro 30 giorni**. La registrazione è obbligatoria: senza non puoi fare la residenza, il SSN o l'ISEE. Il costo (1% del canone annuo per i 4+4, oppure 200 € fissi per i 3+2) si divide al 50% tra le parti.
+• Il contratto **va registrato all'Agenzia delle Entrate entro 30 giorni**. La registrazione è obbligatoria: senza non puoi fare la residenza, il SSN o l'ISEE. Il costo per gli immobili residenziali è il 2% del canone annuo (minimo 67 €); per i canone concordato a Roma la base imponibile si riduce del 30%. Per legge le due parti rispondono in solido: in pratica si divide a metà.
 
 **Passo 7. Il pagamento**
 Deposito e prima mensilità — con bonifico con causale corretta (deposito cauzionale, affitto mese X). Contanti solo con ricevuta. Conserva la copia del contratto firmato e registrato: serve per Comune, medico e banca.
