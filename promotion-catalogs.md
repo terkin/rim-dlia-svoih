@@ -15,6 +15,7 @@
 | **ua.intelegram.one** | `POST /send` → категорія «Новини та ЗМІ» | ✅ Надіслано на модерацію | Чекати схвалення |
 | **ukrtg.com.ua** | Перевірка через форму | ✅ Канал уже є в каталозі | Нічого не робити |
 | **ukrtelegram.com** | Опубліковано промо-текст (пост 11) → `PUT /catalogue` | ✅ Заявку прийнято (HTTP 200) | Розгляд до 7 днів |
+| **webgrupos.net** | `POST /api/publish_telegram.php` (без акаунта й капчі) | ✅ Лістинг живий: `/channel/11991` | Нічого не робити; індексується Google за 24–72 год |
 
 > Формула «подав і забув» тут працює: більшість каталогів самі витягують назву, опис і аватар із Telegram.
 
@@ -30,6 +31,9 @@
 | **Telegramic** | https://telegramic.org/channels/create/ | Увійти через Telegram Login | Потрібен Telegram-логін |
 | **TGlist** | https://tglist.com.ua/tgadd | Назва, `@username`, опис, категорія, email, згода | Email + captcha |
 | **Містограм** | https://mistogram.com.ua/add | Форма на сайті (JS) | Потрібен браузер / можливий Telegram-логін |
+| **tg.place** | https://tg.place/en/submit | Лише `@username` + коментар; listed навіть нижче 100 підписників (без оцінки) | Next.js server action + перевірка — вручну, 1 хв |
+| **tdirectory.me** | Форма «Submit Now» | Cloudflare + reCAPTCHA — вручну (низький пріоритет: заявки висять місяцями) |
+| **TGNAV (@TGQRYbot)** | Надіслати посилання боту в Telegram → обрати категорію | Потрібен Telegram-акаунт — 2 хв вручну |
 
 ### Готові дані для картки (копіювати однаково всюди)
 
@@ -100,6 +104,31 @@ eventi, trasporti, casa, lavoro, salute e sicurezza. Con fonti e senza allarmism
 ### 4.6. Внутрішні перелінковки
 
 У кожному пості давайте 1–2 посилання на попередні пости каналу (`https://t.me/rim_dlia_svoih/8`). Це збільшує глибину перегляду і допомагає пошуку.
+
+### 4.7. Крос-пост у соцмережі (Bluesky / Mastodon)
+
+Кожен пост сайту дублюється в соцмережі автоматично — `automation/crosspost.py`:
+
+1. читає найсвіжіший запис із `docs/rss.xml` (заплановані на майбутнє пости пропускає);
+2. публікує заголовок + короткий опис + посилання на сайт + хештеги;
+3. зберігає опублікований link у `automation/.crosspost-state.json` — дублікатів не буде;
+4. мережа пропускається, якщо в `.env` немає її ключів.
+
+Щоб увімкнути (по 5 хвилин на акаунт, обидві мережі безкоштовні):
+
+```
+# Bluesky: bsky.app → Settings → App passwords
+BSKY_HANDLE=ваше-ім’я.bsky.social
+BSKY_APP_PASSWORD=xxxx-xxxx-xxxx-xxxx
+
+# Mastodon: mastodon.social (або будь-який інстанс) → Preferences → Development → New app
+MASTODON_BASE=https://mastodon.social
+MASTODON_TOKEN=...
+```
+
+Перевірка: `python3 automation/crosspost.py --dry-run`.
+
+Ті самі ключі можна додати як GitHub Secrets і викликати скрипт із Actions після кожного push.
 
 ---
 

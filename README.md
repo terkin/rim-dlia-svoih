@@ -146,6 +146,7 @@ cd covers && python3 generate.py && for f in *.svg; do rsvg-convert -w 1080 -h 8
 | `python3 automation/report.py --json` | те саме у JSON |
 | `python3 automation/site.py` | генерує SEO-сайт у `docs/` (index, пости, sitemap, robots, rss, IndexNow-ключ) |
 | `python3 automation/indexnow.py` | надсилає URL сайту в IndexNow (Bing, Yandex, Seznam, Naver) |
+| `python3 automation/crosspost.py` | крос-пост найсвіжішого поста сайту в Bluesky/Mastodon (потрібні ключі в `.env`) |
 | `python3 publish.py text content/promo-ukrtelegram.txt` | публікує текст із файлу |
 | `python3 publish.py file content/extra/<slug>.md` | публікує пост з обкладинкою `covers/<slug>.png` |
 
