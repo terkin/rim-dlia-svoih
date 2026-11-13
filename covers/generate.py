@@ -61,6 +61,15 @@ COVERS = [
         "icon": "shield",
     },
     {
+        "file": "2026-11-13-weekend-14-15",
+        "kicker": "ВИХІДНІ",
+        "title": ["ПЛАН НА", "14–15 ЛИСТОПАДА"],
+        "sub": "Рим і околиці: Japan Days, 100 Cellos, borghi",
+        "date": "14–15 ЛИСТОПАДА",
+        "accent": "#A78BFA",
+        "icon": "pin",
+    },
+    {
         "file": "2026-11-13-peace-talks-eu",
         "kicker": "УКРАЇНА І СВІТ",
         "title": ["ПЕРЕГОВОРИ", "І ДЕДЛАЙН ЄС"],
