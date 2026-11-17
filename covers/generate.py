@@ -61,6 +61,15 @@ COVERS = [
         "icon": "shield",
     },
     {
+        "file": "2026-11-17-inflation-strike",
+        "kicker": "ІТАЛІЯ",
+        "title": ["ІНФЛЯЦІЯ", "І СТРАЙК"],
+        "sub": "боллетте +61,6% · страйк ATAC 20.11 · затори",
+        "date": "17 ЛИСТОПАДА",
+        "accent": "#FF6B6B",
+        "icon": "wallet",
+    },
+    {
         "file": "2026-11-16-week-ahead",
         "kicker": "ТЕЖДЕНЬ",
         "title": ["ТИЖДЕНЬ 16–22", "ЛИСТОПАДА"],
