@@ -61,6 +61,15 @@ COVERS = [
         "icon": "shield",
     },
     {
+        "file": "2026-11-18-kerch-summit-museums",
+        "kicker": "УКРАЇНА І РИМ",
+        "title": ["КРИМСЬКИЙ МІСТ", "І САМІТ У КИТАЇ"],
+        "sub": "Шеньчжен 19.11 · музеї Sapienza 21.11",
+        "date": "18 ЛИСТОПАДА",
+        "accent": "#6EC1FF",
+        "icon": "doc",
+    },
+    {
         "file": "2026-11-17-inflation-strike",
         "kicker": "ІТАЛІЯ",
         "title": ["ІНФЛЯЦІЯ", "І СТРАЙК"],
