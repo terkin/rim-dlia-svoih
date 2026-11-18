@@ -61,6 +61,15 @@ COVERS = [
         "icon": "shield",
     },
     {
+        "file": "2026-11-18-rome-newcomer-events",
+        "kicker": "РИМ",
+        "title": ["ЩО ПОБАЧИТИ", "19–22 ЛИСТОПАДА"],
+        "sub": "Christmas Garden · Caput Mundi · Абрамович",
+        "date": "19–22 ЛИСТОПАДА",
+        "accent": "#A78BFA",
+        "icon": "pin",
+    },
+    {
         "file": "2026-11-18-kerch-summit-museums",
         "kicker": "УКРАЇНА І РИМ",
         "title": ["КРИМСЬКИЙ МІСТ", "І САМІТ У КИТАЇ"],
