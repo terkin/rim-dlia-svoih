@@ -193,6 +193,43 @@ content/it/YYYY-MM-DD-slug.md     →  /it/posts/YYYY-MM-DD-slug.html
 
 ---
 
+## 3.3. Автопостинг за розкладом (launchd)
+
+Двічі на день локальний планувальник macOS запускає скрипт, який через CLI створює пост, збирає сайт і публікує його в канал.
+
+| Що | Значення |
+|---|---|
+| Розклад | **09:00** — ранковий випуск, **19:00** — вечірній (локальний час, CET/CEST) |
+| Скрипт | `automation/scheduled_post.sh morning\|evening\|test` |
+| Агенти | `~/Library/LaunchAgents/it.ucrainiroma.post-morning.plist`, `...post-evening.plist` |
+| Модель | `opencode/deepseek-v4.1-flash-free` (зафіксована в скрипті; дефолтна `gemini-4-carbon` падає без кредитів) |
+| Логи | `automation/logs/YYYY-MM-DD-HHMM-<slot>.log` (зберігаються останні 30) |
+| Ручний запуск | `automation/scheduled_post.sh morning` |
+
+**Що робить кожен запуск:** `collect.py` → перевірка теми у 2+ джерелах → `content/extra/<slug>.md` + `content/it/<slug>.md` + `content/channel/<slug>-post.md` (≤1024) → обкладинка → `site.py` → commit + push → `publish.py` → очікування білда Pages → `indexnow.py` → перевірка `t.me/s/`.
+
+**Ранок** — головна тема дня (Україна / Італія / Рим) + 1–3 практичні блоки.
+**Вечір** — підсумок дня або 3–5 подій Риму на завтра й вихідні для новачків. Дублікатів із ранковим постом не робить (перевіряє `content/extra/` за останні 2 дні).
+
+**Вимкнути / увімкнути:**
+
+```bash
+# вимкнути
+launchctl bootout gui/$(id -u)/it.ucrainiroma.post-morning
+launchctl bootout gui/$(id -u)/it.ucrainiroma.post-evening
+
+# увімкнути знову
+launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/it.ucrainiroma.post-morning.plist
+launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/it.ucrainiroma.post-evening.plist
+
+# перевірити, що агенти завантажені
+launchctl list | grep -i ucrainiroma
+```
+
+**Обмеження launchd:** завдання виконуються лише коли ви увійшли в систему; якщо Mac спав — запуск відбудеться після пробудження. Пости публікуються без ручного погодження, тому раз на кілька днів варто переглядати логи й канал.
+
+---
+
 ## 4. Налаштування після створення
 
 - **Коментарі:** увімкніть, якщо хочете обговорення під постами (створюється прив'язаний чат).
