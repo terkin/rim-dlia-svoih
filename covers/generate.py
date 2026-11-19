@@ -61,6 +61,15 @@ COVERS = [
         "icon": "shield",
     },
     {
+        "file": "2026-11-19-shenzhen-berlin",
+        "kicker": "СВІТ І РИМ",
+        "title": ["САМІТ", "І БЕРЛІН"],
+        "sub": "Трамп–Путін–Сі · Мелоні без військ",
+        "date": "19 ЛИСТОПАДА",
+        "accent": "#6EC1FF",
+        "icon": "doc",
+    },
+    {
         "file": "2026-11-18-rome-newcomer-events",
         "kicker": "РИМ",
         "title": ["ЩО ПОБАЧИТИ", "19–22 ЛИСТОПАДА"],
