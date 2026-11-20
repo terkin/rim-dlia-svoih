@@ -5,7 +5,7 @@
 # Тест без публікації: automation/scheduled_post.sh test
 set -u
 
-REPO="/Users/terkin/Documents/Default Project/rim-dlia-svoikh"
+REPO="/Users/terkin/rim-dlia-svoikh"
 SLOT="${1:-morning}"
 export PATH="/Users/terkin/.opencode/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin"
 mkdir -p "$REPO/automation/logs"
