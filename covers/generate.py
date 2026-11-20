@@ -61,6 +61,15 @@ COVERS = [
         "icon": "shield",
     },
     {
+        "file": "2026-11-20-rome-weekend-cie-museums",
+        "kicker": "РИМ",
+        "title": ["ВИХІДНІ", "21–22 ЛИСТОПАДА"],
+        "sub": "Страйк · CIE · Ніч музеїв",
+        "date": "20 ЛИСТОПАДА",
+        "accent": "#F0A868",
+        "icon": "metro",
+    },
+    {
         "file": "2026-11-19-shenzhen-berlin",
         "kicker": "СВІТ І РИМ",
         "title": ["САМІТ", "І БЕРЛІН"],
