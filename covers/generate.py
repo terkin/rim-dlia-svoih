@@ -61,6 +61,15 @@ COVERS = [
         "icon": "shield",
     },
     {
+        "file": "2026-11-21-rome-weekend-parade-fl1",
+        "kicker": "ВИХІДНІ",
+        "title": ["ПАРАД І", "МАРКЕТИ"],
+        "sub": "Christmas Parade · Ficus · Vegan Village · FL1",
+        "date": "21–22 ЛИСТОПАДА",
+        "accent": "#FFB86B",
+        "icon": "pin",
+    },
+    {
         "file": "2026-11-20-rome-weekend-cie-museums",
         "kicker": "РИМ",
         "title": ["ВИХІДНІ", "21–22 ЛИСТОПАДА"],

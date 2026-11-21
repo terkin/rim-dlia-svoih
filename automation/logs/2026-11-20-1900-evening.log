@@ -1,0 +1,4763 @@
+=== 2026-11-20 19:00:55 slot=evening ===
+[0m
+> build · deepseek-v4.1-flash-free
+I'll start by reading the README and exploring the repository structure.
+[0m→ [0mRead README.md 
+[0m$ [0mls -la /Users/terkin/rim-dlia-svoikh
+total 288
+drwxr-xr-x@  22 terkin  staff    704 Nov 20 09:46 .
+drwxr-x---+ 167 terkin  staff   5344 Nov 20 18:43 ..
+-rw-r--r--@   1 terkin  staff   6148 Nov  9 11:01 .DS_Store
+-rw-------@   1 terkin  staff     99 Nov  9 11:21 .env
+-rw-r--r--@   1 terkin  staff    300 Nov  9 11:48 .env.example
+drwxr-xr-x@  14 terkin  staff    448 Nov 20 09:49 .git
+-rw-r--r--@   1 terkin  staff     45 Nov  9 11:06 .gitignore
+-rw-r--r--@   1 terkin  staff  21371 Nov 20 09:49 README.md
+drwxr-xr-x@   3 terkin  staff     96 Nov 10 08:59 __pycache__
+-rw-r--r--@   1 terkin  staff  16781 Nov  9 11:56 ai-promotion.md
+drwxr-xr-x@   3 terkin  staff     96 Nov  9 14:03 analysis
+drwxr-xr-x@  14 terkin  staff    448 Nov 19 10:21 automation
+drwxr-xr-x@   4 terkin  staff    128 Nov  9 10:45 brand
+-rw-r--r--@   1 terkin  staff   6323 Nov  9 13:55 catalog-submission.md
+drwxr-xr-x@  11 terkin  staff    352 Nov 10 10:19 content
+drwxr-xr-x@  47 terkin  staff   1504 Nov 20 09:46 covers
+drwxr-xr-x@  14 terkin  staff    448 Nov 20 09:46 docs
+-rw-r--r--@   1 terkin  staff  17729 Nov  9 11:48 preview.html
+-rw-r--r--@   1 terkin  staff  14675 Nov 11 09:36 promotion-catalogs.md
+-rw-r--r--@   1 terkin  staff  18236 Nov  9 12:10 promotion.md
+-rw-r--r--@   1 terkin  staff  13540 Nov 10 08:57 publish.py
+drwxr-xr-x@   4 terkin  staff    128 Nov  9 14:03 reports
+> build · deepseek-v4.1-flash-free
+[0m→ [0mRead covers/generate.py 
+[0m$ [0mls -la /Users/terkin/rim-dlia-svoikh/content/extra | tail -30; echo; ls -la /Users/terkin/rim-dlia-svoikh/content/channel | tail -20; echo; ls /Users/terkin/rim-dlia-svoikh/automation
+total 144
+drwxr-xr-x@ 17 terkin  staff   544 Nov 20 09:45 .
+drwxr-xr-x@ 11 terkin  staff   352 Nov 10 10:19 ..
+-rw-r--r--@  1 terkin  staff  3656 Nov 10 10:18 2026-11-10-codice-fiscale.md
+-rw-r--r--@  1 terkin  staff  1443 Nov 10 09:31 2026-11-10-events.md
+-rw-r--r--@  1 terkin  staff  1242 Nov 10 14:31 2026-11-10-italy-military-aid.md
+-rw-r--r--@  1 terkin  staff  1521 Nov 10 08:57 2026-11-10-rent.md
+-rw-r--r--@  1 terkin  staff  1924 Nov 11 08:58 2026-11-11-lazio-irpef.md
+-rw-r--r--@  1 terkin  staff  6507 Nov 11 11:01 2026-11-11-rent-long-term.md
+-rw-r--r--@  1 terkin  staff  3129 Nov 12 08:53 2026-11-12-school-alerts.md
+-rw-r--r--@  1 terkin  staff  4274 Nov 13 11:13 2026-11-13-peace-talks-eu.md
+-rw-r--r--@  1 terkin  staff  3064 Nov 13 11:19 2026-11-13-weekend-14-15.md
+-rw-r--r--@  1 terkin  staff  3365 Nov 16 08:34 2026-11-16-week-ahead.md
+-rw-r--r--@  1 terkin  staff  3638 Nov 17 11:25 2026-11-17-inflation-strike.md
+-rw-r--r--@  1 terkin  staff  4159 Nov 18 10:44 2026-11-18-kerch-summit-museums.md
+-rw-r--r--@  1 terkin  staff  3255 Nov 18 10:48 2026-11-18-rome-newcomer-events.md
+-rw-r--r--@  1 terkin  staff  3737 Nov 19 10:19 2026-11-19-shenzhen-berlin.md
+-rw-r--r--@  1 terkin  staff  3686 Nov 20 09:45 2026-11-20-rome-weekend-cie-museums.md
+
+total 96
+drwxr-xr-x@ 14 terkin  staff   448 Nov 20 09:46 .
+drwxr-xr-x@ 11 terkin  staff   352 Nov 10 10:19 ..
+-rw-r--r--@  1 terkin  staff  1549 Nov 10 10:19 2026-11-10-codice-fiscale-post.md
+-rw-r--r--@  1 terkin  staff  1311 Nov 11 08:59 2026-11-11-lazio-irpef-post.md
+-rw-r--r--@  1 terkin  staff  1444 Nov 11 10:59 2026-11-11-rent-long-term-post.md
+-rw-r--r--@  1 terkin  staff  1589 Nov 12 08:54 2026-11-12-school-alerts-post.md
+-rw-r--r--@  1 terkin  staff  1642 Nov 13 11:14 2026-11-13-peace-talks-eu-post.md
+-rw-r--r--@  1 terkin  staff  1375 Nov 13 11:20 2026-11-13-weekend-14-15-post.md
+-rw-r--r--@  1 terkin  staff  1389 Nov 16 08:34 2026-11-16-week-ahead-post.md
+-rw-r--r--@  1 terkin  staff  1498 Nov 17 11:25 2026-11-17-inflation-strike-post.md
+-rw-r--r--@  1 terkin  staff  1457 Nov 18 10:44 2026-11-18-kerch-summit-museums-post.md
+-rw-r--r--@  1 terkin  staff  1348 Nov 18 10:48 2026-11-18-rome-newcomer-events-post.md
+-rw-r--r--@  1 terkin  staff  1289 Nov 19 10:19 2026-11-19-shenzhen-berlin-post.md
+-rw-r--r--@  1 terkin  staff  1385 Nov 20 09:46 2026-11-20-rome-weekend-cie-museums-post.md
+
+__pycache__
+candidates.json
+collect.py
+crosspost.py
+indexnow.key
+indexnow.py
+logs
+report.json
+report.py
+scheduled_post.sh
+site.py
+> build · deepseek-v4.1-flash-free
+[0m→ [0mRead content/extra/2026-11-20-rome-weekend-cie-museums.md 
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 automation/collect.py 2>&1 | tail -30
+→ ANSA Lazio
+→ Corriere Roma
+→ Il Messaggero Roma
+→ Il Tempo
+→ AGI
+→ Adnkronos
+→ Il Sole 24 Ore
+→ Il Fatto Quotidiano
+
+Збережено 40 кандидатів → /Users/terkin/rim-dlia-svoikh/automation/candidates.json
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 -c "
+import json
+d=json.load(open('automation/candidates.json'))
+print(type(d))
+items = d if isinstance(d,list) else d.get('items',d)
+for i,x in enumerate(items[:40]):
+    print(i, '|', x.get('source'), '|', x.get('title'), '|', x.get('link','')[:90])
+"
+<class 'dict'>
+0 | Il Messaggero Roma | Il cane poliziotto Odina punta un ragazzo, trovata droga addosso e a casa: arrestato | https://www.ilmessaggero.it/roma/flaminio/polizia_idraulico_spaccio_droga-9902607.html
+1 | Il Messaggero Roma | Roma, cosa fare (anche gratis) venerdì 20, sabato 21 e domenica 22 novembre: Christmas Parade, Vegan Village e Ficus al Massimo | https://www.ilmessaggero.it/roma/eventi/roma_cosa_fare_gratis_venerdi_20_sabato_21_domenic
+2 | Il Messaggero Roma | Le sagre e le feste nei dintorni di Roma sabato 21 e domenica 22 novembre: dal vino alla crespella, ecco tutti gli appuntamenti | https://www.ilmessaggero.it/roma/eventi/le_sagre_le_feste_dintorni_di_roma_sabato_21_domen
+3 | Il Messaggero Roma | Hilton punta su Roma: a Monti un hotel di lusso con 147 camere | https://www.ilmessaggero.it/roma/metropoli/hotel_hilton_lxr_hotels_resort_roma_monti_5_ste
+4 | Il Messaggero Roma | Roma, sciopero e manifestazioni: la città nella morsa del caos (con l?incubo incappucciati) | https://www.ilmessaggero.it/roma/roma_sciopero_manifestazioni_dove_quando-9900869.html
+5 | Adnkronos | Casini: "Nel trio di Shenzhen solo Xi vince, Trump e Putin sono loser" | https://www.adnkronos.com/politica/pierferdinando-casini-myrta-merlino-ucraina-shenzhen_6v
+6 | Il Tempo | Manovra, Casasco (FI): “Sanità per gli anziani, beneficio fino a 360 euro. Liquidità immediata sulla pensione per chi ha bisogno di cure” | https://www.iltempo.it/news/general/manovra-casasco-fi-sanita-per-gli-anziani-beneficio-fi
+7 | ANSA Lazio | Sei su 10 scoprono tardi l'infezione da Hiv, al via la settimana dei test | https://www.ansa.it/lazio/notizie/2026/11/20/sei-su-10-scoprono-tardi-linfezione-da-hiv-al
+8 | Adnkronos | Ue-Gb, ex ministro Giustizia Gauke: "Relazione più collaborativa ma serve che Londra discuta le regole non le subisca" | https://www.adnkronos.com/cronaca/ue-gb-ex-ministro-giustizia-gauke_7cArK6wDAoZUJZsQfN78VO
+9 | Il Fatto Quotidiano | Sciopero generale, giovani in piazza contro riarmo e carovita. Verdecchia (Rete degli studenti): “Vogliamo poterci immaginare un futuro in questo Paese” | https://www.ilfattoquotidiano.it/2026/11/20/sciopero-generale-studenti-piazza-riarmo-notiz
+10 | Adnkronos | Pattinaggio, il 23 dicembre il galà dei Campionati italiani di figura alla Fiera Ice Arena | https://www.adnkronos.com/economia/pattinaggio-il-23-dicembre-il-gala-dei-campionati-itali
+11 | Il Tempo | Sciopero del venerdì, nella polizia agenti feriti fra Roma e Venezia | https://www.iltempo.it/news/general/sciopero-del-venerdi-nella-polizia-agenti-feriti-fra-r
+12 | ANSA Lazio | Il basket si mobilita contro violenza sulle donne, iniziativa della Maxima Roma | https://www.ansa.it/lazio/notizie/2026/11/20/il-basket-si-mobilita-contro-violenza-sulle-d
+13 | Il Fatto Quotidiano | Una giornata particolare: si comincia con colazione da Tiffany, Fondazione Prada inaugura “Global Antiquity” e al Teatro alla Scala Bolle è un sublime Apollo | https://www.ilfattoquotidiano.it/2026/11/20/una-giornata-particolare-si-comincia-con-colaz
+14 | Corriere Roma | Ostia, il corteo degli studenti «occupa» l'ex mercato in abbandono: servono spazi sociali | https://roma.corriere.it/notizie/cronaca/26_novembre_20/ostia-il-corteo-degli-studenti-occ
+15 | Il Fatto Quotidiano | Sciopero generale, tensioni al ministero dell’Istruzione: manifestanti lanciano oggetti. Gli studenti: “La violenza è quella dello Stato” | https://www.ilfattoquotidiano.it/2026/11/20/sciopero-studentesco-tensioni-ministero-istruz
+16 | Adnkronos | "In quel momento ha fatto le ultime due spinte, ho preso il suo bimbo che ha pianto subito", parla Niurka Roman l'autista che aiutò una donna a partorire sull'autobus | https://www.adnkronos.com/cronaca/in-quel-momento-ha-fatto-le-ultime-due-spinte-niurka-rom
+17 | Adnkronos | Forum Nordest: in vista del tunnel Brennero mancano investimenti da 7,8 miliardi | https://www.adnkronos.com/economia/tunnel-brennero-investimenti_5oOhIXnYioN9LmEYGFNDVS
+18 | Il Fatto Quotidiano | Online i redditi dei politici, da Meloni a Conte: chi dichiara di più. E Schillaci investe su SpaceX e Nvidia | https://www.ilfattoquotidiano.it/2026/11/20/redditi-politici-2025-meloni-schillaci-notizie
+19 | Il Fatto Quotidiano | Sciopero generale, Landini: “Manovra? 2mila emendamenti dal centrodestra, sono i primi a pensare faccia schifo” | https://www.ilfattoquotidiano.it/2026/11/20/sciopero-generale-landini-manovra-emendamenti-
+20 | Il Sole 24 Ore | Redditi del Governo, per Meloni 185mila euro nel 2025 | https://www.ilsole24ore.com/art/redditi-governo-meloni-185mila-euro-2025-AJUgwVNC
+21 | Il Tempo | Salute mentale, Unobravo “Solo il 38% dei pazienti è uomo. Abbattere i tabù” | https://www.iltempo.it/news/italpress/salute-mentale-unobravo-solo-il-38-dei-pazienti-e-uo
+22 | ANSA Lazio | Ucciso a colpi di forbici a Roma, diffusa la foto del presunto killer | https://www.ansa.it/lazio/notizie/2026/11/20/ucciso-a-colpi-di-forbici-a-roma-diffusa-la-f
+23 | AGI | Tensioni nei cortei studenteschi: bombe carta a Roma, striscione incendiato a Napoli (VIDEO) | https://www.agi.it/cronaca/news/2026-11-20/sciopero-ministero-istruzione-bombe-carta-40115
+24 | Corriere Roma | Gli stipendi dei politici: da Meloni (173 mila euro) a Calenda e Schlein, ecco quanto guadagnano e dichiarano al Fisco | https://roma.corriere.it/notizie/cronaca/26_novembre_20/gli-stipendi-dei-politici-da-melon
+25 | Corriere Roma | Roma e il verde, 500 alberi messi a dimora nel parco di Aguzzano. «Così si rafforza la biodiversità» | https://roma.corriere.it/notizie/cronaca/26_novembre_20/roma-e-il-verde-500-alberi-messi-a
+26 | Il Tempo | Comunicato Stampa: ESG, Industria Felix e Cerved: il 45% delle imprese senza obiettivi di riduzione delle emissioni | https://www.iltempo.it/news/press-release/comunicato-stampa-esg-industria-felix-e-cerved-i
+27 | Il Tempo | Malattie rare, Scopinaro (Uniamo): "La persona al centro di tutte le politiche" | https://www.iltempo.it/news/adnkronos/malattie-rare-scopinaro-uniamo-la-persona-al-centro-
+28 | Corriere Roma | Sciopero generale, a Roma gli studenti ricordano l'operaio morto al Colosseo e fanno un minuto di rumore contro i femminicidi | https://video.corriere.it/roma/video-verticali/sciopero-generale-a-roma-gli-studenti-ricor
+29 | ANSA Lazio | Irruzione all'istituto Faraday di Ostia, preside aggredita | https://www.ansa.it/lazio/notizie/2026/11/20/irruzione-allistituto-faraday-di-ostia-presid
+30 | ANSA Lazio | Il Premio Solinas a Roma, dal 2 al 15 dicembre | https://www.ansa.it/lazio/notizie/2026/11/20/il-premio-solinas-a-roma-dal-2-al-15-dicembre
+31 | Corriere Roma | A Roma studenti davanti al ministero lanciano oggetti e un cartello stradale contro la polizia | https://video.corriere.it/roma/a-roma-studenti-davanti-al-ministero-lanciano-oggetti-e-un-
+32 | Il Sole 24 Ore | Il gruppo Il Sole 24 Ore a Bookcity Milano 2026 | https://www.ilsole24ore.com/art/il-gruppo-sole-24-ore-bookcity-milano-2026-AJsnk9MC
+33 | AGI | Violenza sulle donne, "Io non denuncio se": la campagna di Una Nessuna Centomila | https://www.agi.it/cronaca/news/2026-11-20/violenza-sulle-donne-io-non-denuncio-se-campagn
+34 | Il Sole 24 Ore | Landini: «siamo più di un milione nelle oltre cento piazze» | https://www.ilsole24ore.com/art/landini-siamo-piu-un-milione-oltre-cento-piazze-AJS7JCNC
+35 | AGI | Omicidio di Tor Pignattara a Roma: diffusa la foto del presunto assassino | https://www.agi.it/cronaca/news/2026-11-20/omicidio-torpignattara-foto-presunto-colpevole-
+36 | Il Sole 24 Ore | Contrabbando di carburante, sequestrati 80mila litri di benzina a Roma | https://www.ilsole24ore.com/art/contrabbando-carburante-sequestrati-80mila-litri-benzina-r
+37 | Il Sole 24 Ore | Bce, Lagarde: «Servono leader pronti a battersi per l’Europa» | https://www.ilsole24ore.com/art/bce-lagarde-servono-leader-pronti-battersi-l-europa-AJSzW7
+38 | AGI | Nato prematuro e dopo 17 anni prende in braccio la dottoressa che lo ha curato | https://www.agi.it/cronaca/news/2026-11-19/neonato-prematuro-policlinico-bari-40107998/
+39 | AGI | Due minorenni rubano un autobus e finiscono in un fossato: "Volevano imitare GTA" | https://www.agi.it/cronaca/news/2026-11-19/bus-rubato-rovigo-40105154/
+[0m$ [0mcd /tmp && curl -s "https://news.google.com/rss/search?q=Roma+eventi+domani&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+items=re.findall(r'<item>(.*?)</item>',t,re.S)
+for it in items[:15]:
+    title=re.search(r'<title>(.*?)</title>',it,re.S).group(1)
+    date=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S)
+    print('-',html.unescape(title),'|',date.group(1) if date else '')
+"
+- Sciopero dei mezzi, Roma verso la paralisi. Oggi, venerdì 20 novembre, a rischio metro, bus, tram e treni per 24 ore - RomaToday | Fri, 20 Nov 2026 11:43:30 GMT
+- Cosa fare gratis a Roma oggi 13 novembre, cinema e mostre - Vivere Roma | Fri, 13 Nov 2026 14:53:48 GMT
+- L’Italia di Domani: incontriamoci a Roma il 14 e 15 novembre (anche in streaming) - Domani | Tue, 03 Nov 2026 08:00:00 GMT
+- Cerimonie del 4 novembre e Villaggio Difesa: la viabilità tra piazza Venezia e Circo Massimo - Roma Servizi per la Mobilità | Sun, 01 Nov 2026 21:43:20 GMT
+- Sito Istituzionale | Mobilità e trasporti, weekend 24 e 25 ottobre - Roma Capitale | Sun, 25 Oct 2026 07:00:00 GMT
+- 30 ottobre: corteo USB ed eventi istituzionali protagonisti della scena dell’ordine pubblico. Tavolo tecnico in Questura per illustrare il piano di sicurezza. - Questura di Roma | Polizia di Stato - Polizia di Stato – Questure sul web | Thu, 29 Oct 2026 16:46:26 GMT
+- Weekend a Roma: gli eventi da non perdere sabato 31 ottobre e domenica 1 novembre - RomaToday | Sun, 01 Nov 2026 07:00:00 GMT
+- Weekend a Roma con i bambini: 19 eventi sabato 3 e domenica 4 ottobre 2026 - Roma 03 | Sun, 04 Oct 2026 07:00:00 GMT
+- Manifestazioni a Roma, circolazione verso normalità tra via Marmorata/Porta San Paolo/via Ostiense - Roma Servizi per la Mobilità | Wed, 28 Oct 2026 16:10:15 GMT
+- Halloween a Roma, una notte stregata con tanti eventi. Ecco i party da paura a misura di tutti - Il Messaggero | Sat, 31 Oct 2026 07:00:00 GMT
+- Halloween a Roma con i bambini 2026: altri 19 eventi tra feste, laboratori, fattorie e parchi divertimento - Roma 03 | Mon, 26 Oct 2026 07:00:00 GMT
+- Weekend a Roma: 18 eventi da non perdere sabato 10 e domenica 11 ottobre - RomaToday | Sat, 10 Oct 2026 07:00:00 GMT
+- Sciopero 20 novembre a Roma, venerdì a rischio tensioni: le tappe delle manifestazioni studentesche - RomaToday | Wed, 18 Nov 2026 09:57:01 GMT
+- Weekend a Roma: 18 eventi da non perdere sabato 3 e domenica 4 ottobre - RomaToday | Thu, 01 Oct 2026 07:00:00 GMT
+- Weekend a Roma: 20 eventi da non perdere sabato 26 e domenica 27 settembre - RomaToday | Sun, 27 Sep 2026 07:00:00 GMT
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /tmp && curl -sL "https://www.ilmessaggero.it/roma/eventi/roma_cosa_fare_gratis_venerdi_20_sabato_21_domenica_22_novembre-9900000.html" -o m1.html -w "%{http_code}\n" ; python3 - <<'EOF'
+import json
+d=json.load(open('/Users/terkin/rim-dlia-svoikh/automation/candidates.json'))
+items=d.get('items',d)
+for x in items:
+    if 'cosa_fare' in x.get('link','') or 'sagre' in x.get('link','') or 'aguzzano' in x.get('link',''):
+        print(x['title']); print(x['link']); print()
+EOF
+200
+Roma, cosa fare (anche gratis) venerdì 20, sabato 21 e domenica 22 novembre: Christmas Parade, Vegan Village e Ficus al Massimo
+https://www.ilmessaggero.it/roma/eventi/roma_cosa_fare_gratis_venerdi_20_sabato_21_domenica_22_novembre-9901896.html
+
+Le sagre e le feste nei dintorni di Roma sabato 21 e domenica 22 novembre: dal vino alla crespella, ecco tutti gli appuntamenti
+https://www.ilmessaggero.it/roma/eventi/le_sagre_le_feste_dintorni_di_roma_sabato_21_domenica_22_novembre_vino_polenta_ecco_tutti_appuntamenti-9902025.html
+
+Roma e il verde, 500 alberi messi a dimora nel parco di Aguzzano. «Così si rafforza la biodiversità»
+https://roma.corriere.it/notizie/cronaca/26_novembre_20/roma-e-il-verde-500-alberi-messi-a-dimora-nel-parco-di-aguzzano-cosi-si-rafforza-la-biodiversita-f42de918-8853-4240-958f-4b4f10cc0xlk.shtml
+[0m$ [0mcd /tmp && for q in "Roma+weekend" "Roma+sciopero+trasporti" "Roma+eventi+gratis+weekend" "Roma+21+22+novembre+eventi"; do echo "=== $q ==="; curl -s "https://news.google.com/rss/search?q=$q&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+items=re.findall(r'<item>(.*?)</item>',t,re.S)
+for it in items[:10]:
+    title=re.search(r'<title>(.*?)</title>',it,re.S).group(1)
+    date=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S)
+    print('-',html.unescape(title),'|',date.group(1) if date else '')
+"; done
+=== Roma+weekend ===
+- Sito Istituzionale | Mobilità e trasporti, weekend 21 e 22 novembre - Roma Capitale | Fri, 20 Nov 2026 16:28:43 GMT
+- Weekend a Roma: 20 eventi da non perdere sabato 21 e domenica 22 novembre - RomaToday | Thu, 19 Nov 2026 11:28:49 GMT
+- Roma eventi weekend. Musei in Musica, Pappano all'Auditorium, Abramovic all'Arco di Giano - Il Messaggero | Thu, 19 Nov 2026 09:45:13 GMT
+- Weekend tra chiusure e bus deviati: da Lazio-Lecce e Papa Leone XIV alla «Corri al Tiburtino» e alla Christmas Parade - Abitare A Roma | Fri, 20 Nov 2026 16:51:14 GMT
+- Che fare a Roma e Litorale romano nel weekend dal 20 al 22 novembre: dove si entra gratis - Canale 10 | Thu, 19 Nov 2026 13:13:19 GMT
+- Weekend a Roma: 5 eventi da non perdere sabato 21 e domenica 22 novembre - Leggo.it | Fri, 20 Nov 2026 10:58:29 GMT
+- Guida ai mercatini di Natale 2026 a Roma: luoghi e date - RomaToday | Thu, 19 Nov 2026 13:32:00 GMT
+- Le strade chiuse a Roma sabato 21 e domenica 22 novembre 2026 - RomaToday | Fri, 20 Nov 2026 17:47:30 GMT
+- Weekend a Roma: 5 eventi da non perdere sabato 21 e domenica 22 novembre - Funweek | Fri, 20 Nov 2026 06:19:20 GMT
+- La raccolta dei rifiuti ingombranti a Roma sabato 21 e domenica 22 novembre 2026 - RomaToday | Fri, 20 Nov 2026 15:11:51 GMT
+=== Roma+sciopero+trasporti ===
+- Sciopero generale a Roma il 20 novembre e percorso della manifestazione: servizio ridotto in metro, chiusa linea C - Fanpage | Thu, 19 Nov 2026 15:00:20 GMT
+- Sciopero dei mezzi, Roma verso la paralisi. Oggi, venerdì 20 novembre, a rischio metro, bus, tram e treni per 24 ore - RomaToday | Fri, 20 Nov 2026 11:43:30 GMT
+- Sciopero mezzi Roma e Bologna 20 novembre: orari e fasce di garanzia - La Gazzetta dello Sport | Thu, 19 Nov 2026 16:09:39 GMT
+- Sciopero 20 novembre trasporti Roma: stato della rete in tempo reale - Odissea Quotidiana | Fri, 20 Nov 2026 11:16:00 GMT
+- Sciopero trasporti a Roma domani 20 novembre: metro, bus e tram a rischio per 24 ore. Gli orari garantiti - IlFaroOnline | Thu, 19 Nov 2026 06:00:00 GMT
+- Sciopero generale del 20 novembre: strade chiuse, bus deviati e divieti di sosta a Roma - RomaToday | Thu, 19 Nov 2026 08:23:00 GMT
+- Roma blindata oggi 20 novembre per lo sciopero generale: tutti i disagi tra mezzi, cortei e scuole - RomaToday | Fri, 20 Nov 2026 05:05:00 GMT
+- Sciopero 20 novembre a Roma: dalle scuole agli ospedali, i servizi a rischio e quelli garantiti - RomaToday | Thu, 19 Nov 2026 12:07:00 GMT
+- Gli orari e la mappa dello sciopero generale: oggi stop ai mezzi pubblici da Bologna a Roma, blocchi a scuola e sanità - Corriere della Sera | Fri, 20 Nov 2026 08:35:06 GMT
+- Sciopero 20 novembre, gli orari dei trasporti e la mappa dei cortei città per città - Sky TG24 | Fri, 20 Nov 2026 09:17:10 GMT
+=== Roma+eventi+gratis+weekend ===
+=== Roma+21+22+novembre+eventi ===
+- Musei in Musica 2026 - Musei in Comune | Fri, 20 Nov 2026 15:43:51 GMT
+- Sito Istituzionale | Mobilità e trasporti, weekend 21 e 22 novembre - Roma Capitale | Fri, 20 Nov 2026 16:28:43 GMT
+- Weekend a Roma: 20 eventi da non perdere sabato 21 e domenica 22 novembre - RomaToday | Thu, 19 Nov 2026 11:28:49 GMT
+- Le sagre e le feste nei dintorni di Roma sabato 21 e domenica 22 novembre: dal vino alla crespella, ecco tutti gli appuntamenti - Il Messaggero | Fri, 20 Nov 2026 05:52:03 GMT
+- Cosa fare a Roma nel weekend 21-22 novembre, Musei in Musica - Vivere Roma | Thu, 19 Nov 2026 21:33:06 GMT
+- Weekend 21 e 22 novembre nel Lazio: sagre, mercatini di Natale, musei a 1 euro e spettacoli - Il Quotidiano del Lazio | Fri, 20 Nov 2026 17:58:12 GMT
+- Weekend 20-22 novembre: cosa fare e gli eventi da segnare in calendario - Cosmopolitan | Fri, 20 Nov 2026 07:13:26 GMT
+- Novembre 2026 a Roma: scopri e vivi Roma dal 1° al 30 novembre 2026 - Turismo Roma | Thu, 29 Oct 2026 15:56:52 GMT
+- ATP Finals, Torino si accende per il gran finale: tutti gli eventi del 21 e 22 novembre - Torino Top News | Fri, 20 Nov 2026 15:30:00 GMT
+- Vegan Village all'Hacienda - RomaToday | Fri, 20 Nov 2026 13:06:47 GMT
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /tmp && curl -sL "https://www.ilmessaggero.it/roma/eventi/roma_cosa_fare_gratis_venerdi_20_sabato_21_domenica_22_novembre-9901896.html" -o m1.html -w "%{http_code}\n"; python3 - <<'EOF'
+import re,html
+t=open('/tmp/m1.html',encoding='utf-8',errors='ignore').read()
+t=re.sub(r'<script.*?</script>|<style.*?</style>','',t,flags=re.S)
+s=re.sub(r'<[^>]+>','\n',t)
+lines=[html.unescape(x).strip() for x in s.split('\n')]
+lines=[x for x in lines if len(x)>40]
+print('\n'.join(lines[:80]))
+EOF
+200
+Roma, cosa fare (anche gratis) venerdì 20, sabato 21 e domenica 22 novembre: Christmas Parade, Vegan Village e Ficus al Massimo
+Roma, cosa fare (anche gratis) venerdì 20, sabato 21 e domenica 22...
+Roma, cosa fare (anche gratis) venerdì 20, sabato 21 e domenica 22 novembre: Christmas Parade, Vegan Village e Ficus al Massimo
+Nel penultimo fine settimana del mese spazio al Game Vintage; al teatro con Silvia Salemi all'OFF OFF Theatre, Medea all'OFF Studio, Narciso al Teatrosophia. Ma c'è di più: la musica con gli ospiti al Room26 e le rassegne a Rimessa Fab e al Charity Cafè
+Penultimo fine settimana del mese: lo spirito natalizio inizia a farsi sentire. A Roma il weekend si apre all’insegna del vintage, del teatro, della musica e della solidarietà. Tanti gli eventi in programma, alcuni anche gratuiti. Ecco il ventaglio di appuntamenti in programma venerdì 20, sabato 21 e domenica 22 novembre:
+Ben cinquanta le realtà creative provenienti da tutta Italia pronte ad atterrare nella Capitale per far conoscere al grande pubblico le loro creazioni. Artisti e artigiani saranno i protagonisti di Ficus al Massimo, che torna a Roma, nella cornice del Garum-Museo della Cucina, sabato 21 e domenica 22 novembre. Gioielli, ceramiche d’autore, illustrazioni, sartoria indipendente, accessori originali, home decor, oggetti di design, vintage ricercato e all’interno del museo la possibilità di conoscere da vicino le collezioni dedicate alla storia della cucina e dell’alimentazione, tra oggetti e utensili antichi. L’ingresso è gratuito (via dei Cerchi, 87, ndr) e l’orario è dalle 10.30 alle 20.
+Appassionati di gaming e console d’epoca, l’appuntamento è dedicato proprio a voi: Game Vintage torna a Fusolab, a Roma, in viale della Bella Villa, 96, sabato 21 e domenica 22 novembre 2026. L’ingresso è a offerta libera. Dalle 10 alle 19, oltre 90 espositori provenienti da tutta Italia con un'ampia varietà di videogiochi, carte collezionabili, action figures, insegne led, poster. Nella due giorni sono in programma tornei ufficiali,  sfide competitive e street food.
+Un festival dedicato alla cultura vegan e rivolto anche a chi desidera avvicinarsi alla gastronomia vegetale: a Roma torna il Vegan Village con chef, laboratori artigianali, stand dedicati allo street food. Sabato 21 e domenica 22 novembre, dalle 11 alle 22, con ingresso libero (donazione facoltativa, ndr) all’Hacienda, in via dei Cluniacensi, 68, produttori provenienti da ogni zona dell’Italia faranno gustare le loro proposte che ricordano la cucina tradizionale, ma con ingredienti completamente vegetali. Ad arricchire le giornate lezioni gratuite di yoga, cooking show e spettacoli.
+Una giornata di festa nel segno della solidarietà quella in programma domenica 22 novembre, a Roma. A piazza del Popolo, dalle 15, arriva la seconda edizione dei Christmas Parade. La grande parata di Natale in cui i cittadini, scuole, associazioni e realtà territoriali, si mobiliteranno a sostegno del Bambino Gesù di Roma. A promuovere l’iniziativa le attività di Christmas World, con produzione e direzione artistica a cura di Lux Entertainment. A supportare la manifestazione è Roma Capitale. Il corteo partirà alle 15 da piazza del Popolo. Ad accogliere le famiglie e i partecipanti ci sarà Babbo Natale e oltre 100 performer. Il corteo attraverserà via del Corso, via dei Condotti fino a piazza di Spagna dove, alle 16, si terrà lo spettacolo conclusivo.
+Medea, il vello e la colpa al Teatro Off Studio
+Fino al 22 novembre al Teatro Off Studio l’appuntamento è con Medea, il vello e colpa. La storia torna in scena attraverso una rilettura del dramma di Franz Grillparzer, che si concentra sul terzo capitolo della vicenda. Dopo aver aiutato Giasone a conquistare il vello d’oro e aver lasciato la sua terra per seguirlo, Medea si trova a Corinto, dove l’eroe l’abbandona per sposare Creusa, figlia del re Creonte. In questa versione, Medea cerca di liberarsi del proprio passato: seppellisce gli abiti stranieri, i simboli della magia e lo stesso vello d’oro divenuto oramai segno di dolore. Vorrebbe essere accettata, ma trova soltanto sospetto e rifiuto. Il dramma conduce così al gesto estremo, senza ricorrere a incantesimi o giustificazioni. L’adattamento si allontana dalla tragedia greca e assume un tono più moderno, con un linguaggio diretto e senza coro. Uno spettacolo che parla ancora al presente, tra esclusione, persecuzione ed esilio. La regia è di Emilia Miscio. In scena, accanto a Medea, In scena, accanto a Medea (Federica Pallozzi Lavorante), Giasone (Andrea Lami), principe greco cresciuto in esilio, che sa di dovere a lei la riuscita dell'impresa e proprio per questo comincia a odiarla; Gora (Michela De Nicola), ancella e confidente, coscienza e ragione di Medea e voce della Colchide in terra greca; Creonte (Enzo Avagliano), sovrano dispotico e diffidente verso ogni diversità; Creusa (Chiara Martinelli), figlia del re, gentile e compassionevole, incline a piegarsi alla volontà paterna. Chiude il cast l'Araldo (Edoardo Vivenzio). Gli orari degli spettacoli: venerdì 20 e sabato 21 novembre alle 20.30. Domenica 22 novembre alle 17.30. Appuntamento in via Concordia, 42-44. Info e prenotazioni: 347 0619618 - 06 86678834
+Silvia Salemi all’OFF OFF Theatre con “La voce nel cassetto”
+Silvia Salemi sceglie di raccontarsi senza filtri, portando sul palco una parte molto intima della sua vita e trasformandola in una storia in cui anche gli altri possono riconoscersi. A trent’anni dal successo di “A casa di Luca”, la cantautrice siciliana torna indietro nel tempo e affronta una ferita che l’ha accompagnata fin dall’infanzia: la perdita della sorellina Laura. Difficile da accettare, ma soprattutto da raccontare e rimasta a lungo sospesa tra ricordi, silenzi ed emozioni mai del tutto elaborate. Nel suo spettacolo "La voce nel cassetto", scritto dalla stessa Salemi e Roberta Savona, prendono forma i ricordi di bambina, la leggerezza dei giochi, la scoperta di un dolore troppo grande per essere compreso e il lungo percorso che l’ha portata a ritrovare se stessa. Un cammino che passa anche attraverso la musica e una carriera di successi: dalle sue interpretazioni di "Like a Prayer" di Madonna a "Nothing Compares 2U", di Sinèas O’Coonor.  L’appuntamento è triplo: venerdì 20 novembre, alle 21; sabato 21novembre alle 21 e domenica 22 novembre alle 17 all’OFF/OFF Theatre, in via Giulia, 20. La direzione musicale Francesco Tosoni; all’aiuto regia Giorgia Morbidoni; fonico e datore luci Alessandro Acquaroli; foto di Rosamagada Taverna; Martina Sarpero per la collaborazione alla drammaturgia e la regia è di Umberto Fiore. La produzione è Maximo Evento di Nicolò Innocenzi.
+Un passo indietro negli anni Ottanta e Novanta, due decenni di musica, arte, libertà, amori ed eccessi. Anni in cui la notte diventa un luogo dove sperimentare, conoscersi e sentirsi liberi. Ma sono anche gli anni dell’arrivo dell’Aids. Il protagonista di “Narciso Superstar”, lo spettacolo in programma fino a domenica 22 novembre 2026 al Teatrosophia, ha 18 anni. Narciso, per l’appunto, un giovane che lascia la sua provincia in Calabria per andare alla scoperta del mondo. Il suo viaggio comincia a New York, negli anni Ottanta e prosegue a Roma negli anni Novanta. Anni piene di nuove esperienze, incontri, amori e momenti felici. Anche difficoltà. Narciso scopre la vita delle grandi città, la notte, la musica, l’arte e la libertà. Diventerà padre. E attraverso la sua storia riviviamo un periodo intenso, segnato dalla new wave, dalla voglia di vivere e dalla ricerca di sé, ma anche da perdite e momenti dolorosi legati all’AIDS. Tratto dal romanzo di Giorgio Gigliotti, ideatore e primo direttore artistico del format “Muccassassina” e attivista della Comunità LGBTQ +, la rappresentazione vedrà salire sul palco di via della Vetrina, 7, Tiziana Di Sora e Francesco Giannotti. L’adattamento alla regia è di Guido Lomoro. Le coreografie e i movimenti scenici di Maria Concetta Borgese. Le danzAutrici sono Sara Ferrigno e Virginia Picchi. Disegno Luci Gloria Mancuso; video creatore, foto e grafica, Edmund Kurenia.  Gli orari sono: venerdì 20 alle 21, sabato 21 e domenica 22 novembre alle 18.
+Sarà Wade il terzo ospite al Room26. Dj e produttore spagnolo, Juan Carlos Cruz, sbarcherà nel tempio del divertimento, nel quadrante sud di Roma, sabato 21 novembre, accolto da MiKI Stentella. Il weekend al Room26 si aprirà venerdì 20 novembre con i resident, Fabio Angeli e Mattia Olivi.
+Un weekend a suon di jazz al Charity Cafè, in via Panisperna, 68.
+Venerdì 20 novembre, alle 22, sarà la volta  della “Jazz Night”, con Giulia Salsone Jazz Quartet. Il quartetto nasce dalla collaborazione di quattro musicisti: Paolo Innarella ai sassofoni e flauto, Federica Michisanti al contrabbasso, Giulia Salsone alla chitarra e Armando Sciommeri alla batteria. Serata a tutto blues sabato 21 novembre, alle 22, con I Monkey Business e una Blues Night: Fabio Jannicola alla voce; Francesco Marino alla chitarra; David Pintaldi al basso e Pino Liberti alla batteria. Domenica 22 novembre, alle 19, Kama-Jazz& Bossa Trio si esibiranno nelle atmosfere intime della bossanova e classici standard jazz. S’intitola Early Concert con  Francesca Dottarelli alla voce; Christian Vilona al sax e Alex Fraternali alla chitarra.
+Prosegue la rassegna "Blue Friday" a Rimessa Fab, diretto da Danilo Blaiotta. Il secondo appuntamento vedrà salire sul palco la Mark Hanna band. Il concerto si svolgerà venerdì 20 novembre alle 22.30: la band presenterà al pubblico un mix si brani e cover blues, rock, funk, swing , jazz, musica etnica e tradizionale.  Mark Hanna alla voce e chitarra; Moreno Viglione  alla chitarra; Adriano Lo Giudice al basso e voce; Augusto Zanonzini alla batteria e voce. L’ingresso è gratuito con consumazione obbligatoria. Sabato 21 novembre alle 22, spazio all’evento “Saturday Fever” con una jam session e la musica tra funk, soul, R’n’B e Gospel e artisti di riferimento quali Erykah Badu, Jill Scott, Stevie Wonder, Marvin Gaye. A guidare la serata sarà il Funk Collective, nato dalla collaborazione con Rimessa Fab, che vedrà la partecipazione di Cecilia Fava alla voce, Emiliano Pari alle tastiere, Michele Beneforti alla chitarra, Giuseppe Vitale al basso elettrico e Matteo Morini alla batteria. La band aprirà la jam con un set, invitando poi i musicisti presenti in sala a salire sul palco. Ingresso gratuito con consumazione obbligatoria.
+Vaticano, dal Pollino un abete di 24 metri: i bambini malati accenderanno le luci il 7 dicembre a San Pietro
+Il Natale si accende ad Assisi: uno spettacoli di luci e mercatini in nome di Francesco
+Natale in Vaticano 2026, l'albero di 25 metri arriva in volo dalla Basilicata: lo decoreranno i piccoli pazienti oncologici
+Una scelta di classe, Dybala verso il recupero
+Destinazione Croazia: tutto è pronto per le festività natalizie
+Frontini passa all’attacco: «C’è chi pensa alle poltrone noi investiamo nei cantieri»
+Natale in Croazia: quattro esperienze tra mercatini, neve e tradizioni a tavola
+Il Natale siciliano: cosa fare, vedere e mangiare da dicembre all'Epifania, all'insegna della tradizione
+Mucca fugge dall'università e semina il caos nel campus travolgendo una persona
+Garlasco, doppia audizione in Procura sui presunti pagamenti dei Sempio
+Mostro di Firenze, il genetista di Garlasco a caccia del Dna del serial killer: riesumati i vecchi reperti
+Stimolare nuove idee e imparare a pensare fuori dagli schemi: ecco “Se non l’hai mai letto, scrivilo!”, il nuovo libro di Jacopo Ratini
+Le sagre e le feste nei dintorni di Roma sabato 21 e domenica 22 novembre: dal vino alla crespella, ecco tutti gli appuntamenti
+Roma eventi weekend. Musei in Musica, Pappano all'Auditorium, Abramovic all'Arco di Giano
+Cosa fare a Roma (anche gratis) venerdì 20, sabato 21 e domenica 22 novembre: Christmas Parade, Vegan Village e Ficus al Massimo
+L’eccellenza di ogni chicco sul podio, parterre de rois per l’undicesima edizione dell’Ernesto Illy Award
+Fotonica 2026, Roma e le nuove geografie dell’arte: il MAM ridisegna i confini delle arti visive
+​San Pietro, Il cardinale Ravasi riporta l'amore al centro del dibattito pubblico, dal Cantico dei Cantici a Morandi
+“Nei letti degli altri” allo Spazio Diamante con Apuzzo: «Mi piacerebbe recitare in un’opera che nasce per la pagina e poi arriva allo schermo»
+Aggressività maschile e femminile, a Roma il confronto entra nel vivo: esperti a raccolta sulle asimmetrie giuridiche
+Hard Rock Cafe Roma diventa Punto Viola di DonneXStrada: un nuovo presidio contro la violenza di genere nel cuore della Capitale
+Omnia card 72h + Roma Pass: Musei Vaticani e Colosseo inclusi
+Zuppa imperiale ricetta: la minestra della tradizione emiliana
+Ossobuco ricetta della nonna: un classico che conquista
+Calvizie, un pettine elettrico fa ricrescere quasi il 98% dei peli: meglio del minoxidil nei test sui topi
+Botox e filler clandestini nel centro estetico: la Finanza scopre un ambulatorio nascosto, quattro indagati
+Giappone, studente inseguito da un orso: il video della fuga. Scuole chiuse a Maebashi
+Edi Rama abbraccia il premier belga alle spalle, De Wever: «Dev’essere l’albanese, arriva sempre da dietro»
+Estrazioni Lotto, Superenalotto, 10eLotto di giovedì 19 novembre 2026: numeri vincenti, quote e montepremi
+X Factor: Le Distanze in missione di riscatto (8), Teo Bok da YouTube (5), Fontana graffia (7)
+Oroscopo 20 novembre: Gemelli verso nuove opportunità nel lavoro, Bilancia fa passi avanti in amore
+Addio a Corrado Augias: il giornalista, scrittore
+e autore televisivo che ha ricercato la bellezza
+Mattarella: libero e radicato in valori Costituzione
+Cane da caccia fiuta la droga e scopre quasi 5 chili di cocaina nascosti nel bosco a Grottammare
+[0m$ [0mcd /tmp && for u in "https://www.romatoday.it/eventi/weekend-roma-21-22-novembre-2026.html" "https://www.romatoday.it/attualita/strade-chiuse-roma-21-22-novembre-2026.html"; do echo "=== $u"; curl -sL "$u" -o page.html -w "%{http_code}\n"; python3 - <<'EOF'
+import re,html
+t=open('/tmp/page.html',encoding='utf-8',errors='ignore').read()
+t=re.sub(r'<script.*?</script>|<style.*?</style>','',t,flags=re.S)
+body=re.search(r'<article.*?</article>',t,re.S)
+s=body.group(0) if body else t
+s=re.sub(r'<[^>]+>','\n',s)
+lines=[html.unescape(x).strip() for x in s.split('\n')]
+lines=[x for x in lines if len(x)>30]
+print('\n'.join(lines[:70]))
+EOF
+done
+=== https://www.romatoday.it/eventi/weekend-roma-21-22-novembre-2026.html
+200
+3 canzoni uscite questa settimana e che meritano di essere ascoltate
+=== https://www.romatoday.it/attualita/strade-chiuse-roma-21-22-novembre-2026.html
+404
+Forse intendevi... su RomaToday
+Ci stai leggendo con un adblocker
+Raccontiamo la tua città ogni giorno, con una redazione sul territorio. La pubblicità ci permette di offrire gratuitamente gran parte del nostro lavoro: scegli come continuare a leggerci.
+Aggiungi il sito alle eccezioni e ricarica la pagina.
+Niente pubblicità e un sostegno diretto al nostro lavoro, al prezzo di un caffè al mese.
+L'app è gratuita: segui la tua città ovunque, sempre a portata di mano.
+© 2026 Citynews SpA - P.IVA 10786801000
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /tmp && curl -s "https://news.google.com/rss/search?q=romatoday+strade+chiuse+roma+21+22+novembre&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+for it in re.findall(r'<item>(.*?)</item>',t,re.S)[:10]:
+    print(html.unescape(re.search(r'<title>(.*?)</title>',it,re.S).group(1)))
+    print(re.search(r'<link>(.*?)</link>',it,re.S).group(1))
+    print()
+"
+Le strade chiuse a Roma sabato 21 e domenica 22 novembre 2026 - RomaToday
+https://news.google.com/rss/articles/CBMimgFBVV95cUxQZ3ZhTXNDWi1YeHN6V1RGSlFaSm5Sd3BJZFdqSHR3UXpHMFJKVlU1MXVQZzNrMzNYRE1oaWZVTHdOdUZDRVRTWGVqMFItSF9lUkhLQVFLd1kyQ0RjYzR2bjMwQ09DRzhTR0U0N2FGSm5FVlcwWUlTT3I5ZnpUYmtQRE95aUUtZzFFQklWS3gyZEtVQ1hmOUNTd1RB?oc=5
+
+La raccolta dei rifiuti ingombranti a Roma sabato 21 e domenica 22 novembre 2026 - RomaToday
+https://news.google.com/rss/articles/CBMirgFBVV95cUxNckZCcjd3cWVfYWIzaDdvZFpwbHhEREx5SW9XNnlKYm5halBlRW5xdmR2MXg3LVdnaC1Vd2NTX01LbndJeG5peFZuMGx5S0EwenZCQ1dDUl8tQlBSYy10UTB2a2JYOFEwZ19QOHY3ajNzbFlJLXBOQkFNNXJsMlNhNThvRVZTME1vZERfNlkwNTZ1dEZUdno2b3lXWHdDWHk3djZXa1FybWxkWlYweEE?oc=5
+
+Le strade chiuse a Roma sabato 22 e domenica 23 novembre 2025 - RomaToday
+https://news.google.com/rss/articles/CBMihAFBVV95cUxPa192LVVjSmUzQ2pPc1pRdDdXeHRuRjFvajNQMks3NVdBNDM2N2FtNWdwOVB5Z3JJa2w1dmVKWkQzcHlFQmdfWEUzVEpqcDRmUlZEMXZibDl4N1l2WURwMnUyYTV2VnltTTNBR3hBWHVGRng4LURvcVNabEtfSzY1bUJzTzc?oc=5
+
+Eur blindato per l'evento sulla cybersicurezza. Strade chiuse e divieti nella zona di Roma sud - RomaToday
+https://news.google.com/rss/articles/CBMiiAFBVV95cUxNM3RPOEpZVkhxODNBWi1VdnVlaUxGdHRKQ3FlS0VfdjVzTE1QWjV2ckFLa2thbFdoOUZIbVVySTloTXV4dkR3LURJLVE5ZXRndDhFRDloWTczbHZZTlVidUpWWDB6b21hLUNHa2V2Wnl6S2NJVV9nN2x6b0s3YW1jdzdwUmVOb3dB?oc=5
+
+Roma sud nel caos, traffico da bollino rosso e fermata metro chiusa per l'evento sulla cybersicurezza - RomaToday
+https://news.google.com/rss/articles/CBMihwFBVV95cUxQX2cyemJDaWdiUm5pNmFaeXBJRGNIbWphVDNQUU1BOXVyTjRuQ2kya2xHUm55c2QtSkRFRHNKdlhya1R6TG5WMXlfUFl1QWhXbE4tVm9rZWxKZWI2ZmZyN0Y3LWhmMGpyMUFhY0dMVEUyRDNUZFpLd1JsYW1EQTFEN0RiQjJyenM?oc=5
+
+Le strade chiuse a Roma sabato 8 e domenica 9 novembre 2025 - RomaToday
+https://news.google.com/rss/articles/CBMilwFBVV95cUxOSVhFNEZoZ2NtWmNrV2RJajlGZ2ZtMUtkVXRBWUhsUjYtaUZBWEVtNlVqcDZ2Zzk0cUF5MU9EQ3JHNFRmbjRYWVZOWERsZFhfMVJTNVkta2FNTzBkdzF0dmRFUWdpQWVvSXo3bDFDRjd2d0V3aklsZE9EZFVuM0dRdTZBQ1JIUUpiamNNeGlSWDhua3NtWFMw?oc=5
+
+Maratona di Roma 2026: percorso, strade chiuse e bus deviati. Tutto quello che c'è da sapere - RomaToday
+https://news.google.com/rss/articles/CBMipwFBVV95cUxQNEM2T2theUJHZU1QR1dKbGVEY2c2MDNYaExrN2labU1SYm5YZjE1YTY4RjBwQ0pqaFVWQ3FmZFRhNG5lWkYwYk01MF8wU2lhMnRQSHVaNDNSY0F6RnhFdTkzdmkxLXpjbEJncWV6Y3p0Qk05OWNqdmtFSEpMRjV6N0ZiTlRTRHdLQV81UEx6Y3pjT2pjc3FNb1phMVBZQ3pTZFFkai1BSQ?oc=5
+
+Le strade chiuse a Roma sabato 21 e domenica 22 settembre - RomaToday
+https://news.google.com/rss/articles/CBMilAFBVV95cUxOUGZYZzJhaUpORHFEdGpSTnFVRk5rUl9idXFDUzBIT3QxTktJYXM3MFlMbTR2QjZqdzlCUmpDc0hhaFJ0LThRZk5ZTXdvS01pakszQk5lMTVRVzhvRTd2YmpPd2JTRDBfaS1JWnc5bXRXLUlBdGJkYWFvMVRPVTBGa2dnSUZzYzNuMVo5UlFfYUt5b3ho?oc=5
+
+Manifestazione per Gaza a Roma, lunedì 22 settembre l'Usb sarà a piazza dei Cinquecento - RomaToday
+https://news.google.com/rss/articles/CBMiiAFBVV95cUxOVVZTMEExLUc1RDdXZEJDdzRaaGw2dGI0Sjk2T2JGQjNBRFpreGNsdl9iMUlJME9pcUVHX3NueXNzS0FBTG0zYks5ZDJIamFCOGVPWmU3QnUyU0NoUjg2b3I4T0cyalVPdHh3bmZ1cUh5SlRxcG5CVzFua1ZOal94Smp1bVRjQnZk?oc=5
+
+Le strade chiuse e i bus deviati a Roma sabato 21 e domenica 22 maggio - RomaToday
+https://news.google.com/rss/articles/CBMiggFBVV95cUxPOXlpSmxqd1BreVhHdjBHcS1hRDJzWURZZ1dHS3R5U2kyUFRweGRwM3JCR3ozYkZhMzdZRl8wX2RrdzUtRlVCSFhxT3J0TzgzUkNmVkRFQWp2aC1oUjhndkczejBHdzdrUWNqdEotZjF0QzJZWUVhallNdkc5ZzUtakVB?oc=5
+[0m$ [0mcd /tmp && curl -s "https://news.google.com/rss/search?q=Roma+%22Mobilit%C3%A0+e+trasporti%22+weekend+21+22+novembre&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+for it in re.findall(r'<item>(.*?)</item>',t,re.S)[:10]:
+    print(html.unescape(re.search(r'<title>(.*?)</title>',it,re.S).group(1)))
+    print(re.search(r'<link>(.*?)</link>',it,re.S).group(1))
+    print()
+"
+Sito Istituzionale | Mobilità e trasporti, weekend 21 e 22 novembre - Roma Capitale
+https://news.google.com/rss/articles/CBMikwFBVV95cUxQZGNWbXZHd0NHU0NjT3hBRDFuZ05JOVhtT01DWGg3SEZ4T1liazNhbnhsOXB5ZmlteFBQSnlYLW1DSGhFUWZPOURRTldjbF9HQUNnWEpubFFEdGVWRTVPTEp0d19pMjdCNFlZeURtWFVXOUMzaVB6OXF4VjlpWXFiMF9OUmdJTW56XzdaX1ZEOU1jYzg?oc=5
+
+Sito Istituzionale | Mobilità e trasporti, weekend 22 e 23 novembre - Roma Capitale
+https://news.google.com/rss/articles/CBMimAFBVV95cUxPT3BuNTlHb0ZoVWlaMjJRb2xqeEJ5SE9JSVNJTFo4czYzQmZ4cldHVE1BX2R6cW5CRWFrb05wVFZROTVSQUViN0V3VzI2X0kwZTZCd3NGSWZ2a0szV3hNb3lhbTc5aDZzaFlxb3pEV3NjQWpLLTcyQVdBN1NfTU1aeVI5VE9rb09reW5MX0RFOVJzWWZVLVJ4Sw?oc=5
+
+Sito Istituzionale | Mobilità e trasporti, weekend 20 e 21 giugno - Roma Capitale
+https://news.google.com/rss/articles/CBMimwFBVV95cUxOU1VuN1BHRDlLU09Ybm5YWTcxQXJkTTBldmZHbFhxX2F2NkxvQmhzRXhGNFBfeDlKRVFRM3hTaXc4NExyY0pueDVfM25Yak81eHRRSldDRFJMY2pHUm1keUh2SjhFZnFiQUlZMkp6NWNYU2tWVmhWSC1jaFVFdXdUV1BaZGtZWThvNUpXdXp5TFNFMVBpWWpuZWh5dw?oc=5
+
+Dal 30 ottobre al weekend nero del 20 e 21 novembre: tutti gli scioperi in arrivo - iO Donna
+https://news.google.com/rss/articles/CBMi5AFBVV95cUxQZGNhV1BxXzNUNEVfN2Vwbk1OZEJBVEtqZ2pYNmxwdkxpU0VVTHR0R1dEc3Yyb2NWMWlDMkh5VXl3ejdzd280blZRSE1CclZxVUpYODZqeHVBT0FWaGlBNzVWOGpCTkFnMkZlOHRpN2kxallTNXFmYW5TREk5Y0lMNVdRLUdBVE12UC1Ndk1pSWFhVVpKZWVGZ1Y2QnlQWkI2amxra3RsZmlVcXhSMjZ2Mjl4MzhSckMtWXc3REM4LWVpWkVWMjlBY3ZHaS0wWFlNTXlGWktkSnlqV284cjd6cWpScHY?oc=5
+
+Sito Istituzionale | Mobilità e trasporti, weekend 10 e 11 ottobre - Roma Capitale
+https://news.google.com/rss/articles/CBMijAFBVV95cUxOakpTNDBTTk1zTXpReWp4QWZobGhDYUllOWw1N194UXRvaUlOU2pjOU9DVXJSaDBIRHM5ZktWOVBWQkpWY3FlcllvSFFBQ1ZqcjlrNnhXWG9aelZ1NlRzMnlVMkw1c08wVHZ5NWtkaUZ2bWswR3RlRjhTVmV0ODMzTTlGRTM1Rmc4TzQ0ZQ?oc=5
+
+Sito Istituzionale | Mobilità e trasporti, weekend 21 e 22 giugno - Roma Capitale
+https://news.google.com/rss/articles/CBMilgFBVV95cUxPMGtWRk9vT1d5WkZVVlg4S2JqQnE5Ty1tRkFER0M2NUJ6MkV2VXA5VTNLeHdBQ1RXOVNDVVZwaXFDZGtBSnE4S2VBWmY0djdyU3NQYnA3TXhYTFViMGpqYWR2S0NrbnRRVHBJa25IakM1bEZuQ01ISjEwem1MSTV2NGpETUlybVdpMDROMC1kemRNNk82X2c?oc=5
+
+Sito Istituzionale | Mobilità e trasporti weekend 23 e 24 novembre - Roma Capitale
+https://news.google.com/rss/articles/CBMimAFBVV95cUxNcktONklqRTNDVzFoaHZIN3ZSaTMtcmVlbHdfWUlteTduclk0alBNc1NuSE16d0cyanNLT3ZsQnR3dUwyMk5wMTZuNkhFY0N4ZzR1NlloU1JYSGx6YldyVG1UakpKUU90M2tRTWtaTTFNQzdwTmpEdG5NUVMxT0NnVGtTS0E0ejRpak1ablN2Sl9lU3JqM0tTZg?oc=5
+
+Sito Istituzionale | Mobilità e trasporti dal 22 al 24 marzo - Roma Capitale
+https://news.google.com/rss/articles/CBMiigFBVV95cUxOMURIZHg1T0FnMFFpbzJlc215WXRkY05TVXpFOHNVUkR3aFd6ekNVc2E1b2VaQ0VLQUFpcVBGdkZLM003YTU1b3FaYW1fazNzWXA0VVVWZThKWDdHejQwT0RlcjlRNlRqWUtwV1pIRHRHeFFYRTk2NDA0RTY3cnN1U1BwakstcFdId0E?oc=5
+
+Sito Istituzionale | Mobilità e trasporti weekend e 4 novembre - Roma Capitale
+https://news.google.com/rss/articles/CBMiigFBVV95cUxPZmtpSmh2TS1NN2RyQlhHY01uWDFQRThlbjBWQWV1VFFRUlFxNXJ5MUxubk13dlRrSm11cmppZGJhbVUyRFRnblg1WWhONnNjSk5JZExYLXhRa3FjOEF4UmZ0VFhDeFYtMG5zRzd0TkZ0RHg3T0NmTGpURE9PS0Z4akJYTVJVcjNuc2c?oc=5
+
+Sito Istituzionale | Metro C, la programmazione fino a ottobre - Roma Capitale
+https://news.google.com/rss/articles/CBMidkFVX3lxTE5idXRITmZyUW9TTXBXUTBwd2gwdmN6YkkzRm1tS21NV1gxMzluaDdWRkQ5YVhkYjA1N0ZPdE8yU0dBLWxESHp3a0FQd0dLNC1zcFdUT2FKY2xJMXpNTmpnQzRBSHFRTjhUd1pFTXotVmozay1pTXc?oc=5
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /tmp && curl -sL "https://www.comune.roma.it/web/it/notizia.page?contentId=NOT123456" -o /dev/null -w "%{http_code}\n"; curl -s "https://www.romamobilita.it/it/chi-siamo/comunicati" -o rm.html -w "%{http_code}\n"; head -c 300 rm.html
+404
+301
+<html>
+<head><title>301 Moved Permanently</title><script>var __uzdbm_1 = "cd5dc152-4069-46d9-ae38-240828a17d99";var __uzdbm_2 = "NjU2ZmZiNWItZHphZS00MWVjLTkyNjEtZThjMmRiZWZiYzBlJDEzOS4yOC40MS4xMzg=";var __uzdbm_3 = "";var __uzdbm_4 = "false";var __uzdbm_5 = "";var __uzdbm_6 = "";var __uzdbm_7 = "";
+[0m$ [0mcd /tmp && python3 - <<'EOF'
+import urllib.request, re
+urls = {
+ 'strade':'https://news.google.com/rss/articles/CBMimgFBVV95cUxQZ3ZhTXNDWi1YeHN6V1RGSlFaSm5Sd3BJZFdqSHR3UXpHMFJKVlU1MXVQZzNrMzNYRE1oaWZVTHdOdUZDRVRTWGVqMFItSF9lUkhLQVFLd1kyQ0RjYzR2bjMwQ09DRzhTR0U0N2FGSm5FVlcwWUlTT3I5ZnpUYmtQRE95aUUtZzFFQklWS3gyZEtVQ1hmOUNTd1RB?oc=5',
+ 'rifiuti':'https://news.google.com/rss/articles/CBMirgFBVV95cUxNckZCcjd3cWVfYWIzaDdvZFpwbHhEREx5SW9XNnlKYm5halBlRW5xdmR2MXg3LVdnaC1Vd2NTX01LbndJeG5peFZuMGx5S0EwenZCQ1dDUl8tQlBSYy10UTB2a2JYOFEwZ19QOHY3ajNzbFlJLXBOQkFNNXJsMlNhNThvRVZTME1vZERfNlkwNTZ1dEZUdno2b3lXWHdDWHk3djZXa1FybWxkWlYweEE?oc=5',
+}
+for k,u in urls.items():
+    req=urllib.request.Request(u, headers={'User-Agent':'Mozilla/5.0'})
+    try:
+        r=urllib.request.urlopen(req, timeout=20)
+        print(k, r.geturl())
+    except Exception as e:
+        print(k, 'ERR', e)
+EOF
+strade https://news.google.com/rss/articles/CBMimgFBVV95cUxQZ3ZhTXNDWi1YeHN6V1RGSlFaSm5Sd3BJZFdqSHR3UXpHMFJKVlU1MXVQZzNrMzNYRE1oaWZVTHdOdUZDRVRTWGVqMFItSF9lUkhLQVFLd1kyQ0RjYzR2bjMwQ09DRzhTR0U0N2FGSm5FVlcwWUlTT3I5ZnpUYmtQRE95aUUtZzFFQklWS3gyZEtVQ1hmOUNTd1RB?oc=5&ucbcb=1&hl=en-US&gl=US&ceid=US:en
+rifiuti https://news.google.com/rss/articles/CBMirgFBVV95cUxNckZCcjd3cWVfYWIzaDdvZFpwbHhEREx5SW9XNnlKYm5halBlRW5xdmR2MXg3LVdnaC1Vd2NTX01LbndJeG5peFZuMGx5S0EwenZCQ1dDUl8tQlBSYy10UTB2a2JYOFEwZ19QOHY3ajNzbFlJLXBOQkFNNXJsMlNhNThvRVZTME1vZERfNlkwNTZ1dEZUdno2b3lXWHdDWHk3djZXa1FybWxkWlYweEE?oc=5&ucbcb=1&hl=en-US&gl=US&ceid=US:en
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /tmp && for u in "https://www.romatoday.it/attualita/strade-chiuse-roma-sabato-21-domenica-22-novembre-2026.html" "https://www.romatoday.it/attualita/strade-chiuse-roma-21-novembre-2026.html" "https://www.romatoday.it/eventi/weekend-roma-21-22-novembre-2026.html"; do echo "$u"; curl -sL "$u" -o /dev/null -w "%{http_code}\n"; done
+https://www.romatoday.it/attualita/strade-chiuse-roma-sabato-21-domenica-22-novembre-2026.html
+200
+https://www.romatoday.it/attualita/strade-chiuse-roma-21-novembre-2026.html
+404
+https://www.romatoday.it/eventi/weekend-roma-21-22-novembre-2026.html
+200
+[0m◈ [0mWeb Search via Tinyfish "RomaToday "Le strade chiuse a Roma sabato 21 e domenica 22 novembre 2026"" 
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /tmp && curl -sL "https://www.romatoday.it/attualita/strade-chiuse-roma-sabato-21-domenica-22-novembre-2026.html" -o strade.html && python3 - <<'EOF'
+import re,html
+t=open('/tmp/strade.html',encoding='utf-8',errors='ignore').read()
+t=re.sub(r'<script.*?</script>|<style.*?</style>','',t,flags=re.S)
+m=re.search(r'<h1[^>]*>(.*?)</h1>',t,re.S)
+print('TITLE:',html.unescape(re.sub('<[^>]+>','',m.group(1))).strip() if m else '?')
+m=re.search(r'{"@context":"https://schema.org","@type":"NewsArticle".*?}',t,re.S)
+# fallback: paragraphs
+paras=re.findall(r'<p[^>]*>(.*?)</p>',t,re.S)
+for p in paras[:60]:
+    s=html.unescape(re.sub('<[^>]+>','',p)).strip()
+    if len(s)>40: print('-',s)
+EOF
+TITLE: Le strade chiuse a Roma sabato 21 e domenica 22 novembre
+- Ci stai leggendo con un adblocker
+    Raccontiamo la tua città ogni giorno, con una redazione sul territorio. La pubblicità ci permette di offrire gratuitamente gran parte del nostro lavoro: scegli come continuare a leggerci.
+- Aggiungi il sito alle eccezioni e ricarica la pagina.
+- Niente pubblicità e un sostegno diretto al nostro lavoro, al prezzo di un caffè al mese.
+- L'app è gratuita: segui la tua città ovunque, sempre a portata di mano.
+- Venerdì, 20 Novembre 2026        
+                	
+        		
+
+
+
+
+  
+  
+    
+    Nuvoloso per velature estese 
+   
+      
+    
+    16°
+     Venti 3.4 nodi SE
+     Probabilità di pioggia 0 % 
+  -->
+
+
+
+
+
+        	
+            	
+    
+      
+        
+          
+            
+          
+        
+      
+    	
+      	
+  
+  
+    
+    
+      
+    
+  
+  
+  
+    
+    
+      
+    
+  
+  
+  
+    
+    
+      
+    
+  
+  
+  
+    
+    
+      
+    
+  
+
+      
+              
+          
+            
+              Abbonati            
+            
+              Aggiorna piano             
+          
+        
+          	        
+                  
+            
+                
+            
+            Accedi           
+      
+                      
+              
+                
+              
+  
+            
+            	 
+
+
+
+
+  
+
+    
+
+			
+				
+			
+			
+				
+			
+		
+
+    
+			
+      	          
+  
+ 
+              
+      
+            
+    
+    
+    
+
+			
+				
+			
+			
+				
+			
+		
+    
+
+			
+				
+			
+			
+				
+			
+		
+    
+  
+  
+  
+
+  
+    
+    
+      
+      
+       
+        
+          
+        
+        
+      
+    
+    
+  
+
+      
+            
+
+        
+      
+             	            
+
+      
+        
+                
+        
+        
+ 
+
+
+  
+  
+    
+  
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+      
+		
+      
+    
+  
+    
+    
+
+    
+    
+      
+              Attualità
+            
+                        
+            Borgo          
+
+      
+
+            
+         / Via della Conciliazione      
+            
+      
+      Le strade chiuse a Roma sabato 21 e domenica 22 novembre
+      Nel fine settimana manifestazioni sportive, culturali e gli incontri di Papa Leone XIV modificheranno la viabilità. Ecco una guida utile per muoversi in città nel weekend
+- Sabato 21 e domenica 22 strade chiuse e divieti in tutta la Capitale. A Roma infatti le diverse manifestazioni sportive dal Tiburtino alla Garbatella, fino al Foro Italico oltre agli incontri di Papa Leone XIV modificheranno la viabilità nel fine settimana. Ecco una guida utile per muoversi nel weekend in città.
+- Domenica 22 novembre, in orario 08:00-12:00 cerimonia nella chiesa ortodossa di Eritrea (piazza San Salvatore in Campo). Dalla notte di sabato vietato sostare nella piazza e nella via di San Salvatore in Campo.
+- Nel pomeriggio, dalle 15:00, in Centro la Christmas Parade che da piazza del Popolo arriverà a piazza di Spagna passando per via del Corso e via dei Condotti. Entro la mezzanotte e mezza nella notte fra sabato e domenica divieto di sosta (e sgomberi) per i veicoli in piazza di Spagna, piazza Mignanelli, in via Borgognona tra via Mario de’ Fiori e piazza di Spagna; in via dei Condotti, via delle Carrozze, tra via Mario de’ Fiori e piazza di Spagna; via della Croce tra via Mario de’ Fiori e piazza di Spagna; via del Corso tra piazza del Popolo e via Frattina; vicolo del Bottino, via Mario de’ Fiori, largo Goldoni; piazza della Trinità dei Monti dall’altezza della Rampa Mignanelli. Domenica entro le 14:00 chiusure a vista piazza di Spagna, via dei Condotti, via delle Carrozze, via Mario de’ Fiori, piazza Mignanelli, vicolo del Bottino, via del Corso tra piazza del Popolo e via Frattina, largo Goldoni.
+- Manifestazione socio-culturale a Centocelle. Tra le 07:30 e le 21:00 circolazione vietata in via dei Castani nel tratto tra piazza dei Mirti e via dei Faggi.
+- Domenica tante modifiche a San Pietro per l’Angelus (ore 12:00) e il pranzo con i poveri in Aula Paolo VI alla presenza di Papa Leone XIV. Entro la mezzanotte del 22 novembre dovranno essere rimossi i veicoli e scatterà il divieto di sosta su largo del Colonnato, via di Porta Angelica, Borgo Pio tra via di Porta Angelica e via del Mascherino; via del Mascherino, nel tratto compreso tra Borgo Pio e via dei Corridori; piazza della Città Leonina, via dei Corridori, via Rusticucci; via della Conciliazione, compresi i controviali, da via della Traspontina a piazza Papa Pio XII; piazza Papa Pio XII, via Pfeiffer, largo degli Alicorni, via Paolo VI, piazza del Sant’Uffizio. A partire dalle 06:00 varrà anche il divieto di circolazione che varrà anche per vicolo del Campanile, via Scossacavalli, via dei Corridori altezza via dell’Erba, via della Conciliazione angolo via della Traspontina, via del Mascherino altezza piazza Risorgimento, Borgo Santo Spirito/largo Ildebrando Gregori, largo di Porta Cavalleggeri/piazza del Sant’Uffizio.
+- Per la manifestazione “Corri al Tiburtino” (domenica tra le 08:00 alle 13:00) vietato circolare lungo il percorso della corsa, che partirà e arriverà in via Mozart, comprendente via della Vanga, via Grotta di Gregna, via Iginio Giordani, via Trivento, via Venafro, via del Frantoio, via dell’Erpice, via e largo del Badile, di nuovo via della Vanga, via Grotta di Gregna, viale Ferdinando Santi, viale Palmiro Togliatti, viale Ettore Franceschini, piazza Camillo Loriedo, viale Battista Bardanzellu, viale Palmiro Togliatti, di nuovo viale Ferdinando Santi, via Cassiani, via degli Alberini, via Grotta di Gregna, via della Vanga, largo Boiano, via Trivento, via Venafro, via del Frantoio, via dell’Erpice, via e largo del Badile, Largo del Badile, via della Vanga. Deviate le corse delle linee 058, 450, 451, 508, 705 e 309 con quest’ultimo che avrà sospeso il capolinea di Santa Maria del Soccorso.
+- Dalle 08:00 alle 12:00 la 32esima edizione di “Corri alla Garbatella” con una gara podistica di 5 km, da ripetersi due volte, sul seguente itinerario: viale Guglielmo Massaia (partenza), piazza Geremia Bonomelli, via Francesco Orazio da Pennabilli, piazza Marco da Tomba, via Padre Reginaldo Giuliani, circonvallazione Ostiense (la corsia laterale), piazza Giovanni da Lucca, via Stanislao Carcereri, via Giovanni Maria Percoto, piazza Michele da Carbonara, via Ignazio Persico, via Caffaro, di nuovo la circonvallazione Ostiense, il Ponte Settimia Spizzichino in entrambe le direzioni, via Giacinto Pullino, piazza Augusto Albini, via Giovanni Battista Licata, via Edgardo Ferrati, via Luigi Fincati, via Alberto Guglielmotti, piazza Benedetto Brin, via e largo delle Sette Chiese, via Nicolo Odero, via Francesco Passino, piazza Damiano Sauli, via Giacomo Rho, piazza Giovanni da Triora, via Cristoforo Borri, di nuovo via delle Sette Chiese, piazza di San Eurosia, via Alessandra Macinghi Strozzi, piazza Oderico da Pordenone, viale Guglielmo Massaia (arrivo). Le strade chiuderanno al traffico al momento del passaggio dei partecipanti. Deviate le corse dei bus 715, 716 e 792.
+- Sabato a Ostia dalle 14:30 allo stadio Pasquale Giannattasio è in programma l’incontro di calcio di Lega Pro tra Ostiamare e Atalanta under 23. Deviazioni per le linee bus 05, 05B e 05P tra via del Mar Arabico e via Mar dei Coralli.
+- Sempre sabato ma alle 15:00 si gioca Lazio-Lecce di Serie A all’Olimpico. Divieti di sosta già dalla mattina nell’area del Foro Italico come prevede il piano viabilità. Lo stadio è raggiungibile con le linee 2 (piazzale Flaminio-piazza Mancini), 23 (via Pincherle-piazzale Clodio), 31 (Laurentina/metro B-piazzale Clodio), 32 (viale Giulio Cesare/Ottaviano metro A-stadio Olimpico-Saxa Rubra), 53 (che collega il Centro e i Parioli con piazza Mancini), 69 (largo Pugliese-piazzale Clodio), 70 (Termini piazzale Clodio), 89 (stazione Sant’Agnese metro B1-piazzale Clodio), 168 (stazione Tiburtina-largo Diaz), 200 (Prima Porta-piazza Mancini), 201 (Olgiata-piazza Mancini), 226 (Grottarossa-piazza Mancini), 280 (stazione Ostiense-piazza Mancini), 301 (Grottarossa-Ponte Milvio-Lepanto/metro A), 446 (stazione Cornelia/metro A-piazza Mancini), 628 (piazza Baronio-Farnesina), 910 (piazza Indipendenza-piazza Mancini), 911 (San Filippo Neri-piazza Mancini) e 982 (stazione Quattro Venti-XVII Olimpiade).
+- Sabato 21 e domenica 22 novembre, la circolazione ferroviaria sarà interessata da modifiche tra Roma Tiburtina e Roma Ostiense per lo svolgimento delle attività necessarie alla realizzazione della fermata di Pigneto. I lavori, comporteranno modifiche alla circolazione per i treni del Regionale delle linee FL1 Orte – Fiumicino Aeroporto (i treni saranno cancellati tra Roma Tiburtina e Roma Ostiense. Attiva la circolazione solo sulle tratte Orte/Poggio Mirteto/Fara Sabina – Roma Tiburtina e viceversa e Roma Ostiense – Fiumicino Aeroporto e viceversa) e FL3 Roma – Cesano/Viterbo (i treni saranno limitati/originari a Roma Ostiense). Inoltre fino alle 20:00 di sabato è previsto uno sciopero.
+- Sino al 23 novembre lavori notturni di rifacimento del manto stradale in viale dell’Oceano Atlantico e via Rhodesia in orario 22:00-06:00. Nello specifico in viale dell’Oceano Atlantico (carreggiata in direzione di via Laurentina – da viale Cesare Pavese a via Rhodesia) e in via Rhodesia (dal civico 34 a viale dell’Oceano Atlantico), prevista l’istituzione di divieti di fermata e sosta h24; il restringimento di carreggiata a la riduzione del limite di velocità a 30 km/h.
+- Lavori notturni di rifacimento della pavimentazione stradale in viale Alessandrino fino al 15 dicembre nella fascia oraria 22-6. Interesseranno il tratto di strada tra via Casilina e via dei Meli, con l’istituzione del senso unico alternato.
+- Scegli RomaToday  come fonte preferita su Google News
+- Leggi tutte le inchieste e gli approfondimenti
+- Vuoi navigare senza pubblicità ? Scopri come fare
+- Per muoverti con i mezzi pubblici e in sharing nella città di Roma usa la nostra Partner App gratuita
+    
+      
+        
+      
+    !
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /tmp && curl -sL "https://www.romatoday.it/attualita/rifiuti-ingombranti-roma-21-22-novembre-2026.html" -o rifiuti.html -w "%{http_code}\n"; python3 - <<'EOF'
+import re,html
+for f in ['/tmp/rifiuti.html']:
+    t=open(f,encoding='utf-8',errors='ignore').read()
+    t=re.sub(r'<script.*?</script>|<style.*?</style>','',t,flags=re.S)
+    for p in re.findall(r'<p[^>]*>(.*?)</p>',t,re.S):
+        s=html.unescape(re.sub('<[^>]+>','',p)).strip()
+        if len(s)>60 and 'adblocker' not in s and 'pubblicità' not in s:
+            print('-',s)
+EOF
+404
+- L'app è gratuita: segui la tua città ovunque, sempre a portata di mano.
+[0m$ [0mcd /tmp && curl -sL "https://www.romatoday.it/eventi/weekend-roma-21-22-novembre-2026.html" -o we.html -w "%{http_code}\n"; python3 - <<'EOF'
+import re,html
+t=open('/tmp/we.html',encoding='utf-8',errors='ignore').read()
+t=re.sub(r'<script.*?</script>|<style.*?</style>','',t,flags=re.S)
+for p in re.findall(r'<p[^>]*>(.*?)</p>',t,re.S):
+    s=html.unescape(re.sub('<[^>]+>','',p)).strip()
+    if len(s)>60 and 'adblocker' not in s and 'pubblicità' not in s:
+        print('-',s)
+EOF
+200
+- L'app è gratuita: segui la tua città ovunque, sempre a portata di mano.
+- Venerdì, 20 Novembre 2026        
+                	
+        		
+
+
+
+
+  
+  
+    
+    Nuvoloso per velature estese 
+   
+      
+    
+    16°
+     Venti 3.4 nodi SE
+     Probabilità di pioggia 0 % 
+  -->
+
+
+
+
+
+        	
+            	
+    
+      
+        
+          
+            
+          
+        
+      
+    	
+      	
+  
+  
+    
+    
+      
+    
+  
+  
+  
+    
+    
+      
+    
+  
+  
+  
+    
+    
+      
+    
+  
+  
+  
+    
+    
+      
+    
+  
+
+      
+              
+          
+            
+              Abbonati            
+            
+              Aggiorna piano             
+          
+        
+          	        
+                  
+            
+                
+            
+            Accedi           
+      
+                
+              
+  
+            
+            
+      
+                      
+ 
+
+
+
+  
+  
+    
+    
+      
+      
+        
+                    
+  
+                  
+ 
+           
+        
+      
+      
+      
+        
+        
+          
+        
+        
+          
+          
+      
+      
+      
+        
+        
+          
+                    Notizie    
+                    
+                    
+                    
+          Cosa fare in città
+          Zone
+
+                    
+          
+                      Dossier
+                    
+        
+        
+        
+          
+          
+            
+          
+          
+            
+          
+				
+        
+          
+          
+            
+          
+          
+            
+          
+        
+        
+      
+      
+    
+    
+     
+    	  
+	
+    
+        
+              
+        
+    
+    
+    
+        
+    	    
+                        
+    
+     
+    
+      
+              
+          
+            
+          
+        
+           
+      
+        
+          
+           
+            3 canzoni uscite questa settimana e che meritano di essere ascoltate 
+            
+          
+         
+      
+        
+                
+ 
+         
+        
+      
+      
+      
+        
+          
+        
+        
+         
+          Paolo Aruffo        
+      
+     
+       
+       
+      
+    
+  
+    
+    
+     
+    
+      
+              
+          
+            
+          
+        
+           
+      
+        
+          
+           
+            La Tv ai telemorenti, lo streaming ai giovani 
+            
+          
+         
+      
+        
+                
+ 
+         
+        
+      
+      
+      
+        
+          
+        
+        
+         
+          Enrico Pazzi        
+      
+     
+       
+       
+      
+    
+  
+            
+          
+        
+  
+  
+      
+    
+    
+  
+  
+
+  
+    
+    
+      
+      
+       
+        
+          
+        
+        
+      
+    
+    
+  
+  
+                    
+            
+
+       
+               
+                
+
+
+
+ 
+
+  
+  
+
+  
+    
+           
+      
+              
+               
+      
+              
+                                
+              Eventi 
+               
+               
+            
+                                          
+              Cinema 
+               
+               
+            
+                                          
+              Dove Mangiare 
+               
+               
+            
+                                          
+              Shopping 
+               
+               
+            
+                                  
+            
+      
+    
+    
+    
+            
+         
+    
+       
+            
+  
+
+
+
+               
+        
+        
+      
+             	            
+
+      
+        
+                
+        
+        
+
+
+ 
+
+
+  
+  
+      
+      
+        
+                      
+            
+              
+                Eventi a Roma
+                                  Questa settimana
+                              
+              
+                
+              
+              
+                
+                                     
+                    
+                      Oggi
+                      venerdì 20 novembre
+                    
+                  
+                                     
+                    
+                      Domani
+                      sabato 21 novembre
+                    
+                  
+                                     
+                    
+                      Weekend
+                      21 novembre - 22 novembre
+                    
+                  
+                                     
+                    
+                      Questa settimana
+                      16 novembre - 22 novembre
+                    
+                  
+                                     
+                    
+                      Prossima settimana
+                      23 novembre - 29 novembre
+                    
+                  
+                                     
+                    
+                      Questo mese
+                       1 novembre - 30 novembre
+                    
+                  
+                                  
+              
+            
+          
+            
+            
+              
+                Tipologia
+                
+                                    Tutti
+                                  
+              
+              
+                
+              
+              
+                
+                  Tipologia
+                                    
+ 
+   
+    
+    
+      
+            
+            
+      
+        
+          Mostre        
+			
+      
+            	
+            
+    
+  
+   
+ 
+   
+    
+    
+      
+            
+            
+      
+        
+          Teatri        
+			
+      
+            	
+            
+    
+  
+   
+ 
+   
+    
+    
+      
+            
+            
+      
+        
+          Manifestazioni        
+			
+      
+            	
+            
+    
+  
+   
+ 
+   
+    
+    
+      
+            
+            
+      
+        
+          Concerti        
+			
+      
+            	
+            
+    
+  
+   
+ 
+   
+    
+    
+      
+            
+            
+      
+        
+          Incontri        
+			
+      
+            	
+            
+    
+  
+   
+ 
+   
+    
+    
+      
+            
+            
+      
+        
+          Mercatini        
+			
+      
+            	
+            
+    
+  
+   
+ 
+   
+    
+    
+      
+            
+            
+      
+        
+          Turismo        
+			
+      
+            	
+            
+    
+  
+   
+ 
+   
+    
+    
+      
+            
+            
+      
+        
+          Cinema        
+			
+      
+            	
+            
+    
+  
+   
+ 
+   
+    
+    
+      
+            
+            
+      
+        
+          Escursioni        
+			
+      
+            	
+            
+    
+  
+   
+ 
+   
+    
+    
+      
+            
+            
+      
+        
+          Sagre        
+			
+      
+            	
+            
+    
+  
+   
+ 
+   
+    
+    
+      
+            
+            
+      
+        
+          Cibo E Vino        
+			
+      
+            	
+            
+    
+  
+   
+ 
+   
+    
+    
+      
+            
+            
+      
+        
+          Hobby        
+			
+      
+            	
+            
+    
+  
+   
+ 
+   
+    
+    
+      
+            
+            
+      
+        
+          Disco Feste        
+			
+      
+            	
+            
+    
+  
+   
+ 
+   
+    
+    
+      
+            
+            
+      
+        
+          Inaugurazioni        
+			
+      
+            	
+            
+    
+  
+   
+ 
+   
+    
+    
+      
+            
+            
+      
+        
+          Sport        
+			
+      
+            	
+            
+    
+  
+   
+ 
+   
+    
+    
+      
+            
+            
+      
+        
+          Moda        
+			
+      
+            	
+            
+    
+  
+   
+ 
+   
+    
+    
+      
+            
+            
+      
+        
+          Promozioni        
+			
+      
+            	
+            
+    
+  
+   
+
+                  
+                  Età ideale
+    
+                   
+                    
+                      Evento per Bambini
+                      
+                      
+                    
+                  
+          
+                  Tema
+                                    
+ 
+   
+    
+    
+      
+            
+            
+      
+        
+          Natale        
+			
+      
+            	
+            
+    
+  
+   
+ 
+   
+    
+    
+      
+            
+            
+      
+        
+          Halloween        
+			
+      
+            	
+            
+    
+  
+   
+
+                                  
+                Applica filtri
+              
+                    
+          
+        
+      
+
+      
+        
+          Segnala Evento
+        
+        
+          
+            Filtra 
+            
+              
+            
+          
+        
+               
+          
+            Calendario
+            
+          
+          
+      
+    
+
+    
+
+      
+
+
+
+
+ 
+  
+    
+    
+        
+          
+            
+              Speciale Weekend
+> build · deepseek-v4.1-flash-free
+[0m◈ [0mWeb Search via Tinyfish "Roma raccolta rifiuti ingombranti sabato 21 domenica 22 novembre 2026 RomaToday" 
+[0m◈ [0mWeb Search via Tinyfish "Roma mercatini di Natale 2026 luoghi date guida" 
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /tmp && curl -sL "https://www.romatoday.it/attualita/raccolta-rifiuti-ingombranti-roma-sabato-21-domenica-22-novembre-2026.html" -o rifiuti.html -w "%{http_code}\n"; python3 - <<'EOF'
+import re,html
+t=open('/tmp/rifiuti.html',encoding='utf-8',errors='ignore').read()
+t=re.sub(r'<script.*?</script>|<style.*?</style>','',t,flags=re.S)
+for p in re.findall(r'<p[^>]*>(.*?)</p>',t,re.S):
+    s=html.unescape(re.sub('<[^>]+>','',p)).strip()
+    if len(s)>50 and 'adblocker' not in s and 'pubblicità' not in s:
+        print('-',s)
+EOF
+200
+- Aggiungi il sito alle eccezioni e ricarica la pagina.
+- L'app è gratuita: segui la tua città ovunque, sempre a portata di mano.
+- Venerdì, 20 Novembre 2026        
+                	
+        		
+
+
+
+
+  
+  
+    
+    Nuvoloso per velature estese 
+   
+      
+    
+    16°
+     Venti 3.4 nodi SE
+     Probabilità di pioggia 0 % 
+  -->
+
+
+
+
+
+        	
+            	
+    
+      
+        
+          
+            
+          
+        
+      
+    	
+      	
+  
+  
+    
+    
+      
+    
+  
+  
+  
+    
+    
+      
+    
+  
+  
+  
+    
+    
+      
+    
+  
+  
+  
+    
+    
+      
+    
+  
+
+      
+              
+          
+            
+              Abbonati            
+            
+              Aggiorna piano             
+          
+        
+          	        
+                  
+            
+                
+            
+            Accedi           
+      
+                      
+              
+                
+              
+  
+            
+            	 
+
+
+
+
+  
+
+    
+
+			
+				
+			
+			
+				
+			
+		
+
+    
+			
+      	          
+  
+ 
+              
+      
+            
+    
+    
+    
+
+			
+				
+			
+			
+				
+			
+		
+    
+
+			
+				
+			
+			
+				
+			
+		
+    
+  
+  
+  
+
+  
+    
+    
+      
+      
+       
+        
+          
+        
+        
+      
+    
+    
+  
+
+      
+            
+
+        
+      
+             	            
+
+      
+        
+                
+        
+        
+ 
+
+
+  
+  
+    
+  
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+      
+		
+      
+    
+  
+    
+    
+
+    
+    
+      
+              Attualità
+            
+                        
+            Villa Gordiani          
+
+      
+
+            
+         / Via Rovigno d'Istria      
+            
+      
+      La raccolta dei rifiuti ingombranti a Roma sabato 21 e domenica 22 novembre
+      Nel weekend nella Capitale torna il consueto appuntamento con l'iniziativa Atac. Nel fine settimana saranno attive diverse postazioni nei vari municipi. Ecco dove trovarli
+- Sabato 21 e domenica 22 novembre a Roma torna “Ama il Tuo Quartiere – Giornate del Riciclo” la raccolta straordinaria gratuita di rifiuti ingombranti, elettronici e speciali organizzata da Ama in collaborazione con il Tgr Lazio Rai.
+- Per l’occasione saranno a disposizione dei cittadini le postazioni dei municipi I, II, IV, V, VI, VII, VIII, IX, X, XI, XII, XIII, XIV e XV. Qui ci si potrà liberare, dalle ore 08:00 alle 12:30, dei rifiuti che non possono essere conferiti nei cassonetti.
+- Domenica 22 i cittadini si potranno disfare di materiali ingombranti, legno, metallo, RAEE, abiti usati, prodotti tessili, accessori di abbigliamento nelle postazioni di piazza Tempio di Diana e piazzale Clodio (mun I), piazzale Aldo Moro (mun II), via Rovigno d’Istria (mun V), largo Montanari (mun IX), via Gianni Angus (mun X), via Ponzone (mun XIII), via Santi Audiface e Abacuc (mun XIV), via Guido Rattoppatore (mun XV).
+- Sabato si potranno consegnare anche sfalci e potature nei centri di via Colleverde (mun IV), via Elce della Vecchia (mun VI), via Anagnina (mun VII), via dell’Accademia Peloritana (mun VIII), via Gaetano Arturo Crocco (mun XI), viale Quattro Venti (mun XII), via Luisa Spagnoli (mun XIV), via di Grottarossa (mun XV).
+- Domenica 22 novembre inoltre i volontari dell’Associazione Culturale Ciclonauti saranno presenti, presso la postazione di piazzale Clodio per la raccolta delle biciclette usate nell’ambito del progetto “Insieme per il Riuso”. I volontari, nel rispetto delle clausole di adesione all’Albo AMA degli Enti del Terzo Settore per la raccolta di beni usati e riutilizzabili, saranno riconoscibili da fratini e bandiere a goccia personalizzate con i loghi AMA e Insieme per il Riuso.
+- Scegli RomaToday  come fonte preferita su Google News
+- Per muoverti con i mezzi pubblici e in sharing nella città di Roma usa la nostra Partner App gratuita
+    
+      
+        
+      
+    !
+[0m$ [0mcd /tmp && curl -sL "https://www.comune.roma.it/web/it/notizia/ama-tuo-quartiere--21-22-novembre-2026.page" -o ama.html -w "%{http_code}\n"; python3 - <<'EOF'
+import re,html
+t=open('/tmp/ama.html',encoding='utf-8',errors='ignore').read()
+t=re.sub(r'<script.*?</script>|<style.*?</style>','',t,flags=re.S)
+for p in re.findall(r'<p[^>]*>(.*?)</p>',t,re.S):
+    s=html.unescape(re.sub('<[^>]+>','',p)).strip()
+    if len(s)>50:
+        print('-',s)
+EOF
+200
+- Use Google to translate the web site.We take no responsibility for the accuracy of the translation.
+- Sabato 21 e domenica 22 novembre 2026 nuovo appuntamento con le "Raccolte del Weekend - Ama il Tuo Quartiere”: ritiro straordinario gratuito di rifiuti ingombranti, tessili, elettrici ed elettronici. Iniziativa organizzata da Ama in collaborazione con il TGR Lazio RAI.
+- A disposizione dei cittadini vengono allestite, nelle due giornate, 16 postazioni nei Municipi I, II, IV, V, VI, VII, VIII, IX, X, XI, XII, XIII, XIV e XV.
+- Sabato vengono allestite 8 postazioni nei municipi IV, VI, VII, VIII, XI, XII, XIV e XV, mentre domenica saranno coinvolti i municipi I, II, V, IX, X, XIII, XIV e XV con il posizionamento di ulteriori 8 siti.
+- Tutte le eco-stazioni sono attrezzate per accogliere materiali ingombranti, legno, metallo, Raee, abiti usati (vestiti, cappotti, ecc.), prodotti tessili (stoffe, coperte, tende e tappezzerie) e accessori di abbigliamento (scarpe, borse, zaini, cappelli, sciarpe, guanti, ecc.). In quelle del sabato, è anche possibile conferire sfalci e potature.
+- I siti saranno accessibili dalle 8 alle 12:30. I materiali consegnati dai cittadini nel corso delle due mattinate verranno differenziati secondo la categoria merceologica di riferimento (legno, ferro, plastica, altri metalli, Raee, ecc.) e avviati alle rispettive filiere di recupero/riciclo.
+- Roma Capitale invita cittadine e cittadini a consultare sempre la pagina dedicata del sito AMA per ulteriori informazioni e conferme sulla lista dei materiali conferibili.
+- ISCRIVITI per ricevere SMS con le info utili relative al tuo territorio (apertura cantieri, modifiche viabilità, ecc) e la Newsletter di Roma Capitale.
+- Per avere tutta Roma sempre a portata di mano, iscriviti anche al canale WhatsApp di Roma Capitale.
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /tmp && curl -sL "https://www.3bmeteo.com/meteo/roma/3-giorni" -o wx.html -w "%{http_code}\n"; python3 - <<'EOF'
+import re,html
+t=open('/tmp/wx.html',encoding='utf-8',errors='ignore').read()
+t=re.sub(r'<script.*?</script>|<style.*?</style>','',t,flags=re.S)
+s=re.sub(r'<[^>]+>',' ',t)
+s=html.unescape(s)
+s=re.sub(r'\s+',' ',s)
+print(s[:2000])
+EOF
+404
+ Pagina non trovata - Errore 404 « 3B Meteo --> Vai al contenuto principale Home Previsioni Mappe Media Notizie Servizi Abbonati Accedi Menù × Previsioni Generali Previsioni Italia Meteo weekend Meteo settimana Tendenze lungo termine Previsioni Mondo Regionali Abruzzo Basilicata Calabria Campania Emilia Romagna Friuli Venezia Giulia Lazio Liguria Lombardia Marche Molise Piemonte Puglia Sardegna Sicilia Toscana Trentino Alto Adige Umbria Valle d'Aosta Veneto Mappe Mappe interattive Cartografico Previsioni Meteo Temperature Precipitazioni Nuvolosità Venti Mari Monitoraggio e dati Radar meteo Satellite meteo Allerte Neve & Impianti Terremoti Centraline meteo Traffico Altri dati dal territorio Qualità dell'aria Parassiti animali Previsione crescita funghi Previsioni pollini Notizie Vedi tutti gli articoli Cronaca meteo Previsioni e tendenze Ambiente e scienza Glossario Media Video e webcam Video previsionali Video news Webcam Osserva e condividi Community foto e video Segnalazioni meteo Servizi Vedi tutto Accedi o registrati × --> Schermata di ricerca località Recenti Preferiti Località non trovata Non siamo riusciti a trovare la località cercata. Verifica che il nome sia scritto correttamente o provaun'area vicina. Registrati gratis Crea un account per salvare e gestire le tue località preferiti 404 Pagina non trovata Torna alla home 404 Pagina non trovata Torna alla home Le previsioni del tempo nel resto del mondo Nessuna località trovata. Amsterdam Parigi Madrid Vienna Belgrado Oslo Londra New York San Francisco Boston Cancun Hawaii Il tempo nelle principali località italiane Nessuna località trovata. Ancona Aosta Bari Bergamo Bologna Brescia Cagliari Campobasso Catania Catanzaro Ferrara Firenze Forli' Genova L'Aquila Livorno Messina Milano Modena Monza Napoli Novara Padova Palermo Parma Perugia Pescara Pisa Potenza Prato Ravenna Reggio Calabria Reggio Emilia Rimini Meteo Roma Savona Siena Siracusa Taranto Torino Trento Treviso Trieste Udine Venezia Verona Vicenza Ab
+[0m$ [0mcd /tmp && curl -sL "https://www.romatoday.it/eventi/cultura/mercatini-natale-roma-2026.html" -o mn.html -w "%{http_code}\n"; python3 - <<'EOF'
+import re,html
+t=open('/tmp/mn.html',encoding='utf-8',errors='ignore').read()
+t=re.sub(r'<script.*?</script>|<style.*?</style>','',t,flags=re.S)
+for p in re.findall(r'<p[^>]*>(.*?)</p>',t,re.S):
+    s=html.unescape(re.sub('<[^>]+>','',p)).strip()
+    if len(s)>60 and 'adblocker' not in s and 'pubblicità' not in s:
+        print('-',s)
+EOF
+200
+- L'app è gratuita: segui la tua città ovunque, sempre a portata di mano.
+- Venerdì, 20 Novembre 2026        
+                	
+        		
+
+
+
+
+  
+  
+    
+    Nuvoloso per velature estese 
+   
+      
+    
+    16°
+     Venti 3.4 nodi SE
+     Probabilità di pioggia 0 % 
+  -->
+
+
+
+
+
+        	
+            	
+    
+      
+        
+          
+            
+          
+        
+      
+    	
+      	
+  
+  
+    
+    
+      
+    
+  
+  
+  
+    
+    
+      
+    
+  
+  
+  
+    
+    
+      
+    
+  
+  
+  
+    
+    
+      
+    
+  
+
+      
+              
+          
+            
+              Abbonati            
+            
+              Aggiorna piano             
+          
+        
+          	        
+                  
+            
+                
+            
+            Accedi           
+      
+                      
+              
+                
+              
+  
+            
+            
+      
+                      
+ 
+
+
+
+  
+  
+    
+    
+      
+      
+        
+                    
+  
+                  
+ 
+           
+        
+      
+      
+      
+        
+        
+          
+        
+        
+          
+          
+      
+      
+      
+        
+        
+          
+                    Notizie    
+                    
+                    
+                    
+          Cosa fare in città
+          Zone
+
+                    
+          
+                      Dossier
+                    
+        
+        
+        
+          
+          
+            
+          
+          
+            
+          
+				
+        
+          
+          
+            
+          
+          
+            
+          
+        
+        
+      
+      
+    
+    
+     
+    	  
+	
+    
+        
+              
+        
+    
+    
+    
+        
+    	    
+                        
+    
+     
+    
+      
+              
+          
+            
+          
+        
+           
+      
+        
+          
+           
+            3 canzoni uscite questa settimana e che meritano di essere ascoltate 
+            
+          
+         
+      
+        
+                
+ 
+         
+        
+      
+      
+      
+        
+          
+        
+        
+         
+          Paolo Aruffo        
+      
+     
+       
+       
+      
+    
+  
+    
+    
+     
+    
+      
+              
+          
+            
+          
+        
+           
+      
+        
+          
+           
+            La Tv ai telemorenti, lo streaming ai giovani 
+            
+          
+         
+      
+        
+                
+ 
+         
+        
+      
+      
+      
+        
+          
+        
+        
+         
+          Enrico Pazzi        
+      
+     
+       
+       
+      
+    
+  
+            
+          
+        
+  
+  
+      
+    
+    
+  
+  
+
+  
+    
+    
+      
+      
+       
+        
+          
+        
+        
+      
+    
+    
+  
+  
+                    
+            
+
+        
+      
+             	            
+
+      
+        
+                
+        
+        
+ 
+
+
+  
+  
+    
+  
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+      
+		
+      
+    
+  
+    
+    
+
+    
+    
+      
+              Cultura
+            
+      
+
+            
+      
+      Guida ai mercatini di Natale 2026 a Roma: luoghi e date
+      Alla scoperta dei mercatini natalizi più belli da scoprire nel Natale 2026 in città, dal centro alla periferia
+- L'atmosfera natalizia avvolge la Capitale e dal centro alla periferia prendono forma i caratteristici mercatini di Natale 2026.
+- Casette di legno, luminarie e profumo di vin brulè avvolgono interi quartieri, animano piazze, parchi, vie della città e diventano per molti la meta preferita per trascorrere qualche ora di spensieratezza, soprattutto nei fine settimana.
+- Il Natale 2026 a Roma conferma i mercatini storici (come quelli di piazza Navona e piazza Mazzini) e ne presenta anche di nuovi, che strizzano l'occhio all'artigianato locale e al consumo consapevole. Ecco una guida ai migliori mercatini natalizi della Capitale: dove si trovano, date di apertura e tutte le info utili.
+- Non è davvero Natale a Roma senza le casette in legno, il Carosello dei cavalli e l'arrivo di Babbo Natale, ma soprattutto della Befana, in piazza Navona. Dal 1 dicembre torna uno degli appuntamenti più attesi nella Capitale. Come consuetudine vuole, saranno allestite le tradizionali casette in legno, con espositori di artigianato, decorazioni natalizie e dolciumi. La Festa di Piazza Navona culminerà nella mattinata del 6 gennaio con l'arrivo della Befana che "scenderà" nella piazza accompagnata da Vigili del Fuoco e Banda Musicale.
+- Un altro appuntamento tradizionale del Natale romano è il Mercatino allestito in piazza Mazzini (a Prati), che torna anche quest'anno, dal 1 dicembre al 6 gennaio. Nei giardini della piazza arrivano le tradizionali casettine di legno con tanto artigianato e tante idee regalo. Gli stand saranno disposti intorno alla scenografica fontana e circondate da lecci, cipressi e siepi.
+- Torna a Roma GiftLand, la manifestazione organizzata da Vintage Market che quest'anno si svolgerà presso l'Opificio ItaliaCamp, ex marmificio in via Luigi Pierantoni, 2. Ogni weekend ci saranno 80 realtà, per un totale di 240 espositori. L’intero Opificio ItaliaCamp si trasformerà in un percorso espositivo, tra ambienti interni, piano superiore e spazi esterni. Le date di GiftLand sono: 7-8 dicembre, 12-13 dicembre e 19-20 dicembre, con ingresso “up to you” dalle 10 alle 20. [TUTTE LE INFORMAZIONI]
+- Ethica Christmas Village arriva alla Città dell'Altra Economia, nel cuore di Testaccio, dal 9 novembre 2026 al 10 gennaio 2027. Il fulcro dell’iniziativa è il grande mercato natalizio, dedicato al commercio equo e solidale, all’artigianato, all’economia sociale e a tante proposte per regali scelti con cura e consapevolezza: si troveranno idee regalo, artigianato, prodotti alimentari, moda, accessori, cosmesi, libri e giochi scelti per la loro qualità, per le storie che raccontano e per il valore delle filiere da cui provengono. L’area eventi ospita incontri con produttori, presentazioni di libri e laboratori gratuiti. A completare l’esperienza si trovano il punto ristoro e la pista di pattinaggio sul ghiaccio, entrambi organizzati dalla Città dell’Altra Economia.  [TUTTE LE INFORMAZIONI]
+- A Roma arriva Caro Mercato: tre weekend di un mercato di Natale contemporaneo dove si incontrano creatività, artigianato, vintage, design, piante e progetti indipendenti. Il Caro Mercato si terrà nei weekend del 5-6 dicembre, 12-13 dicembre e 19-20 dicembre presso Snodo Roma Aurelia, in via della Stazione Aurelia 185, dalle 10 alle 20. Si potranno trovare: handmade e artigianato, vintage e second hand selezionato, design, home decor e illustrazione, piante e idee regalo originali e molto altro ancora. [TUTTE LE INFORMAZIONI]
+- Ficus al Massimo presenta la sua Xmas - Edition, tutti i weekend, dal 5 al 20 dicembre. Oltre 10.000 idee regalo tra le sale del Garum Museo. Gli stand proporranno gioielli artigianali, ceramiche d'autore, illustrazioni, stampe artistiche, accessori moda, sartoria indipendente, abbigliamento e oggetti vintage, home decor, creazioni di design e tante altre proposte originali. [TUTTE LE INFORMAZIONI]
+- Sabato 28 e domenica 29 novembre, dalle 10 alle 20, Park Hotel Villa Grazioli a Grottaferrata, riapre le sue porte per la VIII edizione del Christmas Market. Nell’antica dimora cinquecentesca, adagiata sulle colline dei Castelli Romani, per due giornate si troveranno oltre 5.000 idee regalo e pezzi unici, due maestri presepisti all’opera dal vivo, concerti e incursioni musicali tra le sale affrescate, animazione e laboratori creativi per bambini, realtà aumentata nella Galleria del Pannini e, al calare della sera, un grande videomapping 3D che trasformerà la facciata storica della Villa in un suggestivo racconto di luce. [TUTTE LE INFORMAZIONI]
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /tmp && curl -sL "https://www.ilmeteo.it/meteo/Roma" -o wx2.html -w "%{http_code}\n"; python3 - <<'EOF'
+import re,html
+t=open('/tmp/wx2.html',encoding='utf-8',errors='ignore').read()
+t=re.sub(r'<script.*?</script>|<style.*?</style>','',t,flags=re.S)
+s=re.sub(r'<[^>]+>',' ',t); s=html.unescape(s); s=re.sub(r'\s+',' ',s)
+i=s.find('Sab')
+print(s[:1500])
+EOF
+200
+ --> Meteo Roma - Previsioni Oggi, Prossimi 15 Giorni » iLMeteo.it --> --> --> chiudi menu --> Accedi Esci Previsioni Meteo a 3 e 7 Giorni 15 Giorni 30 Giorni Meteo Italia Meteo Europa Meteo Mondo Meteo Record Carte del Tempo Previsioni Stagionali Qualità dell'aria Pollini Bollettino Neve Bollettino Mari Situazione Radar Immagini Satellitari Dati in Tempo Reale Segnalazioni Fulmini Radiosondaggi Dati Climatici Archivio Meteo --> Radar --> --> Mappe Mappe Meteo Venti Mari ETA 10Km ETA 5Km HiRes WRF ETA Italia Grecia ETA Central Europe ETA South Europe GFS Europe Ensemble Europe Altre Mappe Neve Bollettino Neve Mappe Neve Venti e Mari Bollettino Mari Meteo Città Marine Venti fino a 7 Giorni Mari fino a 5 Giorni Mappe Venti Surf News e Video Notizie Video Meteo Video Oggi Video Domani Utilità Webcam Meteo Record Terremoto Glossario Meteo Report Eventi Meteo Indice Vivibilità Climatica Rapporto sul Clima Didattica Meteo Maratona dles Dolomites Viabilità Meteo Autostrade Traffico e Viabilità Meteo Aeroporti Percorsi e Itinerari Contatti Chi Siamo Come Lavoriamo Dove Siamo Contattaci Business Developer Stampa Dicono di Noi Privacy e Cookie Policy Termini e Condizioni d'uso Consensi GDPR Accessibilità Menu Home Previsioni Previsioni Meteo Meteo a 3 e 7 Giorni 15 Giorni 30 Giorni Meteo Italia Meteo Europa Meteo Mondo Carte del Tempo Previsioni Stagionali Qualità dell'aria Pollini Bollettino Neve Bollettino Mari Meteo Record Situazione Situazione Meteo Immagini Satellitari Dati in Tem
+[0m◈ [0mWeb Search via Tinyfish "FL1 FL3 Roma Tiburtina Ostiense 21 22 novembre 2026 Pigneto lavori treni cancellati" 
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcurl -s "https://api.open-meteo.com/v1/forecast?latitude=41.9028&longitude=12.4964&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=Europe/Rome&start_date=2026-11-20&end_date=2026-11-23"
+{"latitude":41.895107,"longitude":12.526347,"generationtime_ms":0.10275840759277344,"utc_offset_seconds":3600,"timezone":"Europe/Rome","timezone_abbreviation":"GMT+1","elevation":58.0,"daily_units":{"time":"iso8601","weather_code":"wmo code","temperature_2m_max":"°C","temperature_2m_min":"°C","precipitation_probability_max":"%"},"daily":{"time":["2026-11-20","2026-11-21","2026-11-22","2026-11-23"],"weather_code":[80,45,80,80],"temperature_2m_max":[19.1,18.8,18.6,17.9],"temperature_2m_min":[12.7,9.2,14.1,10.0],"precipitation_probability_max":[50,5,65,14]}}
+[0m$ [0mcd /tmp && curl -sL "https://romamobilita.it/infomobilita/trenitalia-modifiche-alla-circolazione-tra-tiburtina-e-ostiense-questo-fine-settimana/" -o mob.html -w "%{http_code}\n"; python3 - <<'EOF'
+import re,html
+t=open('/tmp/mob.html',encoding='utf-8',errors='ignore').read()
+t=re.sub(r'<script.*?</script>|<style.*?</style>','',t,flags=re.S)
+for p in re.findall(r'<p[^>]*>(.*?)</p>',t,re.S):
+    s=html.unescape(re.sub('<[^>]+>','',p)).strip()
+    if len(s)>40: print('-',s)
+EOF
+In agenda
+											
+									
+								
+											
+
+												
+													
+										Oggi a Roma
+											
+									
+						
+						
+				
+				
+					
+				
+				
+		
+News & Media
+Piani e progetti		
+				
+					
+		
+				
+				
+							
+							
+											
+
+												
+													
+										PUMS
+											
+									
+								
+											
+
+												
+													
+										Biciplan
+											
+									
+								
+											
+
+												
+													
+										Formazione nelle scuole
+											
+									
+								
+											
+
+												
+													
+										Intermodalità
+											
+									
+								
+											
+
+												
+													
+										Logistica
+											
+									
+								
+											
+
+												
+													
+										MaaS
+											
+									
+								
+											
+
+												
+													
+										Mobility Management
+											
+									
+								
+											
+
+												
+													
+										Pedonalità
+											
+									
+								
+											
+
+												
+													
+										Sicurezza Stradale
+											
+									
+								
+											
+
+												
+													
+										Trasporto rapido di massa
+											
+									
+						
+						
+				
+				
+		
+				
+				
+							
+							
+											
+
+												
+													
+										PGTU
+											
+									
+								
+											
+
+												
+													
+										Black Point
+											
+									
+								
+											
+
+												
+													
+										Cantieri e viabilità
+											
+									
+								
+											
+
+												
+													
+										Ciclabilità
+											
+									
+								
+											
+
+												
+													
+										Strade scolastiche
+											
+									
+								
+											
+
+												
+													
+										DSS, studi e indagini
+											
+									
+								
+											
+
+												
+													
+										Progetti europei
+											
+									
+								
+											
+
+												
+													
+										Roma Corre in Bici
+											
+									
+						
+						
+				
+				
+					
+				
+		
+					
+		
+				
+					
+				
+		
+					
+					
+				
+				
+		
+Sistemi e tecnologie		
+				
+					
+		
+		
+				
+				
+							
+							
+											
+
+												
+													
+										ITS
+											
+									
+								
+											
+
+												
+													
+										Impianti semaforici
+											
+									
+						
+						
+				
+				
+		
+				
+				
+							
+							
+											
+
+												
+													
+										Open Data
+											
+									
+								
+											
+
+												
+													
+										Centrale mobilità
+											
+									
+						
+						
+				
+				
+				
+					
+				
+		
+					
+		
+		
+				
+				
+							
+							
+											
+
+												
+													
+										ITS
+											
+									
+								
+											
+
+												
+													
+										Impianti semaforici
+											
+									
+						
+						
+				
+				
+				
+							
+							
+											
+
+												
+													
+										Open Data
+											
+									
+								
+											
+
+												
+													
+										Centrale mobilità
+											
+									
+						
+						
+				
+				
+				
+					
+				
+				
+		
+FAQ
+Contatti
+X
+			        
+						
+				
+				
+		
+		
+				
+				
+							
+			            
+                                    
+                            
+            FAQ
+Contatti
+X
+			        
+						
+				
+				
+				
+					
+				
+		
+				
+				
+							
+							
+											
+
+												
+													
+										Servizi online
+											
+									
+						
+						
+				
+				
+				
+							
+						
+				
+		
+				
+				
+							
+							
+					
+						Facebook-f
+											
+				
+							
+					
+						Instagram
+											
+				
+							
+					
+						X-twitter
+											
+				
+							
+					
+						Social_youtube
+											
+				
+							
+					
+						Linkedin-in
+											
+				
+							
+					
+						Telegram
+											
+				
+							
+					
+						Icofont-radio
+											
+				
+					
+						
+				
+				
+				
+							
+			
+						
+		
+						
+				
+				
+				
+							
+			
+						
+		
+						
+				
+				
+				
+					        
+                    
+        
+        
+        
+            
+            
+                
+                    
+					
+                                            
+                
+            
+        
+        
+        				
+				
+				
+				
+		
+					
+		
+		
+		
+				
+				
+							
+			            
+                            
+            Servizi al pubblico		
+				
+					
+		
+		
+				
+				
+							
+							
+											
+
+												
+													
+										Permessi ZTL
+											
+									
+								
+											
+
+												
+													
+										Permessi Sosta
+											
+									
+								
+											
+
+												
+													
+										Persone con disabilità
+											
+									
+								
+											
+
+												
+													
+										Permessi Bus turistici
+											
+									
+								
+											
+
+												
+													
+										Servizi per licenze Taxi Roma
+											
+									
+						
+						
+				
+				
+		
+				
+				
+							
+							
+											
+
+												
+													
+										Servizi per NCC
+											
+									
+								
+											
+
+												
+													
+										Servizi per Botticelle 
+											
+									
+								
+											
+
+												
+													
+										Servizio Car Sharing Roma
+											
+									
+								
+											
+
+												
+													
+										Mobilità elettrica
+											
+									
+						
+						
+				
+				
+				
+					
+				
+		
+					
+		
+		
+				
+				
+							
+							
+											
+
+												
+													
+										ZTL
+											
+									
+								
+											
+
+												
+													
+										Sosta
+											
+									
+								
+											
+
+												
+													
+										Persone con disabilità
+											
+									
+								
+											
+
+												
+													
+										Bus turistici
+											
+									
+								
+											
+
+												
+													
+										Taxi
+											
+									
+								
+											
+
+												
+													
+										NCC
+											
+									
+								
+											
+
+												
+													
+										Botticelle
+											
+									
+								
+											
+
+												
+													
+										Car sharing
+											
+									
+								
+											
+
+												
+													
+										Mobilità elettrica
+											
+									
+						
+						
+				
+				
+				
+					
+				
+				
+		
+Muoversi a Roma		
+				
+					
+		
+		
+				
+				
+							
+							
+											
+
+												
+													
+										Bus tram e filobus
+											
+									
+								
+											
+
+												
+													
+										Metro e ferrovie
+											
+									
+								
+											
+
+												
+													
+										Taxi
+											
+									
+								
+											
+
+												
+													
+										Oggetti smarriti sui mezzi di trasporto
+											
+									
+								
+											
+
+												
+													
+										ClicBus - trasporto pubblico a chiamata
+											
+									
+								
+											
+
+												
+													
+										Mobilità sharing
+											
+									
+								
+											
+
+												
+													
+										Bus turistici
+											
+									
+								
+											
+
+												
+													
+										Open bus
+											
+									
+								
+											
+
+												
+													
+										Bicicletta
+											
+									
+						
+						
+				
+				
+		
+				
+				
+							
+							
+											
+
+												
+													
+										ZTL 
+											
+									
+								
+											
+
+												
+													
+										Strisce Rosa
+											
+									
+								
+											
+
+												
+													
+										Strisce Blu
+											
+									
+								
+											
+
+												
+													
+										Parcheggi di scambio
+											
+									
+								
+											
+
+												
+													
+										Aeroporti
+											
+									
+								
+											
+
+												
+													
+										Shuttle Termini - Aeroporti
+											
+									
+								
+											
+
+												
+													
+										Pedonalizzazioni
+											
+									
+								
+											
+
+												
+													
+										Foro italico
+											
+									
+								
+											
+
+												
+													
+										Zona 30
+											
+									
+						
+						
+				
+				
+				
+		
+				
+				
+							
+							
+											
+
+												
+													
+										In agenda
+											
+									
+								
+											
+
+												
+													
+										Oggi a Roma
+											
+									
+						
+						
+				
+				
+					
+				
+		
+					
+		
+		
+				
+				
+							
+							
+											
+
+												
+													
+										Bus tram e filobus
+											
+									
+								
+											
+
+												
+													
+										Metro e ferrovie
+											
+									
+								
+											
+
+												
+													
+										Taxi
+											
+									
+								
+											
+
+												
+													
+										Oggetti smarriti sui mezzi di trasporto
+											
+									
+								
+											
+
+												
+													
+										ClicBus - trasporto pubblico a chiamata
+											
+									
+								
+											
+
+												
+													
+										Mobilità sharing
+											
+									
+								
+											
+
+												
+													
+										Bus turistici
+											
+									
+								
+											
+
+												
+													
+										Open bus
+											
+									
+								
+											
+
+												
+													
+										Bicicletta
+											
+									
+						
+						
+				
+				
+				
+							
+							
+											
+
+												
+													
+										ZTL 
+											
+									
+								
+											
+
+												
+													
+										Strisce Rosa
+											
+									
+								
+											
+
+												
+													
+										Strisce Blu
+											
+									
+								
+											
+
+												
+													
+										Parcheggi di scambio
+											
+									
+								
+											
+
+												
+													
+										Aeroporti
+											
+									
+								
+											
+
+												
+													
+										Shuttle Termini - Aeroporti
+											
+									
+								
+											
+
+												
+													
+										Pedonalizzazioni
+											
+									
+								
+											
+
+												
+													
+										Foro italico
+											
+									
+								
+											
+
+												
+													
+										Zona 30
+											
+									
+						
+						
+				
+				
+				
+		
+				
+				
+							
+							
+											
+
+												
+													
+										In agenda
+											
+									
+								
+											
+
+												
+													
+										Oggi a Roma
+											
+									
+						
+						
+				
+				
+					
+				
+				
+		
+News & Media
+Piani e progetti		
+				
+					
+		
+				
+				
+							
+							
+											
+
+												
+													
+										PUMS
+											
+									
+								
+											
+
+												
+													
+										Biciplan
+											
+									
+								
+											
+
+												
+													
+										Formazione nelle scuole
+											
+									
+								
+											
+
+												
+													
+										Intermodalità
+											
+									
+								
+											
+
+												
+													
+										Logistica
+											
+									
+								
+											
+
+												
+													
+										MaaS
+											
+									
+								
+											
+
+												
+													
+										Mobility Management
+											
+									
+								
+											
+
+												
+													
+										Pedonalità
+											
+									
+								
+											
+
+												
+													
+										Sicurezza Stradale
+											
+									
+								
+											
+
+												
+													
+										Trasporto rapido di massa
+											
+									
+						
+						
+				
+				
+		
+				
+				
+							
+							
+											
+
+												
+													
+										PGTU
+											
+									
+								
+											
+
+												
+													
+										Black Point
+											
+									
+								
+											
+
+												
+													
+										Cantieri e viabilità
+											
+									
+								
+											
+
+												
+													
+										Ciclabilità
+											
+									
+								
+											
+
+												
+													
+										Strade scolastiche
+											
+									
+								
+											
+
+												
+													
+										DSS, studi e indagini
+											
+									
+								
+											
+
+												
+													
+										Progetti europei
+											
+									
+								
+											
+
+												
+													
+										Roma Corre in Bici
+											
+									
+						
+						
+				
+				
+					
+				
+		
+					
+		
+				
+					
+				
+		
+					
+					
+				
+				
+		
+Sistemi e tecnologie		
+				
+					
+		
+		
+				
+				
+							
+							
+											
+
+												
+													
+										ITS
+											
+									
+								
+											
+
+												
+													
+										Impianti semaforici
+											
+									
+						
+						
+				
+				
+		
+				
+				
+							
+							
+											
+
+												
+													
+										Open Data
+											
+									
+								
+											
+
+												
+													
+										Centrale mobilità
+											
+									
+						
+						
+				
+				
+				
+					
+				
+		
+					
+		
+		
+				
+				
+							
+							
+											
+
+												
+													
+										ITS
+											
+									
+								
+											
+
+												
+													
+										Impianti semaforici
+											
+									
+						
+						
+				
+				
+				
+							
+							
+											
+
+												
+													
+										Open Data
+											
+									
+								
+											
+
+												
+													
+										Centrale mobilità
+											
+									
+						
+						
+				
+				
+				
+					
+				
+				
+		
+FAQ
+Contatti
+X
+			        
+						
+				
+				
+		
+				
+				
+																
+															
+															
+				
+				
+		
+				
+				
+					Roma Servizi per la Mobilità				
+				
+				
+				
+				
+					
+				
+		
+				
+				
+																														
+				
+				
+		
+					
+		
+				
+				
+							
+
+						Permessi ZTL e Sosta (residenti e domiciliati)
+			
+						Dal 2 febbraio 2026 le richieste (rinnovo, rilascio, cambio targa) possono essere presentate solo online o presso lo Sportello al pubblico (previo appuntamento).
+			
+						
+									×
+							
+			
+		
+						
+				
+				
+		
+				
+				
+							
+
+						Chiusura Check Point "Aurelia"
+			
+						Dal 1 gennaio 2026 i permessi per pullman turistici si possono acquistare solo online. 
+			
+						
+									×
+							
+			
+		
+						
+				
+				
+					
+				
+		
+					
+				
+				
+							
+
+    
+        
+
+            
+                Trasporto individuale persone con disabilità – apertura lista d’attesa fino al 15/01/2027
+
+                
+                                    
+
+                                    
+                        Leggi                    
+                            
+
+            
+                ×
+            
+
+        
+
+    
+        
+
+            
+                Sciopero venerdì 20 novembre 2026 – possibili disservizi
+
+                
+                    Situazione sciopero - I servizi dello Sportello al pubblico di via Silvio D'Amico n 38 e del Contact Center 06 57003 risultano attivi. Seguiranno aggiornamenti.                
+
+                            
+
+            
+                ×
+            
+
+        
+
+    
+
+
+
+
+						
+				
+					
+				
+				
+				
+			
+					
+				
+				
+							
+    
+        Home
+
+        
+            
+            ›
+            In Agenda
+
+            ›
+            Trenitalia, modifiche alla circolazione tra Tiburtina e Ostiense il 21 e 22 novembre
+
+        
+    
+
+    
+
+						
+				
+		
+		
+				
+				
+					Trenitalia, modifiche alla circolazione tra Tiburtina e Ostiense il 21 e 22 novembre				
+				
+				
+				
+					Per i lavori propedeutici alla realizzazione della fermata Pigneto				
+				
+				
+		
+		
+				
+				
+							
+					
+			
+							
+			
+							
+		
+					
+				
+								
+				
+																		
+								
+								
+							
+												
+							Condividi						
+																
+							
+																Chiudi Condividi
+							
+							
+																Apri Condividi
+							
+						
+									
+									
+						
+		
+				
+				
+							
+                            
+                                        
+                                        
+                        
+                                                
+                                                                                                Facebook                                                                                            
+                    
+                
+                                            
+                                        
+                                        
+                        
+                                                
+                                                                                                Twitter                                                                                            
+                    
+                
+                                            
+                                        
+                                        
+                        
+                                                
+                                                                                                Linkedin                                                                                            
+                    
+                
+                                            
+                                        
+                                        
+                        
+                                                
+                                                                                                Whatsapp                                                                                            
+                    
+                
+                                    
+        				
+				
+				
+				
+							
+							
+					
+				
+																		
+								
+								
+							
+												
+							Vedi azioni						
+																
+							
+																Chiudi Vedi azioni
+							
+							
+																Apri Vedi azioni
+							
+						
+									
+									
+						
+					
+		
+				
+				
+							
+							
+											
+													
+										Stampa
+									
+						
+						
+				
+				
+				
+							
+							
+											
+
+												
+													
+										Invia
+											
+									
+						
+						
+				
+				
+					
+				
+							
+							
+						
+			
+		
+						
+				
+				
+		
+				
+				
+				
+					
+				
+		
+		
+					
+				
+				
+							Pubblicato il: 06/11/2026 - Aggiornato il: 16/11/2026
+- Validità dal: 21-11-2026 06:00 — Validità fino al: 22-11-2026 23:59
+- Anche nel prossimo fine settimana, sabato 21 e domenica 22 novembre, la circolazione ferroviaria sarà interessata da modifiche tra Roma Tiburtina e Roma Ostiense per lo svolgimento delle attività necessarie alla realizzazione della fermata di Pigneto.
+- I lavori, ha fatto sapere Trenitalia in una nota, comporteranno modifiche alla circolazione per i treni del Regionale delle linee FL1 Orte – Fiumicino Aeroporto (i treni saranno cancellati tra Roma Tiburtina e Roma Ostiense. Attiva la circolazione solo sulle tratte Orte/Poggio Mirteto/Fara Sabina – Roma Tiburtina e viceversa e Roma Ostiense – Fiumicino Aeroporto e viceversa) e FL3 Roma – Cesano/Viterbo (i treni saranno limitati/originari a Roma Ostiense).
+- Restando in tema di cantieri ferroviari, questa settimana sono in programma lavori, serali e notturni, a Termini. Ecco cosa è previsto sui collegamenti regionali.
+- E ancora a proposito di Ferrovie, da tenere presente anche che, questo fine settimana, è previsto uno sciopero: sarà dalle 21 di venerdì alle 20 di sabato. Qui i dettagli.
+- Difficoltà nella richiesta/utilizzo di un servizio indicato nella pagina.
+- Questo modulo non è lo strumento appropriato per richieste di assistenza.
+Se hai riscontrato problemi con un servizio, utilizza il modulo ufficiale:
+- Per segnalazioni relative alle aree di competenza dell'azienda: gestione permessi
+(zone a traffico limitato, parcheggi, disabili), gestione licenze (taxi, NCC,
+autonoleggio), gestione permessi autobus turistici, e segnalazioni relative alla
+pianificazione del trasporto pubblico, Roma Servizi per la Mobilità risponde ai
+cittadini e agli utenti della città tramite il
+
+canale dedicato
+.
+
+Le richieste che perverranno per canali diversi da quelli indicati,
+non potranno essere gestite.
+- Cliccando pul bottone “iscriviti” accetti la policy privacy e i termini e condizioni.
+- Roma Servizi per la Mobilità svolge attività strategiche di pianificazione, supervisione, coordinamento e controllo della mobilità pubblica e privata e gestisce attività di progettazione, sviluppo, realizzazione e gestione dei servizi di mobilità e di supporto alla comunicazione di Roma Capitale e delle aziende partecipate.
+- via Silvio D’Amico 38 – 00145 RomaLunedì – Venerdì 8.30 -16:00Solo su appuntamentoPrenota
+- Apple Store
+											
+									
+						
+						
+				
+				
+		
+				
+				
+					In Evidenza				
+				
+		
+				
+				
+							
+							
+											
+
+											 Permessi Bus turistici
+											
+									
+								
+											
+
+											Permessi Sosta
+											
+									
+								
+											
+
+											Permessi ZTL
+											
+									
+								
+											
+
+											Persone con disabilità
+											
+									
+								
+											
+
+											Servizi per licenze Taxi
+											
+									
+								
+											
+
+											Servizio Car Sharing
+											
+									
+								
+											
+
+											Piano colonnine elettriche
+											
+									
+						
+						
+				
+				
+				
+							
+							
+											
+
+											Bus tram e filobus
+											
+									
+								
+											
+
+											Metro e ferrovie
+											
+									
+								
+											
+
+											Bicicletta
+											
+									
+								
+											
+
+											ZTL a Roma
+											
+									
+								
+											
+
+											Mobilità sharing a Roma
+											
+									
+								
+											
+
+											Trasporto scolastico
+											
+									
+								
+											
+
+											Open bus
+											
+									
+								
+											
+
+											Servizio a chiamata ClicBus
+											
+									
+						
+						
+				
+				
+				
+		
+				
+				
+					Novità				
+				
+				
+				
+							
+							
+											
+
+											Ultime notizie
+											
+									
+								
+											
+
+											Comunicati stampa
+											
+									
+								
+										Avvisi infomobilità
+									
+						
+						
+				
+				
+				
+					Vivere il Comune				
+				
+				
+				
+							
+							
+											
+
+											Foro Italico
+											
+									
+								
+											
+
+											Pedonalizzazioni
+											
+									
+								
+											
+
+											Aeroporti
+											
+									
+						
+						
+				
+				
+					
+				
+		
+					
+		
+				
+				
+					Azienda				
+				
+		
+				
+				
+							
+							
+											
+
+											Chi siamo
+											
+									
+								
+											
+
+											Governance
+											
+									
+								
+											
+
+											Whistleblowing
+											
+									
+								
+											
+
+											Co-Marketing
+											
+									
+								
+											
+
+											Social media policy
+											
+									
+								
+											
+
+											Informativa Cookie
+											
+									
+								
+											
+
+											Informativa Sito web e social media
+											
+									
+						
+						
+				
+				
+				
+							
+							
+											
+
+											Privacy
+											
+									
+								
+											
+
+											Parità di genere
+											
+									
+								
+											
+
+											Amministrazione trasparente
+											
+									
+								
+											
+
+											Bandi e gare
+											
+									
+								
+											
+
+											Note legali
+											
+									
+								
+											
+
+											Dichiarazione di accessibilità
+											
+									
+						
+						
+				
+				
+				
+		
+				
+				
+					UTILITÀ				
+				
+				
+				
+							
+							
+											
+
+											Sito Roma capitale
+											
+									
+								
+											
+
+											Sito Atac
+											
+									
+								
+											
+
+											Car Sharing Roma
+											
+									
+						
+						
+				
+				
+				
+					Seguici su				
+				
+				
+				
+							
+							
+					
+						Facebook-f
+											
+				
+							
+					
+						Instagram
+											
+				
+							
+					
+						X-twitter
+											
+				
+							
+					
+						Youtube
+											
+				
+							
+					
+						Linkedin-in
+											
+				
+							
+					
+						Telegram
+											
+				
+							
+					
+						Icofont-radio
+											
+				
+					
+						
+				
+				
+		
+		
+				
+				
+																														
+				
+				
+				
+																														
+				
+				
+				
+					
+				
+		
+					
+		
+				
+				
+							
+							
+											
+
+											Mappa del sito
+											
+									
+						
+						
+				
+				
+				
+									Sede legale in via Silvio D’Amico 40, 00145 Roma, P. IVA e N. Iscrizione 10735431008 del 31/12/2009 Numero REA 1253419 Capitale Sociale € 10.000.000,00 i.v.
+- Questo sito utilizza cookie tecnici (ed assimilati) necessari al corretto funzionamento del sistema. Selezionando ACCETTA TUTTI I COOKIE è possibile abilitare cookie funzionali e di terze parti. Non vengono utilizzati cookie di profilazione. Selezionando RIFIUTA o chiudendo questa finestra si proseguirà la navigazione utilizzando solo i cookie tecnici. Selezionando IMPOSTAZIONI COOKIE è possibile gestire le proprie preferenze, modificandole in ogni momento. Per ulteriori dettagli si faccia riferimento alla sezione Cookie Policy.
+
+[showing lines 663-2662 of 2662; full output saved to /Users/terkin/.local/share/opencode/shell/aa8e047669bdad0a803f2911ad0ce4d18bcf7981/sh_1fa1f935c003c9ukzS5xh335i1.out]
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && head -60 content/it/2026-11-20-rome-weekend-cie-museums.md 2>/dev/null; echo "---"; ls content/it | tail -8; echo "---"; head -30 content/extra/2026-11-13-weekend-14-15.md
+🏛 **Roma 20–22 novembre: sciopero, open day CIE e notte dei musei**
+
+**🚇 Oggi, 20.11 — sciopero generale**
+Atac e Cotral viaggiano solo nelle fasce garantite: **dall'inizio del servizio alle 8:29** e **dalle 17:00 alle 19:59**. Dalle 8:30 bus, metro e tram sono a rischio: corse possibili riduzioni, stazioni della metro che possono chiudere, scale mobili non garantite. I bus notturni non hanno già circolato questa notte. Nelle zone Centro, Ostiense, Tiburtina, Casilina e Nomentana i percorsi subiscono deviazioni per i cortei. Treni: sciopero FS/Trenitalia **dalle 21:00 di oggi fino alle 20:00 di sabato 21.11**, con regionali garantiti dalle 6:00 alle 9:00 e dalle 18:00 alle 21:00 (RomaToday, Atac, Trenitalia).
+
+**🪪 Open day carta d'identità: 21–22 novembre**
+Il Comune apre sportelli straordinari per la carta d'identità elettronica (CIE). **Prenotazioni dalle 9:00 di venerdì 20.11** sul portale Agenda CIE del Ministero dell'Interno, fino a esaurimento posti.
+
+• **Sabato 21.11:** Municipio III — via Fracchia 45 (8:00–17:00); IV (Casal Bertone) — via Alberto Pollio 50 (8:30–13:00); VIII — via Benedetto Croce 50 (8:30–15:30); XII — via Fabiola 14 (8:30–13:30); XV — piazza Saxa Rubra 19 (8:30–16:00); più gli sportelli del centro (ex PIT e via Petroselli 52).
+• **Domenica 22.11:** solo centro — piazza Sonnino, piazza Santa Maria Maggiore, via Petroselli 52, 8:30–12:30.
+
+Da portare: **prenotazione, fototessera, carta di pagamento e vecchio documento**. La carta d'identità cartacea resta valida solo fino al **31 gennaio 2027** sul territorio italiano; per l'espatrio non vale più dal 3 agosto 2026 (Vivere Roma, 19.11).
+
+**🎶 Notte dei musei: dalle 20:00 di sabato alle 2:00 di domenica**
+Musei in Musica 2026: i musei civici di Roma aprono di notte, biglietto **1 euro** (gratis con la Roma MIC Card), con concerti e performance nelle sale. Partecipano anche le università: i musei della Sapienza, LUISS, Link ed eCampus sono aperti gratuitamente con un proprio programma (RomaToday, Musei in Comune).
+
+**🎄 Christmas Garden — ogni giorno**
+L'Orto Botanico di Trastevere: 17:00–21:00, ingressi scaglionati ogni 30 minuti, biglietti online da 15,90 euro (al botteghino da 18), bambini da 12,90.
+
+**Cosa significa per chi è appena arrivato:** se avevate programmato commissioni in centro sabato, meglio andare a piedi o in metro prima delle 20:00; domenica i trasporti funzionano regolarmente e la sera si può entrare nei musei a poco prezzo.
+
+Fonti: RomaToday (20.11 — sciopero, fasce garantite, deviazioni; Musei in Musica), Vivere Roma (19.11 — open day CIE, sedi e orari), Atac e Trenitalia (fasce garantite), Musei in Comune, christmas-garden.it.
+---
+2026-11-13-peace-talks-eu.md
+2026-11-13-weekend-14-15.md
+2026-11-16-week-ahead.md
+2026-11-17-inflation-strike.md
+2026-11-18-kerch-summit-museums.md
+2026-11-18-rome-newcomer-events.md
+2026-11-19-shenzhen-berlin.md
+2026-11-20-rome-weekend-cie-museums.md
+---
+🎪 **План на вихідні 14–15 листопада: Рим і околиці**
+
+**У Римі**
+
+**Сб–Нд, обидва дні**
+• 🇯🇵 **Japan Days**, Ippodromo Capannelle — японська культура: manga, cosplay, K-pop, кухня, майстерні. Безкоштовно, 10:00–19:30.
+• 🐱 **SuperCat Show**, Nuova Fiera di Roma — 28-ма редакція найбільшої виставки котів: 600+ котів на «подіумі», покази порід і **адопція** (закликають врятувати безпритульних котів Ostia). Години й квитки — на сайті Vivere Roma.
+• 🖼 Виставка портретів **Fayum** — давньоєгипетські портрети; і **Notte Bianca в Villa Medici** (за програмою Roma.Com).
+
+**Субота 14.11**
+• ✍️ 17:30 — вечір до **90-річчя Dacia Maraini** (одна з найвідоміших італійських письменниць), Casa dell'Architettura, Piazza Manfredo Fanti 47. Вхід вільний за реєстрацією Eventbrite.
+• ⚠️ Вранці в центрі — кортео за безпечні дороги: частина вулиць закрита (Vivere Roma).
+
+**Неділя 15.11**
+• 🚫 **Перша domenica ecologica сезону**: у Fascia Verde (центр) — без авто. Винятки — офіційні deroghe; далі такі неділі: 6.12, 24.01, 21.02, 21.03.
+• 🏃 **Corri Libera** — 5 км бігу проти насильства над жінками, маршрут Colosseo → Fori Imperiali. Друга редакція; реєстрація ще відкрита (Sport e Salute).
+• 🎻 **Гранд-фінал Romaeuropa Festival**: **100 Cellos** — сто віолончелістів в Auditorium Parco della Musica. У програмі фіналу також The Classical Rave Party (Енріко Мелоцці перетворює класику в рейв), Third Coast Percussion і Jlin.
+
+**Куди виїхати з Риму на день**
+• 🍷 **Нове вино (vino novello)** — сезон якраз почався: свята в містечках Кастеллі-Романі та всього Лаціо (Frascati, Marino).
+• 🍄 **Свята трюфеля** — осінні ярмарки в гірських містах Лаціо.
+• 🏘 **Borghi in festa** — «містечка на святі»: огляд на вихідні склав Il Quotidiano del Lazio.
+
+**Погода:** мінлива, але тепліше за сезон (Moveo). Беріть дощовик — субота дощова.
+
+Джерела: RomaToday (13.11: domenica ecologica, Japan Days, SuperCat), Corriere Roma, Roma Capitale, Sport e Salute (Corri Libera), Il Mattino di Padova (100 Cellos, 15.11), RaiNews (Melozzi), il Tacco di Bacco, Roma.Com, Vivere Roma, Il Messaggero, Il Quodidiano del Lazio, Moveo by Telepass.
+[0m$ [0mcd /tmp && curl -sL "https://www.3bmeteo.com/meteo/roma" -o wx3.html -w "%{http_code}\n"; python3 - <<'EOF'
+import re,html
+t=open('/tmp/wx3.html',encoding='utf-8',errors='ignore').read()
+t=re.sub(r'<script.*?</script>|<style.*?</style>','',t,flags=re.S)
+s=re.sub(r'<[^>]+>','|',t); s=html.unescape(s); s=re.sub(r'\|+','|',s); s=re.sub(r'[ \t]+',' ',s)
+i=s.find('Sabato')
+print(s[i-200:i+1200] if i>0 else s[:1200])
+EOF
+200
+| 
+ |Previsioni Meteo Roma Oggi - Fino a 15 Giorni - 3B Meteo| |-->| 
+ 
+ 
+ 
+ 
+ 
+ | | | | | | | | | | 
+ | | | | | 
+ | | | | | | 
+ 
+ 
+ 
+ 
+ 
+ |Vai al contenuto principale|Home|Previsioni|Mappe|Media|Notizie|Servizi|Abbonati|Accedi|Menù|×|Previsioni|Generali|Previsioni Italia|Meteo weekend|Meteo settimana|Tendenze lungo termine|Previsioni Mondo|Regionali|Abruzzo|Basilicata|Calabria|Campania|Emilia Romagna|Friuli Venezia Giulia|Lazio|Liguria|Lombardia|Marche|Molise|Piemonte|Puglia|Sardegna|Sicilia|Toscana|Trentino Alto Adige|Umbria|Valle d'Aosta|Veneto|Mappe|Mappe interattive|Cartografico|Previsioni Meteo|Temperature|Precipitazioni|Nuvolosità|Venti|Mari|Monitoraggio e dati|Radar meteo|Satellite meteo|Allerte|Neve & Impianti|Terremoti|Centraline meteo|Traffico|Altri dati dal territorio|Qualità dell'aria|Parassiti animali|Previsione crescita funghi|Previsioni pollini|Notizie|Vedi tutti gli articoli|Cronaca meteo|Previsioni e tendenze|Ambiente e scienza|Glossario|Media|Video e webcam|Video previsionali|Video news|Webcam|Osserva e condividi|Community foto e video|Segnalazioni meteo|Servizi|Vedi tutto|Accedi o registrati|×|-->|Schermata di ricerca località|Recenti|Preferiti|Località non trov
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /tmp && curl -sL "https://www.ilmeteo.it/meteo/Roma" -o wx2.html; python3 - <<'EOF'
+import re,html
+t=open('/tmp/wx2.html',encoding='utf-8',errors='ignore').read()
+t=re.sub(r'<script.*?</script>|<style.*?</style>','',t,flags=re.S)
+s=re.sub(r'<[^>]+>','|',t); s=html.unescape(s); s=re.sub(r'\|+','|',s); s=re.sub(r'[ \t]+',' ',s)
+for kw in ['sabato 21','domenica 22','Sab 21','Dom 22']:
+    i=s.lower().find(kw.lower())
+    if i>0:
+        print('==',kw)
+        print(s[i:i+700]); break
+print(len(s))
+EOF
+== sabato 21
+Sabato 21 Novembre 2026|
+Ore 1:00
+|
+|
+|poco nuvoloso|
+|
+|Temperatura| |12.9 °C | 55.1 °F|
+|Umidità rel.| |86%|
+|Precipitazioni| |- assenti -|
+|Pressione| |1018 mb|
+|Quota 0°C| |2230 m|
+|Quota neve| |1920 m|
+|Vento| |NW 4/12 km/h |2.2/6.5 nodi | 1.1/3.3 m/s|
+|Probabilità di precipitazione| |0%|
+|Visibilità| |>10km |buona|
+|Indice UV| |0|
+|Grandine| |0%|
+|Qualità aria| |CO: 147| | |PM10: 12| | |NO|2|: 8.7|
+|
+|Roma|
+Sabato 21 Novembre 2026|
+Ore 2:00
+|
+|
+|poco nuvoloso|
+|
+|Temperatura| |12.2 °C | 54 °F|
+|Umidità rel.| |92%|
+|Precipitazioni| |- assenti -|
+|Pressione| |1018 mb|
+|Quota 0°C| |2300 m|
+|Quota neve| |-|
+|Vento| |var. 4/9 km/h |0/4.9 nodi | 0/2.5 m/s|
+|Probabilità di precipitazione| |0%
+18988
+[0m◈ [0mWeb Search via Tinyfish ""Ficus al Massimo" 21 22 novembre 2026 Garum ingresso gratuito" 
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && sed -n 1,120p automation/site.py
+#!/usr/bin/env python3
+"""
+Генератор статичного SEO-сайту для каналу «Рим для своїх».
+
+Створює в docs/:
+  index.html          — головна сторінка
+  posts/<slug>.html   — окрема сторінка кожного поста
+  covers/*.png        — копії обкладинок
+  sitemap.xml
+  robots.txt
+  rss.xml
+  404.html
+  <indexnow-key>.txt  — файл підтвердження IndexNow
+
+Запуск:
+  python3 automation/site.py
+  SITE_URL=https://example.com python3 automation/site.py
+"""
+from __future__ import annotations
+
+import html
+import os
+import re
+import shutil
+from datetime import datetime, timezone
+from pathlib import Path
+from xml.sax.saxutils import escape as xml_escape
+from urllib.parse import urlparse
+
+ROOT = Path(__file__).resolve().parent.parent
+DOCS = ROOT / "docs"
+COVERS = ROOT / "covers"
+CONTENT = ROOT / "content/01-first-week.md"
+EXTRA = ROOT / "content/extra"
+KEY_FILE = ROOT / "automation/indexnow.key"
+
+SITE_URL = os.environ.get("SITE_URL", "https://ucrainiroma.it").rstrip("/")
+CHANNEL_URL = "https://t.me/rim_dlia_svoih"
+CHANNEL_HANDLE = "@rim_dlia_svoih"
+CHANNEL_TITLE = "Рим для своїх | Українці в Римі"
+CHANNEL_DESC = (
+    "Щотижневий дайджест для українців у Римі: події, транспорт, житло, "
+    "робота, здоров'я, безпека. Без паніки, з джерелами. 🇺🇦🇮🇹"
+)
+CHANNEL_DESC_IT = (
+    "Digest settimanale per gli ucraini a Roma: eventi, trasporti, casa, "
+    "lavoro, salute, sicurezza. Senza allarmismi, con le fonti. 🇺🇦🇮🇹"
+)
+
+# Перекладений контент: content/it/<slug>.md (той самий slug, що й обкладинка)
+IT_CONTENT = ROOT / "content/it"
+
+LANGS = ("uk", "it")
+
+BRAND = {"uk": "Рим для своїх", "it": "Rim per i nostri"}
+SITE_NAME = {"uk": CHANNEL_TITLE, "it": "Rim per i nostri | Ucraini a Roma"}
+LOCALE = {"uk": "uk_UA", "it": "it_IT"}
+FOOTER = {
+    "uk": "© 2026 «Рим для своїх». Незалежний дайджест для українців у Римі.",
+    "it": "© 2026 «Rim per i nostri». Digest indipendente per gli ucraini a Roma.",
+}
+
+TOPICS = {
+    "uk": [
+        ("🗓", "Події та виставки", "Куди піти цього тижня: безкоштовні події, виставки, що закриваються, ярмарки."),
+        ("🚇", "Транспорт", "Страйки, ремонти, закриття станцій, зміни маршрутів Roma-Lido, метро й автобусів."),
+        ("🏠", "Житло й робота", "Оренда без посередників, вакансії, курси італійської, легальне працевлаштування."),
+        ("🏥", "Здоров'я", "Лікарі, аналізи, SSN, невідкладна допомога, де шукати україномовного лікаря."),
+        ("⚠️", "Безпека", "Шахрайство, фішинг, райони, що робити в складній ситуації."),
+        ("🇺🇦", "Україна і світ", "Коротко про головне — без паніки й без клікбейту."),
+    ],
+    "it": [
+        ("🗓", "Eventi e mostre", "Dove andare questa settimana: eventi gratuiti, mostre in chiusura, mercatini."),
+        ("🚇", "Trasporti", "Scioperi, cantieri, stazioni chiuse, cambi di percorso su Roma-Lido, metro e bus."),
+        ("🏠", "Casa e lavoro", "Affitti senza intermediari, offerte di lavoro, corsi di italiano, lavoro regolare."),
+        ("🏥", "Salute", "Medici, analisi, SSN, pronto soccorso e dove trovare un medico che parli ucraino."),
+        ("⚠️", "Sicurezza", "Truffe, phishing, zone da conoscere e cosa fare in una situazione difficile."),
+        ("🇺🇦", "Ucraina e mondo", "L'essenziale in breve: senza allarmismi e senza clickbait."),
+    ],
+}
+
+STEPS = {
+    "uk": [
+        ("1", "Відкрийте канал", "Натисніть кнопку «Відкрити в Telegram» — канал публічний, читати можна без акаунта у вебверсії."),
+        ("2", "Підпишіться", "Один дайджест на тиждень. Нічого зайвого: лише те, що стосується життя в Римі."),
+        ("3", "Повертайтеся", "Якщо загубили пост — усі матеріали зібрані на цьому сайті."),
+    ],
+    "it": [
+        ("1", "Apri il canale", "Premi «Apri in Telegram»: il canale è pubblico, si legge anche senza account nella versione web."),
+        ("2", "Iscriviti", "Un digest a settimana. Niente di superfluo: solo ciò che riguarda la vita a Roma."),
+        ("3", "Torna quando vuoi", "Se hai perso un post, tutti i materiali sono raccolti su questo sito."),
+    ],
+}
+
+FAQ = {
+    "uk": [
+        ("Це офіційний канал?", "Ні. Це незалежний дайджест для українців, які нещодавно переїхали до Риму. Ми не установа й не посередник."),
+        ("Скільки коштує підписка?", "Нічого. Канал безкоштовний, без реклами й без платних підписок."),
+        ("Звідки беруться новини?", "З відкритих джерел: ANSA, Corriere Roma, Il Messaggero, Il Tempo, AGI, Adnkronos, Il Sole 24 Ore, Il Fatto Quotidiano та офіційних сайтів."),
+        ("Чи можна писати вам?", "Так, у коментарях під постами. Питання й пропозиції допомагають робити дайджест кориснішим."),
+    ],
+    "it": [
+        ("È un canale ufficiale?", "No. È un digest indipendente per gli ucraini arrivati da poco a Roma. Non siamo un ente né un intermediario."),
+        ("Quanto costa l'iscrizione?", "Niente. Il canale è gratuito, senza pubblicità e senza abbonamenti."),
+        ("Da dove arrivano le notizie?", "Da fonti aperte: ANSA, Corriere Roma, Il Messaggero, Il Tempo, AGI, Adnkronos, Il Sole 24 Ore, Il Fatto Quotidiano e siti istituzionali."),
+        ("Si può scrivervi?", "Sì, nei commenti sotto i post. Domande e proposte aiutano a rendere il digest più utile."),
+    ],
+}
+
+TEXT = {
+    "uk": {
+        "badge": "🇺🇦🇮🇹 Телеграм-канал для українців у Римі",
+        "h1": "Рим для своїх — щотижневий дайджест для українців у Римі",
+        "lead": "Події, транспорт, житло, робота, здоров'я й безпека. Коротко, з джерелами, без паніки. Для тих, хто нещодавно переїхав до Риму або вже живе тут.",
+        "cta": "Відкрити в Telegram →",
+        "cta2": "Останні пости",
+        "meta": ["📅 Один дайджест на тиждень", "🔗 Джерела в кожному пості", "🆓 Безкоштовно"],
+        "topics_h2": "Що всередині",
+        "topics_sub": "Шість рубрик, які закривають перші місяці життя в Римі.",
+        "posts_h2": "Останні пости",
+[0m$ [0mcd /tmp && curl -sL "https://www.romatoday.it/eventi/ficus-al-massimo-21-22-novembre-2026.html" -o ficus.html -w "%{http_code}\n"; python3 - <<'EOF'
+import re,html
+t=open('/tmp/ficus.html',encoding='utf-8',errors='ignore').read()
+t=re.sub(r'<script.*?</script>|<style.*?</style>','',t,flags=re.S)
+for p in re.findall(r'<p[^>]*>(.*?)</p>',t,re.S):
+    s=html.unescape(re.sub('<[^>]+>','',p)).strip()
+    if len(s)>60 and 'adblocker' not in s and 'pubblicità' not in s and 'Abbonati' not in s:
+        print('-',s)
+EOF
+200
+- L'app è gratuita: segui la tua città ovunque, sempre a portata di mano.
+- Il 21 e 22 novembre, dalle 10:30 alle 20, torna Ficus al Massimo, uno degli appuntamenti più originali dello shopping indipendente nel centro storico della Capitale.
+- Nella cornice del Garum – Museo della Cucina, a pochi passi dal Circo Massimo, 50 brand indipendenti, artisti e artigiani provenienti da tutta Italia daranno vita a un market che intreccia creatività contemporanea, bellezza e patrimonio storico.
+- Cinquanta realtà creative selezionate, provenienti da tutta Italia, porteranno a Roma il meglio delle proprie produzioni: gioielli artigianali, ceramiche d'autore, illustrazioni, sartoria indipendente, accessori originali, home decor, oggetti di design, vintage ricercato e piccole meraviglie impossibili da trovare nelle vetrine convenzionali.
+- A contraddistinguere l'appuntamento è il dialogo tra il patrimonio storico del Garum Museo della Cucina e le nuove espressioni della creatività italiana. Il museo custodisce una collezione dedicata alla storia della cucina e dell'alimentazione, tra utensili antichi, testimonianze di epoche lontane e ambienti che conservano il fascino della Roma di un tempo.
+- Appuntamento il 21 e 22 novembre, nel cuore di Roma, in via dei Cerchi 87 con ingresso gratuito.
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && grep -n "def parse\|frontmatter\|title\|date" automation/site.py | sed -n 1,60p
+25:from datetime import datetime, timezone
+138:        "title_index": "Рим для своїх — телеграм-канал для українців у Римі",
+168:        "title_index": "Ucraini a Roma — eventi, trasporti, casa e lavoro | Rim per i nostri",
+198:def post_date(cover: Path) -> datetime:
+199:    return datetime.strptime(cover.name[:10], "%Y-%m-%d")
+202:def human_date(value: datetime) -> str:
+279:    posts.sort(key=lambda post: (post["date"], post["slug"]))
+294:        "date": post_date(cover),
+295:        "title": first_line(text),
+299:        "title_it": first_line(text_it) if text_it else "",
+401:    title: str,
+429:<title>{esc(title)}</title>
+434:<meta property="og:title" content="{esc(title)}">
+440:<meta name="twitter:title" content="{esc(title)}">
+443:<link rel="alternate" type="application/rss+xml" title="{esc(SITE_NAME[lang])}" href="{SITE_URL}/rss.xml">
+502:def human_date_lang(value: datetime, lang: str) -> str:
+505:    return human_date(value)
+515:  <a href="{(p['url'] if lang == 'uk' else p['url_it'])}"><img src="{SITE_URL}/covers/{p['cover'].name}" alt="{esc(p['title'] if lang == 'uk' else p['title_it'])}" loading="lazy" width="640" height="480"></a>
+517:    <time datetime="{p['date'].strftime('%Y-%m-%d')}">{human_date_lang(p['date'], lang)}</time>
+518:    <h3><a href="{(p['url'] if lang == 'uk' else p['url_it'])}">{esc(p['title'] if lang == 'uk' else p['title_it'])}</a></h3>
+529:  <h3>{esc(title)}</h3>
+532:        for icon, title, text in TOPICS[lang]
+538:  <h3>{esc(title)}</h3>
+541:        for n, title, text in STEPS[lang]
+558:                "name": p["title"] if lang == "uk" else p["title_it"],
+656:        t["title_index"],
+672:    title = post["title_it"] if it else post["title"]
+678:    post_title = lambda p: p["title_it"] if it else p["title"]
+682:        pager.append(f'<a href="{post_url(prev)}">← {esc(post_title(prev))}</a>')
+686:        pager.append(f'<a href="{post_url(nxt)}">{esc(post_title(nxt))} →</a>')
+691:        "headline": title,
+693:        "datePublished": post["date"].strftime("%Y-%m-%d"),
+694:        "dateModified": post["date"].strftime("%Y-%m-%d"),
+714:  <h1>{esc(title)}</h1>
+715:  <time datetime="{post['date'].strftime('%Y-%m-%d')}">{human_date_lang(post['date'], lang)}</time>
+717:    <img src="{SITE_URL}/covers/{post['cover'].name}" alt="{esc(title)}" width="1080" height="810">
+725:        f"{title} — {BRAND[lang]}",
+738:    last = posts[-1]["date"] if posts else datetime.now(timezone.utc)
+741:    def row(url: str, date: datetime, changefreq: str, priority: str, alts: list[tuple[str, str]]) -> str:
+748:            f"<lastmod>{date.strftime('%Y-%m-%d')}</lastmod>"
+759:        rows.append(row(post["url"], post["date"], "monthly", "0.8", [("uk", post["url"])] + ([("it", post["url_it"])] if post["text_it"] else [])))
+761:            rows.append(row(post["url_it"], post["date"], "monthly", "0.8", [("uk", post["url"]), ("it", post["url_it"]), ("x-default", post["url"])]))
+774:      <title>{xml_escape(p['title'])}</title>
+777:      <pubDate>{p['date'].strftime('%a, %d %b %Y 09:00:00 +0100')}</pubDate>
+785:    <title>{xml_escape(CHANNEL_TITLE)}</title>
+[0m◈ [0mWeb Search via Tinyfish ""Game Vintage" Fusolab 21 22 novembre 2026 Roma ingresso" 
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && sed -n 260,320p automation/site.py; echo ---; grep -n "1024\|cover\|def cmd_file\|file" publish.py | head -40
+return {
+        path.stem: path.read_text(encoding="utf-8").strip()
+        for path in sorted(IT_CONTENT.glob("*.md"))
+        if path.read_text(encoding="utf-8").strip()
+    }
+
+
+def load_posts() -> list[dict]:
+    texts = code_blocks(CONTENT)
+    covers = cover_files()
+    if len(texts) != len(covers):
+        raise SystemExit(
+            f"Постів {len(texts)}, обкладинок {len(covers)} — кількість має збігатися."
+        )
+    translations = italian_texts()
+    posts = []
+    for text, cover in zip(texts, covers):
+        posts.append(make_post(text, cover, translations.get(cover.stem)))
+    posts.extend(extra_posts(translations))
+    posts.sort(key=lambda post: (post["date"], post["slug"]))
+    unknown = set(translations) - {post["slug"] for post in posts}
+    if unknown:
+        raise SystemExit(
+            "Переклад без відповідного поста: " + ", ".join(sorted(unknown))
+        )
+    return posts
+
+
+def make_post(text: str, cover: Path, text_it: str | None = None) -> dict:
+    slug = slug_from_cover(cover)
+    post = {
+        "text": text,
+        "cover": cover,
+        "slug": slug,
+        "date": post_date(cover),
+        "title": first_line(text),
+        "excerpt": body_excerpt(text),
+        "url": f"{SITE_URL}/posts/{slug}.html",
+        "text_it": text_it or "",
+        "title_it": first_line(text_it) if text_it else "",
+        "excerpt_it": body_excerpt(text_it) if text_it else "",
+        "url_it": f"{SITE_URL}/it/posts/{slug}.html",
+    }
+    return post
+
+
+def extra_posts(translations: dict[str, str] | None = None) -> list[dict]:
+    """Окремі пости з content/extra/<slug>.md + covers/<slug>.png."""
+    translations = translations or {}
+    posts = []
+    for path in sorted(EXTRA.glob("*.md")):
+        cover = COVERS / f"{path.stem}.png"
+        if not cover.exists():
+            raise SystemExit(f"Немає обкладинки {cover.name} для content/extra/{path.name}")
+        text = path.read_text(encoding="utf-8").strip()
+        if not text:
+            continue
+        posts.append(make_post(text, cover, translations.get(path.stem)))
+    return posts
+
+
+---
+37:ROOT = Path(__file__).resolve().parent
+43:    0: ROOT / "covers/2026-11-09-intro.png",
+44:    1: ROOT / "covers/2026-11-10-transport.png",
+45:    2: ROOT / "covers/2026-11-11-kids.png",
+46:    3: ROOT / "covers/2026-11-12-exhibitions.png",
+47:    4: ROOT / "covers/2026-11-13-money.png",
+48:    5: ROOT / "covers/2026-11-14-weekend.png",
+49:    6: ROOT / "covers/2026-11-15-digest.png",
+84:def api(method: str, params: dict | None = None, files: dict | None = None):
+86:    if files:
+95:        for key, (filename, data, ctype) in files.items():
+98:                f'Content-Disposition: form-data; name="{key}"; filename="{filename}"\r\n'
+181:    if len(text) > 1024:
+182:        sys.exit(f"Підпис {len(text)} символів — більше ліміту 1024.")
+191:        files={"photo": (image.name, data, "image/png")},
+218:        files={"photo": (image.name, image.read_bytes(), "image/png")},
+248:    cover = COVERS.get(index)
+249:    if cover and cover.exists():
+250:        message_id = send_photo(text, cover, args.dry_run)
+265:    path = Path(args.file)
+276:def cmd_file(args) -> None:
+277:    path = Path(args.file)
+283:    cover = Path(args.cover) if args.cover else ROOT / "covers" / f"{path.stem}.png"
+284:    if not cover.is_absolute():
+285:        cover = ROOT / cover
+286:    if not cover.exists():
+287:        sys.exit(f"Немає обкладинки: {cover}")
+288:    print(f"Пост: {len(text)} символів · {path.name} · обкладинка {cover.name}")
+289:    if len(text) > 1024:
+290:        sys.exit(f"Підпис {len(text)} символів — більше ліміту 1024.")
+291:    message_id = send_photo(text, cover, args.dry_run)
+337:    p_file = sub.add_parser("file", help="опублікувати пост із .md з обкладинкою")
+338:    p_file.add_argument("file", help="шлях до .md з текстом поста")
+339:    p_file.add_argument("--cover", help="шлях до обкладинки (типово covers/<назва>.png)")
+340:    p_file.add_argument("--dry-run", action="store_true")
+341:    p_file.set_defaults(func=cmd_file)
+344:    p_text.add_argument("file", help="шлях до .txt або .md з текстом")
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && git status --short && git log --oneline -5 && git branch --show-current
+M automation/candidates.json
+?? automation/logs/2026-11-20-1900-evening.log
+f683e92 Autopost: Rome-only prompts; move repo to ~/rim-dlia-svoikh so launchd can read it (macOS Documents protection); docs
+82d2110 Add post: Rome weekend 20-22 Nov - transport strike windows, CIE open day, Musei in Musica night (uk+it); autopost prompt now Rome-only
+d975b36 Docs: add launchd autoposting section (09:00/19:00 schedule, logs, disable instructions)
+a135093 Add post: Shenzhen trilateral, Meloni in Berlin no troops, Rome free HIV tests, Christmas Garden opening (uk+it)
+b94bdc0 Add post: Rome newcomer events 19-22 Nov - Christmas Garden, Caput Mundi, Abramovic, Ara Pacis residents (uk+it)
+main
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && ls -la automation/logs | tail -6; echo ---; tail -40 automation/logs/2026-11-20-1900-evening.log; echo ---; date
+-rw-r--r--   1 terkin  staff     324 Nov 20 09:47 2026-11-20-0947-test.log
+-rw-r--r--   1 terkin  staff  143303 Nov 20 19:02 2026-11-20-1900-evening.log
+-rw-r--r--@  1 terkin  staff       0 Nov 20 09:49 launchd-evening.err
+-rw-r--r--@  1 terkin  staff       0 Nov 19 19:18 launchd-evening.out
+-rw-r--r--@  1 terkin  staff       0 Nov 20 09:49 launchd-morning.err
+-rw-r--r--@  1 terkin  staff       0 Nov 20 09:00 launchd-morning.out
+---
+84:def api(method: str, params: dict | None = None, files: dict | None = None):
+86:    if files:
+95:        for key, (filename, data, ctype) in files.items():
+98:                f'Content-Disposition: form-data; name="{key}"; filename="{filename}"\r\n'
+181:    if len(text) > 1024:
+182:        sys.exit(f"Підпис {len(text)} символів — більше ліміту 1024.")
+191:        files={"photo": (image.name, data, "image/png")},
+218:        files={"photo": (image.name, image.read_bytes(), "image/png")},
+248:    cover = COVERS.get(index)
+249:    if cover and cover.exists():
+250:        message_id = send_photo(text, cover, args.dry_run)
+265:    path = Path(args.file)
+276:def cmd_file(args) -> None:
+277:    path = Path(args.file)
+283:    cover = Path(args.cover) if args.cover else ROOT / "covers" / f"{path.stem}.png"
+284:    if not cover.is_absolute():
+285:        cover = ROOT / cover
+286:    if not cover.exists():
+287:        sys.exit(f"Немає обкладинки: {cover}")
+288:    print(f"Пост: {len(text)} символів · {path.name} · обкладинка {cover.name}")
+289:    if len(text) > 1024:
+290:        sys.exit(f"Підпис {len(text)} символів — більше ліміту 1024.")
+291:    message_id = send_photo(text, cover, args.dry_run)
+337:    p_file = sub.add_parser("file", help="опублікувати пост із .md з обкладинкою")
+338:    p_file.add_argument("file", help="шлях до .md з текстом поста")
+339:    p_file.add_argument("--cover", help="шлях до обкладинки (типово covers/<назва>.png)")
+340:    p_file.add_argument("--dry-run", action="store_true")
+341:    p_file.set_defaults(func=cmd_file)
+344:    p_text.add_argument("file", help="шлях до .txt або .md з текстом")
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && git status --short && git log --oneline -5 && git branch --show-current
+M automation/candidates.json
+?? automation/logs/2026-11-20-1900-evening.log
+f683e92 Autopost: Rome-only prompts; move repo to ~/rim-dlia-svoikh so launchd can read it (macOS Documents protection); docs
+82d2110 Add post: Rome weekend 20-22 Nov - transport strike windows, CIE open day, Musei in Musica night (uk+it); autopost prompt now Rome-only
+d975b36 Docs: add launchd autoposting section (09:00/19:00 schedule, logs, disable instructions)
+a135093 Add post: Shenzhen trilateral, Meloni in Berlin no troops, Rome free HIV tests, Christmas Garden opening (uk+it)
+b94bdc0 Add post: Rome newcomer events 19-22 Nov - Christmas Garden, Caput Mundi, Abramovic, Ara Pacis residents (uk+it)
+main
+> build · deepseek-v4.1-flash-free
+---
+Fri Nov 20 19:02:54 CET 2026
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && cat .gitignore && git check-ignore -v automation/logs/2026-11-20-1900-evening.log || echo "NOT IGNORED"
+.env
+.env.local
+__pycache__/
+*.pyc
+.DS_Store
+NOT IGNORED
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && sed -n 1,80p automation/scheduled_post.sh; echo ...; grep -n "git add\|indexnow\|publish" automation/scheduled_post.sh
+#!/bin/zsh
+# Автопостинг для каналу @rim_dlia_svoih.
+# Запускається launchd: 09:00 (morning) і 19:00 (evening).
+# Ручний запуск:  automation/scheduled_post.sh morning
+# Тест без публікації: automation/scheduled_post.sh test
+set -u
+
+REPO="/Users/terkin/rim-dlia-svoikh"
+SLOT="${1:-morning}"
+export PATH="/Users/terkin/.opencode/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin"
+mkdir -p "$REPO/automation/logs"
+cd "$REPO" || exit 1
+
+STAMP=$(date +%Y-%m-%d-%H%M)
+LOG="$REPO/automation/logs/$STAMP-$SLOT.log"
+
+COMMON="Ти працюєш у репозиторії $REPO (сайт ucrainiroma.it + Telegram-канал @rim_dlia_svoih).
+Спочатку прочитай README.md і дотримуйся описаного процесу. Уся текстова продукція — українською (сайт також має італійську версію в content/it/).
+Ніколи не друкуй вміст .env і токени."
+
+FOCUS="ГОЛОВНЕ ПРАВИЛО ФОКУСУ: пишемо ТІЛЬКИ про Рим і те, що безпосередньо стосується життя в Римі.
+ЗАБОРОНЕНО як головну тему: світові новини (саміти, Трамп, Путін, Сі, війна, НАТО, Брюссель, Вашингтон), загальноукраїнські та загальноіталійські новини, якщо вони не мають прямої практичної дії на людину, яка живе в Римі.
+Політика — лише місцева: рішення Comune di Roma / Regione Lazio, які змінюють правила життя в місті (транспорт, тарифи, дозволи, черги, послуги, ZTL, будівництво, парки).
+Добре підходять: події та виставки в Римі, безкоштовні можливості, нові відкриття, ринки, страйки й транспорт, ціни/тарифи в Римі, дедлайни для резидентів, міські послуги, погода/екологічні неділі, поради для новачків.
+Якщо новина світова, але має прямий римський кут (напр. зміна цін на пальне в Римі, закриття вулиці через саміт) — подавай САМЕ римський кут, а не саму світову подію."
+
+MORNING="$COMMON
+$FOCUS
+Завдання: РАНКОВИЙ ВИПУСК. Зроби рівно ОДИН новий пост за сьогодні — про Рим.
+1) Запусти python3 automation/collect.py і переглянь automation/candidates.json (джерела Il Messaggero Roma, Corriere Roma, RomaToday тощо).
+2) Додатково пошукай у Google News RSS запити на кшталт: «Roma oggi», «Roma eventi <дата>», «Roma trasporti sciopero», «Roma gratis», «Roma apertura mostra». Факти підтверджуй 2+ джерелами або офіційним сайтом.
+3) Обери 3–5 римських тем дня (подія/виставка, безкоштовна можливість, транспорт або страйк, практична дрібниця для новачка) і подай короткими блоками.
+4) Не повторюй теми з content/extra/ за останні 2 дні.
+5) Створи content/extra/<YYYY-MM-DD-slug>.md (повний текст), content/it/<slug>.md (італійський переклад того ж матеріалу), content/channel/<slug>-post.md (≤1024 символи, перевір len()).
+6) Додай запис обкладинки у covers/generate.py (kicker/title/sub/date/accent/icon з наявних), згенеруй PNG через python3 covers/generate.py та /opt/homebrew/bin/rsvg-convert -w 1080 -h 810.
+7) Запусти python3 automation/site.py, потім git add -A && git commit && git push origin main.
+8) Опублікуй: python3 publish.py file content/channel/<slug>-post.md --cover covers/<slug>.png
+9) Дочекайся білда GitHub Pages (gh api repos/terkin/rim-dlia-svoih/pages/builds) і запусти python3 automation/indexnow.py.
+10) Перевір пост через https://t.me/s/rim_dlia_svoih і живі URL сайту.
+Якщо римських новин мало — зроби корисний evergreen-пост для новачків у Римі (без повторів). Світові новини не публікуй навіть як запасний варіант."
+
+EVENING="$COMMON
+$FOCUS
+Завдання: ВЕЧІРНІЙ ВИПУСК. Зроби рівно ОДИН новий пост — про Рим на завтра й вихідні.
+1) Запусти python3 automation/collect.py і переглянь candidates.json + свіжі Google News RSS за сьогодні (запити «Roma eventi domani», «Roma weekend», «Roma sciopero trasporti»).
+2) Обери 3–5 римських подій/новин на завтра й вихідні: виставки, безкоштовні події, концерти, ринки, транспорт і страйки, тимчасові закриття, дедлайни.
+3) Не повторюй ранковий пост цього дня: перевір файли content/extra/ за сьогодні.
+4) Створи content/extra/<YYYY-MM-DD-slug>.md, content/it/<slug>.md, content/channel/<slug>-post.md (≤1024 символи, перевір len()).
+5) Обкладинка у covers/generate.py → python3 covers/generate.py → rsvg-convert -w 1080 -h 810.
+6) python3 automation/site.py → git add -A && git commit && git push origin main.
+7) python3 publish.py file content/channel/<slug>-post.md --cover covers/<slug>.png
+8) Дочекайся білда Pages, python3 automation/indexnow.py, перевір t.me/s/rim_dlia_svoih і живі URL.
+Якщо римських подій мало — зроби практичний римський пост (чекліст новачка, поради щодо транспорту/лікаря/житла) без повторів. Світові новини не публікуй."
+
+TEST="$COMMON
+Це тестовий запуск. Нічого не створюй, не змінюй, не публікуй. Просто перевір, що ти бачиш репозиторій: виконай head -5 automation/candidates.json. Відповідай одним словом OK."
+
+case "$SLOT" in
+  morning) TASK="$MORNING" ;;
+  evening) TASK="$EVENING" ;;
+  test)    TASK="$TEST" ;;
+  *) echo "Usage: $0 [morning|evening|test]"; exit 2 ;;
+esac
+
+{
+  echo "=== $(date '+%Y-%m-%d %H:%M:%S') slot=$SLOT ==="
+  /Users/terkin/.opencode/bin/opencode run --auto --model opencode/deepseek-v4.1-flash-free --title "Автопост $SLOT $STAMP" "$TASK"
+  echo "exit=$?"
+} >>"$LOG" 2>&1
+
+# Залишаємо тільки 30 останніх логів
+ls -1t "$REPO/automation/logs"/*.log 2>/dev/null | tail -n +31 | xargs -I{} rm -f {} 2>/dev/null
+
+exit 0
+...
+36:7) Запусти python3 automation/site.py, потім git add -A && git commit && git push origin main.
+37:8) Опублікуй: python3 publish.py file content/channel/<slug>-post.md --cover covers/<slug>.png
+38:9) Дочекайся білда GitHub Pages (gh api repos/terkin/rim-dlia-svoih/pages/builds) і запусти python3 automation/indexnow.py.
+50:6) python3 automation/site.py → git add -A && git commit && git push origin main.
+51:7) python3 publish.py file content/channel/<slug>-post.md --cover covers/<slug>.png
+52:8) Дочекайся білда Pages, python3 automation/indexnow.py, перевір t.me/s/rim_dlia_svoih і живі URL.
+> build · deepseek-v4.1-flash-free
+Now I'll create the post files. First the Ukrainian full version:
+[0m← [0mWrite content/extra/2026-11-20-rome-weekend-parade-fl1.md
+Created file successfully: content/extra/2026-11-20-rome-weekend-parade-fl1.md
+[0m← [0mWrite content/it/2026-11-20-rome-weekend-parade-fl1.md
+Created file successfully: content/it/2026-11-20-rome-weekend-parade-fl1.md
+> build · deepseek-v4.1-flash-free
+[0m← [0mWrite content/channel/2026-11-20-rome-weekend-parade-fl1-post.md
+Created file successfully: content/channel/2026-11-20-rome-weekend-parade-fl1-post.md
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 -c "
+from pathlib import Path
+p=Path('content/channel/2026-11-20-rome-weekend-parade-fl1-post.md')
+t=p.read_text().strip()
+print(len(t))
+"
+1017
+> build · deepseek-v4.1-flash-free
+[0m← [0mEdit covers/generate.py
+Index: covers/generate.py
+===================================================================
+--- covers/generate.py
++++ covers/generate.py
+@@ -60,8 +60,17 @@
+         "accent": "#6EC1FF",
+         "icon": "shield",
+     },
+     {
++        "file": "2026-11-20-rome-weekend-parade-fl1",
++        "kicker": "ВИХІДНІ",
++        "title": ["ПАРАД І", "МАРКЕТИ"],
++        "sub": "Christmas Parade · Ficus · Vegan Village · FL1",
++        "date": "21–22 ЛИСТОПАДА",
++        "accent": "#FFB86B",
++        "icon": "pin",
++    },
++    {
+         "file": "2026-11-20-rome-weekend-cie-museums",
+         "kicker": "РИМ",
+         "title": ["ВИХІДНІ", "21–22 ЛИСТОПАДА"],
+         "sub": "Страйк · CIE · Ніч музеїв",
+
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 covers/generate.py 2>&1 | tail -3 && rsvg-convert -w 1080 -h 810 covers/2026-11-20-rome-weekend-parade-fl1.svg -o covers/2026-11-20-rome-weekend-parade-fl1.png && ls -la covers/2026-11-20-rome-weekend-parade-fl1.png
+/Users/terkin/rim-dlia-svoikh/covers/2026-11-13-money.svg
+/Users/terkin/rim-dlia-svoikh/covers/2026-11-14-weekend.svg
+/Users/terkin/rim-dlia-svoikh/covers/2026-11-15-digest.svg
+-rw-r--r--@ 1 terkin  staff  185448 Nov 20 19:03 covers/2026-11-20-rome-weekend-parade-fl1.png
+> build · deepseek-v4.1-flash-free
+[0m→ [0mRead covers/2026-11-20-rome-weekend-parade-fl1.png 
+> build · deepseek-v4.1-flash-free
+[91m[1mError: [0mFree usage limit reached. Connect a provider or subscribe to OpenCode Go to keep going, or switch models.
+exit=1

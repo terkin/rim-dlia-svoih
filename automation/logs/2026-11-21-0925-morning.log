@@ -1,0 +1,394 @@
+=== 2026-11-21 09:25:56 slot=morning ===
+[0m
+> build · deepseek-v4.1-flash-free
+I'll start by reading the README and understanding the repository process.
+[0m→ [0mRead README.md 
+[0m$ [0mls -la /Users/terkin/rim-dlia-svoikh
+total 288
+drwxr-xr-x@  22 terkin  staff    704 Nov 20 09:46 .
+drwxr-x---+ 167 terkin  staff   5344 Nov 21 09:26 ..
+-rw-r--r--@   1 terkin  staff   6148 Nov  9 11:01 .DS_Store
+-rw-------@   1 terkin  staff     99 Nov  9 11:21 .env
+-rw-r--r--@   1 terkin  staff    300 Nov  9 11:48 .env.example
+drwxr-xr-x@  14 terkin  staff    448 Nov 20 19:02 .git
+-rw-r--r--@   1 terkin  staff     45 Nov  9 11:06 .gitignore
+-rw-r--r--@   1 terkin  staff  21371 Nov 20 09:49 README.md
+drwxr-xr-x@   3 terkin  staff     96 Nov 10 08:59 __pycache__
+-rw-r--r--@   1 terkin  staff  16781 Nov  9 11:56 ai-promotion.md
+drwxr-xr-x@   3 terkin  staff     96 Nov  9 14:03 analysis
+drwxr-xr-x@  14 terkin  staff    448 Nov 19 10:21 automation
+drwxr-xr-x@   4 terkin  staff    128 Nov  9 10:45 brand
+-rw-r--r--@   1 terkin  staff   6323 Nov  9 13:55 catalog-submission.md
+drwxr-xr-x@  11 terkin  staff    352 Nov 10 10:19 content
+drwxr-xr-x@  49 terkin  staff   1568 Nov 20 19:03 covers
+drwxr-xr-x@  14 terkin  staff    448 Nov 20 09:46 docs
+-rw-r--r--@   1 terkin  staff  17729 Nov  9 11:48 preview.html
+-rw-r--r--@   1 terkin  staff  14675 Nov 11 09:36 promotion-catalogs.md
+-rw-r--r--@   1 terkin  staff  18236 Nov  9 12:10 promotion.md
+-rw-r--r--@   1 terkin  staff  13540 Nov 10 08:57 publish.py
+drwxr-xr-x@   4 terkin  staff    128 Nov  9 14:03 reports
+> build · deepseek-v4.1-flash-free
+[0m$ [0mls -la /Users/terkin/rim-dlia-svoikh/content/extra /Users/terkin/rim-dlia-svoikh/content/channel /Users/terkin/rim-dlia-svoikh/content/it 2>&1 | tail -50
+-rw-r--r--@  1 terkin  staff  1375 Nov 13 11:20 2026-11-13-weekend-14-15-post.md
+-rw-r--r--@  1 terkin  staff  1389 Nov 16 08:34 2026-11-16-week-ahead-post.md
+-rw-r--r--@  1 terkin  staff  1498 Nov 17 11:25 2026-11-17-inflation-strike-post.md
+-rw-r--r--@  1 terkin  staff  1457 Nov 18 10:44 2026-11-18-kerch-summit-museums-post.md
+-rw-r--r--@  1 terkin  staff  1348 Nov 18 10:48 2026-11-18-rome-newcomer-events-post.md
+-rw-r--r--@  1 terkin  staff  1289 Nov 19 10:19 2026-11-19-shenzhen-berlin-post.md
+-rw-r--r--@  1 terkin  staff  1385 Nov 20 09:46 2026-11-20-rome-weekend-cie-museums-post.md
+-rw-r--r--@  1 terkin  staff  1401 Nov 20 19:03 2026-11-20-rome-weekend-parade-fl1-post.md
+
+/Users/terkin/rim-dlia-svoikh/content/extra:
+total 160
+drwxr-xr-x@ 18 terkin  staff   576 Nov 20 19:03 .
+drwxr-xr-x@ 11 terkin  staff   352 Nov 10 10:19 ..
+-rw-r--r--@  1 terkin  staff  3656 Nov 10 10:18 2026-11-10-codice-fiscale.md
+-rw-r--r--@  1 terkin  staff  1443 Nov 10 09:31 2026-11-10-events.md
+-rw-r--r--@  1 terkin  staff  1242 Nov 10 14:31 2026-11-10-italy-military-aid.md
+-rw-r--r--@  1 terkin  staff  1521 Nov 10 08:57 2026-11-10-rent.md
+-rw-r--r--@  1 terkin  staff  1924 Nov 11 08:58 2026-11-11-lazio-irpef.md
+-rw-r--r--@  1 terkin  staff  6507 Nov 11 11:01 2026-11-11-rent-long-term.md
+-rw-r--r--@  1 terkin  staff  3129 Nov 12 08:53 2026-11-12-school-alerts.md
+-rw-r--r--@  1 terkin  staff  4274 Nov 13 11:13 2026-11-13-peace-talks-eu.md
+-rw-r--r--@  1 terkin  staff  3064 Nov 13 11:19 2026-11-13-weekend-14-15.md
+-rw-r--r--@  1 terkin  staff  3365 Nov 16 08:34 2026-11-16-week-ahead.md
+-rw-r--r--@  1 terkin  staff  3638 Nov 17 11:25 2026-11-17-inflation-strike.md
+-rw-r--r--@  1 terkin  staff  4159 Nov 18 10:44 2026-11-18-kerch-summit-museums.md
+-rw-r--r--@  1 terkin  staff  3255 Nov 18 10:48 2026-11-18-rome-newcomer-events.md
+-rw-r--r--@  1 terkin  staff  3737 Nov 19 10:19 2026-11-19-shenzhen-berlin.md
+-rw-r--r--@  1 terkin  staff  3686 Nov 20 09:45 2026-11-20-rome-weekend-cie-museums.md
+-rw-r--r--@  1 terkin  staff  4164 Nov 20 19:03 2026-11-20-rome-weekend-parade-fl1.md
+
+/Users/terkin/rim-dlia-svoikh/content/it:
+total 136
+drwxr-xr-x@ 18 terkin  staff   576 Nov 20 19:03 .
+drwxr-xr-x@ 11 terkin  staff   352 Nov 10 10:19 ..
+-rw-r--r--@  1 terkin  staff  2753 Nov 10 10:19 2026-11-10-codice-fiscale.md
+-rw-r--r--@  1 terkin  staff  1162 Nov 10 09:54 2026-11-10-events.md
+-rw-r--r--@  1 terkin  staff   863 Nov 10 14:31 2026-11-10-italy-military-aid.md
+-rw-r--r--@  1 terkin  staff  1151 Nov 10 09:54 2026-11-10-rent.md
+-rw-r--r--@  1 terkin  staff  1419 Nov 11 08:58 2026-11-11-lazio-irpef.md
+-rw-r--r--@  1 terkin  staff  4409 Nov 11 11:01 2026-11-11-rent-long-term.md
+-rw-r--r--@  1 terkin  staff  2025 Nov 12 08:53 2026-11-12-school-alerts.md
+-rw-r--r--@  1 terkin  staff  2719 Nov 13 11:13 2026-11-13-peace-talks-eu.md
+-rw-r--r--@  1 terkin  staff  2320 Nov 13 11:19 2026-11-13-weekend-14-15.md
+-rw-r--r--@  1 terkin  staff  2459 Nov 16 08:34 2026-11-16-week-ahead.md
+-rw-r--r--@  1 terkin  staff  2607 Nov 17 11:25 2026-11-17-inflation-strike.md
+-rw-r--r--@  1 terkin  staff  2939 Nov 18 10:44 2026-11-18-kerch-summit-museums.md
+-rw-r--r--@  1 terkin  staff  2389 Nov 18 10:48 2026-11-18-rome-newcomer-events.md
+-rw-r--r--@  1 terkin  staff  2527 Nov 19 10:19 2026-11-19-shenzhen-berlin.md
+-rw-r--r--@  1 terkin  staff  2733 Nov 20 09:46 2026-11-20-rome-weekend-cie-museums.md
+-rw-r--r--@  1 terkin  staff  3069 Nov 20 19:03 2026-11-20-rome-weekend-parade-fl1.md
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 automation/collect.py 2>&1 | tail -30
+→ ANSA Lazio
+→ Corriere Roma
+→ Il Messaggero Roma
+→ Il Tempo
+→ AGI
+→ Adnkronos
+→ Il Sole 24 Ore
+→ Il Fatto Quotidiano
+
+Збережено 40 кандидатів → /Users/terkin/rim-dlia-svoikh/automation/candidates.json
+> build · deepseek-v4.1-flash-free
+[0m→ [0mRead content/extra/2026-11-20-rome-weekend-parade-fl1.md 
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 -c "
+import json
+d=json.load(open('automation/candidates.json'))
+print(type(d))
+if isinstance(d,dict): print(d.keys())
+items = d if isinstance(d,list) else d.get('items',d.get('candidates',[]))
+for i,x in enumerate(items):
+    print(i, x.get('source'), '|', x.get('title'), '|', x.get('published',''), '|', x.get('link',''))
+"
+<class 'dict'>
+dict_keys(['generated_at', 'count', 'items'])
+0 Il Messaggero Roma | Roma, scoppia la faida tra donne del clan: 52enne uccisa a coltellate durante il raid. La spedizione con armi e benzina | ven, 20 nov 2026 23:34:14 +0100 | https://www.ilmessaggero.it/roma/metropoli/roma_lite_famiglie_rom_morta_cosa_e_successo_ultime_notizie-9903076.html
+1 Il Messaggero Roma | Il cane poliziotto Odina punta un ragazzo, trovata droga addosso e a casa: arrestato | ven, 20 nov 2026 15:40:55 +0100 | https://www.ilmessaggero.it/roma/flaminio/polizia_idraulico_spaccio_droga-9902607.html
+2 Il Messaggero Roma | Roma, cosa fare (anche gratis) venerdì 20, sabato 21 e domenica 22 novembre: Christmas Parade, Vegan Village e Ficus al Massimo | ven, 20 nov 2026 13:17:20 +0100 | https://www.ilmessaggero.it/roma/eventi/roma_cosa_fare_gratis_venerdi_20_sabato_21_domenica_22_novembre-9901896.html
+3 Il Messaggero Roma | Le sagre e le feste nei dintorni di Roma sabato 21 e domenica 22 novembre: dal vino alla crespella, ecco tutti gli appuntamenti | ven, 20 nov 2026 06:52:03 +0100 | https://www.ilmessaggero.it/roma/eventi/le_sagre_le_feste_dintorni_di_roma_sabato_21_domenica_22_novembre_vino_polenta_ecco_tutti_appuntamenti-9902025.html
+4 Il Messaggero Roma | Hilton punta su Roma: a Monti un hotel di lusso con 147 camere | ven, 20 nov 2026 00:23:21 +0100 | https://www.ilmessaggero.it/roma/metropoli/hotel_hilton_lxr_hotels_resort_roma_monti_5_stelle_lusso_via_cavour_via_lanza-9900601.html
+5 Il Fatto Quotidiano | La moglie di Loris, l’ultimo morto dentro l’Ilva: “Era insicura. Voglio giustizia, non vendetta. Lo Stato dia un futuro agli operai” | 2026-11-21T08:21:40+00:00 | https://www.ilfattoquotidiano.it/2026/11/21/ilva-loris-costantino-morto-lavoro-intervista-moglie/8577251/
+6 Il Fatto Quotidiano | Una bambina che fa rinascere un bosco, una quercia di 400 anni e un albero che prende vita: i 5 libri per bambini da leggere nella Giornata Nazionale degli Alberi del 21 novembre | 2026-11-21T08:20:11+00:00 | https://www.ilfattoquotidiano.it/2026/11/21/giornata-nazionale-alberi-libri-bambini-notizie/8560475/
+7 Il Sole 24 Ore | Francesco Schettino lascia il carcere dopo nove anni: affidato ai servizi sociali | 2026-11-21T08:19:25+00:00 | https://www.ilsole24ore.com/art/francesco-schettino-lascia-carcere-nove-anni-affidato-servizi-sociali-AJ6U0GOC
+8 Il Sole 24 Ore | Condono, dalla Lega silenzio-assenso per 180 giorni | 2026-11-21T08:16:10+00:00 | https://www.ilsole24ore.com/art/condono-lega-silenzio-assenso-180-giorni-AJpiWwNC
+9 Il Tempo | Sapienza, premiato chi non occupa. Torna la destra di Azione Universitaria, fuori i compagni | 2026-11-21T08:08:52+00:00 | https://www.iltempo.it/news/attualita/la-sapienza-premia-chi-non-occupa-torna-la-destra-fuori-i-compagni/
+10 Il Tempo | Urso “Non molliamo l’auto, Zes unica sarà la madre di tutte le semplificazioni” | 2026-11-21T07:55:39+00:00 | https://www.iltempo.it/news/italpress/urso-non-molliamo-lauto-zes-unica-sara-la-madre-di-tutte-le-semplificazioni/
+11 Corriere Roma | Schlein al corteo a Roma con Landini e i leader di Avs, ma Conte resta defilato | 2026-11-21T07:32:57+00:00 | https://roma.corriere.it/notizie/cronaca/26_novembre_21/schlein-al-corteo-a-roma-con-landini-e-i-leader-di-avs-ma-conte-resta-defilato-b349ebcf-e20a-4ff8-a1a2-1c9efa431xlk.shtml
+12 Adnkronos | Sognando Sinner e Alcaraz: quanto costa diventare tennisti? I 'conti' alle Atp Finals | 2026-11-21T07:22:28+00:00 | https://www.adnkronos.com/sport/sinner-alcaraz-quanto-costa-diventare-tennisti_NLkQ7WLE95o8hCDelDwqQ
+13 Il Sole 24 Ore | Pensioni, l’1 dicembre arriva il bonus Natale fino a 155 euro per gli assegni bassi | 2026-11-21T07:19:04+00:00 | https://www.ilsole24ore.com/art/pensioni-l-1-dicembre-arriva-bonus-natale-fino-155-euro-gli-assegni-bassi-AJLTwkNC
+14 Adnkronos | Paolo Belli come ballerino per una notte, il ritorno in pista dopo l'incidente e il silenzio | 2026-11-21T07:13:13+00:00 | https://www.adnkronos.com/spettacoli/paolo-belli-incidente-cosa-e-successo-ballando_3SzWJIvIkN3abQ6HOtc6qk
+15 Il Fatto Quotidiano | Lexus NX, debutto alle ATP Finals. Motori, autonomia e prezzi – FOTO | 2026-11-21T07:05:54+00:00 | https://www.ilfattoquotidiano.it/2026/11/21/lexus-nx-debutto-alle-atp-finals-motori-autonomia-e-prezzi-foto/8575766/
+16 Il Tempo | Boggero, giù le mani dal prof anti-occupazioni. Ecco le surreali accuse disciplinari | 2026-11-21T07:03:00+00:00 | https://www.iltempo.it/news/attualita/giu-le-mani-dal-prof-anti-occupazioni-ecco-le-surreali-accuse-disciplinari/
+17 Il Fatto Quotidiano | Lunetta Savino: “In strada mi chiamano ancora Cettina di Un Medico in famiglia. Il lavoro mi ha salvata, ma quando vedo coppie che stanno insieme da sempre mi chiedo: come cavolo hanno fatto?” | 2026-11-21T07:00:26+00:00 | https://www.ilfattoquotidiano.it/2026/11/21/in-strada-mi-chiamano-ancora-cettina-di-un-medico-in-famiglia-quando-vedo-coppie-che-stanno-insieme-da-sempre-mi-chiedo-come-cavolo-hanno-fatto-cosi-lunetta-savino/8578784/
+18 Il Tempo | Landini e la Cgil, un sindacato trasformato in trampolino | 2026-11-21T06:54:59+00:00 | https://www.iltempo.it/news/opinioni-e-commenti/landini-e-la-cgil-un-sindacato-trasformato-in-trampolino/
+19 Il Tempo | Governo, se la scuola diventa il pretesto per l’opposizione politica | 2026-11-21T06:49:22+00:00 | https://www.iltempo.it/news/opinioni-e-commenti/governo-se-la-scuola-diventa-il-pretesto-per-lopposizione-politica/
+20 Adnkronos | Forte terremoto in Perù, la scossa di magnitudo 6.7 avvertita a Lima: paura e gente in strada | 2026-11-21T06:49:08+00:00 | https://www.adnkronos.com/internazionale/esteri/terremoto-oggi-peru-lima_2RqvuHMS354hZGs4LHBjtu
+21 Il Fatto Quotidiano | “Ho i miei blocchi, fatico a non comprare un golfino se la commessa me lo ha tirato fuori dal cassetto. Cerco di tenere distante la sindrome dell’impostore”: parla Pilar Fogliati | 2026-11-21T06:30:26+00:00 | https://www.ilfattoquotidiano.it/2026/11/21/ho-i-miei-blocchi-fatico-a-non-comprare-un-golfino-se-la-commessa-me-lo-ha-tirato-fuori-dal-cassetto-parla-pilar-fogliati/8578880/
+22 Corriere Roma | Corteo e tensioni a Roma, prossimo appuntamento il 12 dicembre. Indagini sugli incappucciati nascosti fra gli studenti | 2026-11-21T06:26:44+00:00 | https://roma.corriere.it/notizie/cronaca/26_novembre_21/corteo-e-tensioni-a-roma-prossimo-appuntamento-il-12-dicembre-indagini-sugli-incappucciati-nascosti-fra-gli-studenti-9b72bc2c-7ddf-4219-93b5-333534b03xlk.shtml
+23 Corriere Roma | Augias, le cadute in casa, i dolori e le cure oncologiche impossibili: così ha detto «basta». Oggi la camera ardente in Campidoglio | 2026-11-21T06:18:43+00:00 | https://roma.corriere.it/notizie/cronaca/26_novembre_21/augias-basta-oncologiche-2328a286-e93a-4e65-a534-fc30c6fccxlk.shtml
+24 Corriere Roma | Sfilata di Chanel a Palazzo Farnese: la moda rivoluziona anche il traffico | 2026-11-21T06:17:54+00:00 | https://roma.corriere.it/notizie/cronaca/26_novembre_21/sfilata-di-chanel-a-palazzo-farnese-la-moda-rivoluziona-anche-il-traffico-a227546e-3e9a-4d9e-8558-922a15dd5xlk.shtml
+25 Corriere Roma | Ostia, al liceo Faraday caos durante l'occupazione. La preside: «Io aggredita». Gli studenti: «Falso, ci ha aizzato contro il cane» | 2026-11-21T06:14:54+00:00 | https://roma.corriere.it/notizie/cronaca/26_novembre_21/ostia-al-liceo-faraday-caos-durante-l-occupazione-la-preside-io-aggredita-gli-studenti-falso-ci-ha-aizzato-contro-il-cane-49e87732-86de-4def-91eb-5d43ac11bxlk.shtml
+26 Adnkronos | Serie A, oggi Parma-Roma: orario, probabili formazioni, dove vederla in tv e streaming | 2026-11-21T05:58:42+00:00 | https://www.adnkronos.com/sport/parma-roma-oggi-serie-a-orario-formazioni-dove-vederla-tv-streaming_4HiSr4sXLSZKWTO3gMdfqU
+27 Adnkronos | Manovra, Centrodestra sempre a caccia di risorse sulla sanità: Salvini rilancia su condono | 2026-11-20T23:10:54+00:00 | https://www.adnkronos.com/economia/manovra-sanita-salvini-condono_36rOPq7Pt5pgVOhIfEywAw
+28 ANSA Lazio | Sanità, inaugurate le Case di Comunità a Veroli e Ferentino | 2026-11-20T17:57:14+00:00 | https://www.ansa.it/lazio/notizie/2026/11/20/sanita-inaugurate-le-case-di-comunita-a-veroli-e-ferentino_8094d101-ae8c-4a33-b525-222f656de193.html
+29 ANSA Lazio | Sei su 10 scoprono tardi l'infezione da Hiv, al via la settimana dei test | 2026-11-20T17:06:15+00:00 | https://www.ansa.it/lazio/notizie/2026/11/20/sei-su-10-scoprono-tardi-linfezione-da-hiv-al-via-la-settimana-dei-test_c743c53e-9f31-41e3-b701-7bc1b20c1eef.html
+30 ANSA Lazio | Il basket si mobilita contro violenza sulle donne, iniziativa della Maxima Roma | 2026-11-20T16:47:01+00:00 | https://www.ansa.it/lazio/notizie/2026/11/20/il-basket-si-mobilita-contro-violenza-sulle-donne-iniziativa-della-maxima-roma_50def03b-a6c8-462b-812e-1909bfc2ecbe.html
+31 Il Sole 24 Ore | Redditi del Governo, per Meloni 185mila euro nel 2025 | 2026-11-20T15:49:53+00:00 | https://www.ilsole24ore.com/art/redditi-governo-meloni-185mila-euro-2025-AJUgwVNC
+32 ANSA Lazio | Ucciso a colpi di forbici a Roma, diffusa la foto del presunto killer | 2026-11-20T15:41:52+00:00 | https://www.ansa.it/lazio/notizie/2026/11/20/ucciso-a-colpi-di-forbici-a-roma-diffusa-la-foto-del-presunto-killer_0a37cdf5-b850-4e95-ad9a-8cdf0e3d1f89.html
+33 AGI | Tensioni nei cortei studenteschi: bombe carta a Roma, striscione incendiato a Napoli (VIDEO) | 2026-11-20T15:38:22+00:00 | https://www.agi.it/cronaca/news/2026-11-20/sciopero-ministero-istruzione-bombe-carta-40115598/
+34 ANSA Lazio | Irruzione all'istituto Faraday di Ostia, preside aggredita | 2026-11-20T15:17:54+00:00 | https://www.ansa.it/lazio/notizie/2026/11/20/irruzione-allistituto-faraday-di-ostia-preside-aggredita_b7ad04fe-92d8-41b6-8cfb-bc08a213d334.html
+35 Il Sole 24 Ore | Il gruppo Il Sole 24 Ore a Bookcity Milano 2026 | 2026-11-20T12:46:13+00:00 | https://www.ilsole24ore.com/art/il-gruppo-sole-24-ore-bookcity-milano-2026-AJsnk9MC
+36 AGI | Violenza sulle donne, "Io non denuncio se": la campagna di Una Nessuna Centomila | 2026-11-20T12:14:08+00:00 | https://www.agi.it/cronaca/news/2026-11-20/violenza-sulle-donne-io-non-denuncio-se-campagna-40113825/
+37 AGI | Omicidio di Tor Pignattara a Roma: diffusa la foto del presunto assassino | 2026-11-20T11:18:01+00:00 | https://www.agi.it/cronaca/news/2026-11-20/omicidio-torpignattara-foto-presunto-colpevole-40113099/
+38 AGI | Nato prematuro e dopo 17 anni prende in braccio la dottoressa che lo ha curato | 2026-11-19T21:16:26+00:00 | https://www.agi.it/cronaca/news/2026-11-19/neonato-prematuro-policlinico-bari-40107998/
+39 AGI | Due minorenni rubano un autobus e finiscono in un fossato: "Volevano imitare GTA" | 2026-11-19T19:15:42+00:00 | https://www.agi.it/cronaca/news/2026-11-19/bus-rubato-rovigo-40105154/
+> build · deepseek-v4.1-flash-free
+[0m→ [0mRead content/extra/2026-11-20-rome-weekend-cie-museums.md 
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && head -20 content/extra/2026-11-19-shenzhen-berlin.md && echo "---CHANNEL EXAMPLE---" && cat content/channel/2026-11-20-rome-weekend-parade-fl1-post.md
+🌍 **Саміт у Шеньчжені: Трамп обіцяє «закінчити війну»; Мелоні в Берліні — без військ**
+
+**Перший тристоронній саміт**
+Сьогодні в Шеньчжені (Китай) вперше зустрічаються Трамп, Путін і Сі Цзіньпін. Трамп напередодні: «У мене особливі відносини з Сі; ми хочемо покласти край війні в Україні» (Il Tempo). На столі — Україна, ядерна тема, Іран; за даними Corriere — і Тайвань (наш пост 18.11). Експерти стримані: Амброзетті (ISPI) каже, що це «не нова Ялта», а ризик — «лише фото для протоколу» (Il Popolo di Pordenone, 19.11). Тобто конкретних домовленостей може й не бути — стежимо за підсумковою заявою.
+
+**Мелоні в Берліні: «охочий» формат без італійських військ**
+Паралельно в Берліні збираються «коаліція охочих» щодо гарантій безпеки для Києва. Італія підтвердила: **військ на землі не буде**, але Рим веде контакти про «узгодження позицій» (ANSA, Il Sole 24 Ore, джерела Chigi). Міністр оборони Кросетто: 6 млрд € інвестицій у захист від гібридної війни (Il Messaggero). la Repubblica зауважує: сьогодні в Берліні — E3 (Франція, Британія, Німеччина), а Італія — «в залі очікування».
+
+**🩺 Рим: безкоштовні тести на ВІЛ та ІПСШ**
+У Римі розширюють профілактику: безкоштовні тести на ВІЛ та інші інфекції, що передаються статевим шляхом, — в університетах і спортивних центрах (Corriere Roma, 19.11). Для новачків це важливо: у перші місяці після переїзду люди часто не знають, куди звертатися. Адреси й години — у статті Corriere Roma; загалом безкоштовне тестування в місті також шукають запитом «test HIV gratuito Roma».
+
+**🎄 Christmas Garden відкрився сьогодні**
+Орто-ботанічний сад у Трастевере відкрив зимовий сезон світла: 19.11–10.01, щодня 17:00–21:00. Квитки онлайн від 15,90 € (каса — від 18 €), дитячий — від 12,90 €; вхід сеансами кожні 30 хвилин. На вихідні краще бронювати заздалегідь (christmas-garden.it).
+
+**🚨 Нагадування: завтра страйк**
+П'ятниця 20.11: 24-годинний страйк ATAC (автобуси, метро, трамваї) + 48-годинний страйк потягів (20–21.11). Зранку перевіряйте fasce di garanzia; за можливості — працюйте з дому або плануйте пішки.
+
+Джерела: Il Tempo, La Stampa, Sky TG24, Il Popolo di Pordenone (19.11 — саміт), ANSA, Il Sole 24 Ore, Quotidiano Nazionale, Il Messaggero, la Repubblica (19.11 — Берлін), Corriere Roma (19.11 — тести), christmas-garden.it (офіційно).
+---CHANNEL EXAMPLE---
+🚆 **Рим на вихідні 21–22.11: парад, маркети, зміни на FL1**
+
+**Потяги.** Усі вихідні FL1 (Orte–Fiumicino) не ходить між Tiburtina і Ostiense, FL3 — лише до Ostiense: роботи на Pigneto. На аеропорт — з Ostiense/Trastevere. Страйк залізниці до 20:00 сб.
+
+**🎅 Christmas Parade.** Нд, 15:00, безкоштовно: piazza del Popolo → via del Corso → piazza di Spagna, о 16:00 шоу. Збір для лікарні Bambino Gesù. До 14:00 центр перекритий.
+
+**🎨 Ficus al Massimo.** Сб–нд, 10:30–20, вхід вільний: 50 брендів у Garum, via dei Cerchi 87 (Circo Massimo).
+
+**🌱 Vegan Village.** Сб–нд, 11–22, Hacienda, via dei Cluniacensi 68: стрітфуд, безкоштовна йога, музика.
+
+**🕹 Game Vintage.** Сб–нд, 10–19, Fusolab, viale della Bella Villa 96: ретро-ігри, VR. Безкоштовно за бронюванням (fusolab.net).
+
+**♻️ Меблі й техніка.** Сб–нд, 8:00–12:30, безкоштовні точки Ama; нд на piazzale Clodio — ще й велосипеди.
+
+**Погода:** сб суха, +19; нд +18, можливі зливи.
+
+Адреси й деталі: https://ucrainiroma.it/posts/2026-11-20-rome-weekend-parade-fl1.html
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && for q in "Roma+oggi" "Roma+eventi+21+novembre" "Roma+traffico+21+novembre" "Roma+gratis" "Roma+mostra+apertura"; do echo "=== $q ==="; curl -s "https://news.google.com/rss/search?q=$q&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+items=re.findall(r'<item>(.*?)</item>',t,re.S)[:8]
+for it in items:
+    ti=re.search(r'<title>(.*?)</title>',it,re.S)
+    pd=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S)
+    print('-',html.unescape(ti.group(1)) if ti else '', '|', pd.group(1) if pd else '')
+"; done
+=== Roma+oggi ===
+- Roma, sciopero generale Cgil in diretta | I cortei: fitto lancio di bombe carta e bottiglie, centro paralizzato. A fuoco immagine di Crosetto. Blitz ai distributori. Manifestanti al ministero dell'Istruzione: «Valditara scendi» - Corriere Roma | Fri, 20 Nov 2026 15:06:00 GMT
+- Manifestazione a Roma. Il corteo arriva al Mim: lancio di bottiglie e sampietrini agli agenti - la Repubblica | Fri, 20 Nov 2026 08:29:48 GMT
+- Sciopero dei mezzi, Roma verso la paralisi. Oggi, venerdì 20 novembre, a rischio metro, bus, tram e treni per 24 ore - RomaToday | Fri, 20 Nov 2026 11:43:30 GMT
+- Serie A, oggi Parma-Roma: orario, probabili formazioni, dove vederla in tv e streaming - Adnkronos | Sat, 21 Nov 2026 05:58:00 GMT
+- Parma-Roma oggi, la diretta della partita di Serie A dalle 18: attesa per le formazioni ufficiali, dove vederla in TV e streaming - Fanpage | Sat, 21 Nov 2026 06:30:34 GMT
+- Sciopero 20 novembre trasporti Roma: stato della rete in tempo reale - Odissea Quotidiana | Fri, 20 Nov 2026 07:52:00 GMT
+- Sciopero 20 novembre, dai blitz ai benzinai alle tensioni al ministero: gli studenti bloccano Roma - RomaToday | Fri, 20 Nov 2026 09:46:55 GMT
+- Rischio paralisi in centro a Roma per lo sciopero generale di oggi: dalle 8.30 il corteo della Cgil e quello degli studenti - Corriere Roma | Fri, 20 Nov 2026 09:08:02 GMT
+=== Roma+eventi+21+novembre ===
+- Weekend a Roma: 20 eventi da non perdere sabato 21 e domenica 22 novembre - RomaToday | Sat, 21 Nov 2026 07:14:43 GMT
+- Musei in Musica 2026 - Musei in Comune | Sat, 21 Nov 2026 02:25:50 GMT
+- Sito Istituzionale | Mobilità e trasporti, weekend 21 e 22 novembre - Roma Capitale | Sat, 21 Nov 2026 07:31:08 GMT
+- Roma, cosa fare (anche gratis) venerdì 20, sabato 21 e domenica 22 novembre: Christmas Parade, Vegan Village e Ficus al Massimo - Il Messaggero | Fri, 20 Nov 2026 12:17:20 GMT
+- Musei in Musica 2026: aperture serali e spettacoli diffusi (a 1 euro) - RomaToday | Sat, 21 Nov 2026 05:53:00 GMT
+- Cosa fare a Roma nel weekend 21-22 novembre, Musei in Musica - Vivere Roma | Thu, 19 Nov 2026 21:33:06 GMT
+- Sito Istituzionale | Musei in Musica, il 21 novembre la sedicesima edizione - Roma Capitale | Thu, 19 Nov 2026 16:04:51 GMT
+- Musei in Musica: il 21 novembre a Roma oltre 50 luoghi della cultura aperti dalle 20, concerti ed eventi a un euro - Radio Globo - Solo le Migliori | Thu, 19 Nov 2026 16:57:31 GMT
+=== Roma+traffico+21+novembre ===
+- Sito Istituzionale | Mobilità e trasporti, weekend 21 e 22 novembre - Roma Capitale | Sat, 21 Nov 2026 07:31:08 GMT
+- Le strade chiuse a Roma sabato 21 e domenica 22 novembre 2026 - RomaToday | Sat, 21 Nov 2026 06:25:14 GMT
+- Traffico 20, 21 e 22 novembre 2026: le previsioni del weekend - SICURAUTO.it | Fri, 20 Nov 2026 16:19:50 GMT
+- Panoramica, prorogate fino al 21 novembre le limitazioni al traffico - MessinaToday | Thu, 12 Nov 2026 08:00:00 GMT
+- Sciopero 20 – 21 novembre 2026: come sta andando nei trasporti? - SICURAUTO.it | Fri, 20 Nov 2026 14:33:35 GMT
+- Roma blindata oggi 20 novembre per lo sciopero generale: tutti i disagi tra mezzi, cortei e scuole - RomaToday | Fri, 20 Nov 2026 05:05:00 GMT
+- Viabilità, le modifiche al traffico dal 18 ottobre al 21 novembre - ArezzoNotizie | Sun, 18 Oct 2026 07:00:00 GMT
+- Lavori di messa in sicurezza al passaggio a livello: dal 13 al 21 novembre chiude al traffico di un tratto di via dei Giusiana - Comune di Cuneo | Tue, 10 Nov 2026 09:11:00 GMT
+=== Roma+gratis ===
+- Cosa fare gratis a Roma questa settimana - Sulle Strade del Mondo | Mon, 16 Nov 2026 08:00:00 GMT
+- Cosa fare a Roma nel weekend 21-22 novembre, Musei in Musica - Vivere Roma | Thu, 19 Nov 2026 21:33:06 GMT
+- Roma, cosa fare (anche gratis) venerdì 20, sabato 21 e domenica 22 novembre: Christmas Parade, Vegan Village e Ficus al Massimo - Il Messaggero | Fri, 20 Nov 2026 12:17:20 GMT
+- Mogol scrive un brano contro i femminicidi e dona i ricavi: lo canta Giusy Ferreri gratis a Roma - Corriere Adriatico | Fri, 20 Nov 2026 17:29:25 GMT
+- Marina Abramović all’Arco di Giano: Confession, l’asino d’oro gratis a Roma - UniversiNet Magazine | Fri, 20 Nov 2026 15:31:42 GMT
+- Domenica al Museo - Ministero della cultura | Sun, 01 Nov 2026 07:00:00 GMT
+- Napoli-Roma gratis su DAZN: dove vederla in diretta streaming, orario e formazioni | DAZN News Italia - DAZN | Sat, 24 Oct 2026 07:00:00 GMT
+- Avengers: Doomsday, fan event gratis a Roma il 6 dicembre: come prenotare - SpazioGames | Tue, 17 Nov 2026 15:13:54 GMT
+=== Roma+mostra+apertura ===
+- Mostre a Roma il 21 e 22 novembre: appuntamenti nei musei - inITALY | Thu, 19 Nov 2026 15:55:48 GMT
+- Apertura straordinaria serale della mostra Robert Mapplethorpe nei weekend - Museo dell'Ara Pacis | Tue, 22 Sep 2026 07:00:00 GMT
+- Le più importanti mostre in apertura dopo l'estate 2026 - Sky Arte | Sat, 05 Sep 2026 07:00:00 GMT
+- Riapre l’Antica Biblioteca della Trinità dei Monti a Roma. Una mostra con 40 artisti per inaugurarla - Artribune | Sun, 27 Sep 2026 07:00:00 GMT
+- Mostra Renato Guttuso. Anima mediterranea: apertura a Roma - inITALY | Wed, 14 Oct 2026 17:12:17 GMT
+- Roma: Apertura all'Umano - Mostra d'arte contemporanea nel Lazio - Alvèus Studio - Itinerari nell'Arte | Sat, 07 Mar 2026 21:39:28 GMT
+- Il volto delle Donne - Senato della Repubblica | Tue, 10 Mar 2026 07:00:00 GMT
+- Roma, apertura della mostra fotografica “Supereroi” - Polizia | Tue, 08 Oct 2024 07:00:00 GMT
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://news.google.com/rss/search?q=Giusy+Ferreri+Roma+gratis&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+for it in re.findall(r'<item>(.*?)</item>',t,re.S)[:6]:
+    ti=re.search(r'<title>(.*?)</title>',it,re.S); pd=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S); ln=re.search(r'<link>(.*?)</link>',it,re.S)
+    print('-',html.unescape(ti.group(1)) if ti else '','|',pd.group(1) if pd else '')
+    print(' ',ln.group(1) if ln else '')
+"
+- Mogol scrive un brano contro i femminicidi e dona i ricavi: lo canta Giusy Ferreri gratis a Roma - Corriere Adriatico | Fri, 20 Nov 2026 17:29:25 GMT
+  https://news.google.com/rss/articles/CBMinwFBVV95cUxNQU9zbVg0RnhFUDZiS0tCLWZ2d3BmcGZyZmpkaVhoUHc2MWpjS01uLUU3YkJwRTI3TENLUVh5aEpiQnd5OGJiWDBaSnNoZXJrV21GQ0VndDBiM3dtQlpIYlMzVW05Zzl3MjJnOE02TEhVM3htWWdPanhUMDhPSTBVLTNTZXhLT190UVFOZm1EbU5MTWN3cWJHN2NmVGI1SWfSAaQBQVVfeXFMT0ZDRmZ5LWZma3pjWmJ6OXlsVnE3aTllZUVISzZ2WkEtNnZhUVctRTdrQnh1ZzJWaG1kclFNb3R1c3cyNERUZXZ1RDU5ZXR2elVSbzZHSERtRkpDUDM0NUlsS1B6MHY3OTEyZWZmRUM4V1dDWW1BVVI5eEtwQjNnWUtiYUJPRDBoYWNEMFhBcXBZMzNpcmlqejJ4aEozUjFsR2h6UVQ?oc=5
+- “Sono Giusy Ferreri”. La cantante deposita il marchio vocale per non farsi clonare dall’IA - la Repubblica | Tue, 12 May 2026 07:00:00 GMT
+  https://news.google.com/rss/articles/CBMiwgFBVV95cUxPbzFHMmozajlkZW9yMzg3enczNWt0aE93ZTVERnJSQTl2X0FabXdhN2Q5b1RZdFJMMmlFWG9HY3ppOGFwZWt1WWY3anNzV2NMbW5zWk1oZ0VlbktkbjhCNkxCc2JCVTJaWU90WFlSN0xWdlFwaTZWNHkxWHh5UzBESkdOSWE5OG5aWnFMUXVqLTUwM2UtQl90aFdQeUdwd1B6ek5iZGNFRjMtSm1zOVBsakI0YnNUYkhNU0JFd3J4dkVBUQ?oc=5
+- Baby K - Roma-Bangkok (feat. Giusy Ferreri) testo lyric - www.rockit.it | Sat, 11 Jun 2016 06:03:37 GMT
+  https://news.google.com/rss/articles/CBMif0FVX3lxTE1PUVBWaDZlSkxQQkhOMzNhWnJhOE90T2c1THhabHEyNFhHd3FKcWdtQ1o4cEJDdlZtblFhYVZuOG8tMWJQeEY3b0FXMzlES3BLdlViT1JzTVM1RDFNeUFBRTdvd3NmSFptZE0yUWItOGxieWpuT0JtQmR0bE9DN28?oc=5
+- Baby K e Giusy Ferreri: Roma-Bangkok è il video dei record da 5 anni - Radio Italia | Wed, 08 Jul 2020 07:00:00 GMT
+  https://news.google.com/rss/articles/CBMiqwFBVV95cUxPMk90dmRBSG1JWEJfVmFWS2tBTFdkdEZvRF9iUEpqaUdIVkRwazE4X2xFNVVMaEJZUVliZnZTVUxReEZaaGh3cXdGUHYwalBpbUthcXRwNUd2ODJMYW5TMEZRc09rZ3ZYVjNxbW9XUnFGYklWUmtSTE9hZFM1UVVtNW5aenFzLXZGTXgxdkNhMDJzYzg4MW5PdWNwR0dEQ2wzZjZlMng5WTBNeDA?oc=5
+- "Cortometraggi", Giusy Ferreri in concerto a Roma - RomaToday | Fri, 23 Sep 2022 07:00:00 GMT
+  https://news.google.com/rss/articles/CBMiiwFBVV95cUxNYXd4RDdLaHQ5RG5vZGswT2dVXzItaVRfNnZXenNZQ2hkLXA4SlZDNWxSSXZybHVCdGZrTHhocHhCX2Y1ZEJpNXJDYmYzcERoa3hBZkoyZ1NvSEpoMjk5cXlhbXNyLTk0UVh6T0s3a2FPRGdLMDJjRTN1TGdZM1dvRFYwd2lGNnZYdzFz?oc=5
+- Per “Roma-Bangkok” insieme a Baby K e Giusy Ferreri anche un ‘Gemello DiVerso’ - Fanpage | Sat, 25 Jul 2015 07:00:00 GMT
+  https://news.google.com/rss/articles/CBMiogFBVV95cUxPcVBCdnJwT0Q1UjNFNWZTaG1xNERkU0JsMXQ4N0dfbWhULW9SWXBfSnNxaFJsTWh2T3k1bWpFTVdUbmVzWWp0aU1ZVlVPZnhyMkt6R2V3LXdFN2xNS0pyY3JxY25ZTk9RbTVTSFM0RjcyTG9XeDFKX1pjUzVibkxrLURuaUNaSlhCNVl3ZDJ6RFdTbzhjS1ZBZW1ZSHMyREZDMlE?oc=5
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -sL "https://www.romatoday.it/eventi/weekend-roma-21-22-novembre-2026-eventi.html" -A "Mozilla/5.0" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S)
+t=re.sub(r'<style.*?</style>','',t,flags=re.S)
+txt=re.sub(r'<[^>]+>','\n',t)
+lines=[html.unescape(x).strip() for x in txt.split('\n')]
+lines=[x for x in lines if len(x)>40]
+print('\n'.join(lines[:120]))
+"
+Raccontiamo la tua città ogni giorno, con una redazione sul territorio. La pubblicità ci permette di offrire gratuitamente gran parte del nostro lavoro: scegli come continuare a leggerci.
+Aggiungi il sito alle eccezioni e ricarica la pagina.
+Niente pubblicità e un sostegno diretto al nostro lavoro, al prezzo di un caffè al mese.
+L'app è gratuita: segui la tua città ovunque, sempre a portata di mano.
+Poco o parzialmente nuvoloso per velature sparse
+3 canzoni uscite questa settimana e che meritano di essere ascoltate
+La Tv ai telemorenti, lo streaming ai giovani
+Weekend a Roma: 20 eventi da non perdere sabato 21 e domenica 22 novembre
+Vegan Village a Roma, un weekend tra cucina vegetale, arte e attivismo: il 21 e 22 novembre
+Il 21 e 22 novembre arriva a Roma l'Open Weekend della nuova ID. Polo con imperdibili offerte per il Black Friday
+Tutti gli store Valentino Automobili (Megastore Tiburtina di via Tiburtina 1097, Megastore Prenestina di via Prenestina 911, Megastore Tuscolana di via Tuscolana 1233 e City Store Parioli di via Giovanni Paisiello 34)
+A Roma un'agorà civica con spazio di pensiero: le grandi rassegne e i cicli culturali tra i palcoscenici di Argentina, Valle e Torlonia
+Teatri Argentina (largo di Torre Argentina, 52), Valle (via del Teatro Valle, 21) e Torlonia (via Lazzaro Spallanzani, 1A)
+Quando il cibo smette di essere soltanto cibo: cinque secoli di arte raccontano ciò che mettiamo a tavola
+Da Eataly Roma Ostiense ti aspetta solo il bello del Natale
+Dallo spazio alle nuove opportunità: a Roma torna New Space Economy Expoforum
+"La meravigliosa Carica dei 101" al Teatro Manzoni
+Tre storie, tre sguardi sull'esistenza: il teatro racconta identità, guerra e sentimenti
+Paolo Kessisoglu porta Closer al Teatro Ambra Jovinelli
+Memoria di ragazza, il libro di Annie Ernaux diventa uno spettacolo: tre attrici raccontano il peso dei ricordi
+"Monet. Una vita a colori" al teatro Brancaccio
+Musei in Musica 2026: aperture serali e spettacoli diffusi (a 1 euro)
+"Campagnano Terra di Sapori": il 28 e 29 novembre la seconda edizione
+Christmas Parade, parata di Natale al centro di Roma
+Steve Hackett racconta i Genesis all'Auditorium Parco della Musica
+Auditorium Parco della Musica - Sala Petrassi
+Christmas Market in una villa del Cinquecento
+Lirica, al Campidoglio la masterclass per scoprire i segreti della Tosca
+Il Comando Generale dell'Arma dei Carabinieri apre le porte al pubblico
+Comando Generale dell'Arma dei Carabinieri
+"La Tempesta Silenziosa. Ultimo atto. Prima del prossimo", lezione di Baricco su 'Le Notti bianche' di Dostoevskij
+Auditorium Parco della Musica - Sala Santa Cecilia
+Mercatino della solidarietà di Croce Rossa Roma
+Ficus al Massimo: artigiani e artisti indipendenti a due passi dal Circo Massimo
+Fantafestival Young, rassegna dedicata a registi italiani under 35 del cinema horror e fantastico
+"Utopia - Il Viaggio": esperienza immersiva gratuita per ragazzi all'Aviator Park di Velletri
+"Il principe delle tenebre", spettacolo per tutta la famiglia a Centrale Preneste Teatro
+Reel Rock 20 World Tour Italia al The Space Cinema Moderno
+"Venerdì 13" con Martina Colombari al Teatro Parioli
+Ensemble! Suoni e Sapori dal Mondo a Fusolab
+Riflessi, incontro con Nicola Piovani a Palazzo Cipolla
+Museo del Corso – Polo museale Palazzo Cipolla
+"Si può imparare la meraviglia?", il talk alla libreria Eli
+Toy Day, borsa scambio del giocattolo vintage
+Laboratorio di origami – Origami in fiore
+Incantevole Italia: un viaggio nel belcanto tra opera, romanza da camera e canzone napoletana
+Attività e visite didattiche per bambini e famiglie con Cicero in Rome
+Il nuovo Parco di Centocelle con pic nic vegano
+Mercatino delle Streghe alla Città dell’Altra Economia
+S. Ignazio e Gesù, le chiese dei Gesuiti a Roma: visita e degustazione di vini
+© Copyright 2009-2026 - RomaToday plurisettimanale telematico reg. tribunale di
+Roma n. 93/2010 - ISSN 2785-4396 - P.iva 10786801000
+Citynews spa - Viale Stelvio 70, 20159 Milano
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -sL "https://www.romatoday.it/eventi/weekend-roma-21-22-novembre-2026-eventi.html" -A "Mozilla/5.0" | python3 -c "
+import sys,re
+t=sys.stdin.read()
+for m in re.finditer(r'href=\"(https://www\.romatoday\.it/[^\"]+)\"[^>]*>([^<]{15,120})<',t):
+    u,ti=m.group(1),m.group(2)
+    if any(k in ti.lower() for k in ['mercato','mercatin','christmas','carabinieri','toy','streghe','centocelle','parco','mostra','musei','natale','albero','vegan','new space']):
+        print(ti.strip(),'->',u)
+" | sort -u | head -40
+(no output)
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -sL "https://www.comune.roma.it/web/it/notizia.page?contentId=NOT123456" -A "Mozilla/5.0" -o /dev/null -w "%{http_code}\n"; curl -s "https://news.google.com/rss/search?q=Carabinieri+aprono+porte+Roma+21+novembre&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+for it in re.findall(r'<item>(.*?)</item>',t,re.S)[:6]:
+    ti=re.search(r'<title>(.*?)</title>',it,re.S); pd=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S)
+    print('-',html.unescape(ti.group(1)) if ti else '','|',pd.group(1) if pd else '')
+"
+404
+- Per la settimana dei Diritti dell’Infanzia e Adolescenza, ultimo appuntamento con "Leggiamo una storia". Sabato 21 novembre, ore 10,00 al Centro Culturale Polivalente - Geronimo News | Fri, 20 Nov 2026 11:04:00 GMT
+- Rieti, domani celebrazione della “Virgo fidelis”, patrona dell’arma dei Carabinieri - TusciaTimes.eu | Fri, 20 Nov 2026 07:50:48 GMT
+- Giornata contro la violenza sulle donne 2026: le principali iniziative in Italia - OK Salute e Benessere | Thu, 19 Nov 2026 05:41:19 GMT
+- Accoltellato in strada alle porte di Milano, gravissimo un uomo - MilanoToday | Fri, 21 Nov 2025 08:00:00 GMT
+- È in programma sabato 21 novembre, ore 16,00 con ritrovo in Piazza Cavour: “È con te. Rimini cammina contro la violenza sulle donne” - Geronimo News | Wed, 18 Nov 2026 12:49:00 GMT
+- Accoltellato e rapinato in strada alle porte di Milano: fermato un ragazzo di 23 anni - MilanoToday | Tue, 21 Jul 2026 07:00:00 GMT
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 - <<'EOF'
+import urllib.request,re,html
+q="Le+strade+chiuse+a+Roma+sabato+21+e+domenica+22+novembre+2026"
+url=f"https://news.google.com/rss/search?q={q}&hl=it&gl=IT&ceid=IT:it"
+req=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0'})
+t=urllib.request.urlopen(req).read().decode()
+items=re.findall(r'<item>(.*?)</item>',t,re.S)
+for it in items[:3]:
+    ti=re.search(r'<title>(.*?)</title>',it,re.S).group(1)
+    ln=re.search(r'<link>(.*?)</link>',it,re.S).group(1)
+    print(ti); print(ln)
+EOF
+Le strade chiuse a Roma sabato 21 e domenica 22 novembre 2026 - RomaToday
+https://news.google.com/rss/articles/CBMimgFBVV95cUxQZ3ZhTXNDWi1YeHN6V1RGSlFaSm5Sd3BJZFdqSHR3UXpHMFJKVlU1MXVQZzNrMzNYRE1oaWZVTHdOdUZDRVRTWGVqMFItSF9lUkhLQVFLd1kyQ0RjYzR2bjMwQ09DRzhTR0U0N2FGSm5FVlcwWUlTT3I5ZnpUYmtQRE95aUUtZzFFQklWS3gyZEtVQ1hmOUNTd1RB?oc=5
+Cosa fare a Roma nel weekend 21-22 novembre, Musei in Musica - Vivere Roma
+https://news.google.com/rss/articles/CBMiqAFBVV95cUxQUGg5OVVxUmc5LUpMd19OTEw5ZzllWDIwb1JSMVUxeUxFaGkzNk5IQktOR21uMFZEeDBoc25fcUlzMGprS3pDcURqbnpJUDNDZnB6VWZzTVQtTFBpT1FMMDBpcm9uRXh3TWJRcURwaEZaTEVyN24xMFRrRjNLVWVORGdFZW80NXVqVmtsVHNYRkozR0tEdXo3dlZOSXZkQ1UzVHphdTJ2Z2U?oc=5
+La raccolta dei rifiuti ingombranti a Roma sabato 21 e domenica 22 novembre 2026 - RomaToday
+https://news.google.com/rss/articles/CBMirgFBVV95cUxNckZCcjd3cWVfYWIzaDdvZFpwbHhEREx5SW9XNnlKYm5halBlRW5xdmR2MXg3LVdnaC1Vd2NTX01LbndJeG5peFZuMGx5S0EwenZCQ1dDUl8tQlBSYy10UTB2a2JYOFEwZ19QOHY3ajNzbFlJLXBOQkFNNXJsMlNhNThvRVZTME1vZERfNlkwNTZ1dEZUdno2b3lXWHdDWHk3djZXa1FybWxkWlYweEE?oc=5
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://news.google.com/rss/search?q=%22Christmas+Market%22+villa+Cinquecento+Roma&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+for it in re.findall(r'<item>(.*?)</item>',t,re.S)[:6]:
+    ti=re.search(r'<title>(.*?)</title>',it,re.S); pd=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S)
+    print('-',html.unescape(ti.group(1)) if ti else '','|',pd.group(1) if pd else '')
+"; echo "=== TOY DAY ==="; curl -s "https://news.google.com/rss/search?q=Toy+Day+Roma+21+novembre&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+for it in re.findall(r'<item>(.*?)</item>',t,re.S)[:5]:
+    ti=re.search(r'<title>(.*?)</title>',it,re.S); pd=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S)
+    print('-',html.unescape(ti.group(1)) if ti else '','|',pd.group(1) if pd else '')
+"
+- Christmas Market in una villa del Cinquecento - RomaToday | Tue, 03 Nov 2026 12:04:07 GMT
+- Guida ai mercatini di Natale 2026 a Roma: luoghi e date - RomaToday | Thu, 19 Nov 2026 13:32:00 GMT
+- Game Vintage Market | 23-24 maggio 2026 - RomaToday | Sun, 24 May 2026 07:00:00 GMT
+- Felicittà 2026 - Teatro Torlonia, visite teatralizzate tra affreschi e segreti nobiliari - RomaToday | Thu, 25 Jun 2026 07:00:00 GMT
+- "Torniamo a Sognare", l’Earth Day 2026 a Roma - RomaToday | Wed, 22 Apr 2026 07:00:00 GMT
+- Il Roma Celtic Festival alla Città dell’Altra Economia - RomaToday | Sun, 31 May 2026 07:00:00 GMT
+=== TOY DAY ===
+- Weekend a Roma: 20 eventi da non perdere sabato 21 e domenica 22 novembre - RomaToday | Sat, 21 Nov 2026 07:14:43 GMT
+- Toy day, borsa scambio del giocattolo vintage | 21-22 novembre 2026 - RomaToday | Fri, 20 Nov 2026 06:22:57 GMT
+- Baseball per ciechi, open day della Roma All Blinds Asd - SuperAbile - Inail | Sun, 08 Nov 2026 08:00:00 GMT
+- TOY DAY Roma 2026: due giorni tra giocattoli vintage, retrogaming e collezionismo - CorriereNerd.it | Sun, 01 Nov 2026 07:13:41 GMT
+- Toys Center Roma, arriva la notte Pokémon per Dominio Delta e i 30 anni del brand - Toystore | Fri, 06 Nov 2026 08:00:00 GMT
+> build · deepseek-v4.1-flash-free
+received SIGTERM again during shutdown; exiting. Still pending:
+  nothing tracked; the stuck finalizer is outside any LayerNode layer
