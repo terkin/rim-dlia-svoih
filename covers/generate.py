@@ -213,6 +213,15 @@ COVERS = [
         "accent": "#C9A7FF",
         "icon": "mail",
     },
+    {
+        "file": "2026-11-21-rome-open-day-markets-closures",
+        "kicker": "РИМ",
+        "title": ["OPEN DAY", "І РИНКИ"],
+        "sub": "Carabinieri · Streghe · благодійні маркети",
+        "date": "21–22 ЛИСТОПАДА",
+        "accent": "#FFD166",
+        "icon": "pin",
+    },
 ]
 
 
