@@ -222,6 +222,15 @@ COVERS = [
         "accent": "#FFD166",
         "icon": "pin",
     },
+    {
+        "file": "2026-11-22-rome-week-panettone-bazar",
+        "kicker": "ТИЖДЕНЬ",
+        "title": ["РИМ 23–29", "ЛИСТОПАДА"],
+        "sub": "Panettone Maximo · Urban Bazar · дощі",
+        "date": "23–29 ЛИСТОПАДА",
+        "accent": "#FFB86B",
+        "icon": "pin",
+    },
 ]
 
 

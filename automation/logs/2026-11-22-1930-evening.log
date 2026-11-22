@@ -1,0 +1,547 @@
+=== 2026-11-22 19:30:07 slot=evening ===
+[0m
+> build · deepseek-v4.1-flash-free
+I'll start by reading the README and understanding the repository process.
+[0m→ [0mRead README.md 
+[0m$ [0mls -la /Users/terkin/rim-dlia-svoikh
+total 288
+drwxr-xr-x@  22 terkin  staff    704 Nov 21 09:32 .
+drwxr-x---+ 167 terkin  staff   5344 Nov 21 18:12 ..
+-rw-r--r--@   1 terkin  staff   6148 Nov  9 11:01 .DS_Store
+-rw-------@   1 terkin  staff     99 Nov  9 11:21 .env
+-rw-r--r--@   1 terkin  staff    300 Nov  9 11:48 .env.example
+drwxr-xr-x@  14 terkin  staff    448 Nov 21 09:32 .git
+-rw-r--r--@   1 terkin  staff     45 Nov  9 11:06 .gitignore
+-rw-r--r--@   1 terkin  staff  21371 Nov 20 09:49 README.md
+drwxr-xr-x@   3 terkin  staff     96 Nov 10 08:59 __pycache__
+-rw-r--r--@   1 terkin  staff  16781 Nov  9 11:56 ai-promotion.md
+drwxr-xr-x@   3 terkin  staff     96 Nov  9 14:03 analysis
+drwxr-xr-x@  14 terkin  staff    448 Nov 19 10:21 automation
+drwxr-xr-x@   4 terkin  staff    128 Nov  9 10:45 brand
+-rw-r--r--@   1 terkin  staff   6323 Nov  9 13:55 catalog-submission.md
+drwxr-xr-x@  11 terkin  staff    352 Nov 10 10:19 content
+drwxr-xr-x@  51 terkin  staff   1632 Nov 21 09:32 covers
+drwxr-xr-x@  14 terkin  staff    448 Nov 21 09:32 docs
+-rw-r--r--@   1 terkin  staff  17729 Nov  9 11:48 preview.html
+-rw-r--r--@   1 terkin  staff  14675 Nov 11 09:36 promotion-catalogs.md
+-rw-r--r--@   1 terkin  staff  18236 Nov  9 12:10 promotion.md
+-rw-r--r--@   1 terkin  staff  13540 Nov 10 08:57 publish.py
+drwxr-xr-x@   4 terkin  staff    128 Nov  9 14:03 reports
+> build · deepseek-v4.1-flash-free
+[0m$ [0mls -la /Users/terkin/rim-dlia-svoikh/content/extra | tail -20; echo "---IT---"; ls -la /Users/terkin/rim-dlia-svoikh/content/it | tail -20; echo "---CHANNEL---"; ls -la /Users/terkin/rim-dlia-svoikh/content/channel | tail -20
+total 176
+drwxr-xr-x@ 19 terkin  staff   608 Nov 21 09:31 .
+drwxr-xr-x@ 11 terkin  staff   352 Nov 10 10:19 ..
+-rw-r--r--@  1 terkin  staff  3656 Nov 10 10:18 2026-11-10-codice-fiscale.md
+-rw-r--r--@  1 terkin  staff  1443 Nov 10 09:31 2026-11-10-events.md
+-rw-r--r--@  1 terkin  staff  1242 Nov 10 14:31 2026-11-10-italy-military-aid.md
+-rw-r--r--@  1 terkin  staff  1521 Nov 10 08:57 2026-11-10-rent.md
+-rw-r--r--@  1 terkin  staff  1924 Nov 11 08:58 2026-11-11-lazio-irpef.md
+-rw-r--r--@  1 terkin  staff  6507 Nov 11 11:01 2026-11-11-rent-long-term.md
+-rw-r--r--@  1 terkin  staff  3129 Nov 12 08:53 2026-11-12-school-alerts.md
+-rw-r--r--@  1 terkin  staff  4274 Nov 13 11:13 2026-11-13-peace-talks-eu.md
+-rw-r--r--@  1 terkin  staff  3064 Nov 13 11:19 2026-11-13-weekend-14-15.md
+-rw-r--r--@  1 terkin  staff  3365 Nov 16 08:34 2026-11-16-week-ahead.md
+-rw-r--r--@  1 terkin  staff  3638 Nov 17 11:25 2026-11-17-inflation-strike.md
+-rw-r--r--@  1 terkin  staff  4159 Nov 18 10:44 2026-11-18-kerch-summit-museums.md
+-rw-r--r--@  1 terkin  staff  3255 Nov 18 10:48 2026-11-18-rome-newcomer-events.md
+-rw-r--r--@  1 terkin  staff  3737 Nov 19 10:19 2026-11-19-shenzhen-berlin.md
+-rw-r--r--@  1 terkin  staff  3686 Nov 20 09:45 2026-11-20-rome-weekend-cie-museums.md
+-rw-r--r--@  1 terkin  staff  4749 Nov 21 09:31 2026-11-21-rome-open-day-markets-closures.md
+-rw-r--r--@  1 terkin  staff  4125 Nov 21 09:27 2026-11-21-rome-weekend-parade-fl1.md
+---IT---
+total 144
+drwxr-xr-x@ 19 terkin  staff   608 Nov 21 09:31 .
+drwxr-xr-x@ 11 terkin  staff   352 Nov 10 10:19 ..
+-rw-r--r--@  1 terkin  staff  2753 Nov 10 10:19 2026-11-10-codice-fiscale.md
+-rw-r--r--@  1 terkin  staff  1162 Nov 10 09:54 2026-11-10-events.md
+-rw-r--r--@  1 terkin  staff   863 Nov 10 14:31 2026-11-10-italy-military-aid.md
+-rw-r--r--@  1 terkin  staff  1151 Nov 10 09:54 2026-11-10-rent.md
+-rw-r--r--@  1 terkin  staff  1419 Nov 11 08:58 2026-11-11-lazio-irpef.md
+-rw-r--r--@  1 terkin  staff  4409 Nov 11 11:01 2026-11-11-rent-long-term.md
+-rw-r--r--@  1 terkin  staff  2025 Nov 12 08:53 2026-11-12-school-alerts.md
+-rw-r--r--@  1 terkin  staff  2719 Nov 13 11:13 2026-11-13-peace-talks-eu.md
+-rw-r--r--@  1 terkin  staff  2320 Nov 13 11:19 2026-11-13-weekend-14-15.md
+-rw-r--r--@  1 terkin  staff  2459 Nov 16 08:34 2026-11-16-week-ahead.md
+-rw-r--r--@  1 terkin  staff  2607 Nov 17 11:25 2026-11-17-inflation-strike.md
+-rw-r--r--@  1 terkin  staff  2939 Nov 18 10:44 2026-11-18-kerch-summit-museums.md
+-rw-r--r--@  1 terkin  staff  2389 Nov 18 10:48 2026-11-18-rome-newcomer-events.md
+-rw-r--r--@  1 terkin  staff  2527 Nov 19 10:19 2026-11-19-shenzhen-berlin.md
+-rw-r--r--@  1 terkin  staff  2733 Nov 20 09:46 2026-11-20-rome-weekend-cie-museums.md
+-rw-r--r--@  1 terkin  staff  3635 Nov 21 09:31 2026-11-21-rome-open-day-markets-closures.md
+-rw-r--r--@  1 terkin  staff  3033 Nov 21 09:27 2026-11-21-rome-weekend-parade-fl1.md
+---CHANNEL---
+total 112
+drwxr-xr-x@ 16 terkin  staff   512 Nov 21 09:31 .
+drwxr-xr-x@ 11 terkin  staff   352 Nov 10 10:19 ..
+-rw-r--r--@  1 terkin  staff  1549 Nov 10 10:19 2026-11-10-codice-fiscale-post.md
+-rw-r--r--@  1 terkin  staff  1311 Nov 11 08:59 2026-11-11-lazio-irpef-post.md
+-rw-r--r--@  1 terkin  staff  1444 Nov 11 10:59 2026-11-11-rent-long-term-post.md
+-rw-r--r--@  1 terkin  staff  1589 Nov 12 08:54 2026-11-12-school-alerts-post.md
+-rw-r--r--@  1 terkin  staff  1642 Nov 13 11:14 2026-11-13-peace-talks-eu-post.md
+-rw-r--r--@  1 terkin  staff  1375 Nov 13 11:20 2026-11-13-weekend-14-15-post.md
+-rw-r--r--@  1 terkin  staff  1389 Nov 16 08:34 2026-11-16-week-ahead-post.md
+-rw-r--r--@  1 terkin  staff  1498 Nov 17 11:25 2026-11-17-inflation-strike-post.md
+-rw-r--r--@  1 terkin  staff  1457 Nov 18 10:44 2026-11-18-kerch-summit-museums-post.md
+-rw-r--r--@  1 terkin  staff  1348 Nov 18 10:48 2026-11-18-rome-newcomer-events-post.md
+-rw-r--r--@  1 terkin  staff  1289 Nov 19 10:19 2026-11-19-shenzhen-berlin-post.md
+-rw-r--r--@  1 terkin  staff  1385 Nov 20 09:46 2026-11-20-rome-weekend-cie-museums-post.md
+-rw-r--r--@  1 terkin  staff  1336 Nov 21 09:31 2026-11-21-rome-open-day-markets-closures-post.md
+-rw-r--r--@  1 terkin  staff  1403 Nov 21 09:27 2026-11-21-rome-weekend-parade-fl1-post.md
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 automation/collect.py 2>&1 | tail -30
+→ ANSA Lazio
+→ Corriere Roma
+→ Il Messaggero Roma
+→ Il Tempo
+→ AGI
+→ Adnkronos
+→ Il Sole 24 Ore
+→ Il Fatto Quotidiano
+
+Збережено 39 кандидатів → /Users/terkin/rim-dlia-svoikh/automation/candidates.json
+> build · deepseek-v4.1-flash-free
+[0m→ [0mRead content/extra/2026-11-21-rome-weekend-parade-fl1.md 
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 -c "
+import json
+d=json.load(open('automation/candidates.json'))
+items=d if isinstance(d,list) else d.get('items',d)
+print(type(d), len(items))
+for i in items:
+    print('-',i.get('source'),'|',i.get('title'),'|',i.get('published','')[:25])
+    print('  ',i.get('link','')[:120])
+"
+<class 'dict'> 39
+- Il Messaggero Roma | Roma, scoppia la faida tra donne del clan: 52enne uccisa a coltellate durante il raid. La spedizione con armi e benzina | ven, 20 nov 2026 23:34:14
+   https://www.ilmessaggero.it/roma/metropoli/roma_lite_famiglie_rom_morta_cosa_e_successo_ultime_notizie-9903076.html
+- Il Messaggero Roma | Hilton punta su Roma: a Monti un hotel di lusso con 147 camere | ven, 20 nov 2026 00:23:21
+   https://www.ilmessaggero.it/roma/metropoli/hotel_hilton_lxr_hotels_resort_roma_monti_5_stelle_lusso_via_cavour_via_lanza
+- Il Messaggero Roma | Roma, Lungotevere dei Mellini: sbloccato il cantiere per il nuovo parcheggio. I lavori riprendono lunedì | ven, 20 nov 2026 00:20:00
+   https://www.ilmessaggero.it/roma/centro_storico/roma_lungotevere_mellini_sbloccato_cantiere_nuovo_parcheggio-9900863.htm
+- Il Messaggero Roma | Roma, a 20 anni voleva gettarsi da ponte Flaminio, dove si era dato il primo bacio con l'ex. Salvato dalla polizia | sab, 21 nov 2026 15:08:24
+   https://www.ilmessaggero.it/roma/flaminio/roma_ragazzo_salvato_ponte_flaminio_primo_bacio_ex_cosa_e_successo-9904529.htm
+- Il Messaggero Roma | Morto Paolo Bulgari, il grande gioielliere aveva 89 anni: i funerali a Roma lunedì 23 novembre | sab, 21 nov 2026 13:15:00
+   https://www.ilmessaggero.it/roma/centro_storico/morto_paolo_bulgari_chi_era-9904444.html
+- Corriere Roma | Ferraro Smi supera 3-0 il Club Italia: seconda vittoria consecutiva per le romane | 2026-11-22T18:00:36+00:00
+   https://roma.corriere.it/notizie/cronaca/26_novembre_22/ferraro-smi-supera-3-0-il-club-italia-seconda-vittoria-consecuti
+- Corriere Roma | Lazio, Angelilli: «Investire in cultura significa generare valore e stimolare la competitività» | 2026-11-22T17:45:09+00:00
+   https://roma.corriere.it/notizie/cronaca/26_novembre_22/lazio-angelilli-investire-in-cultura-significa-generare-valore-e
+- Il Sole 24 Ore | Trasparenza salariale, l’Italia supera Francia e Germania: lo stipendio indicato nel 61% degli annunci di lavoro | 2026-11-22T17:39:01+00:00
+   https://www.ilsole24ore.com/art/trasparenza-salariale-l-italia-supera-francia-e-germania-stipendio-indicato-61percento-a
+- Adnkronos | Valeria Marini: "Il mio desiderio è avere una famiglia, ora ho una relazione ma non parlo" | 2026-11-22T17:28:55+00:00
+   https://www.adnkronos.com/spettacoli/valeria-marini-verissimo-oggi-22-novembre_5QWgSf1rbnXXCyizwZVz7i
+- Corriere Roma | Parco Aniene, petizione dei residenti perché i 30 ettari privati non vadano all'asta ma siano acquisiti dal Comune: «Prezioso corridoio ecologico» | 2026-11-22T17:03:57+00:00
+   https://video.corriere.it/roma/parco-aniene-petizione-dei-residenti-perche-i-30-ettari-privati-non-vadano-all-asta-ma-si
+- AGI | Christmas Parade a Roma: migliaia in centro per aiutare i bambini del Bambino Gesù | 2026-11-22T17:02:04+00:00
+   https://www.agi.it/cronaca/video/2026-11-22/christmas-parade-roma-bambino-ges-40144672/
+- Corriere Roma | Bomba carta al Tufello, danni alla vetrata d'ingresso di un palazzo. L'ipotesi dell'avvertimento a uno spacciatore | 2026-11-22T16:23:47+00:00
+   https://roma.corriere.it/notizie/cronaca/26_novembre_22/bomba-carta-al-tufello-danni-alla-vetrata-d-ingresso-di-un-palaz
+- AGI | Morte De Gennaro, sequestrata la dependance della villa in Maremma: sotto esame le ultime ... | 2026-11-22T16:15:02+00:00
+   https://www.agi.it/cronaca/news/2026-11-22/de-gennaro-suicidio-casa-sequestrata-40143403/
+- AGI | Malattie rare, a Tor Bella Monaca sport e solidarietà per accendere i riflettori sulla CIDP | 2026-11-22T16:14:10+00:00
+   https://www.agi.it/cronaca/news/2026-11-22/roma-tor-bella-monaca-cidp-40144388/
+- ANSA Lazio | Muti e i Wiener a Roma incantano con la Messa dell'Incoronazione di Mozart | 2026-11-22T15:55:49+00:00
+   https://www.ansa.it/lazio/notizie/2026/11/22/muti-e-i-wiener-a-roma-incantano-con-la-messa-dellincoronazione-di-mozart_1
+- Il Fatto Quotidiano | “Ho speso 4500 euro per trasformare una stanza nella biblioteca della Bella e la Bestia. Ho fatto tutto da sola. La parte più difficile? Il soffitto, non avevo fatto i conti con la forza di gravità”: la storia di Erika Mathews | 2026-11-22T15:43:37+00:00
+   https://www.ilfattoquotidiano.it/2026/11/22/ho-speso-4500-euro-per-trasformare-una-stanza-nella-biblioteca-della-bella-e
+- Il Fatto Quotidiano | Bimba di due anni si perde nel deserto dell’Arizona: ritrovata dopo cinque ore. Indossava solo un pannolino | 2026-11-22T15:32:48+00:00
+   https://www.ilfattoquotidiano.it/2026/11/22/bimba-di-due-anni-si-perde-nel-deserto-dellarizona-ritrovata-dopo-cinque-ore
+- Il Fatto Quotidiano | Binaghi su Sinner: “Non ha nessuna colpa, similitudini con il caso doping. Finals a Torino o Milano nel 2028? Non so, è complesso” | 2026-11-22T15:16:21+00:00
+   https://www.ilfattoquotidiano.it/2026/11/22/sinner-binaghi-caso-doping-atp-finals-notizie/8580244/
+- Il Fatto Quotidiano | Cop 31 fallita, Guterres: “Combustibili fossili, chi trae profitto dalla distruzione del pianeta non detti le regole della lotta per salvarlo” | 2026-11-22T15:11:02+00:00
+   https://www.ilfattoquotidiano.it/2026/11/22/cop31-fallita-guterres-combustibili-fossili-notizie/8580379/
+- Il Fatto Quotidiano | Atlante dei luoghi maestri, l’estratto del libro di Alex Corlazzoli sulla casa del presidente Pertini | 2026-11-22T15:10:00+00:00
+   https://www.ilfattoquotidiano.it/2026/11/22/pertini-casa-stella-corlazzoli-notizie/8580363/
+- Corriere Roma | Roma ospita il primo Forum nazionale sulla rigenerazione urbana: cinque giorni per ripensare le città attraverso la cultura | 2026-11-22T14:49:56+00:00
+   https://roma.corriere.it/notizie/cronaca/26_novembre_22/roma-ospita-il-primo-forum-nazionale-sulla-rigenerazione-urbana-
+- Adnkronos | Valerio Scanu e i chili persi: "Sto bene, non devo giustificarmi" | 2026-11-22T14:00:11+00:00
+   https://www.adnkronos.com/spettacoli/valerio-scanu-foto-instagram-dimagrito_5ETCbLelJHCnpeWMPypKXu
+- Adnkronos | Messi, follia in Mls: palla in faccia all'avversario e rissa sfiorata | 2026-11-22T12:34:43+00:00
+   https://www.adnkronos.com/sport/messi-follia-mls-palla-faccia-avversario-video-rissa_68g8JyAQzZZNg6JM3r2X5S
+- Adnkronos | Il mediatore del Qatar: "Usa-Iran, nessuna svolta imminente. Pace a Gaza difficile con attuale governo Israele" | 2026-11-22T11:29:00+00:00
+   https://www.adnkronos.com/internazionale/esteri/iran-usa-mediatore-qatar-med-dialogues_6DeGuNKWpV8c3hnceTBSze
+- ANSA Lazio | Roma segreta, un Atlante svela luoghi nascosti da folle e cliché | 2026-11-22T10:31:06+00:00
+   https://www.ansa.it/lazio/notizie/2026/11/22/roma-segreta-un-atlante-svela-luoghi-nascosti-da-folle-e-cliche_0a5f9984-a6
+- ANSA Lazio | Sport e Salute, a Colle Oppio Natale è sul ghiaccio con pista di pattinaggio e curling | 2026-11-22T09:57:13+00:00
+   https://www.ansa.it/lazio/notizie/2026/11/22/sport-e-salute-a-colle-oppio-natale-e-sul-ghiaccio-con-pista-di-pattinaggio
+- Il Sole 24 Ore | Venezia, nel 2027 il ticket d’accesso potrebbe raddoppiare: da 10 a 20 euro | 2026-11-22T07:50:00+00:00
+   https://www.ilsole24ore.com/art/venezia-ticket-d-accesso-potrebbe-raddoppiare-10-20-euro-AJlijeOC
+- Il Tempo | Gianni De Gennaro trovato senza vita nella casa in Toscana | 2026-11-22T06:33:39+00:00
+   https://www.iltempo.it/news/attualita/gianni-de-gennaro-trovato-senza-vita-nella-casa-in-toscana/
+- AGI | De Gennaro, l'isolamento, i biglietti d'addio e l’inchiesta a Grosseto per istigazione al suicidio | 2026-11-22T06:17:13+00:00
+   https://www.agi.it/cronaca/news/2026-11-21/de-gennaro-suicidio-sparato-40128627/
+- AGI | In diecimila per l'ultimo saluto a Corrado Augias in Campidoglio | 2026-11-21T20:39:08+00:00
+   https://www.agi.it/cronaca/news/2026-11-21/augias-camera-ardente-campidoglio-40128287/
+- ANSA Lazio | L'ultimo saluto a Corrado Augias, oltre 10.000 in fila in Campidoglio | 2026-11-21T20:29:37+00:00
+   https://www.ansa.it/lazio/notizie/2026/11/21/aperta-la-camera-ardente-di-corrado-augias-al-campidoglio_e506b886-afa0-48a
+- ANSA Lazio | Serie A: poker di Malen, la Roma batte il Parma 5-1 e resta in scia | 2026-11-21T20:27:34+00:00
+   https://www.ansa.it/lazio/notizie/2026/11/21/serie-a-poker-di-malen-la-roma-batte-il-parma-5-1-e-resta-in-scia_22142406-
+- Il Tempo | Poker di Malen e la Roma vince 5-1 a Parma | 2026-11-21T19:05:51+00:00
+   https://www.iltempo.it/news/italpress/poker-di-malen-e-la-roma-vince-5-1-a-parma/
+- Il Tempo | Meteo, nubi a Roma e allerta maltempo in parte della penisola: ecco dove | 2026-11-21T18:33:10+00:00
+   https://www.iltempo.it/news/attualita/meteo-nubi-a-roma-e-allerta-maltempo-in-parte-della-penisola-ecco-dove/
+- Il Tempo | L’analista Giovanni Giacalone: «La sinistra globale usa le stesse parole per nascondere la propria crisi» | 2026-11-21T17:41:57+00:00
+   https://www.iltempo.it/news/attualita/la-sinistra-globale-usa-le-stesse-parole-per-nascondere-la-propria-crisi/
+- Il Sole 24 Ore | La Sardegna scommette sui nomadi digitali: la Regione investe 10 milioni di euro | 2026-11-21T17:24:41+00:00
+   https://www.ilsole24ore.com/art/la-sardegna-scommette-nomadi-digitali-regione-investe-10-milioni-euro-AJif6pNC
+- Il Tempo | Noslin super e Lecce sconfitto, la Lazio non smette di sognare | 2026-11-21T16:26:16+00:00
+   https://www.iltempo.it/news/italpress/noslin-super-e-lecce-sconfitto-la-lazio-non-smette-di-sognare/
+- Il Sole 24 Ore | Decreto Scuola, un ordine del giorno sugli e-book per siglare la pace tra Fdi e azzurri | 2026-11-21T12:57:32+00:00
+   https://www.ilsole24ore.com/art/decreto-scuola-ordine-giorno-e-book-siglare-pace-fdi-e-azzurri-AJhLyoNC
+- Il Sole 24 Ore | Codice della strada, scompare la tariffa massima per chi perde il biglietto in autostrada | 2026-11-21T12:49:33+00:00
+   https://www.ilsole24ore.com/art/codice-strada-scompare-tariffa-massima-chi-perde-biglietto-autostrada-AJ7exTMC
+> build · deepseek-v4.1-flash-free
+> build · deepseek-v4.1-flash-free
+[0m⚙ [0mexecute {"code":"const qs = [\n  \"Roma eventi domani\",\n  \"Roma weekend 28 29 novembre\",\n  \"Roma sciopero trasporti\",\n  \"Roma Natale mercatini 2026\",\n  \"Roma mostre novembre 2026\"\n];\nconst out = {};\nfor (const q of qs) {\n  const url = `https://news.google.com/rss/search?q=${encodeURIComponent(q)}&hl=it&gl=IT&ceid=IT:it`;\n  try {\n    const r = await fetch(url);\n    out[q] = (await r.text()).slice(0, 6000);\n  } catch(e) { out[q] = \"ERR \"+e; }\n}\nreturn out;"} 
+> build · deepseek-v4.1-flash-free
+[0m⚙ [0mexecute {"code":"const qs = [\n  \"Roma eventi settimana 23 29 novembre\",\n  \"Roma pista ghiaccio Colle Oppio Natale\",\n  \"Roma mercatini Natale piazza Navona 2026\",\n  \"Roma trasporti novembre 2026 metro\",\n  \"Roma sciopero 27 novembre 2026\",\n  \"Roma weekend 28 novembre\"\n];\nconst out = {};\nfor (const q of qs) {\n  const url = `https://news.google.com/rss/search?q=${encodeURIComponent(q)}&hl=it&gl=IT&ceid=IT:it`;\n  const r = await fetch(url);\n  const t = await r.text();\n  const items = [...t.matchAll(/<item>([\\s\\S]*?)<\\/item>/g)].map(m=>m[1]);\n  out[q] = items.slice(0,8).map(it=>{\n    const title=(it.match(/<title>([\\s\\S]*?)<\\/title>/)||[])[1];\n    const date=(it.match(/<pubDate>([\\s\\S]*?)<\\/pubDate>/)||[])[1];\n    const src=(it.match(/<source url=\"([^\"]+)\"/)||[])[1];\n    return `${date} | ${title} | ${src}`;\n  });\n}\nreturn out;"} 
+> build · deepseek-v4.1-flash-free
+[0m⚙ [0mexecute {"code":"const urls = [\n \"https://www.universinet.it/cosa-fare-a-roma-nel-weekend-anohhi-e-loggia-dei-vini/\",\n \"https://www.romatoday.it/eventi/\",\n \"https://www.turismoroma.it/it/eventi\",\n \"https://www.comune.roma.it/web/it/notizie.page\"\n];\nconst out={};\nfor (const u of urls){\n  try{ const r=await fetch(u); const t=await r.text(); out[u]={status:r.status,len:t.length,head:t.slice(0,3000)}; }\n  catch(e){ out[u]=\"ERR \"+e; }\n}\nreturn out;"} 
+> build · deepseek-v4.1-flash-free
+[0m⚙ [0mexecute {"code":"const r = await fetch(\"https://www.romatoday.it/eventi/\");\nconst t = await r.text();\nconst links = [...t.matchAll(/<a[^>]+href=\"(https:\\/\\/www\\.romatoday\\.it\\/eventi\\/[^\"]+)\"[^>]*>([\\s\\S]{0,200}?)<\\/a>/g)];\nconst seen=new Set(); const rows=[];\nfor(const m of links){\n  const u=m[1]; if(seen.has(u))continue; seen.add(u);\n  const txt=m[2].replace(/<[^>]+>/g,' ').replace(/\\s+/g,' ').trim();\n  if(txt && txt.length>4) rows.push(txt+' | '+u);\n}\nreturn rows.slice(0,60);"} 
+> build · deepseek-v4.1-flash-free
+[0m⚙ [0mexecute {"code":"const r = await fetch(\"https://www.romatoday.it/eventi/\");\nconst t = await r.text();\nconst idx = [...t.matchAll(/href=\"([^\"]*eventi[^\"]*)\"/g)].map(m=>m[1]);\nreturn [...new Set(idx)].slice(0,80);"} 
+> build · deepseek-v4.1-flash-free
+[0m⚙ [0mexecute {"code":"const urls=[\"https://www.romatoday.it/eventi/dal/2026-11-23/al/2026-11-23/\",\"https://www.romatoday.it/eventi/dal/2026-11-23/al/2026-11-29/\"];\nconst out={};\nfor(const u of urls){\n const r=await fetch(u); const t=await r.text();\n const links=[...t.matchAll(/href=\"(\\/eventi\\/[^\"\\/]+\\.html)\"/g)].map(m=>m[1]);\n out[u]=[...new Set(links)];\n}\nreturn out;"} 
+> build · deepseek-v4.1-flash-free
+[0m⚙ [0mexecute {"code":"const urls=[\n\"https://www.romatoday.it/eventi/panettone-maximo-29-novembre-2026.html\",\n\"https://www.romatoday.it/eventi/villaggio-natale-26.html\",\n\"https://www.romatoday.it/eventi/urban-bazar-mediterraneo-maxxi-28-novembre-2026.html\",\n\"https://www.romatoday.it/eventi/trekking-urbano-caffarella-valle-ninfa-egeria-29-novembre-2026.html\",\n\"https://www.romatoday.it/eventi/natale-eur-programma-28-novembre-2026-10-gennaio-2027.html\",\n\"https://www.romatoday.it/eventi/christmas-garden-orto-botanico-19-novembre-2026-10-gennaio-2027.html\"\n];\nconst out={};\nfor(const u of urls){\n try{\n  const r=await fetch(u); const t=await r.text();\n  const txt=t.replace(/<script[\\s\\S]*?<\\/script>/g,' ').replace(/<style[\\s\\S]*?<\\/style>/g,' ').replace(/<[^>]+>/g,' ').replace(/&nbsp;/g,' ').replace(/&amp;/g,'&').replace(/&quot;/g,'\"').replace(/&#039;/g,\"'\").replace(/\\s+/g,' ');\n  const i=txt.indexOf('Panettone')>=0?0:0;\n  out[u]=txt.slice(0,3500);\n }catch(e){out[u]=\"ERR \"+e;}\n}\nreturn out;"} 
+> build · deepseek-v4.1-flash-free
+[0m⚙ [0mexecute {"code":"const urls=[\n\"https://www.virgilio.it/notizie/scioperi-settimana-dal-23-al-29-novembre-2026-si-fermano-sanita-banche-e-avvocati-le-citta-coinvolte/\",\n\"https://www.romatoday.it/eventi/arche-natale-mercatino-solidale-28-29-novembre-2026.html\",\n\"https://www.ansa.it/lazio/notizie/2026/11/22/sport-e-salute-a-colle-oppio-natale-e-sul-ghiaccio-con-pista-di-pattinaggio_1f0e2c3d-1111-4444-8888-000000000000.html\"\n];\nconst out={};\nfor(const u of urls){\n try{const r=await fetch(u);const t=await r.text();\n  const txt=t.replace(/<script[\\s\\S]*?<\\/script>/g,' ').replace(/<style[\\s\\S]*?<\\/style>/g,' ').replace(/<[^>]+>/g,' ').replace(/&nbsp;/g,' ').replace(/&amp;/g,'&').replace(/&quot;/g,'\"').replace(/&#039;/g,\"'\").replace(/\\s+/g,' ');\n  out[u]={status:r.status, txt:txt.slice(0,2500)};\n }catch(e){out[u]=\"ERR \"+e;}\n}\nconst w=await fetch(\"https://api.open-meteo.com/v1/forecast?latitude=41.8933&longitude=12.4829&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,precipitation_sum&timezone=Europe%2FRome&start_date=2026-11-23&end_date=2026-11-29\");\nout.weather=await w.json();\nreturn out;"} 
+> build · deepseek-v4.1-flash-free
+[0m⚙ [0mexecute {"code":"const qs=[\"scioperi 23 29 novembre 2026 sanità banche avvocati Roma\",\"Roma metro bus deviazioni 24 25 novembre 2026\",\"Roma mobilità 28 29 novembre 2026\"];\nconst out={};\nfor(const q of qs){\n const u=`https://news.google.com/rss/search?q=${encodeURIComponent(q)}&hl=it&gl=IT&ceid=IT:it`;\n const r=await fetch(u); const t=await r.text();\n out[q]=[...t.matchAll(/<item>([\\s\\S]*?)<\\/item>/g)].slice(0,6).map(m=>{\n   const it=m[1];\n   return ((it.match(/<pubDate>([\\s\\S]*?)<\\/pubDate>/)||[])[1]||'')+' | '+((it.match(/<title>([\\s\\S]*?)<\\/title>/)||[])[1]||'');\n });\n}\nreturn out;"} 
+> build · deepseek-v4.1-flash-free
+[0m⚙ [0mexecute {"code":"const qs=[\"FL1 Pigneto 23 novembre riapertura\",\"Roma FL1 chiusura Tiburtina Ostiense novembre 2026\"];\nconst out={};\nfor(const q of qs){\n const u=`https://news.google.com/rss/search?q=${encodeURIComponent(q)}&hl=it&gl=IT&ceid=IT:it`;\n const r=await fetch(u); const t=await r.text();\n out[q]=[...t.matchAll(/<item>([\\s\\S]*?)<\\/item>/g)].slice(0,8).map(m=>{\n   const it=m[1];\n   const link=(it.match(/<link>([\\s\\S]*?)<\\/link>/)||[])[1];\n   return ((it.match(/<pubDate>([\\s\\S]*?)<\\/pubDate>/)||[])[1]||'')+' | '+((it.match(/<title>([\\s\\S]*?)<\\/title>/)||[])[1]||'')+' | '+link;\n });\n}\nreturn out;"} 
+> build · deepseek-v4.1-flash-free
+[0m→ [0mRead covers/generate.py [90m[limit=120][0m
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && tail -80 covers/generate.py && ls covers | tail -12
+f'<path d="M{cx-64} {cy-40} L{cx} {cy+8} L{cx+64} {cy-40}" fill="none" stroke="{accent}" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>'
+            f'<path d="M{cx-64} {cy+40} L{cx-18} {cy-2} M{cx+64} {cy+40} L{cx+18} {cy-2}" stroke="{accent}" stroke-width="3" stroke-opacity="0.6"/>'
+        )
+    # metro
+    return base + (
+        f'<rect x="{cx-64}" y="{cy-52}" width="128" height="104" rx="18" fill="none" stroke="{accent}" stroke-width="4"/>'
+        f'<path d="M{cx-38} {cy+30} L{cx-38} {cy-24} L{cx} {cy+10} L{cx+38} {cy-24} L{cx+38} {cy+30}" fill="none" stroke="{accent}" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>'
+        f'<line x1="{cx-92}" y1="{cy+78}" x2="{cx+92}" y2="{cy+78}" stroke="{accent}" stroke-width="3" stroke-dasharray="10 10" stroke-opacity="0.7"/>'
+    )
+
+
+def colosseum(accent: str) -> str:
+    # декоративні арки праворуч знизу
+    parts = [f'<g opacity="0.10" fill="none" stroke="{accent}" stroke-width="4">']
+    for i in range(6):
+        x = 690 + i * 64
+        parts.append(f'<path d="M{x} 790 L{x} 742 Q{x+22} 716 {x+44} 742 L{x+44} 790"/>')
+    parts.append('</g>')
+    return "".join(parts)
+
+
+def cover(c: dict) -> str:
+    accent = c["accent"]
+    lines = c["title"]
+    title_svg = []
+    y = 330 if len(lines) == 2 else 360
+    for line in lines:
+        title_svg.append(
+            f'<text x="80" y="{y}" font-family="PT Sans, Arial, sans-serif" '
+            f'font-size="112" font-weight="800" fill="#FFFFFF" letter-spacing="-3">{escape(line)}</text>'
+        )
+        y += 122
+    sub_y = y + 8
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="810" viewBox="0 0 1080 810">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A1424"/>
+      <stop offset="0.55" stop-color="#132844"/>
+      <stop offset="1" stop-color="#1B3352"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="82%" cy="18%" r="55%">
+      <stop offset="0" stop-color="{accent}" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="{accent}" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1080" height="810" fill="url(#bg)"/>
+  <rect width="1080" height="810" fill="url(#glow)"/>
+  <rect x="30" y="30" width="1020" height="750" rx="28" fill="none" stroke="{accent}" stroke-opacity="0.28" stroke-width="2"/>
+
+  <g font-family="PT Sans, Arial, sans-serif">
+    <circle cx="86" cy="92" r="9" fill="{accent}"/>
+    <text x="110" y="100" font-size="22" font-weight="700" fill="#DCE8F4" letter-spacing="5">РИМ ДЛЯ СВОЇХ</text>
+    <text x="994" y="100" text-anchor="end" font-size="20" font-weight="600" fill="#7F95A9" letter-spacing="3">РИМ · ІТАЛІЯ</text>
+
+    <text x="80" y="230" font-size="24" font-weight="700" fill="{accent}" letter-spacing="5">{escape(c["kicker"])}</text>
+    {"".join(title_svg)}
+    <text x="82" y="{sub_y}" font-size="31" font-weight="500" fill="#C9D6E2">{escape(c["sub"])}</text>
+
+    <rect x="80" y="638" width="{int(len(c["date"]) * 17 + 64)}" height="66" rx="33" fill="{accent}"/>
+    <text x="112" y="682" font-size="27" font-weight="800" fill="#0A1424" letter-spacing="1">{escape(c["date"])}</text>
+
+    <text x="80" y="752" font-size="18" font-weight="600" fill="#7F95A9" letter-spacing="3">t.me/rim_dlia_svoih</text>
+  </g>
+
+  {colosseum(accent)}
+  {icon(c["icon"], accent)}
+</svg>
+'''
+
+
+def main() -> None:
+    for c in COVERS:
+        path = OUT / f'{c["file"]}.svg'
+        path.write_text(cover(c), encoding="utf-8")
+        print(path)
+
+
+if __name__ == "__main__":
+    main()
+2026-11-18-kerch-summit-museums.svg
+2026-11-18-rome-newcomer-events.png
+2026-11-18-rome-newcomer-events.svg
+2026-11-19-shenzhen-berlin.png
+2026-11-19-shenzhen-berlin.svg
+2026-11-20-rome-weekend-cie-museums.png
+2026-11-20-rome-weekend-cie-museums.svg
+2026-11-21-rome-open-day-markets-closures.png
+2026-11-21-rome-open-day-markets-closures.svg
+2026-11-21-rome-weekend-parade-fl1.png
+2026-11-21-rome-weekend-parade-fl1.svg
+generate.py
+> build · deepseek-v4.1-flash-free
+[0m→ [0mRead covers/generate.py [90m[offset=120, limit=130][0m
+> build · deepseek-v4.1-flash-free
+[0m→ [0mRead content/it/2026-11-21-rome-weekend-parade-fl1.md 
+[0m→ [0mRead content/channel/2026-11-21-rome-weekend-parade-fl1-post.md 
+> build · deepseek-v4.1-flash-free
+[0m⚙ [0mexecute {"code":"const qs=[\"Natale all'Eur 2026 villaggio lago ingresso gratuito ruota panoramica\",\"Christmas Garden Roma 2026 biglietti prezzo orari\"];\nconst out={};\nfor(const q of qs){\n const u=`https://news.google.com/rss/search?q=${encodeURIComponent(q)}&hl=it&gl=IT&ceid=IT:it`;\n const r=await fetch(u); const t=await r.text();\n out[q]=[...t.matchAll(/<item>([\\s\\S]*?)<\\/item>/g)].slice(0,5).map(m=>{\n  const it=m[1];\n  return ((it.match(/<pubDate>([\\s\\S]*?)<\\/pubDate>/)||[])[1]||'')+' | '+((it.match(/<title>([\\s\\S]*?)<\\/title>/)||[])[1]||'');\n });\n}\nreturn out;"} 
+> build · deepseek-v4.1-flash-free
+[0m⚙ [0mexecute {"code":"const q=\"Natale all'EUR 2026 ruota panoramica villaggio\";\nconst u=`https://news.google.com/rss/search?q=${encodeURIComponent(q)}&hl=it&gl=IT&ceid=IT:it`;\nconst r=await fetch(u); const t=await r.text();\nconst item=[...t.matchAll(/<item>([\\s\\S]*?)<\\/item>/g)].map(m=>m[1]).find(x=>x.includes('CorriereNerd'));\nconst link=(item.match(/<link>([\\s\\S]*?)<\\/link>/)||[])[1];\nlet art=null;\ntry{const rr=await fetch(link); art=rr.status+' '+(await rr.text()).slice(0,200);}catch(e){art='ERR '+e;}\nreturn {link, art};"} 
+> build · deepseek-v4.1-flash-free
+[0m◈ [0mWeb Search via Parallel "Natale all'Eur 2026 villaggio lago ingresso gratuito ruota panoramica prezzo" 
+> build · deepseek-v4.1-flash-free
+[0m⚙ [0mexecute {"code":"const urls=[\"https://christmas-garden.it/roma/\",\"https://christmas-garden.it/roma/biglietti/\",\"https://www.romatoday.it/eventi/dal/2026-11-23/al/2026-11-23/\"];\nconst out={};\nfor(const u of urls){\n try{const r=await fetch(u);const t=await r.text();\n  const txt=t.replace(/<script[\\s\\S]*?<\\/script>/g,' ').replace(/<style[\\s\\S]*?<\\/style>/g,' ').replace(/<[^>]+>/g,' ').replace(/&nbsp;/g,' ').replace(/&amp;/g,'&').replace(/&quot;/g,'\"').replace(/&#039;/g,\"'\").replace(/\\s+/g,' ');\n  out[u]={status:r.status,len:t.length,txt:txt.slice(0,2200)};\n }catch(e){out[u]=\"ERR \"+e;}\n}\nreturn out;"} 
+> build · deepseek-v4.1-flash-free
+[0m→ [0mRead automation/site.py [90m[limit=120][0m
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && git log --oneline -5 && git status --short | head -20
+c275cb7 Add post: Rome 21-22 Nov - Carabinieri open day, witches market, charity markets, road closures, Amazing Wonders (uk+it)
+d0e8c9b Add post: Rome weekend 21-22 Nov - Christmas Parade, Ficus al Massimo, Vegan Village, Game Vintage, FL1 works, Ama collection (uk+it)
+f683e92 Autopost: Rome-only prompts; move repo to ~/rim-dlia-svoikh so launchd can read it (macOS Documents protection); docs
+82d2110 Add post: Rome weekend 20-22 Nov - transport strike windows, CIE open day, Musei in Musica night (uk+it); autopost prompt now Rome-only
+d975b36 Docs: add launchd autoposting section (09:00/19:00 schedule, logs, disable instructions)
+ M automation/candidates.json
+?? automation/logs/2026-11-21-1923-evening.log
+?? automation/logs/2026-11-22-0900-morning.log
+?? automation/logs/2026-11-22-1930-evening.log
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && tail -40 automation/logs/2026-11-22-0900-morning.log; echo "=== EVENING ==="; tail -60 automation/logs/2026-11-22-1930-evening.log
+2026-11-21-rome-weekend-parade-fl1.png
+2026-11-21-rome-weekend-parade-fl1.svg
+generate.py
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /tmp && for q in "Roma+oggi" "Roma+eventi+22+novembre" "Roma+gratis" "Roma+mostra" "Roma+trasporti"; do echo "### $q"; curl -s "https://news.google.com/rss/search?q=${q}&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re
+x=sys.stdin.read()
+items=re.findall(r'<item>(.*?)</item>',x,re.S)
+for it in items[:10]:
+    t=re.search(r'<title>(.*?)</title>',it,re.S)
+    d=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S)
+    print('-',(t.group(1) if t else '')[:130],'|',(d.group(1)[:16] if d else ''))
+"; done
+### Roma+oggi
+
+
+Command exceeded timeout of 120000 ms. Retry with a larger timeout if the command is expected to take longer.
+> build · deepseek-v4.1-flash-free
+> build · deepseek-v4.1-flash-free
+> build · deepseek-v4.1-flash-free
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcurl -s --max-time 25 "https://news.google.com/rss/search?q=Roma%20oggi&hl=it&gl=IT&ceid=IT:it" -o /tmp/gn1.xml; echo exit=$?; wc -c /tmp/gn1.xml
+exit=0
+    1103 /tmp/gn1.xml
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcat /tmp/gn1.xml
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><title>Sorry...</title><style> body { font-family: verdana, arial, sans-serif; background-color: #fff; color: #000; }</style></head><body><div><table><tr><td><b><font face=sans-serif size=10><font color=#4285f4>G</font><font color=#ea4335>o</font><font color=#fbbc05>o</font><font color=#4285f4>g</font><font color=#34a853>l</font><font color=#ea4335>e</font></font></b></td><td style="text-align: left; vertical-align: bottom; padding-bottom: 15px; width: 50%"><div style="border-bottom: 1px solid #dfdfdf;">Sorry...</div></td></tr></table></div><div style="margin-left: 4em;"><h1>We're sorry...</h1><p>... but your computer or network may be sending automated queries. To protect our users, we can't process your request right now.</p></div><div style="margin-left: 4em;">See <a href="https://support.google.com/websearch/answer/86640">Google Help</a> for more information.<br/><br/></div><div style="text-align: center; border-top: 1px solid #dfdfdf;"><a href="https://www.google.com">Google Home</a></div></body></html>
+> build · deepseek-v4.1-flash-free
+[0m◈ [0mWeb Search via Parallel "Roma 22 novembre 2026 eventi gratuiti domenica" 
+[0m◈ [0mWeb Search via Parallel "RomaToday 22 novembre 2026 sciopero trasporti meteo" 
+> build · deepseek-v4.1-flash-free
+[0m◈ [0mWeb Search via Parallel "Tertio Millennio Film Fest 2026 Roma date programma Carlo Verdone" 
+[0m◈ [0mWeb Search via Parallel "Roma Arte in Nuvola 2026 22 novembre orari biglietti" 
+> build · deepseek-v4.1-flash-free
+[91m[1mError: [0mTimed out waiting for response data
+> build · deepseek-v4.1-flash-free
+[91m[1mError: [0mTimed out waiting for response data
+> build · deepseek-v4.1-flash-free
+> build · deepseek-v4.1-flash-free
+exit=1
+=== EVENING ===
+
+    <rect x="80" y="638" width="{int(len(c["date"]) * 17 + 64)}" height="66" rx="33" fill="{accent}"/>
+    <text x="112" y="682" font-size="27" font-weight="800" fill="#0A1424" letter-spacing="1">{escape(c["date"])}</text>
+
+    <text x="80" y="752" font-size="18" font-weight="600" fill="#7F95A9" letter-spacing="3">t.me/rim_dlia_svoih</text>
+  </g>
+
+  {colosseum(accent)}
+  {icon(c["icon"], accent)}
+</svg>
+'''
+
+
+def main() -> None:
+    for c in COVERS:
+        path = OUT / f'{c["file"]}.svg'
+        path.write_text(cover(c), encoding="utf-8")
+        print(path)
+
+
+if __name__ == "__main__":
+    main()
+2026-11-18-kerch-summit-museums.svg
+2026-11-18-rome-newcomer-events.png
+2026-11-18-rome-newcomer-events.svg
+2026-11-19-shenzhen-berlin.png
+2026-11-19-shenzhen-berlin.svg
+2026-11-20-rome-weekend-cie-museums.png
+2026-11-20-rome-weekend-cie-museums.svg
+2026-11-21-rome-open-day-markets-closures.png
+2026-11-21-rome-open-day-markets-closures.svg
+2026-11-21-rome-weekend-parade-fl1.png
+2026-11-21-rome-weekend-parade-fl1.svg
+generate.py
+> build · deepseek-v4.1-flash-free
+[0m→ [0mRead covers/generate.py [90m[offset=120, limit=130][0m
+> build · deepseek-v4.1-flash-free
+[0m→ [0mRead content/it/2026-11-21-rome-weekend-parade-fl1.md 
+[0m→ [0mRead content/channel/2026-11-21-rome-weekend-parade-fl1-post.md 
+> build · deepseek-v4.1-flash-free
+[0m⚙ [0mexecute {"code":"const qs=[\"Natale all'Eur 2026 villaggio lago ingresso gratuito ruota panoramica\",\"Christmas Garden Roma 2026 biglietti prezzo orari\"];\nconst out={};\nfor(const q of qs){\n const u=`https://news.google.com/rss/search?q=${encodeURIComponent(q)}&hl=it&gl=IT&ceid=IT:it`;\n const r=await fetch(u); const t=await r.text();\n out[q]=[...t.matchAll(/<item>([\\s\\S]*?)<\\/item>/g)].slice(0,5).map(m=>{\n  const it=m[1];\n  return ((it.match(/<pubDate>([\\s\\S]*?)<\\/pubDate>/)||[])[1]||'')+' | '+((it.match(/<title>([\\s\\S]*?)<\\/title>/)||[])[1]||'');\n });\n}\nreturn out;"} 
+> build · deepseek-v4.1-flash-free
+[0m⚙ [0mexecute {"code":"const q=\"Natale all'EUR 2026 ruota panoramica villaggio\";\nconst u=`https://news.google.com/rss/search?q=${encodeURIComponent(q)}&hl=it&gl=IT&ceid=IT:it`;\nconst r=await fetch(u); const t=await r.text();\nconst item=[...t.matchAll(/<item>([\\s\\S]*?)<\\/item>/g)].map(m=>m[1]).find(x=>x.includes('CorriereNerd'));\nconst link=(item.match(/<link>([\\s\\S]*?)<\\/link>/)||[])[1];\nlet art=null;\ntry{const rr=await fetch(link); art=rr.status+' '+(await rr.text()).slice(0,200);}catch(e){art='ERR '+e;}\nreturn {link, art};"} 
+> build · deepseek-v4.1-flash-free
+[0m◈ [0mWeb Search via Parallel "Natale all'Eur 2026 villaggio lago ingresso gratuito ruota panoramica prezzo" 
+> build · deepseek-v4.1-flash-free
+[0m⚙ [0mexecute {"code":"const urls=[\"https://christmas-garden.it/roma/\",\"https://christmas-garden.it/roma/biglietti/\",\"https://www.romatoday.it/eventi/dal/2026-11-23/al/2026-11-23/\"];\nconst out={};\nfor(const u of urls){\n try{const r=await fetch(u);const t=await r.text();\n  const txt=t.replace(/<script[\\s\\S]*?<\\/script>/g,' ').replace(/<style[\\s\\S]*?<\\/style>/g,' ').replace(/<[^>]+>/g,' ').replace(/&nbsp;/g,' ').replace(/&amp;/g,'&').replace(/&quot;/g,'\"').replace(/&#039;/g,\"'\").replace(/\\s+/g,' ');\n  out[u]={status:r.status,len:t.length,txt:txt.slice(0,2200)};\n }catch(e){out[u]=\"ERR \"+e;}\n}\nreturn out;"} 
+> build · deepseek-v4.1-flash-free
+[0m→ [0mRead automation/site.py [90m[limit=120][0m
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && git log --oneline -5 && git status --short | head -20
+c275cb7 Add post: Rome 21-22 Nov - Carabinieri open day, witches market, charity markets, road closures, Amazing Wonders (uk+it)
+d0e8c9b Add post: Rome weekend 21-22 Nov - Christmas Parade, Ficus al Massimo, Vegan Village, Game Vintage, FL1 works, Ama collection (uk+it)
+f683e92 Autopost: Rome-only prompts; move repo to ~/rim-dlia-svoikh so launchd can read it (macOS Documents protection); docs
+82d2110 Add post: Rome weekend 20-22 Nov - transport strike windows, CIE open day, Musei in Musica night (uk+it); autopost prompt now Rome-only
+d975b36 Docs: add launchd autoposting section (09:00/19:00 schedule, logs, disable instructions)
+ M automation/candidates.json
+?? automation/logs/2026-11-21-1923-evening.log
+?? automation/logs/2026-11-22-0900-morning.log
+?? automation/logs/2026-11-22-1930-evening.log
+> build · deepseek-v4.1-flash-free
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && grep -n "EXTRA\|def parse\|slug\|title" automation/site.py | head -50
+7:  posts/<slug>.html   — окрема сторінка кожного поста
+34:EXTRA = ROOT / "content/extra"
+50:# Перекладений контент: content/it/<slug>.md (той самий slug, що й обкладинка)
+138:        "title_index": "Рим для своїх — телеграм-канал для українців у Римі",
+168:        "title_index": "Ucraini a Roma — eventi, trasporti, casa e lavoro | Rim per i nostri",
+186:    return {path.stem for path in EXTRA.glob("*.md")}
+194:def slug_from_cover(cover: Path) -> str:
+257:    """Переклади постів: content/it/<slug>.md → текст."""
+279:    posts.sort(key=lambda post: (post["date"], post["slug"]))
+280:    unknown = set(translations) - {post["slug"] for post in posts}
+289:    slug = slug_from_cover(cover)
+293:        "slug": slug,
+295:        "title": first_line(text),
+297:        "url": f"{SITE_URL}/posts/{slug}.html",
+299:        "title_it": first_line(text_it) if text_it else "",
+301:        "url_it": f"{SITE_URL}/it/posts/{slug}.html",
+307:    """Окремі пости з content/extra/<slug>.md + covers/<slug>.png."""
+310:    for path in sorted(EXTRA.glob("*.md")):
+401:    title: str,
+429:<title>{esc(title)}</title>
+434:<meta property="og:title" content="{esc(title)}">
+440:<meta name="twitter:title" content="{esc(title)}">
+443:<link rel="alternate" type="application/rss+xml" title="{esc(SITE_NAME[lang])}" href="{SITE_URL}/rss.xml">
+515:  <a href="{(p['url'] if lang == 'uk' else p['url_it'])}"><img src="{SITE_URL}/covers/{p['cover'].name}" alt="{esc(p['title'] if lang == 'uk' else p['title_it'])}" loading="lazy" width="640" height="480"></a>
+518:    <h3><a href="{(p['url'] if lang == 'uk' else p['url_it'])}">{esc(p['title'] if lang == 'uk' else p['title_it'])}</a></h3>
+529:  <h3>{esc(title)}</h3>
+532:        for icon, title, text in TOPICS[lang]
+538:  <h3>{esc(title)}</h3>
+541:        for n, title, text in STEPS[lang]
+558:                "name": p["title"] if lang == "uk" else p["title_it"],
+656:        t["title_index"],
+672:    title = post["title_it"] if it else post["title"]
+678:    post_title = lambda p: p["title_it"] if it else p["title"]
+682:        pager.append(f'<a href="{post_url(prev)}">← {esc(post_title(prev))}</a>')
+686:        pager.append(f'<a href="{post_url(nxt)}">{esc(post_title(nxt))} →</a>')
+691:        "headline": title,
+714:  <h1>{esc(title)}</h1>
+717:    <img src="{SITE_URL}/covers/{post['cover'].name}" alt="{esc(title)}" width="1080" height="810">
+725:        f"{title} — {BRAND[lang]}",
+774:      <title>{xml_escape(p['title'])}</title>
+785:    <title>{xml_escape(CHANNEL_TITLE)}</title>
+856:        (DOCS / "posts" / f"{post['slug']}.html").write_text(
+866:            (DOCS / "it" / "posts" / f"{post['slug']}.html").write_text(
+> build · deepseek-v4.1-flash-free
+[0m→ [0mRead automation/site.py [90m[offset=255, limit=80][0m
+> build · deepseek-v4.1-flash-free
+[0m⚙ [0mexecute {"code":"const urls=[\"https://christmas-garden.it/roma/info/\",\"https://christmas-garden.it/roma/informazioni/\"];\nconst out={};\nfor(const u of urls){\n try{const r=await fetch(u);const t=await r.text();\n  const txt=t.replace(/<script[\\s\\S]*?<\\/script>/g,' ').replace(/<style[\\s\\S]*?<\\/style>/g,' ').replace(/<[^>]+>/g,' ').replace(/&nbsp;/g,' ').replace(/&amp;/g,'&').replace(/&quot;/g,'\"').replace(/&#039;/g,\"'\").replace(/\\s+/g,' ');\n  const i=txt.search(/Orari|orari|Apertura/);\n  out[u]={status:r.status, snip: txt.slice(Math.max(0,i-300), i+1800)};\n }catch(e){out[u]=\"ERR \"+e;}\n}\nreturn out;"} 
+> build · deepseek-v4.1-flash-free
+[0m⚙ [0mexecute {"code":"const r=await fetch(\"https://christmas-garden.it/roma/biglietti/\");const t=await r.text();\nconst links=[...new Set([...t.matchAll(/href=\"(https:\\/\\/christmas-garden\\.it\\/[^\"]+)\"/g)].map(m=>m[1]))];\nreturn links.slice(0,40);"} 
+> build · deepseek-v4.1-flash-free
+[0m⚙ [0mexecute {"code":"const r=await fetch(\"https://christmas-garden.it/visita/\");const t=await r.text();\nconst txt=t.replace(/<script[\\s\\S]*?<\\/script>/g,' ').replace(/<style[\\s\\S]*?<\\/style>/g,' ').replace(/<[^>]+>/g,' ').replace(/&nbsp;/g,' ').replace(/&amp;/g,'&').replace(/&quot;/g,'\"').replace(/&#039;/g,\"'\").replace(/\\s+/g,' ');\nconst i=txt.search(/Orari|orari|Apertura|apertura/);\nreturn {status:r.status, snip:txt.slice(Math.max(0,i-200), i+2000)};"} 
+> build · deepseek-v4.1-flash-free
+Now I'll create the post files (Ukrainian, Italian, and the channel version).
+[0m← [0mWrite content/it/2026-11-22-rome-week-panettone-bazar.md
+Created file successfully: content/it/2026-11-22-rome-week-panettone-bazar.md
+[0m← [0mWrite content/extra/2026-11-22-rome-week-panettone-bazar.md
+Created file successfully: content/extra/2026-11-22-rome-week-panettone-bazar.md
+> build · deepseek-v4.1-flash-free
+[0m← [0mWrite content/channel/2026-11-22-rome-week-panettone-bazar-post.md
+Created file successfully: content/channel/2026-11-22-rome-week-panettone-bazar-post.md
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 -c "
+t=open('content/channel/2026-11-22-rome-week-panettone-bazar-post.md').read().strip()
+print(len(t))
+"
+939
+> build · deepseek-v4.1-flash-free
+[0m← [0mEdit covers/generate.py
+Index: covers/generate.py
+===================================================================
+--- covers/generate.py
++++ covers/generate.py
+@@ -221,8 +221,17 @@
+         "date": "21–22 ЛИСТОПАДА",
+         "accent": "#FFD166",
+         "icon": "pin",
+     },
++    {
++        "file": "2026-11-22-rome-week-panettone-bazar",
++        "kicker": "ТИЖДЕНЬ",
++        "title": ["РИМ 23–29", "ЛИСТОПАДА"],
++        "sub": "Panettone Maximo · Urban Bazar · дощі",
++        "date": "23–29 ЛИСТОПАДА",
++        "accent": "#FFB86B",
++        "icon": "pin",
++    },
+ ]
+ 
+ 
+ def icon(kind: str, accent: str) -> str:
+
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 covers/generate.py | tail -3 && rsvg-convert -w 1080 -h 810 covers/2026-11-22-rome-week-panettone-bazar.svg -o covers/2026-11-22-rome-week-panettone-bazar.png && ls -la covers/2026-11-22-rome-week-panettone-bazar.*
+/Users/terkin/rim-dlia-svoikh/covers/2026-11-15-digest.svg
+/Users/terkin/rim-dlia-svoikh/covers/2026-11-21-rome-open-day-markets-closures.svg
+/Users/terkin/rim-dlia-svoikh/covers/2026-11-22-rome-week-panettone-bazar.svg
+-rw-r--r--@ 1 terkin  staff  190192 Nov 22 19:38 covers/2026-11-22-rome-week-panettone-bazar.png
+-rw-r--r--@ 1 terkin  staff    2753 Nov 22 19:38 covers/2026-11-22-rome-week-panettone-bazar.svg
+> build · deepseek-v4.1-flash-free
+[0m→ [0mRead covers/2026-11-22-rome-week-panettone-bazar.png 
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 automation/site.py 2>&1 | tail -20 && ls -la docs/posts/2026-11-22-rome-week-panettone-bazar.html docs/it/posts/2026-11-22-rome-week-panettone-bazar.html
+Сайт згенеровано → /Users/terkin/rim-dlia-svoikh/docs
+  index.html · 25 постів · sitemap.xml · robots.txt · rss.xml
+  it/: 18 перекладених постів
+  IndexNow key: 59109d96a7a1479b32410c75db6bd891 → docs/59109d96a7a1479b32410c75db6bd891.txt
+  SITE_URL: https://ucrainiroma.it
+-rw-r--r--@ 1 terkin  staff  13966 Nov 22 19:38 docs/it/posts/2026-11-22-rome-week-panettone-bazar.html
+-rw-r--r--@ 1 terkin  staff  16718 Nov 22 19:38 docs/posts/2026-11-22-rome-week-panettone-bazar.html
+> build · deepseek-v4.1-flash-free

@@ -1,0 +1,1925 @@
+=== 2026-11-21 19:23:30 slot=evening ===
+[0m
+> build · deepseek-v4.1-flash-free
+I'll start by reading the README to understand the established process.
+[0m→ [0mRead README.md 
+> build · deepseek-v4.1-flash-free
+Now let me run the collector and check today's existing content in parallel.
+[0m$ [0mls -la content/extra/ | tail -20; echo "---CHANNEL---"; ls -la content/channel/ | tail -10; echo "---IT---"; ls -la content/it/ | tail -10
+total 176
+drwxr-xr-x@ 19 terkin  staff   608 Nov 21 09:31 .
+drwxr-xr-x@ 11 terkin  staff   352 Nov 10 10:19 ..
+-rw-r--r--@  1 terkin  staff  3656 Nov 10 10:18 2026-11-10-codice-fiscale.md
+-rw-r--r--@  1 terkin  staff  1443 Nov 10 09:31 2026-11-10-events.md
+-rw-r--r--@  1 terkin  staff  1242 Nov 10 14:31 2026-11-10-italy-military-aid.md
+-rw-r--r--@  1 terkin  staff  1521 Nov 10 08:57 2026-11-10-rent.md
+-rw-r--r--@  1 terkin  staff  1924 Nov 11 08:58 2026-11-11-lazio-irpef.md
+-rw-r--r--@  1 terkin  staff  6507 Nov 11 11:01 2026-11-11-rent-long-term.md
+-rw-r--r--@  1 terkin  staff  3129 Nov 12 08:53 2026-11-12-school-alerts.md
+-rw-r--r--@  1 terkin  staff  4274 Nov 13 11:13 2026-11-13-peace-talks-eu.md
+-rw-r--r--@  1 terkin  staff  3064 Nov 13 11:19 2026-11-13-weekend-14-15.md
+-rw-r--r--@  1 terkin  staff  3365 Nov 16 08:34 2026-11-16-week-ahead.md
+-rw-r--r--@  1 terkin  staff  3638 Nov 17 11:25 2026-11-17-inflation-strike.md
+-rw-r--r--@  1 terkin  staff  4159 Nov 18 10:44 2026-11-18-kerch-summit-museums.md
+-rw-r--r--@  1 terkin  staff  3255 Nov 18 10:48 2026-11-18-rome-newcomer-events.md
+-rw-r--r--@  1 terkin  staff  3737 Nov 19 10:19 2026-11-19-shenzhen-berlin.md
+-rw-r--r--@  1 terkin  staff  3686 Nov 20 09:45 2026-11-20-rome-weekend-cie-museums.md
+-rw-r--r--@  1 terkin  staff  4749 Nov 21 09:31 2026-11-21-rome-open-day-markets-closures.md
+-rw-r--r--@  1 terkin  staff  4125 Nov 21 09:27 2026-11-21-rome-weekend-parade-fl1.md
+---CHANNEL---
+-rw-r--r--@  1 terkin  staff  1642 Nov 13 11:14 2026-11-13-peace-talks-eu-post.md
+-rw-r--r--@  1 terkin  staff  1375 Nov 13 11:20 2026-11-13-weekend-14-15-post.md
+-rw-r--r--@  1 terkin  staff  1389 Nov 16 08:34 2026-11-16-week-ahead-post.md
+-rw-r--r--@  1 terkin  staff  1498 Nov 17 11:25 2026-11-17-inflation-strike-post.md
+-rw-r--r--@  1 terkin  staff  1457 Nov 18 10:44 2026-11-18-kerch-summit-museums-post.md
+-rw-r--r--@  1 terkin  staff  1348 Nov 18 10:48 2026-11-18-rome-newcomer-events-post.md
+-rw-r--r--@  1 terkin  staff  1289 Nov 19 10:19 2026-11-19-shenzhen-berlin-post.md
+-rw-r--r--@  1 terkin  staff  1385 Nov 20 09:46 2026-11-20-rome-weekend-cie-museums-post.md
+-rw-r--r--@  1 terkin  staff  1336 Nov 21 09:31 2026-11-21-rome-open-day-markets-closures-post.md
+-rw-r--r--@  1 terkin  staff  1403 Nov 21 09:27 2026-11-21-rome-weekend-parade-fl1-post.md
+---IT---
+-rw-r--r--@  1 terkin  staff  2719 Nov 13 11:13 2026-11-13-peace-talks-eu.md
+-rw-r--r--@  1 terkin  staff  2320 Nov 13 11:19 2026-11-13-weekend-14-15.md
+-rw-r--r--@  1 terkin  staff  2459 Nov 16 08:34 2026-11-16-week-ahead.md
+-rw-r--r--@  1 terkin  staff  2607 Nov 17 11:25 2026-11-17-inflation-strike.md
+-rw-r--r--@  1 terkin  staff  2939 Nov 18 10:44 2026-11-18-kerch-summit-museums.md
+-rw-r--r--@  1 terkin  staff  2389 Nov 18 10:48 2026-11-18-rome-newcomer-events.md
+-rw-r--r--@  1 terkin  staff  2527 Nov 19 10:19 2026-11-19-shenzhen-berlin.md
+-rw-r--r--@  1 terkin  staff  2733 Nov 20 09:46 2026-11-20-rome-weekend-cie-museums.md
+-rw-r--r--@  1 terkin  staff  3635 Nov 21 09:31 2026-11-21-rome-open-day-markets-closures.md
+-rw-r--r--@  1 terkin  staff  3033 Nov 21 09:27 2026-11-21-rome-weekend-parade-fl1.md
+[0m$ [0mpython3 automation/collect.py
+→ ANSA Lazio
+→ Corriere Roma
+→ Il Messaggero Roma
+→ Il Tempo
+→ AGI
+→ Adnkronos
+→ Il Sole 24 Ore
+→ Il Fatto Quotidiano
+
+Збережено 40 кандидатів → /Users/terkin/rim-dlia-svoikh/automation/candidates.json
+> build · deepseek-v4.1-flash-free
+Two posts already exist today. Let me read them to avoid repetition, and review candidates.
+[0m$ [0mcat content/extra/2026-11-21-rome-open-day-markets-closures.md; echo "=====SECOND====="; cat content/extra/2026-11-21-rome-weekend-parade-fl1.md
+🎖 **Рим 21–22 листопада: безкоштовний open day, ринки й перекриття**
+
+Субота буде сухою й теплою, неділя — з дощем. Ось п'ять речей, які варто знати, якщо плануєте вийти з дому.
+
+**🚧 Транспорт: що перекрито**
+• **Сьогодні, 15:00 — Lazio–Lecce** на Stadio Olimpico. З ранку заборона паркування в зоні Foro Italico; до стадіону їдьте автобусами 2, 23, 31, 32, 53, 69, 70, 89, 168, 200, 201, 226, 280, 301, 446, 628, 910, 911, 982 (зупинки біля piazzale Clodio / piazza Mancini).
+• **Centocelle:** via dei Castani закрита між piazza dei Mirti і via dei Faggi з 07:30 до 21:00 через районний захід.
+• **Неділя, San Pietro:** з 06:00 — перекриття й заборона паркування навколо площі через Angelus (12:00) і обід Папи Лева XIV з бідними. Приберіть авто з via della Conciliazione, Borgo Pio, piazza Pio XII до опівночі 22 листопада.
+• **Неділя, забіги:** Corri al Tiburtino (08:00–13:00) — відхилення автобусів 058, 450, 451, 508, 705, 309; Corri alla Garbatella (08:00–12:00) — 715, 716, 792.
+• **Нічні роботи:** viale dell'Oceano Atlantico і via Rhodesia — до 23.11, 22:00–06:00, обмеження 30 км/год; viale Alessandrino — до 15.12, реверсна смуга вночі.
+• **З понеділка:** Chanel готує показ у Palazzo Farnese (2 грудня). Два тижні не можна паркуватися на largo Ottavio Tassoni, via del Banco di Santo Spirito і vicolo di San Celso.
+
+**🎖 Безкоштовний open day Carabinieri — сьогодні, 10:00–13:00**
+Comando Generale відкриває зали для публіки: Viale Romania 45 (Parioli), екскурсії по 45 хвилин, старт кожні 30 хвилин, останній вхід — 12:30. Вхід безкоштовний, але потрібне бронювання листом на **museo.storico@carabinieri.it** (вкажіть бажаний час і дані учасників). Є доступний вхід з via Oxilia.
+
+**🧙 Mercatino delle Streghe — сб–нд, вхід вільний**
+Città dell'Altra Economia (largo Dino Frisullo, Testaccio, ex Mattatoio). Субота 11:00–20:00, неділя 10:00–19:00. Амулети, трави, кристали, dark-арт і hand-made з усієї Італії, таро й консульти. Гарний варіант, якщо шукаєте незвичайний подарунок.
+
+**🎄 Благодійні різдвяні маркети**
+• **Croce Rossa:** The Westin Excelsior, via Vittorio Veneto 125, сб–нд 10:30–19:30, вхід вільний. Вінтаж, одяг, декор; весь дохід — на підтримку людей у скруті.
+• **Fondazione Antea:** Circolo degli Esteri, Lungotevere dell'Acqua Acetosa 42, сб–нд 10:00–18:30, вхід вільний. У неділю — майстерня для дітей.
+• **Toy Day:** Hotel Mercure Roma West, viale Eroi di Cefalonia 301. Субота 15:00–19:00, неділя 9:30–18:00. Квиток €3, діти до 12 — безкоштовно, діє на обидва дні.
+
+**✨ Нова виставка: Amazing Wonders**
+Forte Trionfale, via Trionfale 7400 — імерсивна виставка з 30+ інсталяціями на 21 тис. м², відкрилася 20.11 і працює до 30.04.2027. Графік: ср–чт 16:00–22:00, пт 16:00–01:00, сб 10:00–01:00, нд 10:00–22:00, пн–вт зачинено. У вихідні вдень квиток €19, після 18:00 — €23; пільговий — від €12 (до 25 і після 65 років, з Metrebus Card), діти до 6 — безкоштовно. Є 300 безкоштовних паркомісць.
+
+**Погода:** субота — до +19 і без дощу; неділя — до +18, імовірність зливи 45%. Парасолька не завадить.
+
+Джерела: RomaToday (21.11 — перекриття, Lazio–Lecce, San Pietro, забіги, нічні роботи; open day Carabinieri; Mercatino delle Streghe; Croce Rossa; Toy Day), Corriere Roma (21.11 — Chanel/Palazzo Farnese), Roma Capitale (мобільність 21–22.11), amazingwonders.it (графік і квитки), Open-Meteo (прогноз).
+=====SECOND=====
+🚆 **Рим на вихідні 21–22 листопада: парад, безкоштовні маркети й зміни на FL1**
+
+Субота буде сухою й теплою, неділя — з імовірним дощем. Ось п'ять речей, які варто знати, щоб не зіпсувати вихідні.
+
+**🚆 Потяги: FL1 не їде між Tiburtina і Ostiense**
+Усі вихідні, 21–22.11, через роботи на майбутній зупинці Pigneto:
+• FL1 Orte–Fiumicino: рейси скасовані між Roma Tiburtina і Roma Ostiense. Працюють ділянки Orte–Tiburtina та Ostiense–Fiumicino.
+• FL3 Roma–Cesano/Viterbo: починається й закінчується на Roma Ostiense.
+
+Що робити: якщо летите з Fiumicino, їдьте до Ostiense або Trastevere (метро B + потяг чи автобус), а не на Tiburtina. І пам'ятайте: страйк залізниці триває до 20:00 суботи, регіональні потяги гарантовані 06:00–09:00 і 18:00–21:00.
+
+**🎅 Christmas Parade — неділя, 15:00, безкоштовно**
+Хода від piazza del Popolo через via del Corso і via dei Condotti до piazza di Spagna, старт о 15:00. Понад 100 артистів, Санта для дітей, збір на підтримку дитячої лікарні Bambino Gesù. У неділю до 14:00 перекривають via del Corso (від Popolo до Frattina), Condotti, delle Carrozze, Mario de' Fiori, piazza di Spagna і Mignanelli. Найкраще — пішки або метро Spagna/Flaminio.
+
+**🎨 Ficus al Massimo — сб–нд, 10:30–20:00, вхід вільний**
+50 незалежних брендів з усієї Італії у Garum – Museo della Cucina (via dei Cerchi 87, біля Circo Massimo): прикраси, кераміка, ілюстрації, вінтаж, декор. Заодно можна подивитися колекцію музею кухні. Хороший варіант для подарунків без натовпу.
+
+**🌱 Vegan Village — сб–нд, 11:00–22:00**
+Hacienda, via dei Cluniacensi 68 (Tiburtina): стрітфуд, кулінарні шоу, безкоштовні заняття йогою, музика, майстерні для дітей. Вхід вільний, донат за бажанням.
+
+**🕹 Game Vintage — сб–нд, 10:00–19:00**
+Fusolab, viale della Bella Villa 96 (Casilino): 90+ стендів з ретро-іграми, консолями, картками й фігурками, турніри, VR і симулятори. Вхід безкоштовний, але потрібне бронювання на fusolab.net/biglietti.
+
+**♻️ Безкоштовно здати меблі й техніку — сб–нд, 08:00–12:30**
+Ama il Tuo Quartiere: 14 муніципалітетів (усі, крім III). Приймають меблі, дерево, метал, техніку (RAEE), одяг і текстиль; у суботу — ще й гілки та обрізки. Точні адреси й дні — на ama.roma.it у розділі «Raccolte del weekend». Не залишайте речі біля контейнерів: за це штрафують.
+
+**Погода:** субота — до +19 і без дощу; неділя — до +18, імовірність зливи близько 45%. Парасолька не завадить.
+
+**Коротко:** з дітьми — парад або Game Vintage; без грошей — Ficus і парад; якщо летите — перевірте FL1 і виїжджайте заздалегідь.
+
+Джерела: Roma Servizi per la Mobilità і Trenitalia (21–22.11 — FL1/FL3, Pigneto), RomaToday (20.11 — перекриття, парад, FL1, Ama), Il Messaggero (20.11 — Ficus, Vegan Village, Christmas Parade), Roma Capitale (Ama il Tuo Quartiere), Open-Meteo (прогноз).
+[0m$ [0mpython3 -c "
+import json
+d=json.load(open('automation/candidates.json'))
+items=d if isinstance(d,list) else d.get('items',d)
+for i,x in enumerate(items[:40]):
+    print(i, '|', x.get('source',''), '|', x.get('title','')[:110])
+    print('   ', x.get('published','')[:25], x.get('link','')[:100])
+"
+0 | Il Messaggero Roma | Roma, scoppia la faida tra donne del clan: 52enne uccisa a coltellate durante il raid. La spedizione con armi 
+    ven, 20 nov 2026 23:34:14 https://www.ilmessaggero.it/roma/metropoli/roma_lite_famiglie_rom_morta_cosa_e_successo_ultime_notiz
+1 | Il Messaggero Roma | Il cane poliziotto Odina punta un ragazzo, trovata droga addosso e a casa: arrestato
+    ven, 20 nov 2026 15:40:55 https://www.ilmessaggero.it/roma/flaminio/polizia_idraulico_spaccio_droga-9902607.html
+2 | Il Messaggero Roma | Roma, cosa fare (anche gratis) venerdì 20, sabato 21 e domenica 22 novembre: Christmas Parade, Vegan Village e
+    ven, 20 nov 2026 13:17:20 https://www.ilmessaggero.it/roma/eventi/roma_cosa_fare_gratis_venerdi_20_sabato_21_domenica_22_novem
+3 | Il Messaggero Roma | Le sagre e le feste nei dintorni di Roma sabato 21 e domenica 22 novembre: dal vino alla crespella, ecco tutti
+    ven, 20 nov 2026 06:52:03 https://www.ilmessaggero.it/roma/eventi/le_sagre_le_feste_dintorni_di_roma_sabato_21_domenica_22_nov
+4 | Il Messaggero Roma | Hilton punta su Roma: a Monti un hotel di lusso con 147 camere
+    ven, 20 nov 2026 00:23:21 https://www.ilmessaggero.it/roma/metropoli/hotel_hilton_lxr_hotels_resort_roma_monti_5_stelle_lusso_
+5 | Il Fatto Quotidiano | Corrado Augias, in diecimila al Campidoglio per l’ultimo saluto. La figlia Natalia: “Colpita da chi ha parlato
+    2026-11-21T18:06:56+00:00 https://www.ilfattoquotidiano.it/2026/11/21/corrado-augias-camera-ardente-campidoglio-notizie/857984
+6 | ANSA Lazio | La camera ardente di Corrado Augias al Campidoglio
+    2026-11-21T18:04:37+00:00 https://www.ansa.it/lazio/notizie/2026/11/21/aperta-la-camera-ardente-di-corrado-augias-al-campidogl
+7 | AGI | Centinaia in fila per l'ultimo saluto a Corrado Augias in Campidoglio
+    2026-11-21T17:59:51+00:00 https://www.agi.it/cronaca/news/2026-11-21/augias-camera-ardente-campidoglio-40128287/
+8 | ANSA Lazio | Alessandro Baricco e La tempesta silenziosa, a Roma lezione su Le notti bianche
+    2026-11-21T17:53:28+00:00 https://www.ansa.it/lazio/notizie/2026/11/21/alessandro-baricco-e-la-tempesta-silenziosa-a-roma-lezi
+9 | ANSA Lazio | Festival economia della cultura, 'nel Lazio comparto che genera sviluppo'
+    2026-11-21T17:53:19+00:00 https://www.ansa.it/lazio/notizie/2026/11/21/festival-economia-della-cultura-nel-lazio-comparto-che-
+10 | ANSA Lazio | Gualtieri, 5 milioni euro per riqualificare i 144 centri anziani di Roma
+    2026-11-21T17:53:16+00:00 https://www.ansa.it/lazio/notizie/2026/11/21/gualtieri-5-milioni-euro-per-riqualificare-i-144-centri
+11 | ANSA Lazio | Giornata caregiver, Rocca-Maselli 'ci prendiamo cura di chi si prende cura'
+    2026-11-21T17:53:16+00:00 https://www.ansa.it/lazio/notizie/2026/11/21/giornata-caregiver-rocca-maselli-ci-prendiamo-cura-di-c
+12 | Adnkronos | Parma-Roma, proteste sul gol di Malen e Gilardino chiede un rosso
+    2026-11-21T17:52:44+00:00 https://www.adnkronos.com/sport/parma-roma-gol-malen-mancini-capelli-elphege-rosso-cose-successo_7Bu
+13 | Adnkronos | Dl scuola, Fdi-Fi trattano su libri digitali: exit strategy odg per correttivi in altro provvedimento
+    2026-11-21T17:50:00+00:00 https://www.adnkronos.com/politica/dl-scuola-libri-testo-digitali-scontro-fi-fdi-trattative-governo_
+14 | Il Tempo | L’analista Giovanni Giacalone: «La sinistra globale usa le stesse parole per nascondere la propria crisi»
+    2026-11-21T17:41:57+00:00 https://www.iltempo.it/news/attualita/la-sinistra-globale-usa-le-stesse-parole-per-nascondere-la-pro
+15 | AGI | Gianni De Gennaro si è ucciso. La procura indaga per istigazione al suicidio. Trovati bigl...
+    2026-11-21T17:30:22+00:00 https://www.agi.it/cronaca/news/2026-11-21/de-gennaro-suicidio-sparato-40128627/
+16 | Corriere Roma | La lunga coda in piazza del Campidoglio per l'ultimo saluto a Corrado Augias
+    2026-11-21T17:27:08+00:00 https://video.corriere.it/roma/la-lunga-coda-in-piazza-del-campidoglio-per-l-ultimo-saluto-a-corrado
+17 | Il Sole 24 Ore | La Sardegna scommette sui nomadi digitali: la Regione investe 10 milioni di euro
+    2026-11-21T17:24:41+00:00 https://www.ilsole24ore.com/art/la-sardegna-scommette-nomadi-digitali-regione-investe-10-milioni-eur
+18 | Il Fatto Quotidiano | Il Tar sospende i divieti della Questura di Trieste per l’assistenza ai migranti. L’invito al Comune: “Organiz
+    2026-11-21T17:04:10+00:00 https://www.ilfattoquotidiano.it/2026/11/21/migranti-trieste-tar-sospensione-divieti-notizie/8579792
+19 | Il Fatto Quotidiano | De Gennaro non si è ucciso in casa: i rilievi della Scientifica in una rimessa svelati dal drone
+    2026-11-21T16:45:37+00:00 https://www.ilfattoquotidiano.it/2026/11/21/de-gennaro-suicidio-video-villa-drone-investigatori-rime
+20 | Il Fatto Quotidiano | Bolelli e Vavassori si separano: dalle finali Slam alla vittoria a Roma, finisce l’era della coppia d’oro del 
+    2026-11-21T16:39:34+00:00 https://www.ilfattoquotidiano.it/2026/11/21/bolelli-vavassori-separazione-doppio-notizie/8579773/
+21 | Il Tempo | Noslin super e Lecce sconfitto, la Lazio non smette di sognare
+    2026-11-21T16:26:16+00:00 https://www.iltempo.it/news/italpress/noslin-super-e-lecce-sconfitto-la-lazio-non-smette-di-sognare/
+22 | Adnkronos | Serie A, Parma-Roma 1-1 - Diretta
+    2026-11-21T16:06:00+00:00 https://www.adnkronos.com/sport/diretta-parma-roma-oggi-serie-a-risultato-live_1BPFJ899GzboxgAyY2iwG
+23 | Adnkronos | Darderi: "Coppa Davis coronamento di un percorso, il prossimo obiettivo è la top ten"
+    2026-11-21T16:04:03+00:00 https://www.adnkronos.com/sport/luciano-darderi-intervista-coppa-davis-atp-finals_1ErkbSz3QjRoFZWpe8
+24 | Corriere Roma | Salute mentale, oltre 250 ospiti a Palazzo Rondinini per la Charity Dinner di Progetto Itaca Roma
+    2026-11-21T15:59:05+00:00 https://roma.corriere.it/notizie/cronaca/26_novembre_21/salute-mentale-oltre-250-ospiti-a-palazzo-ro
+25 | Adnkronos | Gattuso chiede due rigori, Di Francesco uno: caos in Lazio-Lecce
+    2026-11-21T15:56:58+00:00 https://www.adnkronos.com/sport/caos-lazio-lecce-rigori-cose-successo-serie-a_lKzGGHUuvzLQxdKu8Ixq
+26 | Il Fatto Quotidiano | “Ho trovato due casse buttate in discarica, le ho rivendute e ho scoperto l’imprenditoria. Oggi con mio fratel
+    2026-11-21T15:18:05+00:00 https://www.ilfattoquotidiano.it/2026/11/21/ho-trovato-due-casse-buttate-in-discarica-le-ho-rivendut
+27 | Il Tempo | Amorim “Pavlovic convocato, siamo pronti per ripartire”
+    2026-11-21T14:00:25+00:00 https://www.iltempo.it/news/italpress/amorim-pavlovic-convocato-siamo-pronti-per-ripartire/
+28 | Corriere Roma | L'accesso alla casa di Gianni De Gennaro in Toscana presidiato dai carabinieri
+    2026-11-21T13:50:38+00:00 https://video.corriere.it/roma/l-accesso-alla-casa-di-gianni-de-gennaro-in-toscana-presidiato-dai-ca
+29 | Corriere Roma | Corrado Augias, Casini: «Un grande maestro, rispettato da tutti perché era un gentiluomo»
+    2026-11-21T13:45:18+00:00 https://video.corriere.it/roma/corrado-augias-casini-un-grande-maestro-rispettato-da-tutti-perche-er
+30 | Corriere Roma | Urbano Cairo ricorda Corrado Augias: «Un grande intellettuale con il sorriso, persona di grande equilibrio»
+    2026-11-21T13:27:05+00:00 https://video.corriere.it/roma/urbano-cairo-ricorda-corrado-augias-un-grande-intellettuale-con-il-so
+31 | Il Sole 24 Ore | Decreto Scuola, un ordine del giorno sugli e-book per siglare la pace tra Fdi e azzurri
+    2026-11-21T12:57:32+00:00 https://www.ilsole24ore.com/art/decreto-scuola-ordine-giorno-e-book-siglare-pace-fdi-e-azzurri-AJhLy
+32 | Il Sole 24 Ore | Codice della strada, scompare la tariffa massima per chi perde il biglietto in autostrada
+    2026-11-21T12:49:33+00:00 https://www.ilsole24ore.com/art/codice-strada-scompare-tariffa-massima-chi-perde-biglietto-autostrad
+33 | Il Tempo | Garlasco, due carabinieri in via Pascoli 50 minuti prima della chiamata di Stasi al 118: il mistero
+    2026-11-21T12:34:48+00:00 https://www.iltempo.it/news/attualita/garlasco-due-carabinieri-in-via-pascoli-50-minuti-prima-della-
+34 | Il Tempo | Morto Gianni De Gennaro, i messaggi della politica. “Vittima di un massacro mediatico-giudiziario”
+    2026-11-21T12:25:37+00:00 https://www.iltempo.it/news/politica/morto-gianni-de-gennaro-i-messaggi-della-politica-vittima-di-un
+35 | Il Sole 24 Ore | Sanità: in manovra fino a 1 miliardo in più, ma resta il nodo buste paga
+    2026-11-21T11:57:40+00:00 https://www.ilsole24ore.com/art/sanita-manovra-fino-1-miliardo-piu-ma-resta-nodo-buste-paga-AJ38ssNC
+36 | AGI | L'ultimo addio in Campidoglio a Corrado Augias. Gualtieri: "Oggi siamo tutti un po' più poveri"
+    2026-11-21T11:37:32+00:00 https://www.agi.it/cronaca/video/2026-11-21/corrado-augias-camera-ardente-40130405/
+37 | AGI | Perché l’ex capo della Polizia era indagato: le carte bruciate e via D’Amelio
+    2026-11-21T10:53:19+00:00 https://www.agi.it/cronaca/news/2026-11-21/perche-gianni-de-gennaro-era-indagato-40129626/
+38 | Il Sole 24 Ore | Suicidio Gianni De Gennaro, chi era l’ex capo della Polizia: dalla lotta alla mafia ai vertici dei servizi seg
+    2026-11-21T10:41:00+00:00 https://www.ilsole24ore.com/art/de-gennaro-dall-antimafia-vertici-polizia-e-servizi-segreti-AJxV7LOC
+39 | AGI | Tensioni nei cortei studenteschi: bombe carta a Roma, striscione incendiato a Napoli (VIDEO)
+    2026-11-20T15:38:22+00:00 https://www.agi.it/cronaca/news/2026-11-20/sciopero-ministero-istruzione-bombe-carta-40115598/
+> build · deepseek-v4.1-flash-free
+[91m[1mError: [0mTimed out waiting for response data
+> build · deepseek-v4.1-flash-free
+Now let me check fresh Rome news via Google News RSS and look at the format of a recent post.
+[0m$ [0mhead -30 content/extra/2026-11-20-rome-weekend-cie-museums.md; echo "===COVER GEN HEAD==="; head -60 covers/generate.py
+🏛 **Рим 20–22 листопада: страйк, open day CIE і ніч музеїв**
+
+**🚇 Сьогодні, 20.11 — загальний страйк**
+ATAC і Cotral працюють лише у гарантовані вікна: **з початку руху до 08:29** і **17:00–19:59**. З 08:30 автобуси, метро й трамваї — під питанням: можливі скасування рейсів, закриті станції метро, неробочі ескалатори. Нічні автобуси вже не ходили цієї ночі. У зонах Centro, Ostiense, Tiburtina, Casilina, Nomentana маршрути йдуть з відхиленнями через ходу. Потяги: страйк FS/Trenitalia **з 21:00 сьогодні до 20:00 суботи 21.11**, регіональні рейси гарантовані 06:00–09:00 і 18:00–21:00 (RomaToday, ATAC, Trenitalia).
+
+**🪪 Open day carta d'identità: 21–22 листопада**
+Місто відкриває додаткові вікна для електронного посвідчення (CIE). **Запис — з 09:00 п'ятниці 20.11** на порталі Agenda CIE Міністерства внутрішніх справ, місця до вичерпання.
+
+• **Субота 21.11:** Municipio III — via Fracchia 45 (8:00–17:00); IV (Casal Bertone) — via Alberto Pollio 50 (8:30–13:00); VIII — via Benedetto Croce 50 (8:30–15:30); XII — via Fabiola 14 (8:30–13:30); XV — piazza Saxa Rubra 19 (8:30–16:00); плюс центральні пункти (колишні PIT і via Petroselli 52).
+• **Неділя 22.11:** лише центр — piazza Sonnino, piazza Santa Maria Maggiore, via Petroselli 52, 8:30–12:30.
+
+Взяти з собою: **бронювання, фотокартку, банківську картку для оплати і старий документ**. Паперове посвідчення дійсне лише до **31 січня 2027** на території Італії; для виїзду за кордон воно не годиться з 3 серпня 2026 (Vivere Roma, 19.11).
+
+**🎶 Ніч музеїв: з 20:00 суботи до 02:00 неділі**
+Musei in Musica 2026: муніципальні музеї Риму працюють уночі, квиток — **1 €** (безкоштовно з Roma MIC Card), у програмі концерти й перформанси просто в залах. До акції долучаються університети: музеї Sapienza, LUISS, Link та eCampus відкриті безкоштовно зі своєю програмою (RomaToday, Musei in Comune).
+
+**🎄 Christmas Garden — щодня**
+Орто-ботанічний сад у Трастевере: 17:00–21:00, вхід сеансами кожні 30 хвилин, квитки від 15,90 € онлайн (каса — від 18 €), діти — від 12,90 €.
+
+**Що це означає для новачка:** якщо планували справу в центрі на суботу — краще пішки або на метро до 20:00; на неділю транспорт працює нормально, а ввечері можна дешево потрапити до музеїв.
+
+Джерела: RomaToday (20.11 — страйк, гарантовані вікна, відхилення маршрутів; Musei in Musica), Vivere Roma (19.11 — open day CIE, адреси й години), ATAC і Trenitalia (гарантовані вікна), Musei in Comune, christmas-garden.it.
+===COVER GEN HEAD===
+#!/usr/bin/env python3
+"""Генерує обкладинки 1080×810 для постів каналу «Рим для своїх»."""
+from pathlib import Path
+from html import escape
+
+OUT = Path(__file__).parent
+
+COVERS = [
+    {
+        "file": "2026-11-09-intro",
+        "kicker": "ЗНАЙОМСТВО",
+        "title": ["РИМ", "ДЛЯ СВОЇХ"],
+        "sub": "Щотижневий дайджест для українців",
+        "date": "СТАРТ 09.11.2026",
+        "accent": "#FFD166",
+        "icon": "home",
+    },
+    {
+        "file": "2026-11-10-transport",
+        "kicker": "ТРАНСПОРТ",
+        "title": ["ЩО ЗМІНИЛОСЯ", "ЦЬОГО ТИЖНЯ"],
+        "sub": "Roma-Lido · Lepanto · страйки 20–21.11",
+        "date": "9–15 ЛИСТОПАДА",
+        "accent": "#5FD3C4",
+        "icon": "metro",
+    },
+    {
+        "file": "2026-11-10-rent",
+        "kicker": "ЖИТЛО Й ГРОШІ",
+        "title": ["СКІЛЬКИ", "КОШТУЄ РИМ"],
+        "sub": "Оренда · ярмарок · здоров'я · культура",
+        "date": "10 ЛИСТОПАДА",
+        "accent": "#FFB86B",
+        "icon": "wallet",
+    },
+    {
+        "file": "2026-11-10-events",
+        "kicker": "КАЛЕНДАР",
+        "title": ["РИМ ПЕРЕД", "СВЯТАМИ"],
+        "sub": "Japan Days · екологічна неділя · ярмарки",
+        "date": "14.11 — 08.12",
+        "accent": "#E5C07B",
+        "icon": "pin",
+    },
+    {
+        "file": "2026-11-10-codice-fiscale",
+        "kicker": "ДОКУМЕНТИ",
+        "title": ["CODICE", "FISCALE"],
+        "sub": "16 символів, без яких нічого не оформити",
+        "date": "БЕЗКОШТОВНО",
+        "accent": "#7FB2F0",
+        "icon": "doc",
+    },
+    {
+        "file": "2026-11-10-italy-military-aid",
+        "kicker": "УКРАЇНА І СВІТ",
+        "title": ["13-Й ПАКЕТ", "ДОПОМОГИ"],
+        "sub": "Італія підтвердила нову військову підтримку",
+        "date": "10 ЛИСТОПАДА",
+        "accent": "#6EC1FF",
+[0m$ [0mfor q in "Roma+eventi+domani" "Roma+weekend" "Roma+sciopero+trasporti"; do echo "=== $q ==="; curl -s "https://news.google.com/rss/search?q=$q&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+items=re.findall(r'<item>(.*?)</item>',t,re.S)
+for it in items[:12]:
+    ti=re.search(r'<title>(.*?)</title>',it,re.S)
+    d=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S)
+    print('-',html.unescape(ti.group(1))[:120] if ti else '', '|', d.group(1) if d else '')
+"; done
+=== Roma+eventi+domani ===
+- Musei in Musica 2026: aperture serali e spettacoli diffusi (a 1 euro) - RomaToday | Sat, 21 Nov 2026 17:55:20 GMT
+- L’Italia di Domani: incontriamoci a Roma il 14 e 15 novembre (anche in streaming) - Domani | Tue, 03 Nov 2026 08:00:00 GMT
+- Sito Istituzionale | Mobilità e trasporti, weekend 24 e 25 ottobre - Roma Capitale | Sun, 25 Oct 2026 07:00:00 GMT
+- Se Domani Non Torno - Oggi Roma | Wed, 04 Nov 2026 09:01:31 GMT
+- Sciopero dei mezzi, Roma verso la paralisi. Oggi, venerdì 20 novembre, a rischio metro, bus, tram e treni per 24 ore - R | Fri, 20 Nov 2026 11:43:30 GMT
+- Avs. Inizia domani domenica 6 settembre a Roma la Festa Nazionale "Terra", con Corbyn, Gualtieri, Cathy La Torre e tanti | Sat, 05 Sep 2026 07:00:00 GMT
+- Weekend a Roma: 20 eventi da non perdere sabato 12 e domenica 13 settembre - RomaToday | Sat, 12 Sep 2026 07:00:00 GMT
+- Axios, 'colloqui Israele-Libano a Roma interrotti per gli eventi sul terreno' - ANSA | Wed, 05 Aug 2026 07:00:00 GMT
+- Torna a Roma “60 under 30”: il premio dedicato ai giovani che stanno cambiando il Paese - Domani | Mon, 05 Oct 2026 07:00:00 GMT
+- Arene di Roma Estate 2026 - Turismo Roma | Fri, 29 May 2026 11:28:58 GMT
+- Notte di San Lorenzo: cosa fare a Roma e dove vedere le stelle cadenti - RomaToday | Fri, 07 Aug 2026 07:50:40 GMT
+- “L'albero della vita dei biologi: orientarsi oggi per costruire il domani”: evento a Roma il 24 marzo - Federazione Nazi | Mon, 02 Mar 2026 08:00:00 GMT
+=== Roma+weekend ===
+- Weekend a Roma: 20 eventi da non perdere sabato 21 e domenica 22 novembre - RomaToday | Sat, 21 Nov 2026 19:13:31 GMT
+- Sito Istituzionale | Mobilità e trasporti, weekend 21 e 22 novembre - Roma Capitale | Sat, 21 Nov 2026 16:40:32 GMT
+- Roma da vivere: 7 esperienze esclusive tra arte, gusto e meraviglia per un weekend d’inverno nella Capitale - Forbes Ita | Sat, 21 Nov 2026 09:53:11 GMT
+- Roma eventi weekend. Musei in Musica, Pappano all'Auditorium, Abramovic all'Arco di Giano - Il Messaggero | Thu, 19 Nov 2026 09:45:13 GMT
+- Weekend a Roma con i bambini da 0 a 3 anni: tutti gli eventi dal 20 al 22 novembre - Roma 03 | Wed, 18 Nov 2026 15:32:53 GMT
+- Weekend tra chiusure e bus deviati: da Lazio-Lecce e Papa Leone XIV alla «Corri al Tiburtino» e alla Christmas Parade -  | Fri, 20 Nov 2026 16:51:14 GMT
+- Che fare a Roma e Litorale romano nel weekend dal 20 al 22 novembre: dove si entra gratis - Canale 10 | Thu, 19 Nov 2026 13:13:19 GMT
+- Guida ai mercatini di Natale 2026 a Roma: luoghi e date - RomaToday | Thu, 19 Nov 2026 13:32:00 GMT
+- Le strade chiuse a Roma sabato 21 e domenica 22 novembre 2026 - RomaToday | Sat, 21 Nov 2026 18:28:31 GMT
+- Roma, cosa fare (anche gratis) venerdì 20, sabato 21 e domenica 22 novembre: Christmas Parade, Vegan Village e Ficus al  | Fri, 20 Nov 2026 12:17:20 GMT
+- Cosa fare a Roma nel weekend 21-22 novembre, Musei in Musica - Vivere Roma | Thu, 19 Nov 2026 21:33:06 GMT
+- Weekend 21 e 22 novembre nel Lazio: sagre, mercatini di Natale, musei a 1 euro e spettacoli - Il Quotidiano del Lazio | Sat, 21 Nov 2026 16:45:51 GMT
+=== Roma+sciopero+trasporti ===
+> build · deepseek-v4.1-flash-free
+> build · deepseek-v4.1-flash-free
+Let me pull the fresh weekend listings and event details.
+[0m$ [0mcurl -sL "https://news.google.com/rss/search?q=Musei+in+Musica+Roma+2026&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+for it in re.findall(r'<item>(.*?)</item>',t,re.S)[:6]:
+    ti=re.search(r'<title>(.*?)</title>',it,re.S).group(1)
+    li=re.search(r'<link>(.*?)</link>',it,re.S).group(1)
+    print(html.unescape(ti)); print(li); print()
+"
+Musei in Musica 2026 - Musei in Comune
+https://news.google.com/rss/articles/CBMidkFVX3lxTE5FMnVWckNCT2M4VURiZ051TFdVVEdMdlhnNDhuLXZjOWt0VDVCXzE3Qjh2ZFR1cFV2d093dTcyejZQNkUzTVlhcEk5NGdCckdVUlRlY0ZROFhxdXZjc3BaSlJIVW1LZXBZSmgyU2hOb05ZQWh5eHc?oc=5
+
+Musei in Musica 2026 ai Musei Capitolini - Musei Capitolini
+https://news.google.com/rss/articles/CBMijwFBVV95cUxPZDR0eHZKSTNFMHQ4eWMwY1R0ZXo3MllOcHl4bDJCTHlMdDFnOWhQYzgtdThlQ1Q2Wm1mem1sUS11b1dLSmNQcWJ0NGRQUGpNMWo0cHNEbUVUZU05REU5MGtmQ0EwM3FkckJVUlQwaU9YUjdqSVFwdFcxWE8yei1yd3JWc3BSaVZNOE03QVFEbw?oc=5
+
+Musei in Musica 2026: aperture serali e spettacoli diffusi (a 1 euro) - RomaToday
+https://news.google.com/rss/articles/CBMieEFVX3lxTE1aemZjMC1Vc2F2OWRKbFdJaHZnRUE4bkJnLUZjZHR5X0ZudjhoMXRHNkdOLXNpOUxUWm9YTVQxMmN5aTFQNU1XWVhYOHJpX1QycWtoR0ppTEMxcnc0U2RrRDBTc2hwbFphTDBJdHo5NFZadVVZVTlQWg?oc=5
+
+Sito Istituzionale | Musei in Musica, il 21 novembre la sedicesima edizione - Roma Capitale
+https://news.google.com/rss/articles/CBMikAFBVV95cUxQVklQbnJOX2pWV2pfc0UwVmpraXpXa1BiYkpkQWtaNzZzOHVRNVpXc2tPdEpQZDRDelZ3bXRWaV9XWUJjS25QVWE1bEJZdjNIT2ZhSkVjcjN3MGVvbWlrSkoxa19pV3phdW5IUnRZNmFsemFncUpsUHhaWmtmNl91c1dQUzFJUmZnbEJqaHNzQ2k?oc=5
+
+Musei in Musica 2026 al Museo dell'Ara Pacis - Museo dell'Ara Pacis
+https://news.google.com/rss/articles/CBMiiAFBVV95cUxNYjlGOExOWVZyU2RzR2drd3hyMHF3M3kzcTJGU2dLcVFqaVI4MUhyZVFxbjVQcWloOGEyZ0NDa2l0YnVSUnVuOXljbHFPZjRnem1CT2Q1am83RTF6OHBpV1lFclZnN0hTZldMOWthU1pHb0RPR1BwQ2pWbU1jZ29relVxQkMwbGtW?oc=5
+
+Musei in Musica 2026 al WEGIL – LAZIOCREA - Turismo Roma
+https://news.google.com/rss/articles/CBMiiwFBVV95cUxNVW9iTFBHdUlrLUo3SGhwS3RzY3FlWmJPb2lsUXBJajEyWDAyZWhpZTZqUkxqY1pnTFFOaDg3OW0tNjFFOHczWjR6S0NXLVhkX3ZEbThIZXRRbmNmY0ZMUzl0elRhQlk5ZTBvNFhtVU1aODBHaXI4RXRPS1d4OWlvbWRvaGpVVmlFMGF3?oc=5
+[0m$ [0mpython3 - <<'EOF'
+import urllib.request, re, html, json
+urls = {
+ "romatoday20": "https://www.romatoday.it/eventi/weekend-roma-21-22-novembre-2026.html",
+}
+# resolve google news links instead
+import subprocess
+EOF
+curl -sL "https://news.google.com/rss/search?q=Roma+weekend&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+for it in re.findall(r'<item>(.*?)</item>',t,re.S)[:6]:
+    ti=re.search(r'<title>(.*?)</title>',it,re.S).group(1)
+    li=re.search(r'<link>(.*?)</link>',it,re.S).group(1)
+    print(html.unescape(ti)); print(li); print()
+"
+Weekend a Roma: 20 eventi da non perdere sabato 21 e domenica 22 novembre - RomaToday
+https://news.google.com/rss/articles/CBMihgFBVV95cUxQZF9EOHFiQW16amdkeUFpNEVXM3dhbThmN2c5NG9YOU1MR1RyNmRfenZCNmdhRFdPblNnVHN2TFZncS1fMzJuUER4MjFWVmpsNnZ5clpDVmZCeDdhc3laLXUxQ0J3MDF3WF94Z2xDQTM0aF9XWjRUS09DU2pNbFBPbHNybEZPQQ?oc=5
+
+Sito Istituzionale | Mobilità e trasporti, weekend 21 e 22 novembre - Roma Capitale
+https://news.google.com/rss/articles/CBMikwFBVV95cUxQZGNWbXZHd0NHU0NjT3hBRDFuZ05JOVhtT01DWGg3SEZ4T1liazNhbnhsOXB5ZmlteFBQSnlYLW1DSGhFUWZPOURRTldjbF9HQUNnWEpubFFEdGVWRTVPTEp0d19pMjdCNFlZeURtWFVXOUMzaVB6OXF4VjlpWXFiMF9OUmdJTW56XzdaX1ZEOU1jYzg?oc=5
+
+Roma da vivere: 7 esperienze esclusive tra arte, gusto e meraviglia per un weekend d’inverno nella Capitale - Forbes Italia
+https://news.google.com/rss/articles/CBMiugFBVV95cUxOT2ZaczB0NTcza2s5YmRkMHpKUzdBdERlOFZKY0NzaDNucWNBdFVJM2lrMW40NmFTOFhZbm16Umh6NjlJQzhfSnhPOGw5TTZhc29INWk3bE13cW1FMzJ0Mi1BUTBDTnVkcmFXcWpKU3Jsa0I4dkFNaUV4Slg2VjNreHlyZWpmY2lfZVhaT2ZXT3ZMb21OYW4ycnQxeXhwM0VXMDlMcFB6OElwUk1XUlhnbzB0czM0RHRUSmc?oc=5
+
+Roma eventi weekend. Musei in Musica, Pappano all'Auditorium, Abramovic all'Arco di Giano - Il Messaggero
+https://news.google.com/rss/articles/CBMixAFBVV95cUxNOVFFX1NfLWpKQnllY3F4ZlNNMjl2S1pDMGhsRWZycHFFUmgxb25NMGt2bVVpOE83X05PUnBoMDlMMmFlajlKdjVNY2N1ZVRnQW03QXRTb0tBYzl3bTNNdUJoSTQxWDZELVBOTURCNmk1U2hTUDE0NnhKTUVTOU5WWTVkOFk3eTJ2UWpUWU1CRElVd0w3aTNlbFlVUWhZUHJDZHpqTExHdnhSRWlUVHdsVmJoRFNFNlp5d0VaOWNpVEVBczBr0gG4AUFVX3lxTFBpQ2FVbkNXUWxMWWZqUjdhR0lTOGstaWZ1dWFmN1hMTHpjWmpJb1B5dklDckpJdGtNUzFnVVk5ejhvcGZuR1h5VG9Hcm55TnQzd28wM1VIODlmRk9UdXpYc1ptemVuYV9oWXhFSlNreWZxWXNQZ2xmLVd6NjEzZXUzbkZEYTVQb0xGOVh5V1NtT0Zxa2NjNUVhZ2k1WFVPNHV3ck5LN3QwMDZ3Z2NHRzZFWG8wYTU2eDY?oc=5
+
+Weekend a Roma con i bambini da 0 a 3 anni: tutti gli eventi dal 20 al 22 novembre - Roma 03
+https://news.google.com/rss/articles/CBMiqAFBVV95cUxQejNaQWs0YVBzZmp6cDRDb2h5UUMzVzRpYTJvOWVHQVA5QWxIejJVQnF3YkUtMjBLRy1NWHJyTGZzZW1xMnozeXdsV0lRVm5ZR083MXE3NzBoT1dESl9PZ2o3RHZoUm1qTTdZT05rTUMyNF96bGxjVl9oNGRhMG9vWEhZZ1FWTWR4dnNybGdPUExVQ1ZrZkVCNXBGb0w4aHkwaE9PeU5YUlc?oc=5
+
+Weekend tra chiusure e bus deviati: da Lazio-Lecce e Papa Leone XIV alla «Corri al Tiburtino» e alla Christmas Parade - Abitare A Roma
+https://news.google.com/rss/articles/CBMi1gFBVV95cUxPMHFWRWJIeHNQSUJWRnpBbnNQQzloMVZlbDkzZ09LVU1GLVo3bjFHSUs2NWZaQ3BLYmdHdnRoazdEVWdVZmU4cHEyNGQ4Z3ljTkdscWpNVU1Fdms1SmM4ZGpwbXZwSUNOeVRzSmlqMmtjWjdNek8xUmYyV1hCTmNkNjJST1B5YnlFSFZFMk00dk95Y29JYWNTbWR4S2RacVRBdE9jeEZBUlg2bXdOdEh1SWtYbVU5QXo5QmNBc0hVUWNOdzhNeHRWblg1ZmhQTnJaMVV0V0hn?oc=5
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcurl -sL "https://news.google.com/rss/articles/CBMixAFBVV95cUxNOVFFX1NfLWpKQnllY3F4ZlNNMjl2S1pDMGhsRWZycHFFUmgxb25NMGt2bVVpOE83X05PUnBoMDlMMmFlajlKdjVNY2N1ZVRnQW03QXRTb0tBYzl3bTNNdUJoSTQxWDZELVBOTURCNmk1U2hTUDE0NnhKTUVTOU5WWTVkOFk3eTJ2UWpUWU1CRElVd0w3aTNlbFlVUWhZUHJDZHpqTExHdnhSRWlUVHdsVmJoRFNFNlp5d0VaOWNpVEVBczBr0gG4AUFVX3lxTFBpQ2FVbkNXUWxMWWZqUjdhR0lTOGstaWZ1dWFmN1hMTHpjWmpJb1B5dklDckpJdGtNUzFnVVk5ejhvcGZuR1h5VG9Hcm55TnQzd28wM1VIODlmRk9UdXpYc1ptemVuYV9oWXhFSlNreWZxWXNQZ2xmLVd6NjEzZXUzbkZEYTVQb0xGOVh5V1NtT0Zxa2NjNUVhZ2k1WFVPNHV3ck5LN3QwMDZ3Z2NHRzZFWG8wYTU2eDY?oc=5" -o /tmp/g1.html -w "%{http_code} %{url_effective}\n"; ls -la /tmp/g1.html; grep -o '<title>[^<]*' /tmp/g1.html | head -3
+200 https://news.google.com/rss/articles/CBMixAFBVV95cUxNOVFFX1NfLWpKQnllY3F4ZlNNMjl2S1pDMGhsRWZycHFFUmgxb25NMGt2bVVpOE83X05PUnBoMDlMMmFlajlKdjVNY2N1ZVRnQW03QXRTb0tBYzl3bTNNdUJoSTQxWDZELVBOTURCNmk1U2hTUDE0NnhKTUVTOU5WWTVkOFk3eTJ2UWpUWU1CRElVd0w3aTNlbFlVUWhZUHJDZHpqTExHdnhSRWlUVHdsVmJoRFNFNlp5d0VaOWNpVEVBczBr0gG4AUFVX3lxTFBpQ2FVbkNXUWxMWWZqUjdhR0lTOGstaWZ1dWFmN1hMTHpjWmpJb1B5dklDckpJdGtNUzFnVVk5ejhvcGZuR1h5VG9Hcm55TnQzd28wM1VIODlmRk9UdXpYc1ptemVuYV9oWXhFSlNreWZxWXNQZ2xmLVd6NjEzZXUzbkZEYTVQb0xGOVh5V1NtT0Zxa2NjNUVhZ2k1WFVPNHV3ck5LN3QwMDZ3Z2NHRzZFWG8wYTU2eDY?oc=5&hl=en-US&gl=US&ceid=US:en
+-rw-r--r--@ 1 terkin  wheel  587166 Nov 21 20:35 /tmp/g1.html
+<title>Google News
+[0m$ [0mcurl -s "https://news.google.com/rss/search?q=Pappano+Auditorium+Roma+22+novembre&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+for it in re.findall(r'<item>(.*?)</item>',t,re.S)[:8]:
+    ti=re.search(r'<title>(.*?)</title>',it,re.S).group(1)
+    d=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S)
+    print('-',html.unescape(ti)[:130],'|',d.group(1)[:16] if d else '')
+"; echo "===ABRAMOVIC==="; curl -s "https://news.google.com/rss/search?q=Abramovic+Arco+di+Giano+Roma&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+for it in re.findall(r'<item>(.*?)</item>',t,re.S)[:8]:
+    ti=re.search(r'<title>(.*?)</title>',it,re.S).group(1)
+    d=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S)
+    print('-',html.unescape(ti)[:130],'|',d.group(1)[:16] if d else '')
+"
+- Roma eventi weekend. Musei in Musica, Pappano all'Auditorium, Abramovic all'Arco di Giano - Il Messaggero | Thu, 19 Nov 2026
+- Accademia di Santa Cecilia, Pappano/maratona pianistica/mostra Regina Margherita - Teatrionline | Wed, 18 Nov 2026
+- Musei in musica, Pappano e Marina Abramović: gli eventi del fine settimana a Roma - Agenzia Nova | Thu, 19 Nov 2026
+- Roma: a Santa Cecilia una Stagione da sold out - Le Salon Musical | Tue, 27 Feb 2024
+- Torino, concerto Kantorow/Pappano/Chambers Orchestra of Europe, 12/11/2026 - L'ape musicale | Thu, 12 Nov 2026
+- Accademia di Santa Cecilia 2021: i concerti di dicembre - FS News | Thu, 25 Nov 2021
+- Roma, la stagione 2026/27 dell'Accademia di Santa Cecilia - L'ape musicale | Fri, 13 Mar 2026
+- Eventi a Roma e provincia dal 19 al 26 novembre 2026 tra cultura natura e concerti - Viaggiando Italia | Thu, 19 Nov 2026
+===ABRAMOVIC===
+- Marina Abramovic porta sotto l’Arco di Giano "un asinello" a cui confidare segreti e pensieri - RomaToday | Thu, 19 Nov 2026
+- “Quest’opera è la mia lettera d’amore a Roma. Voglio condividere questo atto catartico con tutti”: Marina Abramovic presenta la su | Fri, 20 Nov 2026
+- Marina Abramović porta la confessione sotto l’Arco di Giano a Roma - insideart | Thu, 19 Nov 2026
+- Marina Abramović si confessa all’Arco di Giano, ma da domani ognuno potrà diventare protagonista di “Confession” - Arte Magazine | Wed, 18 Nov 2026
+- Un asino dorato all'Arco di Giano raccoglie le confessioni dei visitatori: a Roma l'opera di Marina Abramović - Radio Globo - Solo | Thu, 19 Nov 2026
+- Marina Abramović porta “Confession” all’Arco di Giano a Roma - inITALY | Fri, 20 Nov 2026
+- Roma, “città della confessione” con l’asino d’oro di Marina Abramović - La Voce di New York | Tue, 17 Nov 2026
+- Marina Abramović a Roma: la performance in anteprima sotto l'Arco di Giano - la Repubblica | Tue, 17 Nov 2026
+> build · deepseek-v4.1-flash-free
+[0m◈ [0mWeb Search via Firecrawl "Marina Abramović Confession Arco di Giano Roma orari fino al dicembre 2026 gratis" 
+[0m◈ [0mWeb Search via Firecrawl "Pappano Auditorium Roma 22 novembre 2026 Santa Cecilia concerto orario" 
+> build · deepseek-v4.1-flash-free
+[0m$ [0mgrep -o 'https\?://[^"'"'"' ]*ilmessaggero[^"'"'"' ]*' /tmp/g1.html | head -5; echo "---"; grep -o 'data-n-au="[^"]*"' /tmp/g1.html | head -3; echo "---"; grep -o 'https\?://[^"'"'"'\\]*romatoday[^"'"'"'\\]*' /tmp/g1.html | head -5
+---
+---
+[0m$ [0mcurl -sL -A "Mozilla/5.0" "https://www.romatoday.it/eventi/" -o /tmp/rt.html -w "%{http_code}\n"; grep -o 'href="[^"]*abramovic[^"]*"' /tmp/rt.html | head; grep -o 'href="[^"]*weekend[^"]*"' /tmp/rt.html | head
+200
+href="/eventi/weekend/21-22-novembre-2026-roma-cosa-fare.html"
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcurl -sL -A "Mozilla/5.0" "https://www.romatoday.it/eventi/weekend/21-22-novembre-2026-roma-cosa-fare.html" -o /tmp/wk.html -w "%{http_code} %{size_download}\n"; python3 - <<'EOF'
+import re,html
+t=open('/tmp/wk.html',encoding='utf-8',errors='ignore').read()
+# extract headings and paragraphs
+for m in re.findall(r'<h[23][^>]*>(.*?)</h[23]>',t,re.S)[:40]:
+    s=re.sub(r'<[^>]+>','',m); s=html.unescape(s).strip()
+    if s: print('H:',s[:150])
+EOF
+200 962932
+H: Ci stai leggendo con un adblocker
+H: Disattiva l'adblocker
+H: Abbonati
+H: Leggi dall'app
+H: Paolo Rotelli e la favoletta del 'se vuoi puoi': no, non funziona così
+H: L'enorme business dei calendari dell'avvento (che ormai ci ha dato la nausea)
+H: Musei in Musica
+H: Christmas Parade
+H: Roma Arte in Nuvola
+H: La Tempesta Silenziosa. Ultimo atto. Prima del prossimo
+H: Vegan Village
+H: Christmas Garden all'Orto Botanico
+H: Game Vintage Market
+H: Fotonica 2026
+H: Amazing Wonders a Forte Trionfale
+H: Iva Zanicchi in “Viva la Mamma!”
+H: Bazar di Natale di Fondazione Antea
+H: Toy Day, borsa scambio del giocattolo vintage
+H: L'Ospedale dei Giocattoli Rotti
+H: C'era una volta...scugnizzi al Teatro Sistina
+H: Tutto fa Brod-Way
+H: "Buio" a Castelnuovo di Porto
+H: Lucilla al Teatro Brancaccio
+H: Mercatino delle Streghe
+H: Origami in fiore
+H: Mercatino della solidarietà
+H: Guida ai mercatini di Natale 2026 a Roma: luoghi e date
+H: Il Natale nei borghi del Lazio: favole di luce, presepi e caratteristici mercatini
+H: Fori Imperiali, apre al pubblico la Biblioteca Occidentale del Foro di Traiano
+H: "Livia" è il nuovo brano di Gazzelle fuori a sorpresa per tutti i fan
+H: I più letti
+H: Weekend a Roma: 20 eventi da non perdere sabato 21 e domenica 22 novembre
+H: In Evidenza
+H: Tutti i residenti sui balconi con il "distress call". Contro l'assalto degli storni a viale Jonio scatta il piano d'emergenza
+H: Weekend a Roma: 25 eventi da non perdere sabato 14 e domenica 15 novembre
+H: Weekend a Roma: 20 eventi da non perdere sabato 7 e domenica 8 novembre
+H: Al Policlinico Casilino donati 30 polpetti di cotone per i neonati prematuri
+H: Potrebbe interessarti
+H: Canali
+H: Link utili
+> build · deepseek-v4.1-flash-free
+[0m$ [0mpython3 - <<'EOF'
+import re,html
+t=open('/tmp/wk.html',encoding='utf-8',errors='ignore').read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S)
+t=re.sub(r'<style.*?</style>','',t,flags=re.S)
+# isolate article body
+m=re.search(r'<article.*?</article>',t,re.S)
+body=m.group(0) if m else t
+body=re.sub(r'<[^>]+>','\n',body)
+body=html.unescape(body)
+lines=[l.strip() for l in body.split('\n') if l.strip()]
+txt='\n'.join(lines)
+print(txt[:9000])
+EOF
+Paolo Rotelli e la favoletta del 'se vuoi puoi': no, non funziona così
+Yasmina Pani
+> build · deepseek-v4.1-flash-free
+[0m$ [0mpython3 - <<'EOF'
+import re,html
+t=open('/tmp/wk.html',encoding='utf-8',errors='ignore').read()
+for key in ['Roma Arte in Nuvola','Fotonica','Abramovi','Traiano','Tempesta Silenziosa','Pappano']:
+    for m in re.finditer(key,t):
+        seg=t[m.start()-200:m.start()+900]
+        seg=re.sub(r'<[^>]+>',' ',seg); seg=html.unescape(seg); seg=re.sub(r'\s+',' ',seg)
+        print('###',key,'>>>',seg[:800]); print()
+        break
+EOF
+### Roma Arte in Nuvola >>> i Spagna e via del Babuino per poi tornare la punto di partenza. [ TUTTE LE INFORMAZIONI ] Roma Arte in Nuvola Dal 20 al 22 novembre torna Roma Arte in Nuvola, la grande fiera internazionale d’arte moderna e contemporanea della Capitale, ideata e diretta da Alessandro Nicosia e promossa da Eur SpA, con la direzione artistica di Adriana Polveroni a cui si affianca, in questa edizione, una sezione curata da Pier Paolo Pancotto. Dopo gli oltre 38.000 visitatori della scorsa edizione, la sesta presenterà circa 140 gallerie italiane e internazionali partecipanti all’interno della Nuvola di Fuksas. [ TUTTE LE INFORMAZIONI ] La Tempesta Silenziosa. Ultimo atto. Prima del prossimo La Tempesta Silenziosa – il format di lettura ideato da Alessandro Baricco, promosso e sostenuto da Roma Capitale - As
+
+### Fotonica >>>  e introvabili, fino alle carte collezionabili e alle action figures. [ TUTTE LE INFORMAZIONI ] Fotonica 2026 Roma si accende con la decima edizione di Fotonica, il festival internazionale dedicato alle Audio Visual Live Performance e all'esplorazione artistica della luce nei nuovi media. La manifestazione prodotta da Flyer, quest’anno si svolgerà negli spazi del MAM – Media Art Museum, il nuovo museo dedicato alle arti digitali di Roma (Corso d’Italia, n.37/D) anche nel fine settimana alle porte. Una mostra immersiva sulle forme d’arte più avanzate e cinque serate dedicate a performance audio-video realizzate live, musica elettronica, workshop e residenze artistiche. [ TUTTE LE INFORMAZIONI ] Amazing Wonders a Forte Trionfale Dal 20 novembre, Forte Trionfale ospita Amazing Wonders – Immer
+
+### Traiano >>> rizontal u-relative u-overflow-hidden"> <a class="u-block u-absolute u-size-full u-left u-top" aria-label="Fori Imperiali, apre al pubblico la Biblioteca Occidentale del Foro di Traiano" href="/eventi/cultura/apre-biblioteca-occidentale-foro-traiano.html"> <img loading="lazy" class="u-size-full" src="//citynews-romatoday.stgy.ovh/~media/horizontal-low/35064380902898/basilica-ulpia_ph-wps.jpg" alt="Fori Imperiali, apre al pubblico la Biblioteca Occidentale del Foro di Traiano"> </a> </figure> </div> cultura Fori Imperiali, apre al pubblic
+
+### Tempesta Silenziosa >>> italiane e internazionali partecipanti all’interno della Nuvola di Fuksas. [ TUTTE LE INFORMAZIONI ] La Tempesta Silenziosa. Ultimo atto. Prima del prossimo La Tempesta Silenziosa – il format di lettura ideato da Alessandro Baricco, promosso e sostenuto da Roma Capitale - Assessorato alla Cultura e al Coordinamento delle iniziative riconducibili alla Giornata della Memoria – torna a riunire lettrici e lettori in “La Tempesta Silenziosa. Ultimo atto. Prima del Prossimo. Una lezione di Alessandro Baricco su Le Notti bianche di Fëdor Dostoevskij”. Una serata di condivisione, memoria e sguardo al futuro – a ingresso gratuito con prenotazione obbligatoria – in programma domenica 22 novembre, alle ore 18 (con apertura porte dalle ore 17.15), nella sala Santa Cecilia dell’Auditorium Parco della M
+> build · deepseek-v4.1-flash-free
+[0m$ [0mgrep -o 'href="/eventi/[^"]*"' /tmp/wk.html | sort -u | head -40
+href="/eventi/"
+href="/eventi/cinema/"
+href="/eventi/cultura/apre-biblioteca-occidentale-foro-traiano.html"
+href="/eventi/cultura/livia-gazzelle-nuovo-brano.html"
+href="/eventi/cultura/mercatini-natale-roma-2026.html"
+href="/eventi/cultura/natale-borghi-lazio-2026.html"
+href="/eventi/weekend/"
+href="/eventi/weekend/14-15-novembre-2026-roma-cosa-fare.html"
+href="/eventi/weekend/21-22-novembre-2026-roma-cosa-fare.html"
+href="/eventi/weekend/7-8-novembre-2026-roma-cosa-fare.html"
+> build · deepseek-v4.1-flash-free
+[0m$ [0mpython3 - <<'EOF'
+import re
+t=open('/tmp/wk.html',encoding='utf-8',errors='ignore').read()
+for key in ['nuvola','fotonica','traiano','tempesta','musei-in-musica']:
+    hits=set(re.findall(r'href="([^"]*'+key+r'[^"]*)"',t,re.I))
+    print(key, list(hits)[:6])
+EOF
+nuvola ['https://www.romatoday.it/eventi/roma-arte-in-nuvola-20-22-novembre-2026.html']
+fotonica ['https://www.romatoday.it/eventi/fotonica-mam-20-28-novembre-2026.html']
+traiano ['/eventi/cultura/apre-biblioteca-occidentale-foro-traiano.html']
+tempesta ['https://www.romatoday.it/eventi/tempesta-silenziosa-baricco-notti-bianche-dostoevskij-22-novembre-2026.html']
+musei-in-musica ['https://www.romatoday.it/eventi/musei-in-musica-21-novembre-2026.html']
+> build · deepseek-v4.1-flash-free
+[0m$ [0mfor u in "https://www.romatoday.it/eventi/roma-arte-in-nuvola-20-22-novembre-2026.html" "https://www.romatoday.it/eventi/fotonica-mam-20-28-novembre-2026.html" "https://www.romatoday.it/eventi/cultura/apre-biblioteca-occidentale-foro-traiano.html"; do echo "########## $u"; curl -sL -A "Mozilla/5.0" "$u" -o /tmp/e.html; python3 - <<'EOF'
+import re,html
+t=open('/tmp/e.html',encoding='utf-8',errors='ignore').read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S)
+t=re.sub(r'<style.*?</style>','',t,flags=re.S)
+# get meta description and paragraphs in main
+d=re.search(r'<meta name="description" content="([^"]*)"',t)
+print('DESC:',html.unescape(d.group(1)) if d else '')
+paras=re.findall(r'<p[^>]*>(.*?)</p>',t,re.S)
+out=[]
+for p in paras:
+    s=html.unescape(re.sub(r'<[^>]+>','',p)).strip()
+    if len(s)>60: out.append(s)
+print('\n'.join(out[:8])[:2500])
+EOF
+done
+########## https://www.romatoday.it/eventi/roma-arte-in-nuvola-20-22-novembre-2026.html
+DESC: Roma Arte in Nuvola 2026, fiera internazionale d’arte moderna e contemporanea
+Ci stai leggendo con un adblocker
+    Raccontiamo la tua città ogni giorno, con una redazione sul territorio. La pubblicità ci permette di offrire gratuitamente gran parte del nostro lavoro: scegli come continuare a leggerci.
+Niente pubblicità e un sostegno diretto al nostro lavoro, al prezzo di un caffè al mese.
+L'app è gratuita: segui la tua città ovunque, sempre a portata di mano.
+Sabato, 21 Novembre 2026        
+                	
+        		
+
+
+
+
+  
+  
+    
+    Sereno 
+   
+      
+    
+    16°
+     Venti 3 nodi ESE
+     Probabilità di pioggia 0 % 
+  -->
+
+
+
+
+
+        	
+            	
+    
+      
+        
+          
+            
+          
+        
+      
+    	
+      	
+  
+  
+    
+    
+      
+    
+  
+  
+  
+    
+    
+      
+    
+  
+  
+  
+    
+    
+      
+    
+  
+  
+  
+    
+    
+      
+    
+  
+
+      
+              
+          
+            
+              Abbonati            
+            
+              Aggiorna piano             
+          
+        
+          	        
+                  
+            
+                
+            
+            Accedi           
+      
+                      
+              
+                
+              
+  
+            
+            
+      
+                      
+ 
+
+
+
+  
+  
+    
+    
+      
+      
+        
+                    
+  
+                  
+ 
+           
+        
+      
+      
+      
+        
+        
+          
+        
+        
+          
+          
+      
+      
+      
+        
+        
+          
+                    Notizie    
+                    
+                    
+                    
+          Cosa fare in città
+          Zone
+
+                    
+          
+                      Dossier
+                    
+        
+        
+        
+          
+          
+            
+          
+          
+            
+          
+				
+        
+          
+          
+            
+          
+          
+            
+          
+        
+        
+      
+      
+    
+    
+     
+    	  
+	
+    
+        
+              
+        
+    
+    
+    
+        
+    	    
+                        
+    
+     
+    
+      
+              
+          
+            
+          
+        
+           
+      
+        
+          
+           
+            Paolo Rotelli e la favoletta del 'se vuoi puoi': no, non funziona così 
+            
+          
+         
+      
+        
+                
+ 
+         
+        
+      
+      
+      
+        
+          
+        
+        
+         
+          Yasmina Pani        
+      
+     
+       
+       
+      
+    
+  
+    
+    
+     
+########## https://www.romatoday.it/eventi/fotonica-mam-20-28-novembre-2026.html
+DESC: Fotonica 2026, festival dedicato alle Audio Visual Live Perfomance
+Ci stai leggendo con un adblocker
+    Raccontiamo la tua città ogni giorno, con una redazione sul territorio. La pubblicità ci permette di offrire gratuitamente gran parte del nostro lavoro: scegli come continuare a leggerci.
+Niente pubblicità e un sostegno diretto al nostro lavoro, al prezzo di un caffè al mese.
+L'app è gratuita: segui la tua città ovunque, sempre a portata di mano.
+Sabato, 21 Novembre 2026        
+                	
+        		
+
+
+
+
+  
+  
+    
+    Sereno 
+   
+      
+    
+    16°
+     Venti 3 nodi ESE
+     Probabilità di pioggia 0 % 
+  -->
+
+
+
+
+
+        	
+            	
+    
+      
+        
+          
+            
+          
+        
+      
+    	
+      	
+  
+  
+    
+    
+      
+    
+  
+  
+  
+    
+    
+      
+    
+  
+  
+  
+    
+    
+      
+    
+  
+  
+  
+    
+    
+      
+    
+  
+
+      
+              
+          
+            
+              Abbonati            
+            
+              Aggiorna piano             
+          
+        
+          	        
+                  
+            
+                
+            
+            Accedi           
+      
+                      
+              
+                
+              
+  
+            
+            
+      
+                      
+ 
+
+
+
+  
+  
+    
+    
+      
+      
+        
+                    
+  
+                  
+ 
+           
+        
+      
+      
+      
+        
+        
+          
+        
+        
+          
+          
+      
+      
+      
+        
+        
+          
+                    Notizie    
+                    
+                    
+                    
+          Cosa fare in città
+          Zone
+
+                    
+          
+                      Dossier
+                    
+        
+        
+        
+          
+          
+            
+          
+          
+            
+          
+				
+        
+          
+          
+            
+          
+          
+            
+          
+        
+        
+      
+      
+    
+    
+     
+    	  
+	
+    
+        
+              
+        
+    
+    
+    
+        
+    	    
+                        
+    
+     
+    
+      
+              
+          
+            
+          
+        
+           
+      
+        
+          
+           
+            Paolo Rotelli e la favoletta del 'se vuoi puoi': no, non funziona così 
+            
+          
+         
+      
+        
+                
+ 
+         
+        
+      
+      
+      
+        
+          
+        
+        
+         
+          Yasmina Pani        
+      
+     
+       
+       
+      
+    
+  
+    
+    
+     
+########## https://www.romatoday.it/eventi/cultura/apre-biblioteca-occidentale-foro-traiano.html
+DESC: L'ambiente monumentale, a lungo inaccessibile, entra a far parte del Sistema Musei in Comune e del patrimonio storico archeologico della città visitabile, ampliando l’offerta culturale di Roma Capitale con un nuovo racconto dei Fori Imperiali
+Ci stai leggendo con un adblocker
+    Raccontiamo la tua città ogni giorno, con una redazione sul territorio. La pubblicità ci permette di offrire gratuitamente gran parte del nostro lavoro: scegli come continuare a leggerci.
+Niente pubblicità e un sostegno diretto al nostro lavoro, al prezzo di un caffè al mese.
+L'app è gratuita: segui la tua città ovunque, sempre a portata di mano.
+Sabato, 21 Novembre 2026        
+                	
+        		
+
+
+
+
+  
+  
+    
+    Sereno 
+   
+      
+    
+    16°
+     Venti 3 nodi ESE
+     Probabilità di pioggia 0 % 
+  -->
+
+
+
+
+
+        	
+            	
+    
+      
+        
+          
+            
+          
+        
+      
+    	
+      	
+  
+  
+    
+    
+      
+    
+  
+  
+  
+    
+    
+      
+    
+  
+  
+  
+    
+    
+      
+    
+  
+  
+  
+    
+    
+      
+    
+  
+
+      
+              
+          
+            
+              Abbonati            
+            
+              Aggiorna piano             
+          
+        
+          	        
+                  
+            
+                
+            
+            Accedi           
+      
+                      
+              
+                
+              
+  
+            
+            
+      
+                      
+ 
+
+
+
+  
+  
+    
+    
+      
+      
+        
+                    
+  
+                  
+ 
+           
+        
+      
+      
+      
+        
+        
+          
+        
+        
+          
+          
+      
+      
+      
+        
+        
+          
+                    Notizie    
+                    
+                    
+                    
+          Cosa fare in città
+          Zone
+
+                    
+          
+                      Dossier
+                    
+        
+        
+        
+          
+          
+            
+          
+          
+            
+          
+				
+        
+          
+          
+            
+          
+          
+            
+          
+        
+        
+      
+      
+    
+    
+     
+    	  
+	
+    
+        
+              
+        
+    
+    
+    
+        
+    	    
+                        
+    
+     
+    
+      
+              
+          
+            
+          
+        
+           
+      
+        
+          
+           
+            Paolo Rotelli e la favoletta del 'se vuoi puoi': no, non funziona così 
+            
+          
+         
+      
+        
+                
+ 
+         
+        
+      
+      
+      
+        
+          
+        
+        
+         
+          Yasmina Pani
+> build · deepseek-v4.1-flash-free
+[0m$ [0mfor u in "https://www.romatoday.it/eventi/roma-arte-in-nuvola-20-22-novembre-2026.html" "https://www.romatoday.it/eventi/fotonica-mam-20-28-novembre-2026.html" "https://www.romatoday.it/eventi/cultura/apre-biblioteca-occidentale-foro-traiano.html"; do echo "########## $u"; curl -sL -A "Mozilla/5.0" "$u" -o /tmp/e.html; python3 - <<'EOF'
+import re,html
+t=open('/tmp/e.html',encoding='utf-8',errors='ignore').read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S)
+# find the longest paragraph clusters: strip tags in main body region after first h1
+h=re.search(r'<h1[^>]*>(.*?)</h1>',t,re.S)
+if h:
+    start=h.end()
+    seg=t[start:start+40000]
+    seg=re.sub(r'<[^>]+>','\n',seg)
+    seg=html.unescape(seg)
+    lines=[re.sub(r'\s+',' ',l).strip() for l in seg.split('\n')]
+    lines=[l for l in lines if len(l)>50]
+    print('\n'.join(lines[:10])[:3000])
+EOF
+done
+########## https://www.romatoday.it/eventi/roma-arte-in-nuvola-20-22-novembre-2026.html
+Dal 20 al 22 novembre torna Roma Arte in Nuvola, la grande fiera internazionale d’arte moderna e contemporanea della Capitale, ideata e diretta da Alessandro Nicosia e promossa da Eur SpA, con la direzione artistica di Adriana Polveroni a cui si affianca, in questa edizione, una sezione curata da Pier Paolo Pancotto.
+Dopo gli oltre 38.000 visitatori della scorsa edizione, la sesta presenterà circa 140 gallerie italiane ed internazionali partecipanti all’interno della Nuvola di Fuksas.
+Paese ospite di questa edizione è la Germania, con un progetto che si avvale della curatela di Gregor Jansen e Julia Apitzsch, realizzato in collaborazione con l’Ambasciata della Repubblica Federale di Germania in Italia.
+Grazie alla capacità di fare sistema e con una sua precisa specificità, questa sesta edizione conferma significative collaborazioni con le istituzioni pubbliche, parte attiva nella programmazione artistico-culturale della manifestazione: dal Ministero della Cultura, con la speciale partecipazione di alcune delle sue istituzioni museali e culturali più rappresentative fino alla Regione Lazio e a Roma Capitale.
+Tra i progetti speciali di quest’anno, la manifestazione rende omaggio a Corrado Cagli, nel cinquantesimo anniversario della scomparsa del Maestro, con un progetto realizzato in collaborazione con l’Archivio Corrado Cagli, che riunisce una selezione di sculture e alcune inedite maschere in carta.
+Ad arricchire ulteriormente il programma una serie di importanti novità, che verranno presentate prossimamente e che contribuiranno a rendere questa edizione ancora più ricca e sorprendente.
+Roma Arte in Nuvola rappresenta un evento di richiamo per collezionisti, curatori, artisti, addetti ai lavori ma anche per il grande pubblico. Talk, mostre, installazioni e performance connotano l’identità di questa sesta edizione, rendendola un’offerta completa e di alto profilo, che spazia dall’arte moderna fino alle nuove avanguardie.
+script[type="text/ad"][data-ad--state--sold][data-ad--internal--bid-type="native"]+iframe{width:100%!important;height:350px!important;}
+script[type="text/ad"][data-ad--state--sold][data-ad--internal--bid-type="native"]+iframe{width:100%!important;height:350px!important;}
+script[type="text/ad"][data-ad--state--sold][data-ad--internal--bid-type="native"]+iframe{width:100%!important;height:350px!important;}
+########## https://www.romatoday.it/eventi/fotonica-mam-20-28-novembre-2026.html
+Dopo l’anteprima estiva a Villa d’Este a Tivoli, dal 20 al 28 novembre, Roma si accende con la decima edizione di Fotonica, il festival internazionale dedicato alle Audio Visual Live Performance e all'esplorazione artistica della luce nei nuovi media.
+La manifestazione prodotta da Flyer, quest’anno si svolgerà negli spazi del MAM – Media Art Museum, il nuovo museo dedicato alle arti digitali di Roma (Corso d’Italia, n.37/D) e con una anteprima il 19 novembre all’Accademia d’Ungheria in Roma (via Giulia, n.1).
+Dieci giorni di festival con una mostra immersiva sulle forme d’arte più avanzate e cinque serate dedicate a performance audio-video realizzate live, musica elettronica, workshop e residenze artistiche: Fotonica celebra l’arte digitale e la sperimentazione audiovisiva portando nella Capitale gli artisti più interessanti della scena internazionale, contribuendo alla creazione di un network globale che raduna le più importanti realtà del settore.
+A inaugurare la decima edizione del festival sarà una speciale anteprima giovedì 19 novembre all’Accademia d’Ungheria in Roma dove protagonista sarà la creatività internazionale. Tra i partecipanti, la compositrice elettroacustica e media artist ungherese Natalie Szende: autrice della colonna sonora del film d'animazione Adgwa Ata, presentato in anteprima mondiale al Festival di Cannes nel 2026, nella sua arte vivono le influenze dell’estetica hauntologica - che esplora la nostalgia per i futuri perduti e la presenza spettrale del passato – e una ricerca continua tra la musica contemporanea, sound art e cultura club sperimentale, con un particolare interesse per la spazializzazione del suono. Con la performance audiovisiva Fractured Ultraheaven, esplora le tensioni e le contraddizioni tra luce e ombra, euforia e vertigine. Con lei il duo polacco-ungherese Elektro Moon Vision allestisce nei giardini dell’Accademia l’opera in WebAR Fragilità, in cui una medusa fluttua nel cielo della città, riflettendo sulla vulnerabilità degli ecosistemi marini.
+A partire dal 20 novembre l’opera è visibile per tutte le giornate del festival, seguendo gli orari di apertura al pubblico dell’Accademia d’Ungheria.
+Dal 20 novembre, la programmazione di Fotonica si sposta al MAM – Media Art Museum - il primo museo permanente di Roma dedicato alla media art con una sala immersiva da 300 mq, dotata di 27 proiettori che trasformano pareti e pavimento in un unico ambiente sensoriale - con una programmazione di live immersivi in cui lo spettatore diventa il vero protagonista.
+Lo studio creativo romano Ultravioletto insieme al percussionista e compositore jazz Antonio Del Sordo presenta la residenza artistica Immersive Jazz che mette in dialogo l'improvvisazione jazzistica con la digital visual art e le tecnologie generative. La residenza produrrà quattro piccoli output in ognuna delle serate dedicate alle performance, iniziando proprio da quella di venerdì 20 novembre.
+Nella stessa sera iniziano i live immersivi con il collettivo
+########## https://www.romatoday.it/eventi/cultura/apre-biblioteca-occidentale-foro-traiano.html
+L'ambiente monumentale, a lungo inaccessibile, entra a far parte del Sistema Musei in Comune e del patrimonio storico archeologico della città visitabile, ampliando l’offerta culturale di Roma Capitale con un nuovo racconto dei Fori Imperiali
+Rimasta nascosta e inaccessibile per secoli sotto i Fori Imperiali, la Biblioteca Occidentale del Foro di Traiano apre al pubblico. La vasta aula sotterranea, tradizionalmente identificata con una delle biblioteche che affiancavano la Colonna Traiana, entra per la prima volta nel percorso di visita dei Fori Imperiali.
+L'ambiente monumentale viene restituito alla città grazie a un importante intervento di restauro conservativo e valorizzazione promosso dalla Sovrintendenza Capitolina ai Beni Culturali nell’ambito del PNRR Caput Mundi. L’intervento consente di accedere a uno degli spazi meno noti dell’intera area archeologica, ampliando il percorso di visita dei Fori Imperiali e offrendo al pubblico una nuova occasione di conoscenza del complesso inaugurato dall’imperatore Traiano nel 112 d.C.
+I lavori, realizzati con un investimento complessivo di 1.755.000 euro, hanno interessato il recupero di un vasto ambiente posto al di sotto dell’attuale livello stradale, a lungo utilizzato come deposito e oggi trasformato in un nuovo spazio museale permanente. L’intervento ha compreso il restauro delle strutture, la messa in sicurezza e la realizzazione di un allestimento pensato per accompagnare il visitatore alla scoperta della storia e delle trasformazioni dell’antica aula e del Foro di Traiano attraverso reperti archeologici, apparati didattici, installazioni audio-video e contenuti multimediali.
+La storia della Biblioteca Occidentale del Foro di Traiano
+L’edificio, tradizionalmente identificato come una delle due biblioteche che affiancavano la Colonna Traiana, rappresenta uno degli ambienti più significativi e complessi del Foro di Traiano. Le fonti antiche ricordano infatti una Bibliotheca Ulpia, tra le più prestigiose raccolte librarie dell’antica Roma, destinata alla conservazione di testi letterari, documenti ufficiali e materiali giuridici. Le ricerche più recenti hanno tuttavia suggerito una lettura più articolata della funzione di questi spazi, alimentando un dibattito scientifico che rende il sito ancora oggi di particolare interesse per studiosi e visitatori.
+Dopo la caduta dell’Impero, l’antica aula conobbe un progressivo abbandono e sulle strutture romane si svilupparono nuove occupazioni e insediamenti fino alla formazione del Quartiere Alessandrino. Nel Novecento, le demolizioni realizzate per l’apertura della Via dell’Impero e le grandi campagne di scavo riportarono alla luce il complesso monumentale e determinarono nuovi interventi di sistemazione, ancora oggi leggibili all’interno dello spazio.
+Il progetto ha previsto importanti interventi di conservazione e consolidamento delle strutture esistenti, delle murature storiche e della soletta di copertura, attraverso tecnologie contemporanee ad alte p
+> build · deepseek-v4.1-flash-free
+[0m$ [0mfor u in "https://www.romatoday.it/eventi/roma-arte-in-nuvola-20-22-novembre-2026.html" "https://www.romatoday.it/eventi/fotonica-mam-20-28-novembre-2026.html" "https://www.romatoday.it/eventi/cultura/apre-biblioteca-occidentale-foro-traiano.html" "https://www.romatoday.it/eventi/tempesta-silenziosa-baricco-notti-bianche-dostoevskij-22-novembre-2026.html"; do echo "########## $u"; curl -sL -A "Mozilla/5.0" "$u" -o /tmp/e.html; python3 - <<'EOF'
+import re,html
+t=open('/tmp/e.html',encoding='utf-8',errors='ignore').read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S)
+t=re.sub(r'<style.*?</style>','',t,flags=re.S)
+t=re.sub(r'<[^>]+>','\n',t)
+t=html.unescape(t)
+lines=[re.sub(r'\s+',' ',l).strip() for l in t.split('\n')]
+keys=['orari','orario','bigliett','ingress','prenot','gratis','€','euro','dalle','alle ore','aperto']
+seen=set()
+for l in lines:
+    ll=l.lower()
+    if len(l)>25 and any(k in ll for k in keys) and l not in seen:
+        seen.add(l); print('-',l[:220])
+    if len(seen)>14: break
+EOF
+done
+########## https://www.romatoday.it/eventi/roma-arte-in-nuvola-20-22-novembre-2026.html
+- Festa del fungo porcino a Velletri: 18 serate gratis con Serena Brancale, LDA e tanti altri
+########## https://www.romatoday.it/eventi/fotonica-mam-20-28-novembre-2026.html
+- A partire dal 20 novembre l’opera è visibile per tutte le giornate del festival, seguendo gli orari di apertura al pubblico dell’Accademia d’Ungheria.
+- • dalle 11:00 alle 19:00 – Hypermedia, mostra con 32 artisti
+- Festa del fungo porcino a Velletri: 18 serate gratis con Serena Brancale, LDA e tanti altri
+########## https://www.romatoday.it/eventi/cultura/apre-biblioteca-occidentale-foro-traiano.html
+- I lavori, realizzati con un investimento complessivo di 1.755.000 euro, hanno interessato il recupero di un vasto ambiente posto al di sotto dell’attuale livello stradale, a lungo utilizzato come deposito e oggi trasform
+- La nuova apertura offre un tassello fondamentale per la comprensione del Foro di Traiano e della storia urbana di Roma. La Biblioteca entra a far parte del Sistema Musei in Comune e del patrimonio storico archeologico de
+- La cripta delle Sacre Stimmate riapre: visite gratis ogni giovedì fino al 10 dicembre
+########## https://www.romatoday.it/eventi/tempesta-silenziosa-baricco-notti-bianche-dostoevskij-22-novembre-2026.html
+- ore 18 (apertura porte dalle ore 17.15)
+- La Tempesta Silenziosa – il format di lettura ideato da Alessandro Baricco, promosso e sostenuto da Roma Capitale - Assessorato alla Cultura e al Coordinamento delle iniziative riconducibili alla Giornata della Memoria –
+- L'ingresso è gratuito fino a esaurimento posti disponibili previo ritiro voucher. I voucher saranno disponibili dalle ore 11 di lunedì 16 novembre on line sul sito ticketone.it o anche presso il botteghino dell’Auditoriu
+- Festa del fungo porcino a Velletri: 18 serate gratis con Serena Brancale, LDA e tanti altri
+> build · deepseek-v4.1-flash-free
+[0m$ [0mpython3 - <<'EOF'
+import re,html
+t=open('/tmp/wk.html',encoding='utf-8',errors='ignore').read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S)
+plain=html.unescape(re.sub(r'<[^>]+>',' ',t))
+plain=re.sub(r'\s+',' ',plain)
+for key in ['Mercatino della solidarietà','Origami in fiore','Iva Zanicchi','Ospedale dei Giocattoli','Roma Arte in Nuvola']:
+    i=plain.find(key)
+    print('###',key)
+    print(plain[i:i+700] if i>=0 else 'NOT FOUND')
+    print()
+EOF
+### Mercatino della solidarietà
+Mercatino della solidarietà Sabato 21 e domenica 22 novembre arriva a Roma il Mercatino della Solidarietà della Croce Rossa Italiana - Comitato Area Metropolitana di Roma Capitale. Capi d’abbigliamento, artigianato, oggettistica vintage e moderna e tante altre idee in una ormai consolidata formula: ecco il Mercatino della Solidarietà della Croce Rossa Roma al The Westin Excelsior Roma. [ TUTTE LE INFORMAZIONI ] script[type="text/ad"][data-ad--state--sold][data-ad--internal--bid-type="native"]+iframe{width:100%!important;height:350px!important;} Scegli RomaToday come fonte preferita su Google News Leggi tutte le inchieste e gli approfondimenti Vuoi navigare senza pubblicità ? Scopri come fare
+
+### Origami in fiore
+Origami in fiore Laboratorio di origami – Origami in fiore è l'appuntamento per creare fiori di carta al Museo Ex Cartiera Latina domenica 22 novembre. Un foglio di carta, un pizzico di fantasia e tante pieghe per dare vita a splendidi fiori. Il laboratorio “Origami in fiore” è un'attività creativa dedicata alla scoperta delle forme e dei colori della natura attraverso l'antica arte giapponese dell'origami. Durante il laboratorio, i partecipanti potranno cimentarsi nella realizzazione di diverse varietà di fiori, tra cui il giglio, la rosa e il fiore di ciliegio. [ TUTTE LE INFORMAZIONI ] Mercatino della solidarietà Sabato 21 e domenica 22 novembre arriva a Roma il Mercatino della Solidariet
+
+### Iva Zanicchi
+Iva Zanicchi in “Viva la Mamma!” Cosa può accadere se una mamma, non più giovanissima, ma nel pieno della vitalità, rivendica il suo diritto alla felicità, lontana dallo stereotipo della donna matura “tutta casa e nipoti”? Tra risate e riflessioni approda al Teatro Manzoni di Roma la commedia Viva la Mamma!, con un cast che vede al centro della scena Iva Zanicchi, affiancata da Milena Miconi, Samuel Peron, Diego Ruiz, in scena fino a domenica 22 novembre. L’ironia del testo affronta, con uno sguardo lucido e attento, un tema delicato e una delle sfide sociali della nostra epoca: la solitudine degli anziani, con le criticità legate alla loro quotidianità. [ TUTTE LE INFORMAZIONI ] Bazar di Na
+
+### Ospedale dei Giocattoli
+Ospedale dei Giocattoli Rotti Bambole di pezza scucite, peluche strappati, trottole che hanno smesso di girare: ogni giocattolo porta con sé una storia, qualcosa che si è spezzato e che forse può essere ricomposto. Nella clinica del Dottor Milne nessuno viene lasciato indietro, anche ciò che sembra irrimediabilmente rotto merita di essere accolto, ascoltato e curato. È da questa immagine che prende forma L'Ospedale dei Giocattoli Rotti, l'esperienza teatrale immersiva di Progetto Goldstein, in programma dal 20 al 22 novembre al Teatro San Giustino, in zona Alessandrino. il progetto teatrale utilizza il linguaggio del larp da camera, una forma di gioco di ruolo dal vivo in cui i partecipanti 
+
+### Roma Arte in Nuvola
+Roma Arte in Nuvola Dal 20 al 22 novembre torna Roma Arte in Nuvola, la grande fiera internazionale d’arte moderna e contemporanea della Capitale, ideata e diretta da Alessandro Nicosia e promossa da Eur SpA, con la direzione artistica di Adriana Polveroni a cui si affianca, in questa edizione, una sezione curata da Pier Paolo Pancotto. Dopo gli oltre 38.000 visitatori della scorsa edizione, la sesta presenterà circa 140 gallerie italiane e internazionali partecipanti all’interno della Nuvola di Fuksas. [ TUTTE LE INFORMAZIONI ] La Tempesta Silenziosa. Ultimo atto. Prima del prossimo La Tempesta Silenziosa – il format di lettura ideato da Alessandro Baricco, promosso e sostenuto da Roma Capi
+[0m$ [0mcurl -sL -A "Mozilla/5.0" "https://www.romaarteinnuvola.it/" -o /tmp/nuv.html -w "%{http_code}\n"; python3 - <<'EOF'
+import re,html
+t=open('/tmp/nuv.html',encoding='utf-8',errors='ignore').read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S)
+p=html.unescape(re.sub(r'<[^>]+>',' ',t)); p=re.sub(r'\s+',' ',p)
+for k in ['orari','Orari','bigliet','Bigliet','ticket','22 novembre','domenica']:
+    for m in re.finditer(k,p):
+        print(k,'>>',p[max(0,m.start()-150):m.start()+250]); break
+EOF
+000
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/nuv.html'
+> build · deepseek-v4.1-flash-free
+[0m$ [0mpython3 - <<'EOF'
+import re
+t=open('/tmp/wk.html',encoding='utf-8',errors='ignore').read()
+# find anchors with aria-label or text near event names
+for key in ['Roma Arte in Nuvola','Fotonica','Tempesta Silenziosa','Origami in fiore','Traiano','Zanicchi']:
+    idxs=[m.start() for m in re.finditer(key,t)]
+    print('###',key,len(idxs))
+    for i in idxs[:3]:
+        seg=t[i:i+4000]
+        hrefs=re.findall(r'href="([^"]+)"',seg)
+        hrefs=[h for h in hrefs if 'eventi' in h or 'roma' in h]
+        print(' ',hrefs[:4])
+EOF
+### Roma Arte in Nuvola 2
+  ['https://www.romatoday.it/eventi/roma-arte-in-nuvola-20-22-novembre-2026.html', 'https://www.romatoday.it/eventi/tempesta-silenziosa-baricco-notti-bianche-dostoevskij-22-novembre-2026.html', 'https://www.romatoday.it/eventi/vegan-village-roma-novembre-2026.html', 'https://www.romatoday.it/eventi/christmas-garden-orto-botanico-19-novembre-2026-10-gennaio-2027.html']
+  ['https://www.romatoday.it/eventi/roma-arte-in-nuvola-20-22-novembre-2026.html', 'https://www.romatoday.it/eventi/tempesta-silenziosa-baricco-notti-bianche-dostoevskij-22-novembre-2026.html', 'https://www.romatoday.it/eventi/vegan-village-roma-novembre-2026.html', 'https://www.romatoday.it/eventi/christmas-garden-orto-botanico-19-novembre-2026-10-gennaio-2027.html']
+### Fotonica 2
+  ['https://www.romatoday.it/eventi/fotonica-mam-20-28-novembre-2026.html', 'https://www.romatoday.it/eventi/amazing-wonders-roma-mostra-immersiva-forte-trionfale.html', 'https://www.romatoday.it/eventi/iva-zanicchi-viva-la-mamma-teatro-manzoni.html', 'https://www.romatoday.it/eventi/bazar-natale-fondazione-antea-21-22-novembre-2026.html']
+  ['https://www.romatoday.it/eventi/fotonica-mam-20-28-novembre-2026.html', 'https://www.romatoday.it/eventi/amazing-wonders-roma-mostra-immersiva-forte-trionfale.html', 'https://www.romatoday.it/eventi/iva-zanicchi-viva-la-mamma-teatro-manzoni.html', 'https://www.romatoday.it/eventi/bazar-natale-fondazione-antea-21-22-novembre-2026.html']
+### Tempesta Silenziosa 3
+  ['https://www.romatoday.it/eventi/tempesta-silenziosa-baricco-notti-bianche-dostoevskij-22-novembre-2026.html', 'https://www.romatoday.it/eventi/vegan-village-roma-novembre-2026.html', 'https://www.romatoday.it/eventi/christmas-garden-orto-botanico-19-novembre-2026-10-gennaio-2027.html', 'https://www.romatoday.it/eventi/game-vintage-market-fusolab-21-22-novembre-2026.html']
+  ['https://www.romatoday.it/eventi/tempesta-silenziosa-baricco-notti-bianche-dostoevskij-22-novembre-2026.html', 'https://www.romatoday.it/eventi/vegan-village-roma-novembre-2026.html', 'https://www.romatoday.it/eventi/christmas-garden-orto-botanico-19-novembre-2026-10-gennaio-2027.html', 'https://www.romatoday.it/eventi/game-vintage-market-fusolab-21-22-novembre-2026.html']
+  ['https://www.romatoday.it/eventi/tempesta-silenziosa-baricco-notti-bianche-dostoevskij-22-novembre-2026.html', 'https://www.romatoday.it/eventi/vegan-village-roma-novembre-2026.html', 'https://www.romatoday.it/eventi/christmas-garden-orto-botanico-19-novembre-2026-10-gennaio-2027.html', 'https://www.romatoday.it/eventi/game-vintage-market-fusolab-21-22-novembre-2026.html']
+### Origami in fiore 3
+  ['https://www.romatoday.it/eventi/laboratorio-origami-in-fiore-22-novembre-2026.html', 'https://www.romatoday.it/eventi/mercatino-natale-croce-rossa-roma-21-22-novembre-2026.html']
+  ['https://www.romatoday.it/eventi/laboratorio-origami-in-fiore-22-novembre-2026.html', 'https://www.romatoday.it/eventi/mercatino-natale-croce-rossa-roma-21-22-novembre-2026.html']
+  ['https://www.romatoday.it/eventi/laboratorio-origami-in-fiore-22-novembre-2026.html', 'https://www.romatoday.it/eventi/mercatino-natale-croce-rossa-roma-21-22-novembre-2026.html']
+### Traiano 4
+  ['/eventi/cultura/apre-biblioteca-occidentale-foro-traiano.html', '/eventi/cultura/apre-biblioteca-occidentale-foro-traiano.html', '/eventi/cultura/livia-gazzelle-nuovo-brano.html', '/eventi/cultura/livia-gazzelle-nuovo-brano.html']
+  ['/eventi/cultura/apre-biblioteca-occidentale-foro-traiano.html', '/eventi/cultura/livia-gazzelle-nuovo-brano.html', '/eventi/cultura/livia-gazzelle-nuovo-brano.html', '/eventi/weekend/']
+  ['/eventi/cultura/apre-biblioteca-occidentale-foro-traiano.html', '/eventi/cultura/livia-gazzelle-nuovo-brano.html', '/eventi/cultura/livia-gazzelle-nuovo-brano.html', '/eventi/weekend/']
+### Zanicchi 2
+  ['https://www.romatoday.it/eventi/iva-zanicchi-viva-la-mamma-teatro-manzoni.html', 'https://www.romatoday.it/eventi/bazar-natale-fondazione-antea-21-22-novembre-2026.html', 'https://www.romatoday.it/eventi/toy-day-borsa-scambio-giocattolo-vintage-21-22-novembre-2026.html', 'https://www.romatoday.it/eventi/ospedale-giocattoli-rotti-teatro-san-giustino-20-22-novembre-2026.html']
+  ['https://www.romatoday.it/eventi/iva-zanicchi-viva-la-mamma-teatro-manzoni.html', 'https://www.romatoday.it/eventi/bazar-natale-fondazione-antea-21-22-novembre-2026.html', 'https://www.romatoday.it/eventi/toy-day-borsa-scambio-giocattolo-vintage-21-22-novembre-2026.html', 'https://www.romatoday.it/eventi/ospedale-giocattoli-rotti-teatro-san-giustino-20-22-novembre-2026.html']
+> build · deepseek-v4.1-flash-free
+[0m$ [0mfor u in "https://www.romatoday.it/eventi/laboratorio-origami-in-fiore-22-novembre-2026.html" "https://www.romatoday.it/eventi/roma-arte-in-nuvola-20-22-novembre-2026.html" "https://www.romatoday.it/eventi/fotonica-mam-20-28-novembre-2026.html"; do echo "########## $u"; curl -sL -A "Mozilla/5.0" "$u" -o /tmp/e.html; python3 - <<'EOF'
+import re,html
+t=open('/tmp/e.html',encoding='utf-8',errors='ignore').read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S)
+p=html.unescape(re.sub(r'<[^>]+>','\n',t))
+lines=[re.sub(r'\s+',' ',l).strip() for l in p.split('\n')]
+lines=[l for l in lines if l]
+for k in ['Dove','Quando','Prezzo','Costo','Orario','Indirizzo','Ingresso','Biglietti','Ticket','€']:
+    for i,l in enumerate(lines):
+        if k.lower() in l.lower() and len(l)<160:
+            print(k,'::',l,'||', ' / '.join(lines[i+1:i+3])[:160])
+            break
+EOF
+done
+########## https://www.romatoday.it/eventi/laboratorio-origami-in-fiore-22-novembre-2026.html
+Dove :: Dove || Cartiera Latina / Via Appia Antica, 42
+Quando :: Quando || Dal / 22/11/2026
+Prezzo :: Niente pubblicità e un sostegno diretto al nostro lavoro, al prezzo di un caffè al mese. || Scegli l'abbonamento / Leggi dall'app
+€ :: €6 || Altre informazioni / Sito web
+########## https://www.romatoday.it/eventi/roma-arte-in-nuvola-20-22-novembre-2026.html
+Dove :: Dove || La Nuvola dell’Eur / Viale Asia, 40
+Quando :: Quando || Dal / 20/11/2026
+Prezzo :: Niente pubblicità e un sostegno diretto al nostro lavoro, al prezzo di un caffè al mese. || Scegli l'abbonamento / Leggi dall'app
+Orario :: Orario non disponibile || Prezzo / Prezzo non disponibile
+########## https://www.romatoday.it/eventi/fotonica-mam-20-28-novembre-2026.html
+Dove :: Dove || Media Art Museum / Corso d'Italia, 37
+Quando :: Quando || Dal / 20/11/2026
+Prezzo :: Niente pubblicità e un sostegno diretto al nostro lavoro, al prezzo di un caffè al mese. || Scegli l'abbonamento / Leggi dall'app
+Orario :: Orario non disponibile || Prezzo / Prezzo non disponibile
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcurl -sL -A "Mozilla/5.0" "https://duckduckgo.com/html/?q=Roma+Arte+in+Nuvola+2026+orari+biglietti+domenica" -o /tmp/ddg.html -w "%{http_code}\n"; python3 - <<'EOF'
+import re,html
+t=open('/tmp/ddg.html',encoding='utf-8',errors='ignore').read()
+for m in re.findall(r'class="result__a"[^>]*>(.*?)</a>',t,re.S)[:8]:
+    print('-',html.unescape(re.sub(r'<[^>]+>','',m)))
+for m in re.findall(r'class="result__snippet"[^>]*>(.*?)</a>',t,re.S)[:8]:
+    print('  ',html.unescape(re.sub(r'<[^>]+>','',m))[:200])
+EOF
+202
+[0m$ [0mpython3 - <<'EOF'
+import re,html
+t=open('/tmp/e.html',encoding='utf-8',errors='ignore').read()
+EOF
+curl -sL -A "Mozilla/5.0" "https://www.romatoday.it/eventi/laboratorio-origami-in-fiore-22-novembre-2026.html" -o /tmp/ori.html
+python3 - <<'EOF'
+import re,html
+t=open('/tmp/ori.html',encoding='utf-8',errors='ignore').read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S)
+p=html.unescape(re.sub(r'<[^>]+>',' ',t)); p=re.sub(r'\s+',' ',p)
+i=p.find('Laboratorio di origami')
+print(p[i:i+1800])
+EOF
+Laboratorio di origami – Origami in fiore | 22 novembre 2026 [data-player]{--player--theme-color:#FFAC26;} /* */ /* a[href="/dossier/"]{display:none}@media only screen and (max-width:739px){body[data-edition=cibotoday] .c-header.c-header--slim,body[data-edition=cibotoday] .c-header--slim.c-header--inverse{--header-background:#fff}}body[data-edition=cibotoday] .c-subheader__head .u-title-01{color:#fff}@media only screen and (max-width:739px){body[data-channel*=cibo][data-color-scheme*=dark] .c-header .c-brand__network,body[data-edition*=cibo][data-color-scheme*=dark] .c-header .c-brand__network{--brand-network:#0d0d0d}body[data-channel*=cibo] .c-navbar__controller,body[data-edition*=cibo] .c-navbar__controller{color:#0d0d0d}}body[data-channel*=cibo][data-homepage],body[data-edition*=cibo][data-homepage]{--newsletter-bg:url("//citynews.stgy.ovh/~shared/images/v7/cibo/pattern-newsletter.svg")}body[data-channel*=cibo][data-channel*=agrinext] .c-subheader,body[data-edition*=cibo][data-channel*=agrinext] .c-subheader{background-color:var(--subheader-background)}body[data-channel*=cibo] .c-title,body[data-edition*=cibo] .c-title{--title-background:var(--background-color-gray-darker)}body[data-channel*=cibo][data-model*=approfondimento]:not([data-color-scheme*=light]),body[data-channel*=cibo][data-color-scheme*=light][data-model*=approfondimento],body[data-edition*=cibo][data-model*=approfondimento]:not([data-color-scheme*=light]),body[data-edition*=cibo][data-color-scheme*=light][data-model*=approfondimento]{--background-section:var(--background-color)}body[data-channel*=cibo][data-model*=approfondimento]:not([data-color-scheme*=light]) details,body[data-channel*=cibo][data-model*=approfondimento]:not([data-color-scheme*=light]) [data-entry] .c-entry blockquote:not([class]),bo
+> build · deepseek-v4.1-flash-free
+[0m$ [0mpython3 - <<'EOF'
+import re,html
+t=open('/tmp/ori.html',encoding='utf-8',errors='ignore').read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S)
+h=re.search(r'<h1[^>]*>(.*?)</h1>',t,re.S)
+start=h.end() if h else 0
+seg=t[start:start+20000]
+seg=re.sub(r'<[^>]+>','\n',seg); seg=html.unescape(seg)
+lines=[re.sub(r'\s+',' ',l).strip() for l in seg.split('\n')]
+print('\n'.join([l for l in lines if len(l)>40][:12])[:2200])
+EOF
+Laboratorio di origami – Origami in fiore: crea i tuoi fiori di carta al Museo Ex Cartiera Latina
+Un foglio di carta, un pizzico di fantasia e tante pieghe per dare vita a splendidi fiori! Il laboratorio “Origami in fiore” è un'attività creativa dedicata alla scoperta delle forme e dei colori della natura attraverso l'antica arte giapponese dell'origami.
+Durante il laboratorio, i partecipanti potranno cimentarsi nella realizzazione di diverse varietà di fiori, tra cui il giglio, la rosa e il fiore di ciliegio, conosciuto in Giappone con il nome di sakura.
+Un semplice foglio di carta si trasformerà, piega dopo piega, in delicate composizioni floreali. Seguendo piegature di difficoltà crescente, i partecipanti impareranno le tecniche di base dell'origami, sviluppando manualità, concentrazione e creatività.
+Sarà anche un'occasione per osservare più da vicino le forme della natura, scoprire curiosità e significati simbolici legati ai fiori e sperimentare come la carta possa trasformarsi in piccole creazioni artistiche.
+Il laboratorio è adatto a tutta la famiglia e pensato per offrire un momento creativo da condividere tra grandi e piccoli. Per i bambini di età inferiore agli 8 anni è richiesta la presenza e la partecipazione di un genitore o di un adulto accompagnatore.
+Dove: Museo Ex Cartiera Latina, Parco Regionale dell'Appia Antica, Roma.
+Ingressi: Via Appia Antica 42 oppure Via Appia Antica 50.
+Costo: 6 € per il biglietto laboratorio. Il biglietto comprende anche la possibilità di visitare gratuitamente il Museo Ex Cartiera Latina entro un mese dalla data del laboratorio.
+Ingresso gratuito al laboratorio: per chi ha già acquistato un biglietto d'ingresso al Museo Ex Cartiera Latina. Ogni biglietto del Museo dà diritto a una sola partecipazione gratuita.
+Email: museodellacartieralatina@parcoappiaantica.it
+Un'esperienza divertente e creativa per tutta la famiglia, per scoprire la magia dell'origami e trasformare semplici fogli di carta in meravigliosi fiori senza tempo!
+[0m$ [0mfor u in "https://romaarteinnuvola.it/" "https://www.romaarteinnuvola.it/it/" "https://www.sovraintendenzaroma.it/i_luoghi/fori_imperiali"; do echo "### $u"; curl -sL --max-time 25 -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)" "$u" -o /tmp/x.html -w "%{http_code} %{size_download}\n"; python3 -c "
+import re,html
+t=open('/tmp/x.html',encoding='utf-8',errors='ignore').read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S)
+p=html.unescape(re.sub(r'<[^>]+>',' ',t)); p=re.sub(r'\s+',' ',p)
+for k in ['orari','Orari','bigliet','Bigliet','intero','domenica','22 novembre']:
+    i=p.find(k)
+    if i>0: print(k,'>>',p[max(0,i-100):i+260]); break
+"; done
+### https://romaarteinnuvola.it/
+000 0
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+    t=open('/tmp/x.html',encoding='utf-8',errors='ignore').read()
+      ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/x.html'
+### https://www.romaarteinnuvola.it/it/
+000 0
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+    t=open('/tmp/x.html',encoding='utf-8',errors='ignore').read()
+      ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/x.html'
+### https://www.sovraintendenzaroma.it/i_luoghi/fori_imperiali
+404 37951
+> build · deepseek-v4.1-flash-free
+[0m$ [0mpython3 - <<'EOF'
+import re,html
+t=open('/tmp/ori.html',encoding='utf-8',errors='ignore').read()
+p=html.unescape(re.sub(r'<[^>]+>',' ',t)); p=re.sub(r'\s+',' ',p)
+for k in ['ore 1','ore 9','ore 10','alle 1','alle 9','alle 10','dalle']:
+    for m in re.finditer(k,p):
+        print(k,'>>',p[max(0,m.start()-120):m.start()+160]); break
+EOF
+echo "=== TRAIANO ARTICLE TAIL ==="
+curl -sL -A "Mozilla/5.0" "https://www.romatoday.it/eventi/cultura/apre-biblioteca-occidentale-foro-traiano.html" -o /tmp/tr.html
+python3 - <<'EOF'
+import re,html
+t=open('/tmp/tr.html',encoding='utf-8',errors='ignore').read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S)
+p=html.unescape(re.sub(r'<[^>]+>',' ',t)); p=re.sub(r'\s+',' ',p)
+for k in ['Ingresso','ingresso','orari','Orari','biglietto','Biglietto','Musei in Comune','9.30','18.30','9:30']:
+    i=p.find(k)
+    if i>0: print(k,'>>',p[max(0,i-150):i+300])
+EOF
+=== TRAIANO ARTICLE TAIL ===
+ingresso >> di Roma Capitale con un nuovo racconto dei Fori Imperiali. L'area sarà visitabile il venerdì, sabato e domenica per gruppi di massimo 20 persone, con ingresso ogni 40 minuti, dalle ore 9.20 con un ultimo accesso alle 15.20. Per maggiori informazioni e per prenotazioni: www.sovraintendenzaroma.it oppure call center 060608. script[type="text/ad"][data-ad--state--sold][data-ad--internal--bid-type="native"]+iframe{width:100%!important;height:350px!im
+Musei in Comune >> mperiali, apre al pubblico la Biblioteca Occidentale del Foro di Traiano L'ambiente monumentale, a lungo inaccessibile, entra a far parte del Sistema Musei in Comune e del patrimonio storico archeologico della città visitabile, ampliando l’offerta culturale di Roma Capitale con un nuovo racconto dei Fori Imperiali Redazione 16 novembre 2026 15:58 Facebook WhatsApp --> Rimasta nascosta e inaccessibile per secoli sotto i Fori Imperiali, la Bibliote
+9.30 >> -2.53-73-13.5s-1-11-3-13.8c-2-2.7-5-4-9-4-3.90-6.81.3-8.94-22.7-3.17.3-3.113.8zm67.59.1h2c-27-710.4-15.210.4-5.20-9.6-1.7-13.1-5.3a1919001-5.3-1419.319.300128-18c2.71.343450.7-.31.4-.72-.5.7-1.21-2.21-20-3.1-1-3.6-3.4a6.76.7000-1.6-3.6c-.8-.7-2.3-1-4.5-1-40-71.4-94.1-22.8-37-312.505.8110.33.213.52.23.35.44.99.84.95.909.6-2.711.2-8zm27-25.5h-11v22c03.505.7.47.31.921.92.7s21.131.1c2.204-1.25.6-3.6l1.5.8c-12-2.33.4-4.14.4-1.81-3.61.5-5.51.5a99001-5.
+> build · deepseek-v4.1-flash-free
+[0m$ [0mfor u in "https://www.fotonica.it/" "https://fotonica.it/" "https://www.mamroma.it/" "https://www.parcoappiaantica.it/eventi/" "https://www.ticketone.it/artist/roma-arte-in-nuvola/"; do echo "### $u"; curl -sL --max-time 20 -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15" "$u" -o /tmp/y.html -w "%{http_code} %{size_download}\n"; python3 -c "
+import re,html
+try:
+    t=open('/tmp/y.html',encoding='utf-8',errors='ignore').read()
+except: raise SystemExit
+t=re.sub(r'<script.*?</script>','',t,flags=re.S)
+p=html.unescape(re.sub(r'<[^>]+>',' ',t)); p=re.sub(r'\s+',' ',p)
+for k in ['bigliet','Bigliet','orari','Orari','€','ingresso','Ingresso']:
+    i=p.find(k)
+    if i>0: print(k,'>>',p[max(0,i-120):i+220]); break
+"; done
+### https://www.fotonica.it/
+200 28896
+### https://fotonica.it/
+200 28896
+### https://www.mamroma.it/
+000 0
+### https://www.parcoappiaantica.it/eventi/
+200 467290
+### https://www.ticketone.it/artist/roma-arte-in-nuvola/
+000 0
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcurl -sL --max-time 20 -A "Mozilla/5.0" "https://www.fotonica.it/" -o /tmp/fot.html; python3 - <<'EOF'
+import re,html
+t=open('/tmp/fot.html',encoding='utf-8',errors='ignore').read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S)
+t=re.sub(r'<style.*?</style>','',t,flags=re.S)
+p=html.unescape(re.sub(r'<[^>]+>','\n',t))
+lines=[re.sub(r'\s+',' ',l).strip() for l in p.split('\n')]
+lines=[l for l in lines if l]
+print('\n'.join(lines)[:2500])
+EOF
+IIS 10.0 Detailed Error - 999.0 - AW Special Error
+HTTP Error 999.0 - AW Special Error
+The custom error module does not recognize this error.
+Most likely causes:
+A module set an infrequently used status code.
+Things you can try:
+Investigate why the module set the status code.
+Detailed Error Information:
+Module
+IIS Web Core
+Notification
+Unknown
+Handler
+StaticFile
+Error Code
+0x00000000
+Requested URL
+https://www.fotonica.it:443/
+Physical Path
+D:\inetpub\webs\fotonicait
+Logon Method
+Not yet determined
+Logon User
+Not yet determined
+Request Tracing Directory
+D:\LogFiles\FailedReqLogFiles
+More Information:
+Any module can call SetStatus with the status, substatus or HRESULT. The custom error module only displays status specific error messages for well known errors.
+View more information »
+[0m$ [0mcurl -sL --max-time 25 -A "Mozilla/5.0" "https://www.parcoappiaantica.it/eventi/" -o /tmp/appia.html; python3 - <<'EOF'
+import re,html
+t=open('/tmp/appia.html',encoding='utf-8',errors='ignore').read()
+p=html.unescape(re.sub(r'<[^>]+>',' ',t)); p=re.sub(r'\s+',' ',p)
+i=p.lower().find('origami')
+print(p[max(0,i-400):i+700] if i>0 else 'origami not found')
+EOF
+origami not found
+> build · deepseek-v4.1-flash-free
+[0m$ [0mfor q in "Fotonica+MAM+2026+biglietti" "Roma+Arte+in+Nuvola+2026+orari+biglietti"; do echo "=== $q ==="; curl -s "https://news.google.com/rss/search?q=$q&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+for it in re.findall(r'<item>(.*?)</item>',t,re.S)[:6]:
+    ti=re.search(r'<title>(.*?)</title>',it,re.S).group(1)
+    de=re.search(r'<description>(.*?)</description>',it,re.S)
+    d=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S)
+    print('-',html.unescape(ti)[:120],'|',d.group(1)[:16] if d else '')
+    if de:
+        s=html.unescape(re.sub(r'<[^>]+>',' ',de.group(1))); s=re.sub(r'\s+',' ',s)
+        print('   ',s[:300])
+"; done
+=== Fotonica+MAM+2026+biglietti ===
+- Fotonica 2026 - Exibart | Fri, 20 Nov 2026
+    <a href="https://news.google.com/rss/articles/CBMiX0FVX3lxTFA1MnFqejlvWF9TSS1nTmtDdXRUdHhSN2tXTlZOWGFiczIzUHFRbGJpNzhldWxRWERiSUM2V3g1YThKX3FtaHl5TUhQRmZUUklDR0xWZ0RGUzJjenk5alZv?oc=5" target="_blank">Fotonica 2026</a>&nbsp;&nbsp;<font color="#6f6f6f">Exibart</font>
+- Inaugura a Roma il MAM Media Art Museum con la mostra HyperMedia - inITALY | Sat, 10 Oct 2026
+    <a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxPQVBZT3pmZEhFa1ozZF9IaW5BcUh1b2lKVzFwZ2Vld2thbnkySkVlMXRnal9DNGY3SGZwdUd1ZTgtbkt5bnQtVGhZQlV5SnhEbEhwYjdmZXZDaUdRWGpqS1dncjV6X245WXRsdmJBMHVHUFN4WGpUbExSRGZzTm8tNGx4WHJfZEl5eDBmMDdtbDRQSHMwNHZyTjZmYXViMkZla2JXel9BbDRadw?oc=5" target="_blan
+=== Roma+Arte+in+Nuvola+2026+orari+biglietti ===
+- Roma Arte in Nuvola 2026 porta l’arte contemporanea all’EUR - inITALY | Tue, 17 Nov 2026
+    <a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxPNXRFVklvbWRBZ19pVGxpWG5lVGlOSkJuUVZZbF8wVHlreEZYOTE1LXdGbkhPS1k3ZW1PaDFRWld0S2FFU3BKRXNvNzc5dnpyM3N5QlRNYVBrU3dxS0dISW1JVFZVWm5uOThrOVp5eWVHMXU5SExxNlVWNDhYWTVtV0NZS19wdHRqVUl1V1pKamFTNXQwbWpmV3VwU3Nna2Vr?oc=5" target="_blank">Roma Arte i
+- Roma Arte in Nuvola 2026 - Romeing | Tue, 10 Nov 2026
+    <a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE5BUzVwbmh1Y3lmYjNKbTZ0UVptdko1MC1SY05MNGh0ZzB5RXl6aXNXZ01hSXN2cUZzRV9kWnhnRDNQWTlrWHVJamFNUVozdEw3ZVhxMTVDaEpMQQ?oc=5" target="_blank">Roma Arte in Nuvola 2026</a>&nbsp;&nbsp;<font color="#6f6f6f">Romeing</font>
+- Roma Arte in Nuvola 2026 porta l’arte alla Nuvola - inITALY | Wed, 18 Nov 2026
+    <a href="https://news.google.com/rss/articles/CBMikwFBVV95cUxNVUpTbmtRNnNDcE4yMHNIRkVyRHhkcXRVU1picG1makF6R09tLVRXZWtXLWZlRlpBWEliT2s3V09NQjVzbi1ScmJwZ3BFUV9yRDBsQS1Zd3ZUZFVka0dLWUxXREZoNmd1MWFkMTdsejdnbUpWdVQweUY0NWVlNFNwMlI0a3ZuR0NnT3BvOWt6cElUaWs?oc=5" target="_blank">Roma Arte in Nuvola 2026 por
+- Roma Arte in Nuvola 2026, via al nuovo grande evento - The Parallel Vision | Fri, 30 Oct 2026
+    <a href="https://news.google.com/rss/articles/CBMid0FVX3lxTE5TSURkT19IMFBXWndWVmxmbWhQbFQ4N3plY1dNaHo1UV9XV0loZ0llU3JDR0lDaGF4OVg5czVsWm0wVWZWZll2eWFqbXJnV1dTY3QxSWNmZkhqNDVuM2tIOThCVGZhT2V2SEt6SzFpVzFpUDFnRDNJ?oc=5" target="_blank">Roma Arte in Nuvola 2026, via al nuovo grande evento</a>&nbsp;&nbsp
+- Christmas World a Villa Borghese: il Villaggio di Natale più grande d’Europa torna dal 28 novembre - Romeing | Mon, 16 Nov 2026
+    <a href="https://news.google.com/rss/articles/CBMia0FVX3lxTE9GUFJKOFlzRFUxMER0UzdoMk83RDNOdFUwTmtoZERCMUdOUFR1bDNpRHI1cTZIQjJvRWdzTEJnQkxIT0FnXzdjSWNTb0UwMW91X3V3ZWNWUTEwWVdnYmtNTHZwbjFObE54REln?oc=5" target="_blank">Christmas World a Villa Borghese: il Villaggio di Natale più grande d’Europa torna 
+- Roma Arte in Nuvola presenta mostre tra Eur e San Lorenzo - inITALY | Fri, 20 Nov 2026
+    <a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxNMGk0cFU4NWtYdlJpa3lKUEZGUnpDaDNoc0pjN0xDajY1ZVFjYzU5ejhGRFFoWmJpVE5xbEVibTBDbUE2Ty1qVXhoeFJlYlJyWmdVRFNiZ1RhVThjcnVndVBiU2FObURnb2ItMHByUHhMSU1Cc0xDdWlEeXRRRGNQckdXNXdZOTVxdnZSejJVSGtQaWcwdEV1MlgtTmtObDQ?oc=5" target="_blank">Roma Arte in
+> build · deepseek-v4.1-flash-free
+[0m$ [0mfor u in "https://www.romeing.it/roma-arte-in-nuvola-2026/" "https://www.romeing.it/roma-arte-in-nuvola/"; do echo "### $u"; curl -sL --max-time 20 -A "Mozilla/5.0" "$u" -o /tmp/r.html -w "%{http_code} %{size_download}\n"; python3 -c "
+import re,html
+t=open('/tmp/r.html',encoding='utf-8',errors='ignore').read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S)
+p=html.unescape(re.sub(r'<[^>]+>',' ',t)); p=re.sub(r'\s+',' ',p)
+for k in ['When','Hours','Ticket','ticket','€','Sunday','22 November']:
+    i=p.find(k)
+    if i>0: print(k,'>>',p[max(0,i-100):i+300]); break
+"; done
+### https://www.romeing.it/roma-arte-in-nuvola-2026/
+404 723600
+When >>  events and insider updates. I travel to Rome: Send me travel tips, curated tours and local events. When are you planning to travel? Scegli 1 valore Soon (1-2 Months) Planning (3-6 Months) Dreaming (Not Sure yet) SUBSCRIBE By entering your email address you agree to our Privacy Policy Contact Us About Romeing Advertise Newsletter Services Work with us Romeing Shop Visit Florence website Privacy Po
+### https://www.romeing.it/roma-arte-in-nuvola/
+200 958543
+When >>  events and insider updates. I travel to Rome: Send me travel tips, curated tours and local events. When are you planning to travel? Scegli 1 valore Soon (1-2 Months) Planning (3-6 Months) Dreaming (Not Sure yet) SUBSCRIBE By entering your email address you agree to our Privacy Policy Contact Us About Romeing Advertise Newsletter Services Work with us Romeing Shop Visit Florence website Privacy Po
+> build · deepseek-v4.1-flash-free
+[0m$ [0mpython3 - <<'EOF'
+import re,html
+t=open('/tmp/r.html',encoding='utf-8',errors='ignore').read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S)
+t=re.sub(r'<style.*?</style>','',t,flags=re.S)
+h=re.search(r'<h1[^>]*>(.*?)</h1>',t,re.S)
+start=h.end() if h else 0
+seg=t[start:start+30000]
+seg=re.sub(r'<[^>]+>','\n',seg); seg=html.unescape(seg)
+lines=[re.sub(r'\s+',' ',l).strip() for l in seg.split('\n')]
+print('\n'.join([l for l in lines if len(l)>30][:25])[:3500])
+EOF
+Rome’s International Fair of Modern and Contemporary Art
+returns for its sixth edition at
+. The fair brings together around
+140 Italian and international galleries
+, with works ranging from painting and sculpture to photography.
+, this year’s edition adds a new section,
+, and for the first time extends beyond the Nuvola with an exhibition in the city center.
+Heike Gallmeier, mobile art space, Reiseprojekt Outlines, 2020
+Courtesy the artist and Guest Country Germany
+The Best Events in November in Rome
+Germany is this year’s guest country
+, marking the 75th anniversary of the resumption of diplomatic relations with Italy. Its group show,
+Journey to Italy. Nostalgia for Italy
+, curated by Gregor Jansen and Julia Apitzsch, looks at the artistic exchange between the two countries through the eyes of eight artists, including Candida Höfer and Thomas Struth.
+is the guest region, with a selection of Olympic and Paralympic posters by painters under 40, created with Triennale Milano and the Milano Cortina 2026 Foundation.
+Among the exhibitions and special projects, we highlight:
+: masks and portraits in cardboard and metal by Corrado Cagli, made between 1959 and 1967, marking 50 years since the artist’s death.
+: a retrospective by Tornabuoni Arte on the artist’s bond with Rome, his home from 1944, with works from the early 1900s to the 1970s.
+: a tribute to Japanese sculptor Hidetoshi Nagasawa, with monumental works in marble, lead, wood and bronze in the Nuvola foyer.
+: contemporary works by artists such as Enzo Cucchi, Nico Vascellari and Eva Marisaldi, placed among the furnishings of the Casa Museo Mario Praz.
+: the Ministry of Culture, the National Gallery of Modern and Contemporary Art, with two works by Marinella Senatore, and MAXXI, with two works by Thomas Ruff.
+The program also includes talks moderated by Adriana Polveroni, live performances and four awards for artists and galleries.
+Your email address will not be published.
+Save my name, email, and website in this browser for the next time I comment.
+<path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.24a2 2 0 0 0-1.8
+> build · deepseek-v4.1-flash-free
+[0m$ [0mpython3 - <<'EOF'
+import re,html
+t=open('/tmp/r.html',encoding='utf-8',errors='ignore').read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S)
+p=html.unescape(re.sub(r'<[^>]+>',' ',t)); p=re.sub(r'\s+',' ',p)
+for k in ['€','EUR','Ticket','tickets','Hours','10am','11am','8pm','Nov 20']:
+    for m in re.finditer(re.escape(k),p):
+        seg=p[max(0,m.start()-200):m.start()+250]
+        if 'Nuvola' in seg or 'fair' in seg or 'arte' in seg.lower():
+            print(k,'>>',seg); break
+EOF
+€ >>  talks moderated by Adriana Polveroni, live performances and four awards for artists and galleries. CLICK HERE TO BUY TICKETS Details 20/11/2026 – 22/11/2026 La Nuvola Viale Asia 40-44 10.30am-8.30pm €16,5 romaarteinnuvola.eu Buy tickets Leave a Reply Cancel reply Your email address will not be published. Required fields are marked * Comment * Name * Email * Save my name, email, and website in this browser for the next time I comment. .romeing-wi
+EUR >>  November 10, 2026 by Benedetta Fabris Rome’s International Fair of Modern and Contemporary Art From November 20 to 22 , Roma Arte in Nuvola returns for its sixth edition at Fuksas’s Nuvola in Rome’s EUR District . The fair brings together around 140 Italian and international galleries , with works ranging from painting and sculpture to photography. Created and directed by Alessandro Nicosia , with artistic direction by Adriana Polveroni , this y
+Ticket >> important;display:block!important}.bmp-banner-code{line-height:normal!important;display:block!important;min-width:300px!important;min-height:50px!important} Roma Arte in Nuvola 2026: Dates, Shows and Tickets img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px} :root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122 , 0 , 223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background
+tickets >> lveroni, live performances and four awards for artists and galleries. CLICK HERE TO BUY TICKETS Details 20/11/2026 – 22/11/2026 La Nuvola Viale Asia 40-44 10.30am-8.30pm €16,5 romaarteinnuvola.eu Buy tickets Leave a Reply Cancel reply Your email address will not be published. Required fields are marked * Comment * Name * Email * Save my name, email, and website in this browser for the next time I comment. .romeing-widget-container{max-width:420px
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcurl -s "https://api.open-meteo.com/v1/forecast?latitude=41.9028&longitude=12.4964&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,precipitation_sum,weathercode&timezone=Europe%2FRome&start_date=2026-11-22&end_date=2026-11-22" | python3 -m json.tool
+{
+    "latitude": 41.895107,
+    "longitude": 12.526347,
+    "generationtime_ms": 0.12159347534179688,
+    "utc_offset_seconds": 3600,
+    "timezone": "Europe/Rome",
+    "timezone_abbreviation": "GMT+1",
+    "elevation": 58.0,
+    "daily_units": {
+        "time": "iso8601",
+        "temperature_2m_max": "\u00b0C",
+        "temperature_2m_min": "\u00b0C",
+        "precipitation_probability_max": "%",
+        "precipitation_sum": "mm",
+        "weathercode": "wmo code"
+    },
+    "daily": {
+        "time": [
+            "2026-11-22"
+        ],
+        "temperature_2m_max": [
+            17.7
+        ],
+        "temperature_2m_min": [
+            13.1
+        ],
+        "precipitation_probability_max": [
+            68
+        ],
+        "precipitation_sum": [
+            2.1
+        ],
+        "weathercode": [
+            80
+        ]
+    }
+}
+[0m$ [0mcurl -sL --max-time 20 -A "Mozilla/5.0" "https://www.exibart.com/evento-arte/fotonica-2026/" -o /tmp/ex.html -w "%{http_code}\n"; python3 -c "
+import re,html
+t=open('/tmp/ex.html',encoding='utf-8',errors='ignore').read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S)
+p=html.unescape(re.sub(r'<[^>]+>',' ',t)); p=re.sub(r'\s+',' ',p)
+for k in ['€','orari','Orari','ingresso','Ingresso','bigliet']:
+    i=p.find(k)
+    if i>0: print(k,'>>',p[max(0,i-150):i+250])
+"
+200
+€ >>  20 al 28 novembre 2026 arte contemporanea arti performative musica Location MAM-Media Art Museum Roma, Corso d'Italia, 37, (RM) Biglietti Full pass: €32,70 Giornaliero: €16,35 Orario di apertura Mostra Hypermedia: dalle ore 11 alle ore 19 Fotonica: dalle ore 21 Sito web https://fotonicafestival.com/ Ufficio stampa GDG Press Autore Natalie Szende Kati Katona Infratonal - Konx-om-Pax - --> Redy LAS
+orari >> iflettendo sulla vulnerabilità degli ecosistemi marini. A partire dal 20 novembre l’opera è visibile per tutte le giornate del festival, seguendo gli orari di apertura al pubblico dell’Accademia d’Ungheria. Dal 20 novembre, la programmazione di Fotonica si sposta al MAM – Media Art Museum - il primo museo permanente di Roma dedicato alla media art con una sala immersiva da 300 mq, dotata di 27 pro
+Orari >> e contemporanea arti performative musica Location MAM-Media Art Museum Roma, Corso d'Italia, 37, (RM) Biglietti Full pass: €32,70 Giornaliero: €16,35 Orario di apertura Mostra Hypermedia: dalle ore 11 alle ore 19 Fotonica: dalle ore 21 Sito web https://fotonicafestival.com/ Ufficio stampa GDG Press Autore Natalie Szende Kati Katona Infratonal - Konx-om-Pax - --> Redy LASCIA UN COMMENTO Cancella la
+> build · deepseek-v4.1-flash-free
+[0m$ [0mgrep -o '2026-11-22T[0-9:]*' /tmp/ori.html | head -5; grep -o '"startDate":"[^"]*"' /tmp/ori.html | head -3; grep -o 'ore [0-9][0-9]:[0-9][0-9]' /tmp/ori.html | head -5
+"startDate":"2026-11-22"
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcurl -sL --max-time 20 -A "Mozilla/5.0" "https://www.parcoappiaantica.it/?s=origami" -o /tmp/pa.html -w "%{http_code}\n"; python3 - <<'EOF'
+import re,html
+t=open('/tmp/pa.html',encoding='utf-8',errors='ignore').read()
+for m in re.findall(r'href="([^"]*origami[^"]*)"',t,re.I)[:5]: print(m)
+p=html.unescape(re.sub(r'<[^>]+>',' ',t)); p=re.sub(r'\s+',' ',p)
+i=p.lower().find('origami')
+print(p[max(0,i-200):i+500] if i>0 else 'none')
+EOF
+200
+https://www.parcoappiaantica.it/search/origami/feed/rss2/
+:0;font-size:calc(var(--h6-size-proportion) * 1rem);font-weight:400;margin-bottom:.7rem}p{margin-bottom:1.43rem;line-height:var(--p-line-height,1.6);font-size:var(--p-font-size,1.14rem)} Si è cercato origami – Parco Regionale dell’Appia Antica {"@context":"https:\/\/schema.org","@graph":[{"@type":["CollectionPage","SearchResultsPage"],"@id":"https:\/\/www.parcoappiaantica.it\/?s=origami","url":"https:\/\/www.parcoappiaantica.it\/?s=origami","name":"Si è cercato origami – Parco Regionale dell’Appia Antica","isPartOf":{"@id":"https:\/\/www.parcoappiaantica.it\/#website"},"breadcrumb":{"@id":"#breadcrumb"},"inLanguage":"it-IT"},{"@type":"BreadcrumbList","@id":"#breadcrumb","itemListElement":[{"
+> build · deepseek-v4.1-flash-free
+[0m$ [0mpython3 - <<'EOF'
+import re
+t=open('/tmp/ori.html',encoding='utf-8',errors='ignore').read()
+i=t.find('Sito web')
+print(t[max(0,i-600):i+300])
+EOF
+>
+        <div class="l-grid__item u-p-xxsmal" data-grid-position="">
+          <span class="u-label-03 u-block u-uppercase u-mb-xsmall u-mt-xxsmall">Prezzo</span>
+          <!-- start dettagli prezzo -->
+                    <span class="u-label-011 u-py-xsmall">&euro;6</span>
+                    
+        </div>
+        <div class="l-grid__item u-p-xxsmal" data-grid-position="">
+          <span class="u-label-03 u-block u-uppercase u-my-xsmall">Altre informazioni</span>
+                    
+                      
+          
+          
+                    	<span class="u-label-011 u-py-xsmall">Sito web </span>
+          	<a class="u-label-011 u-py-xsmall o-link-text" aria-label="parcoappiaantica.it" href="https://eventi.parcoappiaantica.it/events/laboratorio-di-origami-origami-in-fiore/" target="_blank">parcoappiaantica.it</a>
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcurl -sL --max-time 20 -A "Mozilla/5.0" "https://eventi.parcoappiaantica.it/events/laboratorio-di-origami-origami-in-fiore/" -o /tmp/oe.html -w "%{http_code}\n"; python3 - <<'EOF'
+import re,html
+t=open('/tmp/oe.html',encoding='utf-8',errors='ignore').read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S)
+p=html.unescape(re.sub(r'<[^>]+>',' ',t)); p=re.sub(r'\s+',' ',p)
+for k in ['orari','Orari','ore','Ore','11:','10:','15:','dalle']:
+    i=p.find(k)
+    if i>0: print(k,'>>',p[max(0,i-180):i+250]); print()
+EOF
+200
+ore >>  1rem);font-weight:400;margin-bottom:.7rem}p{margin-bottom:1.43rem;line-height:var(--p-line-height,1.6);font-size:var(--p-font-size,1.14rem)} Laboratorio di origami – Origami in fiore – Eventi – Parco Regionale dell'Appia Antica img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px} /*# sourceURL=wp-img-auto-sizes-contain-inline-css */ /*! This file is auto-generated */ .wp-block-button__link{color:#ff
+
+11: >> fter { right: 5px; }*/ Facebook Instagram Youtube Linkedin WhatsApp Laboratorio di origami – Origami in fiore 22 Novembre 2026 / Posted by Infopoint Appia Quando Novembre 22, 2026 11:00 am - 12:00 pm Aggiungi al calendario Download ICS Google Calendar iCalendar Office 365 Outlook Live Prenotazioni €0,00 - €6,00 Dove Cartiera Latina Via Appia Antica 42, 00179, Rome, Roma, Roma, 00179, Lazio Event Type Bambini Evento Laboratorio
+> build · deepseek-v4.1-flash-free
+Now let me check how `site.py` parses posts and how covers are defined, so the new files match exactly.
+[0m$ [0mgrep -n "2026-11-21\|2026-11-20-rome-weekend\|COVERS = \|for c in COVERS\|\"file\"" covers/generate.py | tail -30; echo "---tail---"; tail -40 covers/generate.py
+8:COVERS = [
+10:        "file": "2026-11-09-intro",
+19:        "file": "2026-11-10-transport",
+28:        "file": "2026-11-10-rent",
+37:        "file": "2026-11-10-events",
+46:        "file": "2026-11-10-codice-fiscale",
+55:        "file": "2026-11-10-italy-military-aid",
+64:        "file": "2026-11-21-rome-weekend-parade-fl1",
+73:        "file": "2026-11-20-rome-weekend-cie-museums",
+82:        "file": "2026-11-19-shenzhen-berlin",
+91:        "file": "2026-11-18-rome-newcomer-events",
+100:        "file": "2026-11-18-kerch-summit-museums",
+109:        "file": "2026-11-17-inflation-strike",
+118:        "file": "2026-11-16-week-ahead",
+127:        "file": "2026-11-13-weekend-14-15",
+136:        "file": "2026-11-13-peace-talks-eu",
+145:        "file": "2026-11-12-school-alerts",
+154:        "file": "2026-11-11-lazio-irpef",
+163:        "file": "2026-11-11-rent-long-term",
+172:        "file": "2026-11-11-kids",
+181:        "file": "2026-11-12-exhibitions",
+190:        "file": "2026-11-13-money",
+199:        "file": "2026-11-14-weekend",
+208:        "file": "2026-11-15-digest",
+217:        "file": "2026-11-21-rome-open-day-markets-closures",
+353:    for c in COVERS:
+354:        path = OUT / f'{c["file"]}.svg'
+---tail---
+    <radialGradient id="glow" cx="82%" cy="18%" r="55%">
+      <stop offset="0" stop-color="{accent}" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="{accent}" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1080" height="810" fill="url(#bg)"/>
+  <rect width="1080" height="810" fill="url(#glow)"/>
+  <rect x="30" y="30" width="1020" height="750" rx="28" fill="none" stroke="{accent}" stroke-opacity="0.28" stroke-width="2"/>
+
+  <g font-family="PT Sans, Arial, sans-serif">
+    <circle cx="86" cy="92" r="9" fill="{accent}"/>
+    <text x="110" y="100" font-size="22" font-weight="700" fill="#DCE8F4" letter-spacing="5">РИМ ДЛЯ СВОЇХ</text>
+    <text x="994" y="100" text-anchor="end" font-size="20" font-weight="600" fill="#7F95A9" letter-spacing="3">РИМ · ІТАЛІЯ</text>
+
+    <text x="80" y="230" font-size="24" font-weight="700" fill="{accent}" letter-spacing="5">{escape(c["kicker"])}</text>
+    {"".join(title_svg)}
+    <text x="82" y="{sub_y}" font-size="31" font-weight="500" fill="#C9D6E2">{escape(c["sub"])}</text>
+
+    <rect x="80" y="638" width="{int(len(c["date"]) * 17 + 64)}" height="66" rx="33" fill="{accent}"/>
+    <text x="112" y="682" font-size="27" font-weight="800" fill="#0A1424" letter-spacing="1">{escape(c["date"])}</text>
+
+    <text x="80" y="752" font-size="18" font-weight="600" fill="#7F95A9" letter-spacing="3">t.me/rim_dlia_svoih</text>
+  </g>
+
+  {colosseum(accent)}
+  {icon(c["icon"], accent)}
+</svg>
+'''
+
+
+def main() -> None:
+    for c in COVERS:
+        path = OUT / f'{c["file"]}.svg'
+        path.write_text(cover(c), encoding="utf-8")
+        print(path)
+
+
+if __name__ == "__main__":
+    main()
+[0m$ [0mgrep -n "def \|slug\|front\|title\|date\|content/extra\|content/it\|channel" automation/site.py | head -60
+7:  posts/<slug>.html   — окрема сторінка кожного поста
+25:from datetime import datetime, timezone
+34:EXTRA = ROOT / "content/extra"
+50:# Перекладений контент: content/it/<slug>.md (той самий slug, що й обкладинка)
+51:IT_CONTENT = ROOT / "content/it"
+138:        "title_index": "Рим для своїх — телеграм-канал для українців у Римі",
+168:        "title_index": "Ucraini a Roma — eventi, trasporti, casa e lavoro | Rim per i nostri",
+180:def code_blocks(path: Path) -> list[str]:
+185:def extra_stems() -> set[str]:
+189:def cover_files() -> list[Path]:
+194:def slug_from_cover(cover: Path) -> str:
+198:def post_date(cover: Path) -> datetime:
+199:    return datetime.strptime(cover.name[:10], "%Y-%m-%d")
+202:def human_date(value: datetime) -> str:
+206:def first_line(text: str) -> str:
+211:def excerpt(text: str, limit: int = 180) -> str:
+219:def body_excerpt(text: str, limit: int = 180) -> str:
+230:def esc(value: str) -> str:
+234:def paragraphs(text: str) -> str:
+237:    Підтримує **жирний** усередині рядка (markdown-файли з content/extra).
+256:def italian_texts() -> dict[str, str]:
+257:    """Переклади постів: content/it/<slug>.md → текст."""
+267:def load_posts() -> list[dict]:
+279:    posts.sort(key=lambda post: (post["date"], post["slug"]))
+280:    unknown = set(translations) - {post["slug"] for post in posts}
+288:def make_post(text: str, cover: Path, text_it: str | None = None) -> dict:
+289:    slug = slug_from_cover(cover)
+293:        "slug": slug,
+294:        "date": post_date(cover),
+295:        "title": first_line(text),
+297:        "url": f"{SITE_URL}/posts/{slug}.html",
+299:        "title_it": first_line(text_it) if text_it else "",
+301:        "url_it": f"{SITE_URL}/it/posts/{slug}.html",
+306:def extra_posts(translations: dict[str, str] | None = None) -> list[dict]:
+307:    """Окремі пости з content/extra/<slug>.md + covers/<slug>.png."""
+313:            raise SystemExit(f"Немає обкладинки {cover.name} для content/extra/{path.name}")
+400:def page_shell(
+401:    title: str,
+429:<title>{esc(title)}</title>
+434:<meta property="og:title" content="{esc(title)}">
+440:<meta name="twitter:title" content="{esc(title)}">
+443:<link rel="alternate" type="application/rss+xml" title="{esc(SITE_NAME[lang])}" href="{SITE_URL}/rss.xml">
+477:def org_schema() -> str:
+489:def json_str(value: str) -> str:
+502:def human_date_lang(value: datetime, lang: str) -> str:
+505:    return human_date(value)
+508:def index_page(posts: list[dict], lang: str = "uk") -> str:
+515:  <a href="{(p['url'] if lang == 'uk' else p['url_it'])}"><img src="{SITE_URL}/covers/{p['cover'].name}" alt="{esc(p['title'] if lang == 'uk' else p['title_it'])}" loading="lazy" width="640" height="480"></a>
+517:    <time datetime="{p['date'].strftime('%Y-%m-%d')}">{human_date_lang(p['date'], lang)}</time>
+518:    <h3><a href="{(p['url'] if lang == 'uk' else p['url_it'])}">{esc(p['title'] if lang == 'uk' else p['title_it'])}</a></h3>
+529:  <h3>{esc(title)}</h3>
+532:        for icon, title, text in TOPICS[lang]
+538:  <h3>{esc(title)}</h3>
+541:        for n, title, text in STEPS[lang]
+558:                "name": p["title"] if lang == "uk" else p["title_it"],
+656:        t["title_index"],
+667:def post_page(post: dict, prev: dict | None, nxt: dict | None, lang: str = "uk") -> str:
+672:    title = post["title_it"] if it else post["title"]
+678:    post_title = lambda p: p["title_it"] if it else p["title"]
+682:        pager.append(f'<a href="{post_url(prev)}">← {esc(post_title(prev))}</a>')
+> build · deepseek-v4.1-flash-free
+[0m→ [0mRead covers/generate.py [90m[offset=60, limit=40][0m
+[0m→ [0mRead covers/generate.py [90m[offset=210, limit=30][0m
+> build · deepseek-v4.1-flash-free
+[0m→ [0mRead automation/site.py [90m[offset=306, limit=40][0m
+[0m$ [0mgrep -n 'if kind ==\|elif kind ==' covers/generate.py
+231:    if kind == "wheel":
+241:    if kind == "frame":
+247:    if kind == "pin":
+252:    if kind == "home":
+258:    if kind == "wallet":
+265:    if kind == "doc":
+273:    if kind == "shield":
+278:    if kind == "mail":
+> build · deepseek-v4.1-flash-free
+exit=1

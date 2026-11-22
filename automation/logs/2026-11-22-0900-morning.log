@@ -1,0 +1,222 @@
+=== 2026-11-22 09:00:02 slot=morning ===
+[0m
+> build · deepseek-v4.1-flash-free
+I'll start by reading the README and understanding the repo structure.
+[0m→ [0mRead . 
+[0m→ [0mRead README.md 
+> build · deepseek-v4.1-flash-free
+[0m$ [0mls -1 content/extra | tail -20
+2026-11-10-codice-fiscale.md
+2026-11-10-events.md
+2026-11-10-italy-military-aid.md
+2026-11-10-rent.md
+2026-11-11-lazio-irpef.md
+2026-11-11-rent-long-term.md
+2026-11-12-school-alerts.md
+2026-11-13-peace-talks-eu.md
+2026-11-13-weekend-14-15.md
+2026-11-16-week-ahead.md
+2026-11-17-inflation-strike.md
+2026-11-18-kerch-summit-museums.md
+2026-11-18-rome-newcomer-events.md
+2026-11-19-shenzhen-berlin.md
+2026-11-20-rome-weekend-cie-museums.md
+2026-11-21-rome-open-day-markets-closures.md
+2026-11-21-rome-weekend-parade-fl1.md
+[0m$ [0mpython3 automation/collect.py
+→ ANSA Lazio
+→ Corriere Roma
+→ Il Messaggero Roma
+→ Il Tempo
+→ AGI
+→ Adnkronos
+→ Il Sole 24 Ore
+→ Il Fatto Quotidiano
+
+Збережено 37 кандидатів → /Users/terkin/rim-dlia-svoikh/automation/candidates.json
+> build · deepseek-v4.1-flash-free
+[0m→ [0mRead content/extra/2026-11-21-rome-weekend-parade-fl1.md 
+[0m$ [0mpython3 -c "
+import json
+d=json.load(open('automation/candidates.json'))
+for i,c in enumerate(d):
+    print(i, '|', c.get('source'), '|', c.get('title'))
+    print('   ', c.get('link'))
+"
+Traceback (most recent call last):
+  File "<string>", line 5, in <module>
+    print(i, '|', c.get('source'), '|', c.get('title'))
+                  ^^^^^
+AttributeError: 'str' object has no attribute 'get'
+> build · deepseek-v4.1-flash-free
+[0m→ [0mRead content/extra/2026-11-21-rome-open-day-markets-closures.md 
+[0m$ [0mpython3 -c "
+import json
+d=json.load(open('automation/candidates.json'))
+print(type(d))
+if isinstance(d,dict): print(d.keys())
+" ; head -c 600 automation/candidates.json
+<class 'dict'>
+dict_keys(['generated_at', 'count', 'items'])
+{
+  "generated_at": "2026-11-22T08:00:13.514832+00:00",
+  "count": 37,
+  "items": [
+    {
+      "source": "Il Messaggero Roma",
+      "title": "Roma, scoppia la faida tra donne del clan: 52enne uccisa a coltellate durante il raid. La spedizione con armi e benzina",
+      "link": "https://www.ilmessaggero.it/roma/metropoli/roma_lite_famiglie_rom_morta_cosa_e_successo_ultime_notizie-9903076.html",
+      "published": "ven, 20 nov 2026 23:34:14 +0100",
+      "summary": "La faida interna tra le donne del clan è culminata ieri sera quando un gruppo è partito da Artena, comune alle porte della Capi
+> build · deepseek-v4.1-flash-free
+[0m$ [0mpython3 -c "
+import json
+d=json.load(open('automation/candidates.json'))['items']
+for i,c in enumerate(d):
+    print(i, '|', c['source'], '|', c['published'][:16], '|', c['title'])
+    print('   ', c['link'])
+"
+0 | Il Messaggero Roma | ven, 20 nov 2026 | Roma, scoppia la faida tra donne del clan: 52enne uccisa a coltellate durante il raid. La spedizione con armi e benzina
+    https://www.ilmessaggero.it/roma/metropoli/roma_lite_famiglie_rom_morta_cosa_e_successo_ultime_notizie-9903076.html
+1 | Il Messaggero Roma | ven, 20 nov 2026 | Il cane poliziotto Odina punta un ragazzo, trovata droga addosso e a casa: arrestato
+    https://www.ilmessaggero.it/roma/flaminio/polizia_idraulico_spaccio_droga-9902607.html
+2 | Il Messaggero Roma | ven, 20 nov 2026 | Hilton punta su Roma: a Monti un hotel di lusso con 147 camere
+    https://www.ilmessaggero.it/roma/metropoli/hotel_hilton_lxr_hotels_resort_roma_monti_5_stelle_lusso_via_cavour_via_lanza-9900601.html
+3 | Il Messaggero Roma | ven, 20 nov 2026 | Roma, blitz nel nido abusivo a Marconi: asilo e cucina senza i permessi
+    https://www.ilmessaggero.it/roma/portuense/roma_asilo_nido_abusivo_marconi-9900867.html
+4 | Il Messaggero Roma | ven, 20 nov 2026 | Roma, Lungotevere dei Mellini: sbloccato il cantiere per il nuovo parcheggio. I lavori riprendono lunedì
+    https://www.ilmessaggero.it/roma/centro_storico/roma_lungotevere_mellini_sbloccato_cantiere_nuovo_parcheggio-9900863.html
+5 | Il Fatto Quotidiano | 2026-11-22T07:57 | “Gran Bretagna conduce cyber attacchi contro Russia, Cina, Iran e Corea del Nord”: la rivelazione del comandante Magowan
+    https://www.ilfattoquotidiano.it/2026/11/22/guerra-cibernetica-uk-russia-cina-notizie/8579528/
+6 | Il Sole 24 Ore | 2026-11-22T07:50 | Venezia, il ticket d’accesso potrebbe raddoppiare: da 10 a 20 euro
+    https://www.ilsole24ore.com/art/venezia-ticket-d-accesso-potrebbe-raddoppiare-10-20-euro-AJlijeOC
+7 | Corriere Roma | 2026-11-22T07:44 | «Tertio Millennio Film Fest», la trentesima edizione con Carlo Verdone: «Il mio film più struggente? "Al lupo al lupo"»
+    https://roma.corriere.it/notizie/cronaca/26_novembre_22/tertio-millennio-film-fest-la-trentesima-edizione-con-carlo-verdone-il-mio-film-piu-struggente-al-lupo-al-lupo-824a3de6-54a8-4bd1-920b-7442bb344xlk.shtml
+8 | Corriere Roma | 2026-11-22T07:39 | Roma, all'Accademia di Santa Cecilia omaggio a Margherita di Savoia «regina musicista»
+    https://roma.corriere.it/notizie/cronaca/26_novembre_22/roma-all-accademia-di-santa-cecilia-omaggio-a-margherita-di-savoia-regina-musicista-440e2478-d28b-4c3e-b39f-db00c8da9xlk.shtml
+9 | Corriere Roma | 2026-11-22T07:33 | Minicar a Roma, il gip sui due ragazzi: «Dopo le aggressioni ridevano indifferenti delle vittime, come fosse uno scherzo»
+    https://roma.corriere.it/notizie/cronaca/26_novembre_22/minicar-a-roma-il-gip-sui-due-ragazzi-dopo-le-aggressioni-ridevano-indifferenti-delle-vittime-come-fosse-uno-scherzo-87528085-464f-4ed3-a8bb-056ab4071xlk.shtml
+10 | Corriere Roma | 2026-11-22T07:27 | Morta Raffaella Curiel, per anni protagonista della moda anche a Roma
+    https://roma.corriere.it/notizie/cronaca/26_novembre_22/morta-raffaella-curiel-per-anni-protagonista-della-moda-anche-a-roma-1c2fe5b3-67f0-4949-a729-6d2020e88xlk.shtml
+11 | Corriere Roma | 2026-11-22T07:20 | Black Friday a Roma, scatta la caccia agli sconti: sono i giorni degli acquisti per i regali di Natale
+    https://roma.corriere.it/notizie/cronaca/26_novembre_22/black-friday-a-roma-scatta-la-caccia-agli-sconti-sono-i-giorni-degli-acquisti-per-i-regali-di-natale-762a070f-ecfb-4924-ae5f-062b3f1cfxlk.shtml
+12 | Il Tempo | 2026-11-22T06:33 | Gianni De Gennaro trovato senza vita nella casa in Toscana
+    https://www.iltempo.it/news/attualita/gianni-de-gennaro-trovato-senza-vita-nella-casa-in-toscana/
+13 | Adnkronos | 2026-11-22T06:30 | Atp Finals, oggi finale Zverev-Alcaraz: quanto guadagna chi vince il Torneo dei Maestri
+    https://www.adnkronos.com/sport/alcaraz-zverev-finale-atp-finals-quanto-guadagna-chi-vince-oggi_7i7lTHHy9MCykfxZ413CQ0
+14 | AGI | 2026-11-22T06:17 | De Gennaro, l'isolamento, i biglietti d'addio e l’inchiesta a Grosseto per istigazione al suicidio
+    https://www.agi.it/cronaca/news/2026-11-21/de-gennaro-suicidio-sparato-40128627/
+15 | Il Fatto Quotidiano | 2026-11-22T05:46 | Il Piano di Ripristino della Natura: l’Italia aderisce (a modo suo)
+    https://www.ilfattoquotidiano.it/2026/11/22/piano-nazionale-ripristino-natura-italia-bozza-mountain-wilderness-opinione/8578471/
+16 | Il Fatto Quotidiano | 2026-11-22T05:41 | Black Friday: perché quello sconto del 50% non è sempre un affare
+    https://www.ilfattoquotidiano.it/2026/11/22/black-friday-2026-sconti-moda-prezzi-guida-acquisti/8578535/
+17 | Adnkronos | 2026-11-22T05:22 | Ferrari, disastro a Las Vegas: lite e incidente tra Leclerc e Hamilton
+    https://www.adnkronos.com/sport/incidente-hamilton-leclerc-las-vegas-ferrari_1yseQxX1zWebsp6O4vLuOc
+18 | Il Fatto Quotidiano | 2026-11-22T05:11 | Trump, Xi e Putin riscrivono il mondo. L’Europa guarda dalla finestra
+    https://www.ilfattoquotidiano.it/2026/11/22/vertice-trump-xi-putin-shenzhen-loretta-napoleoni-analisi/8578573/
+19 | Il Fatto Quotidiano | 2026-11-21T22:00 | Ferrari 296 Challenge Evo e Stradale, dalla pista alla strada senza compromessi. E senza ibrido – FOTO
+    https://www.ilfattoquotidiano.it/2026/11/21/ferrari-296-challenge-evo-e-stradale-dalla-pista-alla-strada-senza-compromessi-e-senza-ibrido-foto/8579749/
+20 | AGI | 2026-11-21T20:39 | In diecimila per l'ultimo saluto a Corrado Augias in Campidoglio
+    https://www.agi.it/cronaca/news/2026-11-21/augias-camera-ardente-campidoglio-40128287/
+21 | ANSA Lazio | 2026-11-21T20:29 | L'ultimo saluto a Corrado Augias, oltre 10.000 in fila in Campidoglio
+    https://www.ansa.it/lazio/notizie/2026/11/21/aperta-la-camera-ardente-di-corrado-augias-al-campidoglio_e506b886-afa0-48a8-b2aa-3f7f123368dd.html
+22 | ANSA Lazio | 2026-11-21T20:27 | Serie A: poker di Malen, la Roma batte il Parma 5-1 e resta in scia
+    https://www.ansa.it/lazio/notizie/2026/11/21/serie-a-poker-di-malen-la-roma-batte-il-parma-5-1-e-resta-in-scia_22142406-69b4-4611-bd45-02402a8c641f.html
+23 | Il Tempo | 2026-11-21T19:05 | Poker di Malen e la Roma vince 5-1 a Parma
+    https://www.iltempo.it/news/italpress/poker-di-malen-e-la-roma-vince-5-1-a-parma/
+24 | Il Tempo | 2026-11-21T18:33 | Meteo, nubi a Roma e allerta maltempo in parte della penisola: ecco dove
+    https://www.iltempo.it/news/attualita/meteo-nubi-a-roma-e-allerta-maltempo-in-parte-della-penisola-ecco-dove/
+25 | ANSA Lazio | 2026-11-21T17:53 | Alessandro Baricco e La tempesta silenziosa, a Roma lezione su Le notti bianche
+    https://www.ansa.it/lazio/notizie/2026/11/21/alessandro-baricco-e-la-tempesta-silenziosa-a-roma-lezione-su-le-notti-bianche_0ae91473-a544-4d75-9680-d9d6ddecea29.html
+26 | ANSA Lazio | 2026-11-21T17:53 | Festival economia della cultura, 'nel Lazio comparto che genera sviluppo'
+    https://www.ansa.it/lazio/notizie/2026/11/21/festival-economia-della-cultura-nel-lazio-comparto-che-genera-sviluppo_c090d607-467b-4d84-b9ab-6932610330d6.html
+27 | ANSA Lazio | 2026-11-21T17:53 | Gualtieri, 5 milioni euro per riqualificare i 144 centri anziani di Roma
+    https://www.ansa.it/lazio/notizie/2026/11/21/gualtieri-5-milioni-euro-per-riqualificare-i-144-centri-anziani-di-roma_dcf77a1f-694c-4ec2-aa96-4559352d0a19.html
+28 | Il Tempo | 2026-11-21T17:41 | L’analista Giovanni Giacalone: «La sinistra globale usa le stesse parole per nascondere la propria crisi»
+    https://www.iltempo.it/news/attualita/la-sinistra-globale-usa-le-stesse-parole-per-nascondere-la-propria-crisi/
+29 | Il Sole 24 Ore | 2026-11-21T17:24 | La Sardegna scommette sui nomadi digitali: la Regione investe 10 milioni di euro
+    https://www.ilsole24ore.com/art/la-sardegna-scommette-nomadi-digitali-regione-investe-10-milioni-euro-AJif6pNC
+30 | Il Tempo | 2026-11-21T16:26 | Noslin super e Lecce sconfitto, la Lazio non smette di sognare
+    https://www.iltempo.it/news/italpress/noslin-super-e-lecce-sconfitto-la-lazio-non-smette-di-sognare/
+31 | Il Sole 24 Ore | 2026-11-21T12:57 | Decreto Scuola, un ordine del giorno sugli e-book per siglare la pace tra Fdi e azzurri
+    https://www.ilsole24ore.com/art/decreto-scuola-ordine-giorno-e-book-siglare-pace-fdi-e-azzurri-AJhLyoNC
+32 | Il Sole 24 Ore | 2026-11-21T12:49 | Codice della strada, scompare la tariffa massima per chi perde il biglietto in autostrada
+    https://www.ilsole24ore.com/art/codice-strada-scompare-tariffa-massima-chi-perde-biglietto-autostrada-AJ7exTMC
+33 | Il Sole 24 Ore | 2026-11-21T11:57 | Sanità: in manovra fino a 1 miliardo in più, ma resta il nodo buste paga
+    https://www.ilsole24ore.com/art/sanita-manovra-fino-1-miliardo-piu-ma-resta-nodo-buste-paga-AJ38ssNC
+34 | AGI | 2026-11-21T11:37 | L'ultimo addio in Campidoglio a Corrado Augias. Gualtieri: "Oggi siamo tutti un po' più poveri"
+    https://www.agi.it/cronaca/video/2026-11-21/corrado-augias-camera-ardente-40130405/
+35 | AGI | 2026-11-21T10:53 | Perché l’ex capo della Polizia era indagato: le carte bruciate e via D’Amelio
+    https://www.agi.it/cronaca/news/2026-11-21/perche-gianni-de-gennaro-era-indagato-40129626/
+36 | AGI | 2026-11-20T15:38 | Tensioni nei cortei studenteschi: bombe carta a Roma, striscione incendiato a Napoli (VIDEO)
+    https://www.agi.it/cronaca/news/2026-11-20/sciopero-ministero-istruzione-bombe-carta-40115598/
+> build · deepseek-v4.1-flash-free
+[0m→ [0mRead content/extra/2026-11-20-rome-weekend-cie-museums.md 
+[0m$ [0mls -1 content/channel | tail -15; echo ---; ls -1 covers | tail -15
+2026-11-10-codice-fiscale-post.md
+2026-11-11-lazio-irpef-post.md
+2026-11-11-rent-long-term-post.md
+2026-11-12-school-alerts-post.md
+2026-11-13-peace-talks-eu-post.md
+2026-11-13-weekend-14-15-post.md
+2026-11-16-week-ahead-post.md
+2026-11-17-inflation-strike-post.md
+2026-11-18-kerch-summit-museums-post.md
+2026-11-18-rome-newcomer-events-post.md
+2026-11-19-shenzhen-berlin-post.md
+2026-11-20-rome-weekend-cie-museums-post.md
+2026-11-21-rome-open-day-markets-closures-post.md
+2026-11-21-rome-weekend-parade-fl1-post.md
+---
+2026-11-17-inflation-strike.png
+2026-11-17-inflation-strike.svg
+2026-11-18-kerch-summit-museums.png
+2026-11-18-kerch-summit-museums.svg
+2026-11-18-rome-newcomer-events.png
+2026-11-18-rome-newcomer-events.svg
+2026-11-19-shenzhen-berlin.png
+2026-11-19-shenzhen-berlin.svg
+2026-11-20-rome-weekend-cie-museums.png
+2026-11-20-rome-weekend-cie-museums.svg
+2026-11-21-rome-open-day-markets-closures.png
+2026-11-21-rome-open-day-markets-closures.svg
+2026-11-21-rome-weekend-parade-fl1.png
+2026-11-21-rome-weekend-parade-fl1.svg
+generate.py
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /tmp && for q in "Roma+oggi" "Roma+eventi+22+novembre" "Roma+gratis" "Roma+mostra" "Roma+trasporti"; do echo "### $q"; curl -s "https://news.google.com/rss/search?q=${q}&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re
+x=sys.stdin.read()
+items=re.findall(r'<item>(.*?)</item>',x,re.S)
+for it in items[:10]:
+    t=re.search(r'<title>(.*?)</title>',it,re.S)
+    d=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S)
+    print('-',(t.group(1) if t else '')[:130],'|',(d.group(1)[:16] if d else ''))
+"; done
+### Roma+oggi
+
+
+Command exceeded timeout of 120000 ms. Retry with a larger timeout if the command is expected to take longer.
+> build · deepseek-v4.1-flash-free
+> build · deepseek-v4.1-flash-free
+> build · deepseek-v4.1-flash-free
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcurl -s --max-time 25 "https://news.google.com/rss/search?q=Roma%20oggi&hl=it&gl=IT&ceid=IT:it" -o /tmp/gn1.xml; echo exit=$?; wc -c /tmp/gn1.xml
+exit=0
+    1103 /tmp/gn1.xml
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcat /tmp/gn1.xml
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><title>Sorry...</title><style> body { font-family: verdana, arial, sans-serif; background-color: #fff; color: #000; }</style></head><body><div><table><tr><td><b><font face=sans-serif size=10><font color=#4285f4>G</font><font color=#ea4335>o</font><font color=#fbbc05>o</font><font color=#4285f4>g</font><font color=#34a853>l</font><font color=#ea4335>e</font></font></b></td><td style="text-align: left; vertical-align: bottom; padding-bottom: 15px; width: 50%"><div style="border-bottom: 1px solid #dfdfdf;">Sorry...</div></td></tr></table></div><div style="margin-left: 4em;"><h1>We're sorry...</h1><p>... but your computer or network may be sending automated queries. To protect our users, we can't process your request right now.</p></div><div style="margin-left: 4em;">See <a href="https://support.google.com/websearch/answer/86640">Google Help</a> for more information.<br/><br/></div><div style="text-align: center; border-top: 1px solid #dfdfdf;"><a href="https://www.google.com">Google Home</a></div></body></html>
+> build · deepseek-v4.1-flash-free
+[0m◈ [0mWeb Search via Parallel "Roma 22 novembre 2026 eventi gratuiti domenica" 
+[0m◈ [0mWeb Search via Parallel "RomaToday 22 novembre 2026 sciopero trasporti meteo" 
+> build · deepseek-v4.1-flash-free
+[0m◈ [0mWeb Search via Parallel "Tertio Millennio Film Fest 2026 Roma date programma Carlo Verdone" 
+[0m◈ [0mWeb Search via Parallel "Roma Arte in Nuvola 2026 22 novembre orari biglietti" 
+> build · deepseek-v4.1-flash-free
+[91m[1mError: [0mTimed out waiting for response data
+> build · deepseek-v4.1-flash-free
+[91m[1mError: [0mTimed out waiting for response data
+> build · deepseek-v4.1-flash-free
+> build · deepseek-v4.1-flash-free
+exit=1
