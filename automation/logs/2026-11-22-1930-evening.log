@@ -545,3 +545,52 @@ Index: covers/generate.py
 -rw-r--r--@ 1 terkin  staff  13966 Nov 22 19:38 docs/it/posts/2026-11-22-rome-week-panettone-bazar.html
 -rw-r--r--@ 1 terkin  staff  16718 Nov 22 19:38 docs/posts/2026-11-22-rome-week-panettone-bazar.html
 > build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && git add -A && git commit -q -m "Add post: Rome 23-29 Nov - Panettone Maximo, Urban Bazar, Arché market, Christmas Garden, FL1 restored, weather" && git push origin main 2>&1 | tail -5
+To github.com:terkin/rim-dlia-svoih.git
+   c275cb7..eae3a15  main -> main
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 publish.py file content/channel/2026-11-22-rome-week-panettone-bazar-post.md --cover covers/2026-11-22-rome-week-panettone-bazar.png 2>&1 | tail -20
+Пост: 939 символів · 2026-11-22-rome-week-panettone-bazar-post.md · обкладинка 2026-11-22-rome-week-panettone-bazar.png
+  message_id=29
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && for i in $(seq 1 18); do code=$(curl -s -o /dev/null -w "%{http_code}" "https://ucrainiroma.it/posts/2026-11-22-rome-week-panettone-bazar.html"); echo "try $i: $code"; if [ "$code" = "200" ]; then break; fi; sleep 10; done
+try 1: 404
+try 2: 404
+try 3: 200
+> build · deepseek-v4.1-flash-free
+[0m$ [0mfor u in "https://ucrainiroma.it/posts/2026-11-22-rome-week-panettone-bazar.html" "https://ucrainiroma.it/it/posts/2026-11-22-rome-week-panettone-bazar.html" "https://ucrainiroma.it/"; do echo "$u -> $(curl -s -o /dev/null -w '%{http_code}' "$u")"; done
+https://ucrainiroma.it/posts/2026-11-22-rome-week-panettone-bazar.html -> 200
+https://ucrainiroma.it/it/posts/2026-11-22-rome-week-panettone-bazar.html -> 200
+https://ucrainiroma.it/ -> 200
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 automation/indexnow.py 2>&1 | tail -10
+IndexNow → https://api.indexnow.org/indexnow
+  host: ucrainiroma.it
+  URLs: 45
+  HTTP 200
+> build · deepseek-v4.1-flash-free
+[0m⚙ [0mexecute {"code":"const r=await fetch(\"https://t.me/s/rim_dlia_svoih\");\nconst t=await r.text();\nconst i=t.indexOf(\"Panettone Maximo\");\nreturn {status:r.status, found:i>=0, snip: i>=0? t.slice(Math.max(0,i-800), i+1200).replace(/<[^>]+>/g,' ').replace(/\\s+/g,' ') : t.slice(0,500)};"} 
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && git status --short | head -10 && git log --oneline -1
+M automation/logs/2026-11-22-1930-evening.log
+eae3a15 Add post: Rome 23-29 Nov - Panettone Maximo, Urban Bazar, Arché market, Christmas Garden, FL1 restored, weather
+> build · deepseek-v4.1-flash-free
+Вечірній випуск опубліковано ✅
+
+**Пост:** «Рим 23–29 листопада: Panettone Maximo, Urban Bazar і сухі, але холодні вихідні»
+
+Що всередині:
+- 🚆 FL1 з понеділка знову їде між Tiburtina і Ostiense після робіт на Pigneto
+- 🌧 Погода: сухо у вівторок, зливи й грози в середу–четвер, сухі та холодні вихідні (+14 вдень, +5–7 вночі)
+- ✨ Christmas Garden в Орто Ботаніко — щодня 17:00–23:00, від €15,90
+- 🛍 Urban Bazar у MAXXI — сб 28.11, безкоштовно
+- 🥖 Panettone Maximo — нд 29.11, EUR
+- 🎁 Arché Natale — сб–нд 28–29.11, безкоштовний благодійний маркет
+
+**Файли:**
+- `content/extra/2026-11-22-rome-week-panettone-bazar.md`
+- `content/it/2026-11-22-rome-week-panettone-bazar.md`
+- `content/channel/2026-11-22-rome-week-panettone-bazar-post.md` — 939 символів
+- `covers/2026-11-22-rome-week-panettone-bazar.png` — 1080×810
+
+**Публікація:** message_id=29, обкладинка прикріплена. Сайт оновлено, commit `eae3a15` запушено в `main`. IndexNow — HTTP 200 (45 URL). Живі сторінки UK та IT — 200, пост видно на `t.me/s/rim_dlia_svoih`.
+exit=0

@@ -1,0 +1,1381 @@
+=== 2026-11-23 09:00:02 slot=morning ===
+[0m
+> build · deepseek-v4.1-flash-free
+I'll start by reading the README and understanding the repository process.
+[0m→ [0mRead README.md 
+[0m$ [0mls -la /Users/terkin/rim-dlia-svoikh
+total 288
+drwxr-xr-x@  22 terkin  staff    704 Nov 22 19:38 .
+drwxr-x---+ 167 terkin  staff   5344 Nov 23 08:50 ..
+-rw-r--r--@   1 terkin  staff   6148 Nov  9 11:01 .DS_Store
+-rw-------@   1 terkin  staff     99 Nov  9 11:21 .env
+-rw-r--r--@   1 terkin  staff    300 Nov  9 11:48 .env.example
+drwxr-xr-x@  14 terkin  staff    448 Nov 22 19:40 .git
+-rw-r--r--@   1 terkin  staff     45 Nov  9 11:06 .gitignore
+-rw-r--r--@   1 terkin  staff  21371 Nov 20 09:49 README.md
+drwxr-xr-x@   3 terkin  staff     96 Nov 10 08:59 __pycache__
+-rw-r--r--@   1 terkin  staff  16781 Nov  9 11:56 ai-promotion.md
+drwxr-xr-x@   3 terkin  staff     96 Nov  9 14:03 analysis
+drwxr-xr-x@  14 terkin  staff    448 Nov 19 10:21 automation
+drwxr-xr-x@   4 terkin  staff    128 Nov  9 10:45 brand
+-rw-r--r--@   1 terkin  staff   6323 Nov  9 13:55 catalog-submission.md
+drwxr-xr-x@  11 terkin  staff    352 Nov 10 10:19 content
+drwxr-xr-x@  53 terkin  staff   1696 Nov 22 19:38 covers
+drwxr-xr-x@  14 terkin  staff    448 Nov 22 19:38 docs
+-rw-r--r--@   1 terkin  staff  17729 Nov  9 11:48 preview.html
+-rw-r--r--@   1 terkin  staff  14675 Nov 11 09:36 promotion-catalogs.md
+-rw-r--r--@   1 terkin  staff  18236 Nov  9 12:10 promotion.md
+-rw-r--r--@   1 terkin  staff  13540 Nov 10 08:57 publish.py
+drwxr-xr-x@   4 terkin  staff    128 Nov  9 14:03 reports
+> build · deepseek-v4.1-flash-free
+[0m$ [0mls -la /Users/terkin/rim-dlia-svoikh/content/extra/ /Users/terkin/rim-dlia-svoikh/content/channel/ /Users/terkin/rim-dlia-svoikh/content/it/ 2>&1 | tail -60
+-rw-r--r--@  1 terkin  staff  1311 Nov 11 08:59 2026-11-11-lazio-irpef-post.md
+-rw-r--r--@  1 terkin  staff  1444 Nov 11 10:59 2026-11-11-rent-long-term-post.md
+-rw-r--r--@  1 terkin  staff  1589 Nov 12 08:54 2026-11-12-school-alerts-post.md
+-rw-r--r--@  1 terkin  staff  1642 Nov 13 11:14 2026-11-13-peace-talks-eu-post.md
+-rw-r--r--@  1 terkin  staff  1375 Nov 13 11:20 2026-11-13-weekend-14-15-post.md
+-rw-r--r--@  1 terkin  staff  1389 Nov 16 08:34 2026-11-16-week-ahead-post.md
+-rw-r--r--@  1 terkin  staff  1498 Nov 17 11:25 2026-11-17-inflation-strike-post.md
+-rw-r--r--@  1 terkin  staff  1457 Nov 18 10:44 2026-11-18-kerch-summit-museums-post.md
+-rw-r--r--@  1 terkin  staff  1348 Nov 18 10:48 2026-11-18-rome-newcomer-events-post.md
+-rw-r--r--@  1 terkin  staff  1289 Nov 19 10:19 2026-11-19-shenzhen-berlin-post.md
+-rw-r--r--@  1 terkin  staff  1385 Nov 20 09:46 2026-11-20-rome-weekend-cie-museums-post.md
+-rw-r--r--@  1 terkin  staff  1336 Nov 21 09:31 2026-11-21-rome-open-day-markets-closures-post.md
+-rw-r--r--@  1 terkin  staff  1403 Nov 21 09:27 2026-11-21-rome-weekend-parade-fl1-post.md
+-rw-r--r--@  1 terkin  staff  1325 Nov 22 19:38 2026-11-22-rome-week-panettone-bazar-post.md
+
+/Users/terkin/rim-dlia-svoikh/content/extra/:
+total 192
+drwxr-xr-x@ 20 terkin  staff   640 Nov 22 19:38 .
+drwxr-xr-x@ 11 terkin  staff   352 Nov 10 10:19 ..
+-rw-r--r--@  1 terkin  staff  3656 Nov 10 10:18 2026-11-10-codice-fiscale.md
+-rw-r--r--@  1 terkin  staff  1443 Nov 10 09:31 2026-11-10-events.md
+-rw-r--r--@  1 terkin  staff  1242 Nov 10 14:31 2026-11-10-italy-military-aid.md
+-rw-r--r--@  1 terkin  staff  1521 Nov 10 08:57 2026-11-10-rent.md
+-rw-r--r--@  1 terkin  staff  1924 Nov 11 08:58 2026-11-11-lazio-irpef.md
+-rw-r--r--@  1 terkin  staff  6507 Nov 11 11:01 2026-11-11-rent-long-term.md
+-rw-r--r--@  1 terkin  staff  3129 Nov 12 08:53 2026-11-12-school-alerts.md
+-rw-r--r--@  1 terkin  staff  4274 Nov 13 11:13 2026-11-13-peace-talks-eu.md
+-rw-r--r--@  1 terkin  staff  3064 Nov 13 11:19 2026-11-13-weekend-14-15.md
+-rw-r--r--@  1 terkin  staff  3365 Nov 16 08:34 2026-11-16-week-ahead.md
+-rw-r--r--@  1 terkin  staff  3638 Nov 17 11:25 2026-11-17-inflation-strike.md
+-rw-r--r--@  1 terkin  staff  4159 Nov 18 10:44 2026-11-18-kerch-summit-museums.md
+-rw-r--r--@  1 terkin  staff  3255 Nov 18 10:48 2026-11-18-rome-newcomer-events.md
+-rw-r--r--@  1 terkin  staff  3737 Nov 19 10:19 2026-11-19-shenzhen-berlin.md
+-rw-r--r--@  1 terkin  staff  3686 Nov 20 09:45 2026-11-20-rome-weekend-cie-museums.md
+-rw-r--r--@  1 terkin  staff  4749 Nov 21 09:31 2026-11-21-rome-open-day-markets-closures.md
+-rw-r--r--@  1 terkin  staff  4125 Nov 21 09:27 2026-11-21-rome-weekend-parade-fl1.md
+-rw-r--r--@  1 terkin  staff  5207 Nov 22 19:38 2026-11-22-rome-week-panettone-bazar.md
+
+/Users/terkin/rim-dlia-svoikh/content/it/:
+total 152
+drwxr-xr-x@ 20 terkin  staff   640 Nov 22 19:38 .
+drwxr-xr-x@ 11 terkin  staff   352 Nov 10 10:19 ..
+-rw-r--r--@  1 terkin  staff  2753 Nov 10 10:19 2026-11-10-codice-fiscale.md
+-rw-r--r--@  1 terkin  staff  1162 Nov 10 09:54 2026-11-10-events.md
+-rw-r--r--@  1 terkin  staff   863 Nov 10 14:31 2026-11-10-italy-military-aid.md
+-rw-r--r--@  1 terkin  staff  1151 Nov 10 09:54 2026-11-10-rent.md
+-rw-r--r--@  1 terkin  staff  1419 Nov 11 08:58 2026-11-11-lazio-irpef.md
+-rw-r--r--@  1 terkin  staff  4409 Nov 11 11:01 2026-11-11-rent-long-term.md
+-rw-r--r--@  1 terkin  staff  2025 Nov 12 08:53 2026-11-12-school-alerts.md
+-rw-r--r--@  1 terkin  staff  2719 Nov 13 11:13 2026-11-13-peace-talks-eu.md
+-rw-r--r--@  1 terkin  staff  2320 Nov 13 11:19 2026-11-13-weekend-14-15.md
+-rw-r--r--@  1 terkin  staff  2459 Nov 16 08:34 2026-11-16-week-ahead.md
+-rw-r--r--@  1 terkin  staff  2607 Nov 17 11:25 2026-11-17-inflation-strike.md
+-rw-r--r--@  1 terkin  staff  2939 Nov 18 10:44 2026-11-18-kerch-summit-museums.md
+-rw-r--r--@  1 terkin  staff  2389 Nov 18 10:48 2026-11-18-rome-newcomer-events.md
+-rw-r--r--@  1 terkin  staff  2527 Nov 19 10:19 2026-11-19-shenzhen-berlin.md
+-rw-r--r--@  1 terkin  staff  2733 Nov 20 09:46 2026-11-20-rome-weekend-cie-museums.md
+-rw-r--r--@  1 terkin  staff  3635 Nov 21 09:31 2026-11-21-rome-open-day-markets-closures.md
+-rw-r--r--@  1 terkin  staff  3033 Nov 21 09:27 2026-11-21-rome-weekend-parade-fl1.md
+-rw-r--r--@  1 terkin  staff  3446 Nov 22 19:38 2026-11-22-rome-week-panettone-bazar.md
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && git log --oneline -10 && git status --short | head -20
+eae3a15 Add post: Rome 23-29 Nov - Panettone Maximo, Urban Bazar, Arché market, Christmas Garden, FL1 restored, weather
+c275cb7 Add post: Rome 21-22 Nov - Carabinieri open day, witches market, charity markets, road closures, Amazing Wonders (uk+it)
+d0e8c9b Add post: Rome weekend 21-22 Nov - Christmas Parade, Ficus al Massimo, Vegan Village, Game Vintage, FL1 works, Ama collection (uk+it)
+f683e92 Autopost: Rome-only prompts; move repo to ~/rim-dlia-svoikh so launchd can read it (macOS Documents protection); docs
+82d2110 Add post: Rome weekend 20-22 Nov - transport strike windows, CIE open day, Musei in Musica night (uk+it); autopost prompt now Rome-only
+d975b36 Docs: add launchd autoposting section (09:00/19:00 schedule, logs, disable instructions)
+a135093 Add post: Shenzhen trilateral, Meloni in Berlin no troops, Rome free HIV tests, Christmas Garden opening (uk+it)
+b94bdc0 Add post: Rome newcomer events 19-22 Nov - Christmas Garden, Caput Mundi, Abramovic, Ara Pacis residents (uk+it)
+233cc79 Add post: Kerch bridge strike, Trump-Putin-Xi summit 19.11, free Sapienza museums 21.11, Kinder recall, fuel prices (uk+it)
+9e48009 Add post: inflation 5.5%, ATAC strike 20.11 confirmed, Rome anti-traffic plan, Ukraine brief (uk+it)
+ M automation/logs/2026-11-22-1930-evening.log
+?? automation/logs/2026-11-23-0900-morning.log
+> build · deepseek-v4.1-flash-free
+[0m→ [0mRead content/extra/2026-11-22-rome-week-panettone-bazar.md 
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 automation/collect.py 2>&1 | tail -30
+→ ANSA Lazio
+→ Corriere Roma
+→ Il Messaggero Roma
+→ Il Tempo
+→ AGI
+→ Adnkronos
+→ Il Sole 24 Ore
+→ Il Fatto Quotidiano
+
+Збережено 39 кандидатів → /Users/terkin/rim-dlia-svoikh/automation/candidates.json
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 -c "
+import json
+d=json.load(open('automation/candidates.json'))
+items = d if isinstance(d,list) else d.get('items',d.get('candidates',[]))
+print(type(d), len(items))
+for i,it in enumerate(items):
+    print(i, '|', it.get('source'), '|', it.get('title'))
+    print('   ', (it.get('summary') or '')[:220].replace('\n',' '))
+"
+<class 'dict'> 39
+0 | Il Messaggero Roma | Roma, a 20 anni voleva gettarsi da ponte Flaminio, dove si era dato il primo bacio con l'ex. Salvato dalla polizia
+    Voleva togliersi la vita nel punto in cui, tre anni fa, aveva dato il primo bacio alla sua ex. Il ragazzo, 20 anni, è stato fortunato: se è vivo lo deve a due precise circostanze....
+1 | Il Messaggero Roma | Morto Paolo Bulgari, il grande gioielliere aveva 89 anni: i funerali a Roma lunedì 23 novembre
+    È mancato all'affetto dei suoi cari, all'età di 89 anni, Paolo Bulgari. Ne dà notizia la famiglia, che ricorda «la straordinaria figura di Paolo Bulgari, la sua...
+2 | Il Messaggero Roma | Roma tra sciopero e manifestazioni: un?altra giornata di paralisi, migliaia di romani costretti allo smart-working
+    Da una parte i cortei, diversi e divisi, come era atteso: «Noi non siamo la Cgil» intonavano in coro i collettivi studenteschi. Dall?altra parte i romani, costretti a ricorrere a...
+3 | Il Messaggero Roma | Roma, 32enne sequestrata e stuprata in un edificio abbandonato: fermato l'ex compagno
+    Avrebbe sequestrato e costretto a subire un rapporto sessuale l'ex compagna, minacciandola con un coltello. Un 32enne di Ardea è stato sottoposto a fermo dai carabinieri con le...
+4 | Il Messaggero Roma | Roma, fontana del Sole di Bravetta: quando la bellezza si scontra con la trascuratezza
+    Nel tessuto urbano di Bravetta, la Fontana del Sole ubicata nell'omonima via, conserva una presenza che va ben oltre la sua funzione originaria. È una testimonianza di una Roma che si...
+5 | Il Fatto Quotidiano | Roventini: “La patrimoniale? Chiamiamola Robin Hood tax, non colpisce il ceto medio. Il M5S ci ripensi sull’esclusione degli immobili”
+    “Chiamiamola imposta di solidarietà sulle grandi fortune o Robin Hood tax. È falso che la classe media debba preoccuparsi: si parla di colpire al massimo lo 0,1% più ricco della popolazione”. Andrea Roventini, ordinario 
+6 | Il Fatto Quotidiano | Una pillola simile al Viagra può rallentare l’Alzheimer del 31%. Gli esperti: “Risultati molto promettenti”
+    Una compressa assunta una volta al giorno, basata su un meccanismo simile a quello del Viagra, potrebbe aprire una strada inedita nella lotta contro l’Alzheimer. Secondo i dati di uno studio clinico globale di fase 3, il
+7 | Il Fatto Quotidiano | I benefici della lettura ad alta voce, cosa dice la ricerca: tre giorni di incontri tra università, scuole e biblioteche
+    Leggere ad alta voce fa bene. Ad approfondire questo tema, dal due al quattro dicembre, all’Università “Sapienza” di Roma e all’Università degli Studi di Perugia, si incontreranno il mondo della ricerca universitaria, de
+8 | Il Fatto Quotidiano | Lavoro da remoto e incentivi economici ai giudici più produttivi: la ricetta per sveltire i processi in uno studio Bankitalia
+    Lavoro da remoto e incentivi economici mirati ai giudici più produttivi. È la ricetta proposta da Enrico Miglino, economista della Banca d’Italia, per accelerare i tempi della giustizia civile nel nostro Paese. In uno st
+9 | Corriere Roma | Russia Today e il servizio al Plinio Seniore, i ragazzi dell'occupazione: «Legittimo farli entrare»
+    Azione annuncia di voler presentare un’interrogazione al ministro Valditara sulla visita dei reporter dell'emittente di Mosca messa al bando dall'Unione europea dopo l'invasione dell'Ucraina
+10 | Corriere Roma | Sanità Lazio e maternità, molto da lavorare sui parti: dopo un taglio cesareo difficile tornare a quello naturale
+    Il Vbac (Vaginal birth after cesarean) ancora poco praticato. Troppi primi cesarei e troppe episiotemie. Bene Gemelli-Isola, male Cristo Re e San Pietro
+11 | Corriere Roma | L'ospedale Sant’Andrea un’eccellenza della sanità romana: «Chirurgia innovativa e cure cucite sui pazienti»
+    Intervista al direttore generale Francesca Milito: «La qualità non si misura solo dal ricovero ma anche dalla di garantire continuità assistenziale»
+12 | Corriere Roma | Sanità Lazio, la Regione sugli ospedali: Tor Vergata al top per cardiologia, ok Gemelli e Campus Bio-Medico
+    Il rapporto Prevale della Regione è una fotografia sulle strutture: valutate le eccellenze e le criticità. Bene anche San Pietro e San Filippo. Ambiti da migliorare per Grassi, Sant’Eugenio e Vannini
+13 | Corriere Roma | De Gennaro, prima del suicidio ha sparato un colpo di prova in giardino. Nella villa la lettera per chi «vorrà pubblicarla». Le ultime parole alla moglie Carla: «Torno domani, è tardi»
+    Lasciata anche una busta per il procuratore di Caltanissetta
+14 | Il Sole 24 Ore | De Gennaro, sequestrati i telefoni e trovate buste sigillate: si indaga sulle ultime ore prima del suicidio
+    La Procura di Grosseto procede per istigazione al suicidio, con il coordinamento dell’antimafia di Firenze. Sotto esame chiamate, messaggi e documenti rinvenuti nella villa in Maremma. Disposta l’autopsia
+15 | Il Fatto Quotidiano | Curare meglio, ricoverare meno: la mia esperienza con i protocolli che possono cambiare la sanità
+    Immaginate di entrare in ospedale per affrontare un intervento chirurgico complesso e, dopo appena ventiquattro ore, ritrovarvi a casa, circondati dai vostri familiari, nel vostro ambiente, con un dolore controllato e un
+16 | Il Tempo | Sinner al bivio fra procedura conservativa e intervento chirurgico
+    ROMA (ITALPRESS) – Mentre i riflettori di Torino e degli appassionati del tennis sono rivolti verso Carlos Alcaraz, per Jannik Sinner è tempo di scelte.
+17 | Adnkronos | Petrolio, gas e carbone dividono il mondo: alla Cop31 manca l'accordo, l'Europa boccia il testo finale
+    (Adnkronos) - Ue, Gb e alleati in via di sviluppo hanno contestato la bozza di accordo finale: "Non accettiamo un testo che non risponde alla scienza e non cita i combustibili fossili". Appuntamento per il prossimo anno 
+18 | Il Tempo | Grillo “Basta discorsi sulla democrazia, stiamo rappezzando un cadavere”
+    ROMA (ITALPRESS) – “Tutti questi discorsi sulla democrazia che facciamo oggi non servono più: stiamo rappezzando un cadavere.
+19 | Il Tempo | Trump “Senza accordo riprendo attacchi contro l’Iran a inizio anno”
+    ROMA (ITALPRESS) – Il presidente degli Usa, Donald Trump, ha avvertito di essere “propenso” a riprendere lo scontro con l’Iran all’inizio del 2027, qualora i due Paesi non riuscissero a raggiungere un accordo entro l’ann
+20 | Adnkronos | Siria, esplode una mina a Idlib: 5 bambini morti e uno ferito
+    (Adnkronos) - La tragedia nell'insediamento rurale di Um Khuzaym
+21 | ANSA Lazio | Bomba carta davanti a palazzo a Roma, danneggiato androne
+    Nella notte al Tufello, indaga la polizia
+22 | ANSA Lazio | Roma, da domani tornano i tram tra Porta Maggiore e Valle Giulia
+    Agenzia della mobilità, la linea 3 torna alla normalità, effetti anche sulla 19
+23 | Adnkronos | Atalanta-Inter 4-4, Sarri ferma Chivu in rimonta e nerazzurri a -3 dalla Lazio
+    (Adnkronos) - La Dea ha pareggiato con i nerazzurri al Gewiss Stadium nella 12esima giornata di campionato
+24 | AGI | De Gennaro si è suicidato con una semiautomatica, nella casa sotto sequestro oltre 20 armi
+    AGI - L' ex capo della polizia Gianni De Gennaro si è tolto la vita sparandosi con una pistola semiautomatica , una delle tante regolarmente detenute. Secondo quanto emerso dalle indagini, nell'abitazione di campagna a M
+25 | ANSA Lazio | A Roma incendi in calo del 16%, rafforzati mezzi e prevenzione
+    Gualtieri, 'risultati importanti della campagna antincendio boschivo 2026'
+26 | Il Sole 24 Ore | Trasparenza salariale, l’Italia supera Francia e Germania: lo stipendio indicato nel 61% degli annunci di lavoro
+    Secondo Indeed, in sei anni le offerte che indicano la retribuzione sono passate dal 5,3% al 61%. L’accelerazione dopo l’entrata in vigore delle nuove norme europee
+27 | Adnkronos | Valeria Marini: "Il mio desiderio è avere una famiglia, ora ho una relazione ma non parlo"
+    (Adnkronos) - "Ho una relazione, con quello che ho passato sono molto attenta. Ho paura a parlarne e di esporre l'altra persona"
+28 | AGI | Christmas Parade a Roma: migliaia in centro per aiutare i bambini del Bambino Gesù
+    AGI - Le strade e le piazze del centro storico di Roma si sono trasformate oggi pomeriggio in un palcoscenico a cielo aperto per la 'Christmas Parade 2026', la grande parata natalizia promossa nell'ambito delle attività 
+29 | AGI | Malattie rare, a Tor Bella Monaca sport e solidarietà per accendere i riflettori sulla CIDP
+    AGI - Un campo di calcio riqualificato, un dibattito aperto ai cittadini e una partita tra giornalisti e giovani del territorio per sensibilizzare su una malattia neurologica poco conosciuta. Arriva a Roma mercoledì 25 n
+30 | ANSA Lazio | Muti e i Wiener a Roma incantano con la Messa dell'Incoronazione di Mozart
+    Standing ovation al maestro e all'orchestra alla Basilica di San Paolo
+31 | ANSA Lazio | Roma segreta, un Atlante svela luoghi nascosti da folle e cliché
+    Dalle aureole quadrate di Santa Prassede agli insulti immortalati in un affresco
+32 | Il Sole 24 Ore | Venezia, nel 2027 il ticket d’accesso potrebbe raddoppiare: da 10 a 20 euro
+    Venezia, o cara. Crescono i costi per visitare la città lagunare: la Giunta comunale ha deciso di portare da 5 a 9,50 euro l’importo massimo della tassa di soggiorno applicato...
+33 | Il Tempo | Gianni De Gennaro trovato senza vita nella casa in Toscana
+    Si sarebbe sparato nella villa a Montiano, aveva 78 anni Trovati biglietti di saluto ai familiari e altri documenti
+34 | AGI | De Gennaro, l'isolamento, i biglietti d'addio e l’inchiesta a Grosseto per istigazione al suicidio
+    AGI - Gianni De Gennaro si è ucciso ieri : si è sparato nella sua casa di campagna, sconvolto dall'inchiesta di Caltanissetta sui depistaggi dopo Via D'Amelio. Aveva 78 anni . La notizia era stata data per primo dal Corr
+35 | AGI | In diecimila per l'ultimo saluto a Corrado Augias in Campidoglio
+    AGI - Almeno diecimila persone hanno voluto rendere omaggio a Corrado Augias, giornalista , scrittore e divulgatore televisivo , scomparso due giorni fa all'età di 91 anni. La camera ardente allestita nella Sala della Pr
+36 | Il Tempo | Poker di Malen e la Roma vince 5-1 a Parma
+    PARMA (ITALPRESS) – La Roma riparte dopo la sosta con un pokerissimo e batte il Parma, al Tardini, per 5-1, nella dodicesima giornata di Serie A. La sblocca Malen nel primo tempo, poi il pari di Elphege a inizio ripresa 
+37 | Il Sole 24 Ore | La Sardegna scommette sui nomadi digitali: la Regione investe 10 milioni di euro
+    Lo stanziamento delle risorse suona come il primo passo di una scommessa contro lo spopolamento
+38 | Il Sole 24 Ore | Decreto Scuola, un ordine del giorno sugli e-book per siglare la pace tra Fdi e azzurri
+    La quiete dopo la tempesta tra meloniani e azzurri sul decreto Scuola dovrebbe arrivare alla Camera con un ordine del giorno che impegnerà il Governo a stabilire limiti ulteriori all’obbligo...
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && ls covers/ && sed -n '1,80p' covers/generate.py
+2026-11-09-intro.png
+2026-11-09-intro.svg
+2026-11-10-codice-fiscale.png
+2026-11-10-codice-fiscale.svg
+2026-11-10-events.png
+2026-11-10-events.svg
+2026-11-10-italy-military-aid.png
+2026-11-10-italy-military-aid.svg
+2026-11-10-rent.png
+2026-11-10-rent.svg
+2026-11-10-transport.png
+2026-11-10-transport.svg
+2026-11-11-kids.png
+2026-11-11-kids.svg
+2026-11-11-lazio-irpef.png
+2026-11-11-lazio-irpef.svg
+2026-11-11-rent-long-term.png
+2026-11-11-rent-long-term.svg
+2026-11-12-exhibitions.png
+2026-11-12-exhibitions.svg
+2026-11-12-school-alerts.png
+2026-11-12-school-alerts.svg
+2026-11-13-money.png
+2026-11-13-money.svg
+2026-11-13-peace-talks-eu.png
+2026-11-13-peace-talks-eu.svg
+2026-11-13-weekend-14-15.png
+2026-11-13-weekend-14-15.svg
+2026-11-14-weekend.png
+2026-11-14-weekend.svg
+2026-11-15-digest.png
+2026-11-15-digest.svg
+2026-11-16-week-ahead.png
+2026-11-16-week-ahead.svg
+2026-11-17-inflation-strike.png
+2026-11-17-inflation-strike.svg
+2026-11-18-kerch-summit-museums.png
+2026-11-18-kerch-summit-museums.svg
+2026-11-18-rome-newcomer-events.png
+2026-11-18-rome-newcomer-events.svg
+2026-11-19-shenzhen-berlin.png
+2026-11-19-shenzhen-berlin.svg
+2026-11-20-rome-weekend-cie-museums.png
+2026-11-20-rome-weekend-cie-museums.svg
+2026-11-21-rome-open-day-markets-closures.png
+2026-11-21-rome-open-day-markets-closures.svg
+2026-11-21-rome-weekend-parade-fl1.png
+2026-11-21-rome-weekend-parade-fl1.svg
+2026-11-22-rome-week-panettone-bazar.png
+2026-11-22-rome-week-panettone-bazar.svg
+generate.py
+#!/usr/bin/env python3
+"""Генерує обкладинки 1080×810 для постів каналу «Рим для своїх»."""
+from pathlib import Path
+from html import escape
+
+OUT = Path(__file__).parent
+
+COVERS = [
+    {
+        "file": "2026-11-09-intro",
+        "kicker": "ЗНАЙОМСТВО",
+        "title": ["РИМ", "ДЛЯ СВОЇХ"],
+        "sub": "Щотижневий дайджест для українців",
+        "date": "СТАРТ 09.11.2026",
+        "accent": "#FFD166",
+        "icon": "home",
+    },
+    {
+        "file": "2026-11-10-transport",
+        "kicker": "ТРАНСПОРТ",
+        "title": ["ЩО ЗМІНИЛОСЯ", "ЦЬОГО ТИЖНЯ"],
+        "sub": "Roma-Lido · Lepanto · страйки 20–21.11",
+        "date": "9–15 ЛИСТОПАДА",
+        "accent": "#5FD3C4",
+        "icon": "metro",
+    },
+    {
+        "file": "2026-11-10-rent",
+        "kicker": "ЖИТЛО Й ГРОШІ",
+        "title": ["СКІЛЬКИ", "КОШТУЄ РИМ"],
+        "sub": "Оренда · ярмарок · здоров'я · культура",
+        "date": "10 ЛИСТОПАДА",
+        "accent": "#FFB86B",
+        "icon": "wallet",
+    },
+    {
+        "file": "2026-11-10-events",
+        "kicker": "КАЛЕНДАР",
+        "title": ["РИМ ПЕРЕД", "СВЯТАМИ"],
+        "sub": "Japan Days · екологічна неділя · ярмарки",
+        "date": "14.11 — 08.12",
+        "accent": "#E5C07B",
+        "icon": "pin",
+    },
+    {
+        "file": "2026-11-10-codice-fiscale",
+        "kicker": "ДОКУМЕНТИ",
+        "title": ["CODICE", "FISCALE"],
+        "sub": "16 символів, без яких нічого не оформити",
+        "date": "БЕЗКОШТОВНО",
+        "accent": "#7FB2F0",
+        "icon": "doc",
+    },
+    {
+        "file": "2026-11-10-italy-military-aid",
+        "kicker": "УКРАЇНА І СВІТ",
+        "title": ["13-Й ПАКЕТ", "ДОПОМОГИ"],
+        "sub": "Італія підтвердила нову військову підтримку",
+        "date": "10 ЛИСТОПАДА",
+        "accent": "#6EC1FF",
+        "icon": "shield",
+    },
+    {
+        "file": "2026-11-21-rome-weekend-parade-fl1",
+        "kicker": "ВИХІДНІ",
+        "title": ["ПАРАД І", "МАРКЕТИ"],
+        "sub": "Christmas Parade · Ficus · Vegan Village · FL1",
+        "date": "21–22 ЛИСТОПАДА",
+        "accent": "#FFB86B",
+        "icon": "pin",
+    },
+    {
+        "file": "2026-11-20-rome-weekend-cie-museums",
+        "kicker": "РИМ",
+        "title": ["ВИХІДНІ", "21–22 ЛИСТОПАДА"],
+        "sub": "Страйк · CIE · Ніч музеїв",
+        "date": "20 ЛИСТОПАДА",
+        "accent": "#F0A868",
+        "icon": "metro",
+    },
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 -c "
+import json
+d=json.load(open('automation/candidates.json'))
+items=d['items'] if 'items' in d else d
+for i in [2,22,25,29,31,28,1]:
+    it=items[i]
+    print(i, json.dumps({k:v for k,v in it.items() if k not in ('summary','content')}, ensure_ascii=False))
+    print('SUM:', (it.get('summary') or '')[:400].replace('\n',' '))
+    print()
+"
+2 {"source": "Il Messaggero Roma", "title": "Roma tra sciopero e manifestazioni: un?altra giornata di paralisi, migliaia di romani costretti allo smart-working", "link": "https://www.ilmessaggero.it/roma/metropoli/sciopero_roma_corteo_citta_paralizzata_smart_working-9903006.html", "published": "sab, 21 nov 2026 00:37:48 +0100"}
+SUM: Da una parte i cortei, diversi e divisi, come era atteso: «Noi non siamo la Cgil» intonavano in coro i collettivi studenteschi. Dall?altra parte i romani, costretti a ricorrere a...
+
+22 {"source": "ANSA Lazio", "title": "Roma, da domani tornano i tram tra Porta Maggiore e Valle Giulia", "link": "https://www.ansa.it/lazio/notizie/2026/11/22/roma-da-domani-tornano-i-tram-tra-porta-maggiore-e-valle-giulia_f1c5d53c-0982-4455-9655-3e3518a95517.html", "published": "2026-11-22T19:18:26+00:00"}
+SUM: Agenzia della mobilità, la linea 3 torna alla normalità, effetti anche sulla 19
+
+25 {"source": "ANSA Lazio", "title": "A Roma incendi in calo del 16%, rafforzati mezzi e prevenzione", "link": "https://www.ansa.it/lazio/notizie/2026/11/22/a-roma-incendi-in-calo-del-16-rafforzati-mezzi-e-prevenzione_93c34ccc-6ae9-421d-b663-5d667a22d907.html", "published": "2026-11-22T18:40:56+00:00"}
+SUM: Gualtieri, 'risultati importanti della campagna antincendio boschivo 2026'
+
+29 {"source": "AGI", "title": "Malattie rare, a Tor Bella Monaca sport e solidarietà per accendere i riflettori sulla CIDP", "link": "https://www.agi.it/cronaca/news/2026-11-22/roma-tor-bella-monaca-cidp-40144388/", "published": "2026-11-22T16:14:10+00:00"}
+SUM: AGI - Un campo di calcio riqualificato, un dibattito aperto ai cittadini e una partita tra giornalisti e giovani del territorio per sensibilizzare su una malattia neurologica poco conosciuta. Arriva a Roma mercoledì 25 novembre "Fai Luce sulla CIDP", l'iniziativa promossa da argenx Italia con il patrocinio di CIDP Ital
+
+31 {"source": "ANSA Lazio", "title": "Roma segreta, un Atlante svela luoghi nascosti da folle e cliché", "link": "https://www.ansa.it/lazio/notizie/2026/11/22/roma-segreta-un-atlante-svela-luoghi-nascosti-da-folle-e-cliche_0a5f9984-a6f8-4d86-b795-ebfa0a909ea8.html", "published": "2026-11-22T10:31:06+00:00"}
+SUM: Dalle aureole quadrate di Santa Prassede agli insulti immortalati in un affresco
+
+28 {"source": "AGI", "title": "Christmas Parade a Roma: migliaia in centro per aiutare i bambini del Bambino Gesù", "link": "https://www.agi.it/cronaca/video/2026-11-22/christmas-parade-roma-bambino-ges-40144672/", "published": "2026-11-22T17:02:04+00:00"}
+SUM: AGI - Le strade e le piazze del centro storico di Roma si sono trasformate oggi pomeriggio in un palcoscenico a cielo aperto per la 'Christmas Parade 2026', la grande parata natalizia promossa nell'ambito delle attività di Christmas World con il supporto di Roma Capitale e la produzione e direzione artistica di Lux Ent
+
+1 {"source": "Il Messaggero Roma", "title": "Morto Paolo Bulgari, il grande gioielliere aveva 89 anni: i funerali a Roma lunedì 23 novembre", "link": "https://www.ilmessaggero.it/roma/centro_storico/morto_paolo_bulgari_chi_era-9904444.html", "published": "sab, 21 nov 2026 13:15:00 +0100"}
+SUM: È mancato all'affetto dei suoi cari, all'età di 89 anni, Paolo Bulgari. Ne dà notizia la famiglia, che ricorda «la straordinaria figura di Paolo Bulgari, la sua...
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && grep -n '"file"' covers/generate.py | tail -8 && grep -n 'def icon\|ICONS\|icons' covers/generate.py && tail -60 covers/generate.py
+172:        "file": "2026-11-11-kids",
+181:        "file": "2026-11-12-exhibitions",
+190:        "file": "2026-11-13-money",
+199:        "file": "2026-11-14-weekend",
+208:        "file": "2026-11-15-digest",
+217:        "file": "2026-11-21-rome-open-day-markets-closures",
+226:        "file": "2026-11-22-rome-week-panettone-bazar",
+363:        path = OUT / f'{c["file"]}.svg'
+237:def icon(kind: str, accent: str) -> str:
+
+def cover(c: dict) -> str:
+    accent = c["accent"]
+    lines = c["title"]
+    title_svg = []
+    y = 330 if len(lines) == 2 else 360
+    for line in lines:
+        title_svg.append(
+            f'<text x="80" y="{y}" font-family="PT Sans, Arial, sans-serif" '
+            f'font-size="112" font-weight="800" fill="#FFFFFF" letter-spacing="-3">{escape(line)}</text>'
+        )
+        y += 122
+    sub_y = y + 8
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="810" viewBox="0 0 1080 810">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A1424"/>
+      <stop offset="0.55" stop-color="#132844"/>
+      <stop offset="1" stop-color="#1B3352"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="82%" cy="18%" r="55%">
+      <stop offset="0" stop-color="{accent}" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="{accent}" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1080" height="810" fill="url(#bg)"/>
+  <rect width="1080" height="810" fill="url(#glow)"/>
+  <rect x="30" y="30" width="1020" height="750" rx="28" fill="none" stroke="{accent}" stroke-opacity="0.28" stroke-width="2"/>
+
+  <g font-family="PT Sans, Arial, sans-serif">
+    <circle cx="86" cy="92" r="9" fill="{accent}"/>
+    <text x="110" y="100" font-size="22" font-weight="700" fill="#DCE8F4" letter-spacing="5">РИМ ДЛЯ СВОЇХ</text>
+    <text x="994" y="100" text-anchor="end" font-size="20" font-weight="600" fill="#7F95A9" letter-spacing="3">РИМ · ІТАЛІЯ</text>
+
+    <text x="80" y="230" font-size="24" font-weight="700" fill="{accent}" letter-spacing="5">{escape(c["kicker"])}</text>
+    {"".join(title_svg)}
+    <text x="82" y="{sub_y}" font-size="31" font-weight="500" fill="#C9D6E2">{escape(c["sub"])}</text>
+
+    <rect x="80" y="638" width="{int(len(c["date"]) * 17 + 64)}" height="66" rx="33" fill="{accent}"/>
+    <text x="112" y="682" font-size="27" font-weight="800" fill="#0A1424" letter-spacing="1">{escape(c["date"])}</text>
+
+    <text x="80" y="752" font-size="18" font-weight="600" fill="#7F95A9" letter-spacing="3">t.me/rim_dlia_svoih</text>
+  </g>
+
+  {colosseum(accent)}
+  {icon(c["icon"], accent)}
+</svg>
+'''
+
+
+def main() -> None:
+    for c in COVERS:
+        path = OUT / f'{c["file"]}.svg'
+        path.write_text(cover(c), encoding="utf-8")
+        print(path)
+
+
+if __name__ == "__main__":
+    main()
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s --max-time 30 'https://news.google.com/rss/search?q=Roma+eventi+23+novembre+2026&hl=it&gl=IT&ceid=IT:it' | python3 -c "
+import sys,re,html
+x=sys.stdin.read()
+items=re.findall(r'<item>(.*?)</item>',x,re.S)
+for it in items[:20]:
+    t=re.search(r'<title>(.*?)</title>',it,re.S); d=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S)
+    print(html.unescape(t.group(1)) if t else '', '|', d.group(1) if d else '')
+"
+Eventi e scadenze: settimana del 23 novembre 2026 - Teleborsa | Mon, 23 Nov 2026 07:10:02 GMT
+Weekend a Roma: 20 eventi da non perdere sabato 21 e domenica 22 novembre - RomaToday | Sat, 21 Nov 2026 08:00:00 GMT
+Sito Istituzionale | Municipio IV. "Facciamo rumore", eventi dal 23 al 27 novembre - Roma Capitale | Fri, 20 Nov 2026 09:31:59 GMT
+Novembre 2026 a Roma: scopri e vivi Roma dal 1° al 30 novembre 2026 - Turismo Roma | Thu, 29 Oct 2026 15:56:52 GMT
+Cosa fare a Roma a novembre: mostre, eventi e appuntamenti da non perdere - Grazia | Sat, 31 Oct 2026 07:00:00 GMT
+Eventi per bambini a Roma a novembre 2026: 5 appuntamenti da non perdere - Viaggiapiccoli | Mon, 26 Oct 2026 07:00:00 GMT
+Roma, ancora tu… Gli Azzurri tornano al Palaeur il 26 novembre, dopo 19 anni - Federazione Italiana Pallacanestro | Fri, 02 Oct 2026 07:00:00 GMT
+Weekend a Roma: 16 eventi da non perdere sabato 22 e domenica 23 novembre - RomaToday | Sat, 22 Nov 2025 08:00:00 GMT
+Reel Rock Italia a Roma e Bergamo - PlanetMountain.com | Sun, 22 Nov 2026 22:51:03 GMT
+Roma Arte in Nuvola - Fiera Internazionale di Arte Moderna e Contemporanea - Arte.it | Thu, 20 Nov 2025 19:11:49 GMT
+Amazing Wonders: la mostra immersiva a Roma al Forte Trionfale - Romeing | Mon, 23 Nov 2026 07:42:36 GMT
+Giornata internazionale contro la violenza sulle donne - Musei in Comune | Mon, 25 Nov 2024 08:00:00 GMT
+Cosa fare a Roma a Novembre: mostre, eventi e appuntamenti da non perdere - Grazia | Tue, 04 Nov 2025 08:00:00 GMT
+Weekend a Roma: 20 eventi da non perdere sabato 7 e domenica 8 novembre - RomaToday | Sat, 07 Nov 2026 08:00:00 GMT
+Irpinia, 46 anni dal terremoto: MetroLunario del 23 novembre - MetroToday | Sun, 22 Nov 2026 23:15:00 GMT
+Attività per bambini a Roma - Turismo Roma | Wed, 18 Mar 2020 20:34:49 GMT
+Weekend a Roma: 18 eventi da non perdere sabato 23 e domenica 24 novembre - RomaToday | Sat, 23 Nov 2024 08:00:00 GMT
+Le ultime lune: Alessandro Haber torna al Teatro Ambra Jovinelli - RomaToday | Mon, 23 Nov 2026 04:08:51 GMT
+Maxima Roma batte Treviso 108-91: Holiday da 28 punti. Basket e solidarietà al PalaEur - RomaToday | Mon, 23 Nov 2026 05:11:23 GMT
+Teatro a Roma: tutti gli spettacoli da vedere nella stagione 2025–2026 - RomaToday | Mon, 29 Sep 2025 08:49:17 GMT
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && for q in 'Roma+gratis+novembre+2026' 'Roma+trasporti+tram+3+23+novembre' 'Roma+sciopero+24+novembre+2026' 'Roma+mostra+23+novembre+2026' 'Roma+mercato+23+novembre+2026'; do echo "### $q"; curl -s --max-time 25 "https://news.google.com/rss/search?q=$q&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+x=sys.stdin.read()
+items=re.findall(r'<item>(.*?)</item>',x,re.S)
+for it in items[:8]:
+    t=re.search(r'<title>(.*?)</title>',it,re.S); d=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S)
+    print('-', html.unescape(t.group(1)) if t else '', '|', d.group(1) if d else '')
+"; done
+### Roma+gratis+novembre+2026
+### Roma+trasporti+tram+3+23+novembre
+- Tram a Roma, da oggi attiva la linea 3. La situazione sul resto della rete - RomaToday | Mon, 23 Nov 2026 06:43:27 GMT
+- Tram 3, da domani torna il servizio completo a Roma: cosa cambia anche per la linea 19 - la Repubblica | Sun, 22 Nov 2026 17:24:09 GMT
+- Scioperi, manifestazioni e proteste in programma a novembre: calendario e date - Sky TG24 | Sun, 01 Nov 2026 07:00:00 GMT
+- Tram Roma: linee, orari e mappa aggiornata 2026 - Vivere Roma | Fri, 28 Aug 2026 07:00:00 GMT
+- Rivoluzione trasporti a Roma: tram fermi per tre mesi. Ecco cosa cambia - RaiNews | Sun, 02 Aug 2026 07:00:00 GMT
+- Tram Roma, dal 3 agosto linee Atac sostituite dai bus - lacapitale.it | Fri, 31 Jul 2026 07:00:00 GMT
+- Roma senza tram: da ieri linee 3, 5, 14 e 19 sostituite da bus - Vivere Roma | Tue, 04 Aug 2026 07:00:00 GMT
+- Tram, bus e metro a Roma: cosa succede dal 7 settembre. La road map verso la normalità - RomaToday | Tue, 01 Sep 2026 07:00:00 GMT
+### Roma+sciopero+24+novembre+2026
+- Calendario scioperi 23 - 29 novembre 2026: vertenze, mobilitazioni e iniziative Cgil - CGIL | Sun, 22 Nov 2026 12:22:41 GMT
+- Sciopero generale 20 novembre, Cgil proclama 24 ore di stop: chi si ferma - Sky TG24 | Tue, 17 Nov 2026 09:17:59 GMT
+- Sciopero: venerdì 20 novembre a Roma a rischio per 24 ore bus, metro e treni. Tutte le informazioni - RomaToday | Fri, 20 Nov 2026 08:00:00 GMT
+- Scioperi settimana dal 23 al 29 novembre 2026, si fermano sanità, banche e avvocati: le città coinvolte - Virgilio | Sat, 21 Nov 2026 11:49:00 GMT
+- Il 20 novembre sciopero generale di 24 ore - RomaSette | Tue, 17 Nov 2026 15:20:30 GMT
+- Sciopero generale venerdì 20 novembre 2026: orari di treni, bus e metro, scuole, sanità e cortei nelle città. Cosa cambia e perché si ferma l'Italia - L'Espresso | Tue, 17 Nov 2026 12:07:31 GMT
+- Sciopero generale Cgil: bus e metro a rischio. Come muoversi e quali servizi sono garantiti - Il Sole 24 ORE | Thu, 19 Nov 2026 18:57:11 GMT
+- Scioperi novembre 2026, il calendario completo: dal trasporto locale ai treni e gli aerei, le date da segnare - Corriere della Sera | Sun, 08 Nov 2026 08:00:00 GMT
+### Roma+mostra+23+novembre+2026
+- Ri-generare con creatività - Convegno - Mostra - Roma - Mattatoio - Arte.it | Sun, 22 Nov 2026 11:00:40 GMT
+- Amazing Wonders: la mostra immersiva a Roma al Forte Trionfale - Romeing | Mon, 23 Nov 2026 07:42:36 GMT
+- Via Veneto 1950-1960. Estrellas del cine en la Roma de La Dolce Vita: Mostra a Madrid - Paese Italia Press | Sun, 22 Nov 2026 23:11:02 GMT
+- Novembre 2026 a Roma: scopri e vivi Roma dal 1° al 30 novembre 2026 - Turismo Roma | Thu, 29 Oct 2026 15:56:52 GMT
+- Mostra “VIA VENETO 1950-1960. Le stelle del cinema nella Roma della Dolce Vita” - Istituto Italiano di Cultura di Madrid | Tue, 17 Nov 2026 21:15:50 GMT
+- Come può la cultura trasformare le città? A Roma il primo Forum nazionale sulla rigenerazione urbana - Finestre sull'Arte | Fri, 20 Nov 2026 16:07:54 GMT
+- Roma Arte in Nuvola 2026 - Mostra - Roma - La Nuvola - Arte.it | Wed, 11 Nov 2026 21:22:46 GMT
+- Arte contemporanea e del '900 per la Collettiva di Fine Anno - RomaToday | Mon, 23 Nov 2026 04:08:54 GMT
+### Roma+mercato+23+novembre+2026
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcurl -s --max-time 30 'https://news.google.com/rss/search?q=%22Facciamo+rumore%22+Municipio+IV+Roma&hl=it&gl=IT&ceid=IT:it' | python3 -c "
+import sys,re,html
+x=sys.stdin.read()
+items=re.findall(r'<item>(.*?)</item>',x,re.S)
+for it in items[:8]:
+    t=re.search(r'<title>(.*?)</title>',it,re.S); l=re.search(r'<link>(.*?)</link>',it,re.S); d=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S)
+    print('-', html.unescape(t.group(1)) if t else '', '|', d.group(1) if d else '')
+    print('  ', l.group(1) if l else '')
+"
+- Sito Istituzionale | Municipio IV. "Facciamo rumore", eventi dal 23 al 27 novembre - Roma Capitale | Fri, 20 Nov 2026 09:31:59 GMT
+   https://news.google.com/rss/articles/CBMifkFVX3lxTFBhazVrZ1QxZHRTcUxhRGktYXZQQ0RQOFN1d2wtUGlMa2lzbVFCRFdVUXJ5UmtaWHdWdkRKZXlHLVZLTUlkX3NZTk05RWZHRmIyYUJFSTZhekJIUmRleklVQkxoZm9NTGhPZTJab1JDSlhTSUNkQTdkY2JSY3JLdw?oc=5
+[0m✗ [0mWebFetch https://www.romatoday.it/attualita/tram-linea-3-riattivata-23-novembre-2026.html failed
+[91m[1mError: [0mStatusCode: non 2xx status code (404 GET https://www.romatoday.it/attualita/tram-linea-3-riattivata-23-novembre-2026.html)
+> build · deepseek-v4.1-flash-free
+[0m◈ [0mWeb Search via Exa "Roma tram linea 3 riattivata 23 novembre 2026 Porta Maggiore Valle Giulia linea 19" 
+[0m◈ [0mWeb Search via Exa "Roma Capitale Municipio IV "Facciamo rumore" 23 27 novembre 2026" 
+> build · deepseek-v4.1-flash-free
+[0m◈ [0mWeb Search via Exa "Roma Arte in Nuvola 2026 date La Nuvola ingresso" 
+[0m◈ [0mWeb Search via Exa "Roma eventi lunedì 23 novembre 2026 gratis mostre aperture" 
+> build · deepseek-v4.1-flash-free
+[0m◈ [0mWeb Search via Exa ""Riccardi 100" WeGil Roma mostra orari ingresso gratuito" 
+[0m◈ [0mWeb Search via Exa "Istituto Giapponese di Cultura Roma "Shodō" mostra 2026 orari ingresso" 
+> build · deepseek-v4.1-flash-free
+[0m◈ [0mWeb Search via Exa "Roma 25 novembre 2026 Giornata contro violenza sulle donne musei gratuiti iniziative" 
+[0m◈ [0mWeb Search via Exa ""Facciamo rumore" Villa Ipazia Alessandria programma 23 27 novembre 2026 ingresso" 
+> build · deepseek-v4.1-flash-free
+[0m◈ [0mWeb Search via Exa ""Villa Ipazia" "Facciamo rumore" ingresso libero programma 23 novembre 2026" 
+[0m% [0mWebFetch https://www.comune.roma.it/web/it/notizie.page?mun=municipio_iv 
+> build · deepseek-v4.1-flash-free
+[0m◈ [0mWeb Search via Exa "site:comune.roma.it "Facciamo rumore" Municipio IV novembre 2026" 
+[0m◈ [0mWeb Search via Exa "Roma 24 novembre 2026 Teatro Palladium "Se domani non torno" proiezione gratuita prenotazione" 
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /tmp && curl -sL --max-time 30 'https://news.google.com/rss/articles/CBMifkFVX3lxTFBhazVrZ1QxZHRTcUxhRGktYXZQQ0RQOFN1d2wtUGlMa2lzbVFCRFdVUXJ5UmtaWHdWdkRKZXlHLVZLTUlkX3NZTk05RWZHRmIyYUJFSTZhekJIUmRleklVQkxoZm9NTGhPZTJab1JDSlhTSUNkQTdkY2JSY3JLdw?oc=5' -o gn.html -w '%{url_effective}\n%{http_code}\n' && grep -o 'https://www.comune.roma.it[^"]*' gn.html | head -5
+https://news.google.com/rss/articles/CBMifkFVX3lxTFBhazVrZ1QxZHRTcUxhRGktYXZQQ0RQOFN1d2wtUGlMa2lzbVFCRFdVUXJ5UmtaWHdWdkRKZXlHLVZLTUlkX3NZTk05RWZHRmIyYUJFSTZhekJIUmRleklVQkxoZm9NTGhPZTJab1JDSlhTSUNkQTdkY2JSY3JLdw?oc=5&hl=en-US&gl=US&ceid=US:en
+200
+[0m◈ [0mWeb Search via Exa ""Facciamo rumore" "23 novembre" "27 novembre" Roma Municipio IV mostra Eva laboratorio" 
+> build · deepseek-v4.1-flash-free
+[0m→ [0mRead content/channel/2026-11-21-rome-open-day-markets-closures-post.md 
+[0m→ [0mRead content/extra/2026-11-21-rome-open-day-markets-closures.md 
+[0m→ [0mRead content/it/2026-11-21-rome-open-day-markets-closures.md 
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && sed -n '1,180p' automation/site.py
+#!/usr/bin/env python3
+"""
+Генератор статичного SEO-сайту для каналу «Рим для своїх».
+
+Створює в docs/:
+  index.html          — головна сторінка
+  posts/<slug>.html   — окрема сторінка кожного поста
+  covers/*.png        — копії обкладинок
+  sitemap.xml
+  robots.txt
+  rss.xml
+  404.html
+  <indexnow-key>.txt  — файл підтвердження IndexNow
+
+Запуск:
+  python3 automation/site.py
+  SITE_URL=https://example.com python3 automation/site.py
+"""
+from __future__ import annotations
+
+import html
+import os
+import re
+import shutil
+from datetime import datetime, timezone
+from pathlib import Path
+from xml.sax.saxutils import escape as xml_escape
+from urllib.parse import urlparse
+
+ROOT = Path(__file__).resolve().parent.parent
+DOCS = ROOT / "docs"
+COVERS = ROOT / "covers"
+CONTENT = ROOT / "content/01-first-week.md"
+EXTRA = ROOT / "content/extra"
+KEY_FILE = ROOT / "automation/indexnow.key"
+
+SITE_URL = os.environ.get("SITE_URL", "https://ucrainiroma.it").rstrip("/")
+CHANNEL_URL = "https://t.me/rim_dlia_svoih"
+CHANNEL_HANDLE = "@rim_dlia_svoih"
+CHANNEL_TITLE = "Рим для своїх | Українці в Римі"
+CHANNEL_DESC = (
+    "Щотижневий дайджест для українців у Римі: події, транспорт, житло, "
+    "робота, здоров'я, безпека. Без паніки, з джерелами. 🇺🇦🇮🇹"
+)
+CHANNEL_DESC_IT = (
+    "Digest settimanale per gli ucraini a Roma: eventi, trasporti, casa, "
+    "lavoro, salute, sicurezza. Senza allarmismi, con le fonti. 🇺🇦🇮🇹"
+)
+
+# Перекладений контент: content/it/<slug>.md (той самий slug, що й обкладинка)
+IT_CONTENT = ROOT / "content/it"
+
+LANGS = ("uk", "it")
+
+BRAND = {"uk": "Рим для своїх", "it": "Rim per i nostri"}
+SITE_NAME = {"uk": CHANNEL_TITLE, "it": "Rim per i nostri | Ucraini a Roma"}
+LOCALE = {"uk": "uk_UA", "it": "it_IT"}
+FOOTER = {
+    "uk": "© 2026 «Рим для своїх». Незалежний дайджест для українців у Римі.",
+    "it": "© 2026 «Rim per i nostri». Digest indipendente per gli ucraini a Roma.",
+}
+
+TOPICS = {
+    "uk": [
+        ("🗓", "Події та виставки", "Куди піти цього тижня: безкоштовні події, виставки, що закриваються, ярмарки."),
+        ("🚇", "Транспорт", "Страйки, ремонти, закриття станцій, зміни маршрутів Roma-Lido, метро й автобусів."),
+        ("🏠", "Житло й робота", "Оренда без посередників, вакансії, курси італійської, легальне працевлаштування."),
+        ("🏥", "Здоров'я", "Лікарі, аналізи, SSN, невідкладна допомога, де шукати україномовного лікаря."),
+        ("⚠️", "Безпека", "Шахрайство, фішинг, райони, що робити в складній ситуації."),
+        ("🇺🇦", "Україна і світ", "Коротко про головне — без паніки й без клікбейту."),
+    ],
+    "it": [
+        ("🗓", "Eventi e mostre", "Dove andare questa settimana: eventi gratuiti, mostre in chiusura, mercatini."),
+        ("🚇", "Trasporti", "Scioperi, cantieri, stazioni chiuse, cambi di percorso su Roma-Lido, metro e bus."),
+        ("🏠", "Casa e lavoro", "Affitti senza intermediari, offerte di lavoro, corsi di italiano, lavoro regolare."),
+        ("🏥", "Salute", "Medici, analisi, SSN, pronto soccorso e dove trovare un medico che parli ucraino."),
+        ("⚠️", "Sicurezza", "Truffe, phishing, zone da conoscere e cosa fare in una situazione difficile."),
+        ("🇺🇦", "Ucraina e mondo", "L'essenziale in breve: senza allarmismi e senza clickbait."),
+    ],
+}
+
+STEPS = {
+    "uk": [
+        ("1", "Відкрийте канал", "Натисніть кнопку «Відкрити в Telegram» — канал публічний, читати можна без акаунта у вебверсії."),
+        ("2", "Підпишіться", "Один дайджест на тиждень. Нічого зайвого: лише те, що стосується життя в Римі."),
+        ("3", "Повертайтеся", "Якщо загубили пост — усі матеріали зібрані на цьому сайті."),
+    ],
+    "it": [
+        ("1", "Apri il canale", "Premi «Apri in Telegram»: il canale è pubblico, si legge anche senza account nella versione web."),
+        ("2", "Iscriviti", "Un digest a settimana. Niente di superfluo: solo ciò che riguarda la vita a Roma."),
+        ("3", "Torna quando vuoi", "Se hai perso un post, tutti i materiali sono raccolti su questo sito."),
+    ],
+}
+
+FAQ = {
+    "uk": [
+        ("Це офіційний канал?", "Ні. Це незалежний дайджест для українців, які нещодавно переїхали до Риму. Ми не установа й не посередник."),
+        ("Скільки коштує підписка?", "Нічого. Канал безкоштовний, без реклами й без платних підписок."),
+        ("Звідки беруться новини?", "З відкритих джерел: ANSA, Corriere Roma, Il Messaggero, Il Tempo, AGI, Adnkronos, Il Sole 24 Ore, Il Fatto Quotidiano та офіційних сайтів."),
+        ("Чи можна писати вам?", "Так, у коментарях під постами. Питання й пропозиції допомагають робити дайджест кориснішим."),
+    ],
+    "it": [
+        ("È un canale ufficiale?", "No. È un digest indipendente per gli ucraini arrivati da poco a Roma. Non siamo un ente né un intermediario."),
+        ("Quanto costa l'iscrizione?", "Niente. Il canale è gratuito, senza pubblicità e senza abbonamenti."),
+        ("Da dove arrivano le notizie?", "Da fonti aperte: ANSA, Corriere Roma, Il Messaggero, Il Tempo, AGI, Adnkronos, Il Sole 24 Ore, Il Fatto Quotidiano e siti istituzionali."),
+        ("Si può scrivervi?", "Sì, nei commenti sotto i post. Domande e proposte aiutano a rendere il digest più utile."),
+    ],
+}
+
+TEXT = {
+    "uk": {
+        "badge": "🇺🇦🇮🇹 Телеграм-канал для українців у Римі",
+        "h1": "Рим для своїх — щотижневий дайджест для українців у Римі",
+        "lead": "Події, транспорт, житло, робота, здоров'я й безпека. Коротко, з джерелами, без паніки. Для тих, хто нещодавно переїхав до Риму або вже живе тут.",
+        "cta": "Відкрити в Telegram →",
+        "cta2": "Останні пости",
+        "meta": ["📅 Один дайджест на тиждень", "🔗 Джерела в кожному пості", "🆓 Безкоштовно"],
+        "topics_h2": "Що всередині",
+        "topics_sub": "Шість рубрик, які закривають перші місяці життя в Римі.",
+        "posts_h2": "Останні пости",
+        "posts_sub": "Ті самі матеріали, що виходять у каналі — зручно читати й пересилати.",
+        "read": "Читати →",
+        "how_h2": "Як це працює",
+        "how_sub": "Три кроки — і ви нічого не пропустите.",
+        "faq_h2": "Часті питання",
+        "faq_sub": "Коротко про формат і правила.",
+        "band_h2": "Приєднуйтеся до «Рим для своїх»",
+        "band_p": "Щотижня — найважливіше для українців у Римі. Без паніки, з джерелами.",
+        "home": "Головна",
+        "posts_crumb": "Пости",
+        "read_tg": "Читати в Telegram →",
+        "nav_topics": "Теми",
+        "nav_posts": "Пости",
+        "nav_faq": "Питання",
+        "nav_tg": "Telegram",
+        "switch": "Italiano",
+        "only_translated": "Інші пости доступні українською.",
+        "title_index": "Рим для своїх — телеграм-канал для українців у Римі",
+        "desc_index": "Щотижневий дайджест для українців у Римі: події, транспорт, житло, робота, здоров'я, безпека. Без паніки, з джерелами.",
+    },
+    "it": {
+        "badge": "🇺🇦🇮🇹 Canale Telegram per gli ucraini a Roma",
+        "h1": "Ucraini a Roma — il digest settimanale in italiano",
+        "lead": "Eventi, trasporti, casa, lavoro, salute e sicurezza. In breve, con le fonti, senza allarmismi. Per chi è arrivato da poco a Roma o ci vive già.",
+        "cta": "Apri in Telegram →",
+        "cta2": "Ultimi post",
+        "meta": ["📅 Un digest a settimana", "🔗 Fonti in ogni post", "🆓 Gratuito"],
+        "topics_h2": "Di cosa parliamo",
+        "topics_sub": "Sei rubriche che coprono i primi mesi di vita a Roma.",
+        "posts_h2": "Ultimi post",
+        "posts_sub": "Gli stessi materiali del canale — comodi da leggere e inoltrare.",
+        "read": "Leggi →",
+        "how_h2": "Come funziona",
+        "how_sub": "Tre passi e non perdi niente.",
+        "faq_h2": "Domande frequenti",
+        "faq_sub": "In breve: formato e regole.",
+        "band_h2": "Unisciti a «Rim per i nostri»",
+        "band_p": "Ogni settimana l'essenziale per gli ucraini a Roma. Senza allarmismi, con le fonti.",
+        "home": "Home",
+        "posts_crumb": "Post",
+        "read_tg": "Leggi in Telegram →",
+        "nav_topics": "Temi",
+        "nav_posts": "Post",
+        "nav_faq": "Domande",
+        "nav_tg": "Telegram",
+        "switch": "Українська",
+        "only_translated": "Gli altri post sono disponibili in ucraino.",
+        "title_index": "Ucraini a Roma — eventi, trasporti, casa e lavoro | Rim per i nostri",
+        "desc_index": "Digest settimanale per gli ucraini a Roma: eventi, trasporti, affitti, lavoro, salute e sicurezza. Con le fonti, senza allarmismi.",
+    },
+}
+
+MONTHS = {
+    1: "січня", 2: "лютого", 3: "березня", 4: "квітня",
+    5: "травня", 6: "червня", 7: "липня", 8: "серпня",
+    9: "вересня", 10: "жовтня", 11: "листопада", 12: "грудня",
+}
+
+
+def code_blocks(path: Path) -> list[str]:
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && sed -n '1,80p' publish.py && grep -n "def cmd_file\|cover\|slug" publish.py | head -40
+#!/usr/bin/env python3
+"""
+Публікація постів у Telegram-канал «Рим для своїх» через Bot API.
+
+Підготовка (один раз):
+  1. Створіть бота в @BotFather → отримайте токен.
+  2. Додайте бота адміністратором каналу з правами:
+     Post messages, Edit messages, Change channel info.
+  3. Створіть файл .env поруч із цим скриптом:
+        TELEGRAM_BOT_TOKEN=123456:ABC...
+        TELEGRAM_CHANNEL=@rim_dlia_svoih
+     і виконайте: chmod 600 .env
+
+Команди:
+  python3 publish.py check
+  python3 publish.py setup
+  python3 publish.py pinned
+  python3 publish.py post 3
+  python3 publish.py all
+  python3 publish.py pin 123
+  python3 publish.py post 3 --dry-run
+
+Токен нікуди не надсилається, крім api.telegram.org.
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import os
+import re
+import sys
+import urllib.error
+import urllib.request
+import uuid
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+ENV_FILE = ROOT / ".env"
+DEFAULT_CHANNEL = "@rim_dlia_svoih"
+
+# 0-based індекси постів → обкладинки (тепер є в кожного поста)
+COVERS = {
+    0: ROOT / "covers/2026-11-09-intro.png",
+    1: ROOT / "covers/2026-11-10-transport.png",
+    2: ROOT / "covers/2026-11-11-kids.png",
+    3: ROOT / "covers/2026-11-12-exhibitions.png",
+    4: ROOT / "covers/2026-11-13-money.png",
+    5: ROOT / "covers/2026-11-14-weekend.png",
+    6: ROOT / "covers/2026-11-15-digest.png",
+}
+
+DESCRIPTION = (
+    "Щотижневий дайджест для українців у Римі: події, транспорт, житло, "
+    "робота, здоров'я, безпека. Без паніки, з джерелами. 🇺🇦🇮🇹"
+)
+
+
+def load_env() -> None:
+    if not ENV_FILE.exists():
+        return
+    for raw in ENV_FILE.read_text(encoding="utf-8").splitlines():
+        line = raw.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, value = line.split("=", 1)
+        os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))
+
+
+def token() -> str:
+    value = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
+    if not value:
+        sys.exit(
+            "Немає TELEGRAM_BOT_TOKEN. Створіть .env поруч зі скриптом:\n"
+            "  TELEGRAM_BOT_TOKEN=123456:ABC...\n"
+            "  TELEGRAM_CHANNEL=@rim_dlia_svoih"
+        )
+    return value
+
+
+def channel() -> str:
+43:    0: ROOT / "covers/2026-11-09-intro.png",
+44:    1: ROOT / "covers/2026-11-10-transport.png",
+45:    2: ROOT / "covers/2026-11-11-kids.png",
+46:    3: ROOT / "covers/2026-11-12-exhibitions.png",
+47:    4: ROOT / "covers/2026-11-13-money.png",
+48:    5: ROOT / "covers/2026-11-14-weekend.png",
+49:    6: ROOT / "covers/2026-11-15-digest.png",
+248:    cover = COVERS.get(index)
+249:    if cover and cover.exists():
+250:        message_id = send_photo(text, cover, args.dry_run)
+276:def cmd_file(args) -> None:
+283:    cover = Path(args.cover) if args.cover else ROOT / "covers" / f"{path.stem}.png"
+284:    if not cover.is_absolute():
+285:        cover = ROOT / cover
+286:    if not cover.exists():
+287:        sys.exit(f"Немає обкладинки: {cover}")
+288:    print(f"Пост: {len(text)} символів · {path.name} · обкладинка {cover.name}")
+291:    message_id = send_photo(text, cover, args.dry_run)
+339:    p_file.add_argument("--cover", help="шлях до обкладинки (типово covers/<назва>.png)")
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && grep -n "def parse\|slug\|date\|title" automation/site.py | sed -n '1,80p'
+7:  posts/<slug>.html   — окрема сторінка кожного поста
+25:from datetime import datetime, timezone
+50:# Перекладений контент: content/it/<slug>.md (той самий slug, що й обкладинка)
+138:        "title_index": "Рим для своїх — телеграм-канал для українців у Римі",
+168:        "title_index": "Ucraini a Roma — eventi, trasporti, casa e lavoro | Rim per i nostri",
+194:def slug_from_cover(cover: Path) -> str:
+198:def post_date(cover: Path) -> datetime:
+199:    return datetime.strptime(cover.name[:10], "%Y-%m-%d")
+202:def human_date(value: datetime) -> str:
+257:    """Переклади постів: content/it/<slug>.md → текст."""
+279:    posts.sort(key=lambda post: (post["date"], post["slug"]))
+280:    unknown = set(translations) - {post["slug"] for post in posts}
+289:    slug = slug_from_cover(cover)
+293:        "slug": slug,
+294:        "date": post_date(cover),
+295:        "title": first_line(text),
+297:        "url": f"{SITE_URL}/posts/{slug}.html",
+299:        "title_it": first_line(text_it) if text_it else "",
+301:        "url_it": f"{SITE_URL}/it/posts/{slug}.html",
+307:    """Окремі пости з content/extra/<slug>.md + covers/<slug>.png."""
+401:    title: str,
+429:<title>{esc(title)}</title>
+434:<meta property="og:title" content="{esc(title)}">
+440:<meta name="twitter:title" content="{esc(title)}">
+443:<link rel="alternate" type="application/rss+xml" title="{esc(SITE_NAME[lang])}" href="{SITE_URL}/rss.xml">
+502:def human_date_lang(value: datetime, lang: str) -> str:
+505:    return human_date(value)
+515:  <a href="{(p['url'] if lang == 'uk' else p['url_it'])}"><img src="{SITE_URL}/covers/{p['cover'].name}" alt="{esc(p['title'] if lang == 'uk' else p['title_it'])}" loading="lazy" width="640" height="480"></a>
+517:    <time datetime="{p['date'].strftime('%Y-%m-%d')}">{human_date_lang(p['date'], lang)}</time>
+518:    <h3><a href="{(p['url'] if lang == 'uk' else p['url_it'])}">{esc(p['title'] if lang == 'uk' else p['title_it'])}</a></h3>
+529:  <h3>{esc(title)}</h3>
+532:        for icon, title, text in TOPICS[lang]
+538:  <h3>{esc(title)}</h3>
+541:        for n, title, text in STEPS[lang]
+558:                "name": p["title"] if lang == "uk" else p["title_it"],
+656:        t["title_index"],
+672:    title = post["title_it"] if it else post["title"]
+678:    post_title = lambda p: p["title_it"] if it else p["title"]
+682:        pager.append(f'<a href="{post_url(prev)}">← {esc(post_title(prev))}</a>')
+686:        pager.append(f'<a href="{post_url(nxt)}">{esc(post_title(nxt))} →</a>')
+691:        "headline": title,
+693:        "datePublished": post["date"].strftime("%Y-%m-%d"),
+694:        "dateModified": post["date"].strftime("%Y-%m-%d"),
+714:  <h1>{esc(title)}</h1>
+715:  <time datetime="{post['date'].strftime('%Y-%m-%d')}">{human_date_lang(post['date'], lang)}</time>
+717:    <img src="{SITE_URL}/covers/{post['cover'].name}" alt="{esc(title)}" width="1080" height="810">
+725:        f"{title} — {BRAND[lang]}",
+738:    last = posts[-1]["date"] if posts else datetime.now(timezone.utc)
+741:    def row(url: str, date: datetime, changefreq: str, priority: str, alts: list[tuple[str, str]]) -> str:
+748:            f"<lastmod>{date.strftime('%Y-%m-%d')}</lastmod>"
+759:        rows.append(row(post["url"], post["date"], "monthly", "0.8", [("uk", post["url"])] + ([("it", post["url_it"])] if post["text_it"] else [])))
+761:            rows.append(row(post["url_it"], post["date"], "monthly", "0.8", [("uk", post["url"]), ("it", post["url_it"]), ("x-default", post["url"])]))
+774:      <title>{xml_escape(p['title'])}</title>
+777:      <pubDate>{p['date'].strftime('%a, %d %b %Y 09:00:00 +0100')}</pubDate>
+785:    <title>{xml_escape(CHANNEL_TITLE)}</title>
+856:        (DOCS / "posts" / f"{post['slug']}.html").write_text(
+866:            (DOCS / "it" / "posts" / f"{post['slug']}.html").write_text(
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && sed -n '190,330p' automation/site.py
+planned = extra_stems()
+    return [path for path in sorted(COVERS.glob("2026-*.png")) if path.stem not in planned]
+
+
+def slug_from_cover(cover: Path) -> str:
+    return cover.stem
+
+
+def post_date(cover: Path) -> datetime:
+    return datetime.strptime(cover.name[:10], "%Y-%m-%d")
+
+
+def human_date(value: datetime) -> str:
+    return f"{value.day} {MONTHS[value.month]} {value.year}"
+
+
+def first_line(text: str) -> str:
+    line = next((line.strip() for line in text.splitlines() if line.strip()), "Без назви")
+    return line.replace("**", "")
+
+
+def excerpt(text: str, limit: int = 180) -> str:
+    body = " ".join(line.strip() for line in text.splitlines() if line.strip()).replace("**", "")
+    if len(body) <= limit:
+        return body
+    cut = body[:limit].rsplit(" ", 1)[0]
+    return cut + "…"
+
+
+def body_excerpt(text: str, limit: int = 180) -> str:
+    """Опис без першого рядка-заголовка (щоб не дублювати h1)."""
+    lines = text.splitlines()
+    start = 0
+    for i, line in enumerate(lines):
+        if line.strip():
+            start = i + 1
+            break
+    return excerpt("\n".join(lines[start:]), limit)
+
+
+def esc(value: str) -> str:
+    return html.escape(value, quote=True)
+
+
+def paragraphs(text: str) -> str:
+    """Перший рядок — жирний, решта — як є, зі збереженням переносів.
+
+    Підтримує **жирний** усередині рядка (markdown-файли з content/extra).
+    """
+    lines = text.splitlines()
+    out: list[str] = []
+    first_done = False
+    for line in lines:
+        stripped = line.strip()
+        if not stripped:
+            out.append("")
+            continue
+        safe = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", esc(line))
+        if not first_done and "<strong>" not in safe:
+            out.append(f"<strong>{safe}</strong>")
+        else:
+            out.append(safe)
+        first_done = True
+    return "\n".join(out)
+
+
+def italian_texts() -> dict[str, str]:
+    """Переклади постів: content/it/<slug>.md → текст."""
+    if not IT_CONTENT.exists():
+        return {}
+    return {
+        path.stem: path.read_text(encoding="utf-8").strip()
+        for path in sorted(IT_CONTENT.glob("*.md"))
+        if path.read_text(encoding="utf-8").strip()
+    }
+
+
+def load_posts() -> list[dict]:
+    texts = code_blocks(CONTENT)
+    covers = cover_files()
+    if len(texts) != len(covers):
+        raise SystemExit(
+            f"Постів {len(texts)}, обкладинок {len(covers)} — кількість має збігатися."
+        )
+    translations = italian_texts()
+    posts = []
+    for text, cover in zip(texts, covers):
+        posts.append(make_post(text, cover, translations.get(cover.stem)))
+    posts.extend(extra_posts(translations))
+    posts.sort(key=lambda post: (post["date"], post["slug"]))
+    unknown = set(translations) - {post["slug"] for post in posts}
+    if unknown:
+        raise SystemExit(
+            "Переклад без відповідного поста: " + ", ".join(sorted(unknown))
+        )
+    return posts
+
+
+def make_post(text: str, cover: Path, text_it: str | None = None) -> dict:
+    slug = slug_from_cover(cover)
+    post = {
+        "text": text,
+        "cover": cover,
+        "slug": slug,
+        "date": post_date(cover),
+        "title": first_line(text),
+        "excerpt": body_excerpt(text),
+        "url": f"{SITE_URL}/posts/{slug}.html",
+        "text_it": text_it or "",
+        "title_it": first_line(text_it) if text_it else "",
+        "excerpt_it": body_excerpt(text_it) if text_it else "",
+        "url_it": f"{SITE_URL}/it/posts/{slug}.html",
+    }
+    return post
+
+
+def extra_posts(translations: dict[str, str] | None = None) -> list[dict]:
+    """Окремі пости з content/extra/<slug>.md + covers/<slug>.png."""
+    translations = translations or {}
+    posts = []
+    for path in sorted(EXTRA.glob("*.md")):
+        cover = COVERS / f"{path.stem}.png"
+        if not cover.exists():
+            raise SystemExit(f"Немає обкладинки {cover.name} для content/extra/{path.name}")
+        text = path.read_text(encoding="utf-8").strip()
+        if not text:
+            continue
+        posts.append(make_post(text, cover, translations.get(path.stem)))
+    return posts
+
+
+CSS = """
+:root{
+  --bg:#faf7f2;--paper:#fff;--ink:#1c1917;--ink2:#57534e;--line:#e7e1d8;
+  --accent:#b45309;--accent2:#0f766e;--ua:#0057b7;--ua2:#ffd700;
+  --radius:14px;--shadow:0 1px 2px rgba(28,25,23,.06),0 8px 24px rgba(28,25,23,.06);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && sed -n '210,290p' covers/generate.py
+"title": ["ГОЛОВНЕ", "ЗА ТИЖДЕНЬ"],
+        "sub": "Транспорт · культура · діти · практичне",
+        "date": "9–15 ЛИСТОПАДА",
+        "accent": "#C9A7FF",
+        "icon": "mail",
+    },
+    {
+        "file": "2026-11-21-rome-open-day-markets-closures",
+        "kicker": "РИМ",
+        "title": ["OPEN DAY", "І РИНКИ"],
+        "sub": "Carabinieri · Streghe · благодійні маркети",
+        "date": "21–22 ЛИСТОПАДА",
+        "accent": "#FFD166",
+        "icon": "pin",
+    },
+    {
+        "file": "2026-11-22-rome-week-panettone-bazar",
+        "kicker": "ТИЖДЕНЬ",
+        "title": ["РИМ 23–29", "ЛИСТОПАДА"],
+        "sub": "Panettone Maximo · Urban Bazar · дощі",
+        "date": "23–29 ЛИСТОПАДА",
+        "accent": "#FFB86B",
+        "icon": "pin",
+    },
+]
+
+
+def icon(kind: str, accent: str) -> str:
+    cx, cy, r = 862, 545, 112
+    base = f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="{accent}" stroke-opacity="0.45" stroke-width="2"/>'
+    if kind == "wheel":
+        spokes = []
+        for angle in range(0, 360, 45):
+            import math
+            a = math.radians(angle)
+            x = cx + 74 * math.cos(a)
+            y = cy + 74 * math.sin(a)
+            spokes.append(f'<line x1="{cx}" y1="{cy}" x2="{x:.1f}" y2="{y:.1f}" stroke="{accent}" stroke-width="3" stroke-opacity="0.8"/>')
+            spokes.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="9" fill="{accent}"/>')
+        return base + f'<circle cx="{cx}" cy="{cy}" r="76" fill="none" stroke="{accent}" stroke-width="4"/>' + "".join(spokes) + f'<circle cx="{cx}" cy="{cy}" r="10" fill="{accent}"/>'
+    if kind == "frame":
+        return base + (
+            f'<rect x="{cx-72}" y="{cy-60}" width="144" height="120" rx="6" fill="none" stroke="{accent}" stroke-width="4"/>'
+            f'<circle cx="{cx-34}" cy="{cy-24}" r="10" fill="{accent}"/>'
+            f'<path d="M{cx-60} {cy+44} L{cx-14} {cy-4} L{cx+18} {cy+26} L{cx+46} {cy-10} L{cx+60} {cy+44} Z" fill="{accent}" opacity="0.85"/>'
+        )
+    if kind == "pin":
+        return base + (
+            f'<path d="M{cx} {cy-78} C{cx-46} {cy-78} {cx-62} {cy-34} {cx-62} {cy-8} C{cx-62} {cy+38} {cx} {cy+82} {cx} {cy+82} C{cx} {cy+82} {cx+62} {cy+38} {cx+62} {cy-8} C{cx+62} {cy-34} {cx+46} {cy-78} {cx} {cy-78} Z" fill="none" stroke="{accent}" stroke-width="4"/>'
+            f'<circle cx="{cx}" cy="{cy-16}" r="22" fill="{accent}"/>'
+        )
+    if kind == "home":
+        return base + (
+            f'<path d="M{cx-70} {cy+10} L{cx} {cy-62} L{cx+70} {cy+10}" fill="none" stroke="{accent}" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>'
+            f'<path d="M{cx-52} {cy-2} L{cx-52} {cy+66} L{cx+52} {cy+66} L{cx+52} {cy-2}" fill="none" stroke="{accent}" stroke-width="5" stroke-linejoin="round"/>'
+            f'<rect x="{cx-16}" y="{cy+22}" width="32" height="44" rx="4" fill="{accent}"/>'
+        )
+    if kind == "wallet":
+        return base + (
+            f'<rect x="{cx-70}" y="{cy-46}" width="140" height="92" rx="14" fill="none" stroke="{accent}" stroke-width="4"/>'
+            f'<path d="M{cx-70} {cy-16} L{cx+70} {cy-16}" stroke="{accent}" stroke-width="3" stroke-opacity="0.5"/>'
+            f'<rect x="{cx+22}" y="{cy-6}" width="48" height="32" rx="8" fill="{accent}"/>'
+            f'<circle cx="{cx+46}" cy="{cy+10}" r="5" fill="#0A1424"/>'
+        )
+    if kind == "doc":
+        return base + (
+            f'<path d="M{cx-52} {cy-72} L{cx+24} {cy-72} L{cx+56} {cy-40} L{cx+56} {cy+72} L{cx-52} {cy+72} Z" fill="none" stroke="{accent}" stroke-width="4" stroke-linejoin="round"/>'
+            f'<path d="M{cx+24} {cy-72} L{cx+24} {cy-40} L{cx+56} {cy-40}" fill="none" stroke="{accent}" stroke-width="4" stroke-linejoin="round"/>'
+            f'<line x1="{cx-28}" y1="{cy-16}" x2="{cx+32}" y2="{cy-16}" stroke="{accent}" stroke-width="5" stroke-linecap="round"/>'
+            f'<line x1="{cx-28}" y1="{cy+8}" x2="{cx+32}" y2="{cy+8}" stroke="{accent}" stroke-width="5" stroke-linecap="round"/>'
+            f'<line x1="{cx-28}" y1="{cy+32}" x2="{cx+12}" y2="{cy+32}" stroke="{accent}" stroke-width="5" stroke-linecap="round"/>'
+        )
+    if kind == "shield":
+        return base + (
+            f'<path d="M{cx} {cy-78} L{cx+66} {cy-48} L{cx+66} {cy+4} C{cx+66} {cy+42} {cx+28} {cy+68} {cx} {cy+84} C{cx-28} {cy+68} {cx-66} {cy+42} {cx-66} {cy+4} L{cx-66} {cy-48} Z" fill="none" stroke="{accent}" stroke-width="4" stroke-linejoin="round"/>'
+            f'<path d="M{cx-24} {cy} L{cx-6} {cy+20} L{cx+28} {cy-18}" fill="none" stroke="{accent}" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>'
+        )
+    if kind == "mail":
+        return base + (
+            f'<rect x="{cx-72}" y="{cy-50}" width="144" height="100" rx="12" fill="none" stroke="{accent}" stroke-width="4"/>'
+            f'<path d="M{cx-64} {cy-40} L{cx} {cy+8} L{cx+64} {cy-40}" fill="none" stroke="{accent}" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>'
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && sed -n '290,345p' covers/generate.py
+f'<path d="M{cx-64} {cy-40} L{cx} {cy+8} L{cx+64} {cy-40}" fill="none" stroke="{accent}" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>'
+            f'<path d="M{cx-64} {cy+40} L{cx-18} {cy-2} M{cx+64} {cy+40} L{cx+18} {cy-2}" stroke="{accent}" stroke-width="3" stroke-opacity="0.6"/>'
+        )
+    # metro
+    return base + (
+        f'<rect x="{cx-64}" y="{cy-52}" width="128" height="104" rx="18" fill="none" stroke="{accent}" stroke-width="4"/>'
+        f'<path d="M{cx-38} {cy+30} L{cx-38} {cy-24} L{cx} {cy+10} L{cx+38} {cy-24} L{cx+38} {cy+30}" fill="none" stroke="{accent}" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>'
+        f'<line x1="{cx-92}" y1="{cy+78}" x2="{cx+92}" y2="{cy+78}" stroke="{accent}" stroke-width="3" stroke-dasharray="10 10" stroke-opacity="0.7"/>'
+    )
+
+
+def colosseum(accent: str) -> str:
+    # декоративні арки праворуч знизу
+    parts = [f'<g opacity="0.10" fill="none" stroke="{accent}" stroke-width="4">']
+    for i in range(6):
+        x = 690 + i * 64
+        parts.append(f'<path d="M{x} 790 L{x} 742 Q{x+22} 716 {x+44} 742 L{x+44} 790"/>')
+    parts.append('</g>')
+    return "".join(parts)
+
+
+def cover(c: dict) -> str:
+    accent = c["accent"]
+    lines = c["title"]
+    title_svg = []
+    y = 330 if len(lines) == 2 else 360
+    for line in lines:
+        title_svg.append(
+            f'<text x="80" y="{y}" font-family="PT Sans, Arial, sans-serif" '
+            f'font-size="112" font-weight="800" fill="#FFFFFF" letter-spacing="-3">{escape(line)}</text>'
+        )
+        y += 122
+    sub_y = y + 8
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="810" viewBox="0 0 1080 810">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A1424"/>
+      <stop offset="0.55" stop-color="#132844"/>
+      <stop offset="1" stop-color="#1B3352"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="82%" cy="18%" r="55%">
+      <stop offset="0" stop-color="{accent}" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="{accent}" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1080" height="810" fill="url(#bg)"/>
+  <rect width="1080" height="810" fill="url(#glow)"/>
+  <rect x="30" y="30" width="1020" height="750" rx="28" fill="none" stroke="{accent}" stroke-opacity="0.28" stroke-width="2"/>
+
+  <g font-family="PT Sans, Arial, sans-serif">
+    <circle cx="86" cy="92" r="9" fill="{accent}"/>
+    <text x="110" y="100" font-size="22" font-weight="700" fill="#DCE8F4" letter-spacing="5">РИМ ДЛЯ СВОЇХ</text>
+    <text x="994" y="100" text-anchor="end" font-size="20" font-weight="600" fill="#7F95A9" letter-spacing="3">РИМ · ІТАЛІЯ</text>
+
+    <text x="80" y="230" font-size="24" font-weight="700" fill="{accent}" letter-spacing="5">{escape(c["kicker"])}</text>
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && ls -la automation/logs/ | tail -5 && tail -40 automation/logs/2026-11-23-0900-morning.log
+-rw-r--r--   1 terkin  staff   73318 Nov 23 09:04 2026-11-23-0900-morning.log
+-rw-r--r--@  1 terkin  staff       0 Nov 20 09:49 launchd-evening.err
+-rw-r--r--@  1 terkin  staff       0 Nov 19 19:18 launchd-evening.out
+-rw-r--r--@  1 terkin  staff       0 Nov 20 09:49 launchd-morning.err
+-rw-r--r--@  1 terkin  staff       0 Nov 20 09:00 launchd-morning.out
+    parts.append('</g>')
+    return "".join(parts)
+
+
+def cover(c: dict) -> str:
+    accent = c["accent"]
+    lines = c["title"]
+    title_svg = []
+    y = 330 if len(lines) == 2 else 360
+    for line in lines:
+        title_svg.append(
+            f'<text x="80" y="{y}" font-family="PT Sans, Arial, sans-serif" '
+            f'font-size="112" font-weight="800" fill="#FFFFFF" letter-spacing="-3">{escape(line)}</text>'
+        )
+        y += 122
+    sub_y = y + 8
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="810" viewBox="0 0 1080 810">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A1424"/>
+      <stop offset="0.55" stop-color="#132844"/>
+      <stop offset="1" stop-color="#1B3352"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="82%" cy="18%" r="55%">
+      <stop offset="0" stop-color="{accent}" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="{accent}" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1080" height="810" fill="url(#bg)"/>
+  <rect width="1080" height="810" fill="url(#glow)"/>
+  <rect x="30" y="30" width="1020" height="750" rx="28" fill="none" stroke="{accent}" stroke-opacity="0.28" stroke-width="2"/>
+
+  <g font-family="PT Sans, Arial, sans-serif">
+    <circle cx="86" cy="92" r="9" fill="{accent}"/>
+    <text x="110" y="100" font-size="22" font-weight="700" fill="#DCE8F4" letter-spacing="5">РИМ ДЛЯ СВОЇХ</text>
+    <text x="994" y="100" text-anchor="end" font-size="20" font-weight="600" fill="#7F95A9" letter-spacing="3">РИМ · ІТАЛІЯ</text>
+
+    <text x="80" y="230" font-size="24" font-weight="700" fill="{accent}" letter-spacing="5">{escape(c["kicker"])}</text>
+> build · deepseek-v4.1-flash-free
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && head -30 automation/logs/2026-11-23-0900-morning.log && grep -n "Add post\|content/extra\|publish\|error\|Error\|failed" automation/logs/2026-11-23-0900-morning.log | tail -30
+=== 2026-11-23 09:00:02 slot=morning ===
+[0m
+> build · deepseek-v4.1-flash-free
+I'll start by reading the README and understanding the repository process.
+[0m→ [0mRead README.md 
+[0m$ [0mls -la /Users/terkin/rim-dlia-svoikh
+total 288
+drwxr-xr-x@  22 terkin  staff    704 Nov 22 19:38 .
+drwxr-x---+ 167 terkin  staff   5344 Nov 23 08:50 ..
+-rw-r--r--@   1 terkin  staff   6148 Nov  9 11:01 .DS_Store
+-rw-------@   1 terkin  staff     99 Nov  9 11:21 .env
+-rw-r--r--@   1 terkin  staff    300 Nov  9 11:48 .env.example
+drwxr-xr-x@  14 terkin  staff    448 Nov 22 19:40 .git
+-rw-r--r--@   1 terkin  staff     45 Nov  9 11:06 .gitignore
+-rw-r--r--@   1 terkin  staff  21371 Nov 20 09:49 README.md
+drwxr-xr-x@   3 terkin  staff     96 Nov 10 08:59 __pycache__
+-rw-r--r--@   1 terkin  staff  16781 Nov  9 11:56 ai-promotion.md
+drwxr-xr-x@   3 terkin  staff     96 Nov  9 14:03 analysis
+drwxr-xr-x@  14 terkin  staff    448 Nov 19 10:21 automation
+drwxr-xr-x@   4 terkin  staff    128 Nov  9 10:45 brand
+-rw-r--r--@   1 terkin  staff   6323 Nov  9 13:55 catalog-submission.md
+drwxr-xr-x@  11 terkin  staff    352 Nov 10 10:19 content
+drwxr-xr-x@  53 terkin  staff   1696 Nov 22 19:38 covers
+drwxr-xr-x@  14 terkin  staff    448 Nov 22 19:38 docs
+-rw-r--r--@   1 terkin  staff  17729 Nov  9 11:48 preview.html
+-rw-r--r--@   1 terkin  staff  14675 Nov 11 09:36 promotion-catalogs.md
+-rw-r--r--@   1 terkin  staff  18236 Nov  9 12:10 promotion.md
+-rw-r--r--@   1 terkin  staff  13540 Nov 10 08:57 publish.py
+drwxr-xr-x@   4 terkin  staff    128 Nov  9 14:03 reports
+> build · deepseek-v4.1-flash-free
+97:82d2110 Add post: Rome weekend 20-22 Nov - transport strike windows, CIE open day, Musei in Musica night (uk+it); autopost prompt now Rome-only
+99:a135093 Add post: Shenzhen trilateral, Meloni in Berlin no troops, Rome free HIV tests, Christmas Garden opening (uk+it)
+100:b94bdc0 Add post: Rome newcomer events 19-22 Nov - Christmas Garden, Caput Mundi, Abramovic, Ara Pacis residents (uk+it)
+101:233cc79 Add post: Kerch bridge strike, Trump-Putin-Xi summit 19.11, free Sapienza museums 21.11, Kinder recall, fuel prices (uk+it)
+102:9e48009 Add post: inflation 5.5%, ATAC strike 20.11 confirmed, Rome anti-traffic plan, Ukraine brief (uk+it)
+106:[0m→ [0mRead content/extra/2026-11-22-rome-week-panettone-bazar.md 
+350:2 {"source": "Il Messaggero Roma", "title": "Roma tra sciopero e manifestazioni: un?altra giornata di paralisi, migliaia di romani costretti allo smart-working", "link": "https://www.ilmessaggero.it/roma/metropoli/sciopero_roma_corteo_citta_paralizzata_smart_working-9903006.html", "published": "sab, 21 nov 2026 00:37:48 +0100"}
+353:22 {"source": "ANSA Lazio", "title": "Roma, da domani tornano i tram tra Porta Maggiore e Valle Giulia", "link": "https://www.ansa.it/lazio/notizie/2026/11/22/roma-da-domani-tornano-i-tram-tra-porta-maggiore-e-valle-giulia_f1c5d53c-0982-4455-9655-3e3518a95517.html", "published": "2026-11-22T19:18:26+00:00"}
+356:25 {"source": "ANSA Lazio", "title": "A Roma incendi in calo del 16%, rafforzati mezzi e prevenzione", "link": "https://www.ansa.it/lazio/notizie/2026/11/22/a-roma-incendi-in-calo-del-16-rafforzati-mezzi-e-prevenzione_93c34ccc-6ae9-421d-b663-5d667a22d907.html", "published": "2026-11-22T18:40:56+00:00"}
+359:29 {"source": "AGI", "title": "Malattie rare, a Tor Bella Monaca sport e solidarietà per accendere i riflettori sulla CIDP", "link": "https://www.agi.it/cronaca/news/2026-11-22/roma-tor-bella-monaca-cidp-40144388/", "published": "2026-11-22T16:14:10+00:00"}
+362:31 {"source": "ANSA Lazio", "title": "Roma segreta, un Atlante svela luoghi nascosti da folle e cliché", "link": "https://www.ansa.it/lazio/notizie/2026/11/22/roma-segreta-un-atlante-svela-luoghi-nascosti-da-folle-e-cliche_0a5f9984-a6f8-4d86-b795-ebfa0a909ea8.html", "published": "2026-11-22T10:31:06+00:00"}
+365:28 {"source": "AGI", "title": "Christmas Parade a Roma: migliaia in centro per aiutare i bambini del Bambino Gesù", "link": "https://www.agi.it/cronaca/video/2026-11-22/christmas-parade-roma-bambino-ges-40144672/", "published": "2026-11-22T17:02:04+00:00"}
+368:1 {"source": "Il Messaggero Roma", "title": "Morto Paolo Bulgari, il grande gioielliere aveva 89 anni: i funerali a Roma lunedì 23 novembre", "link": "https://www.ilmessaggero.it/roma/centro_storico/morto_paolo_bulgari_chi_era-9904444.html", "published": "sab, 21 nov 2026 13:15:00 +0100"}
+519:[0m✗ [0mWebFetch https://www.romatoday.it/attualita/tram-linea-3-riattivata-23-novembre-2026.html failed
+520:[91m[1mError: [0mStatusCode: non 2xx status code (404 GET https://www.romatoday.it/attualita/tram-linea-3-riattivata-23-novembre-2026.html)
+546:[0m→ [0mRead content/extra/2026-11-21-rome-open-day-markets-closures.md 
+583:EXTRA = ROOT / "content/extra"
+730:[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && sed -n '1,80p' publish.py && grep -n "def cmd_file\|cover\|slug" publish.py | head -40
+745:  python3 publish.py check
+746:  python3 publish.py setup
+747:  python3 publish.py pinned
+748:  python3 publish.py post 3
+749:  python3 publish.py all
+750:  python3 publish.py pin 123
+751:  python3 publish.py post 3 --dry-run
+762:import urllib.error
+851:307:    """Окремі пости з content/extra/<slug>.md + covers/<slug>.png."""
+938:    Підтримує **жирний** усередині рядка (markdown-файли з content/extra).
+1008:    """Окремі пости з content/extra/<slug>.md + covers/<slug>.png."""
+1014:            raise SystemExit(f"Немає обкладинки {cover.name} для content/extra/{path.name}")
+[0m$ [0mps aux | grep -E "scheduled_post|opencode|publish.py" | grep -v grep | head -20
+terkin            1951  22.1  2.1 494997552 401664   ??  Ss   Sat09AM   3:26.22 /Users/terkin/Library/Application Support/ai.opencode.desktop/cli/2.2.6-arm64/opencode-cli serve --service
+terkin            1875   0.0  0.0 539206144    624   ??  S    Sat09AM   0:00.01 /Applications/OpenCode.app/Contents/Frameworks/Electron Framework.framework/Helpers/chrome_crashpad_handler --no-rate-limit --monitor-self-annotation=ptype=crashpad-handler --database=/Users/terkin/Library/Application Support/ai.opencode.desktop/Crashpad --annotation=_productName=OpenCode --annotation=_version=2.2.6 --annotation=plat=OS X --annotation=prod=Electron --annotation=ver=44.9.1 --handshake-fd=69
+terkin           58924   0.0  0.4 494803664  68144   ??  S     9:00AM   0:01.37 /Users/terkin/.opencode/bin/opencode run --auto --model opencode/deepseek-v4.1-flash-free --title M-PM^PM-PM-2M-QM^BM-PM->M-PM-?M-PM->M-QM^AM-QM^B morning 2026-11-23-0900 M-PM-"M-PM-8 M-PM-?M-QM^@M-PM-0M-QM^FM-QM^NM-QM^TM-QM^H M-QM^C M-QM^@M-PM-5M-PM-?M-PM->M-PM-7M-PM-8M-QM^BM-PM->M-QM^@M-QM^VM-QM^W /Users/terkin/rim-dlia-svoikh (M-QM^AM-PM-0M-PM-9M-QM^B ucrainiroma.it + Telegram-M-PM-:M-PM-0M-PM-=M-PM-0M-PM-; @rim_dlia_svoih).\012M-PM-!M-PM-?M-PM->M-QM^GM-PM-0M-QM^BM-PM-:M-QM^C M-PM-?M-QM^@M-PM->M-QM^GM-PM-8M-QM^BM-PM-0M-PM-9 README.md M-QM^V M-PM-4M-PM->M-QM^BM-QM^@M-PM-8M-PM-<M-QM^CM-PM-9M-QM^AM-QM^O M-PM->M-PM-?M-PM-8M-QM^AM-PM-0M-PM-=M-PM->M-PM-3M-PM-> M-PM-?M-QM^@M-PM->M-QM^FM-PM-5M-QM^AM-QM^C. M-PM-#M-QM^AM-QM^O M-QM^BM-PM-5M-PM-:M-QM^AM-QM^BM-PM->M-PM-2M-PM-0 M-PM-?M-QM^@M-PM->M-PM-4M-QM^CM-PM-:M-QM^FM-QM^VM-QM^O M-bM^@M^T M-QM^CM-PM-:M-QM^@M-PM-0M-QM^WM-PM-=M-QM^AM-QM^LM-PM-:M-PM->M-QM^N (M-QM^AM-PM-0M-PM-9M-QM^B M-QM^BM-PM-0M-PM-:M-PM->M-PM-6 M-PM-<M-PM-0M-QM^T M-QM^VM-QM^BM-PM-0M-PM-;M-QM^VM-PM-9M-QM^AM-QM^LM-PM-:M-QM^C M-PM-2M-PM-5M-QM^@M-QM^AM-QM^VM-QM^N M-PM-2 content/it/).\012M-PM^]M-QM^VM-PM-:M-PM->M-PM-;M-PM-8 M-PM-=M-PM-5 M-PM-4M-QM^@M-QM^CM-PM-:M-QM^CM-PM-9 M-PM-2M-PM-<M-QM^VM-QM^AM-QM^B .env M-QM^V M-QM^BM-PM->M-PM-:M-PM-5M-PM-=M-PM-8.\012M-PM^SM-PM^^M-PM^[M-PM^^M-PM^RM-PM^]M-PM^U M-PM^_M-P\240M-PM^PM-PM^RM-PM^XM-PM^[M-PM^^ M-PM-$M-PM^^M-PM^ZM-PM-#M-PM-!M-PM-#: M-PM-?M-PM-8M-QM^HM-PM-5M-PM-<M-PM-> M-PM-"M-PM^FM-PM^[M-PM-,M-PM^ZM-PM^X M-PM-?M-QM^@M-PM-> M-P\240M-PM-8M-PM-< M-QM^V M-QM^BM-PM-5, M-QM^IM-PM-> M-PM-1M-PM-5M-PM-7M-PM-?M-PM->M-QM^AM-PM-5M-QM^@M-PM-5M-PM-4M-PM-=M-QM^LM-PM-> M-QM^AM-QM^BM-PM->M-QM^AM-QM^CM-QM^TM-QM^BM-QM^LM-QM^AM-QM^O M-PM-6M-PM-8M-QM^BM-QM^BM-QM^O M-PM-2 M-P\240M-PM-8M-PM-<M-QM^V.\012M-PM^WM-PM^PM-PM^QM-PM^^M-P\240M-PM^^M-PM^]M-PM^UM-PM^]M-PM^^ M-QM^OM-PM-: M-PM-3M-PM->M-PM-;M-PM->M-PM-2M-PM-=M-QM^C M-QM^BM-PM-5M-PM-<M-QM^C: M-QM^AM-PM-2M-QM^VM-QM^BM-PM->M-PM-2M-QM^V M-PM-=M-PM->M-PM-2M-PM-8M-PM-=M-PM-8 (M-QM^AM-PM-0M-PM-<M-QM^VM-QM^BM-PM-8, M-PM-"M-QM^@M-PM-0M-PM-<M-PM-?, M-PM^_M-QM^CM-QM^BM-QM^VM-PM-=, M-PM-!M-QM^V, M-PM-2M-QM^VM-PM-9M-PM-=M-PM-0, M-PM^]M-PM^PM-PM-"M-PM^^, M-PM^QM-QM^@M-QM^NM-QM^AM-QM^AM-PM-5M-PM-;M-QM^L, M-PM^RM-PM-0M-QM^HM-PM-8M-PM-=M-PM-3M-QM^BM-PM->M-PM-=), M-PM-7M-PM-0M-PM-3M-PM-0M-PM-;M-QM^LM-PM-=M-PM->M-QM^CM-PM-:M-QM^@M-PM-0M-QM^WM-PM-=M-QM^AM-QM^LM-PM-:M-QM^V M-QM^BM-PM-0 M-PM-7M-PM-0M-PM-3M-PM-0M-PM-;M-QM^LM-PM-=M-PM->M-QM^VM-QM^BM-PM-0M-PM-;M-QM^VM-PM-9M-QM^AM-QM^LM-PM-:M-QM^V M-PM-=M-PM->M-PM-2M-PM-8M-PM-=M-PM-8, M-QM^OM-PM-:M-QM^IM-PM-> M-PM-2M-PM->M-PM-=M-PM-8 M-PM-=M-PM-5 M-PM-<M-PM-0M-QM^NM-QM^BM-QM^L M-PM-?M-QM^@M-QM^OM-PM-<M-PM->M-QM^W M-PM-?M-QM^@M-PM-0M-PM-:M-QM^BM-PM-8M-QM^GM-PM-=M-PM->M-QM^W M-PM-4M-QM^VM-QM^W M-PM-=M-PM-0 M-PM-;M-QM^NM-PM-4M-PM-8M-PM-=M-QM^C, M-QM^OM-PM-:M-PM-0 M-PM-6M-PM-8M-PM-2M-PM-5 M-PM-2 M-P\240M-PM-8M-PM-<M-QM^V.\012M-PM^_M-PM->M-PM-;M-QM^VM-QM^BM-PM-8M-PM-:M-PM-0 M-bM^@M^T M-PM-;M-PM-8M-QM^HM-PM-5 M-PM-<M-QM^VM-QM^AM-QM^FM-PM-5M-PM-2M-PM-0: M-QM^@M-QM^VM-QM^HM-PM-5M-PM-=M-PM-=M-QM^O Comune di Roma / Regione Lazio, M-QM^OM-PM-:M-QM^V M-PM-7M-PM-<M-QM^VM-PM-=M-QM^NM-QM^NM-QM^BM-QM^L M-PM-?M-QM^@M-PM-0M-PM-2M-PM-8M-PM-;M-PM-0 M-PM-6M-PM-8M-QM^BM-QM^BM-QM^O M-PM-2 M-PM-<M-QM^VM-QM^AM-QM^BM-QM^V (M-QM^BM-QM^@M-PM-0M-PM-=M-QM^AM-PM-?M-PM->M-QM^@M-QM^B, M-QM^BM-PM-0M-QM^@M-PM-8M-QM^DM-PM-8, M-PM-4M-PM->M-PM-7M-PM-2M-PM->M-PM-;M-PM-8, M-QM^GM-PM-5M-QM^@M-PM-3M-PM-8, M-PM-?M-PM->M-QM^AM-PM-;M-QM^CM-PM-3M-PM-8, ZTL, M-PM-1M-QM^CM-PM-4M-QM^VM-PM-2M-PM-=M-PM-8M-QM^FM-QM^BM-PM-2M-PM->, M-PM-?M-PM-0M-QM^@M-PM-:M-PM-8).\012M-PM^TM-PM->M-PM-1M-QM^@M-PM-5 M-PM-?M-QM^VM-PM-4M-QM^EM-PM->M-PM-4M-QM^OM-QM^BM-QM^L: M-PM-?M-PM->M-PM-4M-QM^VM-QM^W M-QM^BM-PM-0 M-PM-2M-PM-8M-QM^AM-QM^BM-PM-0M-PM-2M-PM-:M-PM-8 M-PM-2 M-P\240M-PM-8M-PM-<M-QM^V, M-PM-1M-PM-5M-PM-7M-PM-:M-PM->M-QM^HM-QM^BM-PM->M-PM-2M-PM-=M-QM^V M-PM-<M-PM->M-PM-6M-PM-;M-PM-8M-PM-2M-PM->M-QM^AM-QM^BM-QM^V, M-PM-=M-PM->M-PM-2M-QM^V M-PM-2M-QM^VM-PM-4M-PM-:M-QM^@M-PM-8M-QM^BM-QM^BM-QM^O, M-QM^@M-PM-8M-PM-=M-PM-:M-PM-8, M-QM^AM-QM^BM-QM^@M-PM-0M-PM-9M-PM-:M-PM-8 M-PM-9 M-QM^BM-QM^@M-PM-0M-PM-=M-QM^AM-PM-?M-PM->M-QM^@M-QM^B, M-QM^FM-QM^VM-PM-=M-PM-8/M-QM^BM-PM-0M-QM^@M-PM-8M-QM^DM-PM-8 M-PM-2 M-P\240M-PM-8M-PM-<M-QM^V, M-PM-4M-PM-5M-PM-4M-PM-;M-PM-0M-PM-9M-PM-=M-PM-8 M-PM-4M-PM-;M-QM^O M-QM^@M-PM-5M-PM-7M-PM-8M-PM-4M-PM-5M-PM-=M-QM^BM-QM^VM-PM-2, M-PM-<M-QM^VM-QM^AM-QM^LM-PM-:M-QM^V M-PM-?M-PM->M-QM^AM-PM-;M-QM^CM-PM-3M-PM-8, M-PM-?M-PM->M-PM-3M-PM->M-PM-4M-PM-0/M-PM-5M-PM-:M-PM->M-PM-;M-PM->M-PM-3M-QM^VM-QM^GM-PM-=M-QM^V M-PM-=M-PM-5M-PM-4M-QM^VM-PM-;M-QM^V, M-PM-?M-PM->M-QM^@M-PM-0M-PM-4M-PM-8 M-PM-4M-PM-;M-QM^O M-PM-=M-PM->M-PM-2M-PM-0M-QM^GM-PM-:M-QM^VM-PM-2.\012M-PM-/M-PM-:M-QM^IM-PM-> M-PM-=M-PM->M-PM-2M-PM-8M-PM-=M-PM-0 M-QM^AM-PM-2M-QM^VM-QM^BM-PM->M-PM-2M-PM-0, M-PM-0M-PM-;M-PM-5 M-PM-<M-PM-0M-QM^T M-PM-?M-QM^@M-QM^OM-PM-<M-PM-8M-PM-9 M-QM^@M-PM-8M-PM-<M-QM^AM-QM^LM-PM-:M-PM-8M-PM-9 M-PM-:M-QM^CM-QM^B (M-PM-=M-PM-0M-PM-?M-QM^@. M-PM-7M-PM-<M-QM^VM-PM-=M-PM-0 M-QM^FM-QM^VM-PM-= M-PM-=M-PM-0 M-PM-?M-PM-0M-PM-;M-QM^LM-PM-=M-PM-5 M-PM-2 M-P\240M-PM-8M-PM-<M-QM^V, M-PM-7M-PM-0M-PM-:M-QM^@M-PM-8M-QM^BM-QM^BM-QM^O M-PM-2M-QM^CM-PM-;M-PM-8M-QM^FM-QM^V M-QM^GM-PM-5M-QM^@M-PM-5M-PM-7 M-QM^AM-PM-0M-PM-<M-QM^VM-QM^B) M-bM^@M^T M-PM-?M-PM->M-PM-4M-PM-0M-PM-2M-PM-0M-PM-9 M-PM-!M-PM^PM-PM^\M-PM^U M-QM^@M-PM-8M-PM-<M-QM^AM-QM^LM-PM-:M-PM-8M-PM-9 M-PM-:M-QM^CM-QM^B, M-PM-0 M-PM-=M-PM-5 M-QM^AM-PM-0M-PM-<M-QM^C M-QM^AM-PM-2M-QM^VM-QM^BM-PM->M-PM-2M-QM^C M-PM-?M-PM->M-PM-4M-QM^VM-QM^N.\012M-PM^WM-PM-0M-PM-2M-PM-4M-PM-0M-PM-=M-PM-=M-QM^O: M-P\240M-PM^PM-PM^]M-PM^ZM-PM^^M-PM^RM-PM^XM-PM^Y M-PM^RM-PM^XM-PM^_M-PM-#M-PM-!M-PM^Z. M-PM^WM-QM^@M-PM->M-PM-1M-PM-8 M-QM^@M-QM^VM-PM-2M-PM-=M-PM-> M-PM^^M-PM^TM-PM^XM-PM^] M-PM-=M-PM->M-PM-2M-PM-8M-PM-9 M-PM-?M-PM->M-QM^AM-QM^B M-PM-7M-PM-0 M-QM^AM-QM^LM-PM->M-PM-3M-PM->M-PM-4M-PM-=M-QM^V M-bM^@M^T M-PM-?M-QM^@M-PM-> M-P\240M-PM-8M-PM-<.\0121) M-PM^WM-PM-0M-PM-?M-QM^CM-QM^AM-QM^BM-PM-8 python3 automation/collect.py M-QM^V M-PM-?M-PM-5M-QM^@M-PM-5M-PM-3M-PM-;M-QM^OM-PM-=M-QM^L automation/candidates.json (M-PM-4M-PM-6M-PM-5M-QM^@M-PM-5M-PM-;M-PM-0 Il Messaggero Roma, Corriere Roma, RomaToday M-QM^BM-PM->M-QM^IM-PM->).\0122) M-PM^TM-PM->M-PM-4M-PM-0M-QM^BM-PM-:M-PM->M-PM-2M-PM-> M-PM-?M-PM->M-QM^HM-QM^CM-PM-:M-PM-0M-PM-9 M-QM^C Google News RSS M-PM-7M-PM-0M-PM-?M-PM-8M-QM^BM-PM-8 M-PM-=M-PM-0 M-PM-:M-QM^HM-QM^BM-PM-0M-PM-;M-QM^B: M-BM-+Roma oggiM-BM-;, M-BM-+Roma eventi <M-PM-4M-PM-0M-QM^BM-PM-0>M-BM-;, M-BM-+Roma trasporti scioperoM-BM-;, M-BM-+Roma gratisM-BM-;, M-BM-+Roma apertura mostraM-BM-;. M-PM-$M-PM-0M-PM-:M-QM^BM-PM-8 M-PM-?M-QM^VM-PM-4M-QM^BM-PM-2M-PM-5M-QM^@M-PM-4M-PM-6M-QM^CM-PM-9 2+ M-PM-4M-PM-6M-PM-5M-QM^@M-PM-5M-PM-;M-PM-0M-PM-<M-PM-8 M-PM-0M-PM-1M-PM-> M-PM->M-QM^DM-QM^VM-QM^FM-QM^VM-PM-9M-PM-=M-PM-8M-PM-< M-QM^AM-PM-0M-PM-9M-QM^BM-PM->M-PM-<.\0123) M-PM^^M-PM-1M-PM-5M-QM^@M-PM-8 3M-bM^@M^S5 M-QM^@M-PM-8M-PM-<M-QM^AM-QM^LM-PM-:M-PM-8M-QM^E M-QM^BM-PM-5M-PM-< M-PM-4M-PM-=M-QM^O (M-PM-?M-PM->M-PM-4M-QM^VM-QM^O/M-PM-2M-PM-8M-QM^AM-QM^BM-PM-0M-PM-2M-PM-:M-PM-0, M-PM-1M-PM-5M-PM-7M-PM-:M-PM->M-QM^HM-QM^BM-PM->M-PM-2M-PM-=M-PM-0 M-PM-<M-PM->M-PM-6M-PM-;M-PM-8M-PM-2M-QM^VM-QM^AM-QM^BM-QM^L, M-QM^BM-QM^@M-PM-0M-PM-=M-QM^AM-PM-?M-PM->M-QM^@M-QM^B M-PM-0M-PM-1M-PM-> M-QM^AM-QM^BM-QM^@M-PM-0M-PM-9M-PM-:, M-PM-?M-QM^@M-PM-0M-PM-:M-QM^BM-PM-8M-QM^GM-PM-=M-PM-0 M-PM-4M-QM^@M-QM^VM-PM-1M-PM-=M-PM-8M-QM^FM-QM^O M-PM-4M-PM-;M-QM^O M-PM-=M-PM->M-PM-2M-PM-0M-QM^GM-PM-:M-PM-0) M-QM^V M-PM-?M-PM->M-PM-4M-PM-0M-PM-9 M-PM-:M-PM->M-QM^@M-PM->M-QM^BM-PM-:M-PM-8M-PM-<M-PM-8 M-PM-1M-PM-;M-PM->M-PM-:M-PM-0M-PM-<M-PM-8.\0124) M-PM^]M-PM-5 M-PM-?M-PM->M-PM-2M-QM^BM-PM->M-QM^@M-QM^NM-PM-9 M-QM^BM-PM-5M-PM-<M-PM-8 M-PM-7 content/extra/ M-PM-7M-PM-0 M-PM->M-QM^AM-QM^BM-PM-0M-PM-=M-PM-=M-QM^V 2 M-PM-4M-PM-=M-QM^V.\0125) M-PM-!M-QM^BM-PM-2M-PM->M-QM^@M-PM-8 content/extra/<YYYY-MM-DD-slug>.md (M-PM-?M-PM->M-PM-2M-PM-=M-PM-8M-PM-9 M-QM^BM-PM-5M-PM-:M-QM^AM-QM^B), content/it/<slug>.md (M-QM^VM-QM^BM-PM-0M-PM-;M-QM^VM-PM-9M-QM^AM-QM^LM-PM-:M-PM-8M-PM-9 M-PM-?M-PM-5M-QM^@M-PM-5M-PM-:M-PM-;M-PM-0M-PM-4 M-QM^BM-PM->M-PM-3M-PM-> M-PM-6 M-PM-<M-PM-0M-QM^BM-PM-5M-QM^@M-QM^VM-PM-0M-PM-;M-QM^C), content/channel/<slug>-post.md (M-bM^IM-$1024 M-QM^AM-PM-8M-PM-<M-PM-2M-PM->M-PM-;M-PM-8, M-PM-?M-PM-5M-QM^@M-PM-5M-PM-2M-QM^VM-QM^@ len()).\0126) M-PM^TM-PM->M-PM-4M-PM-0M-PM-9 M-PM-7M-PM-0M-PM-?M-PM-8M-QM^A M-PM->M-PM-1M-PM-:M-PM-;M-PM-0M-PM-4M-PM-8M-PM-=M-PM-:M-PM-8 M-QM^C covers/generate.py (kicker/title/sub/date/accent/icon M-PM-7 M-PM-=M-PM-0M-QM^OM-PM-2M-PM-=M-PM-8M-QM^E), M-PM-7M-PM-3M-PM-5M-PM-=M-PM-5M-QM^@M-QM^CM-PM-9 PNG M-QM^GM-PM-5M-QM^@M-PM-5M-PM-7 python3 covers/generate.py M-QM^BM-PM-0 /opt/homebrew/bin/rsvg-convert -w 1080 -h 810.\0127) M-PM^WM-PM-0M-PM-?M-QM^CM-QM^AM-QM^BM-PM-8 python3 automation/site.py, M-PM-?M-PM->M-QM^BM-QM^VM-PM-< git add -A && git commit && git push origin main.\0128) M-PM^^M-PM-?M-QM^CM-PM-1M-PM-;M-QM^VM-PM-:M-QM^CM-PM-9: python3 publish.py file content/channel/<slug>-post.md --cover covers/<slug>.png\0129) M-PM^TM-PM->M-QM^GM-PM-5M-PM-:M-PM-0M-PM-9M-QM^AM-QM^O M-PM-1M-QM^VM-PM-;M-PM-4M-PM-0 GitHub Pages (gh api repos/terkin/rim-dlia-svoih/pages/builds) M-QM^V M-PM-7M-PM-0M-PM-?M-QM^CM-QM^AM-QM^BM-PM-8 python3 automation/indexnow.py.\01210) M-PM^_M-PM-5M-QM^@M-PM-5M-PM-2M-QM^VM-QM^@ M-PM-?M-PM->M-QM^AM-QM^B M-QM^GM-PM-5M-QM^@M-PM-5M-PM-7 https://t.me/s/rim_dlia_svoih M-QM^V M-PM-6M-PM-8M-PM-2M-QM^V URL M-QM^AM-PM-0M-PM-9M-QM^BM-QM^C.\012M-PM-/M-PM-:M-QM^IM-PM-> M-QM^@M-PM-8M-PM-<M-QM^AM-QM^LM-PM-:M-PM-8M-QM^E M-PM-=M-PM->M-PM-2M-PM-8M-PM-= M-PM-<M-PM-0M-PM-;M-PM-> M-bM^@M^T M-PM-7M-QM^@M-PM->M-PM-1M-PM-8 M-PM-:M-PM->M-QM^@M-PM-8M-QM^AM-PM-=M-PM-8M-PM-9 evergreen-M-PM-?M-PM->M-QM^AM-QM^B M-PM-4M-PM-;M-QM^O M-PM-=M-PM->M-PM-2M-PM-0M-QM^GM-PM-:M-QM^VM-PM-2 M-QM^C M-P\240M-PM-8M-PM-<M-QM^V (M-PM-1M-PM-5M-PM-7 M-PM-?M-PM->M-PM-2M-QM^BM-PM->M-QM^@M-QM^VM-PM-2). M-PM-!M-PM-2M-QM^VM-QM^BM-PM->M-PM-2M-QM^V M-PM-=M-PM->M-PM-2M-PM-8M-PM-=M-PM-8 M-PM-=M-PM-5 M-PM-?M-QM^CM-PM-1M-PM-;M-QM^VM-PM-:M-QM^CM-PM-9 M-PM-=M-PM-0M-PM-2M-QM^VM-QM^BM-QM^L M-QM^OM-PM-: M-PM-7M-PM-0M-PM-?M-PM-0M-QM^AM-PM-=M-PM-8M-PM-9 M-PM-2M-PM-0M-QM^@M-QM^VM-PM-0M-PM-=M-QM^B.
+terkin           58920   0.0  0.0 488786784    848   ??  S     9:00AM   0:00.02 /bin/zsh /Users/terkin/rim-dlia-svoikh/automation/scheduled_post.sh morning
+> build · deepseek-v4.1-flash-free
+[0m→ [0mRead automation/scheduled_post.sh 
+> build · deepseek-v4.1-flash-free
+I have four confirmed Rome topics. Writing the Ukrainian full text, Italian translation, and the short channel version.
+[0m← [0mWrite content/it/2026-11-23-rome-tram3-free-exhibitions-25nov.md
+Created file successfully: content/it/2026-11-23-rome-tram3-free-exhibitions-25nov.md
+[0m← [0mWrite content/extra/2026-11-23-rome-tram3-free-exhibitions-25nov.md
+Created file successfully: content/extra/2026-11-23-rome-tram3-free-exhibitions-25nov.md
+> build · deepseek-v4.1-flash-free
+[0m← [0mWrite content/channel/2026-11-23-rome-tram3-free-exhibitions-25nov-post.md
+Created file successfully: content/channel/2026-11-23-rome-tram3-free-exhibitions-25nov-post.md
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 -c "
+from pathlib import Path
+p=Path('content/channel/2026-11-23-rome-tram3-free-exhibitions-25nov-post.md')
+t=p.read_text(encoding='utf-8')
+print('chars:', len(t), 'limit OK' if len(t)<=1024 else 'TOO LONG')
+"
+chars: 862 limit OK
+> build · deepseek-v4.1-flash-free
+[0m← [0mEdit covers/generate.py
+Index: covers/generate.py
+===================================================================
+--- covers/generate.py
++++ covers/generate.py
+@@ -230,8 +230,17 @@
+         "date": "23–29 ЛИСТОПАДА",
+         "accent": "#FFB86B",
+         "icon": "pin",
+     },
++    {
++        "file": "2026-11-23-rome-tram3-free-exhibitions-25nov",
++        "kicker": "ПОНЕДІЛОК",
++        "title": ["ТРАМВАЙ 3", "І КУЛЬТУРА"],
++        "sub": "WeGil · Shodō · 25 листопада",
++        "date": "23 ЛИСТОПАДА",
++        "accent": "#5FD3C4",
++        "icon": "wheel",
++    },
+ ]
+ 
+ 
+ def icon(kind: str, accent: str) -> str:
+
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 covers/generate.py >/tmp/covers_out.txt 2>&1 && /opt/homebrew/bin/rsvg-convert -w 1080 -h 810 covers/2026-11-23-rome-tram3-free-exhibitions-25nov.svg -o covers/2026-11-23-rome-tram3-free-exhibitions-25nov.png && ls -lh covers/2026-11-23-rome-tram3-free-exhibitions-25nov.* && file covers/2026-11-23-rome-tram3-free-exhibitions-25nov.png
+-rw-r--r--@ 1 terkin  staff   190K Nov 23 09:06 covers/2026-11-23-rome-tram3-free-exhibitions-25nov.png
+-rw-r--r--@ 1 terkin  staff   3.8K Nov 23 09:06 covers/2026-11-23-rome-tram3-free-exhibitions-25nov.svg
+covers/2026-11-23-rome-tram3-free-exhibitions-25nov.png: PNG image data, 1080 x 810, 8-bit/color RGB, non-interlaced
+> build · deepseek-v4.1-flash-free
+[0m→ [0mRead covers/2026-11-23-rome-tram3-free-exhibitions-25nov.png 
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 automation/site.py 2>&1 | tail -30
+Сайт згенеровано → /Users/terkin/rim-dlia-svoikh/docs
+  index.html · 26 постів · sitemap.xml · robots.txt · rss.xml
+  it/: 19 перекладених постів
+  IndexNow key: 59109d96a7a1479b32410c75db6bd891 → docs/59109d96a7a1479b32410c75db6bd891.txt
+  SITE_URL: https://ucrainiroma.it
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && ls docs/posts/2026-11-23* docs/it/posts/2026-11-23* && grep -o '<title>[^<]*</title>' docs/posts/2026-11-23-rome-tram3-free-exhibitions-25nov.html docs/it/posts/2026-11-23-rome-tram3-free-exhibitions-25nov.html && git status --short
+docs/it/posts/2026-11-23-rome-tram3-free-exhibitions-25nov.html
+docs/posts/2026-11-23-rome-tram3-free-exhibitions-25nov.html
+docs/posts/2026-11-23-rome-tram3-free-exhibitions-25nov.html:<title>🚋 Рим, 23 листопада: трамвай 3 знову їде через центр, дві безкоштовні виставки й що буде 25 листопада — Рим для своїх</title>
+docs/it/posts/2026-11-23-rome-tram3-free-exhibitions-25nov.html:<title>🚋 Roma, 23 novembre: torna il tram 3, due mostre gratuite e cosa succede il 25 novembre — Rim per i nostri</title>
+ M automation/candidates.json
+ M automation/logs/2026-11-22-1930-evening.log
+ M covers/generate.py
+ M docs/index.html
+ M docs/it/index.html
+ M docs/it/posts/2026-11-22-rome-week-panettone-bazar.html
+ M docs/posts/2026-11-22-rome-week-panettone-bazar.html
+ M docs/rss.xml
+ M docs/sitemap.xml
+?? automation/logs/2026-11-23-0900-morning.log
+?? content/channel/2026-11-23-rome-tram3-free-exhibitions-25nov-post.md
+?? content/extra/2026-11-23-rome-tram3-free-exhibitions-25nov.md
+?? content/it/2026-11-23-rome-tram3-free-exhibitions-25nov.md
+?? covers/2026-11-23-rome-tram3-free-exhibitions-25nov.png
+?? covers/2026-11-23-rome-tram3-free-exhibitions-25nov.svg
+?? docs/covers/2026-11-23-rome-tram3-free-exhibitions-25nov.png
+?? docs/it/posts/2026-11-23-rome-tram3-free-exhibitions-25nov.html
+?? docs/posts/2026-11-23-rome-tram3-free-exhibitions-25nov.html
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && cat .gitignore && git ls-files automation/logs | tail -5
+.env
+.env.local
+__pycache__/
+*.pyc
+.DS_Store
+automation/logs/2026-11-22-1930-evening.log
+automation/logs/launchd-evening.err
+automation/logs/launchd-evening.out
+automation/logs/launchd-morning.err
+automation/logs/launchd-morning.out
+> build · deepseek-v4.1-flash-free

@@ -231,6 +231,15 @@ COVERS = [
         "accent": "#FFB86B",
         "icon": "pin",
     },
+    {
+        "file": "2026-11-23-rome-tram3-free-exhibitions-25nov",
+        "kicker": "ПОНЕДІЛОК",
+        "title": ["ТРАМВАЙ 3", "І КУЛЬТУРА"],
+        "sub": "WeGil · Shodō · 25 листопада",
+        "date": "23 ЛИСТОПАДА",
+        "accent": "#5FD3C4",
+        "icon": "wheel",
+    },
 ]
 
 
