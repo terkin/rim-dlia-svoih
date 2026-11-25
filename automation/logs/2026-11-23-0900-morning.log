@@ -1379,3 +1379,111 @@ automation/logs/launchd-evening.out
 automation/logs/launchd-morning.err
 automation/logs/launchd-morning.out
 > build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && git add -A
+(no output)
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && git commit -m "Add post: Rome 23 Nov - tram 3 restored, free Riccardi 100 and Shodo exhibitions, 25 Nov city programme (uk+it)"
+[main ad8f1f8] Add post: Rome 23 Nov - tram 3 restored, free Riccardi 100 and Shodo exhibitions, 25 Nov city programme (uk+it)
+ 18 files changed, 2066 insertions(+), 166 deletions(-)
+ create mode 100644 automation/logs/2026-11-23-0900-morning.log
+ create mode 100644 content/channel/2026-11-23-rome-tram3-free-exhibitions-25nov-post.md
+ create mode 100644 content/extra/2026-11-23-rome-tram3-free-exhibitions-25nov.md
+ create mode 100644 content/it/2026-11-23-rome-tram3-free-exhibitions-25nov.md
+ create mode 100644 covers/2026-11-23-rome-tram3-free-exhibitions-25nov.png
+ create mode 100644 covers/2026-11-23-rome-tram3-free-exhibitions-25nov.svg
+ create mode 100644 docs/covers/2026-11-23-rome-tram3-free-exhibitions-25nov.png
+ create mode 100644 docs/it/posts/2026-11-23-rome-tram3-free-exhibitions-25nov.html
+ create mode 100644 docs/posts/2026-11-23-rome-tram3-free-exhibitions-25nov.html
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && git push origin main 2>&1 | tail -20
+To github.com:terkin/rim-dlia-svoih.git
+   eae3a15..ad8f1f8  main -> main
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 publish.py file content/channel/2026-11-23-rome-tram3-free-exhibitions-25nov-post.md --cover covers/2026-11-23-rome-tram3-free-exhibitions-25nov.png 2>&1 | tail -20
+Пост: 861 символів · 2026-11-23-rome-tram3-free-exhibitions-25nov-post.md · обкладинка 2026-11-23-rome-tram3-free-exhibitions-25nov.png
+  message_id=30
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && gh api repos/terkin/rim-dlia-svoih/pages/builds --jq '.[0:3][] | {status, created_at, updated_at, commit: .commit[0:8], url: .url}'
+{"commit":"ad8f1f8b","created_at":"2026-11-23T08:06:42Z","status":"building","updated_at":"2026-11-23T08:06:42Z","url":"https://api.github.com/repos/terkin/rim-dlia-svoih/pages/builds/1395047875"}
+{"commit":"eae3a15c","created_at":"2026-11-22T18:39:38Z","status":"built","updated_at":"2026-11-22T18:39:59Z","url":"https://api.github.com/repos/terkin/rim-dlia-svoih/pages/builds/1393416660"}
+{"commit":"c275cb7d","created_at":"2026-11-21T08:32:53Z","status":"built","updated_at":"2026-11-21T08:33:15Z","url":"https://api.github.com/repos/terkin/rim-dlia-svoih/pages/builds/1389435760"}
+> build · deepseek-v4.1-flash-free
+[0m$ [0msleep 30; cd /Users/terkin/rim-dlia-svoikh && gh api repos/terkin/rim-dlia-svoih/pages/builds --jq '.[0] | {status, created_at, updated_at, commit: .commit[0:8], error}'
+{"commit":"ad8f1f8b","created_at":"2026-11-23T08:06:42Z","error":{"message":null},"status":"built","updated_at":"2026-11-23T08:07:06Z"}
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 automation/indexnow.py 2>&1 | tail -20
+IndexNow → https://api.indexnow.org/indexnow
+  host: ucrainiroma.it
+  URLs: 47
+  HTTP 200
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcurl -s --max-time 30 https://t.me/s/rim_dlia_svoih | python3 -c "
+import sys,re,html
+x=sys.stdin.read()
+# find last messages
+blocks=re.findall(r'data-post=\"rim_dlia_svoih/(\d+)\"(.*?)(?=data-post=\"rim_dlia_svoih/|\Z)',x,re.S)
+for pid,b in blocks[-3:]:
+    txt=re.sub(r'<br\s*/?>','\n',b)
+    txt=re.sub(r'<[^>]+>','',txt)
+    txt=html.unescape(txt)
+    txt=' '.join(txt.split())
+    print('POST',pid,':',txt[:300])
+    print()
+"
+POST 28 : data-view="eyJjIjotNDMzNzM5NTIyMiwicCI6MjgsInQiOjE3OTU0MjEyNTksImgiOiJlNjcyMTdjNGNiMjZmNTM3MzEifQ"> Рим для своїх | Українці в Римі 🎖 Рим 21–22.11: open day, ринки, перекриття 🚧 Транспорт. Сб 15:00 Lazio–Lecce на Olimpico: заборона паркування біля Foro Italico. Centocelle: via dei Castani закрита 07
+
+POST 29 : data-view="eyJjIjotNDMzNzM5NTIyMiwicCI6MjksInQiOjE3OTU0MjEyNTksImgiOiJjY2M1NDcyN2Y1YWJiOGExODMifQ"> Рим для своїх | Українці в Римі 🎄 Рим 23–29.11: Panettone Maximo, Urban Bazar і сухі вихідні 🚆 Понеділок. FL1 знову їде між Tiburtina і Ostiense: роботи на Pigneto завершилися. На Fiumicino все одно в
+
+POST 30 : data-view="eyJjIjotNDMzNzM5NTIyMiwicCI6MzAsInQiOjE3OTU0MjEyNTksImgiOiI4OTdjNDI5YWU0NjM4YjRkYWEifQ"> Рим для своїх | Українці в Римі 🚋 Рим, 23.11: трамвай 3, безкоштовні виставки, 25 листопада 🚋 Трамвай 3 знову їде від Trastevere до Valle Giulia. У будні після 21:00 — автобуси між Trastevere і Porta
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && for u in https://ucrainiroma.it/posts/2026-11-23-rome-tram3-free-exhibitions-25nov.html https://ucrainiroma.it/it/posts/2026-11-23-rome-tram3-free-exhibitions-25nov.html https://ucrainiroma.it/covers/2026-11-23-rome-tram3-free-exhibitions-25nov.png; do code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 30 "$u"); echo "$code $u"; done
+200 https://ucrainiroma.it/posts/2026-11-23-rome-tram3-free-exhibitions-25nov.html
+200 https://ucrainiroma.it/it/posts/2026-11-23-rome-tram3-free-exhibitions-25nov.html
+200 https://ucrainiroma.it/covers/2026-11-23-rome-tram3-free-exhibitions-25nov.png
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && grep -c '2026-11-23-rome-tram3-free-exhibitions-25nov' docs/sitemap.xml docs/rss.xml docs/index.html docs/it/index.html
+docs/sitemap.xml:2
+docs/rss.xml:2
+docs/index.html:4
+docs/it/index.html:4
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s --max-time 30 https://ucrainiroma.it/posts/2026-11-23-rome-tram3-free-exhibitions-25nov.html | grep -Eo 'hreflang="[^"]+"|Трамвай 3 знову їде|Riccardi 100' | sort -u | head -10
+Riccardi 100
+hreflang="it"
+hreflang="uk"
+hreflang="x-default"
+Трамвай 3 знову їде
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcurl -s --max-time 30 https://t.me/s/rim_dlia_svoih | python3 -c "
+import sys,re
+x=sys.stdin.read()
+i=x.find('data-post=\"rim_dlia_svoih/30\"')
+seg=x[i:i+6000]
+print('has_photo:', 'tgme_widget_message_photo_wrap' in seg)
+print('image:', (re.search(r'background-image:url\([\'\"]?([^\'\")]+)',seg) or [None,'none'])[1][:160])
+"
+has_photo: True
+image: https://cdn4.telesco.pe/file/EGIjoUqixmqAhkwJcMZqdWzyAw8sG3t3_hNdfByhlW6PnGfmrr-CNSNoicM4lTIk60Oz4fDpXQoJooje3K245PdX08XK7pUpOq9V5cyEJf8erS5vEyMJCLKlA90kpiH_o1h
+> build · deepseek-v4.1-flash-free
+Готово — опубліковано рівно один ранковий пост про Рим.
+
+**Що в пості (4 римські теми):**
+- 🚋 Трамвай 3 знову їде від Trastevere до Valle Giulia; лінія 19 — лише Porta Maggiore–Valle Giulia; вечірні автобуси після 21:00 і нічні об’їзди 23–24.11 через Ponte Sublicio.
+- 📷 Безкоштовна виставка «Riccardi 100. Verso l’umano» у WeGil до 29.11.
+- ✍️ Безкоштовна японська каліграфія «Shodō» в Istituto Giapponese до 4.12, лише в будні.
+- 🟠 25 листопада: програма міста проти насильства над жінками, підсвітка Кампідолію номером 1522, безкоштовна презентація книги в Palazzo Massimo за бронюванням.
+
+**Файли:**
+- `content/extra/2026-11-23-rome-tram3-free-exhibitions-25nov.md`
+- `content/it/2026-11-23-rome-tram3-free-exhibitions-25nov.md`
+- `content/channel/2026-11-23-rome-tram3-free-exhibitions-25nov-post.md` — 861 символ
+- обкладинка `covers/2026-11-23-rome-tram3-free-exhibitions-25nov.png`
+
+**Публікація й перевірка:**
+- Telegram: `message_id=30`, фото на місці — https://t.me/rim_dlia_svoih/30
+- Сайт: https://ucrainiroma.it/posts/2026-11-23-rome-tram3-free-exhibitions-25nov.html
+- Італійська: https://ucrainiroma.it/it/posts/2026-11-23-rome-tram3-free-exhibitions-25nov.html
+- Коміт `ad8f1f8` запушено в `main`; GitHub Pages build — `built`.
+- IndexNow — HTTP 200 (47 URL).
+- Усі три URL сайту повертають 200; `hreflang` uk/it/x-default на місці.
+
+Світових чи загальноіталійських новин у пості немає.
+exit=0

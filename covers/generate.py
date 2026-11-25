@@ -240,6 +240,24 @@ COVERS = [
         "accent": "#5FD3C4",
         "icon": "wheel",
     },
+    {
+        "file": "2026-11-24-rome-parking-free-museums-chocolate-ensemble",
+        "kicker": "РИМ · 24 ЛИСТОПАДА",
+        "title": ["МУЗЕЇ", "БЕЗ ПЛАТИ"],
+        "sub": "Парковка · шоколад · фестиваль",
+        "date": "24 ЛИСТОПАДА",
+        "accent": "#E5C07B",
+        "icon": "frame",
+    },
+    {
+        "file": "2026-11-25-rome-fl1-airport-borromini-ice-rink",
+        "kicker": "ТРАНСПОРТ І КУЛЬТУРА",
+        "title": ["FL1", "БЕЗ ПОТЯГА"],
+        "sub": "26–29.11 · Borromini · безкоштовний лід",
+        "date": "25 ЛИСТОПАДА",
+        "accent": "#5FD3C4",
+        "icon": "metro",
+    },
 ]
 
 

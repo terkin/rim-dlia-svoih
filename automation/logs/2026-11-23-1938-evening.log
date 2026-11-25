@@ -1,0 +1,1211 @@
+=== 2026-11-23 19:38:51 slot=evening ===
+[0m
+> build · deepseek-v4.1-flash-free
+I'll start by reading the README and understanding the repo process.
+[0m→ [0mRead README.md 
+[0m$ [0mls -la /Users/terkin/rim-dlia-svoikh && ls content/extra | tail -20 && ls content/channel | tail -10
+total 288
+drwxr-xr-x@  22 terkin  staff    704 Nov 23 09:06 .
+drwxr-x---+ 167 terkin  staff   5344 Nov 23 18:37 ..
+-rw-r--r--@   1 terkin  staff   6148 Nov  9 11:01 .DS_Store
+-rw-------@   1 terkin  staff     99 Nov  9 11:21 .env
+-rw-r--r--@   1 terkin  staff    300 Nov  9 11:48 .env.example
+drwxr-xr-x@  14 terkin  staff    448 Nov 23 09:06 .git
+-rw-r--r--@   1 terkin  staff     45 Nov  9 11:06 .gitignore
+-rw-r--r--@   1 terkin  staff  21371 Nov 20 09:49 README.md
+drwxr-xr-x@   3 terkin  staff     96 Nov 10 08:59 __pycache__
+-rw-r--r--@   1 terkin  staff  16781 Nov  9 11:56 ai-promotion.md
+drwxr-xr-x@   3 terkin  staff     96 Nov  9 14:03 analysis
+drwxr-xr-x@  14 terkin  staff    448 Nov 19 10:21 automation
+drwxr-xr-x@   4 terkin  staff    128 Nov  9 10:45 brand
+-rw-r--r--@   1 terkin  staff   6323 Nov  9 13:55 catalog-submission.md
+drwxr-xr-x@  11 terkin  staff    352 Nov 10 10:19 content
+drwxr-xr-x@  55 terkin  staff   1760 Nov 23 09:06 covers
+drwxr-xr-x@  14 terkin  staff    448 Nov 23 09:06 docs
+-rw-r--r--@   1 terkin  staff  17729 Nov  9 11:48 preview.html
+-rw-r--r--@   1 terkin  staff  14675 Nov 11 09:36 promotion-catalogs.md
+-rw-r--r--@   1 terkin  staff  18236 Nov  9 12:10 promotion.md
+-rw-r--r--@   1 terkin  staff  13540 Nov 10 08:57 publish.py
+drwxr-xr-x@   4 terkin  staff    128 Nov  9 14:03 reports
+2026-11-10-codice-fiscale.md
+2026-11-10-events.md
+2026-11-10-italy-military-aid.md
+2026-11-10-rent.md
+2026-11-11-lazio-irpef.md
+2026-11-11-rent-long-term.md
+2026-11-12-school-alerts.md
+2026-11-13-peace-talks-eu.md
+2026-11-13-weekend-14-15.md
+2026-11-16-week-ahead.md
+2026-11-17-inflation-strike.md
+2026-11-18-kerch-summit-museums.md
+2026-11-18-rome-newcomer-events.md
+2026-11-19-shenzhen-berlin.md
+2026-11-20-rome-weekend-cie-museums.md
+2026-11-21-rome-open-day-markets-closures.md
+2026-11-21-rome-weekend-parade-fl1.md
+2026-11-22-rome-week-panettone-bazar.md
+2026-11-23-rome-tram3-free-exhibitions-25nov.md
+2026-11-16-week-ahead-post.md
+2026-11-17-inflation-strike-post.md
+2026-11-18-kerch-summit-museums-post.md
+2026-11-18-rome-newcomer-events-post.md
+2026-11-19-shenzhen-berlin-post.md
+2026-11-20-rome-weekend-cie-museums-post.md
+2026-11-21-rome-open-day-markets-closures-post.md
+2026-11-21-rome-weekend-parade-fl1-post.md
+2026-11-22-rome-week-panettone-bazar-post.md
+2026-11-23-rome-tram3-free-exhibitions-25nov-post.md
+> build · deepseek-v4.1-flash-free
+[0m→ [0mRead content/extra/2026-11-23-rome-tram3-free-exhibitions-25nov.md 
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 automation/collect.py 2>&1 | tail -20
+→ ANSA Lazio
+→ Corriere Roma
+→ Il Messaggero Roma
+→ Il Tempo
+→ AGI
+→ Adnkronos
+→ Il Sole 24 Ore
+→ Il Fatto Quotidiano
+
+Збережено 40 кандидатів → /Users/terkin/rim-dlia-svoikh/automation/candidates.json
+> build · deepseek-v4.1-flash-free
+[0m✗ [0m failed
+[91m[1mError: [0mTimed out waiting for response data
+[0m✗ [0mWebFetch failed
+[91m[1mError: [0mTimed out waiting for response data
+[91m[1mError: [0mTimed out waiting for response data
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && ls content/extra | grep 2026-11-2 && echo "---IT---" && ls content/it | tail -8
+2026-11-20-rome-weekend-cie-museums.md
+2026-11-21-rome-open-day-markets-closures.md
+2026-11-21-rome-weekend-parade-fl1.md
+2026-11-22-rome-week-panettone-bazar.md
+2026-11-23-rome-tram3-free-exhibitions-25nov.md
+---IT---
+2026-11-18-kerch-summit-museums.md
+2026-11-18-rome-newcomer-events.md
+2026-11-19-shenzhen-berlin.md
+2026-11-20-rome-weekend-cie-museums.md
+2026-11-21-rome-open-day-markets-closures.md
+2026-11-21-rome-weekend-parade-fl1.md
+2026-11-22-rome-week-panettone-bazar.md
+2026-11-23-rome-tram3-free-exhibitions-25nov.md
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 -c "
+import json
+d=json.load(open('automation/candidates.json'))
+items=d if isinstance(d,list) else d.get('items',d)
+print(type(d), len(items))
+for i,x in enumerate(items):
+    print(i, '|', x.get('source',''), '|', x.get('title',''), '|', x.get('date','') or x.get('published',''))
+"
+<class 'dict'> 40
+0 | Il Messaggero Roma | Cisterna di Latina, uomo finisce investito sui binari: interrotta la tratta ferroviaria Roma-Napoli | lun, 23 nov 2026 16:54:00 +0100
+1 | Il Messaggero Roma | Eredità d?Autore, il grande cinema italiano protagonista ai Castelli Romani: tre giorni dedicati ai maestri e ai nuovi talenti | lun, 23 nov 2026 13:31:00 +0100
+2 | Il Messaggero Roma | Quintorigo con John De Leo: la formazione originaria torna a Roma con il progetto Rospo Grigio in Cattività | lun, 23 nov 2026 12:27:10 +0100
+3 | Il Messaggero Roma | «Segnali», la Fondazione Insigniti OMRI in campo per prevenire il disagio e la violenza tra i giovani | lun, 23 nov 2026 11:57:26 +0100
+4 | Il Messaggero Roma | Matteo Cirillo, attore e regista romano, conquista il Teatro Kopó con ?Oggi sposo?: risate, emozioni e un viaggio nell?amore | lun, 23 nov 2026 10:38:22 +0100
+5 | Adnkronos | Caso Boccia, processo per truffa a Pisa. Il teste: "Le dissi di restituire 30mila euro, ma lei rispose 'sono fatti miei'" | 2026-11-23T18:24:00+00:00
+6 | Il Fatto Quotidiano | Bello, bellissimo, praticamente inguardabile: c’erano una volta le difese italiane, che ora concedono la media di 3 gol a gara | il commento | 2026-11-23T18:02:26+00:00
+7 | Il Sole 24 Ore | Healthcare Summit 2026 | 2026-11-23T18:00:00+00:00
+8 | Adnkronos | Casa, tenerla vuota costa 4mila euro l’anno, affittarla ne rende 11mila | 2026-11-23T17:57:42+00:00
+9 | Adnkronos | Fisco, Mattarella: "Per pagare meno tasse bisogna contribuire tutti" | 2026-11-23T17:41:00+00:00
+10 | Adnkronos | Iran, dissidente Karimi: "Missili da 4.500 km minaccia reale, per Teheran anche l'Europa è ostile" | 2026-11-23T17:33:18+00:00
+11 | Il Sole 24 Ore | Digitale, mercato Ict in crescita a 68,4 miliardi ma resta il nodo competenze | 2026-11-23T17:25:13+00:00
+12 | Il Sole 24 Ore | Intelligenza artificiale, che cosa cambia con le nuove regole targate Ue | 2026-11-23T17:22:33+00:00
+13 | Adnkronos | Kit di emergenza '72 ore', mezza Europa si prepara, ma l'Italia? | 2026-11-23T17:20:16+00:00
+14 | AGI | Sport e Chiesa, a Roma il convegno nazionale degli Assistenti ecclesiastici del CSI | 2026-11-23T17:14:12+00:00
+15 | Il Tempo | Cina, nuove misure per l’assistenza a madri e bambini nelle strutture ospedaliere | 2026-11-23T17:11:22+00:00
+16 | Il Fatto Quotidiano | I fan pagano 25 euro i biglietti per vedere il loro idolo in concerto, ma lui non esiste: il caso di Antonio Roma, il cantante fatto con l’AI che ha fatto sold out a Madrid. Ecco chi salirà davvero sul palco | 2026-11-23T16:53:56+00:00
+17 | Il Tempo | Sla, Buratti (Icgeb): "La ricerca studia come proteggere i neuroni dalla malattia" | 2026-11-23T16:50:09+00:00
+18 | Il Tempo | Sla, Cerri (Nemo Milano): "La sfida è anticipare i sintomi per intervenire prima" | 2026-11-23T16:50:09+00:00
+19 | Il Tempo | Sla, Riva (Besta): "Biomarcatori aprono la strada a cure personalizzate" | 2026-11-23T16:50:08+00:00
+20 | Corriere Roma | Linea Roma-Napoli sospesa dopo l'investimento di una persona: treni in ritardo e cancellazioni | 2026-11-23T16:45:22+00:00
+21 | Il Tempo | Colombe d’oro per la Pace, premiati alla Sapienza Mauro Biani, Angela Caponnetto e Franco Vaccari | 2026-11-23T16:39:53+00:00
+22 | Il Fatto Quotidiano | Ancora guerra sul rinvio del mercato del carbonio per case e trasporti. I ministri di otto Paesi: “Avanti senza ritardi”. Italia e Polonia contro | 2026-11-23T16:25:19+00:00
+23 | Il Sole 24 Ore | Pmi Day 2026 nel Lazio: 25 aziende e 1000 studenti uniti per la crescita e l’innovazione territoriale | 2026-11-23T16:04:22+00:00
+24 | Corriere Roma | Totti a Belve: «Sbaglio a non abbracciare i miei figli. Il tradimento? Purtroppo è successo» | 2026-11-23T16:01:27+00:00
+25 | Il Fatto Quotidiano | Cop31 fallita: il nostro Paese resta irrilevante nel dibattito sul clima | 2026-11-23T15:16:16+00:00
+26 | Il Fatto Quotidiano | Mercedes GLA, la prova de Il Fatto.it – La Stella cambia passo tra le curve della Catalogna – FOTO | 2026-11-23T15:00:08+00:00
+27 | Corriere Roma | Fine vita, dai vescovi del Lazio un appello a Parlamento e Regioni: «Rischiamo che i fragili debbano giustificarsi se vogliono vivere» | 2026-11-23T14:45:14+00:00
+28 | Corriere Roma | De Angelis: «La sinistra deve tornare a essere popolo». A Roma il confronto con Roberto Gualtieri e Matteo Renzi | 2026-11-23T14:44:11+00:00
+29 | Corriere Roma | Simone Belli: da Margherita Buy a Matilde Gioli e Rocío Muñoz Morales, le star festeggiano i 50 anni del make-up artist romano | 2026-11-23T14:03:38+00:00
+30 | ANSA Lazio | 'Un angelo del Paradiso', a Roma il Canzoniere di Marcantonio Orrigoni | 2026-11-23T12:16:21+00:00
+31 | ANSA Lazio | Anche bambini e bambine nella delegazione dell'Unicef da Mattarella | 2026-11-23T11:59:37+00:00
+32 | Il Sole 24 Ore | Mense e scuolabus dei Comuni: così le spese entreranno nel 730 precompilato | 2026-11-23T11:11:00+00:00
+33 | ANSA Lazio | Champions: Nyberg arbitra Psg-Roma, Letexier per Inter-Stoccarda | 2026-11-23T10:09:18+00:00
+34 | ANSA Lazio | Sir Marmot 'la salute si costruisce nei quartieri, non solo negli ospedali' | 2026-11-23T09:40:26+00:00
+35 | ANSA Lazio | Bomba carta davanti a palazzo a Roma, danneggiato androne | 2026-11-22T19:47:31+00:00
+36 | AGI | De Gennaro si è suicidato con una semiautomatica, nella casa sotto sequestro oltre 20 armi | 2026-11-22T18:45:19+00:00
+37 | AGI | Christmas Parade a Roma: migliaia in centro per aiutare i bambini del Bambino Gesù | 2026-11-22T17:02:04+00:00
+38 | AGI | Malattie rare, a Tor Bella Monaca sport e solidarietà per accendere i riflettori sulla CIDP | 2026-11-22T16:14:10+00:00
+39 | AGI | De Gennaro, l'isolamento, i biglietti d'addio e l’inchiesta a Grosseto per istigazione al suicidio | 2026-11-22T06:17:13+00:00
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && head -5 content/extra/2026-11-20-rome-weekend-cie-museums.md content/extra/2026-11-21-rome-open-day-markets-closures.md content/extra/2026-11-21-rome-weekend-parade-fl1.md content/extra/2026-11-22-rome-week-panettone-bazar.md
+==> content/extra/2026-11-20-rome-weekend-cie-museums.md <==
+🏛 **Рим 20–22 листопада: страйк, open day CIE і ніч музеїв**
+
+**🚇 Сьогодні, 20.11 — загальний страйк**
+ATAC і Cotral працюють лише у гарантовані вікна: **з початку руху до 08:29** і **17:00–19:59**. З 08:30 автобуси, метро й трамваї — під питанням: можливі скасування рейсів, закриті станції метро, неробочі ескалатори. Нічні автобуси вже не ходили цієї ночі. У зонах Centro, Ostiense, Tiburtina, Casilina, Nomentana маршрути йдуть з відхиленнями через ходу. Потяги: страйк FS/Trenitalia **з 21:00 сьогодні до 20:00 суботи 21.11**, регіональні рейси гарантовані 06:00–09:00 і 18:00–21:00 (RomaToday, ATAC, Trenitalia).
+
+
+==> content/extra/2026-11-21-rome-open-day-markets-closures.md <==
+🎖 **Рим 21–22 листопада: безкоштовний open day, ринки й перекриття**
+
+Субота буде сухою й теплою, неділя — з дощем. Ось п'ять речей, які варто знати, якщо плануєте вийти з дому.
+
+**🚧 Транспорт: що перекрито**
+
+==> content/extra/2026-11-21-rome-weekend-parade-fl1.md <==
+🚆 **Рим на вихідні 21–22 листопада: парад, безкоштовні маркети й зміни на FL1**
+
+Субота буде сухою й теплою, неділя — з імовірним дощем. Ось п'ять речей, які варто знати, щоб не зіпсувати вихідні.
+
+**🚆 Потяги: FL1 не їде між Tiburtina і Ostiense**
+
+==> content/extra/2026-11-22-rome-week-panettone-bazar.md <==
+🎄 **Рим 23–29 листопада: Panettone Maximo, Urban Bazar і сухі, але холодні вихідні**
+
+Тиждень починається з хорошої новини для тих, хто їздить електричкою, а завершується двома безкоштовними маркетами й фестивалем панетоне. Ось п'ять речей, які варто знати.
+
+**🚆 FL1 з понеділка знову їде через центр**
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && for q in "Roma+eventi+domani" "Roma+weekend" "Roma+sciopero+trasporti"; do echo "=== $q ==="; curl -s "https://news.google.com/rss/search?q=$q&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+x=sys.stdin.read()
+items=re.findall(r'<item>(.*?)</item>',x,re.S)
+for it in items[:12]:
+    t=re.search(r'<title>(.*?)</title>',it,re.S)
+    d=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S)
+    print('-',html.unescape(t.group(1)) if t else '', '|', d.group(1)[:16] if d else '')
+"; done
+=== Roma+eventi+domani ===
+- L’Italia di Domani: incontriamoci a Roma il 14 e 15 novembre (anche in streaming) - Domani | Tue, 03 Nov 2026
+- Sciopero dei mezzi, Roma verso la paralisi. Oggi, venerdì 20 novembre, a rischio metro, bus, tram e treni per 24 ore - RomaToday | Fri, 20 Nov 2026
+- Se Domani Non Torno - Oggi Roma | Wed, 04 Nov 2026
+- Manifestazioni a Roma, circolazione verso normalità tra via Marmorata/Porta San Paolo/via Ostiense - Roma Servizi per la Mobilità | Wed, 28 Oct 2026
+- Sito Istituzionale | Ama ieri, oggi e domani: l'azienda si racconta - Roma Capitale | Thu, 14 May 2026
+- Notte Bianca di Via Roma a Torino: il programma degli eventi gratuiti tra musica, spettacoli e musei - Guida Torino | Tue, 08 Sep 2026
+- Arene di Roma Estate 2026 - Turismo Roma | Fri, 29 May 2026
+- “L'albero della vita dei biologi: orientarsi oggi per costruire il domani”: evento a Roma il 24 marzo - Federazione Nazionale degli Ordini dei Biologi | Mon, 02 Mar 2026
+- Notte di San Lorenzo: cosa fare a Roma e dove vedere le stelle cadenti - RomaToday | Fri, 07 Aug 2026
+- Avs. Inizia domani domenica 6 settembre a Roma la Festa Nazionale "Terra", con Corbyn, Gualtieri, Cathy La Torre e tanti altri ospiti. Tra gli spettacoli, il concerto delle Bambole di Pezza. Lunedi 7/9 Francesca Albanese e Don Ciotti. I Santi Francesi in concert - Agenparl | Sat, 05 Sep 2026
+- Axios, 'colloqui Israele-Libano a Roma interrotti per gli eventi sul terreno' - ANSA | Wed, 05 Aug 2026
+- Torna a Roma “60 under 30”: il premio dedicato ai giovani che stanno cambiando il Paese - Domani | Mon, 05 Oct 2026
+=== Roma+weekend ===
+- Weekend a Roma: 20 eventi da non perdere sabato 21 e domenica 22 novembre - RomaToday | Sat, 21 Nov 2026
+- Sito Istituzionale | Mobilità e trasporti, weekend 21 e 22 novembre - Roma Capitale | Sun, 22 Nov 2026
+- Cosa fare a Roma nel weekend 21-22 novembre, Musei in Musica - Vivere Roma | Thu, 19 Nov 2026
+- Ultimo weekend prima della sosta: sabato Parma-Napoli Women e Milan-Sassuolo. La Roma in casa del Como Women, Fiorentina-Como 1907 su Rai 2 - FIGC | Fri, 20 Nov 2026
+- Roma da vivere: 7 esperienze esclusive tra arte, gusto e meraviglia per un weekend d’inverno nella Capitale - Forbes Italia | Sat, 21 Nov 2026
+- Cosa fare a Roma questo weekend: concerti, mercatini e gite fuori porta (20-22 novembre) - Secret Roma | Mon, 16 Nov 2026
+- Weekend in famiglia a Roma: cinque idee per il 21 e 22 novembre - inITALY | Sat, 21 Nov 2026
+- Roma Arte in Nuvola 2026: performance, talk e visite guidate per il weekend - insideart | Sat, 21 Nov 2026
+- Cosa fare a Roma questo weekend: ANOHNI, la Loggia dei Vini e l’omaggio ad Augias - UniversiNet Magazine | Sun, 22 Nov 2026
+- Le strade chiuse a Roma sabato 21 e domenica 22 novembre 2026 - RomaToday | Mon, 23 Nov 2026
+- Meteo Roma weekend 21-22 novembre: prima il sole poi la pioggia - Moveo by Telepass | Fri, 20 Nov 2026
+- Weekend 16-17-18 ottobre: cosa fare a Roma tra Festa del Cinema, cucina romana, castagne e orchidee rare - Roma.Com | Mon, 12 Oct 2026
+=== Roma+sciopero+trasporti ===
+- Sciopero generale CGIL 20 novembre 2026 - CGIL Roma Lazio | Fri, 20 Nov 2026
+- Sciopero dei mezzi, Roma verso la paralisi. Oggi, venerdì 20 novembre, a rischio metro, bus, tram e treni per 24 ore - RomaToday | Fri, 20 Nov 2026
+- Sito Istituzionale | Sciopero e cortei, la viabilità del 20 novembre - Roma Capitale | Thu, 19 Nov 2026
+- Gli orari e la mappa dello sciopero generale: oggi stop ai mezzi pubblici da Bologna a Roma, blocchi a scuola e sanità - Corriere della Sera | Fri, 20 Nov 2026
+- Sciopero mezzi Roma e Bologna 20 novembre: orari e fasce di garanzia - La Gazzetta dello Sport | Thu, 19 Nov 2026
+- Sciopero ferrovie 20-21 novembre 2026: norme tecniche - CUB | Sat, 21 Nov 2026
+- Sciopero generale, Roma nel caos: fermi tram, bus e metro, stop ai treni dalle 21.00. Dove si trovano i cortei e come evitare i blocchi - Moveo by Telepass | Fri, 20 Nov 2026
+- Chi si ferma con lo sciopero generale: tutti gli stop, dai treni, ai bus alla scuola - Avvenire | Fri, 20 Nov 2026
+- Sciopero generale Cgil: bus e metro a rischio. Come muoversi e quali servizi sono garantiti - Il Sole 24 ORE | Thu, 19 Nov 2026
+- Sciopero generale 20 novembre 2026 Roma: fasce garantite metro e bus ATAC, Cotral, treni e corteo di Landini - Metro Italia | Thu, 19 Nov 2026
+- Sciopero generale del 20 novembre: strade chiuse, bus deviati e divieti di sosta a Roma - RomaToday | Thu, 19 Nov 2026
+- Legge bilancio: sciopero generale Cgil il 20 novembre, corteo a Roma, a rischio servizi - CGIL Roma Lazio | Tue, 17 Nov 2026
+> build · deepseek-v4.1-flash-free
+[0m→ [0mRead content/extra/2026-11-21-rome-open-day-markets-closures.md 
+[0m→ [0mRead content/extra/2026-11-22-rome-week-panettone-bazar.md 
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && cat > /tmp/rss.py <<'EOF'
+import sys,re,html,urllib.parse,urllib.request
+for q in sys.argv[1:]:
+    url="https://news.google.com/rss/search?q="+urllib.parse.quote(q)+"&hl=it&gl=IT&ceid=IT:it"
+    try:
+        x=urllib.request.urlopen(url,timeout=25).read().decode('utf-8','ignore')
+    except Exception as e:
+        print("ERR",q,e); continue
+    items=re.findall(r'<item>(.*?)</item>',x,re.S)
+    print("=== ",q," ===")
+    for it in items[:10]:
+        t=re.search(r'<title>(.*?)</title>',it,re.S)
+        d=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S)
+        print("-",html.unescape(t.group(1)) if t else "","|",d.group(1)[:16] if d else "")
+EOF
+python3 /tmp/rss.py "Roma 28 novembre 2026" "Roma 29 novembre 2026" "Roma eventi gratuiti novembre 2026" "Roma mercatini Natale 2026" "Roma mostre dicembre 2026"
+===  Roma 28 novembre 2026  ===
+- Christmas World a Villa Borghese, dal 28 novembre la magia del Natale conquista Roma - Sky TG24 | Mon, 23 Nov 2026
+- A Roma torna "Ensemble! Suoni e Sapori dal Mondo" - Corriere dello Sport | Mon, 23 Nov 2026
+- Street Art for Planet Earth - Oggi Roma | Mon, 23 Nov 2026
+- Giornata nazionale sui CCTP. Roma e Zoom, 28 novembre 2026 - Società Psicoanalitica Italiana | Thu, 19 Nov 2026
+- Paolo Bielli porta a Roma la mostra “Beauty dal Bello” - inITALY | Mon, 23 Nov 2026
+- Natale in Festa ai Castelli Romani | 28 novembre - 13 dicembre 2026 - RomaToday | Mon, 23 Nov 2026
+- Rome Pain Insight 2026, il 28 novembre a Roma una giornata dedicata alla terapia del dolore - AAROI-EMAC | Thu, 19 Nov 2026
+- Scioperi settimana dal 23 al 29 novembre 2026, si fermano sanità, banche e avvocati: le città coinvolte - Virgilio | Sat, 21 Nov 2026
+- Calcio tavolo: il ternano Marco Perotti il 28 novembre ancora a Roma per un torneo Fisct Lazio - TusciaTimes.eu | Mon, 23 Nov 2026
+- Sparkleday, Roma 28 novembre 2026 - Cucina & Vini | Fri, 06 Nov 2026
+===  Roma 29 novembre 2026  ===
+- Napoli, Teatro Bellini: “Misurare il salto delle rane” dal 24 al 29 novembre 2026 - GBOPERA | Mon, 23 Nov 2026
+- Roma Chocolate a piazza Risorgimento - RomaToday | Mon, 23 Nov 2026
+- Cosa fare gratis a Roma 23-29 novembre, Moacasa e Celio - Vivere Roma | Mon, 23 Nov 2026
+- WC27Q. Iniziato il raduno: Abass e Tessitori non saranno a disposizione. Akele e Tonut dal 25/11. Ferrari in gruppo da oggi - Federazione Italiana Pallacanestro | Mon, 23 Nov 2026
+- Lavinia - Zero.eu | Mon, 23 Nov 2026
+- A Roma torna "Ensemble! Suoni e Sapori dal Mondo" - Corriere dello Sport | Mon, 23 Nov 2026
+- Calendario scioperi 23 - 29 novembre 2026: vertenze, mobilitazioni e iniziative Cgil - CGIL | Sun, 22 Nov 2026
+- Il Congresso della Federazione FISH: "La forza del movimento associativo, la voce dei diritti" - Superando | Mon, 23 Nov 2026
+- Roma c'è! - Oggi Roma | Mon, 23 Nov 2026
+- Arriva il Bloody Festival Roma 2026, tra serial killer, ufo, esorcismi e l’anteprima nazionale di Blades in the Darkness II con Bill Moseley - https://www.darksidecinema.it/ | Mon, 23 Nov 2026
+===  Roma eventi gratuiti novembre 2026  ===
+- Cosa fare gratis a Roma 23-29 novembre, Moacasa e Celio - Vivere Roma | Mon, 23 Nov 2026
+- Musei in Musica 2026 - Musei in Comune | Sat, 21 Nov 2026
+- Novembre 2026 a Roma: scopri e vivi Roma dal 1° al 30 novembre 2026 - Turismo Roma | Thu, 29 Oct 2026
+- Weekend a Roma: gli eventi da non perdere sabato 31 ottobre e domenica 1 novembre - RomaToday | Sun, 01 Nov 2026
+- Cosa fare a Roma nel weekend 21-22 novembre, Musei in Musica - Vivere Roma | Thu, 19 Nov 2026
+- Quali partite puoi guardare su DAZN gratuitamente | DAZN News Italia - DAZN | Tue, 17 Nov 2026
+- Cosa fare con i bambini a Roma e dintorni nei weekend di novembre 2026 - RomaWeekend.it | Fri, 13 Nov 2026
+- Eventi per bambini a Roma a novembre 2026: 5 appuntamenti da non perdere - Viaggiapiccoli | Mon, 26 Oct 2026
+- Eventi a Roma: weekend 11-12-13 settembre 2026 — guida completa - inITALY | Sun, 13 Sep 2026
+- Musei gratis domenica 1 novembre: tutte le mostre in programma e visitabili - RomaToday | Fri, 30 Oct 2026
+===  Roma mercatini Natale 2026  ===
+- Guida ai mercatini di Natale 2026 a Roma: luoghi e date - RomaToday | Thu, 19 Nov 2026
+- Mercatini di Natale 2026, i più belli di Roma: le date e cosa vedere - Sky TG24 | Sun, 08 Nov 2026
+- Da sabato 21 novembre “Insieme a Natale” in città - Comune di Monza | Tue, 17 Nov 2026
+- Mercatini di Natale in Italia: i più belli del 2026 - Wise Society | Fri, 20 Nov 2026
+- Mercatini di Natale 2026, il Lazio si veste di festa: da Roma a Greccio, i luoghi più belli da visitare - Il Quotidiano del Lazio | Fri, 30 Oct 2026
+- La fortezza medievale che ospitò Michelangelo e Caterina de’ Medici oggi diventa la Casa di Babbo Natale: 12 esperienze, 2 km di luci e mercatini per Natale 2026 a Roma - Secret Roma | Mon, 16 Nov 2026
+- Natale 2026 a Roma: mercatini, luci e indirizzi veri per le feste - The Wom Travel | Fri, 13 Nov 2026
+- Mercatini di Natale 2026, i più belli d'Italia: da Aosta a Benevento - Sky TG24 | Tue, 03 Nov 2026
+- Mercatino di Natale Piazza Navona Roma 2026: date e presepi - Pixidia | Sun, 18 Oct 2026
+- Da Roma ai mercatini natalizi di Austria e Germania a bordo di un treno notturno - RomaToday | Wed, 04 Nov 2026
+===  Roma mostre dicembre 2026  ===
+- Mostre novembre 2026 a Roma: la guida aggiornata - Revenews Arts | Thu, 19 Nov 2026
+- Roma Arte in Nuvola 2026, le mostre e gli appuntamenti dell’ultima giornata - Exibart | Sun, 22 Nov 2026
+- “VIAGGI – Oltre il visibile, alla ricerca dell’Assoluto” - www.monolitenotizie.it | Mon, 23 Nov 2026
+- Zorica Čolić – “Part II – The Thing That Enjoys Itself” - Zero.eu | Fri, 20 Nov 2026
+- VIVA PAOLO! La mostra in memoria di Paolo Aita a Roma - EZ Rome | Mon, 23 Nov 2026
+- Mostre moda 2026: tutti gli appuntamenti da non perdere in Italia e nel mondo, a partire da due esposizioni di Van Cleef & Arpels a Venezia - Vogue | Thu, 19 Nov 2026
+- Mostre a Roma 21-22 novembre, Musei in Musica e Amazing Wonders - Vivere Roma | Thu, 19 Nov 2026
+- Roma Arte in Nuvola 2026: mostre da scoprire il 22 novembre - inITALY | Sun, 22 Nov 2026
+- Mostra “VIA VENETO 1950-1960. Le stelle del cinema nella Roma della Dolce Vita” - Istituto Italiano di Cultura di Madrid | Tue, 17 Nov 2026
+- Hao Liang. Italian Journey - Mostra - Roma - Gagosian - Arte.it | Wed, 11 Nov 2026
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && cat > /tmp/rss2.py <<'EOF'
+import sys,re,html,urllib.parse,urllib.request
+q=sys.argv[1]
+url="https://news.google.com/rss/search?q="+urllib.parse.quote(q)+"&hl=it&gl=IT&ceid=IT:it"
+x=urllib.request.urlopen(url,timeout=25).read().decode('utf-8','ignore')
+items=re.findall(r'<item>(.*?)</item>',x,re.S)
+for it in items[:6]:
+    t=re.search(r'<title>(.*?)</title>',it,re.S)
+    l=re.search(r'<link>(.*?)</link>',it,re.S)
+    print(html.unescape(t.group(1)) if t else "")
+    print(l.group(1) if l else "")
+EOF
+python3 /tmp/rss2.py "Cosa fare gratis a Roma 23-29 novembre Moacasa Celio"; python3 /tmp/rss2.py "Christmas World Villa Borghese 28 novembre"; python3 /tmp/rss2.py "Roma Chocolate piazza Risorgimento"
+Cosa fare gratis a Roma 23-29 novembre, Moacasa e Celio - Vivere Roma
+https://news.google.com/rss/articles/CBMioAFBVV95cUxOMFZJOVZNRjVYVURMZlVxcTNIaGpERlkxZ3JnUHp6OHdiYlZRekFXVzVqUGZUaXZrZEhpRV9VaXFCaXhYNnpnOWpDZ1JuXzVmOGoyNWY0dnBGM0FSOVJEYVN0M2VRZF9zQ0pvS29mRjVacjhvTzhPX2xxRGxadFo4V094Zl8tUlRkeFNpWjh4Z3lOWmNHdWRHUWJTeWM5SUda?oc=5
+Christmas World a Villa Borghese, dal 28 novembre la magia del Natale conquista Roma - Sky TG24
+https://news.google.com/rss/articles/CBMiggFBVV95cUxNWFZ2VmMzS25QMDVkZmJjVGhLZ2syYTd4djY4MFhDUlIxdEZiLV9DRDNjUGZGNGd5RS1XTTFDY0NZbDUwWXNEZWlobjZmVTk3MmIyM3NqUERZZk1UcjVVVzFPbk9sVkNnZHFSUXdNMEMxdW1iYVUtY3I0bTFuZU95VGhR?oc=5
+Weekend 27-28-29 novembre: cosa fare a Roma e dintorni tra Christmas World, i futuristi al MAXXI e i mercatini dei Castelli - Roma.Com
+https://news.google.com/rss/articles/CBMi2wFBVV95cUxOWDRNYzNwVzl1bFNIOE0wdHhISTVuM1dkYWxwNDEwa2JMMXVOdnIzV1RYMk95X0V3T3YxRXVoUnRGVzVjUVRIV0dwT1B2S2hKakxVMkFBeU1tX1dHTzJmbldRTWVDaWh1LThDZ0o4ZXJGMHc4a0xFSXpneEI3emNHQ3JrOTUxY1NBWnVkSFhkdHpIWkJ5bVdMcUNRWmNpZGRhZlU4bnFlUVpodGVIYmdOdnFoXzFlSGhWX0VuVWczaXJpNlhrU3RaYTBiTXVGUGl5OVBzQ1RCWXFiX1U?oc=5
+Christmas World Roma 2026: Villa Borghese diventa un gigantesco parco natalizio tra spettacoli, attrazioni e magia - CorriereNerd.it
+https://news.google.com/rss/articles/CBMiXkFVX3lxTE1ZYXBHV2pZaU5wRlV1RUNqQzVHbzZHTm1vSlBaekYxb2ZXUVE3aFJtcGMyYTB2cktUMFExc2w3UVA4NHR3djVxSnVVUFRsaUN3eWxoQXFLUVVPVTNTdXc?oc=5
+Christmas World a Villa Borghese: il Villaggio di Natale più grande d’Europa torna dal 28 novembre - Romeing
+https://news.google.com/rss/articles/CBMia0FVX3lxTE9GUFJKOFlzRFUxMER0UzdoMk83RDNOdFUwTmtoZERCMUdOUFR1bDNpRHI1cTZIQjJvRWdzTEJnQkxIT0FnXzdjSWNTb0UwMW91X3V3ZWNWUTEwWVdnYmtNTHZwbjFObE54REln?oc=5
+Christmas World a Villa Borghese - RomaToday
+https://news.google.com/rss/articles/CBMijAFBVV95cUxON0NMdER0S0FkU0VNanFETVZobGtpYzZoWU56elRWLS1zWWpTRVVJOTJvQWF5blJMZS0wcjZvSkp2MzB2ck5tczZrSWs2MzQ1RGxrMzBsN2JKZlRpLS10WWUyMUpCb2VlMWZxN3JraVp1OFJaRjA3N1c3TmRuaGUySjJuSkZmclJoZUNWUQ?oc=5
+Capitale d'Italia e del Natale: il più grande villaggio delle feste torna nel cuore di Roma con tantissime novità - Turisti per Caso
+https://news.google.com/rss/articles/CBMi6wFBVV95cUxPUnVMb2xvSmJtN0wtWi1KeHA3aWZtbFNldi1VQUNmXzQ3emFmcWNPYmlQd1hKV09pdTA4OURqMGJYWG9lRXE0SXBrRFJVcUdSaDZtckRYZlRDWS03Ukw2dzNqUWF2SVRQQmNTM1UzNlRmbGc2SDk0YXJaWDljRDE4dk1id3RaRlN2SjQ1dGVuUzQ0UW5sUjlwMzFvRmZnZXRWQV90WnJiNzRoSWFhR1ktQVl3eXdSaU8tTFdnQnZCM2dvbXd6RmFUM3d3czhKVmx3T0Zkc0t1ejdId2VEeWVoaVl3UzJfLTNuNUNN?oc=5
+Roma Chocolate a piazza Risorgimento - RomaToday
+https://news.google.com/rss/articles/CBMie0FVX3lxTE0ydlZ6MkVTTnhPQ1F2cU1HbHV3eFZNeGZFbXNPOEhsV2VtakJMN3JLZ29IZFdFRkpPMFM4ZFdxd2lzYW1tMFZGR1hsRWtsTWdqV0pISnVqTDFOVElsQTZkNEdYTzVQTF82LUswTkRzNnZ3a19vUW1fSGJoNA?oc=5
+Festa del cioccolato in piazza Risorgimento 2026 - Turismo Roma
+https://news.google.com/rss/articles/CBMiigFBVV95cUxNSC1SQTVTSDRyMHA2eVE4Wk8xcVZoV1k2MGNqSlBKdDZ3NGRxUTFvWUNlRGNHcHZWQlc2WlJ6ei1rQkFMM3p4Qm9qOC1hSHM1MVJiOG1nUFQ4SWJvNTBreEVsS094QndyMWZGdm5vNng5VDZLV29ZVVFPRDlEaVZFU0tMdFRLczRFOHc?oc=5
+Festa del Cioccolato in piazza Risorgimento | 31 ottobre - 1 novembre 2026 - RomaToday
+https://news.google.com/rss/articles/CBMiogFBVV95cUxOM0wyWmI5QTlqanNOaXVCMERtb3l4aFNHR2NVdGVYRnRaSGtXQ29GbWEyOTFHZENhdEFUWEFsdWMtdENSbXNud1NtRVJJV25lZFhHTjNkak9xQzFaTTZDTmpGLUo1TFh2cllETTNtdzlENE91TDN1c2VlTF9LWUozUzRYQlQzR21XWEN5cng3NF95NVg5akR2TmJ0dkN5N21WVmc?oc=5
+Festa del Cioccolato Roma, piazza Risorgimento: date e orari - Vivere Roma
+https://news.google.com/rss/articles/CBMipwFBVV95cUxQYWxFZDE0dnlHVEsxSy1LekVlTlBPSHlhZWZrdWFNRWc3VURJWExVdG8ySHU5TlMtb3QzekVoenR5Tk80ME1Eb01JdUlnSENPVUZaeGdIZ0txR2gya1RnNzA5MENuUjk2SEN5dUNBVGF0TC1qX2hJdU9HTTRQc1ItMVdsUWdRZGw5WDNQQm0wNkRNQTR0QU1wOEVLS0l5eFVBbHZDaE55Yw?oc=5
+Roma si fa golosa: Piazza Risorgimento diventa il Regno del Cioccolato - Gazzetta di Roma
+https://news.google.com/rss/articles/CBMimAFBVV95cUxQdXlWTnQtUFFUcEVVYjdWVTNrRVRHWWFmSU8yM3VZbVFoclZOeFV6M3ZSOUVjZFpDZWpGNDR2MW9YSkl4WFdBNFQtV2xPak95dTBJZDV0Xy12dEQ5UVFFcFVPeWUtbjVWQXZNT2Rscmw5VEhnYzhVQlhleE1RTGxOaXZaVWtuTkhxM0dGUkVGM0ZCRW42ckpVMQ?oc=5
+RomaChocolate, a Natale torna la Festa del cioccolato di Roma 2023: dall'8 al 10 dicembre in Piazza Risorgimento - Il Messaggero
+https://news.google.com/rss/articles/CBMitAFBVV95cUxOVWxqV2sxbUR0cUNoQVFJMDBsRzljeDE2bVFWSTU0SU9XcEJBQm9FQlpEMTRqaTVxMTBVOElXSHJKajJKN3J4NzVjZWJRWXI2dTJGY1BPZUNfb1RCanQ1VGRoZ1BhUGxNeWxIM1hHZFJZNzA0cnFXUllqdVhibE5UZlAtWE5BdklHSHJ3eTdNX3Q2UmtTQUJVZ1EtbS02NWUtVWNnamdyWjg0ZUFSeEN1OW81NnbSAbABQVVfeXFMTzlKLUpuZ0V3YVFEUllkUV84VzVBXzV0WUFnVDhvUzFXTnZ4MTR5UXphbl9wN1phYXVjTHFWd3BWNVFhOVhGNXZJaGxDeFJjQU1mcUxybE01YjZmcHBBUzRDa242UVh5ZmhzUnFUWXdLWlB3T1UydExFRU54WUhtX25Xb3JuT2htbk02MFVmTEVFUFhSb0kxdmYyOWlNZjlKYzVHZmt6c3BCamdpeTNwZTI?oc=5
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && for u in "https://news.google.com/rss/articles/CBMioAFBVV95cUxOMFZJOVZNRjVYVURMZlVxcTNIaGpERlkxZ3JnUHp6OHdiYlZRekFXVzVqUGZUaXZrZEhpRV9VaXFCaXhYNnpnOWpDZ1JuXzVmOGoyNWY0dnBGM0FSOVJEYVN0M2VRZF9zQ0pvS29mRjVacjhvTzhPX2xxRGxadFo4V094Zl8tUlRkeFNpWjh4Z3lOWmNHdWRHUWJTeWM5SUda?oc=5"; do curl -sL "$u" -o /tmp/a.html; python3 -c "
+import re,html,sys
+x=open('/tmp/a.html',encoding='utf-8',errors='ignore').read()
+x=re.sub(r'<script.*?</script>','',x,flags=re.S)
+x=re.sub(r'<style.*?</style>','',x,flags=re.S)
+t=re.sub(r'<[^>]+>',' ',x)
+t=html.unescape(t)
+t=re.sub(r'\s+',' ',t)
+print(t[:6000])
+"; done
+Google News
+> build · deepseek-v4.1-flash-free
+[0m✗ [0mWeb Search via Firecrawl "Vivere Roma "Cosa fare gratis a Roma" 23-29 novembre 2026 Moacasa Celio" failed
+[91m[1mError: [0mUnable to search the web for Vivere Roma "Cosa fare gratis a Roma" 23-29 novembre 2026 Moacasa Celio
+[0m✗ [0mWeb Search via Firecrawl "Christmas World Villa Borghese 2026 date orari prezzi 28 novembre" failed
+[91m[1mError: [0mUnable to search the web for Christmas World Villa Borghese 2026 date orari prezzi 28 novembre
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && for u in "https://www.turismoroma.it/it/eventi" "https://www.romatoday.it/eventi/" "https://www.christmasworld.it/"; do echo "=== $u ==="; curl -sL --max-time 25 -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)" "$u" -o /tmp/p.html -w "%{http_code} %{size_download}\n"; python3 -c "
+import re,html
+x=open('/tmp/p.html',encoding='utf-8',errors='ignore').read()
+x=re.sub(r'<script.*?</script>','',x,flags=re.S); x=re.sub(r'<style.*?</style>','',x,flags=re.S)
+t=re.sub(r'<[^>]+>',' ',x); t=html.unescape(t); t=re.sub(r'\s+',' ',t)
+print(t[:2500])
+"; done
+=== https://www.turismoroma.it/it/eventi ===
+404 37918
+ Page not found | Turismo Roma Skip to main content Vivere Roma, scoprire Roma Servizi turistici e offerta culturale 060608 English Italiano Deutsch Français Español Go Social Block Seguici su: Search form Cerca A Roma per Scopri Roma Il tuo viaggio Info utili Page not found The requested page "/it/eventi" could not be found. Le tue utility Mappa Eventi Newsletter A Roma per Business Sport Studio Arte e Cultura Matrimonio Night life Moda e shopping Scopri Roma Roma in breve La Città I quartieri Botteghe e negozi storici Curiosità Il tuo viaggio Eventi Itinerari a tema Itinerari a tempo News Roma Free/Low cost Food & Wine Mare Info utili Roma Accessibile Mappa di Roma Menu di servizio Faq Chi siamo Contatti Iscriviti alla newsletter Footer Social Block Seguici su: Dipartimento Grandi Eventi, Sport, Turismo e Moda. Via di San Basilio, 51 00187 Roma CONTACT CENTER TEL. 06 06 08 CONTATTA LA REDAZIONE subfooter Privacy Social Media Policy Credits Copyright Esclusione di Responsabilità 
+=== https://www.romatoday.it/eventi/ ===
+200 903284
+ Tutti gli eventi a Roma Ci stai leggendo con un adblocker Raccontiamo la tua città ogni giorno, con una redazione sul territorio. La pubblicità ci permette di offrire gratuitamente gran parte del nostro lavoro: scegli come continuare a leggerci. Disattiva l'adblocker Aggiungi il sito alle eccezioni e ricarica la pagina. Fatto, ricarica --> Abbonati Niente pubblicità e un sostegno diretto al nostro lavoro, al prezzo di un caffè al mese. Scegli l'abbonamento Leggi dall'app L'app è gratuita: segui la tua città ovunque, sempre a portata di mano. Scarica l'app Hai già un account? Accedi Lunedì, 23 Novembre 2026 Sereno o poco nuvoloso 13 ° Venti 2.3 nodi NNE Probabilità di pioggia 0 % --> Abbonati Aggiorna piano Accedi Notizie Cosa fare in città Zone Dossier "The Traitors" è stato l'one woman show di Lorella Cuccarini Massimo Falcioni Se Sinner si ferma, il resto non va Stefano Benzi Eventi Cinema Dove Mangiare Shopping Eventi a Roma Questa settimana Oggi lunedì 23 novembre Domani martedì 24 novembre Weekend 28 novembre - 29 novembre Questa settimana 23 novembre - 29 novembre Prossima settimana 30 novembre - 6 dicembre Questo mese 1 novembre - 30 novembre Tipologia Tutti Tipologia Mostre Teatri Concerti Manifestazioni Incontri Mercatini Turismo Cinema Escursioni Sagre Cibo E Vino Hobby Disco Feste Inaugurazioni Sport Moda Promozioni Età ideale Evento per Bambini Tema Natale Halloween Applica filtri Segnala Evento Filtra Calendario Speciale Weekend 10 eventi da non perdere nel weekend del 30 e 31 Luglio --> Mostre Roma, torna la mostra dedicata a minerali e fossili dal 28 al 29 novembre 2026 Ergife Palace Hotel – Piano B Gratis --> Incontri Roma ospita il primo Forum nazionale sulla rigenerazione urbana a base culturale dal 23 al 27 novembre 2026 ex Mattatoio di Testaccio Gratis --> Teatri A Roma un'agorà civica con spazio di pensiero: le grandi rassegne e i cicli culturali tra i palcoscenici di Argentina, Valle e Torlonia dal 13 dicembre 2026 al 9 giugno 2027 Teatri Argentina (largo di Torre Argentina, 52), Valle (via del Teatro Valle, 21) e Torlonia (via Lazzaro Spallanzani, 1A) --> Incontri Da Eataly Roma Ostiense ti aspetta solo il bello del Natale dal 8 dicembre 2026 al 10 gennaio 2027 Eataly Roma Ostiense Gratis --> Dallo spazio alle nuove opportunità: a Roma torna New Space Economy Expoforum dal 25 al 27 novembre 2026 Fiera Roma --> "La meravigliosa Carica dei 101" al Teatro Manzoni dal 28 al 29 novembre 2026 Teatro Manzoni --> Tre storie, tre sguardi sul
+=== https://www.christmasworld.it/ ===
+200 1581859
+ Reparto Natale Christmas World - Agri Brianza Vai al contenuto A pochi minuti da Milano. Vieni a trovarci in negozio: più scelta, più prodotti. Spedizione OMAGGIO oltre 100€ di spesa Acquista online con RITIRO IN NEGOZIO ISCRIVITI ALLA NESLETTER E RICEVI UN BUONO SPEDIZIONE Punto vendita orari e contatti Agribrianza Translation missing: it.header.general.open_account Translation missing: it.header.general.open_cart 0 Menù Translation missing: it.header.general.open_search Cerca... Natale Alberi di Natale pinetti abeti tradizionali abeti slim abeti innevati abeti illuminati copri base albero ghirlande e corone Addobbi per l'albero palline di natale pendenti puntali ghirlande e fili colorati fiori Luci di Natale catene luminose figure e decorazioni tende luminose quadri e cuscini led Presepi statuine capanne e grotte paesaggi completi presepe fai da te elementi paesaggistici e sfondi Per la casa fuoriporta e coroncine personaggi e animali lanterne tessili natalizi decorazioni per finestre zerbini Oggettistica di Natale boule de neige e carillon soprammobili natalizi calendario avvento calze e sacco doni costumi e accessori Alberi di Natale Addobbi per l'albero Luci di Natale Precedente Successivo Alberi di Natale Addobbi per l'albero Luci di Natale Villaggi Lemax Lemax Natale accessori Lemax movimenti Lemax personaggi Lemax santa's città facciate montagna Halloween Lemax Natale Decor e casa Profumatori per ambienti candele profumate e accessori diffusori ambiente e auto lampade catalitiche profumatori per bucato Per la tavola piatti tazze e bicchieri posate e utensili centri tavola e vasi tovaglie runner e tovaglioli sottopiatti e segnaposto Idee regalo e giocattoli Precedente Successivo Arredi esterno Zona pranzo per esterno tavoli sedie set tavolo e sedie cuscini da esterno e accessori Salotti da giardino salotti completi poltrone salotto divani tavolini Sdraio da giardino e relax poltrone relax sdraio e lettini Pulizia e cura arredi pulitori e protettivi coperture arredo Piscine & spa Piscine fuori terra e spa Gonfiabili e giochi piscina Prodotti trattamento acqua Accessori per piscine Pezzi di ricambio Ombrelloni e coperture Precedente Successivo Barbecue Barbecue BBQ – tutti i barbecue barbecue a gas barbecue a pellet e carbone barbecue elettrici affumicatori planche e piastre Pizza & outdoor cooking forni per pizza canaline per arrosticini cucine da esterno accessori pizza Accessori BBQ salse rub e affumicatori accenditori e combustibili termometri pi
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -sL --max-time 30 -A "Mozilla/5.0" "https://www.romatoday.it/eventi/" -o /tmp/rt.html && python3 -c "
+import re,html
+x=open('/tmp/rt.html',encoding='utf-8',errors='ignore').read()
+for m in re.finditer(r'href=\"([^\"]*eventi[^\"]*)\"[^>]*>(.*?)</a>',x,re.S):
+    txt=re.sub(r'<[^>]+>','',m.group(2)); txt=html.unescape(' '.join(txt.split()))
+    if txt and len(txt)<80: print(m.group(1),'|',txt)
+" | sort -u | head -60
+/eventi/ | Cosa fare in città
+/eventi/ | Eventi
+/eventi/arche-natale-mercatino-solidale-28-29-novembre-2026.html | Arché Natale 2026, mercatino solidale a Roma
+/eventi/arte-persistenza-eccellenza-percorso-enogastronomico-26-novembre-2026.html | L’Arte della Persistenza e dell’Eccellenza: percorso enogastronomico
+/eventi/bella-addormentata-centrale-preneste-teatro-29-novembre-2026.html | "La Bella addormentata", spettacolo per bambini a Centrale Preneste Teatro
+/eventi/campagnano-terra-di-sapori-seconda-edizione.html | "Campagnano Terra di Sapori": il 28 e 29 novembre la seconda edizione
+/eventi/carica-101-teatro-manzoni-28-29-novembre-2026.html | "La meravigliosa Carica dei 101" al Teatro Manzoni
+/eventi/christmas-market-grottaferrata-28-29-novembre-2026.html | Christmas Market in una villa del Cinquecento
+/eventi/cinema/ | Cinema
+/eventi/dal/2026-11-01/al/2026-11-30/ | Questo mese 1 novembre - 30 novembre
+/eventi/dal/2026-11-23/al/2026-11-23/ | Oggi lunedì 23 novembre
+/eventi/dal/2026-11-23/al/2026-11-29/ | Questa settimana 23 novembre - 29 novembre
+/eventi/dal/2026-11-24/al/2026-11-24/ | Domani martedì 24 novembre
+/eventi/dal/2026-11-28/al/2026-11-29/ | Speciale Weekend 10 eventi da non perdere nel weekend del 30 e 31 Luglio
+/eventi/dal/2026-11-28/al/2026-11-29/ | Weekend 28 novembre - 29 novembre
+/eventi/dal/2026-11-30/al/2026-12-06/ | Prossima settimana 30 novembre - 6 dicembre
+/eventi/data/novembre-2026/ | Calendario
+/eventi/dinosauri-in-carne-e-ossa-appia-joy-park.html | Dinosauri in Carne e Ossa, la mostra a tema preistorico a Roma
+/eventi/ditonellapiaga-atlantico-live-27-novembre-2026.html | Ditonellapiaga all'Atlantico Live
+/eventi/ensemble-suoni-sapori-mondo-fusolab-28-29-novembre-2026.html | Ensemble! Suoni e Sapori dal Mondo a Fusolab
+/eventi/eugenio-in-via-di-gioia-all-atlantico-25-novembre-2026.html | Eugenio in Via di Gioia all'Atlantico per il Club Tour 2026
+/eventi/goldin-monet-una-vita-a-colori-teatro-brancaccio.html | "Monet. Una vita a colori" al teatro Brancaccio
+/eventi/il-ballo-morante-costantini-flautissimo-29-novembre-2026.html | "Il Ballo", Laura Morante ed Eugenia Costantini in prima a Roma per Flautissimo
+/eventi/kandinsky-palazzo-bonaparte.html | Kandinsky, la grande mostra a Palazzo Bonaparte
+/eventi/keith-haring-mostra.html | Keith Haring, al via l'imperdibile mostra al Museo di Roma
+/eventi/la-strada-centrale-preneste-teatro-27-novembre-2026.html | "La Strada" a Centrale Preneste Teatro
+/eventi/lirica-campidoglio-masterclass-tosca-27-novembre-2026.html | Lirica, al Campidoglio la masterclass per scoprire i segreti della Tosca
+/eventi/location/appia-joy-park/ | Appia Joy Park
+/eventi/location/atlantico-live/ | Atlantico live
+/eventi/location/atlantico/ | Atlantico
+/eventi/location/casa-del-cinema/ | Casa del Cinema
+/eventi/location/casal-palocco/ | Casal Palocco
+/eventi/location/centrale-preneste-teatro/ | Centrale Preneste Teatro
+/eventi/location/chiesa-argentina-di-santa-maria-addolorata/ | Chiesa Argentina di Santa Maria Addolorata
+/eventi/location/chiostro-del-bramante/ | Chiostro del Bramante
+/eventi/location/eataly-roma-ostiense/ | Eataly Roma Ostiense
+/eventi/location/ergife-palace-hotel-piano-b/ | Ergife Palace Hotel – Piano B
+/eventi/location/eur/ | Eur
+/eventi/location/ex-mattatoio-di-testaccio/ | ex Mattatoio di Testaccio
+/eventi/location/fiera-roma/ | Fiera Roma
+/eventi/location/forte-trionfale/ | Forte Trionfale
+/eventi/location/fusolab/ | Fusolab
+/eventi/location/hotel-mercure-roma-west/ | Hotel Mercure Roma West
+/eventi/location/libraccio/ | Libraccio
+/eventi/location/libreria-eli/ | Libreria Eli
+/eventi/location/mediterraneo-al-maxxi/ | Mediterraneo al MAXXI
+/eventi/location/museo-del-corso-polo-museale-palazzo-cipolla/ | Museo del Corso – Polo museale Palazzo Cipolla
+/eventi/location/museo-di-roma/ | Museo di Roma
+/eventi/location/neff-collection-showroom/ | Neff Collection Showroom
+/eventi/location/ostiense/ | Ostiense
+/eventi/location/palazzo-bonaparte/ | Palazzo Bonaparte
+/eventi/location/parco-della-caffarella/ | Parco della Caffarella
+/eventi/location/park-hotel-villa-grazioli/ | Park Hotel Villa Grazioli
+/eventi/location/rima/ | Rimà
+/eventi/location/sala-promoteca/ | Sala Promoteca
+/eventi/location/salone-delle-fontane/ | Salone delle Fontane
+/eventi/location/teatro-brancaccio/ | Teatro Brancaccio
+/eventi/location/teatro-eliseo-sala-grande-e-piccolo-eliseo/ | Teatro Eliseo Sala Grande e Piccolo Eliseo
+/eventi/location/teatro-eliseo/ | Teatro Eliseo
+/eventi/location/teatro-italia/ | Teatro Italia
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && for u in "https://www.romatoday.it/eventi/dal/2026-11-24/al/2026-11-24/" "https://www.romatoday.it/eventi/dal/2026-11-28/al/2026-11-29/"; do echo "===== $u"; curl -sL --max-time 30 -A "Mozilla/5.0" "$u" -o /tmp/ev.html; python3 -c "
+import re,html
+x=open('/tmp/ev.html',encoding='utf-8',errors='ignore').read()
+x=re.sub(r'<script.*?</script>','',x,flags=re.S); x=re.sub(r'<style.*?</style>','',x,flags=re.S)
+# try extract article cards
+blocks=re.findall(r'<article.*?</article>',x,re.S)
+print('articles:',len(blocks))
+for b in blocks[:40]:
+    t=re.sub(r'<[^>]+>',' ',b); t=html.unescape(' '.join(t.split()))
+    print('-',t[:260])
+"; done
+===== https://www.romatoday.it/eventi/dal/2026-11-24/al/2026-11-24/
+articles: 41
+- "The Traitors" è stato l'one woman show di Lorella Cuccarini Massimo Falcioni
+- Se Sinner si ferma, il resto non va Stefano Benzi
+- Incontri Roma ospita il primo Forum nazionale sulla rigenerazione urbana a base culturale dal 23 al 27 novembre 2026 ex Mattatoio di Testaccio Gratis
+- Incontri Riflessi, incontro con Nicola Piovani a Palazzo Cipolla 24 novembre 2026 Museo del Corso – Polo museale Palazzo Cipolla solo domani
+- Quando il cibo smette di essere soltanto cibo: cinque secoli di arte raccontano ciò che mettiamo a tavola dal 17 ottobre 2026 al 29 marzo 2027 Chiostro del Bramante
+- Incontri Tano D’Amico incontra Simon Tanner: Storie di libri e fotografia 24 novembre 2026 WSP Photography Gratis solo domani
+- Torna il Villaggio di Natale più iconico di Roma dal 26 settembre 2026 al 17 gennaio 2027 Casal Palocco Gratis
+- Dinosauri in Carne e Ossa, la mostra a tema preistorico a Roma dal 1 aprile al 31 dicembre 2026 Appia Joy Park
+- Mostra di mattoncini Lego al centro di Roma dal 16 settembre 2025 al 16 settembre 2030 Via d'Aracoeli, 6
+- A Roma arriva un viaggio tra arte e tecnologia: installazioni immersive, intelligenza artificiale e mondi da esplorare dal 20 novembre 2026 al 30 aprile 2027 Forte Trionfale
+- Keith Haring, al via l'imperdibile mostra al Museo di Roma dal 6 ottobre 2026 al 11 aprile 2027 Museo di Roma
+- Il Teatro Eliseo rialza il sipario con una ricca stagione da non perdere dal 2 ottobre 2026 al 30 aprile 2027 Teatro Eliseo Sala Grande e Piccolo Eliseo
+- Kandinsky, la grande mostra a Palazzo Bonaparte dal 15 settembre 2026 al 14 febbraio 2027 Palazzo Bonaparte
+- Event Management e Digital Strategy: parte a Roma il primo corso biennale sugli eventi riconosciuto dal MIM dal 2 novembre al 31 dicembre 2026 ITSSIxellence Gratis
+- Amore, ossessione e l’ombra del “nero”: Luca De Fusco apre la stagione del Teatro Argentina con Otello di Shakespeare dal 4 al 29 novembre 2026 Teatro Argentina
+- I colori dell'antico. Marmi Santarelli ai Musei Capitolini dal 12 aprile 2024 al 30 aprile 2032 Palazzo Clementino
+- Keith Haring: la mostra al Museo di Roma - Palazzo Braschi dal 6 ottobre 2026 al 11 aprile 2027 Museo di Roma a Palazzo Braschi
+- Frank Horvat alle Terme di Caracalla dal 11 settembre 2026 al 10 gennaio 2027 Terme di Caracalla
+- Eur - Una storia lunga 90 anni: la mostra che racconta il quartiere di Roma dal 6 novembre 2026 al 7 febbraio 2027 Palazzo Uffici - Salone dei Disegnatori
+- Tomba François e "Il ritorno degli Eroi" al Museo Nazionale Etrusco di Villa Giulia dal 1 luglio al 31 dicembre 2026 Museo Nazionale Etrusco di Villa Giulia
+- "Diego Rivera e la costruzione dell’arte moderna in Messico nel XX secolo", la mostra a Villa Caffarelli dal 9 giugno al 13 dicembre 2026 Musei Capitolini, Villa Caffarelli
+- Christmas Garden Roma all'Orto Botanico dal 19 novembre 2026 al 10 gennaio 2027 Orto Botanico di Roma
+- Al Pigneto la cultura diventa un laboratorio di idee, incontri e nuove visioni dal 22 ottobre al 31 dicembre 2026 Nuovo Cinema Aquila/ Largo Venue/ Biblioteca Goffredo Mameli Gratis
+- Pontormo, la mostra alle Scuderie del Quirinale dal 9 ottobre 2026 al 7 febbraio 2027 Scuderie del Quirinale
+- Shopping d’autunno, oltre 250 buoni spesa e tre scooter Honda in palio: come partecipare al concorso dal 14 al 29 novembre 2026 Centro Commerciale I Granai
+- Keith Haring a Palazzo Braschi: in mostra oltre 140 opere del maestro della street art dal 6 ottobre 2026 al 11 aprile 2027 Museo di Roma - Palazzo Braschi
+- "Catastrofe e meraviglia": JR, Bill Moran e Fulvio Pierangelini in mostra alla Biblioteca Apostolica Vaticana dal 25 settembre 2026 al 14 maggio 2027 Biblioteca Apostolica Vaticana
+- "Il fascino di Seoul", la mostra all'Istituto Culturale Coreano dal 17 settembre al 4 dicembre 2026 Istituto Culturale Coreano
+- Gordon Matta-Clark al MAXXI: tagliare l’architettura per ripensare la città dal 13 novembre 2026 al 28 febbraio 2027 MAXXI - Museo delle arti del XXI secolo
+- Apertura straordinaria dei Giardini e dei tre villini delle fate nel Quartiere Coppedè dal 6 al 29 novembre 2026 Villini delle Fate
+- Dragon Ball sbarca a Roma: il pop up store di Goku apre da Rinascente dal 17 al 30 novembre 2026 La Rinascente
+- Autunno alla Casina di Raffaello: laboratori per bambini tutti i fine settimana dal 3 ottobre al 29 novembre 2026 Casina di Raffaello
+- Marina Abramovic porta sotto l’Arco di Giano "un asinello" a cui confidare segreti e pensieri dal 19 novembre 2026 al 19 maggio 2027 Arco di Giano Gratis
+- "Il potere dei classici", nuovo ciclo di Lezioni di Storia all’Auditorium Parco della Musica dal 15 novembre 2026 al 18 aprile 2027 Auditorium Parco della Musica Ennio Morricone
+- Arcipelago Quarticciolo: spettacoli, performance, residenze artistiche nel V Municipio dal 26 settembre al 20 dicembre 2026 Teatro Biblioteca Quarticciolo; Biblioteca Quarticciolo; Centro Anziani “Luigi Petroselli”; Libreria Tuba Gratis
+- “Riccardi 100. Verso l’umano”, a Trastevere la mostra in occasione del centenario di Carlo Riccardi dal 3 al 29 novembre 2026 Spazio WEGIL Gratis
+- ROM-E Walk & Run 5k, corri con noi a Villa Borghese e sostieni Sport Senza Frontiere: iscrizioni aperte dal 4 ottobre 2026 al 4 settembre 2027 villa borghese
+- Dialoghi sinfonici "Dietro l’ascolto" alla Nuvola dell’Eur dal 4 ottobre 2026 al 14 marzo 2027 La Nuvola
+- Le domeniche con Roald Dahl: da Willy Wonka a GGG, la rassegna al Cinema Troisi dal 8 novembre al 27 dicembre 2026 Cinema Troisi
+- Le Quattro Stagioni di Vivaldi a Roma dal 4 settembre al 18 dicembre 2026 Chiesa Evangelica Metodista
+===== https://www.romatoday.it/eventi/dal/2026-11-28/al/2026-11-29/
+articles: 41
+- "The Traitors" è stato l'one woman show di Lorella Cuccarini Massimo Falcioni
+- Se Sinner si ferma, il resto non va Stefano Benzi
+- Teatri "La meravigliosa Carica dei 101" al Teatro Manzoni dal 28 al 29 novembre 2026 Teatro Manzoni
+- Mostre Roma, torna la mostra dedicata a minerali e fossili dal 28 al 29 novembre 2026 Ergife Palace Hotel – Piano B Gratis
+- Cibo e Vino "Campagnano Terra di Sapori": il 28 e 29 novembre la seconda edizione dal 28 al 29 novembre 2026
+- Mercatini Christmas Market in una villa del Cinquecento dal 28 al 29 novembre 2026 Park Hotel Villa Grazioli
+- Pink Floyd Immersion al Teatro Italia 28 novembre 2026 Teatro Italia
+- Panettone Maximo, il festival del panettone artigianale a Roma 29 novembre 2026 Salone delle Fontane
+- Music Day - Fiera del Disco di Roma dal 28 al 29 novembre 2026 Hotel Mercure Roma West Gratis
+- "Il Ballo", Laura Morante ed Eugenia Costantini in prima a Roma per Flautissimo 29 novembre 2026 Teatro Palladium
+- Ensemble! Suoni e Sapori dal Mondo a Fusolab dal 28 al 29 novembre 2026 Fusolab Gratis
+- "La Bella addormentata", spettacolo per bambini a Centrale Preneste Teatro 29 novembre 2026 Centrale Preneste Teatro Gratis
+- "Si può imparare la meraviglia?", il talk alla libreria Eli 28 novembre 2026 Libreria Eli Gratis
+- Arché Natale 2026, mercatino solidale a Roma 29 novembre 2026 Chiesa Argentina di Santa Maria Addolorata Gratis
+- Quando il cibo smette di essere soltanto cibo: cinque secoli di arte raccontano ciò che mettiamo a tavola dal 17 ottobre 2026 al 29 marzo 2027 Chiostro del Bramante
+- Bloody Festival Roma, l'8ª edizione porta l'anteprima di "Blades in the darkness II" con Bill Moseley 29 novembre 2026 The Space – Moderno
+- Urban Bazar a Mediterraneo al MAXXI 28 novembre 2026 Mediterraneo al MAXXI Gratis
+- "La valle della Ninfa Egeria", trekking urbano nel Parco della Caffarella 29 novembre 2026 Parco della Caffarella
+- Passeggiata didattica verso la costruzione di un Ecomuseo sull'Archeologia industriale a Ostiense 28 novembre 2026 Ostiense
+- "Una stella in cucina": aperitivo con delitto in birreria 28 novembre 2026 Rimà
+- Magic Live Show alla Libreria Eli 28 novembre 2026 Libreria Eli
+- Scoprir. XIV Mostra di Cinema Iberoamericano di Roma dal 26 al 28 novembre 2026 Casa del Cinema
+- Torna il Villaggio di Natale più iconico di Roma dal 26 settembre 2026 al 17 gennaio 2027 Casal Palocco Gratis
+- Dinosauri in Carne e Ossa, la mostra a tema preistorico a Roma dal 1 aprile al 31 dicembre 2026 Appia Joy Park
+- Mostra di mattoncini Lego al centro di Roma dal 16 settembre 2025 al 16 settembre 2030 Via d'Aracoeli, 6
+- Natale all'Eur: villaggio sul lago, ruota panoramica e luminarie dal 28 novembre 2026 al 10 gennaio 2027 Eur
+- A Roma arriva un viaggio tra arte e tecnologia: installazioni immersive, intelligenza artificiale e mondi da esplorare dal 20 novembre 2026 al 30 aprile 2027 Forte Trionfale
+- Keith Haring, al via l'imperdibile mostra al Museo di Roma dal 6 ottobre 2026 al 11 aprile 2027 Museo di Roma
+- Il Teatro Eliseo rialza il sipario con una ricca stagione da non perdere dal 2 ottobre 2026 al 30 aprile 2027 Teatro Eliseo Sala Grande e Piccolo Eliseo
+- Kandinsky, la grande mostra a Palazzo Bonaparte dal 15 settembre 2026 al 14 febbraio 2027 Palazzo Bonaparte
+- Event Management e Digital Strategy: parte a Roma il primo corso biennale sugli eventi riconosciuto dal MIM dal 2 novembre al 31 dicembre 2026 ITSSIxellence Gratis
+- Amore, ossessione e l’ombra del “nero”: Luca De Fusco apre la stagione del Teatro Argentina con Otello di Shakespeare dal 4 al 29 novembre 2026 Teatro Argentina
+- I colori dell'antico. Marmi Santarelli ai Musei Capitolini dal 12 aprile 2024 al 30 aprile 2032 Palazzo Clementino
+- Arte contemporanea e del '900 per la Collettiva di Fine Anno dal 27 novembre al 24 dicembre 2026 Galleria Edarcom Europa Gratis
+- Le ultime lune: Alessandro Haber torna al Teatro Ambra Jovinelli dal 25 novembre al 6 dicembre 2026 Teatro Ambra Jovinelli
+- Keith Haring: la mostra al Museo di Roma - Palazzo Braschi dal 6 ottobre 2026 al 11 aprile 2027 Museo di Roma a Palazzo Braschi
+- Frank Horvat alle Terme di Caracalla dal 11 settembre 2026 al 10 gennaio 2027 Terme di Caracalla
+- Eur - Una storia lunga 90 anni: la mostra che racconta il quartiere di Roma dal 6 novembre 2026 al 7 febbraio 2027 Palazzo Uffici - Salone dei Disegnatori
+- Tomba François e "Il ritorno degli Eroi" al Museo Nazionale Etrusco di Villa Giulia dal 1 luglio al 31 dicembre 2026 Museo Nazionale Etrusco di Villa Giulia
+- "Diego Rivera e la costruzione dell’arte moderna in Messico nel XX secolo", la mostra a Villa Caffarelli dal 9 giugno al 13 dicembre 2026 Musei Capitolini, Villa Caffarelli
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -sL --max-time 30 -A "Mozilla/5.0" "https://www.romatoday.it/eventi/dal/2026-11-28/al/2026-11-29/" -o /tmp/wk.html && python3 -c "
+import re,html
+x=open('/tmp/wk.html',encoding='utf-8',errors='ignore').read()
+for kw in ['Natale all','Ensemble','Music Day','minerali','Piovani','D’Amico','Caffarella','Christmas World','Bloody']:
+    for m in re.finditer(r'href=\"([^\"]+)\"[^>]*>([^<]*'+re.escape(kw)+r'[^<]*)<',x):
+        print(kw,'|',m.group(1),'|',html.unescape(m.group(2))[:90])
+" | sort -u
+(no output)
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 -c "
+import re,html
+x=open('/tmp/wk.html',encoding='utf-8',errors='ignore').read()
+links=re.findall(r'href=\"([^\"]*\.html)\"',x)
+for l in sorted(set(links)):
+    if any(k in l for k in ['natale','ensemble','music-day','minerali','piovani','d-amico','caffarella','christmas','bloody','bella-addormentata']):
+        print(l)
+"
+/eventi/arche-natale-mercatino-solidale-28-29-novembre-2026.html
+/eventi/bella-addormentata-centrale-preneste-teatro-29-novembre-2026.html
+/eventi/bloody-festival-roma-2026-blades-darkness-bill-moseley.html
+/eventi/christmas-garden-orto-botanico-19-novembre-2026-10-gennaio-2027.html
+/eventi/christmas-market-grottaferrata-28-29-novembre-2026.html
+/eventi/ensemble-suoni-sapori-mondo-fusolab-28-29-novembre-2026.html
+/eventi/music-day-fiera-disco-28-29-novembre-2026.html
+/eventi/natale-eur-programma-28-novembre-2026-10-gennaio-2027.html
+/eventi/roma-mineral-show-2026-mostra-minerali-fossili-conchiglie.html
+/eventi/trekking-urbano-caffarella-valle-ninfa-egeria-29-novembre-2026.html
+/eventi/villaggio-natale-26.html
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && cat > /tmp/ext.py <<'EOF'
+import re,html,sys,urllib.request
+for u in sys.argv[1:]:
+    req=urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0'})
+    try: x=urllib.request.urlopen(req,timeout=30).read().decode('utf-8','ignore')
+    except Exception as e: print('ERR',u,e); continue
+    m=re.search(r'<article.*?</article>',x,re.S)
+    body=m.group(0) if m else x
+    body=re.sub(r'<script.*?</script>','',body,flags=re.S); body=re.sub(r'<style.*?</style>','',body,flags=re.S)
+    t=re.sub(r'<[^>]+>',' ',body); t=html.unescape(t); t=' '.join(t.split())
+    print('=====',u)
+    print(t[:2200])
+EOF
+python3 /tmp/ext.py "https://www.romatoday.it/eventi/natale-eur-programma-28-novembre-2026-10-gennaio-2027.html" "https://www.romatoday.it/eventi/ensemble-suoni-sapori-mondo-fusolab-28-29-novembre-2026.html" "https://www.romatoday.it/eventi/music-day-fiera-disco-28-29-novembre-2026.html"
+===== https://www.romatoday.it/eventi/natale-eur-programma-28-novembre-2026-10-gennaio-2027.html
+"The Traitors" è stato l'one woman show di Lorella Cuccarini Massimo Falcioni
+===== https://www.romatoday.it/eventi/ensemble-suoni-sapori-mondo-fusolab-28-29-novembre-2026.html
+"The Traitors" è stato l'one woman show di Lorella Cuccarini Massimo Falcioni
+===== https://www.romatoday.it/eventi/music-day-fiera-disco-28-29-novembre-2026.html
+"The Traitors" è stato l'one woman show di Lorella Cuccarini Massimo Falcioni
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && cat > /tmp/ext2.py <<'EOF'
+import re,html,sys,urllib.request
+for u in sys.argv[1:]:
+    req=urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0'})
+    x=urllib.request.urlopen(req,timeout=30).read().decode('utf-8','ignore')
+    x=re.sub(r'<script.*?</script>','',x,flags=re.S); x=re.sub(r'<style.*?</style>','',x,flags=re.S)
+    t=re.sub(r'<[^>]+>',' ',x); t=html.unescape(t); t=' '.join(t.split())
+    # cut nav
+    i=t.find('Eventi a Roma')
+    print('=====',u)
+    print(t[i:i+2600] if i>=0 else t[:2600])
+EOF
+python3 /tmp/ext2.py "https://www.romatoday.it/eventi/natale-eur-programma-28-novembre-2026-10-gennaio-2027.html"
+===== https://www.romatoday.it/eventi/natale-eur-programma-28-novembre-2026-10-gennaio-2027.html
+Natale all'Eur: villaggio sul lago, ruota panoramica e luminarie | 28 novembre - 10 gennaio 2026 Ci stai leggendo con un adblocker Raccontiamo la tua città ogni giorno, con una redazione sul territorio. La pubblicità ci permette di offrire gratuitamente gran parte del nostro lavoro: scegli come continuare a leggerci. Disattiva l'adblocker Aggiungi il sito alle eccezioni e ricarica la pagina. Fatto, ricarica --> Abbonati Niente pubblicità e un sostegno diretto al nostro lavoro, al prezzo di un caffè al mese. Scegli l'abbonamento Leggi dall'app L'app è gratuita: segui la tua città ovunque, sempre a portata di mano. Scarica l'app Hai già un account? Accedi Lunedì, 23 Novembre 2026 Sereno o poco nuvoloso 13 ° Venti 2.3 nodi NNE Probabilità di pioggia 0 % --> Abbonati Aggiorna piano Accedi Notizie Cosa fare in città Zone Dossier "The Traitors" è stato l'one woman show di Lorella Cuccarini Massimo Falcioni Se Sinner si ferma, il resto non va Stefano Benzi Eventi / Manifestazioni Natale all'Eur: villaggio sul lago, ruota panoramica e luminarie Dove Eur Viale America Quando Dal 28/11/2026 al 10/01/2027 Orario non disponibile Prezzo Prezzo non disponibile Altre informazioni Tema Natale Redazione Facebook Twitter WhatsApp 09 novembre 2026 13:36 Prende il via la sesta edizione di "Natale all’Eur", l'appuntamento che trasformerà il Municipio IX di Roma per tutte le festività invernali. “Il Natale di Roma - Un Natale sul lago dell'Eur” è il villaggio allestito tra viale Oceania e viale America, attivo dal 28 novembre al 10 gennaio. Tra archi scenografici illuminati e immersi nella natura, i visitatori potranno salire sulla Ruota Panoramica più alta di Roma, icona simbolica dell'evento, mentre i più piccoli potranno incontrare Babbo Natale e i suoi elfi nella suggestiva Casa di Babbo Natale, affiancata da un Presepe Monumentale di 6x3 metri e da un’area food & beverage riscaldata con specialità tradizionali, prodotti d'eccellenza, vini autoctoni del Lazio e proposte dolciarie. Non mancheranno gli appuntamenti in tutto il territorio municipale. Dal 27 novembre all’8 gennaio, le luminarie di viale Europa, realizzate in collaborazione con i commercianti della via. L'inaugurazione ufficiale del programma diffuso si terrà l'8 dicembre alle 19:30 con l'accensione dell'Albero di Natale sulla scalinata della Basilica dei Santi Pietro e Paolo, dando il via a un mese di concerti natalizi, iniziative dedicate alla salute, laboratori per famiglie e animazione itinerante nei parchi e nelle piazze del quartiere. Spot . . . . . . I più letti 1. Conca d'Oro Weekend con gli Ambulanti
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 /tmp/ext2.py "https://www.romatoday.it/eventi/ensemble-suoni-sapori-mondo-fusolab-28-29-novembre-2026.html" "https://www.romatoday.it/eventi/music-day-fiera-disco-28-29-novembre-2026.html" 2>&1 | cut -c1-2200
+===== https://www.romatoday.it/eventi/ensemble-suoni-sapori-mondo-fusolab-28-29-novembre-2026.html
+Ensemble! Suoni e Sapori dal Mondo a Fusolab | 28-29 novembre 2026 Ci stai leggendo con un adblocker Raccontiamo la tua città ogni giorno, con una redazione sul territorio. La pubblicità ci permette di offrire gratuitamente gran parte del nostro lavoro: scegli come continuare a leggerci. Disattiva l'adblocker Aggiungi il sito alle eccezioni e ricarica la pagina. Fatto, ricarica --> Abbonati Niente pubblicità e un sostegno diretto al nostro lavoro, al prezzo di un caffè al mese. Scegli l'abbonamento Leggi dall'app L'app è gratuita: segui la tua città ovunque, sempre a portata di mano. Scarica l'app Hai già un account? Accedi Lunedì, 23 Novembre 2026 Sereno o poco nuvoloso 13 ° Venti 2.3 nodi NNE Probabilità di pioggia 0 % --> Abbonati Aggiorna piano Accedi Notizie Cosa fare in città Zone Dossier "The Traitors" è stato l'one woman show di Lorella Cuccarini Massimo Falcioni Se Sinner si ferma, il resto non va Stefano Benzi Eventi / Manifestazioni Ensemble! Suoni e Sapori dal Mondo a Fusolab Dove Fusolab Viale della Bella Villa, 96 Quando Dal 28/11/2026 al 29/11/2026 Sabato 28 novembre ore 15:00–01:00; Domenica 29 novembre ore 10:00–22:00 Prezzo Gratis Altre informazioni Redazione Facebook Twitter WhatsApp 20 novembre 2026 12:37 "Ensemble! Suoni e Sapori dal Mondo" torna, con la sua seconda edizione, il 28 e 29 novembre negli spazi creativi del Fusolab, in Viale della Bella Villa, 96, nel quartiere Alessandrino. Ben 12 comunità provenienti da 4 continenti daranno vita a un'unica festa, promossa dall'Associazione Metabolica ASD e realizzata con il contributo di Roma Capitale in collaborazione con Zètema Progetto Cultura, con l'obiettivo di trasformare l'incontro tra culture in un'esperienza quotidiana e autentica di integrazione, dove nessuno è spettatore e tutti sono protagonisti. Un luogo dove i confini si annullano davanti a un piatto condiviso, una danza tradizionale o una testimonianza raccontata con il cuore. D'altronde il titolo dell'iniziativa ne racchiude già il senso e l'anima: dal francese ensemble, che tradotto vuol dire "insieme". Per tutto il weekend le comunità di Bangladesh, Bolivia, Brasile, Capo Verde, Cina, Congo, Etiopia, Kurd
+===== https://www.romatoday.it/eventi/music-day-fiera-disco-28-29-novembre-2026.html
+Music Day - Fiera del Disco di Roma | 28-29 novembre 2026 Ci stai leggendo con un adblocker Raccontiamo la tua città ogni giorno, con una redazione sul territorio. La pubblicità ci permette di offrire gratuitamente gran parte del nostro lavoro: scegli come continuare a leggerci. Disattiva l'adblocker Aggiungi il sito alle eccezioni e ricarica la pagina. Fatto, ricarica --> Abbonati Niente pubblicità e un sostegno diretto al nostro lavoro, al prezzo di un caffè al mese. Scegli l'abbonamento Leggi dall'app L'app è gratuita: segui la tua città ovunque, sempre a portata di mano. Scarica l'app Hai già un account? Accedi Lunedì, 23 Novembre 2026 Sereno o poco nuvoloso 13 ° Venti 2.3 nodi NNE Probabilità di pioggia 0 % --> Abbonati Aggiorna piano Accedi Notizie Cosa fare in città Zone Dossier "The Traitors" è stato l'one woman show di Lorella Cuccarini Massimo Falcioni Se Sinner si ferma, il resto non va Stefano Benzi Eventi / Concerti Music Day - Fiera del Disco di Roma Dove Hotel Mercure Roma West Viale degli Eroi di Cefalonia, 301 Quando Dal 28/11/2026 al 29/11/2026 dalle 10 alle 20 Prezzo Gratis Altre informazioni Redazione Facebook Twitter WhatsApp 20 novembre 2026 12:00 Music Day Roma torna con l’ultima kermesse del 2026: un'area espositiva di 2.500 mq, con oltre 60 espositori da tutta Italia saranno presenti con una messe di vinili, cd, oggettistica, memorabilia da collezione e tutto quello che collezionisti e appassionati possono desiderare in ambito musicale. In programma anche un fitto cartellone di presentazioni, incontri col pubblico e firmacopie. Protagonisti nomi della musica italiana quali Massimo Bubola, Vittorio Nocenzi, Gianni Belleno, Roberto Guarino, oltre a una nutrita rappresentanza di alcuni dei massimi autori italiani di colonne sonore come i Maestri Vince Tempera, Franco Bixio, Fabio Frizzi, Guido e Maurizio De Angelis. Gli incontri Sabato 28 Ore 11,30 Roberto Guarino presenta il suo album “Solo incontrotendenza Deluxe” (Hi Qu Music, distribuito da ADA Music Italy / Warner Music Italy). Modera Paolo Tocco. Roberto Guarino, musicista polistrumentista, produttore, compositore, collaboratore di alcuni dei più importanti nomi del
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 - <<'EOF'
+import re,html,urllib.request
+u="https://www.romatoday.it/eventi/ensemble-suoni-sapori-mondo-fusolab-28-29-novembre-2026.html"
+x=urllib.request.urlopen(urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0'}),timeout=30).read().decode('utf-8','ignore')
+x=re.sub(r'<script.*?</script>','',x,flags=re.S); x=re.sub(r'<style.*?</style>','',x,flags=re.S)
+t=html.unescape(re.sub(r'<[^>]+>',' ',x)); t=' '.join(t.split())
+i=t.find('Per tutto il weekend')
+print(t[i:i+1800])
+EOF
+Per tutto il weekend le comunità di Bangladesh, Bolivia, Brasile, Capo Verde, Cina, Congo, Etiopia, Kurdistan, Mozambico, Perù, Romania e Sierra Leone intrecceranno i propri linguaggi, lontano da ogni lettura folkloristica, per portare sul palco esibizioni dal vivo di musica tradizionale e contemporanea, sfilate e momenti di ballo aperti al coinvolgimento diretto del pubblico. Ci saranno anche aree dedicate allo street food internazionale, affiancate da stand artigianali e dall'angolo ristoro curato da FUK – Fusolab Urban Kitchen, per un vero e proprio viaggio culinario intorno al mondo. Non mancheranno incontri, momenti di dialogo e mercatini. Per gli appassionati di musica, invece, sabato sera arriva la performance dei LOS3SALTOS, pronti a far ballare la platea con la loro travolgente miscela sonora, seguiti dal DJ set di La Reina del Fomento e la domenica e le selezioni di Corry X e Gianluca Diana. Il programma dettagliato e i menù degli stand saranno consultabili su fusolab.net. I più letti 1. Conca d'Oro Weekend con gli Ambulanti di Forte dei Marmi 2. Eur Roma Chocolate all'Eur 3. Eventi La porta dorata dell’Abruzzo – Il valico di Forca D’Acero 4. Eventi “Il Bosco Stregato delle Zucche” nel cuore dei Castelli Romani 5. Eur Natale all'Eur: villaggio sul lago, ruota panoramica e luminarie A proposito di Eventi Dinosauri in Carne e Ossa, la mostra a tema preistorico a Roma dal 1 aprile al 31 dicembre 2026 Appia Joy Park Mostra di mattoncini Lego al centro di Roma dal 16 settembre 2025 al 16 settembre 2030 Via d'Aracoeli, 6 Natale all'Eur: villaggio sul lago, ruota panoramica e luminarie dal 28 novembre 2026 al 10 gennaio 2027 Eur Kandinsky, la grande mostra a Palazzo Bonaparte dal 15 settembre 2026 al 14 febbraio 2027 Palazzo Bonaparte Potrebbe interessarti Torna su ©
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 /tmp/rss.py "Roma Chocolate Eur 2026 date" "Roma mobilità weekend 28 29 novembre 2026" "Roma strade chiuse 29 novembre 2026" "sciopero 27 novembre 2026 Roma trasporti" "Roma 24 novembre 2026 evento"
+===  Roma Chocolate Eur 2026 date  ===
+- Roma Chocolate all'Eur - RomaToday | Sun, 08 Nov 2026
+- Roma Chocolate, dal 6 all’8 novembre torna all’Eur l’evento più goloso della Capitale - Il Messaggero | Wed, 04 Nov 2026
+- Weekend a Roma: 20 eventi da non perdere sabato 7 e domenica 8 novembre - RomaToday | Sat, 07 Nov 2026
+- Dal 7 al 9 novembre all’Eur torna “Roma Chocolate” - la Repubblica | Thu, 06 Nov 2025
+- Cosa fare a Roma (anche gratis) venerdì 6, sabato 7 e domenica 8 novembre? Dal Festival del raviolo a Ostiense al Freak & Chic Bazaar a... - Il Messaggero | Fri, 06 Nov 2026
+- Roma Chocolate a piazza Risorgimento - RomaToday | Mon, 23 Nov 2026
+- Roma, dal 7 al 9 novembre all'Eur torna “Roma Chocolate” - Il Messaggero | Tue, 04 Nov 2025
+- Festa del Cioccolato in piazza Risorgimento | 31 ottobre - 1 novembre 2026 - RomaToday | Sun, 01 Nov 2026
+- Eurochocolate Perugia 2026 | Fate Dolci! | 13 - 22 Novembre 2026 - Eurochocolate | Tue, 06 Sep 2016
+- Castelli di Cioccolato a Marino - RomaToday | Sun, 11 Oct 2026
+===  Roma mobilità weekend 28 29 novembre 2026  ===
+- Meteo Roma settimana 23-29 novembre: ancora pioggia, temperatura al ribasso - Moveo by Telepass | Sun, 22 Nov 2026
+- Sito Istituzionale | Mobilità e trasporti, weekend 20 e 21 giugno - Roma Capitale | Sun, 21 Jun 2026
+- Weekend nel Lazio: cosa fare sabato 21 e domenica 22 novembre 2026 - Lazio Eventi | Fri, 20 Nov 2026
+- Le strade chiuse a Roma sabato 28 e domenica 29 marzo - RomaToday | Sun, 29 Mar 2026
+- Sciopero 30 ottobre, cortei e manifestazioni in tutta Italia: settori a rischio stop - RaiNews | Tue, 27 Oct 2026
+- Dal 6 dicembre al via il piano mobilità per le festività natalizie - Roma Servizi per la Mobilità | Wed, 03 Dec 2025
+- Festa della Repubblica: le strade chiuse e i bus deviati per le prove generali - RomaToday | Fri, 29 May 2026
+- Metro C, si aggiorna il calendario dei lavori e delle modifiche al servizio - Roma Servizi per la Mobilità | Mon, 22 Dec 2025
+- Sito Istituzionale | Mobilità e trasporti, weekend 27 e 28 giugno - Roma Capitale | Sun, 28 Jun 2026
+- Lavori stradali Roma 16-22 novembre, strade chiuse e bus - Vivere Roma | Mon, 16 Nov 2026
+===  Roma strade chiuse 29 novembre 2026  ===
+- Sciopero generale del 20 novembre: strade chiuse, bus deviati e divieti di sosta a Roma - RomaToday | Thu, 19 Nov 2026
+- Autovelox nel Lazio, sai dove saranno i controlli questa settimana? Le date e le strade da conoscere per evitare multe salate - Il Quotidiano del Lazio | Mon, 23 Nov 2026
+- Sciopero dei mezzi, Roma verso la paralisi. Oggi, venerdì 20 novembre, a rischio metro, bus, tram e treni per 24 ore - RomaToday | Fri, 20 Nov 2026
+- Circo Massimo, strade chiuse fino al 4 novembre e bus deviati - Vivere Roma | Thu, 29 Oct 2026
+- Le strade chiuse a Roma sabato 14 e domenica 15 novembre 2026 - RomaToday | Sun, 15 Nov 2026
+- Lavori sui binari, treni cancellati per quattro giorni tra Roma e Fiumicino aeroporto: le linee coinvolte - RomaToday | Thu, 19 Nov 2026
+- Manifestazioni a Roma oggi venerdì 30 ottobre, le strade chiuse e i bus deviati: tutte le informazioni - RomaToday | Fri, 30 Oct 2026
+- Manifestazioni a Roma, circolazione verso normalità tra via Marmorata/Porta San Paolo/via Ostiense - Roma Servizi per la Mobilità | Wed, 28 Oct 2026
+- 'Villaggio Difesa' al Circo Massimo, cambia la viabilità - Roma Capitale | Tue, 27 Oct 2026
+- Strade chiuse 4 novembre Roma: piazza Venezia e Circo Massimo - Vivere Roma | Tue, 03 Nov 2026
+===  sciopero 27 novembre 2026 Roma trasporti  ===
+- Calendario scioperi 23 - 29 novembre 2026: vertenze, mobilitazioni e iniziative Cgil - CGIL | Sun, 22 Nov 2026
+- Sciopero ferrovie 20-21 novembre 2026: norme tecniche - CUB | Sat, 21 Nov 2026
+- Sciopero generale 20 novembre 2026: metro Roma a rischio - Metropolitana di Roma | Fri, 20 Nov 2026
+- Scioperi settimana dal 23 al 29 novembre 2026, si fermano sanità, banche e avvocati: le città coinvolte - Virgilio | Sat, 21 Nov 2026
+- Scioperi, manifestazioni e proteste in programma a novembre: calendario e date - Sky TG24 | Sun, 01 Nov 2026
+- Scioperi novembre 2026, dai treni agli aerei fino al trasporto locale: tutte le date da segnare. Quello generale il 20 - Il Messaggero | Mon, 26 Oct 2026
+- Sciopero a Roma, venerdì 30 ottobre stop dei trasporti. Bus, metro e treni a rischio per 24 ore. Tutte le informazioni - RomaToday | Fri, 30 Oct 2026
+- Sciopero generale del 30 ottobre: orari e fasce di garanzia per treni, bus e metro. La mappa delle 41 città - QuiFinanza | Fri, 30 Oct 2026
+- Calendario scioperi 26 ottobre - 1 novembre 2026: vertenze, mobilitazioni e iniziative Cgil - CGIL | Sun, 25 Oct 2026
+- Scioperi novembre 2026, treni e aerei a rischio: tutte le date e le città coinvolte - Studenti.it | Mon, 19 Oct 2026
+===  Roma 24 novembre 2026 evento  ===
+- Novembre 2026 a Roma: scopri e vivi Roma dal 1° al 30 novembre 2026 - Turismo Roma | Thu, 29 Oct 2026
+- Eventi e scadenze: settimana del 23 novembre 2026 - Teleborsa | Mon, 23 Nov 2026
+- Art Déco Week Roma: visita guidata tra alberghi, cinema e lusso degli anni trenta - RomaToday | Wed, 18 Nov 2026
+- Roma, così Gualtieri punta al bis con il campo larghissimo - Il Sole 24 ORE | Sat, 07 Nov 2026
+- Weekend a Roma: 18 eventi da non perdere sabato 24 e domenica 25 ottobre - RomaToday | Sat, 24 Oct 2026
+- Sito Istituzionale | 25 novembre, Roma contro la violenza sulle donne - Roma Capitale | Fri, 20 Nov 2026
+- Giornata delle Vittime della Strada – 25 novembre 2026 - Ufficio Scolastico Regionale per il Veneto | Mon, 23 Nov 2026
+- Terapia mirata con cellule T per curare le malattie immunitarie - geneTIGA e oltre. 23-24 novembre 2026, Roma - Osservatorio Terapie Avanzate | Thu, 05 Nov 2026
+- Il 24 novembre a Roma presentazione delle 10 proposte del Tavolo Asilo e Immigrazione - CNCA – Coordinamento Nazionale Comunità Accoglienti | Fri, 20 Nov 2026
+- Italy – Canada AI Health Nexus - Confindustria | Tue, 20 Oct 2026
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://api.open-meteo.com/v1/forecast?latitude=41.8933&longitude=12.4829&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,precipitation_sum&timezone=Europe%2FRome&start_date=2026-11-24&end_date=2026-11-30" | python3 -m json.tool | head -60
+{
+    "latitude": 41.923637,
+    "longitude": 12.477454,
+    "generationtime_ms": 0.1703500747680664,
+    "utc_offset_seconds": 3600,
+    "timezone": "Europe/Rome",
+    "timezone_abbreviation": "GMT+1",
+    "elevation": 42.0,
+    "daily_units": {
+        "time": "iso8601",
+        "weather_code": "wmo code",
+        "temperature_2m_max": "\u00b0C",
+        "temperature_2m_min": "\u00b0C",
+        "precipitation_probability_max": "%",
+        "precipitation_sum": "mm"
+    },
+    "daily": {
+        "time": [
+            "2026-11-24",
+            "2026-11-25",
+            "2026-11-26",
+            "2026-11-27",
+            "2026-11-28",
+            "2026-11-29",
+            "2026-11-30"
+        ],
+        "weather_code": [
+            45,
+            95,
+            80,
+            45,
+            45,
+            2,
+            3
+        ],
+        "temperature_2m_max": [
+            16.9,
+            16.5,
+            16.4,
+            15.6,
+            14.0,
+            13.3,
+            11.5
+        ],
+        "temperature_2m_min": [
+            6.3,
+            11.5,
+            11.1,
+            7.6,
+            6.1,
+            3.9,
+            3.2
+        ],
+        "precipitation_probability_max": [
+            5,
+            99,
+            79,
+            70,
+            17,
+            7,
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -sL --max-time 25 -A "Mozilla/5.0" "https://www.romatoday.it/eventi/" -o /tmp/rt2.html; python3 -c "
+import re
+x=open('/tmp/rt2.html',encoding='utf-8',errors='ignore').read()
+for l in sorted(set(re.findall(r'href=\"([^\"]*christmas[^\"]*\.html)\"',x))): print(l)
+"; curl -s "https://news.google.com/rss/search?q=Christmas+World+Roma+Villa+Borghese+biglietti&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+x=sys.stdin.read()
+for it in re.findall(r'<item>(.*?)</item>',x,re.S)[:8]:
+    t=re.search(r'<title>(.*?)</title>',it,re.S); l=re.search(r'<link>(.*?)</link>',it,re.S)
+    print(html.unescape(t.group(1)) if t else ''); print(l.group(1) if l else '')
+"
+/eventi/christmas-market-grottaferrata-28-29-novembre-2026.html
+Christmas World Roma 2026: Villa Borghese diventa un gigantesco parco natalizio tra spettacoli, attrazioni e magia - CorriereNerd.it
+https://news.google.com/rss/articles/CBMiXkFVX3lxTE1ZYXBHV2pZaU5wRlV1RUNqQzVHbzZHTm1vSlBaekYxb2ZXUVE3aFJtcGMyYTB2cktUMFExc2w3UVA4NHR3djVxSnVVUFRsaUN3eWxoQXFLUVVPVTNTdXc?oc=5
+Capitale d'Italia e del Natale: il più grande villaggio delle feste torna nel cuore di Roma con tantissime novità - Turisti per Caso
+https://news.google.com/rss/articles/CBMi6wFBVV95cUxPUnVMb2xvSmJtN0wtWi1KeHA3aWZtbFNldi1VQUNmXzQ3emFmcWNPYmlQd1hKV09pdTA4OURqMGJYWG9lRXE0SXBrRFJVcUdSaDZtckRYZlRDWS03Ukw2dzNqUWF2SVRQQmNTM1UzNlRmbGc2SDk0YXJaWDljRDE4dk1id3RaRlN2SjQ1dGVuUzQ0UW5sUjlwMzFvRmZnZXRWQV90WnJiNzRoSWFhR1ktQVl3eXdSaU8tTFdnQnZCM2dvbXd6RmFUM3d3czhKVmx3T0Zkc0t1ejdId2VEeWVoaVl3UzJfLTNuNUNN?oc=5
+Christmas World a Villa Borghese: il Villaggio di Natale più grande d’Europa torna dal 28 novembre - Romeing
+https://news.google.com/rss/articles/CBMia0FVX3lxTE9GUFJKOFlzRFUxMER0UzdoMk83RDNOdFUwTmtoZERCMUdOUFR1bDNpRHI1cTZIQjJvRWdzTEJnQkxIT0FnXzdjSWNTb0UwMW91X3V3ZWNWUTEwWVdnYmtNTHZwbjFObE54REln?oc=5
+Natale 2026 a Roma: Christmas World a Villa Borghese, date e biglietti - The Wom Travel
+https://news.google.com/rss/articles/CBMiekFVX3lxTE93ZWxrZlhHS21NSzFBQ0ZKcXB6Q1JrTS1IT0RZYTFZdkdxM21fSnF1ajlWYzh3bGpHa1hvTjVhZFRLdmxDTlpIOVR4TTRXS3h6NFZfU3hYaW5zckxEQkM5SUpiUWpNeHEwMTNoTnRsNWxBSlo3c2VpVGlB?oc=5
+Christmas World 2025 - Turismo Roma
+https://news.google.com/rss/articles/CBMiaEFVX3lxTE1CNkdxczYwa1dNSllyTWY5LVktcXlqTXV3UVRhNm5lUU15V3BpS1lnWFFsd1prOHdCd1lWYmd4OGpoazlydUc5Q0V5czZFSms2Z2RMcVdob29ETVM0cHZ2Y2xUNzNFeDdq?oc=5
+Christmas World a Villa Borghese | 29 novembre 2025 - 11 gennaio 2026 - RomaToday
+https://news.google.com/rss/articles/CBMiogFBVV95cUxQeW1ITXpfMERGcy0tLTdUemJESl85ZHRIYXlzcFhZT2hzbE5MSlJ3LUJ4UXFsYnZkd3l1QkxicVBtZHh3SS05QkRNa2hsaWFlb0VCcEpLUzRld3A4bWRUc0Z6UjZjeHhXcEYtSktTa25MZWZNQk9NZ3hRcEZUUmppR1hUcHItbGk2Y2dETUM3NlJnN2dmN1BSdWhVRkVnX2RqckE?oc=5
+A Roma torna ‘Christmas World’, il villaggio di Natale a Villa Borghese - Agenzia Dire
+https://news.google.com/rss/articles/CBMipwFBVV95cUxNZzI5LUN3X1l4VjV6MFQ4UFFCa3dlWG1JQm1QamJJYnVCZkhGaEFOUFc2QWYxclRaY2s4c1ZPSk9vcDRRYXU2SG8ySWswYzkwODRxWXdqTzI4ZEF6ckw4MVJPUXdxNnlZU2NJeENsNWdqQzVKVkJScFNWVWJaaklvcVdnUVVQb19YbVQ2OERvWlRlMFNwNUZ6dVVNN3ZNdE9XcUdjMkdTQQ?oc=5
+Il villaggio di Natale più grande d’Europa è qui… ma non dove pensi - The Wom Travel
+https://news.google.com/rss/articles/CBMicEFVX3lxTE1ZUDN4VE9mSDJjN253R0pmYUJXQXZuOGluR245c1ZnckxTY3k1N1VPMmJKQ3V3SkhpSFRXQkgwbk1pZVprUnROalVVOTJDUDZZTmszaTEyXzlBQndDZnBIRnpkYW52RHBFUFJMRlNDd3A?oc=5
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && for u in "https://www.romeing.it/christmas-world-roma/" "https://www.romeing.it/christmas-world-roma" "https://www.christmasworldroma.it/" "https://christmasworldroma.com/"; do echo "=== $u"; curl -sL --max-time 20 -A "Mozilla/5.0" "$u" -o /tmp/cw.html -w "%{http_code}\n"; python3 -c "
+import re,html
+x=open('/tmp/cw.html',encoding='utf-8',errors='ignore').read()
+x=re.sub(r'<script.*?</script>','',x,flags=re.S); x=re.sub(r'<style.*?</style>','',x,flags=re.S)
+t=html.unescape(re.sub(r'<[^>]+>',' ',x)); t=' '.join(t.split())
+print(t[:1200])
+"; done
+=== https://www.romeing.it/christmas-world-roma/
+200
+ JFIF       lExif  II*     1    2         i    :       Google        0220                   C     '  .)10.)-,3:J>36F7,-@WAFLNRSR2>ZaZP`JQRO C&&O5-5OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO   "                                 `B @Q@@dE Y* d  %(E,Y A(    `  ,U PD Y(EaEEKeT,Y P  EK U`  @   @P@( PQr  `%Y`dKR(BB !((!`Q   EU@  "  P@ (-DPE%J  -IdE@d E %@XR - TQ-dY( Q`J RʀA*Q (%YdTXY((   @PPQ`  EJED,dUKET*EE ,%K  D  db U@ Ņ%d @T Q  R,(,?=}P:eh"ȂPP,K% BP"(    e[( e?c# fK% VTYlK ۈ E5A )bXJ$Q , )`d QBEvz.;/.S;l5e卸o {2\ , %&V^ {Sg}Rl`y16\;8HܜNs󎘲YYK(%Ft=@Ι k`K%@*T@ TJ G^9cJtt8gm~}`IOO 6 }㩫϶3;Y&F=IR0v* Ysf% ; bw3zyY qtGYu 7mXCל vkuӟ[ muJ$Bn;\qru^ 罖kz V7 ^7:ҳ˄qݤ7^W"*, ={' X"uSp_^*X!( !*@, [v"ǿkiǟq|[|=:y> 6n?7[εܱ~GOMsӟζQb;^1{{Gwcp9R^&dl FN'n&F6^,ս wԻwM=>;q E|~Q˦6"&f ^:xƽLF#+ׅ8ur'L钼y/^3UQ b`Q (vθ>Ϸ zQ9GgOWy^Bck]˧ I鍶 xV)ۊ 9* PȢ @Y܇e ON^} ם>]kn{Mgnzk;}>7?UOϢ'ۓkztoy֣a*LN]1/]~nzxpMϯ[?=7@mӈԅBP *" =nϯ9]wϗ>.U ,zᓅ}' N&u}=~^}'l덫aysCO\ q Oo| :cf.ߣz//p;Zח'
+=== https://www.romeing.it/christmas-world-roma
+200
+ JFIF       lExif  II*     1    2         i    :       Google        0220                   C     '  .)10.)-,3:J>36F7,-@WAFLNRSR2>ZaZP`JQRO C&&O5-5OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO   "                                 `B @Q@@dE Y* d  %(E,Y A(    `  ,U PD Y(EaEEKeT,Y P  EK U`  @   @P@( PQr  `%Y`dKR(BB !((!`Q   EU@  "  P@ (-DPE%J  -IdE@d E %@XR - TQ-dY( Q`J RʀA*Q (%YdTXY((   @PPQ`  EJED,dUKET*EE ,%K  D  db U@ Ņ%d @T Q  R,(,?=}P:eh"ȂPP,K% BP"(    e[( e?c# fK% VTYlK ۈ E5A )bXJ$Q , )`d QBEvz.;/.S;l5e卸o {2\ , %&V^ {Sg}Rl`y16\;8HܜNs󎘲YYK(%Ft=@Ι k`K%@*T@ TJ G^9cJtt8gm~}`IOO 6 }㩫϶3;Y&F=IR0v* Ysf% ; bw3zyY qtGYu 7mXCל vkuӟ[ muJ$Bn;\qru^ 罖kz V7 ^7:ҳ˄qݤ7^W"*, ={' X"uSp_^*X!( !*@, [v"ǿkiǟq|[|=:y> 6n?7[εܱ~GOMsӟζQb;^1{{Gwcp9R^&dl FN'n&F6^,ս wԻwM=>;q E|~Q˦6"&f ^:xƽLF#+ׅ8ur'L钼y/^3UQ b`Q (vθ>Ϸ zQ9GgOWy^Bck]˧ I鍶 xV)ۊ 9* PȢ @Y܇e ON^} ם>]kn{Mgnzk;}>7?UOϢ'ۓkztoy֣a*LN]1/]~nzxpMϯ[?=7@mӈԅBP *" =nϯ9]wϗ>.U ,zᓅ}' N&u}=~^}'l덫aysCO\ q Oo| :cf.ߣz//p;Zח'
+=== https://www.christmasworldroma.it/
+200
+Christmas World – Il più grande parco a tema natalizio d’Europa Vai al contenuto Home Parco & Spettacoli Parco Spettacoli Attrazioni Pianifica la tua visita Christmas Parade FAQ EN Home Parco & Spettacoli Parco Spettacoli Attrazioni Pianifica la tua visita Christmas Parade FAQ EN TICKETS TICKETS Home Parco & Spettacoli Parco Spettacoli Attrazioni Pianifica la tua visita Christmas Parade FAQ EN Christmas World torna nel cuore di Villa Borghese dal 28 novembre Il biglietto di ingresso include l’accesso al villaggio e tante esperienze da vivere durante la giornata. Tra queste: il Grande Spettacolo di Natale sul Main Stage, gli spettacoli diffusi come Fourth Harmony, il Christmas Jungle Show, Missione Elfi in Lapponia e la Baby Dance. Ogni giorno potrai assistere alle 2 Christmas Parade, ai saluti del Buongiorno e della Buonanotte con tutto il cast, incontrare i personaggi del villaggio, da Renna Renata a Babbo Natale, dagli Elfi alla Befana, e visitare la Casa delle letterine e la magica dimora di Babbo Natale, dove chiedere doni e scattare una foto ricordo. Sono comprese nel prezzo anche attività come lo Snow Village e il Truccabimbi. Tutte le giostre e la food experience sono a paga
+=== https://christmasworldroma.com/
+000
+Christmas World – Il più grande parco a tema natalizio d’Europa Vai al contenuto Home Parco & Spettacoli Parco Spettacoli Attrazioni Pianifica la tua visita Christmas Parade FAQ EN Home Parco & Spettacoli Parco Spettacoli Attrazioni Pianifica la tua visita Christmas Parade FAQ EN TICKETS TICKETS Home Parco & Spettacoli Parco Spettacoli Attrazioni Pianifica la tua visita Christmas Parade FAQ EN Christmas World torna nel cuore di Villa Borghese dal 28 novembre Il biglietto di ingresso include l’accesso al villaggio e tante esperienze da vivere durante la giornata. Tra queste: il Grande Spettacolo di Natale sul Main Stage, gli spettacoli diffusi come Fourth Harmony, il Christmas Jungle Show, Missione Elfi in Lapponia e la Baby Dance. Ogni giorno potrai assistere alle 2 Christmas Parade, ai saluti del Buongiorno e della Buonanotte con tutto il cast, incontrare i personaggi del villaggio, da Renna Renata a Babbo Natale, dagli Elfi alla Befana, e visitare la Casa delle letterine e la magica dimora di Babbo Natale, dove chiedere doni e scattare una foto ricordo. Sono comprese nel prezzo anche attività come lo Snow Village e il Truccabimbi. Tutte le giostre e la food experience sono a paga
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && for u in "https://www.christmasworldroma.it/" "https://www.christmasworldroma.it/pianifica-la-tua-visita/" "https://www.christmasworldroma.it/tickets/"; do echo "=== $u"; curl -sL --max-time 25 -A "Mozilla/5.0" "$u" -o /tmp/cw.html; python3 -c "
+import re,html
+x=open('/tmp/cw.html',encoding='utf-8',errors='ignore').read()
+x=re.sub(r'<script.*?</script>','',x,flags=re.S); x=re.sub(r'<style.*?</style>','',x,flags=re.S)
+t=html.unescape(re.sub(r'<[^>]+>',' ',x)); t=' '.join(t.split())
+i=t.find('Christmas World torna')
+print(t[i:i+2500] if i>=0 else t[:2500])
+"; done
+=== https://www.christmasworldroma.it/
+Christmas World torna nel cuore di Villa Borghese dal 28 novembre Il biglietto di ingresso include l’accesso al villaggio e tante esperienze da vivere durante la giornata. Tra queste: il Grande Spettacolo di Natale sul Main Stage, gli spettacoli diffusi come Fourth Harmony, il Christmas Jungle Show, Missione Elfi in Lapponia e la Baby Dance. Ogni giorno potrai assistere alle 2 Christmas Parade, ai saluti del Buongiorno e della Buonanotte con tutto il cast, incontrare i personaggi del villaggio, da Renna Renata a Babbo Natale, dagli Elfi alla Befana, e visitare la Casa delle letterine e la magica dimora di Babbo Natale, dove chiedere doni e scattare una foto ricordo. Sono comprese nel prezzo anche attività come lo Snow Village e il Truccabimbi. Tutte le giostre e la food experience sono a pagamento e non incluse nel biglietto. attrazioni 11 Performer 300 Visitatori 2,5 mln parco 40.000 mq spettacoli il natale va in scena Uno spettacolo straordinario, un grande palco e una produzione inedita danno vita a un racconto natalizio in grado di emozionare, sorprendere e incantare spettatori di tutte le età. scopri di più attrazioni Nome attrazione Pattina sul ghiaccio sotto l'ombra iconica del Ponte di Brooklyn: un’esperienza indimenticabile per grandi e piccini su una pista di circa 900 mq scopri di più scarica l’app la magia del Natale a portata di click Scarica subito la nostra app ufficiale e accedi al parco più grande d’europa • Crea il tuo itinerario personalizzato e organizza la tua visita • Resta sintonizzato sugli orai degli show • Divertiti con le nuove attrazioni • Scopri i menu digitali di tutte le food court Una produzione Con il patrocinio del © Copyright All Rights Reserved Lux Entertainment S.p.A. | P.Iva IT13059411002 Instagram Tiktok Facebook info@christmasworld.net Informativa Sito Web Privacy Policy Gestisci Consenso Per fornire le migliori esperienze, utilizziamo tecnologie come i cookie per memorizzare e/o accedere alle informazioni del dispositivo. Il consenso a queste tecnologie ci permetterà di elaborare dati come il comportamento di navigazione o ID unici su questo sito. Non acconsentire o ritirare il consenso può influire negativamente su alcune caratteristiche e funzioni. Funzionale Funzionale Sempre attivo L'archiviazione tecnica o l'accesso sono strettamente necessari al fine legittimo di consentire l'uso di un servizio specifico esplicitamente richiesto dall'abbonato o dall'utente, o al solo scopo di effettuare la trasmissione di una 
+=== https://www.christmasworldroma.it/pianifica-la-tua-visita/
+Christmas World torna nel cuore di Villa Borghese dal 28 novembre Il biglietto di ingresso include l’accesso al villaggio e tante esperienze da vivere durante la giornata. Tra queste: il Grande Spettacolo di Natale sul Main Stage, gli spettacoli diffusi come Fourth Harmony, il Christmas Jungle Show, Missione Elfi in Lapponia e la Baby Dance. Ogni giorno potrai assistere alle 2 Christmas Parade, ai saluti del Buongiorno e della Buonanotte con tutto il cast, incontrare i personaggi del villaggio, da Renna Renata a Babbo Natale, dagli Elfi alla Befana, e visitare la Casa delle letterine e la magica dimora di Babbo Natale, dove chiedere doni e scattare una foto ricordo. Sono comprese nel prezzo anche attività come lo Snow Village e il Truccabimbi. Tutte le giostre e la food experience sono a pagamento e non incluse nel biglietto. attrazioni 11 Performer 300 Visitatori 2,5 mln parco 40.000 mq spettacoli il natale va in scena Uno spettacolo straordinario, un grande palco e una produzione inedita danno vita a un racconto natalizio in grado di emozionare, sorprendere e incantare spettatori di tutte le età. scopri di più attrazioni Nome attrazione Pattina sul ghiaccio sotto l'ombra iconica del Ponte di Brooklyn: un’esperienza indimenticabile per grandi e piccini su una pista di circa 900 mq scopri di più scarica l’app la magia del Natale a portata di click Scarica subito la nostra app ufficiale e accedi al parco più grande d’europa • Crea il tuo itinerario personalizzato e organizza la tua visita • Resta sintonizzato sugli orai degli show • Divertiti con le nuove attrazioni • Scopri i menu digitali di tutte le food court Una produzione Con il patrocinio del © Copyright All Rights Reserved Lux Entertainment S.p.A. | P.Iva IT13059411002 Instagram Tiktok Facebook info@christmasworld.net Informativa Sito Web Privacy Policy Gestisci Consenso Per fornire le migliori esperienze, utilizziamo tecnologie come i cookie per memorizzare e/o accedere alle informazioni del dispositivo. Il consenso a queste tecnologie ci permetterà di elaborare dati come il comportamento di navigazione o ID unici su questo sito. Non acconsentire o ritirare il consenso può influire negativamente su alcune caratteristiche e funzioni. Funzionale Funzionale Sempre attivo L'archiviazione tecnica o l'accesso sono strettamente necessari al fine legittimo di consentire l'uso di un servizio specifico esplicitamente richiesto dall'abbonato o dall'utente, o al solo scopo di effettuare la trasmissione di una 
+=== https://www.christmasworldroma.it/tickets/
+Christmas World torna nel cuore di Villa Borghese dal 28 novembre Il biglietto di ingresso include l’accesso al villaggio e tante esperienze da vivere durante la giornata. Tra queste: il Grande Spettacolo di Natale sul Main Stage, gli spettacoli diffusi come Fourth Harmony, il Christmas Jungle Show, Missione Elfi in Lapponia e la Baby Dance. Ogni giorno potrai assistere alle 2 Christmas Parade, ai saluti del Buongiorno e della Buonanotte con tutto il cast, incontrare i personaggi del villaggio, da Renna Renata a Babbo Natale, dagli Elfi alla Befana, e visitare la Casa delle letterine e la magica dimora di Babbo Natale, dove chiedere doni e scattare una foto ricordo. Sono comprese nel prezzo anche attività come lo Snow Village e il Truccabimbi. Tutte le giostre e la food experience sono a pagamento e non incluse nel biglietto. attrazioni 11 Performer 300 Visitatori 2,5 mln parco 40.000 mq spettacoli il natale va in scena Uno spettacolo straordinario, un grande palco e una produzione inedita danno vita a un racconto natalizio in grado di emozionare, sorprendere e incantare spettatori di tutte le età. scopri di più attrazioni Nome attrazione Pattina sul ghiaccio sotto l'ombra iconica del Ponte di Brooklyn: un’esperienza indimenticabile per grandi e piccini su una pista di circa 900 mq scopri di più scarica l’app la magia del Natale a portata di click Scarica subito la nostra app ufficiale e accedi al parco più grande d’europa • Crea il tuo itinerario personalizzato e organizza la tua visita • Resta sintonizzato sugli orai degli show • Divertiti con le nuove attrazioni • Scopri i menu digitali di tutte le food court Una produzione Con il patrocinio del © Copyright All Rights Reserved Lux Entertainment S.p.A. | P.Iva IT13059411002 Instagram Tiktok Facebook info@christmasworld.net Informativa Sito Web Privacy Policy Gestisci Consenso Per fornire le migliori esperienze, utilizziamo tecnologie come i cookie per memorizzare e/o accedere alle informazioni del dispositivo. Il consenso a queste tecnologie ci permetterà di elaborare dati come il comportamento di navigazione o ID unici su questo sito. Non acconsentire o ritirare il consenso può influire negativamente su alcune caratteristiche e funzioni. Funzionale Funzionale Sempre attivo L'archiviazione tecnica o l'accesso sono strettamente necessari al fine legittimo di consentire l'uso di un servizio specifico esplicitamente richiesto dall'abbonato o dall'utente, o al solo scopo di effettuare la trasmissione di una
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -sL --max-time 25 -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36" "https://html.duckduckgo.com/html/?q=Christmas+World+Roma+2026+Villa+Borghese+biglietti+prezzo+date" -o /tmp/ddg.html; python3 -c "
+import re,html
+x=open('/tmp/ddg.html',encoding='utf-8',errors='ignore').read()
+for m in re.finditer(r'class=\"result__a\"[^>]*href=\"([^\"]+)\"[^>]*>(.*?)</a>',x,re.S):
+    t=html.unescape(re.sub(r'<[^>]+>','',m.group(2)))
+    print(t,'|',m.group(1)[:160])
+" | head -15
+(no output)
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -sL --max-time 25 -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)" "https://www.bing.com/search?q=Christmas+World+Roma+2026+Villa+Borghese+biglietti+prezzo+date" -o /tmp/bing.html; python3 -c "
+import re,html
+x=open('/tmp/bing.html',encoding='utf-8',errors='ignore').read()
+x=re.sub(r'<script.*?</script>','',x,flags=re.S)
+t=html.unescape(re.sub(r'<[^>]+>',' ',x)); t=' '.join(t.split())
+print(t[:4000])
+"
+Christmas World Roma 2026 Villa Borghese biglietti prezzo date - Wyszukaj .b_searchbox.b_softkey { --sboxw: 571px; width: calc(var(--sboxw) - 38px); } .hasmic .b_searchbox.b_softkey { width: calc(var(--sboxw) - 74px); } .hassbi .b_searchbox.b_softkey { width: calc(var(--sboxw) - 74px); } .hasmic.hassbi .b_searchbox.b_softkey { width: calc(var(--sboxw) - 110px); } @media (min-width: 1408px) { .b_searchboxForm:not(.as_rsform) .b_searchbox { --sboxw: 771px; } }#b_header .as_rsform .b_searchbox { --sboxw: 897px; } Przejdź do zawartości Opinia dotycząca ułatwień dostępu English Wszystko Wyszukaj Obrazy Wideo Mapy Wiadomości Więcej Zakupy Loty Narzędzia wyniki: 702 000 Otwieraj linki w nowej karcie Data wikipedia.org https:// en.wikipedia.org › wiki › Christmas Christmas - Wikipedia Christmas is a religious and cultural celebration commemorating the birth of Jesus Christ, observed primarily on December 25 [a] … Przeczytaj więcej youtube.com https:// www.youtube.com › channel Christmas Music - YouTube Discover a mix of modern Christmas pop, iconic holiday classics, and feel-good seasonal favorites. Perfect for Christmas parties, holiday … Przeczytaj więcej britannica.com https:// www.britannica.com › topic › Christmas Christmas | Origin, Definition, Traditions, History, Date, Meaning ... 1 dzień temu · Christmas, Christian festival celebrating the birth of Jesus. Since the early 20th century, Christmas has also been a … Przeczytaj więcej wikipedia.org https:// en.wikipedia.org › wiki › Christmas _and_holiday_season Christmas and holiday season - Wikipedia Christmas is celebrated on December 25 Christmas Day, while the Christmas season extends beyond the holiday itself, commonly … Przeczytaj więcej history.com https:// www.history.com › articles › history-of-christmas History of Christmas : Origins, Traditions & Facts | HISTORY 27 paź 2009 · Christmas, celebrated annually on December 25, is a religious holiday as well as a worldwide cultural and commercial … Przeczytaj więcej bbc.co.uk https:// www.bbc.co.uk › bitesize › articles BBC Bitesize – Primary Topic Packs – What is Christmas ? - BBC Bitesize Learn all about the Christian festival of Christmas with these interactive learning resources for KS2 religion students aged 7-11 from BBC … Przeczytaj więcej timeanddate.com https:// www.timeanddate.com › countdown › christmas Christmas Countdown – Countdown to Dec 25, 2026 How many days until Christmas 2026? Watch our timer count down to Christmas, showing days, hours, minutes, and seconds ticking … Przeczytaj więcej youtube.com https:// www.youtube.com › watch Top 100 Christmas Songs of All Time 3 Hour Christmas Music Playlist 2 gru 2020 · The top 100 Christmas Songs of all time! Enjoy all of the best Christmas songs and classic Christmas carols in this 3 hour … Przeczytaj więcej bbc.co.uk https:// www.bbc.co.uk › bitesize › articles Fun facts about Christmas you might not know - BBC Bitesize From global traditions to Guinness world records, this article contains 10 fun facts about Christmas you can share with relatives this … Przeczytaj więcej visit-poland.pl https://www.visit-poland.pl › warsaw christmas market Christmas markets Poland 2026 | VISIT POLAND | Christmas markets … Christmas is one of the most meaningful times of year in Poland — a celebration rich in faith, family, and tradition. More than 90% of … Przeczytaj więcej Podział na strony 1 2 3 Następna Prywatność Warunki Wszystkie Ostatnie 24 godziny Ubiegły tydzień Ubiegły miesiąc Ostatni rok --> --> --> --> --> --> --> --> --> --> --> --> --> --> --> --> --> --> --> --> -->
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 /tmp/rss2.py "site:romatoday.it Christmas World Villa Borghese 2026" 2>/dev/null | head -20
+Christmas World a Villa Borghese - RomaToday
+https://news.google.com/rss/articles/CBMijAFBVV95cUxON0NMdER0S0FkU0VNanFETVZobGtpYzZoWU56elRWLS1zWWpTRVVJOTJvQWF5blJMZS0wcjZvSkp2MzB2ck5tczZrSWs2MzQ1RGxrMzBsN2JKZlRpLS10WWUyMUpCb2VlMWZxN3JraVp1OFJaRjA3N1c3TmRuaGUySjJuSkZmclJoZUNWUQ?oc=5
+Christmas World resta a Villa Borghese: via libera al pubblico interesse per altri 5 anni - RomaToday
+https://news.google.com/rss/articles/CBMikwFBVV95cUxNc1c0XzZNTUpyb1NFT2VHVl9QSXhNS3VFcVA5ZkZWU1FOMURud3l3WXptUkJDSWNCNV8yLWVwT05sQlZkcTR0RHV6cndxYjVjU0hneGZKMEtXbW1IWDJhRHJkYWFJYXV3RUxjamhnRmxTTE1uR0hzN3lmY2Z5VzdyeGQxZXI0dkdfZENHWVBMWG1XVG8?oc=5
+Eventi Natale a Roma - RomaToday
+https://news.google.com/rss/articles/CBMiV0FVX3lxTFBNZF91Y29oUGFpZ2x1RTNsWnZodmxzZlMxX1c5TFdNNHQ5ekotYWxqaG9valprQk1jUENsVFpTaldlMV9zR0d0VnY2dGdDb3FobGlOc0pMUQ?oc=5
+Villa Borghese: tutti gli eventi - RomaToday
+https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9fSFBCYTlCbER1aFR6SUpjNWNHblRFOV9NOEw2Vnp1OEJZbDdxcmU5aWRUNWhmMG44RkItUUZXUU56VzZnLS1GMGJmbDVBVjZOMm51Y0c5TF9OOGItOE14N2xaLUZ0b1E?oc=5
+Christmas World a Villa Borghese | 29 novembre 2025 - 11 gennaio 2026 - RomaToday
+https://news.google.com/rss/articles/CBMiogFBVV95cUxQeW1ITXpfMERGcy0tLTdUemJESl85ZHRIYXlzcFhZT2hzbE5MSlJ3LUJ4UXFsYnZkd3l1QkxicVBtZHh3SS05QkRNa2hsaWFlb0VCcEpLUzRld3A4bWRUc0Z6UjZjeHhXcEYtSktTa25MZWZNQk9NZ3hRcEZUUmppR1hUcHItbGk2Y2dETUM3NlJnN2dmN1BSdWhVRkVnX2RqckE?oc=5
+Christmas World a Villa Borghese | 30 novembre - 6 gennaio 2024 - RomaToday
+https://news.google.com/rss/articles/CBMihgFBVV95cUxPdGpONEprODNSUEZBRHNxbGdGdG5QREpaSldfUnhGOS10MzJWTUNFTDdaYjZGQndYeWFWM0ZfelZqdDFpUkRKWXN3Y0dpXzlTVVZHRGI5UGtwdjk5dGR4S2RzQlhSNXJLb0xCT3BheVA5QmlVck1RS1JIZ0lNaVZhcTk4LTRQUQ?oc=5
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && for u in "https://www.romatoday.it/eventi/christmas-world-villa-borghese-2026.html" "https://www.romatoday.it/eventi/christmas-world-villa-borghese-28-novembre-2026.html" "https://www.romatoday.it/eventi/christmas-world-2026-villa-borghese.html"; do code=$(curl -sL -o /tmp/x.html -w "%{http_code}" --max-time 20 -A "Mozilla/5.0" "$u"); echo "$code $u"; done
+200 https://www.romatoday.it/eventi/christmas-world-villa-borghese-2026.html
+200 https://www.romatoday.it/eventi/christmas-world-villa-borghese-28-novembre-2026.html
+200 https://www.romatoday.it/eventi/christmas-world-2026-villa-borghese.html
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 /tmp/ext2.py "https://www.romatoday.it/eventi/christmas-world-villa-borghese-2026.html" 2>&1 | cut -c1-1500
+===== https://www.romatoday.it/eventi/christmas-world-villa-borghese-2026.html
+Eventi a Roma Questa settimana Oggi lunedì 23 novembre Domani martedì 24 novembre Weekend 28 novembre - 29 novembre Questa settimana 23 novembre - 29 novembre Prossima settimana 30 novembre - 6 dicembre Questo mese 1 novembre - 30 novembre Tipologia Tutti Tipologia Mostre Teatri Concerti Manifestazioni Incontri Mercatini Turismo Cinema Escursioni Sagre Cibo E Vino Hobby Disco Feste Inaugurazioni Sport Moda Promozioni Età ideale Evento per Bambini Tema Natale Halloween Applica filtri Segnala Evento Filtra Calendario Speciale Weekend 10 eventi da non perdere nel weekend del 30 e 31 Luglio --> Mostre Roma, torna la mostra dedicata a minerali e fossili dal 28 al 29 novembre 2026 Ergife Palace Hotel – Piano B Gratis --> Incontri Roma ospita il primo Forum nazionale sulla rigenerazione urbana a base culturale dal 23 al 27 novembre 2026 ex Mattatoio di Testaccio Gratis --> Teatri A Roma un'agorà civica con spazio di pensiero: le grandi rassegne e i cicli culturali tra i palcoscenici di Argentina, Valle e Torlonia dal 13 dicembre 2026 al 9 giugno 2027 Teatri Argentina (largo di Torre Argentina, 52), Valle (via del Teatro Valle, 21) e Torlonia (via Lazzaro Spallanzani, 1A) --> Incontri Da Eataly Roma Ostiense ti aspetta solo il bello del Natale dal 8 dicembre 2026 al 10 gennaio 2027 Eataly Roma Ostiense Gratis --> Dallo spazio alle nuove opportunità: a Roma torna New Space Economy Expoforum dal 25 al 27 novembre 2026 Fiera Roma --> "La meravigliosa Carica dei 101" al Teatro Man
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 -c "
+import re
+x=open('/tmp/rt2.html',encoding='utf-8',errors='ignore').read()
+for l in sorted(set(re.findall(r'href=\"([^\"]*\.html)\"',x))):
+    if any(k in l for k in ['coppede','caffarella','piovani','d-amico','mineral','natale-eur']): print(l)
+"
+/eventi/natale-eur-programma-28-novembre-2026-10-gennaio-2027.html
+/eventi/riflessi-nicola-piovani-palazzo-cipolla-24-novembre-2026.html
+/eventi/roma-mineral-show-2026-mostra-minerali-fossili-conchiglie.html
+/eventi/tano-d-amico-simon-tanner-24-novembre-2026.html
+/eventi/trekking-urbano-caffarella-valle-ninfa-egeria-29-novembre-2026.html
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 /tmp/ext2.py "https://www.romatoday.it/eventi/riflessi-nicola-piovani-palazzo-cipolla-24-novembre-2026.html" "https://www.romatoday.it/eventi/tano-d-amico-simon-tanner-24-novembre-2026.html" "https://www.romatoday.it/eventi/trekking-urbano-caffarella-valle-ninfa-egeria-29-novembre-2026.html" 2>&1 | grep -o "Eventi /.*" | cut -c1-1600
+Eventi / Incontri Riflessi, incontro con Nicola Piovani a Palazzo Cipolla Dove Museo del Corso – Polo museale Palazzo Cipolla Via del Corso, 320 Quando Dal 24/11/2026 al 24/11/2026 solo domani Orario non disponibile Prezzo Prezzo non disponibile Altre informazioni Redazione Facebook Twitter WhatsApp 20 novembre 2026 14:28 Mercoledì 24 novembre si terrà il nuovo appuntamento di Riflessi. Il live show del martedì, il progetto ideato da Fondazione Roma che trasforma il Museo del Corso – Palazzo Cipolla in uno spazio di incontro tra idee, linguaggi artistici e persone. Martedì prossimo, alle ore 18.30, il maestro Nicola Piovani sarà ospite di una serata dedicata alla parola Pace, condotta da Daniele Pitteri e Marco Passiglia e accompagnata dalla musica dal vivo di Martha Deribe e Simone Maggio. Compositore, pianista e direttore d’orchestra, Nicola Piovani è tra le figure più autorevoli della musica italiana contemporanea. Autore di colonne sonore per alcuni dei maggiori registi italiani, da Federico Fellini ai fratelli Taviani, da Marco Bellocchio a Roberto Benigni, ha ricevuto nel 1999 il premio Oscar per le musiche de La vita è bella. Il suo percorso attraversa il cinema, il teatro e la musica d’autore, con collaborazioni importanti, tra cui quella con Fabrizio De André. Più recentemente ha condiviso con Giancarlo De Cataldo il progetto di Romanzo criminale, l’opera lirica tratta dal romanzo dello scrittore, con libretto dello stesso De Cataldo e musiche di Piovani, presentata lo scorso 23 ottobre al Teatro del Maggio Musicale Fiorentino: un elemento di co
+Eventi / Incontri Tano D’Amico incontra Simon Tanner: Storie di libri e fotografia Dove WSP Photography Via Costanzo Cloro, 58 Quando Dal 24/11/2026 al 24/11/2026 solo domani 19:00 Prezzo Gratis Altre informazioni Sito web collettivowsp.org WSP Facebook Twitter WhatsApp 19 novembre 2026 11:01 WSP Photography presenta “Tano D’Amico incontra Simon Tanner. Storie di libri e fotografia”, martedì 24 novembre alle ore 19.00 a Roma in Via Costanzo Cloro 58, zona San Paolo. Una serata dedicata alla storia della libreria Simon Tanner di Rocco e Vincenzo e alla fotografia come strumento di impegno civile e politico di Tano D’Amico. Simon Tanner nasce a Roma come libreria d’occasione e qualche anno fa sceglie di trasferirsi a Gagliano Aterno, piccolo paese dell’Appennino abruzzese, dove sono nati diversi progetti di partecipazione e di comunità, frutto dell’incontro tra le persone che abitano questo territorio e chi ha scelto di arrivare. Rocco e Vincenzo racconteranno il progetto della nuova sede: una Casa della Cultura permanente dove poter dare finalmente spazio ai 25.000 volumi della libreria, oggi ancora in parte conservati negli scatoloni. Per sostenere questo progetto è attiva una campagna di raccolta fondi. Dialogheremo con Tano D’Amico, sul rapporto tra fotografia e memoria e sul ruolo del libro come custode della memoria collettiva e come strumento di partecipazione e impegno politico. Partecipazione gratuita. I più letti 1. Conca d'Oro Weekend con gli Ambulanti di Forte dei Marmi 2. Eur Roma Chocolate all'Eur 3. Eventi La porta dorata dell’Abruzzo �
+Eventi / Escursioni "La valle della Ninfa Egeria", trekking urbano nel Parco della Caffarella Dove Parco della Caffarella Largo Pietro Tacchi Venturi Quando Dal 29/11/2026 al 29/11/2026 09:00 Prezzo €15,5 Altre informazioni Sito web greentrek.it GreenTrek Facebook Twitter WhatsApp 16 novembre 2026 11:00 Una breve ma intensa passeggiata storico-naturalistica nel cuore pulsante di Roma, all'interno del Parco Regionale dell’Appia Antica. All'interno del grande polmone verde della Valle della Caffarella si intrecciano in modo indissolubile mito, storia e biodiversità. Il sentiero proposto si snoda attraverso prati aperti, piccoli boschi e aree di macchia mediterranea, alla scoperta di piante e fiori caratteristici. Lungo il corso del Fiume Almone, si entra in un regno plasmato dall’acqua tramite un reticolato di fiumi, marane, fonti e piccoli laghetti nascosti tra fitti canneti. Una breve tappa al capanno per l’osservazione degli uccelli acquatici sarà l'occasione per provare ad avvistare gli abitanti più elusivi di questo territorio. È anche un viaggio nella memoria storica della città: dal Ninfeo di Egeria al Sepolcro di Annia Regilla, dalla Chiesa di Sant’Urbano alle tante risultanze archeologiche sparse su tutta l’area del parco. Non mancheranno punti panoramici da cui ammirare i profili inconfondibili delle montagne che circondano la capitale. Un itinerario, denso di fascino, a pochi "metri" dal centro abitato. Prenotazione (obbligatoria) aperta fino a Sabato 28 Novembre 2026, ore 15:00 ATTREZZATURA OBBLIGATORIA: Scarpe da ginnastica o da trekking anche ba
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 - <<'EOF'
+import re,html,urllib.request
+u="https://www.romatoday.it/eventi/riflessi-nicola-piovani-palazzo-cipolla-24-novembre-2026.html"
+x=urllib.request.urlopen(urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0'}),timeout=30).read().decode('utf-8','ignore')
+x=re.sub(r'<script.*?</script>','',x,flags=re.S); x=re.sub(r'<style.*?</style>','',x,flags=re.S)
+t=html.unescape(re.sub(r'<[^>]+>',' ',x)); t=' '.join(t.split())
+i=t.find('Più recentemente')
+print(t[i:i+1500])
+EOF
+Più recentemente ha condiviso con Giancarlo De Cataldo il progetto di Romanzo criminale, l’opera lirica tratta dal romanzo dello scrittore, con libretto dello stesso De Cataldo e musiche di Piovani, presentata lo scorso 23 ottobre al Teatro del Maggio Musicale Fiorentino: un elemento di continuità con il precedente appuntamento di Riflessi. Con Piovani, il tema della Pace si apre a una riflessione sul ruolo della musica e sul suo rapporto con la memoria, le emozioni e la vita collettiva. Nel suo percorso artistico, un esempio significativo è La Pietà, lo Stabat Mater su testo di Vincenzo Cerami, presentato a Betlemme nella Pasqua del 1999 come messaggio di pacificazione. Un gesto che testimonia la possibilità della musica di farsi occasione di incontro e di partecipazione, senza dimenticare che, di fronte ai conflitti, l’arte non può sostituire gli aiuti concreti e le responsabilità della politica. Una prospettiva che si intreccia con il significato più ampio della parola Pace: non una condizione acquisita una volta per tutte, ma un cammino fragile e quotidiano, fatto di ascolto, memoria e disponibilità verso l’altro. Come in ogni appuntamento di Riflessi, il pubblico sarà parte attiva della serata: non semplice spettatore, ma interlocutore chiamato a partecipare al dialogo, intervenire e confrontarsi. La grande parete specchiante che caratterizza lo spazio restituisce l’immagine della comunità riunita, mentre le opere della collezione di Fondazione Roma, presentate da Dario
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && for u in "https://www.fondazioneroma.it/riflessi/" "https://www.fondazioneroma.it/eventi/riflessi-pace-nicola-piovani/"; do echo "=== $u"; curl -sL --max-time 25 -A "Mozilla/5.0" "$u" -o /tmp/fr.html -w "%{http_code}\n"; python3 -c "
+import re,html
+x=open('/tmp/fr.html',encoding='utf-8',errors='ignore').read()
+x=re.sub(r'<script.*?</script>','',x,flags=re.S); x=re.sub(r'<style.*?</style>','',x,flags=re.S)
+t=html.unescape(re.sub(r'<[^>]+>',' ',x)); t=' '.join(t.split())
+i=t.lower().find('piovani')
+print(t[max(0,i-500):i+1200] if i>=0 else t[:800])
+"; done
+=== https://www.fondazioneroma.it/riflessi/
+404
+Page not found | Fondazione Roma Salta ai contenuti IT IT EN Fondazione La nostra mission Organi Statuto Bilanci Codice etico Polo Museale Palazzo Sciarra Colonna Collezione permanente Archivio storico Palazzo Cipolla Mostre d’arte Ambiti operativi Salute pubblica, Medicina preventiva e riabilitativa Ricerca scientifica e tecnologica Volontariato Filantropia Beneficenza Arte. Attività e Beni culturali Educazione Istruzione e Formazione Eccellenze Simposio Press News nFR Contatti IT IT EN Logout 404 Pagina non trovata! ERRORE 404 La pagina che cerchi potrebbe essere stata rimossa o potrebbe essere inesistente. Vai alla homepage Palazzo Sciarra Colonna Via M. Minghetti 17, 00187 Roma Tel. +39.06.6976450 | info@fondazioneroma.it LAVORA CON NOI Privacy & Cookie policy | Whistleblowing © 2026 |
+=== https://www.fondazioneroma.it/eventi/riflessi-pace-nicola-piovani/
+404
+Page not found | Fondazione Roma Salta ai contenuti IT IT EN Fondazione La nostra mission Organi Statuto Bilanci Codice etico Polo Museale Palazzo Sciarra Colonna Collezione permanente Archivio storico Palazzo Cipolla Mostre d’arte Ambiti operativi Salute pubblica, Medicina preventiva e riabilitativa Ricerca scientifica e tecnologica Volontariato Filantropia Beneficenza Arte. Attività e Beni culturali Educazione Istruzione e Formazione Eccellenze Simposio Press News nFR Contatti IT IT EN Logout 404 Pagina non trovata! ERRORE 404 La pagina che cerchi potrebbe essere stata rimossa o potrebbe essere inesistente. Vai alla homepage Palazzo Sciarra Colonna Via M. Minghetti 17, 00187 Roma Tel. +39.06.6976450 | info@fondazioneroma.it LAVORA CON NOI Privacy & Cookie policy | Whistleblowing © 2026 |
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 /tmp/rss.py "Natale all'Eur 2026 villaggio lago ruota panoramica" "Ensemble Fusolab 28 29 novembre 2026" "Music Day Fiera del Disco Roma 28 29 novembre 2026"
+===  Natale all'Eur 2026 villaggio lago ruota panoramica  ===
+- Natale all’EUR 2026: la ruota panoramica trasforma Roma in un villaggio di Natale da favola - CorriereNerd.it | Fri, 20 Nov 2026
+- Natale all'Eur: villaggio sul lago, ruota panoramica e luminarie | 28 novembre - 10 gennaio 2026 - RomaToday | Wed, 11 Nov 2026
+- Natale all’Eur 2026, nuovo fantastico evento per le feste - The Parallel Vision | Wed, 11 Nov 2026
+- Roma Chocolate all'Eur - RomaToday | Sun, 08 Nov 2026
+- Natale all'Eur, arriva la ruota panoramica mobile più alta d'Europa: la città vista a 50 metri d'altezza - Corriere Roma | Mon, 08 Dec 2025
+- Il Natale da Favola nel Borgo a Nemi | dicembre 2025 - RomaToday | Tue, 02 Dec 2025
+- Christmas World a Villa Borghese | 29 novembre 2025 - 11 gennaio 2026 - RomaToday | Sat, 29 Nov 2025
+- Natale a Cinecittà World: nuova casa di Babbo Natale e nuovi show per tutta la famiglia - RomaToday | Sat, 22 Nov 2025
+- Roma, sul lago dell'Eur arriva una maxi ruota panoramica: apre il villaggio di Natale con un presepe gigante - 7colli.it | Thu, 19 Nov 2026
+- Natale all’EUR: luci, ruota panoramica ed eventi fino a gennaio - UrloWeb | Tue, 10 Nov 2026
+===  Ensemble Fusolab 28 29 novembre 2026  ===
+- A Roma torna "Ensemble! Suoni e Sapori dal Mondo" - Corriere dello Sport | Mon, 23 Nov 2026
+- Al Fusolab il 28 e 29 novembre torna "Ensemble! Suoni e Sapori dal Mondo" - Abitare A Roma | Fri, 20 Nov 2026
+- ROMA | «Ensemble! Suoni e Sapori dal Mondo», il 28 e 29 novembre torna il festival gratuito al Fusolab - Mondoreale | Fri, 20 Nov 2026
+- Al via la II° di Ensemble! Suoni e Sapori dal Mondo, il festival delle culture enogastronomiche con ingresso gratuito al Fusolab di Roma - Il Messaggero | Sat, 21 Nov 2026
+- Torna "Ensemble! Suoni e Sapori dal Mondo", il festival gratuito del Fusolab, nel quale le diverse - Quotidiano La Voce | Sat, 21 Nov 2026
+- “Ensemble!”: al Fusolab di Roma l’evento di street food e cultura con 12 comunità dal mondo - Roma Pop | Mon, 23 Nov 2026
+- Roma, torna Ensemble Suoni e Sapori dal Mondo al Fusolab il 28 e 29 novembre 2026: 12 comunità, street food e musica gratis all’Alessandrino - Cavalierenews | Fri, 20 Nov 2026
+- Ensemble Suoni e Sapori dal Mondo al Fusolab 2026 - Funweek | Sun, 22 Nov 2026
+===  Music Day Fiera del Disco Roma 28 29 novembre 2026  ===
+- Music Day - Fiera del Disco di Roma - RomaToday | Fri, 20 Nov 2026
+- Music Day Roma, la grande Fiera del Disco della Capitale - Colonne Sonore.net | Mon, 23 Nov 2026
+- Nel week end la Fiera del disco di Treviso - TrevisoToday | Sat, 28 Mar 2026
+- Music Day Roma – Fiera del Disco di Roma | 29-30 novembre 2025 - RomaToday | Sun, 30 Nov 2025
+- Eventi segnalati dai Comuni - Anci Lombardia | Wed, 17 May 2023
+- Cosa fare gratis a Roma questa settimana - Sulle Strade del Mondo | Mon, 06 May 2019
+- Weekend a Roma: 20 eventi da non perdere sabato 29 e domenica 30 novembre - RomaToday | Sat, 29 Nov 2025
+- I festival musicali dell’estate 2026 in Italia: la guida aggiornata, dal Rock in Roma agli I-Days - Fanpage | Sat, 23 May 2026
+- Concerti Italia 2026: biglietti, date e live imperdibili del prossimo anno - Team World | Fri, 23 Oct 2026
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && for u in "https://www.7colli.it/natale-eur-2026-ruota-panoramica-villaggio/" "https://www.7colli.it/roma-sul-lago-dell-eur-arriva-una-maxi-ruota-panoramica-apre-il-villaggio-di-natale-con-un-presepe-gigante/"; do echo "=== $u"; curl -sL --max-time 25 -A "Mozilla/5.0" "$u" -o /tmp/n.html -w "%{http_code}\n"; python3 -c "
+import re,html
+x=open('/tmp/n.html',encoding='utf-8',errors='ignore').read()
+x=re.sub(r'<script.*?</script>','',x,flags=re.S); x=re.sub(r'<style.*?</style>','',x,flags=re.S)
+t=html.unescape(re.sub(r'<[^>]+>',' ',x)); t=' '.join(t.split())
+i=t.lower().find('ruota')
+print(t[max(0,i-400):i+1400] if i>=0 else t[:900])
+"; done
+=== https://www.7colli.it/natale-eur-2026-ruota-panoramica-villaggio/
+404
+Pagina non trovata - 7colli.it Cerca Cronaca Roma e Provincia Storie e curiosità di Roma Roma Capitale I Municipio II Municipio III Municipio IV Municipio V Municipio VI Municipio VII Municipio VIII Municipio IX Municipio X Municipio XI Municipio XII Municipio XIII Municipio Litorale Romano Ostia Ardea Pomezia Anzio Nettuno Cerveteri Ladispoli Fiumicino Civitavecchia Castelli Romani Albano Genzano Velletri Comuni zona Roma Nord Est Tivoli Mentana Guidonia Monterotondo Frosinone Latina Rieti Viterbo Cronaca Italia Cronache dal mondo Ultime notizie Cronaca Politica Sport Meteo Economia e lavoro Inchieste Viaggi e vacanze Visitare il Lazio Cosa fare ed eventi a Roma Cosa fare ed eventi nel Lazio Cosa fare a Roma nel Weekend Dove andare a Roma Dove mangiare a Roma Storie e curiosità di Roma Spettacolo e Programmi TV Programmi e Serie TV Benedetta TV Personaggi Lifestyle Gusto e sapori Dove m
+=== https://www.7colli.it/roma-sul-lago-dell-eur-arriva-una-maxi-ruota-panoramica-apre-il-villaggio-di-natale-con-un-presepe-gigante/
+404
+Pagina non trovata - 7colli.it Cerca Cronaca Roma e Provincia Storie e curiosità di Roma Roma Capitale I Municipio II Municipio III Municipio IV Municipio V Municipio VI Municipio VII Municipio VIII Municipio IX Municipio X Municipio XI Municipio XII Municipio XIII Municipio Litorale Romano Ostia Ardea Pomezia Anzio Nettuno Cerveteri Ladispoli Fiumicino Civitavecchia Castelli Romani Albano Genzano Velletri Comuni zona Roma Nord Est Tivoli Mentana Guidonia Monterotondo Frosinone Latina Rieti Viterbo Cronaca Italia Cronache dal mondo Ultime notizie Cronaca Politica Sport Meteo Economia e lavoro Inchieste Viaggi e vacanze Visitare il Lazio Cosa fare ed eventi a Roma Cosa fare ed eventi nel Lazio Cosa fare a Roma nel Weekend Dove andare a Roma Dove mangiare a Roma Storie e curiosità di Roma Spettacolo e Programmi TV Programmi e Serie TV Benedetta TV Personaggi Lifestyle Gusto e sapori Dove m
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && sed -n '1,120p' covers/generate.py && echo "...TAIL..." && tail -60 covers/generate.py
+#!/usr/bin/env python3
+"""Генерує обкладинки 1080×810 для постів каналу «Рим для своїх»."""
+from pathlib import Path
+from html import escape
+
+OUT = Path(__file__).parent
+
+COVERS = [
+    {
+        "file": "2026-11-09-intro",
+        "kicker": "ЗНАЙОМСТВО",
+        "title": ["РИМ", "ДЛЯ СВОЇХ"],
+        "sub": "Щотижневий дайджест для українців",
+        "date": "СТАРТ 09.11.2026",
+        "accent": "#FFD166",
+        "icon": "home",
+    },
+    {
+        "file": "2026-11-10-transport",
+        "kicker": "ТРАНСПОРТ",
+        "title": ["ЩО ЗМІНИЛОСЯ", "ЦЬОГО ТИЖНЯ"],
+        "sub": "Roma-Lido · Lepanto · страйки 20–21.11",
+        "date": "9–15 ЛИСТОПАДА",
+        "accent": "#5FD3C4",
+        "icon": "metro",
+    },
+    {
+        "file": "2026-11-10-rent",
+        "kicker": "ЖИТЛО Й ГРОШІ",
+        "title": ["СКІЛЬКИ", "КОШТУЄ РИМ"],
+        "sub": "Оренда · ярмарок · здоров'я · культура",
+        "date": "10 ЛИСТОПАДА",
+        "accent": "#FFB86B",
+        "icon": "wallet",
+    },
+    {
+        "file": "2026-11-10-events",
+        "kicker": "КАЛЕНДАР",
+        "title": ["РИМ ПЕРЕД", "СВЯТАМИ"],
+        "sub": "Japan Days · екологічна неділя · ярмарки",
+        "date": "14.11 — 08.12",
+        "accent": "#E5C07B",
+        "icon": "pin",
+    },
+    {
+        "file": "2026-11-10-codice-fiscale",
+        "kicker": "ДОКУМЕНТИ",
+        "title": ["CODICE", "FISCALE"],
+        "sub": "16 символів, без яких нічого не оформити",
+        "date": "БЕЗКОШТОВНО",
+        "accent": "#7FB2F0",
+        "icon": "doc",
+    },
+    {
+        "file": "2026-11-10-italy-military-aid",
+        "kicker": "УКРАЇНА І СВІТ",
+        "title": ["13-Й ПАКЕТ", "ДОПОМОГИ"],
+        "sub": "Італія підтвердила нову військову підтримку",
+        "date": "10 ЛИСТОПАДА",
+        "accent": "#6EC1FF",
+        "icon": "shield",
+    },
+    {
+        "file": "2026-11-21-rome-weekend-parade-fl1",
+        "kicker": "ВИХІДНІ",
+        "title": ["ПАРАД І", "МАРКЕТИ"],
+        "sub": "Christmas Parade · Ficus · Vegan Village · FL1",
+        "date": "21–22 ЛИСТОПАДА",
+        "accent": "#FFB86B",
+        "icon": "pin",
+    },
+    {
+        "file": "2026-11-20-rome-weekend-cie-museums",
+        "kicker": "РИМ",
+        "title": ["ВИХІДНІ", "21–22 ЛИСТОПАДА"],
+        "sub": "Страйк · CIE · Ніч музеїв",
+        "date": "20 ЛИСТОПАДА",
+        "accent": "#F0A868",
+        "icon": "metro",
+    },
+    {
+        "file": "2026-11-19-shenzhen-berlin",
+        "kicker": "СВІТ І РИМ",
+        "title": ["САМІТ", "І БЕРЛІН"],
+        "sub": "Трамп–Путін–Сі · Мелоні без військ",
+        "date": "19 ЛИСТОПАДА",
+        "accent": "#6EC1FF",
+        "icon": "doc",
+    },
+    {
+        "file": "2026-11-18-rome-newcomer-events",
+        "kicker": "РИМ",
+        "title": ["ЩО ПОБАЧИТИ", "19–22 ЛИСТОПАДА"],
+        "sub": "Christmas Garden · Caput Mundi · Абрамович",
+        "date": "19–22 ЛИСТОПАДА",
+        "accent": "#A78BFA",
+        "icon": "pin",
+    },
+    {
+        "file": "2026-11-18-kerch-summit-museums",
+        "kicker": "УКРАЇНА І РИМ",
+        "title": ["КРИМСЬКИЙ МІСТ", "І САМІТ У КИТАЇ"],
+        "sub": "Шеньчжен 19.11 · музеї Sapienza 21.11",
+        "date": "18 ЛИСТОПАДА",
+        "accent": "#6EC1FF",
+        "icon": "doc",
+    },
+    {
+        "file": "2026-11-17-inflation-strike",
+        "kicker": "ІТАЛІЯ",
+        "title": ["ІНФЛЯЦІЯ", "І СТРАЙК"],
+        "sub": "боллетте +61,6% · страйк ATAC 20.11 · затори",
+        "date": "17 ЛИСТОПАДА",
+        "accent": "#FF6B6B",
+        "icon": "wallet",
+    },
+    {
+        "file": "2026-11-16-week-ahead",
+        "kicker": "ТЕЖДЕНЬ",
+        "title": ["ТИЖДЕНЬ 16–22", "ЛИСТОПАДА"],
+...TAIL...
+
+def cover(c: dict) -> str:
+    accent = c["accent"]
+    lines = c["title"]
+    title_svg = []
+    y = 330 if len(lines) == 2 else 360
+    for line in lines:
+        title_svg.append(
+            f'<text x="80" y="{y}" font-family="PT Sans, Arial, sans-serif" '
+            f'font-size="112" font-weight="800" fill="#FFFFFF" letter-spacing="-3">{escape(line)}</text>'
+        )
+        y += 122
+    sub_y = y + 8
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="810" viewBox="0 0 1080 810">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A1424"/>
+      <stop offset="0.55" stop-color="#132844"/>
+      <stop offset="1" stop-color="#1B3352"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="82%" cy="18%" r="55%">
+      <stop offset="0" stop-color="{accent}" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="{accent}" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1080" height="810" fill="url(#bg)"/>
+  <rect width="1080" height="810" fill="url(#glow)"/>
+  <rect x="30" y="30" width="1020" height="750" rx="28" fill="none" stroke="{accent}" stroke-opacity="0.28" stroke-width="2"/>
+
+  <g font-family="PT Sans, Arial, sans-serif">
+    <circle cx="86" cy="92" r="9" fill="{accent}"/>
+    <text x="110" y="100" font-size="22" font-weight="700" fill="#DCE8F4" letter-spacing="5">РИМ ДЛЯ СВОЇХ</text>
+    <text x="994" y="100" text-anchor="end" font-size="20" font-weight="600" fill="#7F95A9" letter-spacing="3">РИМ · ІТАЛІЯ</text>
+
+    <text x="80" y="230" font-size="24" font-weight="700" fill="{accent}" letter-spacing="5">{escape(c["kicker"])}</text>
+    {"".join(title_svg)}
+    <text x="82" y="{sub_y}" font-size="31" font-weight="500" fill="#C9D6E2">{escape(c["sub"])}</text>
+
+    <rect x="80" y="638" width="{int(len(c["date"]) * 17 + 64)}" height="66" rx="33" fill="{accent}"/>
+    <text x="112" y="682" font-size="27" font-weight="800" fill="#0A1424" letter-spacing="1">{escape(c["date"])}</text>
+
+    <text x="80" y="752" font-size="18" font-weight="600" fill="#7F95A9" letter-spacing="3">t.me/rim_dlia_svoih</text>
+  </g>
+
+  {colosseum(accent)}
+  {icon(c["icon"], accent)}
+</svg>
+'''
+
+
+def main() -> None:
+    for c in COVERS:
+        path = OUT / f'{c["file"]}.svg'
+        path.write_text(cover(c), encoding="utf-8")
+        print(path)
+
+
+if __name__ == "__main__":
+    main()
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && grep -n '"file": "2026-11-2' covers/generate.py | tail -10 && grep -n '"file":' covers/generate.py | wc -l && grep -n 'COVERS = \[' covers/generate.py
+64:        "file": "2026-11-21-rome-weekend-parade-fl1",
+73:        "file": "2026-11-20-rome-weekend-cie-museums",
+217:        "file": "2026-11-21-rome-open-day-markets-closures",
+226:        "file": "2026-11-22-rome-week-panettone-bazar",
+235:        "file": "2026-11-23-rome-tram3-free-exhibitions-25nov",
+      26
+8:COVERS = [
+> build · deepseek-v4.1-flash-free
+[0m→ [0mRead covers/generate.py [90m[offset=210, limit=40][0m
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && sed -n '246,330p' covers/generate.py
+def icon(kind: str, accent: str) -> str:
+    cx, cy, r = 862, 545, 112
+    base = f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="{accent}" stroke-opacity="0.45" stroke-width="2"/>'
+    if kind == "wheel":
+        spokes = []
+        for angle in range(0, 360, 45):
+            import math
+            a = math.radians(angle)
+            x = cx + 74 * math.cos(a)
+            y = cy + 74 * math.sin(a)
+            spokes.append(f'<line x1="{cx}" y1="{cy}" x2="{x:.1f}" y2="{y:.1f}" stroke="{accent}" stroke-width="3" stroke-opacity="0.8"/>')
+            spokes.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="9" fill="{accent}"/>')
+        return base + f'<circle cx="{cx}" cy="{cy}" r="76" fill="none" stroke="{accent}" stroke-width="4"/>' + "".join(spokes) + f'<circle cx="{cx}" cy="{cy}" r="10" fill="{accent}"/>'
+    if kind == "frame":
+        return base + (
+            f'<rect x="{cx-72}" y="{cy-60}" width="144" height="120" rx="6" fill="none" stroke="{accent}" stroke-width="4"/>'
+            f'<circle cx="{cx-34}" cy="{cy-24}" r="10" fill="{accent}"/>'
+            f'<path d="M{cx-60} {cy+44} L{cx-14} {cy-4} L{cx+18} {cy+26} L{cx+46} {cy-10} L{cx+60} {cy+44} Z" fill="{accent}" opacity="0.85"/>'
+        )
+    if kind == "pin":
+        return base + (
+            f'<path d="M{cx} {cy-78} C{cx-46} {cy-78} {cx-62} {cy-34} {cx-62} {cy-8} C{cx-62} {cy+38} {cx} {cy+82} {cx} {cy+82} C{cx} {cy+82} {cx+62} {cy+38} {cx+62} {cy-8} C{cx+62} {cy-34} {cx+46} {cy-78} {cx} {cy-78} Z" fill="none" stroke="{accent}" stroke-width="4"/>'
+            f'<circle cx="{cx}" cy="{cy-16}" r="22" fill="{accent}"/>'
+        )
+    if kind == "home":
+        return base + (
+            f'<path d="M{cx-70} {cy+10} L{cx} {cy-62} L{cx+70} {cy+10}" fill="none" stroke="{accent}" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>'
+            f'<path d="M{cx-52} {cy-2} L{cx-52} {cy+66} L{cx+52} {cy+66} L{cx+52} {cy-2}" fill="none" stroke="{accent}" stroke-width="5" stroke-linejoin="round"/>'
+            f'<rect x="{cx-16}" y="{cy+22}" width="32" height="44" rx="4" fill="{accent}"/>'
+        )
+    if kind == "wallet":
+        return base + (
+            f'<rect x="{cx-70}" y="{cy-46}" width="140" height="92" rx="14" fill="none" stroke="{accent}" stroke-width="4"/>'
+            f'<path d="M{cx-70} {cy-16} L{cx+70} {cy-16}" stroke="{accent}" stroke-width="3" stroke-opacity="0.5"/>'
+            f'<rect x="{cx+22}" y="{cy-6}" width="48" height="32" rx="8" fill="{accent}"/>'
+            f'<circle cx="{cx+46}" cy="{cy+10}" r="5" fill="#0A1424"/>'
+        )
+    if kind == "doc":
+        return base + (
+            f'<path d="M{cx-52} {cy-72} L{cx+24} {cy-72} L{cx+56} {cy-40} L{cx+56} {cy+72} L{cx-52} {cy+72} Z" fill="none" stroke="{accent}" stroke-width="4" stroke-linejoin="round"/>'
+            f'<path d="M{cx+24} {cy-72} L{cx+24} {cy-40} L{cx+56} {cy-40}" fill="none" stroke="{accent}" stroke-width="4" stroke-linejoin="round"/>'
+            f'<line x1="{cx-28}" y1="{cy-16}" x2="{cx+32}" y2="{cy-16}" stroke="{accent}" stroke-width="5" stroke-linecap="round"/>'
+            f'<line x1="{cx-28}" y1="{cy+8}" x2="{cx+32}" y2="{cy+8}" stroke="{accent}" stroke-width="5" stroke-linecap="round"/>'
+            f'<line x1="{cx-28}" y1="{cy+32}" x2="{cx+12}" y2="{cy+32}" stroke="{accent}" stroke-width="5" stroke-linecap="round"/>'
+        )
+    if kind == "shield":
+        return base + (
+            f'<path d="M{cx} {cy-78} L{cx+66} {cy-48} L{cx+66} {cy+4} C{cx+66} {cy+42} {cx+28} {cy+68} {cx} {cy+84} C{cx-28} {cy+68} {cx-66} {cy+42} {cx-66} {cy+4} L{cx-66} {cy-48} Z" fill="none" stroke="{accent}" stroke-width="4" stroke-linejoin="round"/>'
+            f'<path d="M{cx-24} {cy} L{cx-6} {cy+20} L{cx+28} {cy-18}" fill="none" stroke="{accent}" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>'
+        )
+    if kind == "mail":
+        return base + (
+            f'<rect x="{cx-72}" y="{cy-50}" width="144" height="100" rx="12" fill="none" stroke="{accent}" stroke-width="4"/>'
+            f'<path d="M{cx-64} {cy-40} L{cx} {cy+8} L{cx+64} {cy-40}" fill="none" stroke="{accent}" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>'
+            f'<path d="M{cx-64} {cy+40} L{cx-18} {cy-2} M{cx+64} {cy+40} L{cx+18} {cy-2}" stroke="{accent}" stroke-width="3" stroke-opacity="0.6"/>'
+        )
+    # metro
+    return base + (
+        f'<rect x="{cx-64}" y="{cy-52}" width="128" height="104" rx="18" fill="none" stroke="{accent}" stroke-width="4"/>'
+        f'<path d="M{cx-38} {cy+30} L{cx-38} {cy-24} L{cx} {cy+10} L{cx+38} {cy-24} L{cx+38} {cy+30}" fill="none" stroke="{accent}" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>'
+        f'<line x1="{cx-92}" y1="{cy+78}" x2="{cx+92}" y2="{cy+78}" stroke="{accent}" stroke-width="3" stroke-dasharray="10 10" stroke-opacity="0.7"/>'
+    )
+
+
+def colosseum(accent: str) -> str:
+    # декоративні арки праворуч знизу
+    parts = [f'<g opacity="0.10" fill="none" stroke="{accent}" stroke-width="4">']
+    for i in range(6):
+        x = 690 + i * 64
+        parts.append(f'<path d="M{x} 790 L{x} 742 Q{x+22} 716 {x+44} 742 L{x+44} 790"/>')
+    parts.append('</g>')
+    return "".join(parts)
+
+
+def cover(c: dict) -> str:
+    accent = c["accent"]
+    lines = c["title"]
+    title_svg = []
+    y = 330 if len(lines) == 2 else 360
+    for line in lines:
+        title_svg.append(
+            f'<text x="80" y="{y}" font-family="PT Sans, Arial, sans-serif" '
+            f'font-size="112" font-weight="800" fill="#FFFFFF" letter-spacing="-3">{escape(line)}</text>'
+        )
+        y += 122
+> build · deepseek-v4.1-flash-free
+exit=1
