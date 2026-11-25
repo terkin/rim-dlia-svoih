@@ -258,6 +258,15 @@ COVERS = [
         "accent": "#5FD3C4",
         "icon": "metro",
     },
+    {
+        "file": "2026-11-25-rome-weekend-cie-christmas-chocolate",
+        "kicker": "ВИХІДНІ В РИМІ",
+        "title": ["БЕЗКОШТОВНА", "НЕДІЛЯ"],
+        "sub": "CIE · шоколад · Christmas World",
+        "date": "26–29 ЛИСТОПАДА",
+        "accent": "#E5C07B",
+        "icon": "pin",
+    },
 ]
 
 

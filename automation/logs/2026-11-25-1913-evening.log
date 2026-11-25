@@ -1,0 +1,466 @@
+=== 2026-11-25 19:13:27 slot=evening ===
+[0m
+> build · deepseek-v4.1-flash-free
+I'll start by reading the README and understanding the project process.
+[0m→ [0mRead README.md 
+[0m$ [0mdate "+%Y-%m-%d %H:%M %A"; ls
+2026-11-25 19:13 Wednesday
+README.md
+__pycache__
+ai-promotion.md
+analysis
+automation
+brand
+catalog-submission.md
+content
+covers
+docs
+preview.html
+promotion-catalogs.md
+promotion.md
+publish.py
+reports
+> build · deepseek-v4.1-flash-free
+[0m$ [0mls -la content/extra | tail -20; echo "---"; ls content/it | tail -10; echo "---"; ls content/channel | tail -10; echo "---"; ls covers | tail -10
+-rw-r--r--@  1 terkin  staff  1443 Nov 10 09:31 2026-11-10-events.md
+-rw-r--r--@  1 terkin  staff  1242 Nov 10 14:31 2026-11-10-italy-military-aid.md
+-rw-r--r--@  1 terkin  staff  1521 Nov 10 08:57 2026-11-10-rent.md
+-rw-r--r--@  1 terkin  staff  1924 Nov 11 08:58 2026-11-11-lazio-irpef.md
+-rw-r--r--@  1 terkin  staff  6507 Nov 11 11:01 2026-11-11-rent-long-term.md
+-rw-r--r--@  1 terkin  staff  3129 Nov 12 08:53 2026-11-12-school-alerts.md
+-rw-r--r--@  1 terkin  staff  4274 Nov 13 11:13 2026-11-13-peace-talks-eu.md
+-rw-r--r--@  1 terkin  staff  3064 Nov 13 11:19 2026-11-13-weekend-14-15.md
+-rw-r--r--@  1 terkin  staff  3365 Nov 16 08:34 2026-11-16-week-ahead.md
+-rw-r--r--@  1 terkin  staff  3638 Nov 17 11:25 2026-11-17-inflation-strike.md
+-rw-r--r--@  1 terkin  staff  4159 Nov 18 10:44 2026-11-18-kerch-summit-museums.md
+-rw-r--r--@  1 terkin  staff  3255 Nov 18 10:48 2026-11-18-rome-newcomer-events.md
+-rw-r--r--@  1 terkin  staff  3737 Nov 19 10:19 2026-11-19-shenzhen-berlin.md
+-rw-r--r--@  1 terkin  staff  3686 Nov 20 09:45 2026-11-20-rome-weekend-cie-museums.md
+-rw-r--r--@  1 terkin  staff  4749 Nov 21 09:31 2026-11-21-rome-open-day-markets-closures.md
+-rw-r--r--@  1 terkin  staff  4125 Nov 21 09:27 2026-11-21-rome-weekend-parade-fl1.md
+-rw-r--r--@  1 terkin  staff  5207 Nov 22 19:38 2026-11-22-rome-week-panettone-bazar.md
+-rw-r--r--@  1 terkin  staff  5609 Nov 23 09:05 2026-11-23-rome-tram3-free-exhibitions-25nov.md
+-rw-r--r--@  1 terkin  staff  7019 Nov 24 09:13 2026-11-24-rome-parking-free-museums-chocolate-ensemble.md
+-rw-r--r--@  1 terkin  staff  9130 Nov 25 09:32 2026-11-25-rome-fl1-airport-borromini-ice-rink.md
+---
+2026-11-18-kerch-summit-museums.md
+2026-11-18-rome-newcomer-events.md
+2026-11-19-shenzhen-berlin.md
+2026-11-20-rome-weekend-cie-museums.md
+2026-11-21-rome-open-day-markets-closures.md
+2026-11-21-rome-weekend-parade-fl1.md
+2026-11-22-rome-week-panettone-bazar.md
+2026-11-23-rome-tram3-free-exhibitions-25nov.md
+2026-11-24-rome-parking-free-museums-chocolate-ensemble.md
+2026-11-25-rome-fl1-airport-borromini-ice-rink.md
+---
+2026-11-18-kerch-summit-museums-post.md
+2026-11-18-rome-newcomer-events-post.md
+2026-11-19-shenzhen-berlin-post.md
+2026-11-20-rome-weekend-cie-museums-post.md
+2026-11-21-rome-open-day-markets-closures-post.md
+2026-11-21-rome-weekend-parade-fl1-post.md
+2026-11-22-rome-week-panettone-bazar-post.md
+2026-11-23-rome-tram3-free-exhibitions-25nov-post.md
+2026-11-24-rome-parking-free-museums-chocolate-ensemble-post.md
+2026-11-25-rome-fl1-airport-borromini-ice-rink-post.md
+---
+2026-11-21-rome-weekend-parade-fl1.svg
+2026-11-22-rome-week-panettone-bazar.png
+2026-11-22-rome-week-panettone-bazar.svg
+2026-11-23-rome-tram3-free-exhibitions-25nov.png
+2026-11-23-rome-tram3-free-exhibitions-25nov.svg
+2026-11-24-rome-parking-free-museums-chocolate-ensemble.png
+2026-11-24-rome-parking-free-museums-chocolate-ensemble.svg
+2026-11-25-rome-fl1-airport-borromini-ice-rink.png
+2026-11-25-rome-fl1-airport-borromini-ice-rink.svg
+generate.py
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 automation/collect.py 2>&1 | tail -20
+→ ANSA Lazio
+→ Corriere Roma
+→ Il Messaggero Roma
+→ Il Tempo
+→ AGI
+→ Adnkronos
+→ Il Sole 24 Ore
+→ Il Fatto Quotidiano
+
+Збережено 40 кандидатів → /Users/terkin/rim-dlia-svoikh/automation/candidates.json
+> build · deepseek-v4.1-flash-free
+[0m→ [0mRead content/extra/2026-11-25-rome-fl1-airport-borromini-ice-rink.md 
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 -c "
+import json
+d=json.load(open('automation/candidates.json'))
+print(type(d))
+items = d if isinstance(d,list) else d.get('items',d)
+for i,c in enumerate(items[:40]):
+    print(i, '|', c.get('source'), '|', c.get('title')[:130], '|', c.get('published','')[:16])
+"
+<class 'dict'>
+0 | Il Messaggero Roma | Roma, bimba di 9 anni e papà investiti da un'auto all'Acqua Acetosa: ricoverati in codice rosso al Gemelli | mer, 25 nov 2026
+1 | Il Messaggero Roma | Roma, cinque cagnolini di un mese abbandonati tra i rifiuti sulla via dei Laghi. «Se prendiamo i responsabili li arrestiamo» | mer, 25 nov 2026
+2 | Il Messaggero Roma | Valle dell'Aniene, scontro tra la Diocesi di Tivoli e il Comune di Canterano sulla custodia di antichi manoscritti | mer, 25 nov 2026
+3 | Il Messaggero Roma | Roma: arriva la magia del Natale con il Christmas Gospel, tra musica e tradizione | mer, 25 nov 2026
+4 | Il Messaggero Roma | Roma: vetro dell?auto in frantumi a San Giovanni, rubato un vinile da collezione da 900 euro | mer, 25 nov 2026
+5 | ANSA Lazio | Controlli carabinieri a San Lorenzo e Esquilino, 4 arresti e 8 denunce | 2026-11-25T17:51
+6 | AGI | Tensioni tra manifestanti e forze dell'ordine al presidio di "Non una di meno" a Roma | 2026-11-25T17:46
+7 | Corriere Roma | Turismo, a Roma per il ponte dell'Immacolata previsto un milione di visitatori | 2026-11-25T17:42
+8 | Il Fatto Quotidiano | Tremila militari e un’esercitazione senza precedenti insieme alla Cambogia: la Cina mostra di nuovo i muscoli fuori dai suoi confi | 2026-11-25T17:30
+9 | ANSA Lazio | Violenza donne, la regione Lazio illuminata di rosso | 2026-11-25T17:29
+10 | Il Fatto Quotidiano | Striscia di Gaza contaminata: la bonifica deve diventare una priorità internazionale | 2026-11-25T17:23
+11 | Il Tempo | Winter Deaflympics 2027, presentata a Roma la delegazione italiana: 20 atleti sordi in gara in Austria | 2026-11-25T17:12
+12 | Il Tempo | Comunicato Stampa: CRV - Quinta commissione. Via libera alla manovra regionale di bilancio 2027-2029 | 2026-11-25T17:10
+13 | Il Tempo | Comunicato Stampa: CRV - ‘Mangia la foglia’. Rigo (Lega-LV): "Per avvicinare nuove generazioni al mondo agricolo" | 2026-11-25T17:10
+14 | Adnkronos | Industria, Eichberg (Mimit): "Collaborazione fondamentale per raggiungere traguardi" | 2026-11-25T17:08
+15 | Il Fatto Quotidiano | “Washington non deve decidere chi può avere un conto e usare la carta di credito in Ue”: 56 eurodeputati chiedono uno scudo contro | 2026-11-25T17:02
+16 | Adnkronos | Scritte offensive a pochi passi da casa, la denuncia di Silvia Salis: "Questa non è critica politica, è sessismo puro" | 2026-11-25T16:55
+17 | Il Tempo | Chinni (Ucb): "L'Italia deve accelerare per attrarre trial clinici e investimenti" | 2026-11-25T16:50
+18 | Adnkronos | Omicidio Andrea Bossi, Appello conferma ergastolo per Douglas Carolo e Michele Caglioni | 2026-11-25T16:42
+19 | Il Tempo | Federica Brignone si ritira “La gamba mi fa troppo male, è una scelta difficile” | 2026-11-25T16:41
+20 | Adnkronos | Chinni (Ucb): "L'Italia deve accelerare per attrarre trial clinici e investimenti" | 2026-11-25T16:33
+21 | Il Fatto Quotidiano | “Altri 45 miliardi di fondi all’Ucraina”: è scontro in Ue sul diktat di Merz e von der Leyen agli Stati membri. Zelensky sicuro: “ | 2026-11-25T16:19
+22 | Adnkronos | Monti (Lombardia): "Serve fare squadra per recuperare competitività internazionale" | 2026-11-25T16:17
+23 | Il Fatto Quotidiano | Basta gabbie negli allevamenti, il Tribunale della Corte di giustizia Ue dà ragione ai cittadini contro Bruxelles | 2026-11-25T16:10
+24 | ANSA Lazio | Cambia sede la manifestazione contro la caccia, domani in piazza Santi Apostoli | 2026-11-25T15:36
+25 | Corriere Roma | La «città paesaggio» e il piano del verde del Comune: il progetto che ripensa strade, piazze ed edifici pubblici e privati | 2026-11-25T15:31
+26 | ANSA Lazio | Torna Christmas World, a Villa Borghese dal 28 novembre la magia del Natale | 2026-11-25T15:28
+27 | ANSA Lazio | Arriva nelle sale il film 'Il ricatto della bellezza' con Catania e Gravina | 2026-11-25T15:17
+28 | AGI | Gino Cecchettin, il cast e la politica alla Camera per "Se domani non torno" | 2026-11-25T13:46
+29 | Corriere Roma | «Roma Chocolate», torna in piazza Risorgimento l'appuntamento per gli amanti del cioccolato d'eccellenza | 2026-11-25T12:34
+30 | Corriere Roma | Roma, crolla una tenda al liceo Plinio Seniore: due studenti in ospedale | 2026-11-25T11:51
+31 | Corriere Roma | Carceri, il Movimento italiano diritti detenuti: «Appoggiamo "Nessuno tocchi Caino" contro il sovraffollamento» | 2026-11-25T11:34
+32 | AGI | Antimafia, "entro fine anno la relazione sul filone mafia e appalti" | 2026-11-25T08:03
+33 | AGI | Gianni De Gennaro, aperte le lettere. Venerdì l'autopsia, lunedì i funerali a Roma | 2026-11-25T06:01
+34 | AGI | Natalità in calo, entro il 2100 a rischio oltre il 90% dei Paesi | 2026-11-25T01:27
+35 | Il Sole 24 Ore | Violenza economica: pervasiva e spesso invisibile. Educazione finanziaria e lavoro la chiave per salvarsi | 2026-11-24T21:12
+36 | Il Sole 24 Ore | Avviso ai lettori: sciopero dei giornalisti del Sole 24 Ore. Oggi il sito non verrà aggiornato e il giornale non è in edicola. Le  | 2026-11-24T20:52
+37 | Il Sole 24 Ore | YouPol, l’app della Polizia di Stato per segnalare la violenza | 2026-11-24T17:15
+38 | Il Sole 24 Ore | Benedetta Pilato: «La violenza psicologica ti cambia il pensiero, uscirne da sole è difficilissimo» | 2026-11-24T17:14
+39 | Il Sole 24 Ore | Violenza tra adolescenti, Lancini: «Il vuoto che gli adulti non sanno vedere» | 2026-11-24T17:13
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && for q in "Roma+eventi+weekend" "Roma+weekend+27+28+novembre" "Roma+sciopero+trasporti" "Roma+Natale+mercato"; do echo "=== $q ==="; curl -s --max-time 25 "https://news.google.com/rss/search?q=$q&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+d=sys.stdin.read()
+items=re.findall(r'<item>(.*?)</item>', d, re.S)
+for it in items[:10]:
+    t=re.search(r'<title>(.*?)</title>',it,re.S)
+    p=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S)
+    s=re.search(r'<source[^>]*>(.*?)</source>',it,re.S)
+    print('-', html.unescape(t.group(1) if t else ''), '|', (s.group(1) if s else ''), '|', (p.group(1)[5:16] if p else ''))
+"; done
+=== Roma+eventi+weekend ===
+- Buenos Aires Tango, Shiva e Han Kang al Valle: gli eventi a Roma nel weekend - www.romaweekend.it | www.romaweekend.it | 25 Nov 2026
+- Eventi per bambini a Roma e dintorni: cosa fare il weekend del 28 e 29 novembre - Roma 03 | Roma 03 | 24 Nov 2026
+- Weekend 27-28-29 novembre: cosa fare a Roma e dintorni tra Christmas World, i futuristi al MAXXI e i mercatini dei Castelli - Roma.Com | Roma.Com | 23 Nov 2026
+- Weekend a Roma: gli eventi da non perdere sabato 31 ottobre e domenica 1 novembre - RomaToday | RomaToday | 01 Nov 2026
+- Novembre 2026 a Roma: scopri e vivi Roma dal 1° al 30 novembre 2026 - Turismo Roma | Turismo Roma | 29 Oct 2026
+- Roma Chocolate, dal 27 al 29 novembre Piazza del Risorgimento di veste di dolcezza in attesa del Natale - Il Messaggero | Il Messaggero | 25 Nov 2026
+- Carta d'identità elettronica a Roma: open day sabato 28 e domenica 29 novembre 2026 - RomaToday | RomaToday | 25 Nov 2026
+- Weekend 25-26-27 settembre: cosa fare a Roma tra storia, cultura e tanti eventi - Roma.Com | Roma.Com | 22 Sep 2026
+- Weekend a Roma: 18 eventi da non perdere sabato 24 e domenica 25 ottobre - RomaToday | RomaToday | 24 Oct 2026
+- Weekend a Roma: 12 eventi da non perdere sabato 17 e domenica 18 ottobre - RomaToday | RomaToday | 17 Oct 2026
+=== Roma+weekend+27+28+novembre ===
+- Weekend 27-28-29 novembre: cosa fare a Roma e dintorni tra Christmas World, i futuristi al MAXXI e i mercatini dei Castelli - Roma.Com | Roma.Com | 23 Nov 2026
+- Cosa fare a Roma questo weekend: concerti, mercatini e gite fuori porta (27-29 novembre) - Secret Roma | Secret Roma | 23 Nov 2026
+- Buenos Aires Tango, Shiva e Han Kang al Valle: gli eventi a Roma nel weekend - www.romaweekend.it | www.romaweekend.it | 25 Nov 2026
+- Festival gastronomici, sagre, eventi food e appuntamenti nel weekend dal 27 al 29 novembre 2026 - CiboToday | CiboToday | 25 Nov 2026
+- Cosa fare a Roma questo weekend con i bambini 14-15 novembre - Viaggiapiccoli | Viaggiapiccoli | 22 Nov 2026
+- Serie A, ufficiali anticipi e posticipi fino alla fine del girone d'andata - Sky Sport | Sky Sport | 25 Sep 2026
+- Weekend a Roma: 12 eventi da non perdere sabato 27 e domenica 28 dicembre - RomaToday | RomaToday | 28 Dec 2025
+- Weekend 11-12-13 settembre: cosa fare a Roma tra Jovanotti, Björk, Vinòforum e il vino di Nemi - Roma.Com | Roma.Com | 07 Sep 2026
+- Novembre 2026 a Roma: scopri e vivi Roma dal 1° al 30 novembre 2026 - Turismo Roma | Turismo Roma | 29 Oct 2026
+- Cosa fare gratis a Roma questa settimana - Sulle Strade del Mondo | Sulle Strade del Mondo | 23 Nov 2026
+=== Roma+sciopero+trasporti ===
+- Sciopero 4 dicembre, stop treni e mezzi pubblici: chi si ferma e gli orari - Sky TG24 | Sky TG24 | 25 Nov 2026
+- Sciopero generale CGIL 20 novembre 2026 - CGIL Roma Lazio | CGIL Roma Lazio | 20 Nov 2026
+- Sciopero dei mezzi, Roma verso la paralisi. Oggi, venerdì 20 novembre, a rischio metro, bus, tram e treni per 24 ore - RomaToday | RomaToday | 20 Nov 2026
+- Sciopero generale 20 novembre 2026: metro Roma a rischio - Metropolitana di Roma | Metropolitana di Roma | 20 Nov 2026
+- Sito Istituzionale | Sciopero e cortei, la viabilità del 20 novembre - Roma Capitale | Roma Capitale | 19 Nov 2026
+- Gli orari e la mappa dello sciopero generale: oggi stop ai mezzi pubblici da Bologna a Roma, blocchi a scuola e sanità - Corriere della Sera | Corriere della Sera | 20 Nov 2026
+- Sciopero mezzi Roma e Bologna 20 novembre: orari e fasce di garanzia - La Gazzetta dello Sport | La Gazzetta dello Sport | 19 Nov 2026
+- Chi si ferma con lo sciopero generale: tutti gli stop, dai treni, ai bus alla scuola - Avvenire | Avvenire | 20 Nov 2026
+- Scioperi trasporti dicembre, il calendario: bus, metro, treni e aerei, tutte le date, orari e chi aderisce città per città - Il Messaggero | Il Messaggero | 25 Nov 2026
+- Sciopero generale, Roma nel caos: fermi tram, bus e metro, stop ai treni dalle 21.00. Dove si trovano i cortei e come evitare i blocchi - Moveo by Telepass | Moveo by Telepass | 20 Nov 2026
+=== Roma+Natale+mercato ===
+- Guida ai mercatini di Natale 2026 a Roma: luoghi e date - RomaToday | RomaToday | 19 Nov 2026
+- Mercatini di Natale 2026, i più belli di Roma: le date e cosa vedere - Sky TG24 | Sky TG24 | 08 Nov 2026
+- Weekend 21 e 22 novembre nel Lazio: sagre, mercatini di Natale, musei a 1 euro e spettacoli - Il Quotidiano del Lazio | Il Quotidiano del Lazio | 21 Nov 2026
+- Mercatini di Natale in Italia: i più belli del 2026 - Wise Society | Wise Society | 20 Nov 2026
+- Il Natale nei borghi del Lazio: favole di luce, presepi e caratteristici mercatini - RomaToday | RomaToday | 19 Nov 2026
+- La fortezza medievale che ospitò Michelangelo e Caterina de’ Medici oggi diventa la Casa di Babbo Natale: 12 esperienze, 2 km di luci e mercatini per Natale 2026 a Roma - Secret Roma | Secret Roma | 16 Nov 2026
+- Mercatini di Natale a Roma: la guida ai più belli da visitare - UniversiNet Magazine | UniversiNet Magazine | 11 Nov 2026
+- Natale a Roma e nel Lazio con i bambini 2026 - Viaggiapiccoli | Viaggiapiccoli | 14 Nov 2026
+- Sagre ed eventi di dicembre nel Lazio, gli appuntamenti da non perdere - SiViaggia | SiViaggia | 16 Nov 2026
+- Mercatini di Natale nel Lazio 2026: date, orari e borghi da Greccio a Viterbo - The Wom Travel | The Wom Travel | 12 Nov 2026
+> build · deepseek-v4.1-flash-free
+[0m⚙ [0mexecute {"code":"const urls = [\n  \"https://news.google.com/rss/search?q=%22Carta+d%27identit%C3%A0+elettronica%22+Roma+open+day+28+29+novembre&hl=it&gl=IT&ceid=IT:it\",\n  \"https://news.google.com/rss/search?q=Christmas+World+Villa+Borghese+28+novembre+2026&hl=it&gl=IT&ceid=IT:it\",\n  \"https://news.google.com/rss/search?q=Roma+Chocolate+piazza+Risorgimento+27+29+novembre&hl=it&gl=IT&ceid=IT:it\",\n  \"https://news.google.com/rss/search?q=MAXXI+futuristi+mostra+novembre+2026&hl=it&gl=IT&ceid=IT:it\",\n  \"https://news.google.com/rss/search?q=Roma+meteo+weekend+28+29+novembre+2026&hl=it&gl=IT&ceid=IT:it\"\n];\nconst out = await Promise.allSettled(urls.map(u => fetch(u).then(r=>r.text())));\nfor (let i=0;i<out.length;i++){\n  const r = out[i];\n  if (r.status!=='fulfilled'){ console.log('FAIL',i); continue; }\n  const d = r.value;\n  const items = [...d.matchAll(/<item>([\\s\\S]*?)<\\/item>/g)].slice(0,8);\n  console.log('=== Q'+i+' ===');\n  for (const it of items){\n    const t = (it[1].match(/<title>([\\s\\S]*?)<\\/title>/)||[])[1]||'';\n    const l = (it[1].match(/<link>([\\s\\S]*?)<\\/link>/)||[])[1]||'';\n    const p = (it[1].match(/<pubDate>([\\s\\S]*?)<\\/pubDate>/)||[])[1]||'';\n    console.log('-', t.replace(/&amp;/g,'&').slice(0,140), '|', p.slice(5,16));\n    console.log('  ', l);\n  }\n}\n"} 
+> build · deepseek-v4.1-flash-free
+[0m⚙ [0mexecute {"code":"const qs = [\n  \"https://news.google.com/rss/search?q=CIE+open+day+28+29+novembre+Roma+prenotazione+anagrafe&hl=it&gl=IT&ceid=IT:it\",\n  \"https://news.google.com/rss/search?q=Roma+Chocolate+orari+27+28+29+novembre+2026&hl=it&gl=IT&ceid=IT:it\",\n  \"https://news.google.com/rss/search?q=Christmas+World+Villa+Borghese+orari+biglietti+2026&hl=it&gl=IT&ceid=IT:it\"\n];\nfor (const q of qs){\n  const r = await fetch(q); const d = await r.text();\n  console.log('===', q.slice(0,80));\n  for (const it of [...d.matchAll(/<item>([\\s\\S]*?)<\\/item>/g)].slice(0,6)){\n    console.log('-', (it[1].match(/<title>([\\s\\S]*?)<\\/title>/)||[])[1]);\n    console.log('  ', (it[1].match(/<link>([\\s\\S]*?)<\\/link>/)||[])[1]);\n  }\n}\n"} 
+> build · deepseek-v4.1-flash-free
+[0m◈ [0mWeb Search via Exa "CIE open day 28 e 29 novembre 2026 Roma Capitale orari sedi prenotazione carta identità" 
+[0m◈ [0mWeb Search via Exa "Roma Chocolate 27 28 29 novembre 2026 piazza Risorgimento orari" 
+> build · deepseek-v4.1-flash-free
+> build · deepseek-v4.1-flash-free
+[0m◈ [0mWeb Search via Exa "Christmas World Villa Borghese 2026 dal 28 novembre orari biglietti ingresso" 
+[0m◈ [0mWeb Search via Exa "meteo Roma weekend 28 29 novembre 2026 pioggia freddo previsioni" 
+> build · deepseek-v4.1-flash-free
+[0m◈ [0mWeb Search via Exa "Roma eventi weekend 27 28 29 novembre 2026 gratis concerti mercatini" 
+[0m◈ [0mWeb Search via Exa "MAXXI "Sensing the Future" mostra date orari biglietti novembre 2026" 
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && sed -n '1,60p' covers/generate.py
+#!/usr/bin/env python3
+"""Генерує обкладинки 1080×810 для постів каналу «Рим для своїх»."""
+from pathlib import Path
+from html import escape
+
+OUT = Path(__file__).parent
+
+COVERS = [
+    {
+        "file": "2026-11-09-intro",
+        "kicker": "ЗНАЙОМСТВО",
+        "title": ["РИМ", "ДЛЯ СВОЇХ"],
+        "sub": "Щотижневий дайджест для українців",
+        "date": "СТАРТ 09.11.2026",
+        "accent": "#FFD166",
+        "icon": "home",
+    },
+    {
+        "file": "2026-11-10-transport",
+        "kicker": "ТРАНСПОРТ",
+        "title": ["ЩО ЗМІНИЛОСЯ", "ЦЬОГО ТИЖНЯ"],
+        "sub": "Roma-Lido · Lepanto · страйки 20–21.11",
+        "date": "9–15 ЛИСТОПАДА",
+        "accent": "#5FD3C4",
+        "icon": "metro",
+    },
+    {
+        "file": "2026-11-10-rent",
+        "kicker": "ЖИТЛО Й ГРОШІ",
+        "title": ["СКІЛЬКИ", "КОШТУЄ РИМ"],
+        "sub": "Оренда · ярмарок · здоров'я · культура",
+        "date": "10 ЛИСТОПАДА",
+        "accent": "#FFB86B",
+        "icon": "wallet",
+    },
+    {
+        "file": "2026-11-10-events",
+        "kicker": "КАЛЕНДАР",
+        "title": ["РИМ ПЕРЕД", "СВЯТАМИ"],
+        "sub": "Japan Days · екологічна неділя · ярмарки",
+        "date": "14.11 — 08.12",
+        "accent": "#E5C07B",
+        "icon": "pin",
+    },
+    {
+        "file": "2026-11-10-codice-fiscale",
+        "kicker": "ДОКУМЕНТИ",
+        "title": ["CODICE", "FISCALE"],
+        "sub": "16 символів, без яких нічого не оформити",
+        "date": "БЕЗКОШТОВНО",
+        "accent": "#7FB2F0",
+        "icon": "doc",
+    },
+    {
+        "file": "2026-11-10-italy-military-aid",
+        "kicker": "УКРАЇНА І СВІТ",
+        "title": ["13-Й ПАКЕТ", "ДОПОМОГИ"],
+        "sub": "Італія підтвердила нову військову підтримку",
+        "date": "10 ЛИСТОПАДА",
+        "accent": "#6EC1FF",
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && head -4 content/extra/2026-11-24-rome-parking-free-museums-chocolate-ensemble.md; echo "==="; head -4 content/extra/2026-11-23-rome-tram3-free-exhibitions-25nov.md; echo "==="; grep -il "vatican\|ватикан" content/extra/2026-11-2*.md
+🏛 **Рим, 24 листопада: безкоштовні музеї для резидентів, два безкоштовні вікенди й чесні цифри про парковку**
+
+Сьогодні — про те, що реально впливає на бюджет і на вихідні: безкоштовний вхід у міські музеї для тих, хто має римську residenza, шоколадний ярмарок біля Ватикану, фестиваль 12 громад в Алессандріно і дослідження про парковку, яке краще знати заздалегідь.
+
+===
+🚋 **Рим, 23 листопада: трамвай 3 знову їде через центр, дві безкоштовні виставки й що буде 25 листопада**
+
+Понеділок починається з транспортної новини, якої чекали: трамвай 3 повертається на весь маршрут. Плюс дві безкоштовні культурні опції на тиждень і практичне на 25 листопада.
+
+===
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && grep -n "2026-11-25-rome-fl1" -A 12 covers/generate.py; echo "---tail---"; tail -40 covers/generate.py
+253:        "file": "2026-11-25-rome-fl1-airport-borromini-ice-rink",
+254-        "kicker": "ТРАНСПОРТ І КУЛЬТУРА",
+255-        "title": ["FL1", "БЕЗ ПОТЯГА"],
+256-        "sub": "26–29.11 · Borromini · безкоштовний лід",
+257-        "date": "25 ЛИСТОПАДА",
+258-        "accent": "#5FD3C4",
+259-        "icon": "metro",
+260-    },
+261-]
+262-
+263-
+264-def icon(kind: str, accent: str) -> str:
+265-    cx, cy, r = 862, 545, 112
+---tail---
+    <radialGradient id="glow" cx="82%" cy="18%" r="55%">
+      <stop offset="0" stop-color="{accent}" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="{accent}" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1080" height="810" fill="url(#bg)"/>
+  <rect width="1080" height="810" fill="url(#glow)"/>
+  <rect x="30" y="30" width="1020" height="750" rx="28" fill="none" stroke="{accent}" stroke-opacity="0.28" stroke-width="2"/>
+
+  <g font-family="PT Sans, Arial, sans-serif">
+    <circle cx="86" cy="92" r="9" fill="{accent}"/>
+    <text x="110" y="100" font-size="22" font-weight="700" fill="#DCE8F4" letter-spacing="5">РИМ ДЛЯ СВОЇХ</text>
+    <text x="994" y="100" text-anchor="end" font-size="20" font-weight="600" fill="#7F95A9" letter-spacing="3">РИМ · ІТАЛІЯ</text>
+
+    <text x="80" y="230" font-size="24" font-weight="700" fill="{accent}" letter-spacing="5">{escape(c["kicker"])}</text>
+    {"".join(title_svg)}
+    <text x="82" y="{sub_y}" font-size="31" font-weight="500" fill="#C9D6E2">{escape(c["sub"])}</text>
+
+    <rect x="80" y="638" width="{int(len(c["date"]) * 17 + 64)}" height="66" rx="33" fill="{accent}"/>
+    <text x="112" y="682" font-size="27" font-weight="800" fill="#0A1424" letter-spacing="1">{escape(c["date"])}</text>
+
+    <text x="80" y="752" font-size="18" font-weight="600" fill="#7F95A9" letter-spacing="3">t.me/rim_dlia_svoih</text>
+  </g>
+
+  {colosseum(accent)}
+  {icon(c["icon"], accent)}
+</svg>
+'''
+
+
+def main() -> None:
+    for c in COVERS:
+        path = OUT / f'{c["file"]}.svg'
+        path.write_text(cover(c), encoding="utf-8")
+        print(path)
+
+
+if __name__ == "__main__":
+    main()
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && cat content/channel/2026-11-25-rome-fl1-airport-borromini-ice-rink-post.md; echo "=== LEN ==="; python3 -c "print(len(open('content/channel/2026-11-25-rome-fl1-airport-borromini-ice-rink-post.md').read()))"; echo "=== IT ==="; head -20 content/it/2026-11-25-rome-fl1-airport-borromini-ice-rink.md
+🚆 **Рим, 25.11: аеропорт без поїздів, Борроміні й лід безкоштовно**
+
+**FL1 / Leonardo Express:** 26–29.11 поїзди скасовані між Roma Ostiense і Fiumicino. Замість них автобуси із зупинками на всіх станціях; Leonardo Express — автобус Termini–Fiumicino. Час у дорозі довший, місць менше. Складаний велосипед до 40×30×15 см можна, самокати — ні. Довідка: 800 892 021.
+
+**ZTL/Sosta:** онлайн-дозволи не працюють 27.11 17:00 — 29.11 18:00. Оформіть заздалегідь.
+
+**Безкоштовно:** Sala Alessandrina Борроміні (Corso del Rinascimento 40) і виставка про Колізей до 15.01, вт/ср/пт 14–18, чт 9–13.
+
+**Ковзанка:** Colle Oppio, 4.12–28.02, 10–20, вхід вільний, метро B Colosseo.
+
+**Погода:** сьогодні жовте попередження — дощ, грози, вітер.
+
+Деталі: https://ucrainiroma.it/posts/2026-11-25-rome-fl1-airport-borromini-ice-rink.html
+=== LEN ===
+820
+=== IT ===
+🚆 **Roma, 25 novembre: quattro giorni senza FL1 per l'aeroporto, Borromini gratis e ghiaccio al Colosseo**
+
+Oggi parliamo di ciò che conviene sapere prima di venerdì: dal 26 al 29 novembre i treni per Fiumicino non circolano, i permessi online ZTL/Sosta saranno temporaneamente sospesi, e in città si può vedere gratis una biblioteca nascosta del Borromini e, dal 4 dicembre, pattinare su una pista con vista sul Colosseo. In più, l'allerta per pioggia e temporali.
+
+**🚆 FL1 e Leonardo Express: dal 26 al 29 novembre nessun treno**
+Trenitalia cancella la FL1 sulla tratta Roma Ostiense — Fiumicino Aeroporto da giovedì 26 a domenica 29 novembre. Il motivo sono i lavori: nuovi sostegni del sottovia di via Pasquale Baffi, rinnovo di sei deviatoi nella stazione di Fiumicino, sostituzione delle rotaie tra Trastevere e Villa Bonelli e barriere antirumore.
+
+Al posto della FL1 circola un bus con fermata in tutte le stazioni intermedie: Roma Trastevere, Villa Bonelli, Magliana, Muratella, Ponte Galeria, Fiera di Roma, Parco Leonardo, Fiumicino Aeroporto.
+
+Anche il Leonardo Express è cancellato: tra Roma Termini e Fiumicino circola un autobus.
+
+Da tenere presente:
+• i tempi di percorrenza possono aumentare per il traffico e i posti sul bus possono essere inferiori rispetto al treno;
+• si può portare gratuitamente solo una bici pieghevole in apposita sacca, con dimensioni massime di 40×30×15 cm; altre bici, monopattini, monowheel e hoverboard non sono ammessi;
+• gli animali di piccola taglia solo nel trasportino; i cani da assistenza sempre; cani di media e grossa taglia non ammessi;
+• i biglietti si comprano sull'app o sul sito Trenitalia, dove c'è anche l'orario aggiornato; informazioni al numero 800 892 021.
+
+Consiglio: per i voli del mattino calcolate 30–60 minuti in più. Se partite dal centro, raggiungete Ostiense o Trastevere con un altro treno e poi prendete il bus sostitutivo. Taxi e transfer conviene prenotarli in anticipo: in quei giorni la domanda sarà più alta.
+
+**🅿️ Permessi ZTL e Sosta: servizi online sospesi nel fine settimana**
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && grep -n 'kind ==\|kind in\|if kind' covers/generate.py | head -30
+267:    if kind == "wheel":
+277:    if kind == "frame":
+283:    if kind == "pin":
+288:    if kind == "home":
+294:    if kind == "wallet":
+301:    if kind == "doc":
+309:    if kind == "shield":
+314:    if kind == "mail":
+> build · deepseek-v4.1-flash-free
+[0m← [0mWrite content/extra/2026-11-25-rome-weekend-cie-christmas-chocolate.md
+Created file successfully: content/extra/2026-11-25-rome-weekend-cie-christmas-chocolate.md
+> build · deepseek-v4.1-flash-free
+[0m← [0mWrite content/it/2026-11-25-rome-weekend-cie-christmas-chocolate.md
+Created file successfully: content/it/2026-11-25-rome-weekend-cie-christmas-chocolate.md
+> build · deepseek-v4.1-flash-free
+[0m← [0mWrite content/channel/2026-11-25-rome-weekend-cie-christmas-chocolate-post.md
+Created file successfully: content/channel/2026-11-25-rome-weekend-cie-christmas-chocolate-post.md
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 -c "print(len(open('content/channel/2026-11-25-rome-weekend-cie-christmas-chocolate-post.md').read()))"
+1290
+> build · deepseek-v4.1-flash-free
+[0m← [0mWrite content/channel/2026-11-25-rome-weekend-cie-christmas-chocolate-post.md
+Wrote file successfully: content/channel/2026-11-25-rome-weekend-cie-christmas-chocolate-post.md
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 -c "print(len(open('content/channel/2026-11-25-rome-weekend-cie-christmas-chocolate-post.md').read()))"
+1178
+> build · deepseek-v4.1-flash-free
+[0m← [0mWrite content/channel/2026-11-25-rome-weekend-cie-christmas-chocolate-post.md
+Wrote file successfully: content/channel/2026-11-25-rome-weekend-cie-christmas-chocolate-post.md
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 -c "print(len(open('content/channel/2026-11-25-rome-weekend-cie-christmas-chocolate-post.md').read()))"
+1136
+> build · deepseek-v4.1-flash-free
+[0m← [0mWrite content/channel/2026-11-25-rome-weekend-cie-christmas-chocolate-post.md
+Wrote file successfully: content/channel/2026-11-25-rome-weekend-cie-christmas-chocolate-post.md
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 -c "print(len(open('content/channel/2026-11-25-rome-weekend-cie-christmas-chocolate-post.md').read()))"
+1036
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 - <<'EOF'
+p='content/channel/2026-11-25-rome-weekend-cie-christmas-chocolate-post.md'
+s=open(p).read()
+s=s.replace('вхід вільний, метро A Ottaviano.','вхід вільний, метро A.')
+s=s.replace('Взяти: підтвердження, фото, картку, старий документ.','Взяти: підтвердження, фото, картку, документ.')
+open(p,'w').write(s)
+print(len(s))
+EOF
+1019
+> build · deepseek-v4.1-flash-free
+[0m← [0mEdit covers/generate.py
+Index: covers/generate.py
+===================================================================
+--- covers/generate.py
++++ covers/generate.py
+@@ -257,8 +257,17 @@
+         "date": "25 ЛИСТОПАДА",
+         "accent": "#5FD3C4",
+         "icon": "metro",
+     },
++    {
++        "file": "2026-11-25-rome-weekend-cie-christmas-chocolate",
++        "kicker": "ВИХІДНІ В РИМІ",
++        "title": ["БЕЗКОШТОВНА", "НЕДІЛЯ"],
++        "sub": "CIE · шоколад · Christmas World",
++        "date": "26–29 ЛИСТОПАДА",
++        "accent": "#E5C07B",
++        "icon": "pin",
++    },
+ ]
+ 
+ 
+ def icon(kind: str, accent: str) -> str:
+
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 covers/generate.py | tail -3 && rsvg-convert -w 1080 -h 810 covers/2026-11-25-rome-weekend-cie-christmas-chocolate.svg -o covers/2026-11-25-rome-weekend-cie-christmas-chocolate.png && ls -la covers/2026-11-25-rome-weekend-cie-christmas-chocolate.png
+/Users/terkin/rim-dlia-svoikh/covers/2026-11-24-rome-parking-free-museums-chocolate-ensemble.svg
+/Users/terkin/rim-dlia-svoikh/covers/2026-11-25-rome-fl1-airport-borromini-ice-rink.svg
+/Users/terkin/rim-dlia-svoikh/covers/2026-11-25-rome-weekend-cie-christmas-chocolate.svg
+-rw-r--r--@ 1 terkin  staff  191726 Nov 25 19:57 covers/2026-11-25-rome-weekend-cie-christmas-chocolate.png
+> build · deepseek-v4.1-flash-free
+[0m→ [0mRead covers/2026-11-25-rome-weekend-cie-christmas-chocolate.png 
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 automation/site.py 2>&1 | tail -15
+Сайт згенеровано → /Users/terkin/rim-dlia-svoikh/docs
+  index.html · 29 постів · sitemap.xml · robots.txt · rss.xml
+  it/: 22 перекладених постів
+  IndexNow key: 59109d96a7a1479b32410c75db6bd891 → docs/59109d96a7a1479b32410c75db6bd891.txt
+  SITE_URL: https://ucrainiroma.it
+> build · deepseek-v4.1-flash-free

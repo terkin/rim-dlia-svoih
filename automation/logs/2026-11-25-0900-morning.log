@@ -3352,3 +3352,29 @@ photo: True
 link: ['https://ucrainiroma.it/posts/2026-11-25-rome-fl1-airport-borromini-ice-rink.html']
 id: ['rim_dlia_svoih/31']
 > build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && git add automation/logs/2026-11-25-0900-morning.log && git commit -m "Update morning run log for 25 Nov post" && git push origin main
+[main 916a6b0] Update morning run log for 25 Nov post
+ 1 file changed, 113 insertions(+)
+To github.com:terkin/rim-dlia-svoih.git
+   6ae964c..916a6b0  main -> main
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && sleep 8; gh api repos/terkin/rim-dlia-svoih/pages/builds --jq '.[0:2][] | [.status, .created_at, .commit] | @tsv'
+built	2026-11-25T08:46:28Z	916a6b08ba1f39d77c8e5131d5b72213d52c0edc
+built	2026-11-25T08:38:06Z	6ae964ccd64701bde33fcbf72fa4e64a56ec0ae5
+> build · deepseek-v4.1-flash-free
+Опубліковано ранковий пост за 25 листопада.
+
+**Головні теми:**
+- 🚆 FL1 і Leonardo Express скасовані 26–29.11 між Roma Ostiense і Fiumicino — замість них автобуси.
+- 🅿️ Онлайн-дозволи ZTL/Sosta не працюють 27.11 17:00 – 29.11 18:00.
+- 🏛 Безкоштовно: Sala Alessandrina Борроміні та виставка про Колізей до 15.01.
+- ⛸ Безкоштовна ковзанка на Colle Oppio з 4.12 до 28.02, 10:00–20:00.
+- 🌧 Жовте попередження через дощ, грози й вітер сьогодні.
+
+**Публікація:**
+- Telegram: message_id 31, з обкладинкою — https://t.me/rim_dlia_svoih/31
+- Українська версія: https://ucrainiroma.it/posts/2026-11-25-rome-fl1-airport-borromini-ice-rink.html
+- Італійська версія: https://ucrainiroma.it/it/posts/2026-11-25-rome-fl1-airport-borromini-ice-rink.html
+
+GitHub Pages build — `built`, IndexNow — HTTP 200. Також у репозиторій додано незавершений пост за 24.11: він з’явився на сайті, але в Telegram не публікувався.
+exit=0
