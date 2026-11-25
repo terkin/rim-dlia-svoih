@@ -3239,3 +3239,116 @@ Index: covers/generate.py
 [91m[1mError: [0mFree usage limit reached. Connect a provider or subscribe to OpenCode Go to keep going, or switch models.
 exit=1
 > build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && git add -A && git commit -m "Add posts: Rome 24 Nov (pending) and 25 Nov - FL1 airport closure, Borromini library, free ice rink, weather (uk+it)" && git push origin main
+warning: in the working copy of 'automation/logs/2026-11-24-0900-morning.log', CRLF will be replaced by LF the next time Git touches it
+[main 6ae964c] Add posts: Rome 24 Nov (pending) and 25 Nov - FL1 airport closure, Borromini library, free ice rink, weather (uk+it)
+ 29 files changed, 8862 insertions(+), 183 deletions(-)
+ create mode 100644 automation/logs/2026-11-23-1938-evening.log
+ create mode 100644 automation/logs/2026-11-24-0900-morning.log
+ create mode 100644 automation/logs/2026-11-24-1918-evening.log
+ create mode 100644 automation/logs/2026-11-25-0900-morning.log
+ create mode 100644 content/channel/2026-11-24-rome-parking-free-museums-chocolate-ensemble-post.md
+ create mode 100644 content/channel/2026-11-25-rome-fl1-airport-borromini-ice-rink-post.md
+ create mode 100644 content/extra/2026-11-24-rome-parking-free-museums-chocolate-ensemble.md
+ create mode 100644 content/extra/2026-11-25-rome-fl1-airport-borromini-ice-rink.md
+ create mode 100644 content/it/2026-11-24-rome-parking-free-museums-chocolate-ensemble.md
+ create mode 100644 content/it/2026-11-25-rome-fl1-airport-borromini-ice-rink.md
+ create mode 100644 covers/2026-11-24-rome-parking-free-museums-chocolate-ensemble.png
+ create mode 100644 covers/2026-11-24-rome-parking-free-museums-chocolate-ensemble.svg
+ create mode 100644 covers/2026-11-25-rome-fl1-airport-borromini-ice-rink.png
+ create mode 100644 covers/2026-11-25-rome-fl1-airport-borromini-ice-rink.svg
+ create mode 100644 docs/covers/2026-11-24-rome-parking-free-museums-chocolate-ensemble.png
+ create mode 100644 docs/covers/2026-11-25-rome-fl1-airport-borromini-ice-rink.png
+ create mode 100644 docs/it/posts/2026-11-24-rome-parking-free-museums-chocolate-ensemble.html
+ create mode 100644 docs/it/posts/2026-11-25-rome-fl1-airport-borromini-ice-rink.html
+ create mode 100644 docs/posts/2026-11-24-rome-parking-free-museums-chocolate-ensemble.html
+ create mode 100644 docs/posts/2026-11-25-rome-fl1-airport-borromini-ice-rink.html
+To github.com:terkin/rim-dlia-svoih.git
+   ad8f1f8..6ae964c  main -> main
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 publish.py file content/channel/2026-11-25-rome-fl1-airport-borromini-ice-rink-post.md --cover covers/2026-11-25-rome-fl1-airport-borromini-ice-rink.png
+Пост: 819 символів · 2026-11-25-rome-fl1-airport-borromini-ice-rink-post.md · обкладинка 2026-11-25-rome-fl1-airport-borromini-ice-rink.png
+  message_id=31
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && gh api repos/terkin/rim-dlia-svoih/pages/builds --jq '.builds[0:3][] | [.status, .created_at, .commit] | @tsv'
+expected an object but got: array ([{"commit":"6ae964ccd6470 ...])
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && gh api repos/terkin/rim-dlia-svoih/pages/builds --jq '.[0:3][] | [.status, .created_at, .commit] | @tsv'
+built	2026-11-25T08:38:06Z	6ae964ccd64701bde33fcbf72fa4e64a56ec0ae5
+built	2026-11-23T08:06:42Z	ad8f1f8beffacd8334716272123c67c7fdb21678
+built	2026-11-22T18:39:38Z	eae3a15c59be867e098cad22cfb3787c4f876a34
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 automation/indexnow.py
+IndexNow → https://api.indexnow.org/indexnow
+  host: ucrainiroma.it
+  URLs: 51
+  HTTP 200
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /tmp && for u in "https://ucrainiroma.it/posts/2026-11-25-rome-fl1-airport-borromini-ice-rink.html" "https://ucrainiroma.it/it/posts/2026-11-25-rome-fl1-airport-borromini-ice-rink.html" "https://ucrainiroma.it/covers/2026-11-25-rome-fl1-airport-borromini-ice-rink.png"; do echo "== $u"; curl -sL --max-time 30 -o /dev/null -w "%{http_code} %{size_download}\n" "$u"; done; echo "== telegram"; curl -sL --max-time 30 -A "Mozilla/5.0" "https://t.me/s/rim_dlia_svoih" -o tg2.html; python3 - <<'EOF'
+import re,html
+t=open('/tmp/tg2.html',encoding='utf-8',errors='ignore').read()
+blocks=re.findall(r'<div class="tgme_widget_message_text[^"]*"[^>]*>(.*?)</div>',t,re.S)
+print('messages:',len(blocks))
+for b in blocks[-2:]:
+    x=re.sub(r'<br\s*/?>','\n',b); x=re.sub(r'<[^>]+>','',x); x=html.unescape(x)
+    print('---'); print(x.strip()[:700])
+EOF
+== https://ucrainiroma.it/posts/2026-11-25-rome-fl1-airport-borromini-ice-rink.html
+200 20949
+== https://ucrainiroma.it/it/posts/2026-11-25-rome-fl1-airport-borromini-ice-rink.html
+200 17356
+== https://ucrainiroma.it/covers/2026-11-25-rome-fl1-airport-borromini-ice-rink.png
+200 183841
+== telegram
+messages: 20
+---
+🚋 Рим, 23.11: трамвай 3, безкоштовні виставки, 25 листопада
+
+🚋 Трамвай 3 знову їде від Trastevere до Valle Giulia. У будні після 21:00 — автобуси між Trastevere і Porta Maggiore. Ночами 23–24.11 (22:30–04:30) роботи на Ponte Sublicio — об'їзд. Лінія 19: трамвай лише Porta Maggiore–Valle Giulia.
+
+📷 Riccardi 100 — безкоштовна фотоісторія Риму ХХ ст. у WeGil (largo Ascianghi 5, Trastevere) до 29.11, щодня 10–19.
+
+✍️ Shodō — 50 робіт японської каліграфії в Istituto Giapponese (via Gramsci 74) до 4.12, пн–пт 9–12:30 і 13:30–17, вхід вільний.
+
+🟠 25 листопада — День проти насильства над жінками: фасад Кампідолію підсвітять номером 1522 (17:30–23:00). Безкоштовна презентація книги в Palazzo Massimo 
+---
+🚆 Рим, 25.11: аеропорт без поїздів, Борроміні й лід безкоштовно
+
+FL1 / Leonardo Express: 26–29.11 поїзди скасовані між Roma Ostiense і Fiumicino. Замість них автобуси із зупинками на всіх станціях; Leonardo Express — автобус Termini–Fiumicino. Час у дорозі довший, місць менше. Складаний велосипед до 40×30×15 см можна, самокати — ні. Довідка: 800 892 021.
+
+ZTL/Sosta: онлайн-дозволи не працюють 27.11 17:00 — 29.11 18:00. Оформіть заздалегідь.
+
+Безкоштовно: Sala Alessandrina Борроміні (Corso del Rinascimento 40) і виставка про Колізей до 15.01, вт/ср/пт 14–18, чт 9–13.
+
+Ковзанка: Colle Oppio, 4.12–28.02, 10–20, вхід вільний, метро B Colosseo.
+
+Погода: сьогодні жовте попередження — дощ, грози, в
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && git status --short && echo --- && curl -sL --max-time 30 "https://ucrainiroma.it/posts/2026-11-25-rome-fl1-airport-borromini-ice-rink.html" | grep -oE '(FL1|Borromini|Colle Oppio|25 листопада|800 892 021)' | sort | uniq -c && echo --- && curl -sL --max-time 30 "https://ucrainiroma.it/it/posts/2026-11-25-rome-fl1-airport-borromini-ice-rink.html" | grep -oE '(FL1|Borromini|Colle Oppio|25 novembre|800 892 021)' | sort | uniq -c
+M automation/logs/2026-11-25-0900-morning.log
+---
+   9 25 листопада
+   1 800 892 021
+   4 Colle Oppio
+  12 FL1
+---
+   9 25 novembre
+   1 800 892 021
+  12 Borromini
+   4 Colle Oppio
+  12 FL1
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /tmp && python3 - <<'EOF'
+import re
+t=open('/tmp/tg2.html',encoding='utf-8',errors='ignore').read()
+# find last message wrapper
+parts=t.split('tgme_widget_message_wrap')
+last=parts[-1]
+print('photo:', 'tgme_widget_message_photo' in last)
+print('link:', re.findall(r'href="(https://ucrainiroma\.it/posts/[^"]+)"', last)[:3])
+print('id:', re.findall(r'data-post="([^"]+)"', last)[:2])
+EOF
+photo: True
+link: ['https://ucrainiroma.it/posts/2026-11-25-rome-fl1-airport-borromini-ice-rink.html']
+id: ['rim_dlia_svoih/31']
+> build · deepseek-v4.1-flash-free
