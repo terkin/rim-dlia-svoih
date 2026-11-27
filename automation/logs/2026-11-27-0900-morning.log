@@ -1,0 +1,2126 @@
+=== 2026-11-27 09:00:05 slot=morning ===
+[0m
+> build · deepseek-v4.1-flash-free
+I'll start by reading the README to understand the process.
+[0m→ [0mRead README.md 
+[0m$ [0mls -la /Users/terkin/rim-dlia-svoikh
+total 288
+drwxr-xr-x@  22 terkin  staff    704 Nov 25 19:57 .
+drwxr-x---+ 169 terkin  staff   5408 Nov 27 08:57 ..
+-rw-r--r--@   1 terkin  staff   6148 Nov  9 11:01 .DS_Store
+-rw-------@   1 terkin  staff     99 Nov  9 11:21 .env
+-rw-r--r--@   1 terkin  staff    300 Nov  9 11:48 .env.example
+drwxr-xr-x@  14 terkin  staff    448 Nov 26 09:11 .git
+-rw-r--r--@   1 terkin  staff     45 Nov  9 11:06 .gitignore
+-rw-r--r--@   1 terkin  staff  21371 Nov 20 09:49 README.md
+drwxr-xr-x@   3 terkin  staff     96 Nov 10 08:59 __pycache__
+-rw-r--r--@   1 terkin  staff  16781 Nov  9 11:56 ai-promotion.md
+drwxr-xr-x@   3 terkin  staff     96 Nov  9 14:03 analysis
+drwxr-xr-x@  14 terkin  staff    448 Nov 19 10:21 automation
+drwxr-xr-x@   4 terkin  staff    128 Nov  9 10:45 brand
+-rw-r--r--@   1 terkin  staff   6323 Nov  9 13:55 catalog-submission.md
+drwxr-xr-x@  11 terkin  staff    352 Nov 10 10:19 content
+drwxr-xr-x@  61 terkin  staff   1952 Nov 25 19:57 covers
+drwxr-xr-x@  14 terkin  staff    448 Nov 25 19:57 docs
+-rw-r--r--@   1 terkin  staff  17729 Nov  9 11:48 preview.html
+-rw-r--r--@   1 terkin  staff  14675 Nov 11 09:36 promotion-catalogs.md
+-rw-r--r--@   1 terkin  staff  18236 Nov  9 12:10 promotion.md
+-rw-r--r--@   1 terkin  staff  13540 Nov 10 08:57 publish.py
+drwxr-xr-x@   4 terkin  staff    128 Nov  9 14:03 reports
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && ls -t content/extra | head -20 && echo "---CHANNEL---" && ls -t content/channel | head -10 && echo "---IT---" && ls -t content/it | head -10
+2026-11-26-rome-terme-traiano-harry-potter-strike.md
+2026-11-25-rome-weekend-cie-christmas-chocolate.md
+2026-11-25-rome-fl1-airport-borromini-ice-rink.md
+2026-11-24-rome-parking-free-museums-chocolate-ensemble.md
+2026-11-23-rome-tram3-free-exhibitions-25nov.md
+2026-11-22-rome-week-panettone-bazar.md
+2026-11-21-rome-open-day-markets-closures.md
+2026-11-21-rome-weekend-parade-fl1.md
+2026-11-20-rome-weekend-cie-museums.md
+2026-11-19-shenzhen-berlin.md
+2026-11-18-rome-newcomer-events.md
+2026-11-18-kerch-summit-museums.md
+2026-11-17-inflation-strike.md
+2026-11-16-week-ahead.md
+2026-11-13-weekend-14-15.md
+2026-11-13-peace-talks-eu.md
+2026-11-12-school-alerts.md
+2026-11-11-rent-long-term.md
+2026-11-11-lazio-irpef.md
+2026-11-10-italy-military-aid.md
+---CHANNEL---
+2026-11-25-rome-weekend-cie-christmas-chocolate-post.md
+2026-11-25-rome-fl1-airport-borromini-ice-rink-post.md
+2026-11-24-rome-parking-free-museums-chocolate-ensemble-post.md
+2026-11-23-rome-tram3-free-exhibitions-25nov-post.md
+2026-11-22-rome-week-panettone-bazar-post.md
+2026-11-21-rome-open-day-markets-closures-post.md
+2026-11-21-rome-weekend-parade-fl1-post.md
+2026-11-20-rome-weekend-cie-museums-post.md
+2026-11-19-shenzhen-berlin-post.md
+2026-11-18-rome-newcomer-events-post.md
+---IT---
+2026-11-26-rome-terme-traiano-harry-potter-strike.md
+2026-11-25-rome-weekend-cie-christmas-chocolate.md
+2026-11-25-rome-fl1-airport-borromini-ice-rink.md
+2026-11-24-rome-parking-free-museums-chocolate-ensemble.md
+2026-11-23-rome-tram3-free-exhibitions-25nov.md
+2026-11-22-rome-week-panettone-bazar.md
+2026-11-21-rome-open-day-markets-closures.md
+2026-11-21-rome-weekend-parade-fl1.md
+2026-11-20-rome-weekend-cie-museums.md
+2026-11-19-shenzhen-berlin.md
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 automation/collect.py 2>&1 | tail -20
+→ ANSA Lazio
+→ Corriere Roma
+→ Il Messaggero Roma
+→ Il Tempo
+→ AGI
+→ Adnkronos
+→ Il Sole 24 Ore
+→ Il Fatto Quotidiano
+
+Збережено 40 кандидатів → /Users/terkin/rim-dlia-svoikh/automation/candidates.json
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && head -60 content/extra/2026-11-26-rome-terme-traiano-harry-potter-strike.md && echo "=====25=====" && head -50 content/extra/2026-11-25-rome-weekend-cie-christmas-chocolate.md
+🏛 **Рим, 26 листопада: Терми Траяна відкрили четверги, ялинка Harry Potter у центрі й страйк 4 грудня**
+
+Сьогодні — п'ять речей для тих, хто живе в Римі: як потрапити в новий музей на Колле Оппіо, куди йти в суботу на безкоштовне запалення ялинки, що буде з транспортом 4 грудня і як спланувати довгі вихідні 6–8 грудня.
+
+**🏛 Терми Траяна: з сьогодні екскурсії ще й у четвер**
+Музей у підземній галереї Терм Траяна на Колле Оппіо відкрився цього року і вже прийняв понад 3 500 відвідувачів. З 26 листопада до 31 грудня одинаки можуть приходити не лише на вихідних, а й щочетверга з 10:00 до 15:00, екскурсії кожні 30 хвилин. 24 і 31 грудня — з 10:00 до 13:00.
+
+Адреса: viale del Monte Oppio, ріг via delle Terme di Tito (Colle Oppio), поруч з Колізеєм і станцією метро Colosseo (лінія B).
+
+Як потрапити:
+• тільки з гідом, групи до 20 осіб, екскурсія італійською;
+• бронювання обов'язкове: 060608 (щодня 9:00–19:00) або онлайн на sovraintendenzaroma.it;
+• квиток: 7,50 € повний для нерезидентів, 6 € пільговий; з чинною MIC Card — безкоштовно (картку не можна активувати на місці);
+• готівку не приймають, онлайн-купівлю радять зробити заздалегідь;
+• взуття — зручне, частина маршруту просто неба.
+
+Що побачите: південно-західну екседру терм, підземну галерею з фрескою «Зображене місто» (Città Dipinta) і Великою мозаїкою. Перша неділя місяця (6 грудня) — безкоштовно, але квитки лише онлайн і з'являються в четвер перед неділею.
+
+**🎄 Субота 28 листопада: безкоштовне запалення ялинок Harry Potter**
+Galleria Alberto Sordi на via del Corso перетворюється на Хогвартс: два різдвяні дерева, гірлянда HBO Max, прапори чотирьох гуртожитків і вітрини з Гаррі, Герміоною й Роном заввишки понад 4 метри.
+
+Запалення — у суботу 28 листопада о 18:00, вхід вільний. Співатиме хор Roma Gospel Voices. Одне дерево — Велика зала й Розподільчий капелюх, друге — потяг Hogwarts Express, листи, сови й валізи.
+
+Порада: приходьте за 30–40 хвилин, бо майданчик у центрі галереї невеликий. Метро A — Spagna або Barberini, далі 5–10 хвилин пішки. Галерея під дахом, тож дощ не завадить; оздоби залишаться на весь різдвяний сезон.
+
+**🚇 Страйк 4 грудня: метро, автобуси й трамваї під загрозою**
+Національний 24-годинний страйк оголосили CUB та інші базові профспілки. У Римі він може зупинити метро A, B і C, автобуси й трамваї; точні слоти та гарантовані рейси Roma Servizi per la Mobilità зазвичай публікує за кілька днів до дати.
+
+Що вже відомо:
+• потяги — з 21:00 четверга 3 грудня до 21:00 п'ятниці 4 грудня;
+• у Римі під час 24-годинних страйків зазвичай гарантують рух до 8:29 і з 17:00 до 19:59, але це треба перевірити в день страйку;
+• другий страйк того ж дня (USI 1912) транспорту не стосується — не плутайте.
+
+Практика: якщо можете — домовтеся про віддалену роботу або зсуньте зустрічі. На дорогу закладайте +40–60 хвилин, перевіряйте atac.roma.it і romamobilita.it перед виходом. Таксі й каршеринг у такі дні розбирають швидко.
+
+**🚗 Неділя 6 грудня: екологічна неділя і безкоштовні музеї**
+6 грудня — друга екологічна неділя сезону. У ZTL «Fascia Verde» з 7:30 до 12:30 і з 16:30 до 20:30 заборонений рух усіх авто з двигуном внутрішнього згоряння. Винятки й класи авто — в окремому ординансі, який публікують перед датою; стежте за romamobilita.it.
+
+Того ж дня — перша неділя місяця, тож державні музеї безкоштовні: Колізей, Римський форум, Галерея Боргезе, Палаццо Барберіні, Терми Каракалли та інші. Міські музеї для резидентів Риму безкоштовні й так.
+
+Порада: безкоштовні слоти в Колізеї й Боргезе розбирають дуже швидко — бронюйте онлайн уже зараз. У неділю без авто краще планувати метро й автобус; це не день для поїздок у центр на машині.
+
+**🎄 8 грудня: Іммаколата, папа і запалення ялинки**
+На довгі вихідні 5–8 грудня Рим очікує близько мільйона туристів: за оцінкою Ente Bilaterale del Turismo del Lazio, 383 950 прибуттів і 951 300 присутностей — на 2,8% і 2,2% більше, ніж торік.
+
+Головні події 8 грудня:
+• о 16:00 Папа Лев XIV приїде на piazza di Spagna вшанувати статую Непорочної Діви;
+• о 18:30 за попереднім графіком запалюють ілюмінацію на via del Corso і головну ялинку на piazza del Popolo.
+
+Практика: у центрі буде натовп і перекриття; метро A Spagna і Flaminio — найзручніше, але й найлюдніше. На площу краще приходити заздалегідь, з дітьми — триматися подалі від натовпу біля сцени. Ресторани в центрі бронюйте заздалегідь.
+
+**🌤 Погода**
+Сьогодні грози, до 16 °C; у вихідні сухо — 15 °C у суботу, 14–15 °C у неділю, вночі 6–7 °C. З понеділка холоднішає: 12 °C, у вівторок 9 °C з дощем, а в ніч на 3 грудня — близько 0,5 °C. Діставайте зимову куртку.
+
+**Коротко:** Терми Траяна — четверги 10–15 до 31.12, 7,50 €, з MIC Card безкоштовно; ялинки Harry Potter — 28.11 о 18:00, безкоштовно; страйк — 4.12, потяги з 21:00 3.12; 6.12 — екологічна неділя 7:30–12:30 і 16:30–20:30 та безкоштовні державні музеї; 8.12 — папа о 16:00 на piazza di Spagna, ялинка о 18:30.
+
+Джерела: Sovrintendenza Capitolina (23–24.11 — нові четвергові слоти, квитки, бронювання), Turismo Roma (календар екологічних неділь 2026–27: 6.12, 7:30–12:30 і 16:30–20:30), RomaToday (24–26.11 — ялинки Harry Potter, події вихідних), Spettacolo.eu (24.11 — 28.11 о 18:00, хор, оздоби), Metropolitana di Roma / MIT (4.11 — страйк 4.12, потяги 3–4.12, гарантовані слоти), Sky TG24 (25.11 — страйк 4.12), Corriere Roma (25.11 — 383 950 прибуттів, 951 300 присутностей, папа о 16:00, ілюмінація о 18:30), Vatican News (27.10 — 8.12 у piazza di Spagna), Open-Meteo (26.11 — прогноз).
+=====25=====
+🎄 **Рим, 26–29 листопада: безкоштовна неділя у Ватикані, шоколад біля Сан-П'єтро й відкриття Christmas World**
+
+Найближчі чотири дні в Римі щільні: у п'ятницю о 9:00 відкривається запис на CIE, у суботу стартує найбільший різдвяний парк у Віллі Боргезе, а в неділю — безкоштовний вхід у Музеї Ватикану. Плюс ярмарок шоколаду, який працює всі три дні.
+
+**🪪 Carta d'identità elettronica: open day 28–29 листопада, запис — з 9:00 п'ятниці**
+Місто відкриває у суботу п'ять муніципій і кілька центральних пунктів, у неділю — лише центральні. Без попереднього запису не приймають: слоти з'являться 27 листопада з 9:00 на порталі МВС prenotazionicie.interno.gov.it і розійдуться швидко.
+
+Куди йти в суботу 28.11:
+• Municipio II — via Dire Daua 11, 8:00–13:00;
+• Municipio III — via Fracchia 45, 8:00–17:00;
+• Municipio VII — piazza Cinecittà 11 і via Fortifiocca 71, 8:30–16:00;
+• Municipio XIII — via Aurelia 470, 8:30–15:30;
+• Municipio XV — via Enrico Bassano 10, 8:30–16:00.
+
+У суботу й неділю також працюють колишні туристичні пункти: piazza delle Cinque Lune, piazza Sonnino, piazza Santa Maria Maggiore і пункт видачі via Petroselli 52. Субота — 8:30–16:30, неділя — 8:30–12:30.
+
+Що взяти: підтвердження запису, свіжу фотокартку, банківську картку для оплати і старий документ (або заяву про втрату). Порада: обирайте пункт за 10–15 хвилин від дому — у суботу в центрі буде натовп.
+
+Нагадування: з 31 січня 2027 року діє лише електронна картка, паперові поступово виходять з обігу.
+
+**🍫 Roma Chocolate: 27–29 листопада, piazza Risorgimento, 10:00–23:00, вхід вільний**
+Просто біля стін Ватикану, за десять хвилин пішки від метро Ottaviano (лінія A), на три дні розкладають намети шоколатьє: плитки, праліне, гарячий шоколад, подарункові набори. Вхід безкоштовний, платите лише за те, що купуєте.
+
+Хороший варіант на суботу після open day або на неділю після Ватикану — все в одному районі. Увечері буде людно й прохолодно: вдягайтеся тепліше, бо площа відкрита.
+
+**🎄 Christmas World у Віллі Боргезе: відкривається 28 листопада**
+Найбільший різдвяний парк Європи повертається на Galoppatoio у Віллі Боргезе (вхід з piazzale delle Canestre) і працює щодня 10:00–20:00 до 10 січня 2027 року.
+
+У квиток входять сама територія, головна сцена, паради, шоу й зустрічі з персонажами, Snow Village і аквагрим. Каруселі, ковзанка, гірка й їжа — окремо.
+
+Ціни залежать від дня: дорослий квиток — 12,50 € у «низький» день, 16,50 € у стандартний, 18,50 € у пік; діти 3–11 років — 10,50 / 13,50 / 15,50 €; сімейний пакет 2+2 — від 41 €. Діти до 3 років — безкоштовно. Вихідні зазвичай дорожчі, тож перед покупкою перевірте календар на christmasworld.net. Онлайн дешевше на 2 € з квитка, ніж у касі.
+
+Порада для новачків: у суботу зранку буде найбільше людей. Якщо йдете з дітьми — беріть квиток на 10:00 і виходьте до обіду, поки не стемніло й не похолодало.
+
+**🏛 Неділя 29 листопада: безкоштовні Музеї Ватикану, 9:00–14:00**
+Остання неділя місяця — традиційний безкоштовний вхід. Останній вхід о 12:30, черга буває довга: приходьте до відкриття або під кінець ранку. Бронювання не потрібне, але й гарантії, що встигнете, теж немає.
+
+Для тих, хто в Римі недавно: йдіть одразу в Сикстинську капелу, поки там відносно вільно, а потім повертайтеся в галереї. Плечі й коліна мають бути закриті.
+
+**🌤 Погода й транспорт на вихідні**
+Дощі, які ллють у середу й четвер, до суботи вщухнуть: обіцяють суху, але холодну погоду — у суботу 8–15 °C, у неділю 7–14 °C, вітер північний. У суботу зранку можливий туман. Це вже не «римське пальто»: куртка, шарф і щось на голову знадобляться, особливо на вечірніх ярмарках.
+
+Нагадування про аеропорт: до неділі 29 листопада FL1 і Leonardo Express замінені автобусами (деталі — у дописі від 25 листопада). Онлайн-сервіс дозволів ZTL/Sosta не працює до 18:00 неділі, тож усе, що потрібно, оформте до 17:00 п'ятниці.
+
+**Коротко:** 27.11 з 9:00 — запис на CIE; 28–29.11 — open day у 5 муніципіях і центрах (сб 8:30–16:30, нд 8:30–12:30); 27–29.11 — Roma Chocolate, piazza Risorgimento, 10–23, безкоштовно; з 28.11 — Christmas World у Віллі Боргезе, 10–20, від 12,50 €; 29.11 — безкоштовні Музеї Ватикану 9–14; вихідні сухі, але холодні.
+
+Джерела: Roma Capitale (24.11 — open day CIE, адреси, години, запис з 27.11, перехід на CIE з 31.01.2027), Il Messaggero (24–25.11 — деталі open day), RomaToday (23–25.11 — Roma Chocolate, CIE), Corriere Roma (25.11 — Roma Chocolate, 10–23, вільний вхід), Christmas World / Turismo Roma (26.11 — дати 28.11–10.01, години, вхід з piazzale delle Canestre), LiveOfficialRome (24.11 — ціни off peak / standard / peak, доплата в касі), Roma.Com (23.11 — відкриття 28.11, безкоштовна неділя у Ватикані 9–14, останній вхід 12:30), 3BMeteo і MeteoPop (25.11 — прогноз на 28–29.11, температура й вітер).
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 -c "
+import json
+d=json.load(open('automation/candidates.json'))
+print(type(d))
+if isinstance(d,dict): print(d.keys())
+"
+<class 'dict'>
+dict_keys(['generated_at', 'count', 'items'])
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 -c "
+import json
+d=json.load(open('automation/candidates.json'))
+for i,it in enumerate(d['items']):
+    print(i, '|', it.get('source'), '|', it.get('published','')[:16], '|', it.get('title'))
+"
+0 | Il Messaggero Roma | ven, 27 nov 2026 | Le sagre e le feste nei dintorni di Roma venerdì 27, sabato 28 e domenica 29 novembre: dalla Polenta alle castagne, ecco gli appuntamenti da non perdere
+1 | Il Messaggero Roma | ven, 27 nov 2026 | Cosa fare a Roma (anche gratis) venerdì 27, sabato 28 e domenica 29 novembre?Christmas Market, la Festa del Cioccolato e Urban Bazar al Maxxi
+2 | Il Messaggero Roma | ven, 27 nov 2026 | Roma, coppia accoltella un uomo dieci volte in casa. «Dove vuoi andare, tanto ti ammazziamo»: 29enne gravissimo
+3 | Il Messaggero Roma | ven, 27 nov 2026 | Emanuele Lo Russo morto in Kuwait, lo choc del suo quartiere di Roma. «Bello come il sole, amava la vita»
+4 | Il Messaggero Roma | ven, 27 nov 2026 | L?ultima palude del litorale romano minacciata dalla tartaruga americana: il 29 novembre visita guidata a Torre Flavia
+5 | Adnkronos | 2026-11-27T07:46 | Europa, De Luca (Aises): "Difesa e sicurezza sono la priorità per affrontare la sfida esistenziale"
+6 | Adnkronos | 2026-11-27T07:43 | Europa, Pitruzzella (Consulta): "Dobbiamo sederci al tavolo delle grandi potenze o finiamo nel menu"
+7 | Adnkronos | 2026-11-27T07:35 | Minniti (Med-Or): "L'Africa centro-settentrionale è il fronte secondario della guerra in Ucraina"
+8 | Corriere Roma | 2026-11-27T07:21 | Francesca Lo Schiavo: «Da Fellini a The Aviator, tanti Oscar e soddisfazioni. Il più bello dei premi? I miei figli»
+9 | Corriere Roma | 2026-11-27T07:15 | Emanuele Lorusso e Antonio Saccoccio, chi sono i due italiani morti in Kuwait: il primo con i sogni tra viaggi e calcio, il secondo ormai vicino alla pensione
+10 | Il Tempo | 2026-11-27T06:56 | Roma, ora a temere sono le aree confinanti al Quarticciolo. Gli spacciatori si spostano, ecco dove
+11 | Il Fatto Quotidiano | 2026-11-27T06:53 | I Comuni non assumono i vincitori del loro concorso, la strigliata del ministero: “Tenete fede agli impegni o rischiate le cause”
+12 | Il Fatto Quotidiano | 2026-11-27T06:52 | La Lombardia colma un vuoto: dopo anni di battaglie anche i cittadini dell’Ue indigenti potranno ricevere le cure dal sistema sanitario
+13 | Il Fatto Quotidiano | 2026-11-27T06:52 | Violenza sulle donne, in Sicilia centri senza fondi: “Stanziato un milione di euro per i convegni mentre i rifugi rischiano di chiudere”
+14 | Il Fatto Quotidiano | 2026-11-27T06:52 | Ecco l’eredità dei Giochi invernali sui territori: il Veneto stanzia 4,5 milioni per le spese di gestione della pista da bob
+15 | Adnkronos | 2026-11-27T06:48 | Approfitta del disagio di una 17enne e abusa di lei, due arresti a Roma
+16 | Adnkronos | 2026-11-27T06:48 | Ue, Di Maio: "Difesa comune anche attraverso formati più ristretti"
+17 | Il Tempo | 2026-11-27T06:44 | Quarticciolo, quartiere “appeso”. Abusivi intoccabili e cantieri a rilento
+18 | Corriere Roma | 2026-11-27T06:44 | Mobilità, l'assessore alla Mobilità Eugenio Patanè: «Nel 2027 mille piste ciclabili, 180 km di preferenziali e taglio alle fermate del bus»
+19 | Il Tempo | 2026-11-27T06:41 | Romanzo Quarticciolo: una serata da cronista e una sfida per tutti. L’appello de Il Tempo
+20 | Il Fatto Quotidiano | 2026-11-27T06:37 | Mina Gorji, leggere le tracce del mondo cambiando scala (Traduzione di Andrea Sirotti)
+21 | Corriere Roma | 2026-11-27T06:26 | Ance-Acer, la presidente Francesca De Sanctis: «A Roma servono 71mila alloggi entro il 2032, la casa sia una priorità delle politiche urbane»
+22 | Corriere Roma | 2026-11-27T06:14 | Bilancio Ue, richieste «inaccettabili». Meloni non vuole firmare nemmeno al Consiglio europeo di dicembre
+23 | Il Sole 24 Ore | 2026-11-27T05:54 | Exit tax più soft, sgravi ai giovani neoassunti e meno tagli alle pensioni: le priorità dei partiti per la Manovra
+24 | AGI | 2026-11-27T00:49 | Sciare costa sempre di più, skipass giornalieri fino a 89 euro
+25 | Il Tempo | 2026-11-26T22:06 | La Juve travolge 4-1 l’Omonia e si avvicina agli ottavi di Europa League
+26 | Il Tempo | 2026-11-26T19:56 | Europa League, il Milan rimonta due gol ad Atene e batte 4-2 l’Olimpyacos
+27 | AGI | 2026-11-26T19:29 | Il cane robot che vigila sulla sicurezza dei cantieri autostradali
+28 | ANSA Lazio | 2026-11-26T17:56 | Festa al Righi, lo storico liceo di Roma compie ottant'anni
+29 | ANSA Lazio | 2026-11-26T17:26 | Terzini, dai quadri-meme nati su Instagram alla prima mostra romana a Palazzo Merulana
+30 | ANSA Lazio | 2026-11-26T17:10 | Il 13 dicembre al via a Roma l'AfriCup 2026
+31 | Il Sole 24 Ore | 2026-11-26T17:07 | Pescara, fatture false per svuotare le casse del club: sequestri per 12,5 milioni di euro
+32 | AGI | 2026-11-26T16:09 | Pistoia, uccide la compagna, poi si dà fuoco e si lancia dal viadotto sull'A1: è lo stesso...
+33 | Il Sole 24 Ore | 2026-11-26T16:07 | Nasce Must solidale: al via il progetto che con bollette ed efficienza energetica sostiene il terzo settore
+34 | AGI | 2026-11-26T15:44 | Il delitto di San Valentino a Roma, confermato l'ergastolo per Angelo Sabatucci
+35 | ANSA Lazio | 2026-11-26T15:28 | All' Opera di Roma Lo Schiaccianoci di Paul Chalmer
+36 | Il Sole 24 Ore | 2026-11-26T15:04 | Flat tax a 100mila euro, Meloni all’attacco: la sinistra confonde fatturato e stipendio
+37 | AGI | 2026-11-26T14:29 | Auto come birilli sulla superstrada Sora-Ferentino: asfalto viscido, maxi tamponamento tra...
+38 | ANSA Lazio | 2026-11-26T11:19 | Trovato cadavere nell'ex Città del rugby a Roma, indaga la polizia
+39 | Il Sole 24 Ore | 2026-11-26T10:21 | Pensioni 2027, nuovi calcoli: da 102 a 1.723 euro in meno l’anno, ecco chi perde di più
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 -c "
+import json
+d=json.load(open('automation/candidates.json'))
+for i in [0,1,4,18,21,29,30,35]:
+    it=d['items'][i]
+    print('=====',i,it.get('source'))
+    print('T:',it.get('title'))
+    print('L:',it.get('link'))
+    print('S:',(it.get('summary') or '')[:600])
+    print()
+"
+===== 0 Il Messaggero Roma
+T: Le sagre e le feste nei dintorni di Roma venerdì 27, sabato 28 e domenica 29 novembre: dalla Polenta alle castagne, ecco gli appuntamenti da non perdere
+L: https://www.ilmessaggero.it/roma/metropoli/sagre_fuori_roma_weekend_27_novembre-9916411.html
+S: Quelle invernali sono considerate le sagre più belle perché profumano di tradizione e raccontano l?anima più genuina dei territorio. L?autunno, del resto,...
+
+===== 1 Il Messaggero Roma
+T: Cosa fare a Roma (anche gratis) venerdì 27, sabato 28 e domenica 29 novembre?Christmas Market, la Festa del Cioccolato e Urban Bazar al Maxxi
+L: https://www.ilmessaggero.it/roma/centro_storico/cosa_fare_roma_gratis_venerdi_27_sabato_28_domenica_29_novembre-9916409.html
+S: Si chiude il mese di novembre e Natale è sempre più vicino. Tante le occasioni per chi vuole iniziare a fare i primi regali: dal Christmas Market a Grottaferrata all'Urban...
+
+===== 4 Il Messaggero Roma
+T: L?ultima palude del litorale romano minacciata dalla tartaruga americana: il 29 novembre visita guidata a Torre Flavia
+L: https://www.ilmessaggero.it/roma/metropoli/torre_flavia_tartaruga_americana-9914833.html
+S: Alla scoperta della palude di Torre Flavia, una delle ultime zone umide della fascia costiera romana oggi divenuta monumento naturale: il prossimo 29 novembre l?area protetta situata nelle...
+
+===== 18 Corriere Roma
+T: Mobilità, l'assessore alla Mobilità Eugenio Patanè: «Nel 2027 mille piste ciclabili, 180 km di preferenziali e taglio alle fermate del bus»
+L: https://roma.corriere.it/notizie/cronaca/26_novembre_27/mobilita-l-assessore-alla-mobilita-eugenio-patane-nel-2027-mille-piste-ciclabili-180-km-di-preferenziali-e-taglio-alle-fermate-b2d1c062-875f-4957-8b06-4f4ba541cxlk.shtml
+S: Patanè: «Lavoriamo per ridurre i 124 morti sulle strade della Capitale, dei quali la maggior parte soggetti fragili»
+
+===== 21 Corriere Roma
+T: Ance-Acer, la presidente Francesca De Sanctis: «A Roma servono 71mila alloggi entro il 2032, la casa sia una priorità delle politiche urbane»
+L: https://roma.corriere.it/notizie/cronaca/26_novembre_27/ance-acer-la-presidente-francesca-de-sanctis-a-roma-servono-71mila-alloggi-entro-il-2032-la-casa-sia-una-priorita-delle-7318a5f9-9c62-4488-a995-15c9edb67xlk.shtml
+S: La questione abitativa: «Pnrr e Giubileo straordinaria occasione ma non rinunciamo alle grandi opere. La richiesta di case riguarda le fasce più fragili, giovani, famiglie, studenti e lavoratori»
+
+===== 29 ANSA Lazio
+T: Terzini, dai quadri-meme nati su Instagram alla prima mostra romana a Palazzo Merulana
+L: https://www.ansa.it/lazio/notizie/2026/11/26/terzini-dai-quadri-meme-nati-su-instagram-alla-prima-mostra-romana_6fbf2d6e-9db3-4502-904f-860c21e79286.html
+S: Dal 27 novembre al 10 gennaio esposte 24 delle opere più famose nate per i brand del lusso
+
+===== 30 ANSA Lazio
+T: Il 13 dicembre al via a Roma l'AfriCup 2026
+L: https://www.ansa.it/lazio/notizie/2026/11/26/il-13-dicembre-al-via-a-roma-lafricup-2026_e1fd7874-abfc-4083-8adf-d338fed526a5.html
+S: Otto nazioni e 176 calciatori in un torneo rivolto al dialogo
+
+===== 35 ANSA Lazio
+T: All' Opera di Roma Lo Schiaccianoci di Paul Chalmer
+L: https://www.ansa.it/lazio/notizie/2026/11/26/all-opera-di-roma-lo-schiaccianoci-di-paul-chalmer_e259f019-4cb0-422c-abea-99545c8d3d26.html
+S: Fino al 5 dicembre al Teatro Nazionale gli allievi della Scuola di Danza del Teatro
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && for q in "Roma+oggi" "Roma+trasporti+sciopero" "Roma+gratis" "Roma+apertura+mostra"; do echo "### $q"; curl -s "https://news.google.com/rss/search?q=$q&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+items=re.findall(r'<item>(.*?)</item>',t,re.S)
+for it in items[:12]:
+    ti=re.search(r'<title>(.*?)</title>',it,re.S)
+    d=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S)
+    s=re.search(r'<source[^>]*>(.*?)</source>',it,re.S)
+    print('-',html.unescape(ti.group(1)) if ti else '', '|', d.group(1) if d else '', '|', html.unescape(s.group(1)) if s else '')
+"; done
+### Roma+oggi
+- Psg-Roma, dove vedere la partita di Champions League in tv e streaming - Sky Sport | Wed, 25 Nov 2026 11:30:01 GMT | Sky Sport
+- Roma, oggi la piazza ambientalista contro la proposta di legge sulla Caccia - Il Fatto Quotidiano | Wed, 25 Nov 2026 23:01:00 GMT | Il Fatto Quotidiano
+- Soulé si è finalmente preso la Roma: oggi è più decisivo di Dybala, Gasperini ha trovato un'altra Joya - Goal.com | Thu, 26 Nov 2026 17:17:47 GMT | Goal.com
+- Autovelox di via Roma. La taratura si farà oggi - La Nazione | Fri, 27 Nov 2026 05:23:15 GMT | La Nazione
+- WC27Q. Domani a Roma Italia-Turchia. Petrucci: "Giornata storica, un onore la presenza del presidente della Repubblica" - Federazione Italiana Pallacanestro | Wed, 25 Nov 2026 12:15:55 GMT | Federazione Italiana Pallacanestro
+- Bombe a Roma: 70 episodi dal 2023, 20 esplosioni solo da inizio agosto 2026 a oggi - Il Foglio | Thu, 26 Nov 2026 16:35:00 GMT | Il Foglio
+- Paura al liceo Plinio Seniore: crolla una tenda, due studenti finiscono in ospedale - RomaToday | Wed, 25 Nov 2026 11:33:42 GMT | RomaToday
+- "Il ricatto della bellezza" a Roma al Cinema Adriano il 4 dicembre 2026 ore 20.15 con il cast - RomaOggi.eu | Thu, 26 Nov 2026 11:00:49 GMT | RomaOggi.eu
+- Due italiani morti in Kuwait: erano di Formia e Roma. «L'esercito ha intercettato dei droni iraniani, ma le schegge li hanno uccisi». Stavano lavorando al sistema di difesa Skyguard - Corriere della Sera | Thu, 26 Nov 2026 23:21:00 GMT | Corriere della Sera
+- Presentate oggi a Roma le 10 proposte del Tavolo Asilo e Immigrazione - CNCA – Coordinamento Nazionale Comunità Accoglienti | Tue, 24 Nov 2026 16:58:50 GMT | CNCA – Coordinamento Nazionale Comunità Accoglienti
+- PSG-Roma su Prime Video e Inter-Stoccarda su Sky: dove vedere la Champions League stasera alle 21 - Skuola.net | Wed, 25 Nov 2026 09:00:08 GMT | Skuola.net
+- Caccia, Enpa oggi in piazza a Roma contro la Pdl “Sparatutto”. Giusy D’Angelo: «Difendere la fauna selvatica è una questione di democrazia e sicurezza - ENPA | Thu, 26 Nov 2026 14:26:54 GMT | ENPA
+### Roma+trasporti+sciopero
+- Sciopero mezzi pubblici e taxi dicembre 2026: date, orari e fasce garantite - missionline | Thu, 26 Nov 2026 16:30:14 GMT | missionline
+- Sciopero generale 20 novembre 2026: metro Roma a rischio - Metropolitana di Roma | Fri, 20 Nov 2026 08:00:00 GMT | Metropolitana di Roma
+- Nuovo venerdì a rischio disagi a Roma: il 4 dicembre sarà sciopero generale - RomaToday | Thu, 26 Nov 2026 12:10:00 GMT | RomaToday
+- Sito Istituzionale | Sciopero e cortei, la viabilità del 20 novembre - Roma Capitale | Thu, 19 Nov 2026 11:21:27 GMT | Roma Capitale
+- Sciopero 4 dicembre, stop treni e mezzi pubblici: chi si ferma e gli orari - Sky TG24 | Wed, 25 Nov 2026 11:33:29 GMT | Sky TG24
+- Scioperi trasporti dicembre, il calendario: bus, metro, treni e aerei, tutte le date, orari e chi aderisce città per città - Il Messaggero | Fri, 27 Nov 2026 05:58:03 GMT | Il Messaggero
+- Trasporti, gli scioperi di dicembre: quando si fermano treni, bus e aerei - La Stampa | Wed, 25 Nov 2026 09:53:00 GMT | La Stampa
+- Sciopero generale, Roma nel caos: fermi tram, bus e metro, stop ai treni dalle 21.00. Dove si trovano i cortei e come evitare i blocchi - Moveo by Telepass | Fri, 20 Nov 2026 11:21:10 GMT | Moveo by Telepass
+- Calendario scioperi e mobilitazioni dal 9 al 15 novembre 2026: call center, trasporti, sanità e spettacolo - CGIL | Sun, 15 Nov 2026 08:00:00 GMT | CGIL
+- Gli orari e la mappa dello sciopero generale: oggi stop ai mezzi pubblici da Bologna a Roma, blocchi a scuola e sanità - Corriere della Sera | Fri, 20 Nov 2026 08:35:06 GMT | Corriere della Sera
+- Sciopero generale 20 novembre 2026 Roma: fasce garantite metro e bus ATAC, Cotral, treni e corteo di Landini - Metro Italia | Thu, 19 Nov 2026 17:12:06 GMT | Metro Italia
+- Sciopero dei mezzi, Roma verso la paralisi. Oggi, venerdì 20 novembre, a rischio metro, bus, tram e treni per 24 ore - RomaToday | Fri, 20 Nov 2026 05:46:24 GMT | RomaToday
+### Roma+gratis
+- Tumore al pancreas, il Lazio apre gratis al nuovo farmaco Daraxonrasib: è la prima Regione in Italia - la Repubblica | Thu, 26 Nov 2026 16:01:31 GMT | la Repubblica
+- Cosa fare a Roma (anche gratis) venerdì 27, sabato 28 e domenica 29 novembre?Christmas Market, la Festa del Cioccolato e Urban Bazar al... - Il Messaggero | Fri, 27 Nov 2026 05:28:12 GMT | Il Messaggero
+- Cosa fare a Roma nel weekend 28-29 novembre, Anohni e Testaccio - Vivere Roma | Thu, 26 Nov 2026 22:24:11 GMT | Vivere Roma
+- Tumore al pancreas, svolta per i pazienti: nel Lazio accesso gratuito all'innovativo farmaco Daraxonrasib - RomaToday | Thu, 26 Nov 2026 11:24:00 GMT | RomaToday
+- Roma apre gratis musei statali e civici domenica 6 dicembre - inITALY | Wed, 25 Nov 2026 06:12:31 GMT | inITALY
+- Domenica al museo a Roma: Colosseo e Capitolini gratis - UniversiNet Magazine | Wed, 25 Nov 2026 19:47:01 GMT | UniversiNet Magazine
+- Weekend 27-28-29 novembre: cosa fare a Roma e dintorni tra Christmas World, i futuristi al MAXXI e i mercatini dei Castelli - Roma.Com | Mon, 23 Nov 2026 16:13:07 GMT | Roma.Com
+- Arte, scienza e note sotto le stelle di Roma: all’Università La Sapienza apro 10 musei. Gratis - Artribune | Sat, 21 Nov 2026 12:00:00 GMT | Artribune
+- PSG-Roma su Prime Video e Inter-Stoccarda su Sky: dove vedere la Champions League stasera alle 21 - Skuola.net | Wed, 25 Nov 2026 09:00:08 GMT | Skuola.net
+- Champions League oggi in TV (25 novembre), il big match in chiaro gratis su TV8: c’è una sfida imperdibile (e giocano anche Inter e Roma) - Libero | Wed, 25 Nov 2026 08:47:54 GMT | Libero
+- Cosa fare gratis a Roma 23-29 novembre, Moacasa e Celio - Vivere Roma | Mon, 23 Nov 2026 10:21:25 GMT | Vivere Roma
+- Visitor Center CARME Roma: orari, ingresso gratis e plastico - UniversiNet Magazine | Thu, 26 Nov 2026 15:00:58 GMT | UniversiNet Magazine
+### Roma+apertura+mostra
+- Roma: Bryan Adams. #SHOTBYADAMS - Mostra di fotografia nel Lazio - WeGil - Itinerari nell'Arte | Thu, 26 Nov 2026 20:41:40 GMT | Itinerari nell'Arte
+- Bryan Adams porta a Roma la mostra fotografica #SHOTBYADAMS - inITALY | Thu, 26 Nov 2026 20:59:16 GMT | inITALY
+- A Roma la mostra "Se questa è una donna" della fotografa palestinese Fatena Mohanna - Alternativa Sostenibile | Mon, 23 Nov 2026 16:15:46 GMT | Alternativa Sostenibile
+- Musei Roma: eventi e mostre dal 27 nov al 3 dic 2026 - Oblo.it | Thu, 26 Nov 2026 12:30:52 GMT | Oblo.it
+- Bryan Adams a Roma la mostra #SHOTBYADAMS con circa 130 opere - Sugarpulp | Thu, 26 Nov 2026 09:27:55 GMT | Sugarpulp
+- Visite guidate Roma 27 novembre-3 dicembre, Sovrintendenza - Vivere Roma | Thu, 26 Nov 2026 07:54:00 GMT | Vivere Roma
+- Ad Alta Voce... Basta! - Oggi Roma | Tue, 24 Nov 2026 22:45:01 GMT | Oggi Roma
+- Richard Avedon e i suoi ritratti per l’eternità: Marco Delogu racconta la mostra a Roma - Artribune | Tue, 24 Nov 2026 15:00:00 GMT | Artribune
+- Collettiva di Fine Anno 2026: l’arte del Novecento e contemporanea in mostra a Roma - EZ Rome | Thu, 26 Nov 2026 09:30:00 GMT | EZ Rome
+- Velázquez arriva a Palazzo Barberini con una mostra dedicata all’Italia - inITALY | Thu, 26 Nov 2026 12:49:18 GMT | inITALY
+- Roma, l'Accademia di Danimarca e Villa Lante aprono al pubblico per Novembre Nordico - professione Architetto | Sun, 01 Nov 2026 07:00:00 GMT | professione Architetto
+- “Abissi”: parte da Tuscania il viaggio nell’arte contemporanea di Flaminia Verdoni tra la Tuscia e Roma - TusciaTimes.eu | Wed, 25 Nov 2026 20:52:37 GMT | TusciaTimes.eu
+> build · deepseek-v4.1-flash-free
+[0m% [0mWebFetch https://www.ansa.it/lazio/notizie/2026/11/26/terzini-dai-quadri-meme-nati-su-instagram-alla-prima-mostra-romana_6fbf2d6e-9db3-4502-904f-860c21e79286.html 
+[0m% [0mWebFetch https://roma.corriere.it/notizie/cronaca/26_novembre_27/mobilita-l-assessore-alla-mobilita-eugenio-patane-nel-2027-mille-piste-ciclabili-180-km-di-preferenziali-e-taglio-alle-fermate-b2d1c062-875f-4957-8b06-4f4ba541cxlk.shtml 
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin && sed -n '1780,1900p' .local/share/opencode/tool-output/tool_21c05783e001RG8fUwlmkVKdVt
+L'accordo tra Roma Capitale e i rider di Just EatL’assessore dà l’annuncio proprio nel corso della presentazione del protocollo d’intesa tra sindacati, Just Eat e Roma Capitale sul lavoro dei rider a Roma. «Per tutti noi rider è una giornata di vittoria molto importante — dichiara Giorgia Cason che lavora per Just Eat da due anni —, non è un semplice atto tecnico o burocratico, ma il vero strumento democratico che trasforma un rapporto di forza sbilanciato in un confronto paritario», garantendo agevolazioni e riconoscimenti nuovi per i rider. Grazie all’accordo di ieri, tramite l’azienda i fattorini potranno far arrivare le loro osservazioni sui tracciati affrontati ogni giorno direttamente al Campidoglio, in modo che la Mobilità possa studiare interventi per garantire più sicurezza sul lavoro.
+        
+        
+        
+
+    Più preferenziali e meno fermate del busPoi c’è anche il tema dell’efficienza dei mezzi pubblici, determinante anche in chiave sicurezza visto che, con un bus affidabile, è più facile lasciare l’auto in garage. E, in questo senso, l’obiettivo del Campidoglio è provare a dare più velocità commerciale ai mezzi dopo il calo registrato negli ultimi 5 anni, con i bus scesi da 16 km/h a 9 km/h. Per arrivare al risultato, la Mobilità punta su una doppia misura: da una parte l’istituzione di 180 km di corsie protette, dall’altra una revisione delle paline attraverso i dati rilevati a bordo dei mezzi Atac con i sensori conta passeggeri. In sostanza si andranno a cancellare le fermate presso le quali non sale e non scende nessuno. Che però, in teoria, non causando stop, non incideranno sulla velocità media del bus
+        
+    
+        
+    LEGGI ANCHE
+    
+        
+    
+            
+        
+                
+                    
+                
+                
+                    
+
+                    
+                Roma, l'assalto dei droni alla «grande bellezza»: sul Colosseo oltre 600 voli al mesedi Maria Egizia Fiaschetti
+            
+                
+                    
+                
+                
+                    
+
+                    
+                Roma, incendio e fumo nero in via Nazionale: giallo sulle cause del rogo nella galleria dei sottoservizi. Le ipotesi: surriscaldamento o errore umanodi Rinaldo Frignani
+            
+                
+                    
+                
+                
+                    
+
+                    
+                Minicar a Roma, il gip sui due ragazzi: «Dopo le aggressioni ridevano indifferenti delle vittime, come fosse uno scherzo»di Giulio De Santis
+            
+                
+                    
+                
+                
+                    
+
+                    
+                Ztl a Tor Bella Monaca, l'idea del minisindaco: «Banchi e ombrelloni, qui un mercato dello spaccio»di Redazione Roma
+            
+                
+                    
+                
+                
+                    
+
+                    
+                Cotral compie 50 anni: biglietti in vendita su Whatsapp, aggressioni dimezzate e 338 nuovi mezzi per i paesi dal 2027di Laura Martellini
+            
+                
+                    
+                
+                
+                    
+
+                    
+                Roma, la promessa del Comune: «Cantieri stradali chiusi in 5 mesi. E contro il traffico in Ztl ingressi dei corrieri scaglionati»di Maria Egizia Fiaschetti
+            
+                
+                    
+                
+                
+                    
+
+                    
+                Lavori a Roma su fibra, acqua, reti elettriche: per non chiedere i permessi, l’escamotage delle aziende è aprire cantieri in emergenzadi Andrea Arzilli
+            
+                
+                    
+                
+                
+                    
+
+                    
+                Traffico caos, a Roma 220 strade da rifare: da via Andrea Doria a via Lanciani, cantieri di notte per limitare i disagidi Andrea Arzilli
+            
+
+
+
+                                                                        
+                                        
+                                    
+                                    
+                                                                            
+                                            
+                                        
+    
+                    Vai a tutte le notizie di Roma
+> build · deepseek-v4.1-flash-free
+[0m% [0mWebFetch https://www.ilmessaggero.it/roma/centro_storico/cosa_fare_roma_gratis_venerdi_27_sabato_28_domenica_29_novembre-9916409.html 
+[0m% [0mWebFetch https://www.ilmessaggero.it/roma/metropoli/torre_flavia_tartaruga_americana-9914833.html 
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://news.google.com/rss/search?q=Torre+Flavia+visita+29+novembre&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+items=re.findall(r'<item>(.*?)</item>',t,re.S)
+for it in items[:10]:
+    ti=re.search(r'<title>(.*?)</title>',it,re.S); d=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S)
+    print('-',html.unescape(ti.group(1)) if ti else '','|',d.group(1) if d else '')
+"
+- L’ultima palude del litorale romano minacciata dalla tartaruga americana: il 29 novembre visita guidata a Torre Flavia - Il Messaggero | Fri, 27 Nov 2026 05:03:05 GMT
+- Biodiversità e specie aliene: alla Palude di Torre Flavia due appuntamenti dedicati al progetto "Trachemys" - Città metropolitana di Roma Capitale | Fri, 13 Nov 2026 08:00:00 GMT
+- Dal 27 al 29 novembre a Napoli il congresso nazionale dell'Anm con il capo dello Stato Mattarella e la premier Meloni - Corriere Del Mezzogiorno | Sun, 15 Nov 2026 09:06:25 GMT
+- "La Bella addormentata", spettacolo per bambini a Centrale Preneste Teatro - RomaToday | Fri, 20 Nov 2026 10:53:50 GMT
+- Lanuvio. Torre d’Oro, Flavia Renzi vince a 17 anni - IlGiornaledelLazio.it | Mon, 24 Aug 2026 07:00:00 GMT
+- La Torre si illumina di rosso per la Giornata contro la violenza sulle donne - L'Amico del Popolo | Tue, 25 Nov 2025 08:00:00 GMT
+- Mostra Personale di Pino Tersigni | 29 novembre - 5 dicembre 2024 - RomaToday | Thu, 05 Dec 2024 08:00:00 GMT
+- Il Natale di Aism e Note per la Ricerca con la Fanfara dei Bersaglieri in concerto: doppio appuntamento a Cerveteri per sostenere la ricerca scientifica - Terzo Binario News | Wed, 25 Nov 2026 07:31:09 GMT
+- Congresso Anm a Napoli, apre il presidente Sergio Mattarella: presenti in città ministri e leader politici - Il Mattino | Wed, 11 Nov 2026 08:00:00 GMT
+- ANM - ASSOCIAZIONE NAZIONALE MAGISTRATI * NAPOLI - CONGRESSO: «ATTESI TAJANI - NORDIO - CONTE - SCHLEIN (27-29/11) - agenziagiornalisticaopinione.it | Tue, 10 Nov 2026 08:00:00 GMT
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://news.google.com/rss/search?q=Roma+allerta+arancione+27+novembre&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+items=re.findall(r'<item>(.*?)</item>',t,re.S)
+for it in items[:15]:
+    ti=re.search(r'<title>(.*?)</title>',it,re.S); d=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S); l=re.search(r'<link>(.*?)</link>',it,re.S)
+    print('-',html.unescape(ti.group(1)) if ti else '','|',d.group(1) if d else '')
+"
+- Previsioni meteo, torna maltempo con freddo, neve e pioggia: ecco dove - Sky TG24 | Tue, 24 Nov 2026 09:50:12 GMT
+- Emma Bonino e l’Europa, un convegno per ricordarla - ExPartibus | Wed, 25 Nov 2026 15:37:34 GMT
+- McTominay, Mvp o fantasma: dalle doppiette con Bodo e Roma alla prova evanescente con la Juve - Radio Marte | Wed, 04 Nov 2026 08:00:00 GMT
+- Meteo, allerta arancione e gialla per il 9 ottobre 2026 in Italia: ecco dove - Meteo.it | Fri, 09 Oct 2026 07:00:00 GMT
+- Roma soffoca sotto il caldo record: tra gli anziani è strage silenziosa, 27 decessi in più in otto giorni - RomaToday | Thu, 20 Aug 2026 07:00:00 GMT
+- Scioperi, manifestazioni e proteste in programma a novembre: calendario e date - Sky TG24 | Sun, 01 Nov 2026 07:00:00 GMT
+- Bob Dylan a Roma, concerto senza cellulari: le regole - Radio Marte | Wed, 04 Nov 2026 08:00:00 GMT
+- Meteo, allerta arancione e gialla per piogge e criticità l'8 ottobre 2026 in Italia: ecco dove - Meteo.it | Thu, 08 Oct 2026 07:00:00 GMT
+- Minicar a Roma, svolta indagini: cosa rischiano i passanti - Lsdi - Libertà di Stampa | Sun, 11 Oct 2026 07:00:00 GMT
+- Allerta meteo 10 ottobre 2026 in Italia: le regioni e zone dove scatta l'arancione e gialla - Meteo.it | Sat, 10 Oct 2026 07:00:00 GMT
+- NAPOLI-ROMA, VICINO IL ‘SOLD OUT’ AL MARADONA - Radio Marte | Thu, 22 Oct 2026 07:00:00 GMT
+- Napoli, recuperato Vergara per la Roma - Radio Marte | Thu, 22 Oct 2026 07:00:00 GMT
+- Meteo, avviso di allerta caldo il 27 agosto 2026 in Italia: la lista della città a rischio per il Ministero della Salute - Meteo.it | Thu, 27 Aug 2026 07:00:00 GMT
+- Napoli, Rrahmani in dubbio per la Roma: pronto Badiashile - Radio Marte | Thu, 22 Oct 2026 07:00:00 GMT
+- Napoli-Roma, De Laurentiis negli spogliatoi: il gesto - Radio Marte | Sun, 25 Oct 2026 07:00:00 GMT
+> build · deepseek-v4.1-flash-free
+[0m% [0mWebFetch https://www.ansa.it/lazio/notizie/2026/11/26/all-opera-di-roma-lo-schiaccianoci-di-paul-chalmer_e259f019-4cb0-422c-abea-99545c8d3d26.html 
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://news.google.com/rss/search?q=Bryan+Adams+Roma+mostra+WeGil&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+items=re.findall(r'<item>(.*?)</item>',t,re.S)
+for it in items[:10]:
+    ti=re.search(r'<title>(.*?)</title>',it,re.S); d=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S); l=re.search(r'<link>(.*?)</link>',it,re.S)
+    print('-',html.unescape(ti.group(1)) if ti else '','|',d.group(1) if d else '')
+    print('  ',l.group(1) if l else '')
+"
+- Le fotografie di Bryan Adams in mostra allo spazio WeGil di Roma: dietro l'obiettivo, uno degli uomini più fotografati - Finestre sull'Arte | Thu, 26 Nov 2026 14:47:36 GMT
+   https://news.google.com/rss/articles/CBMimAFBVV95cUxPMmllT1RGT3NyNHMzWlk0Q29RUEVTRUh2a3pwVVUtMWU3dExIZnQtZ0gySUxWU21SSzBYREh0YnBuSkdBbmxlQ0dyd2ZmRzNZQmF0R29sSnpMa3FzLUVrUDJUQ0lMbGd0cXMxX0liQktEMUJEc0E1ZWRRUXNDV2ZCTzR6b2xJaW9PaWUtamRsM2xYSXI5dV85Qg?oc=5
+- Roma: Bryan Adams. #SHOTBYADAMS - Mostra di fotografia nel Lazio - WeGil - Itinerari nell'Arte | Thu, 26 Nov 2026 20:41:40 GMT
+   https://news.google.com/rss/articles/CBMifEFVX3lxTE83Nmdjd3gzbjduVWJMYV81Qmp6eEJ5eUplTU0wVnVTaENJN0RsZ01UeGh5NmROYjhwc1IzVXotYWpKTkNHLWh6VjBDLWZoQ1h5bno0QjRJWEVrQndkQnBMaExzN190LWxDQkhRS1RkbDhZNnVMaWtjbU84YjU?oc=5
+- Bryan Adams porta a Roma la mostra fotografica #SHOTBYADAMS - inITALY | Thu, 26 Nov 2026 20:59:16 GMT
+   https://news.google.com/rss/articles/CBMioAFBVV95cUxNWVJfeTIxZjItT1lMaFBiTzd0STJnUjVfOVZzWlNXSUNmbmVFaG45WlgyS0ZPWVZYaG1GOFlBNjdGczYwNWx0VHpFaEExSk1wRXpaWk1mZmU2R19qMHFpU3pNRmVXclFKMGRCTW1CS1NtQjFsUXBkNHR3ZXg4ZnZGNWpjaloydHBWQ3RYNVItaDBLdVE0TWJBM3QyVVNzbEZG?oc=5
+- Bryan Adams a Roma la mostra #SHOTBYADAMS con circa 130 opere - Sugarpulp | Thu, 26 Nov 2026 09:27:55 GMT
+   https://news.google.com/rss/articles/CBMiaEFVX3lxTFBINXhlRVlMS3JvZktBOGNWTlpZM2E2UWVhSVByaFN5ekJvSXAwVWk5UzkxX0NMVjN0WTRpbGhtUnoxUlJZWkUyaGROa2ZsY3pUa0dsdE1SUlZpSGhXcUZzWTRyTkU1aDJo?oc=5
+- Bryan Adams dietro l’obiettivo: al WeGil di Roma 130 scatti tra icone pop e impegno - LO_SPECIALE » | Thu, 26 Nov 2026 23:13:00 GMT
+   https://news.google.com/rss/articles/CBMikAFBVV95cUxPLVYxNGFmc1U0NWVmbGxrUWQtMFZUWkRTQ2w2dndhYk1NZllVZjRvaC1mTndnSy1YQUVRVVZnbk5GRzB1VEFyUHhhRDFsRjdLTENiaTBvNmxycFdpS2pLX0JxUHQxTlh2QTJoYkNWYVVmTXlGdTh1LWpoQU5jZV9ILVNUX1lIaWNzeWx1aWtiVU8?oc=5
+- Dalle star ai reduci di guerra, i ritratti di Bryan Adams in mostra a Roma - Tusciaweb.eu | Fri, 27 Nov 2026 03:39:15 GMT
+   https://news.google.com/rss/articles/CBMimgFBVV95cUxPWlNiNzVKWXlRQ29jUXNsN18xbE1UbW11bFNFU3ExdnB0TUV3Y0tSWFc3c2hLYk5fb21WOW5WVG1kcHBXbjhtQ00tMDM5N0p4dDZ1N1Ntd00yNHNIQzBJVldMb2IyZThRM01xOEV0d3F5ZnM3NTdpZmZfOGNiM0lrSXE2ZkZJS3k0TjJYeEpZUlB0QWFnSmJteUh3?oc=5
+- Bryan Adams in mostra a Roma: al WeGil 130 scatti tra star e vite invisibili - Blasting News | Thu, 26 Nov 2026 18:05:50 GMT
+   https://news.google.com/rss/articles/CBMi3gFBVV95cUxOTkYtSTJSem10WXB6WXB0WW82X0M3ZGw1UzhGdUNxU3YxWklFMXUzYlN3MnJHR1Nka01vTERrQVYwaXB5RThPRnMwajdDckx3Z1A1aDJjdHhlU19UUkFqWUN5Xzg5R3ZoSEIyMWN4TjAwa09nd21qUXZNOWdIMGlTV3c4XzlQTjd4azFVcDJnTEFPdk9fN09CckJHS1hsRlBjcW41ZGc3SEVzS2t5REx6TFVseVJ0MEZNMUFmcFE0Z240bXFWN01JTEdBVFZXMXVFa21yVVFwYUdiZEpUZkE?oc=5
+> build · deepseek-v4.1-flash-free
+[0m✗ [0mWebFetch https://www.finestresullarte.info/arte-contemporanea/bryan-adams-mostra-roma-wegil-shotbyadams failed
+[91m[1mError: [0mStatusCode: non 2xx status code (404 GET https://www.finestresullarte.info/404/)
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://www.cittametropolitanaroma.it/homepage/notizie/biodiversita-e-specie-aliene-alla-palude-di-torre-flavia-due-appuntamenti-dedicati-al-progetto-trachemys.html" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S)
+t=re.sub(r'<style.*?</style>','',t,flags=re.S)
+t=re.sub(r'<[^>]+>',' ',t)
+t=html.unescape(t)
+t=re.sub(r'\s+',' ',t)
+i=t.lower().find('torre flavia')
+print(t[max(0,i-200):i+3000])
+"
+Pagina non trovata | Città metropolitana di Roma Capitale Vai al contenuto principale Vai al piè di pagina --> Accedi all'area personale Vai alla homepage Seguici su https://www.facebook.com/CittametropolitanaRomaCapitale https://www.youtube.com/channel/UCt366JLt-gfLplY9yRnBPQw https://www.linkedin.com/company/citt%C3%A0-metropolitana-di-roma-capitale/?vie… https://www.instagram.com/cittametroroma/ Cerca Nascondi la navigazione Amministrazione Novità Servizi Vivere il Territorio Attuazione PNRR Progetti europei Tutte le competenze... 404 Oops! Pagina non trovata. La pagina che stavi cercando non esiste. Vai alla home Contatta la città metropolitana Leggi le domande frequenti Richiedi assistenza Cerca Cerca nel sito Cerca Città metropolitana di Roma Capitale Amministrazione Organi di governo Hub Dipartimenti Uffici Strutture Extradipartimentali Altri organismi Enti, fondazioni e società partecipate Politici Personale amministrativo Documenti e dati Conferenze dei servizi Convenzioni Servizi Ambiente Autorizzazioni Cultura e tempo libero Edilizia scolastica Educazione e formazione Mobilità e trasporti Polizia metropolitana Vita lavorativa Novità Notizie Comunicati Avvisi Vivere il Territorio Eventi Luoghi Comuni Contatti Città metropolitana di Roma Capitale Via IV Novembre, 119/a – 00187 Roma Codice fiscale / P. IVA: 80034390585 / 06214441005​​​​ Ufficio Relazioni con il Pubblico Posta Elettronica Certificata: protocollo@pec.cittametropolitanaroma.it Centralino unico: +39 06 67661 Leggi le FAQ Richiesta d'assistenza Albo pretorio (si apre in una nuova finestra) Amministrazione trasparente (si apre in una nuova finestra) Informativa privacy Note legali Dichiarazione di accessibilità Meccanismo di feedback Seguici su https://www.facebook.com/CittametropolitanaRomaCapitale https://www.youtube.com/channel/UCt366JLt-gfLplY9yRnBPQw https://www.linkedin.com/company/citt%C3%A0-metropolitana-di-roma-capitale/?vie… https://www.instagram.com/cittametroroma/ Media policy Mappa del sito Atti di notifica Area di lavoro
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://news.google.com/rss/search?q=%22Torre+Flavia%22+visita+guidata+novembre+2026&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+items=re.findall(r'<item>(.*?)</item>',t,re.S)
+for it in items[:10]:
+    ti=re.search(r'<title>(.*?)</title>',it,re.S); d=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S)
+    print('-',html.unescape(ti.group(1)) if ti else '','|',d.group(1) if d else '')
+"
+- L’ultima palude del litorale romano minacciata dalla tartaruga americana: il 29 novembre visita guidata a Torre Flavia - Il Messaggero | Fri, 27 Nov 2026 05:03:05 GMT
+- Fronte comune contro il maxi fotovoltaico vicino alla palude di Torre Flavia - OrticaWeb | Fri, 20 Nov 2026 08:54:50 GMT
+- L’oasi selvaggia a due passi da Roma che sembra un paradiso d’altri tempi: ecco dove si trova - The Wom Travel | Thu, 12 Nov 2026 08:00:00 GMT
+- Ladispoli, natura e meditazione all’Oasi di Torre Flavia: mattinata speciale aperta a tutti - Quotidiano La - Quotidiano La Voce | Tue, 20 Oct 2026 07:00:00 GMT
+- Tgcom24: Roma, scoperta tartaruga azzannatrice a Torre Flavia Video - Mediaset Infinity | Sun, 26 Apr 2026 07:00:00 GMT
+- Asse Ladispoli-Cerveteri contro i pannelli solari vicino alla Palude. Gubetti raccoglie l’appello di Grando - Civonline | Mon, 16 Nov 2026 16:00:00 GMT
+- Marevivo: giornata di cleanup a Torre Flavia nell’ambito della campagna Adotta una spiaggia - Agrpress | Wed, 03 Jan 2024 20:51:20 GMT
+- Tragedia a Ladispoli: donna muore annegata, salva l’amica - Ostia TV | Thu, 13 Jun 2024 07:00:00 GMT
+- LA PALUDE DI TORRE FLAVIA È TRA I 74 SITI PIÙ BELLI D’ITALIA - OrticaWeb | Fri, 29 Oct 2021 07:00:00 GMT
+- Campo di Mare, Cerveteri e Ladispoli contro i maxi impianti solari: "Territorio sotto attacco" - radioroma.it | Fri, 20 Nov 2026 14:19:04 GMT
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://news.google.com/rss/search?q=Roma+maltempo+allerta+arancione+venerd%C3%AC&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+items=re.findall(r'<item>(.*?)</item>',t,re.S)
+for it in items[:12]:
+    ti=re.search(r'<title>(.*?)</title>',it,re.S); d=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S)
+    print('-',html.unescape(ti.group(1)) if ti else '','|',d.group(1) if d else '')
+"
+- Previsioni meteo, venerdì 13 novembre allerta arancione per maltempo in 5 regioni - Sky TG24 | Thu, 12 Nov 2026 08:00:00 GMT
+- Maltempo a Roma e nel Lazio, scatta l'allerta arancione: piogge forti e venti di burrasca - RomaToday | Fri, 13 Nov 2026 08:00:00 GMT
+- Maltempo a Roma e nel Lazio, allerta arancione per venerdì 9 ottobre. Scuole chiuse a Nettuno e Anzio - Corriere Roma | Thu, 08 Oct 2026 07:00:00 GMT
+- Maltempo nel Lazio, allerta arancione venerdì 13 novembre: temporali, raffiche di burrasca e rischio allagamenti - Il Quotidiano del Lazio | Thu, 12 Nov 2026 08:00:00 GMT
+- Meteo, allerta al Centro Sud. Poi ottobrata in arrivo con anticiclone - RaiNews | Tue, 13 Oct 2026 07:00:00 GMT
+- Maltempo e calo delle temperature, venerdì allerta meteo arancione su Lazio e Campania - Il Sole 24 ORE | Wed, 07 Oct 2026 07:00:00 GMT
+- Maltempo a Roma e nel Lazio: scatta l’allerta gialla per venerdì 21 agosto - Abitare A Roma | Thu, 20 Aug 2026 07:00:00 GMT
+- Allerta meteo, scuole chiuse venerdì 9 ottobre in Campania e Lazio: a Napoli treni fermi per il maltempo - Virgilio | Fri, 09 Oct 2026 07:00:00 GMT
+- Allerta meteo scuole chiuse venerdì 9 ottobre: stop alle lezioni in diversi comuni di Campania e Lazio. AGGIORNATO - Orizzonte Scuola Notizie | Thu, 08 Oct 2026 07:00:00 GMT
+- Maltempo, domani scuole chiuse in provincia di Roma. L'ordinanza firmata da due sindaci - RomaToday | Fri, 09 Oct 2026 07:00:00 GMT
+- Scuole chiuse per maltempo venerdì 9 ottobre 2026, l'elenco dei comuni in aggiornamento - Virgilio Sapere | Thu, 08 Oct 2026 07:00:00 GMT
+- Maltempo, scuole chiuse per allerta meteo venerdì 9 ottobre: l’elenco dei comuni interessati - Startupbusiness.it | Thu, 08 Oct 2026 07:00:00 GMT
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcurl -s "https://api.open-meteo.com/v1/forecast?latitude=41.9028&longitude=12.4964&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,wind_speed_10m_max&timezone=Europe%2FRome&start_date=2026-11-27&end_date=2026-11-30"
+{"latitude":41.895107,"longitude":12.526347,"generationtime_ms":0.12576580047607422,"utc_offset_seconds":3600,"timezone":"Europe/Rome","timezone_abbreviation":"GMT+1","elevation":58.0,"daily_units":{"time":"iso8601","weather_code":"wmo code","temperature_2m_max":"°C","temperature_2m_min":"°C","precipitation_sum":"mm","precipitation_probability_max":"%","wind_speed_10m_max":"km/h"},"daily":{"time":["2026-11-27","2026-11-28","2026-11-29","2026-11-30"],"weather_code":[80,3,0,3],"temperature_2m_max":[14.5,15.0,15.4,11.9],"temperature_2m_min":[10.1,7.1,5.4,4.6],"precipitation_sum":[2.70,0.00,0.00,0.00],"precipitation_probability_max":[68,15,0,5],"wind_speed_10m_max":[9.0,18.8,13.2,7.3]}}
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://www.operaroma.it/spettacoli/lo-schiaccianoci/" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S); t=re.sub(r'<style.*?</style>','',t,flags=re.S)
+t=re.sub(r'<[^>]+>',' ',t); t=html.unescape(t); t=re.sub(r'\s+',' ',t)
+print(t[:2500])
+"
+Lo schiaccianoci | Teatro dell'Opera di Roma ® Yasuko Kageyama / TOR ® Yasuko Kageyama / TOR ® Yasuko Kageyama / TOR ® Yasuko Kageyama / TOR ® Yasuko Kageyama / TOR ® Yasuko Kageyama /TOR ® Yasuko Kageyama /TOR Home Stagione Opere Balletti Concerti Caracalla Lezioni di Opera PASSAPORTI DI DANZA Biglietteria Acquista Abbonamenti Gran Teatro “All inclusive” Gran Teatro Gran Teatro Leggero Fantasia Tutto Danza Week End Novecento e Contemporaneo Abbonamento Lezioni di Opera Giovani Under 30 Passaporti di danza Agevolazioni CARTA GIOVANI OPERA Mappe teatri Informazioni Informazioni Generali Regolamento Biglietteria Prezzi Opera giovani Scuola di danza Formazione Allievi Audizioni e concorsi Direttore Scuola di Canto Corale Bandi Allievi Docenti IL TEATRO PER I GIOVANI Il Teatro per le scuole – Progetti Tre buone ragioni per… La scuola adotta l’Opera All’Opera con Filosofia Studiare con l’Opera – Shakespeare in Musica Gli Spettacoli Visite guidate Sostieni Diventa Socio Diventa Associato Visualizza i vantaggi I Giovani per l’Opera Diventa Giovane Associato Sostieni il Teatro Dona ora Dona i tuoi voucher con l’Art Bonus Dona con un lascito testamentario Diventa Sponsor Partner Stagione Partner Caracalla Sponsor progetti artistici Sponsor progetti didattici e progetti speciali Sponsor tecnico Sponsor Tournée Organizza un evento Dai visibilità alla tua azienda News Shop it en Search for: ↓ Skip to Main Content Home › Stagione › 2016/2017 › Balletti › Lo schiaccianoci Stagione 2016/2017 Lo schiaccianoci Musica di Pëtr Il’ič Čajkovskij Balletto in due atti da un racconto di E.T. A. Hoffmann Adattamento di Giuliano Peparini Durata: 2 h, I ATTO 45' - INTERVALLO 25' - II ATTO 50' Direttore David Coleman Coreografia Giuliano Peparini Ripetitori Germana Bonaparte e Francesco Saracino Scene Lucia D’Angelo e Cristina Querzola Costumi Frédéric Olivier Video Grafica Gilles Papain Luci Jean-Michel Désiré Interpreti principali Marie Rebecca Bianchi 18, 20 (20.00), 21 dic / Susanna Salvi 20 (11.00), 22 (20.00) dic / Sara Loro 22 (15.00), 23, 24 dic Zio Drosselmeyer Claudio Cocino 18, 20 (20.00), 21, 24 dic / Alessio Rezza 20 (11.00), 22 (20.00) dic / Giuseppe Schiavone 22 (15.00), 23 dic Nipote di Drosselmeyer Michele Satriano 18, 20 (20.00), 21 dic / Claudio Cocino 20 (11.00), 22 (20.00) dic / Giacomo Luci 22 (15.00), 23, 24 dic Regina dei fiocchi di Neve Alessandra Amato 18, 20 (20.00), 21, 22 (20.00), 23, 24 dic / Marianna Suriano 20 (11.00), 22 (15.00) dic Bad Boy Marco Mar
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://news.google.com/rss/search?q=%22SHOTBYADAMS%22+Roma+WeGil+date&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+items=re.findall(r'<item>(.*?)</item>',t,re.S)
+for it in items[:8]:
+    ti=re.search(r'<title>(.*?)</title>',it,re.S); d=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S); de=re.search(r'<description>(.*?)</description>',it,re.S)
+    print('-',html.unescape(ti.group(1)) if ti else '','|',d.group(1) if d else '')
+    print('  ',html.unescape(de.group(1))[:300] if de else '')
+"
+(no output)
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://www.palazzomerulana.it/" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S); t=re.sub(r'<style.*?</style>','',t,flags=re.S)
+t=re.sub(r'<[^>]+>',' ',t); t=html.unescape(t); t=re.sub(r'\s+',' ',t)
+print(t[:3000])
+"
+Palazzo Merulana » Palazzo Merulana Il Palazzo Chi Siamo Gli Spazi Prepara la tua visita Orari Audioguide Didattica Come Arrivare Eventi Privati Press Intervista Cerasi Intervista CoopCulture Artribune Openings Press Room Magazine Contatti Media it en Attività Culturali Eventi in corso Eventi passati Collezione Culture Concept Store Mappa in CAA Acquista Biglietti Acquista Biglietti Attività Culturali Eventi in corso Eventi passati Collezione Culture Concept Store Mappa in CAA Il Palazzo Chi Siamo Gli Spazi Prepara la tua visita Orari Audioguide Didattica Come Arrivare Eventi Privati Press Intervista Cerasi Intervista CoopCulture Artribune Openings Press Room Magazine Contatti Media it en Palazzo Merulana AR | Imaginaria Esposizione permanente di arte immateriale Approfondisci ARE YOU IN LOVE? YES, I’M IN ROME a cura di Glauco Cavaciuti Mostra ARE YOU IN LOVE? YES, I’M IN ROME dal 27 novembre 2026 al 10 gennaio 2027. Approfondisci Dal 09/04/2026 al 30/10/2026 Community Abitare il Museo Dal 30/09/2026 al 03/12/2026 Community FormAzione per il Museo Gentile | Open Merulana 2025-2026 14/11/2026 Community CAMBIAMO COPIONE! 03/12/2026 Community Laboratorio Arte Musica e Movimento Tutti gli eventi Palazzo Merulana 1800 mq, 4 piani espositivi Approfondisci Palazzo Merulana 1800 mq, 4 piani espositivi Approfondisci La collezione 90 opere della scuola romana e del Novecento italiano Approfondisci Iscriviti alla newsletter Chi Siamo Gli Spazi La Collezione Privacy Policy Contatti Join Us Collezione + mostra dal mercoledì al venerdì: Turni di ingresso ogni ora dalle 12 alle 20 (ultimo ingresso alle 19) sabato e domenica: dalle 10 alle 20 (ultimo ingresso ore 19.00) Sala delle sculture, CafeCulture, BookCulture dal mercoledì alla domenica dalle 9:00 alle 20:00 (accesso libero) Via Merulana, 121 Roma © 2026 Palazzo Merulana
+> build · deepseek-v4.1-flash-free
+[0m✗ [0mWebFetch https://www.initaly.com/2026/11/26/bryan-adams-porta-a-roma-la-mostra-fotografica-shotbyadams/ failed
+[91m[1mError: [0mStatusCode: non 2xx status code (404 GET https://initaly.com/2026/11/26/bryan-adams-porta-a-roma-la-mostra-fotografica-shotbyadams/)
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -sL "https://www.palazzomerulana.it/eventi/are-you-in-love-yes-im-in-rome/" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S); t=re.sub(r'<style.*?</style>','',t,flags=re.S)
+t=re.sub(r'<[^>]+>',' ',t); t=html.unescape(t); t=re.sub(r'\s+',' ',t)
+i=t.find('ARE YOU IN LOVE')
+print(t[i:i+2000])
+"
+ARE YOU IN LOVE? YES, I’M IN ROME a cura di Glauco Cavaciuti - Palazzo Merulana Il Palazzo Chi Siamo Gli Spazi Prepara la tua visita Orari Audioguide Didattica Come Arrivare Eventi Privati Press Intervista Cerasi Intervista CoopCulture Artribune Openings Press Room Magazine Contatti Media it en Attività Culturali Eventi in corso Eventi passati Collezione Culture Concept Store Mappa in CAA Acquista Biglietti Acquista Biglietti Attività Culturali Eventi in corso Eventi passati Collezione Culture Concept Store Mappa in CAA Il Palazzo Chi Siamo Gli Spazi Prepara la tua visita Orari Audioguide Didattica Come Arrivare Eventi Privati Press Intervista Cerasi Intervista CoopCulture Artribune Openings Press Room Magazine Contatti Media it en Home Eventi Mostre ARE YOU IN LOVE? YES, I’M IN ROME a cura di Glauco Cavaciuti Dal 27/11/2026 al 10/01/2027 Share [addthis tool="addthis_inline_share_toolbox"] --> Palazzo Merulana è lieto di presentare la mostra: ARE YOU IN LOVE? YES, I’M IN ROME a cura di Glauco Cavaciuti. La mostra ARE YOU IN LOVE? YES, I’M IN ROME si terrà dal 27 novembre 2026 al 10 gennaio 2027 a Palazzo Merulana. ARE YOU IN LOVE? YES, I’M IN ROME è una mostra di arte testuale di Pietro Terzini che nasce da una riflessione: come esseri umani siamo tutti diversi, eppure profondamente simili. Qual è il minimo comune denominatore che ci unisce? Per l’artista, la risposta risiede nelle emozioni e nei sentimenti , capaci di attraversare epoche, culture e differenze individuali. Attraverso frasi scritte su carta, tela e vetro, Terzini esplora ciò che da sempre ci accomuna: l’amore, il desiderio, il senso di rivalsa, la gelosia. Con un linguaggio diretto, sospeso tra ironia e sincerità, le opere trasformano pensieri intimi in esperienze collettive, nelle quali ciascuno può riconoscersi. Questa ricerca entra in dialogo con i valori della Fondazione e di Palazzo Merulana: la multiculturalità, l’autenticità e la valorizzazione delle identità. Riconoscersi in emozioni comuni s
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -sL "https://www.palazzomerulana.it/prepara-la-tua-visita/" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S); t=re.sub(r'<style.*?</style>','',t,flags=re.S)
+t=re.sub(r'<[^>]+>',' ',t); t=html.unescape(t); t=re.sub(r'\s+',' ',t)
+for k in ['Bigliett','€','intero']:
+    for m in re.finditer(k,t):
+        print('...',t[max(0,m.start()-300):m.start()+500].strip()[:800]); print('---')
+        break
+"
+... Gli Spazi Prepara la tua visita Orari Audioguide Didattica Come Arrivare Eventi Privati Press Intervista Cerasi Intervista CoopCulture Artribune Openings Press Room Magazine Contatti Media it en Attività Culturali Eventi in corso Eventi passati Collezione Culture Concept Store Mappa in CAA Acquista Biglietti Acquista Biglietti Attività Culturali Eventi in corso Eventi passati Collezione Culture Concept Store Mappa in CAA Il Palazzo Chi Siamo Gli Spazi Prepara la tua visita Orari Audioguide Didattica Come Arrivare Eventi Privati Press Intervista Cerasi Intervista CoopCulture Artribune Openings Press Room Magazine Contatti Media it en Prepara la tua visita orari e tariffe Audioguide Didattica Come arrivare orari Palazzo Merulana sarà aperto al pubblico nei seguenti nuovi orari: Collezione +
+---
+... o subire variazioni durante lo svolgimento di eventi culturali e/o corporate) dal mercoledì al venerdì : Turni di ingresso ogni ora dalle 12 alle 20 (ultimo ingresso alle 19) sabato e domenica: dalle 10 alle 20 (ultimo ingresso ore 19.00) Prenotazione del turno : consigliata Diritti di prenotazione € 2,00 lunedì, martedì, 25 dicembre e 1 gennaio chiuso 24 dicembre e 31 dicembre aperto dalle ore 10 alle 15 Mercoledì 18 novembre mostra "Corrispondenze" non visitabile Giovedì 19 novembre Palazzo Merulana chiuso al pubblico Sala delle Sculture, CafeCulture* e BookCulture accesso libero dal mercoledì alla domenica dalle ore 9 alle ore 20 lunedì e martedì chiuso * Si prega di verificare la disponibilità dell’aula studio tramite i canali social di CafeCulture Prenotazione on line e presso la bigl
+---
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -sL "https://www.wegil.it/" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S); t=re.sub(r'<style.*?</style>','',t,flags=re.S)
+t=re.sub(r'<[^>]+>',' ',t); t=html.unescape(t); t=re.sub(r'\s+',' ',t)
+i=t.lower().find('adams')
+print(t[max(0,i-500):i+1500] if i>0 else t[:1500])
+"
+ria Scuole Scuola d’arte cinematografica Gian Maria Volontè ACL- Accademia di Cybersicurezza Lazio WeGil Food Lab Eventi News Artbonus Info e Contatti Palazzo WeGil Storia Architettura Spazi Caffetteria Scuole Scuola d’arte cinematografica Gian Maria Volontè ACL- Accademia di Cybersicurezza Lazio WeGil Food Lab Eventi News Artbonus Info e Contatti © 2021 LaazioCREA Tutti i diritti riservati Follow Us Search for WeGil uno spazio culturale unico per mostre, eventi e formazione Scopri di più BRYAN ADAMS. MOSTRA #SHOTBYADAMS 6 dicembre - 24 gennaio Scopri di più Scopri di più dal 3 al 29 novembre Mostra “Riccardi 100. Verso l’umano” Ottobre Novembre 2026 Dicembre L M M G V S D 26 27 28 29 30 31 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 1 2 3 4 5 6 Eventi di 26 Ottobre 10:00 - 00:00 Mostra “ROMA TERZO MILLENNIO” Eventi di 27 Ottobre Tutto il giorno Mostra “ROMA TERZO MILLENNIO” Eventi di 28 Ottobre Tutto il giorno Mostra “ROMA TERZO MILLENNIO” Eventi di 29 Ottobre Tutto il giorno Mostra “ROMA TERZO MILLENNIO” Eventi di 30 Ottobre Tutto il giorno Mostra “ROMA TERZO MILLENNIO” Eventi di 31 Ottobre Tutto il giorno Mostra “ROMA TERZO MILLENNIO” Eventi di 1 Novembre Tutto il giorno Mostra “ROMA TERZO MILLENNIO” Eventi di 2 Novembre Tutto il giorno Mostra “ROMA TERZO MILLENNIO” Eventi di 3 Novembre Tutto il giorno Mostra “ROMA TERZO MILLENNIO” 10:00 - 00:00 Mostra “Riccardi 100. Verso l’umano” Eventi di 4 Novembre Tutto il giorno Mostra “ROMA TERZO MILLENNIO” Tutto il giorno Mostra “Riccardi 100. Verso l’umano” Eventi di 5 Novembre Tutto il giorno Mostra “ROMA TERZO MILLENNIO” Tutto il giorno Mostra “Riccardi 100. Verso l’umano” Eventi di 6 Novembre Tutto il giorno Mostra “ROMA TERZO MILLENNIO” Tutto il giorno Mostra “Riccardi 100. Verso l’umano” Eventi di 7 Novembre Tutto il giorno Mostra “ROMA TERZO MILLENNIO” Tutto il giorno Mostra “Riccardi 100. Verso l’umano” Eventi di 8 Novembre Tutto il giorno Mostra “ROMA TERZO MILLENNIO” Tutto il
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://duckduckgo.com/html/?q=Torre+Flavia+29+novembre+2026+visita+guidata+orario+prenotazione" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+res=re.findall(r'result__a[^>]*href=\"([^\"]+)\"[^>]*>(.*?)</a>',t,re.S)
+for u,ti in res[:10]:
+    print(html.unescape(re.sub('<[^>]+>','',ti)),'|',u[:160])
+"
+(no output)
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://www.cittametropolitanaroma.it/homepage/novita/notizie.html?search=Torre+Flavia" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S); t=re.sub(r'<style.*?</style>','',t,flags=re.S)
+t=re.sub(r'<[^>]+>',' ',t); t=html.unescape(t); t=re.sub(r'\s+',' ',t)
+i=t.lower().find('torre flavia')
+print(t[max(0,i-200):i+2500] if i>0 else 'NOT FOUND')
+"
+NOT FOUND
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && for u in "https://www.cittametropolitanaroma.it/homepage/novita/notizie/biodiversita-e-specie-aliene-alla-palude-di-torre-flavia-due-appuntamenti-dedicati-al-progetto-trachemys.html" "https://www.cittametropolitanaroma.it/homepage/novita/notizie/biodiversita-e-specie-aliene-alla-palude-di-torre-flavia-due-appuntamenti-dedicati-al-progetto-trachemys/"; do echo "== $u"; curl -sL "$u" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S); t=re.sub(r'<style.*?</style>','',t,flags=re.S)
+t=re.sub(r'<[^>]+>',' ',t); t=html.unescape(t); t=re.sub(r'\s+',' ',t)
+i=t.lower().find('trachemys')
+print(t[max(0,i-300):i+2000] if i>0 else 'NOT FOUND len='+str(len(t)))
+"; done
+== https://www.cittametropolitanaroma.it/homepage/novita/notizie/biodiversita-e-specie-aliene-alla-palude-di-torre-flavia-due-appuntamenti-dedicati-al-progetto-trachemys.html
+NOT FOUND len=2040
+== https://www.cittametropolitanaroma.it/homepage/novita/notizie/biodiversita-e-specie-aliene-alla-palude-di-torre-flavia-due-appuntamenti-dedicati-al-progetto-trachemys/
+NOT FOUND len=2040
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://news.google.com/rss/search?q=Patan%C3%A8+preferenziali+fermate+bus+Roma&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+items=re.findall(r'<item>(.*?)</item>',t,re.S)
+for it in items[:10]:
+    ti=re.search(r'<title>(.*?)</title>',it,re.S); d=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S); s=re.search(r'<source[^>]*>(.*?)</source>',it,re.S)
+    print('-',html.unescape(ti.group(1)) if ti else '','|',d.group(1) if d else '','|',html.unescape(s.group(1)) if s else '')
+"
+- Bus a passo d'uomo nei cantieri del centro di Roma, Patanè corre ai ripari: «via le fermate inutili e 180 km di preferenziali" - Abitare A Roma | Wed, 25 Nov 2026 16:02:49 GMT | Abitare A Roma
+- Mobilità, l'assessore alla Mobilità Eugenio Patanè: «Nel 2027 mille piste ciclabili, 180 km di preferenziali e taglio alle fermate del bus» - Corriere Roma | Fri, 27 Nov 2026 06:49:17 GMT | Corriere Roma
+- A Roma arrivano 180 chilometri di corsie preferenziali protette: barriere, telecamere e semafori verdi per i bus - RomaToday | Wed, 25 Nov 2026 12:29:00 GMT | RomaToday
+- Multe a Roma, dai Photored allo Street Control: svolta hi-tech contro le infrazioni - Il Messaggero | Sun, 22 Feb 2026 08:00:00 GMT | Il Messaggero
+- Battistini ora ha una nuova linea bus circolare: una Express che passa da Casalotti - Il Messaggero | Tue, 31 Oct 2023 07:00:00 GMT | Il Messaggero
+- Corsie preferenziali e riduzione delle fermate a Roma: il piano del Campidoglio tra priorità e nodi irrisolti - Odissea Quotidiana | Wed, 25 Nov 2026 10:00:00 GMT | Odissea Quotidiana
+- Mobilità l' assessore alla Mobilità Eugenio Patanè | Nel 2027 mille piste ciclabili 180 km di preferenziali e taglio alle fermate del bus - Zazoom Social News | Fri, 27 Nov 2026 06:56:20 GMT | Zazoom Social News
+- Nuove preferenziali, onda di semafori verdi per i bus, addio alle fermate deserte: il piano che fa correre i trasporti - Leggo.it | Thu, 26 Nov 2026 04:00:08 GMT | Leggo.it
+- Bus rapidi tra Ostia-Eur e Casalotti-Battistini: via alla progettazione delle due nuove linee BRT - Fanpage | Tue, 18 Aug 2026 07:00:00 GMT | Fanpage
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://news.google.com/rss/search?q=Roma+weekend+28+29+novembre+2026+eventi&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+items=re.findall(r'<item>(.*?)</item>',t,re.S)
+for it in items[:12]:
+    ti=re.search(r'<title>(.*?)</title>',it,re.S); d=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S); s=re.search(r'<source[^>]*>(.*?)</source>',it,re.S)
+    print('-',html.unescape(ti.group(1)) if ti else '','|',d.group(1) if d else '','|',html.unescape(s.group(1)) if s else '')
+"
+- Weekend a Roma: 25 eventi da non perdere sabato 28 e domenica 29 novembre - RomaToday | Fri, 27 Nov 2026 05:56:47 GMT | RomaToday
+- Eventi per bambini a Roma e dintorni: cosa fare il weekend del 28 e 29 novembre - Roma 03 | Tue, 24 Nov 2026 20:39:17 GMT | Roma 03
+- Cosa fare a Roma nel weekend 28-29 novembre, Anohni e Testaccio - Vivere Roma | Thu, 26 Nov 2026 22:24:11 GMT | Vivere Roma
+- Roma eventi weekend. Jovanotti al Moderno, Pivetti alla Sala Umberto, festa della cioccolata in piazza e Natale con Harry Potter - Il Messaggero | Fri, 27 Nov 2026 06:58:33 GMT | Il Messaggero
+- Cosa fare a Roma questo weekend con i bambini 14-15 novembre - Viaggiapiccoli | Sun, 22 Nov 2026 18:28:44 GMT | Viaggiapiccoli
+- Cosa fare a Roma questo weekend: concerti, mercatini e gite fuori porta (27-29 novembre) - Secret Roma | Mon, 23 Nov 2026 15:46:00 GMT | Secret Roma
+- Weekend 27, 28 e 29 novembre a Roma: eventi per bambini da 0 a 3 anni - Roma 03 | Thu, 26 Nov 2026 20:37:20 GMT | Roma 03
+- Weekend a Roma e nel Lazio, 28 e 29 novembre. Il Natale accende i borghi: sagre, mercatini, polenta e presepi - Il Quotidiano del Lazio | Wed, 25 Nov 2026 22:24:03 GMT | Il Quotidiano del Lazio
+- Cosa fare con i bambini a Roma e dintorni nei weekend di novembre 2026 - RomaWeekend.it | Fri, 13 Nov 2026 08:00:00 GMT | RomaWeekend.it
+- Festival gastronomici, sagre, eventi food e appuntamenti nel weekend dal 27 al 29 novembre 2026 - CiboToday | Wed, 25 Nov 2026 11:13:45 GMT | CiboToday
+- Weekend nel Lazio: cosa fare sabato 21 e domenica 22 novembre 2026 - Lazio Eventi | Fri, 20 Nov 2026 07:59:04 GMT | Lazio Eventi
+- Al PalaPellicone il Rome European Open 2026 - RomaToday | Thu, 26 Nov 2026 08:42:50 GMT | RomaToday
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://news.google.com/rss/search?q=RomaToday+weekend+Roma+25+eventi+28+29+novembre&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+items=re.findall(r'<item>(.*?)</item>',t,re.S)
+for it in items[:5]:
+    ti=re.search(r'<title>(.*?)</title>',it,re.S); l=re.search(r'<link>(.*?)</link>',it,re.S)
+    print(html.unescape(ti.group(1)) if ti else '')
+    print(l.group(1) if l else '')
+"
+Weekend a Roma: 25 eventi da non perdere sabato 28 e domenica 29 novembre - RomaToday
+https://news.google.com/rss/articles/CBMihgFBVV95cUxQWnVKMVRlV29mSHZ0ZUEzcjYxb1Z0X3pmbVcyZG5Vay1uV3ZsNm8tMEYwb3dsWS1LS0hiZjBWUW82djRvWG1JdzZ4REJrR0Y0UVVRQVhfUnJVc09GQUJQX29FdV9zSVZzQm5iVEZoLUFXNHl4UW9OeTBDZXE3Qk9ZeHZ6OVJuZw?oc=5
+La raccolta dei rifiuti ingombranti a Roma sabato 28 e domenica 29 novembre 2026 - RomaToday
+https://news.google.com/rss/articles/CBMirgFBVV95cUxOZWNIeU1XaG5SeFd5ZlFWYmNTSGdyQi1oVlhoSjdhaFY1TEhPOVJxcm4xd29mZ3J5ODF2UmxrR0NCbVZ2Z0x1aWR5QlpoY1FGR3ZXalEwcVc2MUd6TmZONWR6ZE16VjN5Y2t6bkc2TWZaeW1zSEltWV9nRXRWbEpYWk03WjZhUVFrLTRNY0duMlY3LXZzNzYxUVhXckRZTnhiODQxaVQzRl80VTVkVUE?oc=5
+Carta d'identità elettronica a Roma: open day sabato 28 e domenica 29 novembre 2026 - RomaToday
+https://news.google.com/rss/articles/CBMilwFBVV95cUxNTGNKajJkc2MtRUg5NVQwQnhQRW9jY2xWcGx1QWw5TVAyaVJwUEk1TE16SnU0T2x2bjI1NGluS2gxQmdMMjNxaDJPM1R0d3RvakVKU2l6RnQtdVJsVS1WVy1UZm5OWVVfbHNXOG5zZzA4cnBsejEyQXBiRlpJQTIzZ2l6WC0wVENuVjZKYW1TajZhTmdBUGxV?oc=5
+Al PalaPellicone il Rome European Open 2026 - RomaToday
+https://news.google.com/rss/articles/CBMijgFBVV95cUxNVjJuQXJUaEM5eTNXbmhRejRDOFluQjJQX3R6ZXc4azMzUlkta1kxQUZoQlVfME10RmhrVk41QmRWQ2tVY1NINUtNczZSemxBd1hQU0pieUNYRGY2dzlYbDYyeS1uNldtLUtqSHZCM3dQQjRIZ2ItbWxSdWlaTURsTlA3YmZzajZzeEk1YjhR?oc=5
+Weekend a Roma: 18 eventi da non perdere sabato 27 e domenica 28 giugno - RomaToday
+https://news.google.com/rss/articles/CBMigwFBVV95cUxPWVpwS3dTeDlseVRKU1dnMFBPWXROMFduUzJFNWdVNWxrU1duOURMTUZIUzJ5OG52MDdUQ2dBVDE1OTA1QVRwY0ZjSXloUEEycEdhd3cyTXk3SnBqSmNrcjRWbnBpTVJUcjFUWHJvSE05Qm1xdWZrVm9RanhQSGEtekZaTQ?oc=5
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://news.google.com/rss/search?q=Roma+180+chilometri+corsie+preferenziali+protette&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+items=re.findall(r'<item>(.*?)</item>',t,re.S)
+for it in items[:5]:
+    ti=re.search(r'<title>(.*?)</title>',it,re.S); l=re.search(r'<link>(.*?)</link>',it,re.S)
+    print(html.unescape(ti.group(1)) if ti else '')
+    print(l.group(1) if l else '')
+"
+A Roma arrivano 180 chilometri di corsie preferenziali protette: barriere, telecamere e semafori verdi per i bus - RomaToday
+https://news.google.com/rss/articles/CBMiggFBVV95cUxQanFuSFlDVnJqZzVaREx6bXRHRHplUF9GOFZ2dTc4ZC1ZbkdnbmJFZzRmV1JMc1MwdERJdGFXZVVlbzR6d0w0dnhpYnY4Y2hDbWFwYTdHRUZqalZMaTVtVTgxMzZaN19IUWpkNmFJYTFVbjZPdUdoS3ZPRUt3cDh1dWFB?oc=5
+Roma, trasporto pubblico più efficiente: in arrivo nuove corsie preferenziali - https://citynext.it/
+https://news.google.com/rss/articles/CBMiqwFBVV95cUxNZS1EZmVXTUNndHZpbG1lQ2dtVGdzb25BV1Z1VzREeE1VbGRQVVMzQkVKdFVkNXB6UFZFLUY1dUJUcG5ncE9ZTG9tUHdqbDFIM2RpZHhjQ1YzWDlpSzVMM3lvMUhsM2dBcVc3WjA5TnhqQ093Qmp2c3BlRlBIR2UwV1lBWHJWcDVwY2xzN3FZWFVaN0x5RDFuU2VVQ1VWeUtfOTZLRjRBUGFZSmM?oc=5
+Bus a passo d'uomo nei cantieri del centro di Roma, Patanè corre ai ripari: «via le fermate inutili e 180 km di preferenziali" - Abitare A Roma
+https://news.google.com/rss/articles/CBMi3wFBVV95cUxQZUFLVU9DdS0tVVl6YkhXUUhCelV6b2ZRc1JRQkRpdS1PWEYtaGdPbXBLUm9uQl9LNFMzVXBreXlpUVF1WlVRNjBSaXQxRDVTMWQzamgtMFVUQ2JaYlpMVE41dzJ6cUVtU2tXVGdnT1hSZElsTjB1R3dNZUxVUFpjU1pLV19OS3dQbmVPSHFZZGNQSWhyRE1tS2J2UkNYWU02aFB1NDNyTzM3a0RDVmNxTFZDVlotUkJTUGQ0UGwyZUVGdDJLWjdIemxYeTFPRXJNN2QxZUdsbkQxa1liSFdB?oc=5
+Le auto e la doppia fila fermano i bus di Roma, anche sulle corsie prefenziali. Al centro si viaggia anche a 1,08 km/h - RomaToday
+https://news.google.com/rss/articles/CBMijAFBVV95cUxQQTRMajdCaEhfMkN0SW5jUEQwSUVPTUVLVmxnd3hIZW84WFNST2JpWmF3TDBtbFJMUk5qRlhvdDNpTjlFM0dvOXR0elFubmwyWXNyLTJFSS1IdklYYmpDdUU2Qmh4cFdsTzNBQlJWQkk5VmROU2lhcVhyN0o2NTFfa1FFUW9NTnQ1M0pHYw?oc=5
+Roma, rivoluzione dei trasporti: 180 km di corsie protette, nuovi tram e Metro D. Il piano - IlFaroOnline
+https://news.google.com/rss/articles/CBMizgFBVV95cUxOUFdNZUdSeWlBdkVZTXdHeVRoNXdUOW1ZSjFyekIzT2lYZEEtZXladTQwQWt6QmE0LXBqRlVSZThxempvbzU4a0I0SWJYZE1NclRDVlY3ZnZIMFFlSTZCZG96VERXZVBvZEQ3U3Y4b1JDdTRpNlFpdF9ZaUNPUG9VQjIwNmxqSndyeGhSb05yUUY2QXk5T2otR1N6UjM2TVNMNzhLZEFHcloyU0pyUHVBNlFvVEVDZWM1ZWRlMEk3ajhxYlNuYUlCcnVFR09KZw?oc=5
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && for u in "https://news.google.com/rss/articles/CBMirgFBVV95cUxOZWNIeU1XaG5SeFd5ZlFWYmNTSGdyQi1oVlhoSjdhaFY1TEhPOVJxcm4xd29mZ3J5ODF2UmxrR0NCbVZ2Z0x1aWR5QlpoY1FGR3ZXalEwcVc2MUd6TmZONWR6ZE16VjN5Y2t6bkc2TWZaeW1zSEltWV9nRXRWbEpYWk03WjZhUVFrLTRNY0duMlY3LXZzNzYxUVhXckRZTnhiODQxaVQzRl80VTVkVUE?oc=5" "https://news.google.com/rss/articles/CBMihgFBVV95cUxQWnVKMVRlV29mSHZ0ZUEzcjYxb1Z0X3pmbVcyZG5Vay1uV3ZsNm8tMEYwb3dsWS1LS0hiZjBWUW82djRvWG1JdzZ4REJrR0Y0UVVRQVhfUnJVc09GQUJQX29FdV9zSVZzQm5iVEZoLUFXNHl4UW9OeTBDZXE3Qk9ZeHZ6OVJuZw?oc=5"; do echo "=== $u"; curl -sL "$u" | grep -o 'https://www.romatoday.it[^"]*' | head -3; done
+=== https://news.google.com/rss/articles/CBMirgFBVV95cUxOZWNIeU1XaG5SeFd5ZlFWYmNTSGdyQi1oVlhoSjdhaFY1TEhPOVJxcm4xd29mZ3J5ODF2UmxrR0NCbVZ2Z0x1aWR5QlpoY1FGR3ZXalEwcVc2MUd6TmZONWR6ZE16VjN5Y2t6bkc2TWZaeW1zSEltWV9nRXRWbEpYWk03WjZhUVFrLTRNY0duMlY3LXZzNzYxUVhXckRZTnhiODQxaVQzRl80VTVkVUE?oc=5
+=== https://news.google.com/rss/articles/CBMihgFBVV95cUxQWnVKMVRlV29mSHZ0ZUEzcjYxb1Z0X3pmbVcyZG5Vay1uV3ZsNm8tMEYwb3dsWS1LS0hiZjBWUW82djRvWG1JdzZ4REJrR0Y0UVVRQVhfUnJVc09GQUJQX29FdV9zSVZzQm5iVEZoLUFXNHl4UW9OeTBDZXE3Qk9ZeHZ6OVJuZw?oc=5
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://www.romatoday.it/" | grep -oE 'href="[^"]*(ingombranti|weekend|open-day)[^"]*"' | sort -u | head -20
+href="/eventi/weekend/28-29-novembre-2026-roma-cosa-fare.html"
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://www.romatoday.it/cronaca/raccolta-rifiuti-ingombranti-roma-28-29-novembre-2026.html" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S); t=re.sub(r'<style.*?</style>','',t,flags=re.S)
+t=re.sub(r'<[^>]+>',' ',t); t=html.unescape(t); t=re.sub(r'\s+',' ',t)
+i=t.lower().find('ingombranti')
+print(len(t)); print(t[max(0,i-200):i+2500] if i>0 else t[:800])
+"
+347
+ Forse intendevi... su RomaToday Forse intendevi...? Cronaca - /foto/cronaca/ Cronaca - /cronaca/ Torna alla HomePage Link utili Registrati Contatti Cerca nel sito © 2026 Citynews SpA - P.IVA 10786801000 Termini e Condizioni Condizioni particolari Privacy Policy Modello 231 e Codice Etico RomaToday è in caricamento , ma ha bisogno di JavaScript
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://www.romatoday.it/eventi/weekend/28-29-novembre-2026-roma-cosa-fare.html" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S); t=re.sub(r'<style.*?</style>','',t,flags=re.S)
+t=re.sub(r'<[^>]+>',' ',t); t=html.unescape(t); t=re.sub(r'\s+',' ',t)
+print(len(t))
+for k in ['MAXXI','Urban','disco','Natale','Mercat','gratis']:
+    i=t.find(k)
+    if i>0: print('##',k,'::',t[max(0,i-400):i+600])
+"
+19279
+## Natale :: ubblicità legge l'attualità Massimo Falcioni Le assurde proposte dei parlamentari contro le manifestazioni Yasmina Pani Weekend Weekend a Roma: 25 eventi da non perdere sabato 28 e domenica 29 novembre Cosa fare nel fine settimana a Roma Francesca Demirgian Giornalista RomaToday 26 novembre 2026 17:46 Facebook WhatsApp --> Weekend di fine novembre, inizia il periodo dell'Avvento e l'atmosfera del Natale invade la città. Si apre il sipario su molti villaggi e mercatini natalizi a Roma. Grandi concerti e nuovi spettacoli teatrali approdano sui palcoscenici più importanti della città. Spazio al vintage, al vino, ai panettoni artigianali. Si parla di libri e di minerali in eventi dedicati. Ecco 25 eventi da non perdere sabato 28 e domenica 29 novembre a Roma e dintorni. L'albero di Natale di Harry Potter a Galleria Alberto Sordi La magia di Hogwarts arriva alla Galleria Alberto Sordi per Natale. Un grande Albero di Natale ispirato a Harry Potter e la Pietra Filosofale sarà ufficialmente ac
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://www.romatoday.it/eventi/weekend/28-29-novembre-2026-roma-cosa-fare.html" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S); t=re.sub(r'<style.*?</style>','',t,flags=re.S)
+t=re.sub(r'<[^>]+>',' ',t); t=html.unescape(t); t=re.sub(r'\s+',' ',t)
+i=t.find('L\'albero di Natale di Harry Potter')
+print(t[i:i+9000])
+"
+L'albero di Natale di Harry Potter a Galleria Alberto Sordi La magia di Hogwarts arriva alla Galleria Alberto Sordi per Natale. Un grande Albero di Natale ispirato a Harry Potter e la Pietra Filosofale sarà ufficialmente acceso sabato 28 novembre alle ore 18. Quello romano sarà uno dei due alberi a tema dedicati al celebre mondo creato da J.K. Rowling realizzati in Italia. [ TUTTE LE INFORMAZIONI ] Roma Chocolate a piazza Risorgimento Da venerdì 27 a domenica 29 novembre, dalle 10 alle 23, Piazza Risorgimento ospiterà una nuova edizione di “Roma Chocolate”, la manifestazione dedicata alle eccellenze del cioccolato. La piazza a pochi passi dal Vaticano diventerà punto d'incontro per gli amanti del cioccolato, con maestri cioccolatieri e un'ampia varietà di specialità, dalle praline alle tavolette, fino alle creazioni più originali. [ TUTTE LE INFORMAZIONI ] Christmas World a Villa Borghese Si aprono le porte di Christmas World, a Villa Borghese, sabato 28 novembre. Oltre 40.000 mq di scenografie e atmosfere natalizie, artisti e performer internazionali in uno dei villaggi diventati punto di riferimento del Natale romano. In programma 2 Christmas Parade ogni giorno con oltre 100 artisti, spettacoli inediti e performance diffuse. Per i più piccoli ci sono truccabimbi, baby dance, il buongiorno e la buonanotte con gli elfi e la casetta di Babbo Natale, dove consegnare la propria letterina e scattare una foto ricordo. Il Natale 2026 presenta alcune novità tra cui nuove attrazioni, food experience a tema e il Renna Renata Shop & Store ufficiale. [ TUTTE LE INFORMAZIONI ] Natale all'Eur Prende il via, sabato 28 novembre, la sesta edizione di "Natale all’Eur", l'appuntamento che trasformerà il Municipio IX di Roma per tutte le festività invernali. “Il Natale di Roma - Un Natale sul lago dell'Eur” è il villaggio allestito tra viale Oceania e viale America. I visitatori potranno salire sulla Ruota Panoramica più alta di Roma, mentre i più piccoli potranno incontrare Babbo Natale e i suoi elfi nella suggestiva Casa di Babbo Natale, affiancata da un Presepe Monumentale di 6x3 metri e da un’area food & beverage riscaldata. [ TUTTE LE INFORMAZIONI ] Black Market a Pratibus District Dal 27 novembre, PratiBus ospita Black Market – Vintage Under The Counter: per oltre sei settimane, 5.000 mq accoglieranno un percorso tra installazioni, mostre e una proposta di abbigliamento che attraversa epoche e stili differenti. Nuovi carichi arriveranno per tutta la durata di Black Market, alimentando un ricambio costante tra ceste e relle. Dai grandi classici agli articoli più ricercati, migliaia di proposte potranno essere acquistate al chilo o singolarmente, con il vintage premium disponibile a 35 euro al kg. Infine, Black Market propone anche un’area food & beverage a tema. [ TUTTE LE INFORMAZIONI ] Pink Floyd Immersion al Teatro Italia Il 28 novembre al Teatro Italia di Roma va in scena Pink Floyd Immersion con il nuovo tour “Beyond the Moon - Chapter I”, prodotto da Prisma Show. Pink Floyd Immersion è uno spettacolo live capace di unire fedeltà musicale, ricerca tecnologica e costruzione teatrale, un percorso sensoriale che guarda oltre il mito, restituendo al pubblico la loro eredità artistica attraverso un linguaggio contemporaneo. Dalla psichedelia degli esordi alle grandi architetture progressive, dalle visioni di The Dark Side of the Moon alle tensioni narrative di The Wall, fino alle atmosfere sospese di Wish You Were Here e Animals, lo spettacolo attraversa i momenti più iconici della produzione floydiana con arrangiamenti fedeli allo spirito originale ma arricchiti da una nuova energia live. [ TUTTE LE INFORMAZIONI ] Francesca Michielin all'Auditorium Conciliazione Arriverà il 28 novembre, all'Auditorium Conciliazione, il Tour nei Teatri 2026 di Francesca Michielin. Al centro dello spettacolo, l’intero universo di “Magia Bianca, Magia Nera”, accanto ai brani del repertorio di Francesca, riarrangiati per dialogare con le nuove sonorità e l’immaginario del progetto. “Magia Bianca, Magia Nera” è uscito venerdì 30 ottobre ed è il secondo capitolo dell’evolving project di Francesca Michielin. [ TUTTE LE INFORMAZIONI ] Hypermedia x Andrea Casta al MAM Domenica 29 novembre, alle 17, la musica di Andrea Casta e del suo violino elettrico arrivano al MAM – Media Art Museum, il primo museo permanente in Italia dedicato alla Media Art, con l’esibizione audiovisiva Hypermedia x Andrea Casta creata per la sala immersiva di 300 metri quadrati della struttura: 27 proiettori, pareti, soffitto e pavimento creano un unico ambiente visivo che supera la tradizionale separazione tra palcoscenico e platea per un dialogo continuo tra pubblico e suono, archetto luminoso e opere digitali. [ TUTTE LE INFORMAZIONI ] Scoprir. XIV Mostra di Cinema Iberoamericano La Casa del Cinema di Roma ospiterà dal 26 al 28 novembre 2026 “Scoprir. XIV Mostra di Cinema Iberoamericano di Roma”, un appuntamento che offrirà agli amanti della settima arte un’occasione unica per immergersi nel meglio della produzione cinematografica iberoamericana contemporanea. Oltre 20 opere provenienti da undici Paesi, in gran parte in prima nazionale, celebreranno la ricchezza culturale e la varietà espressiva del cinema iberoamericano attraverso lungometraggi di generi differenti. [ TUTTE LE INFORMAZIONI ] Libridine!, il festival diffuso delle librerie Fino a domenica 29 novembre c'è Libridine!, il Festival diffuso delle librerie che, per la sua terza edizione, coinvolge Roma e il territorio metropolitano in nove giorni di appuntamenti dedicati ai libri, alla cultura e alla lettura. Sono 60 le librerie aderenti, che apriranno le proprie porte al pubblico con un ricco calendario di incontri e iniziative. In questo che è il fine settimana conclusivo, protagonisti anche la scienza e la divulgazione, con l’astronauta Umberto Guidoni, che presenterà Ascensore per Marte, e Lorenzo Pinna, storico autore televisivo dei programmi Quark, Superquark e Noos, che incontrerà il pubblico con Cento anni in compagnia dell'atomo. A chiudere il Festival, domenica 29 novembre, sarà tra gli altri Csaba dalla Zorza, a Roma Eur con il suo romanzo Io sono Adele. [ TUTTE LE INFORMAZIONI ] Roma Mineral Show Roma Mineral Show – Mostra di Minerali, Fossili e Conchiglie torna a Roma sabato 28 e domenica 29 novembre. La mostra occuperà una superficie espositiva di circa 3.000 metri quadrati e accoglierà numerosi espositori provenienti da diverse parti del mondo. I visitatori potranno ammirare campioni di minerali, rocce, gemme, fossili e conchiglie, ma anche acquistare alcuni degli esemplari esposti. L'ingresso sarà completamente gratuito. [ TUTTE LE INFORMAZIONI ] Christmas Market in una villa del Cinquecento Sabato 28 e domenica 29 novembre 2026, dalle 10 alle 20, Park Hotel Villa Grazioli a Grottaferrata, riapre le sue porte per la VIII edizione del Christmas Market. Nell’antica dimora cinquecentesca si troveranno oltre 5.000 idee regalo e pezzi unici, due maestri presepisti all’opera dal vivo, concerti e incursioni musicali tra le sale affrescate, animazione e laboratori creativi per bambini, realtà aumentata nella Galleria del Pannini e, al calare della sera, un grande videomapping 3D che trasformerà la facciata storica della Villa in un suggestivo racconto di luce. [ TUTTE LE INFORMAZIONI ] Music Day - Fiera del Disco di Roma Music Day Roma torna con l’ultima kermesse del 2026: un'area espositiva di 2.500 mq, con oltre 60 espositori da tutta Italia saranno presenti con una messe di vinili, cd, oggettistica, memorabilia da collezione. In programma anche un fitto cartellone di presentazioni, incontri col pubblico e firmacopie. Protagonisti nomi della musica italiana quali Massimo Bubola, Vittorio Nocenzi, Gianni Belleno, Roberto Guarino, oltre a una nutrita rappresentanza di alcuni dei massimi autori italiani di colonne sonore come i Maestri Vince Tempera, Franco Bixio, Fabio Frizzi, Guido e Maurizio De Angelis. [ TUTTE LE INFORMAZIONI ] Panettone Maximo Si terrà domenica 29 novembre, l’ottava edizione di Panettone Maximo, festival nazionale del panettone artigianale, giunto alla sua VIII edizione. La manifestazione si terrà, per il terzo anno consecutivo, presso il Salone delle Fontane. Accanto a oltre 200 tipologie di panettone, in gara e non, tutti disponibili per l’assaggio e l’acquisto al pubblico, troverà posto un Christmas Market di eccellenze enogastronomiche: vini, bollicine, amari e distillati, torrone e cioccolato in varie declinazioni, tartufi, nocciole e tante altre leccornie tipiche del Natale. Il Christmas Village è invece l’area dedicata ai bambini, con giochi e animazione con dei simpatici elfi, l’immancabile foto con Babbo Natale e tanto zucchero filato. [ TUTTE LE INFORMAZIONI ] Ensemble! Suoni e Sapori dal Mondo a Fusolab "Ensemble! Suoni e Sapori dal Mondo" torna, con la sua seconda edizione, il 28 e 29 novembre negli spazi creativi del Fusolab. Ben 12 comunità provenienti da 4 continenti daranno vita a un'uni
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://news.google.com/rss/search?q=Roma+rifiuti+ingombranti+28+29+novembre+2026&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+items=re.findall(r'<item>(.*?)</item>',t,re.S)
+for it in items[:8]:
+    ti=re.search(r'<title>(.*?)</title>',it,re.S); d=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S); de=re.search(r'<description>(.*?)</description>',it,re.S)
+    print('-',html.unescape(ti.group(1)) if ti else '','|',d.group(1) if d else '')
+    print('  ',re.sub('<[^>]+>','',html.unescape(de.group(1)))[:250] if de else '')
+"
+- La raccolta dei rifiuti ingombranti a Roma sabato 28 e domenica 29 novembre 2026 - RomaToday | Fri, 27 Nov 2026 07:24:16 GMT
+   La raccolta dei rifiuti ingombranti a Roma sabato 28 e domenica 29 novembre 2026&nbsp;&nbsp;RomaToday
+- Natale sul ghiaccio a Colle Oppio: pattinaggio e curling dal 4 dicembre 2026. Tutte le info - RomaToday | Sun, 22 Nov 2026 10:35:28 GMT
+   Natale sul ghiaccio a Colle Oppio: pattinaggio e curling dal 4 dicembre 2026. Tutte le info&nbsp;&nbsp;RomaToday
+- "Ama il tuo quartiere" 29 e 30 novembre - Roma Capitale | Fri, 28 Nov 2025 08:00:00 GMT
+   "Ama il tuo quartiere" 29 e 30 novembre&nbsp;&nbsp;Roma Capitale
+- Torna PuliAmo il nostro territorio, la seconda edizione dell'iniziativa di Confcommercio fa tappa a Pitelli - Gazzetta della Spezia | Tue, 20 Oct 2026 07:00:00 GMT
+   Torna PuliAmo il nostro territorio, la seconda edizione dell'iniziativa di Confcommercio fa tappa a Pitelli&nbsp;&nbsp;Gazzetta della Spezia
+- La raccolta dei rifiuti ingombranti a Roma sabato 31 gennaio e domenica 1 febbraio 2026 - RomaToday | Sun, 01 Feb 2026 08:00:00 GMT
+   La raccolta dei rifiuti ingombranti a Roma sabato 31 gennaio e domenica 1 febbraio 2026&nbsp;&nbsp;RomaToday
+- Le strade chiuse a Roma sabato 30 e domenica 31 maggio 2026 - RomaToday | Sun, 31 May 2026 07:00:00 GMT
+   Le strade chiuse a Roma sabato 30 e domenica 31 maggio 2026&nbsp;&nbsp;RomaToday
+- Il calendario delle chiusure notturne delle gallerie Giovanni XXIII, Ignazio Guidi, Fleming e Pasa: tutte le informazioni - RomaToday | Fri, 30 Jan 2026 08:00:00 GMT
+   Il calendario delle chiusure notturne delle gallerie Giovanni XXIII, Ignazio Guidi, Fleming e Pasa: tutte le informazioni&nbsp;&nbsp;RomaToday
+- Le strade chiuse a Roma sabato 29 e domenica 30 novembre 2025 - RomaToday | Sun, 30 Nov 2025 08:00:00 GMT
+   Le strade chiuse a Roma sabato 29 e domenica 30 novembre 2025&nbsp;&nbsp;RomaToday
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://www.romatoday.it/cerca/?q=ingombranti" | grep -oE 'href="/[^"]*ingombranti[^"]*"' | sort -u | head -10
+(no output)
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://www.bing.com/search?q=site%3Aromatoday.it+ingombranti+28+29+novembre+2026" -H "User-Agent: Mozilla/5.0" | grep -oE 'https://www\.romatoday\.it/[a-z0-9/-]+\.html' | sort -u | head -10
+(no output)
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && for sec in ambiente cronaca; do echo "== $sec"; curl -s "https://www.romatoday.it/$sec/" | grep -oE 'href="[^"]*ingombranti[^"]*"' | head -5; done
+== ambiente
+== cronaca
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://www.romatoday.it/" | grep -oE 'href="/[a-z0-9/-]*\.html"' | sort -u | head -60
+href="/attualita/campidoglio-rosso-violenza-donne-1522-video.html"
+href="/attualita/curata-volpe-che-volevano-impiccare-programmata-liberazione.html"
+href="/attualita/liceo-righi-80-anni-roma.html"
+href="/attualita/papa-leone-xiv-parrocchia-sant-eligio-programma.html"
+href="/attualita/park-and-charge-spazi-riqualificati-roma-video.html"
+href="/attualita/regione-lazio-cinque-milioni-caldaie-ater.html"
+href="/attualita/rider-protocollo-sicurezza-lavoro-roma.html"
+href="/attualita/sapienza-spazio-interreligioso-dialogo-fedi-inaugurazione.html"
+href="/attualita/visitor-center-carme-archeologia-museo-roma-video.html"
+href="/cronaca/accoltellato-lite-quadraro-arresti.html"
+href="/cronaca/accoltellato-lite-stradale-mezzocammino.html"
+href="/cronaca/cimitero-auto-rubate-smontate-via-collatina-la-rustica.html"
+href="/cronaca/comunita-islamica-sportello-legale-razzismo.html"
+href="/cronaca/emanuele-lorusso-antonio-saccoccio-morti-kuwait.html"
+href="/cronaca/furti-furgone-jammer-tuscolano.html"
+href="/cronaca/incendio-auto-centocelle-piazzale-delle-gardenie.html"
+href="/cronaca/incidente-stradale/via-dei-campi-sportivi-oggi-25-novembre-2026.html"
+href="/cronaca/ladri-colli-portuensi-borse-centomila-euro-passeggiata-cani.html"
+href="/cronaca/morto-cristoforo-colombo-oggi-24-novembre-2026.html"
+href="/cronaca/morto-ex-citta-del-rugby-25-novembre-2026.html"
+href="/cronaca/ristorante-etnico-chiuso-marconi-sporco-cibo-scaduto.html"
+href="/cronaca/sequestro-cartine-filtri-casal-bernocchi-ostia.html"
+href="/cronaca/sgombero-appartamenti-donna-olimpia-26-novembre-2026.html"
+href="/cronaca/smishing-roma-falso-operatore-bancario.html"
+href="/cronaca/spari-tuscolana-rapina-portavalori.html"
+href="/cronaca/spari-via-anagnina-oggi-19-novembre-2026.html"
+href="/dossier/criminalita/bombe-tufello-nomi-indagini.html"
+href="/dossier/criminalita/christian-vocaturo.html"
+href="/dossier/criminalita/nomi-pusher-romani-arrestati-in-calabria-chi-sono-ruoli.html"
+href="/dossier/potere/giovanni-de-gennaro-roma-cosa-c-entra.html"
+href="/dossier/sociale/cartomanti-roma-chi-sono.html"
+href="/dossier/sociale/writer-tag-storia-scritte-muri.html"
+href="/economia/avio-opa-finlandia-iceye.html"
+href="/economia/imprese-lazio-emissioni-co2-green-unindustria.html"
+href="/economia/lazio-occupazione-64-tempi-disabilita-inps.html"
+href="/eventi/cultura/eddie-brock-incommentabile-manifesti-roma-video.html"
+href="/eventi/cultura/favino-belve-avverte-presenze.html"
+href="/eventi/cultura/festa-nazionale-romania-teatro-atlantico.html"
+href="/eventi/cultura/villaggi-natale-roma-2026.html"
+href="/eventi/weekend/28-29-novembre-2026-roma-cosa-fare.html"
+href="/politica/alluvioni-roma-casse-espansione-via-nomentana.html"
+href="/politica/centro-antiviolenza-inaugurazione-acilia-gualtieri.html"
+href="/politica/elezioni/roma-2027-comunali/accordo-smeriglio-conte-elezioni-roma-2027.html"
+href="/politica/elezioni/roma-2027-comunali/ilona-staller-candidata-sindaco-roma.html"
+href="/politica/farmaco-daraxonrasib-tumore-pancreas-per-chi-lazio.html"
+href="/politica/giardino-dopo-di-noi-centocelle-via-carpineto.html"
+href="/politica/gualtieri-lettera-sindaci-europei-emergenza-casa.html"
+href="/politica/proposta-piano-forni-crematori-regione-lazio.html"
+href="/politica/raddoppio-binari-vigna-clara-valle-aurelia-ritardi.html"
+href="/speciale/acqua-energia-futuro/festa-del-cinema-di-roma-acea-un-lavoretto-pulito.html"
+href="/speciale/speciale-roma/roma-carta-agevolazioni-mostre-spettacoli.html"
+href="/sport/basket/bc-roma-insieme-campagna-abbonamenti-regular-season.html"
+href="/sport/calcio/lazio-mandas-blinda-porta-numeri.html"
+href="/sport/calciomercato/roma-wesley-endrick-real-madrid.html"
+href="/zone/centocelle/centocelle-senza-acqua-oggi-perche.html"
+href="/zone/centocelle/tor-sapienza/case-popolari-tor-sapienza-via-cremona-freddo-video.html"
+href="/zone/eur/torrino/playground-torrino-nord.html"
+href="/zone/eur/torrino/studentato-tarantelli-esposto-finanziamento-mur.html"
+href="/zone/montesacro/area-verde-val-padana-degrado.html"
+href="/zone/montesacro/conca-d-oro/corse-notturne-moto.html"
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && for u in "https://www.romatoday.it/ambiente/raccolta-rifiuti-ingombranti-roma-28-29-novembre-2026.html" "https://www.romatoday.it/ambiente/rifiuti-ingombranti-roma-28-29-novembre-2026.html" "https://www.romatoday.it/cronaca/rifiuti-ingombranti-roma-28-29-novembre-2026.html" "https://www.romatoday.it/attualita/raccolta-rifiuti-ingombranti-roma-28-29-novembre-2026.html"; do code=$(curl -s -o /dev/null -w "%{http_code}" "$u"); echo "$code $u"; done
+404 https://www.romatoday.it/ambiente/raccolta-rifiuti-ingombranti-roma-28-29-novembre-2026.html
+404 https://www.romatoday.it/ambiente/rifiuti-ingombranti-roma-28-29-novembre-2026.html
+404 https://www.romatoday.it/cronaca/rifiuti-ingombranti-roma-28-29-novembre-2026.html
+404 https://www.romatoday.it/attualita/raccolta-rifiuti-ingombranti-roma-28-29-novembre-2026.html
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -sL "https://www.amaroma.it/ama-il-tuo-quartiere/" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S); t=re.sub(r'<style.*?</style>','',t,flags=re.S)
+t=re.sub(r'<[^>]+>',' ',t); t=html.unescape(t); t=re.sub(r'\s+',' ',t)
+i=t.lower().find('novembre')
+print(len(t)); print(t[max(0,i-800):i+2500] if i>0 else t[:1200])
+"
+110
+ 403 Forbidden 403 Forbidden Transaction ID: 6f5b6153563ccc6d5c8a581b39e375e4bbe575352493d5c3914b94f9bcc11330
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://news.google.com/rss/search?q=Roma+Mineral+Show+28+29+novembre+2026+dove&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+items=re.findall(r'<item>(.*?)</item>',t,re.S)
+for it in items[:8]:
+    ti=re.search(r'<title>(.*?)</title>',it,re.S); d=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S); de=re.search(r'<description>(.*?)</description>',it,re.S)
+    print('-',html.unescape(ti.group(1)) if ti else '','|',d.group(1) if d else '')
+    print('  ',re.sub('<[^>]+>','',html.unescape(de.group(1)))[:300] if de else '')
+"
+- Weekend a Roma: 25 eventi da non perdere sabato 28 e domenica 29 novembre - RomaToday | Fri, 27 Nov 2026 05:56:47 GMT
+   Weekend a Roma: 25 eventi da non perdere sabato 28 e domenica 29 novembre&nbsp;&nbsp;RomaToday
+- Roma, torna la mostra dedicata a minerali e fossili - RomaToday | Mon, 23 Nov 2026 09:00:00 GMT
+   Roma, torna la mostra dedicata a minerali e fossili&nbsp;&nbsp;RomaToday
+- Roma Mineral Show 2026, due giorni tra minerali, gemme e fossili: ingresso gratuito, date e programma - Il Quotidiano del Lazio | Sun, 15 Nov 2026 08:00:00 GMT
+   Roma Mineral Show 2026, due giorni tra minerali, gemme e fossili: ingresso gratuito, date e programma&nbsp;&nbsp;Il Quotidiano del Lazio
+- Marina Abramović: Historical Works and Transforming Energy - Arte.it | Mon, 16 Nov 2026 23:01:03 GMT
+   Marina Abramović: Historical Works and Transforming Energy&nbsp;&nbsp;Arte.it
+- Cosa fare a Verona e provincia durante il weekend dal 20 al 22 novembre 2026 - VeronaSera | Sun, 22 Nov 2026 08:00:00 GMT
+   Cosa fare a Verona e provincia durante il weekend dal 20 al 22 novembre 2026&nbsp;&nbsp;VeronaSera
+- Sagre, feste e mercatini in Veneto: 90 appuntamenti dal 27 al 29 novembre 2026 - TViWeb | Thu, 26 Nov 2026 09:12:00 GMT
+   Sagre, feste e mercatini in Veneto: 90 appuntamenti dal 27 al 29 novembre 2026&nbsp;&nbsp;TViWeb
+- Attività per bambini a Roma - Turismo Roma | Wed, 18 Mar 2020 20:34:49 GMT
+   Attività per bambini a Roma&nbsp;&nbsp;Turismo Roma
+- Organico fantastico - Mostra - Bologna - CUBO in Torre Unipol - Arte.it | Thu, 04 Jun 2026 21:17:29 GMT
+   Organico fantastico - Mostra - Bologna - CUBO in Torre Unipol&nbsp;&nbsp;Arte.it
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -sL "https://www.palazzomerulana.it/biglietti/" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S); t=re.sub(r'<style.*?</style>','',t,flags=re.S)
+t=re.sub(r'<[^>]+>',' ',t); t=html.unescape(t); t=re.sub(r'\s+',' ',t)
+i=t.find('€')
+print(len(t)); print(t[max(0,i-700):i+900] if i>0 else t[:900])
+"
+1172
+ Palazzo Merulana » Page not found - Palazzo Merulana Il Palazzo Chi Siamo Gli Spazi Prepara la tua visita Orari Audioguide Didattica Come Arrivare Eventi Privati Press Intervista Cerasi Intervista CoopCulture Artribune Openings Press Room Magazine Contatti Media it en Attività Culturali Eventi in corso Eventi passati Collezione Culture Concept Store Mappa in CAA Acquista Biglietti Acquista Biglietti Attività Culturali Eventi in corso Eventi passati Collezione Culture Concept Store Mappa in CAA Il Palazzo Chi Siamo Gli Spazi Prepara la tua visita Orari Audioguide Didattica Come Arrivare Eventi Privati Press Intervista Cerasi Intervista CoopCulture Artribune Openings Press Room Magazine Contatti Media it en Page not found! Go Back Iscriviti alla newsletter Chi Siamo Gli Spazi La Collezione Privacy Policy Contatti Join Us Collezione + mostra dal mercoledì al venerdì: Turni di ingresso ogni
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -sL "https://www.palazzomerulana.it/prepara-la-tua-visita/" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S); t=re.sub(r'<style.*?</style>','',t,flags=re.S)
+t=re.sub(r'<[^>]+>',' ',t); t=html.unescape(t); t=re.sub(r'\s+',' ',t)
+i=t.find('orari e tariffe')
+print(t[i:i+4000])
+"
+orari e tariffe Audioguide Didattica Come arrivare orari Palazzo Merulana sarà aperto al pubblico nei seguenti nuovi orari: Collezione + mostra (Gli orari possono subire variazioni durante lo svolgimento di eventi culturali e/o corporate) dal mercoledì al venerdì : Turni di ingresso ogni ora dalle 12 alle 20 (ultimo ingresso alle 19) sabato e domenica: dalle 10 alle 20 (ultimo ingresso ore 19.00) Prenotazione del turno : consigliata Diritti di prenotazione € 2,00 lunedì, martedì, 25 dicembre e 1 gennaio chiuso 24 dicembre e 31 dicembre aperto dalle ore 10 alle 15 Mercoledì 18 novembre mostra "Corrispondenze" non visitabile Giovedì 19 novembre Palazzo Merulana chiuso al pubblico Sala delle Sculture, CafeCulture* e BookCulture accesso libero dal mercoledì alla domenica dalle ore 9 alle ore 20 lunedì e martedì chiuso * Si prega di verificare la disponibilità dell’aula studio tramite i canali social di CafeCulture Prenotazione on line e presso la biglietteria del Palazzo nei giorni e negli orari di apertura info@palazzomerulana.it 06 39967800 da lunedì a domenica ( e festivi) dalle ore 9.00 alle ore 17.00 tariffe Tariffe Sala delle Sculture ingresso libero Secondo, terzo e quarto piano: Collezione + mostra Intero € 13,00 Ridotto € 11,00 ( adulti over 65, insegnanti in attività, possessori di Cartax2, possessori Lazio Youth Card, possessori carta EBIT Lazio, possessori carta EBTL, possessori tessera Arci, Scuola Romana dei Fumetti, Box Eventi-welfare card, FAI, Studenti e dipendenti IED, Possessori tessera ENAC, possessori card Cinema Lovers, possessori dei biglietti della Casa del Cinema, della Festa del Cinema di Roma e dipendenti di Fondazione Cinema per Roma, possessori della Tessera Socio Club Medici, studenti e collaboratori del Convitto Lateranense B. Pio IX, possessori card La luna e la Tartaruga, dipendenti LAZIOcrea, possessori Carta Giovani Nazionale, Accademia Moda e Costume, possessori biglietto singolo regionale Trenitalia, Soci e gli Amici delle Dimore Storiche Italiane ) Ridotto giovani collezione + mostre € 8.00 giovani tra i 7 ed i 25 anni Ridotto per scuole € 6,00 Scuole € 4,00 (per studente). Prenotazione turno (gruppo classe max 25 persone) obbligatoria ingresso scuole € 20,00 Gruppi € 11,00 a persona (min 10, max 20 persone) Prenotazione obbligatoria turno ingresso gruppi € 30,00 Gratuito (bambini e ragazzi under 7, un insegnante ogni 10 studenti, un accompagnatore ogni 10 persone, disabile con accompagnatore, possessori Pass Palazzo Merulana e Pass Palazzo Merulana Young, membri ICOM, guide turistiche con patentino) Visite guidate su prenotazione €100.00 (scrivendo a tour@coopculture.it) Visite scuola su prenotazione € 100.00 (scrivendo a edu@coopculture.it) Per chi acquista un biglietto ridotto o gratuito, occorre esibire all’ingresso del sito un documento d'identità che ne attesti la riduzione o gratuità. Grazie alla convenzione tra Palazzo Merulana e Trenitalia , i visitatori che raggiungono la città in treno regionale possono approfittare di agevolazioni speciali su ingressi, eventi e acquisti. Ingresso ridotto per mostre ed eventi Presentando all’ingresso un biglietto singolo Trenitalia regionale o con applicazione sovraregionale , convalidato il giorno stesso dell’ingresso al museo e valido per la stazione di Roma Termini , si potrà accedere a mostre ed eventi con tariffa ridotta . Sconto del 20% sulla Merulana Pass Vuoi vivere Palazzo Merulana tutto l’anno? Con lo stesso biglietto Trenitalia potrai anche acquistare la Merulana Pass con uno sconto del 20% ! 5% di sconto al bookshop con X-GO Se sei iscritto al programma fedeltà X-GO di Trenitalia, presentando la tua iscrizione insieme al biglietto ferroviario, avrai diritto anche a un 5% di sconto sugli acquisti al bookshop del museo . Palazzo Merulana Pass, l’abbonamento di validità annuale. La Palazzo Merulana Pass , realizzata in due versioni, intera e young , consente l'accesso illimitato alla sede espositiva (collezione permanente e mostre temporane
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://news.google.com/rss/search?q=Lo+schiaccianoci+Teatro+Nazionale+Roma+2026+biglietti&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+items=re.findall(r'<item>(.*?)</item>',t,re.S)
+for it in items[:8]:
+    ti=re.search(r'<title>(.*?)</title>',it,re.S); d=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S); de=re.search(r'<description>(.*?)</description>',it,re.S)
+    print('-',html.unescape(ti.group(1)) if ti else '','|',d.group(1) if d else '')
+    print('  ',re.sub('<[^>]+>','',html.unescape(de.group(1)))[:300] if de else '')
+"
+- Teatro Nazionale, sold out Lo Schiaccianoci della Scuola di Danza - Teatrionline | Tue, 24 Nov 2026 10:19:18 GMT
+   Teatro Nazionale, sold out Lo Schiaccianoci della Scuola di Danza&nbsp;&nbsp;Teatrionline
+- “Lo Schiaccianoci” di Chalmer con la Scuola del Teatro dell’Opera - Giornale della Danza | Mon, 23 Nov 2026 16:51:34 GMT
+   “Lo Schiaccianoci” di Chalmer con la Scuola del Teatro dell’Opera&nbsp;&nbsp;Giornale della Danza
+- Lo Schiaccianoci torna al Teatro Nazionale con gli allievi della Scuola di Danza dell’Opera di Roma - Oblo.it | Tue, 24 Nov 2026 15:20:09 GMT
+   Lo Schiaccianoci torna al Teatro Nazionale con gli allievi della Scuola di Danza dell’Opera di Roma&nbsp;&nbsp;Oblo.it
+- La Stagione 2026/2027 del Teatro dell’Opera di Roma - Teatro dell'Opera di Roma | Wed, 17 Jun 2026 12:49:27 GMT
+   La Stagione 2026/2027 del Teatro dell’Opera di Roma&nbsp;&nbsp;Teatro dell'Opera di Roma
+- Lo Schiaccianoci di Paul Chalmer inaugura la stagione del Teatro Nazionale - EZ Rome | Mon, 23 Nov 2026 20:00:00 GMT
+   Lo Schiaccianoci di Paul Chalmer inaugura la stagione del Teatro Nazionale&nbsp;&nbsp;EZ Rome
+- Schiaccianoci a Roma: date e sede del balletto - UniversiNet Magazine | Wed, 18 Nov 2026 08:24:05 GMT
+   Schiaccianoci a Roma: date e sede del balletto&nbsp;&nbsp;UniversiNet Magazine
+- Lo Schiaccianoci - Teatro Comunale Città di Vicenza | Thu, 02 Jul 2026 12:59:15 GMT
+   Lo Schiaccianoci&nbsp;&nbsp;Teatro Comunale Città di Vicenza
+- Cosa fare a Roma questo weekend con i bambini 14-15 novembre - Viaggiapiccoli | Sun, 22 Nov 2026 18:28:44 GMT
+   Cosa fare a Roma questo weekend con i bambini 14-15 novembre&nbsp;&nbsp;Viaggiapiccoli
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://www.operaroma.it/?s=schiaccianoci" | grep -oE 'href="https://www.operaroma.it/[^"]*schiaccianoci[^"]*"' | sort -u | head
+href="https://www.operaroma.it/news/allopera-di-roma-i-balletti-delle-feste-lo-schiaccianoci-e-il-pipistrello/"
+href="https://www.operaroma.it/news/apertura-della-stagione-di-balletto-2021-22-a-dicembre-torna-lo-schiaccianoci-nella-versione-di-peparini/"
+href="https://www.operaroma.it/news/dal-31-dicembre-torna-lo-schiaccianoci-nella-versione-di-giuliano-peparini/"
+href="https://www.operaroma.it/news/la-magia-del-natale-in-una-nuova-produzione-de-lo-schiaccianoci-di-cajkovskij-firmata-da-paul-chalmer/"
+href="https://www.operaroma.it/news/lo-schiaccianoci-apre-la-stagione-natalizia/"
+href="https://www.operaroma.it/news/lo-schiaccianoci-della-scuola-di-danza-diretta-da-eleonora-abbagnato/"
+href="https://www.operaroma.it/news/lo-schiaccianoci-della-scuola-di-danza-e-gia-sold-outdue-nuove-recite-al-teatro-nazionale-il-1-e-3-dicembre/"
+href="https://www.operaroma.it/news/lo-schiaccianoci-terzo-anno-sold-out-al-teatro-dellopera-di-roma/"
+href="https://www.operaroma.it/page/2/?s=schiaccianoci"
+href="https://www.operaroma.it/search/schiaccianoci/feed/rss2/"
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -sL "https://www.operaroma.it/news/lo-schiaccianoci-della-scuola-di-danza-e-gia-sold-outdue-nuove-recite-al-teatro-nazionale-il-1-e-3-dicembre/" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S); t=re.sub(r'<style.*?</style>','',t,flags=re.S)
+t=re.sub(r'<[^>]+>',' ',t); t=html.unescape(t); t=re.sub(r'\s+',' ',t)
+i=t.find('sold out')
+print(t[max(0,i-500):i+2500] if i>0 else t[:1500])
+"
+Lo schiaccianoci della Scuola di Danza sold out: due nuove recite al Nazionale | Teatro dell'Opera di Roma Home Stagione Opere Balletti Concerti Caracalla Lezioni di Opera PASSAPORTI DI DANZA Biglietteria Acquista Abbonamenti Gran Teatro “All inclusive” Gran Teatro Gran Teatro Leggero Fantasia Tutto Danza Week End Novecento e Contemporaneo Abbonamento Lezioni di Opera Giovani Under 30 Passaporti di danza Agevolazioni CARTA GIOVANI OPERA Mappe teatri Informazioni Informazioni Generali Regolamento Biglietteria Prezzi Opera giovani Scuola di danza Formazione Allievi Audizioni e concorsi Direttore Scuola di Canto Corale Bandi Allievi Docenti IL TEATRO PER I GIOVANI Il Teatro per le scuole – Progetti Tre buone ragioni per… La scuola adotta l’Opera All’Opera con Filosofia Studiare con l’Opera – Shakespeare in Musica Gli Spettacoli Visite guidate Sostieni Diventa Socio Diventa Associato Visualizza i vantaggi I Giovani per l’Opera Diventa Giovane Associato Sostieni il Teatro Dona ora Dona i tuoi voucher con l’Art Bonus Dona con un lascito testamentario Diventa Sponsor Partner Stagione Partner Caracalla Sponsor progetti artistici Sponsor progetti didattici e progetti speciali Sponsor tecnico Sponsor Tournée Organizza un evento Dai visibilità alla tua azienda News Shop it en Search for: ↓ Skip to Main Content Home › News › Lo schiaccianoci della Scuola di Danza sold out: due nuove recite al Nazionale Lo schiaccianoci della Scuola di Danza sold out: due nuove recite al Nazionale Dopo il successo delle ultime tre stagioni al Teatro Costanzi, Lo schiaccianoci di Pëtr Il’ič Čajkovskij torna in scena al Teatro Nazionale, affidato agli allievi della Scuola di Danza del Teatro dell’Opera di Roma diretta da Eleonora Abbagnato per la prima volta nella versione coreografica di Paul Chalmer che, tra il 2023 e il 2025 , ha richiamato complessivamente 50.000 spettatori . A fronte del tutto esaurito per le recite già in programma dal 24 novembre al 3 dicembre 2026, sono state inserite due nuove rappresentazioni: martedì 1° e giovedì 3 dicembre, entrambe alle ore 19.00 . Le due recite serali si aggiungono a quelle già previste nelle stesse giornate alle ore 11.00 e riservate alle scuole. Il Teatro amplia così il calendario per rispondere alla grande richiesta del pubblico, offrendo ulteriori occasioni per assistere a uno dei titoli più amati del repertorio classico. Le scene sono di Andrea Miglio , i costumi di Mario Celentano , le luci di Stefano Laselva e la consulenza musicale di Giuseppe Annese . La produzione dell
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -sL "https://www.romamineralshow.it/" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S); t=re.sub(r'<style.*?</style>','',t,flags=re.S)
+t=re.sub(r'<[^>]+>',' ',t); t=html.unescape(t); t=re.sub(r'\s+',' ',t)
+print(len(t)); print(t[:2000])
+"
+0
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://news.google.com/rss/search?q=%22Roma+Mineral+Show%22+2026&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+items=re.findall(r'<item>(.*?)</item>',t,re.S)
+for it in items[:10]:
+    ti=re.search(r'<title>(.*?)</title>',it,re.S); d=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S)
+    print('-',html.unescape(ti.group(1)) if ti else '','|',d.group(1) if d else '')
+"
+- Roma, torna la mostra dedicata a minerali e fossili - RomaToday | Mon, 23 Nov 2026 09:00:00 GMT
+- Roma Mineral Show 2026, due giorni tra minerali, gemme e fossili: ingresso gratuito, date e programma - Il Quotidiano del Lazio | Sun, 15 Nov 2026 08:00:00 GMT
+- Mineral Show 2026 - RomaToday | Thu, 19 Nov 2026 10:30:00 GMT
+- Roma Mineral Show - RomaToday | Tue, 17 Nov 2026 10:08:00 GMT
+- Le meraviglie della Terra in mostra a Roma - RomaToday | Mon, 24 Nov 2025 08:00:00 GMT
+- Roma Mineral Show: al via la 43° mostra di Minerali, Fossili e Conchiglie - RomaToday | Mon, 27 Nov 2023 08:00:00 GMT
+- Roma Arte in Nuvola 2026 chiude con 37.000 visitatori - radioroma.it | Mon, 23 Nov 2026 10:44:10 GMT
+- Win& a Roma: la cultura del vino italiano agli Horti Sallustiani - radioroma.it | Sat, 14 Nov 2026 08:00:00 GMT
+- Maria Grazia Cucinotta e Pino Quartullo protagonisti al Teatro Sistina con ‘La moglie fantasma’ - Radio Roma | Mon, 09 Nov 2026 08:00:00 GMT
+- Multi a Piazza Vittorio: al via la quarta edizione del festival della Roma multiculturale - radioroma.it | Thu, 24 Sep 2026 07:00:00 GMT
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://html.duckduckgo.com/html/?q=Roma+Mineral+Show+2026+ingresso+gratuito+dove" -H "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+print(len(t))
+res=re.findall(r'class=\"result__a\"[^>]*href=\"([^\"]+)\"[^>]*>(.*?)</a>',t,re.S)
+for u,ti in res[:8]:
+    print(html.unescape(re.sub('<[^>]+>','',ti)),'|',html.unescape(u)[:180])
+sn=re.findall(r'class=\"result__snippet\"[^>]*>(.*?)</a>',t,re.S)
+for s in sn[:5]:
+    print('  *',html.unescape(re.sub('<[^>]+>','',s))[:300])
+"
+36354
+Roma Mineral Show 2026 - Mostra di Minerali, Fossili e Gemme a Roma | //duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.festivalinitalia.it%2Ffestival%2Froma%2Dmineral%2Dshow&rut=f5b586bd52d7f83c5456f78a5e26212723adde520d036d6ab82db3664b48a089
+Roma Mineral Show 2026 all'Ergife: ingresso gratuito | //duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.radioroma.it%2Farticolo%2Froma%2Dmineral%2Dshow%2D2026%2Dminerali%2Dfossili%2De%2Dgemme%2Din%2Dmostra%2Dall%2Dergife&rut=cddf233f708521b2
+Roma Mineral Show 2026: minerali, fossili e conchiglie il 28 e 29 ... | //duckduckgo.com/l/?uddg=https%3A%2F%2Fscripomarket.com%2Fevento%2Froma%2Dmineral%2Dshow%2D2026%2Dminerali%2Dfossili%2De%2Dconchiglie%2Dil%2D28%2De%2D29%2Dnovembre%2F&rut=d975ef220
+Roma Mineral Show 2026, due giorni tra minerali, gemme e fossili ... | //duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.ilquotidianodellazio.it%2Froma%2Dmineral%2Dshow%2D2026%2Ddue%2Dgiorni%2Dtra%2Dminerali%2Dgemme%2De%2Dfossili%2Dingresso%2Dgratuito%2Ddate
+Roma Mineral Show 2026 - Roma, Nov 28-29, 2026 | FestivalIndex | //duckduckgo.com/l/?uddg=https%3A%2F%2Ffestivalindex.com%2Fit%2Dit%2Fevents%2F77899%2Droma%2Dmineral%2Dshow%2D2026%2D2026&rut=003be7965b08e540a2ed4396c7674d4df87a39ea98cf4ac23014f3
+Roma Mineral Show 2026: date, orari e programma a Roma | //duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.romatoday.it%2Feventi%2Froma%2Dmineral%2Dshow%2D2026%2Dmostra%2Dminerali%2Dfossili%2Dconchiglie.html&rut=94f44ab0bad1d82330b32dc86dacf4b3
+Roma Mineral Show new - Gruppo Mineraleologico Romano | //duckduckgo.com/l/?uddg=https%3A%2F%2Fgminromano.it%2Froma%2Dmineral%2Dshow%2F&rut=8d93380e3843a3e4b67f10b65a34720a4e7bfd81492d96b51787d6be642418b2
+Roma Mineral Show 2026 - Mostra di Minerali, Fossili e Conchiglie di Roma | //duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.turismoroma.it%2Fit%2Feventi%2Froma%2Dmineral%2Dshow%2D2026%2Dmostra%2Ddi%2Dminerali%2Dfossili%2De%2Dconchiglie%2Ddi%2Droma&rut=917b66f2a
+  * Il Roma Mineral Show torna il 28-29 novembre 2026 all'Ergife Palace Hotel di Roma: minerali, fossili, gemme e conchiglie, conferenze e laboratori. Ingresso gratuito.
+  * A Roma il 28-29 novembre 2026 il Roma Mineral Show all'Ergife: 3.000 mq di minerali, fossili e gemme, laboratori e conferenze. Ingresso gratuito 9-19.
+  * La 46ª edizione del Roma Mineral Show si tiene all'Ergife Palace Hotel il 28-29 novembre 2026, dalle 9 alle 19. Minerali, fossili e conchiglie, ingresso gratuito.
+  * Roma Mineral Show, la 46ª edizione all'Ergife Palace Hotel Due giorni di esposizioni, laboratori gratuiti e conferenze scientifiche a ingresso libero: torna il Roma Mineral Show con la sua quarantaseiesima edizione! Si tratta di una delle fiere più importanti d'Italia per quanto riguarda il mondo de
+  * Il Roma Mineral Show 2026 accoglierà numerosi espositori da diverse parti del mondo su una superficie espositiva di circa 3.000 metri quadrati. I visitatori potranno ammirare campioni di minerali, rocce, gemme, fossili e conchiglie, avendo anche la possibilità di acquistare esemplari. L'ingresso all
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && for q in "Torre+Flavia+29+novembre+2026+visita+guidata+orario" "Natale+all%27Eur+2026+28+novembre+ruota+panoramica+ingresso" "Panettone+Maximo+2026+29+novembre+Salone+delle+Fontane+biglietto"; do echo "##### $q"; curl -s "https://html.duckduckgo.com/html/?q=$q" -H "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+res=re.findall(r'class=\"result__a\"[^>]*href=\"([^\"]+)\"[^>]*>(.*?)</a>',t,re.S)
+sn=re.findall(r'class=\"result__snippet\"[^>]*>(.*?)</a>',t,re.S)
+for (u,ti),s in list(zip(res,sn))[:5]:
+    print('*',html.unescape(re.sub('<[^>]+>','',ti)))
+    print('  ',html.unescape(re.sub('<[^>]+>','',s))[:350])
+"; done
+##### Torre+Flavia+29+novembre+2026+visita+guidata+orario
+##### Natale+all%27Eur+2026+28+novembre+ruota+panoramica+ingresso
+##### Panettone+Maximo+2026+29+novembre+Salone+delle+Fontane+biglietto
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && sleep 3 && curl -s "https://html.duckduckgo.com/html/?q=Torre+Flavia+visita+guidata+29+novembre+2026" -H "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)" | python3 -c "
+import sys,re,html
+t=sys.stdin.read(); print(len(t))
+res=re.findall(r'class=\"result__a\"[^>]*href=\"([^\"]+)\"[^>]*>(.*?)</a>',t,re.S)
+sn=re.findall(r'class=\"result__snippet\"[^>]*>(.*?)</a>',t,re.S)
+for (u,ti),s in list(zip(res,sn))[:6]:
+    print('*',html.unescape(re.sub('<[^>]+>','',ti)))
+    print('  ',html.unescape(re.sub('<[^>]+>','',s))[:400])
+"
+15087
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://news.google.com/rss/search?q=%22Torre+Flavia%22+Trachemys+visita&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+items=re.findall(r'<item>(.*?)</item>',t,re.S)
+for it in items[:6]:
+    ti=re.search(r'<title>(.*?)</title>',it,re.S); d=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S)
+    print('-',html.unescape(ti.group(1)) if ti else '','|',d.group(1) if d else '')
+"
+- Biodiversità e specie aliene: alla Palude di Torre Flavia due appuntamenti dedicati al progetto "Trachemys" - Città metropolitana di Roma Capitale | Fri, 13 Nov 2026 08:00:00 GMT
+- Torre Flavia, al via il progetto contro le tartarughe invasive: un piano triennale per proteggere la biodiversità - lacapitale.it | Mon, 02 Nov 2026 08:00:00 GMT
+- Torre Flavia invasa: centinaia di tartarughe esotiche - Civonline | Sun, 25 Oct 2026 07:00:00 GMT
+- Le tartarughe che crescono fino a 40 centimetri e sterminano le specie locali: cosa sta succedendo nell'oasi vicino Roma - RomaToday | Thu, 01 Oct 2026 07:00:00 GMT
+- Specie aliene e biodiversità: la Città Metropolitana di Roma Capitale presenta il progetto Trachemys - Città metropolitana di Roma Capitale | Mon, 26 Oct 2026 07:00:00 GMT
+- Emergenza specie invasive: centinaia di tartarughe esotiche minacciano Torre Flavia - Civonline | Tue, 29 Sep 2026 07:00:00 GMT
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -sL "https://www.turismoroma.it/it/eventi?search=Torre%20Flavia" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S); t=re.sub(r'<style.*?</style>','',t,flags=re.S)
+t=re.sub(r'<[^>]+>',' ',t); t=html.unescape(t); t=re.sub(r'\s+',' ',t)
+i=t.lower().find('flavia')
+print(len(t)); print(t[max(0,i-500):i+1200] if i>0 else 'NF')
+"
+1017
+ Page not found | Turismo Roma Skip to main content Vivere Roma, scoprire Roma Servizi turistici e offerta culturale 060608 English Italiano Deutsch Français Español Go Social Block Seguici su: Search form Cerca A Roma per Scopri Roma Il tuo viaggio Info utili Page not found The requested page "/it/eventi?search=Torre%20Flavia" could not be found. Le tue utility Mappa Eventi Newsletter A Roma per Business Sport Studio Arte e Cultura Matrimonio Night life Moda e shopping Scopri Roma Roma in breve La Città I quartieri Botteghe e negozi storici Curiosità Il tuo viaggio Eventi Itinerari a tema Itinerari a tempo News Roma Free/Low cost Food & Wine Mare Info utili Roma Accessibile Mappa di Roma Menu di servizio Faq Chi siamo Contatti Iscriviti alla newsletter Footer Social Block Seguici su: Dipartimento Grandi Eventi, Sport, Turismo e Moda. Via di San Basilio, 51 00187 Roma CONTACT CENTER TEL. 06 06 08 CONTATTA LA REDAZIONE subfooter Privacy Social Media Policy Credits Copyright Esclusione di Responsabilità
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -sL "https://www.cittametropolitanaroma.it/homepage/novita/notizie.html" | grep -oiE 'href="[^"]*trachemys[^"]*"|href="[^"]*torre-flavia[^"]*"' | sort -u | head
+(no output)
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://news.google.com/rss/search?q=Libridine+2026+Roma+librerie+29+novembre&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+items=re.findall(r'<item>(.*?)</item>',t,re.S)
+for it in items[:10]:
+    ti=re.search(r'<title>(.*?)</title>',it,re.S); d=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S)
+    print('-',html.unescape(ti.group(1)) if ti else '','|',d.group(1) if d else '')
+"
+- Libridine!, il Festival delle librerie di Roma entra nel weekend finale - Paese Italia Press | Fri, 27 Nov 2026 00:39:55 GMT
+- ROMA | “Libridine!”, il Festival diffuso delle librerie prosegue fino al 29 novembre - Mondoreale | Thu, 26 Nov 2026 17:20:11 GMT
+- CS n°2 Ultimi giorni a Roma per Libridine!, il Festival diffuso delle librerie: arrivano Pierluigi Battista, Monica Calcagni, Stefania Limiti, Umberto Guidoni, Lorenzo Pinna e Csaba dalla Zorza - Easy News Press Agency | Thu, 26 Nov 2026 15:30:00 GMT
+- Libridine!, il festival diffuso delle librerie - RomaToday | Fri, 20 Nov 2026 13:35:20 GMT
+- Libridine! torna dal 21 al 29 novembre a Roma con la festa diffusa della lettura - The BookAdvisor | Sat, 21 Nov 2026 10:02:13 GMT
+- Dal 21 al 29 novembre torna 'Libridine!', il Festival diffuso delle librerie - ANSA | Fri, 20 Nov 2026 17:20:00 GMT
+- Libridine! porta nove giorni di libri a Roma e nell’area metropolitana - inITALY | Sat, 21 Nov 2026 08:00:00 GMT
+- Libridine a Roma: Lagioia, Volo e 60 librerie, gli incontri da non perdere - UniversiNet Magazine | Sat, 21 Nov 2026 13:11:34 GMT
+- Roma | Libridine! Festival diffuso delle librerie - il Tacco di Bacco | Fri, 20 Nov 2026 16:12:17 GMT
+- "Libridine!", gli appuntamenti nei nostri quartieri da via Acqui a via Appia Nuova - AppiOH | Sat, 21 Nov 2026 21:59:25 GMT
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://news.google.com/rss/search?q=%22Natale+all%27Eur%22+2026&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+items=re.findall(r'<item>(.*?)</item>',t,re.S)
+for it in items[:10]:
+    ti=re.search(r'<title>(.*?)</title>',it,re.S); d=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S); de=re.search(r'<description>(.*?)</description>',it,re.S)
+    print('-',html.unescape(ti.group(1)) if ti else '','|',d.group(1) if d else '')
+"
+- Natale all'Eur: villaggio sul lago, ruota panoramica e luminarie | 28 novembre - 10 gennaio 2026 - RomaToday | Thu, 26 Nov 2026 23:44:50 GMT
+- Sito Istituzionale | Municipio IX. Natale all'Eur, tutti gli eventi - Roma Capitale | Mon, 16 Nov 2026 08:00:00 GMT
+- Natale all'EUR - Oggi Roma | Thu, 19 Nov 2026 13:12:37 GMT
+- Villaggi di Natale 2026: i più belli da scoprire a Roma e dintorni - RomaToday | Thu, 26 Nov 2026 12:26:00 GMT
+- Natale all’Eur 2026, nuovo fantastico evento per le feste - The Parallel Vision | Wed, 11 Nov 2026 08:00:00 GMT
+- Natale all’EUR 2026: la ruota panoramica trasforma Roma in un villaggio di Natale da favola - CorriereNerd.it | Wed, 11 Nov 2026 10:10:45 GMT
+- Natale a Roma e nel Lazio con i bambini 2026 - Viaggiapiccoli | Sat, 14 Nov 2026 16:49:13 GMT
+- Christmas Parade, parata di Natale al centro di Roma - RomaToday | Sun, 22 Nov 2026 08:00:00 GMT
+- Natale all'Eur - Oggi Roma | Wed, 19 Nov 2025 17:00:44 GMT
+- Viterbo Christmas Village 2026: attrazioni, mercatini, presepe e Casa di Babbo Natale - RomaToday | Sat, 21 Nov 2026 08:00:00 GMT
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://www.wegil.it/eventi/" | grep -oE 'href="[^"]*(adams|shotbyadams)[^"]*"' | sort -u | head
+(no output)
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://www.ansa.it/lazio/notizie/2026/11/20/libridine-torna-dal-21-al-29-novembre-a-roma-con-la-festa-diffusa-della-lettura_1b0a3f5f-8f5f-4b1f-9a5f-0a5f5f5f5f5f.html" -o /dev/null -w "%{http_code}\n"; curl -s "https://news.google.com/rss/search?q=Libridine+Umberto+Guidoni+29+novembre+Roma+Eur&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+items=re.findall(r'<item>(.*?)</item>',t,re.S)
+for it in items[:6]:
+    ti=re.search(r'<title>(.*?)</title>',it,re.S); d=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S); de=re.search(r'<description>(.*?)</description>',it,re.S)
+    print('-',html.unescape(ti.group(1)) if ti else '','|',d.group(1) if d else '')
+"
+404
+- Libridine! porta nove giorni di libri a Roma e nell’area metropolitana - inITALY | Sat, 21 Nov 2026 08:00:00 GMT
+- CS n°2 Ultimi giorni a Roma per Libridine!, il Festival diffuso delle librerie: arrivano Pierluigi Battista, Monica Calcagni, Stefania Limiti, Umberto Guidoni, Lorenzo Pinna e Csaba dalla Zorza - Easy News Press Agency | Thu, 26 Nov 2026 15:30:00 GMT
+- Libridine!, il festival diffuso delle librerie - RomaToday | Fri, 20 Nov 2026 13:35:20 GMT
+- Dal 21 al 29 novembre torna 'Libridine!', il Festival diffuso delle librerie - ANSA | Fri, 20 Nov 2026 17:20:00 GMT
+- ROMA | «Libridine!», dal 21 al 29 novembre torna il festival della lettura con 60 librerie coinvolte - Mondoreale | Fri, 20 Nov 2026 10:58:54 GMT
+- Libridine a Roma: Lagioia, Volo e 60 librerie, gli incontri da non perdere - UniversiNet Magazine | Sat, 21 Nov 2026 13:11:34 GMT
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://www.wegil.it/" | grep -oE 'href="https://www.wegil.it/[^"]*"' | sort -u | grep -iE 'adams|mostra|event' | head -20
+(no output)
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://www.wegil.it/" | grep -oE 'href="[^"]+"' | sort -u | head -40
+(no output)
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && tail -60 covers/generate.py && ls covers | tail -12
+def cover(c: dict) -> str:
+    accent = c["accent"]
+    lines = c["title"]
+    title_svg = []
+    y = 330 if len(lines) == 2 else 360
+    for line in lines:
+        title_svg.append(
+            f'<text x="80" y="{y}" font-family="PT Sans, Arial, sans-serif" '
+            f'font-size="112" font-weight="800" fill="#FFFFFF" letter-spacing="-3">{escape(line)}</text>'
+        )
+        y += 122
+    sub_y = y + 8
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="810" viewBox="0 0 1080 810">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A1424"/>
+      <stop offset="0.55" stop-color="#132844"/>
+      <stop offset="1" stop-color="#1B3352"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="82%" cy="18%" r="55%">
+      <stop offset="0" stop-color="{accent}" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="{accent}" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1080" height="810" fill="url(#bg)"/>
+  <rect width="1080" height="810" fill="url(#glow)"/>
+  <rect x="30" y="30" width="1020" height="750" rx="28" fill="none" stroke="{accent}" stroke-opacity="0.28" stroke-width="2"/>
+
+  <g font-family="PT Sans, Arial, sans-serif">
+    <circle cx="86" cy="92" r="9" fill="{accent}"/>
+    <text x="110" y="100" font-size="22" font-weight="700" fill="#DCE8F4" letter-spacing="5">РИМ ДЛЯ СВОЇХ</text>
+    <text x="994" y="100" text-anchor="end" font-size="20" font-weight="600" fill="#7F95A9" letter-spacing="3">РИМ · ІТАЛІЯ</text>
+
+    <text x="80" y="230" font-size="24" font-weight="700" fill="{accent}" letter-spacing="5">{escape(c["kicker"])}</text>
+    {"".join(title_svg)}
+    <text x="82" y="{sub_y}" font-size="31" font-weight="500" fill="#C9D6E2">{escape(c["sub"])}</text>
+
+    <rect x="80" y="638" width="{int(len(c["date"]) * 17 + 64)}" height="66" rx="33" fill="{accent}"/>
+    <text x="112" y="682" font-size="27" font-weight="800" fill="#0A1424" letter-spacing="1">{escape(c["date"])}</text>
+
+    <text x="80" y="752" font-size="18" font-weight="600" fill="#7F95A9" letter-spacing="3">t.me/rim_dlia_svoih</text>
+  </g>
+
+  {colosseum(accent)}
+  {icon(c["icon"], accent)}
+</svg>
+'''
+
+
+def main() -> None:
+    for c in COVERS:
+        path = OUT / f'{c["file"]}.svg'
+        path.write_text(cover(c), encoding="utf-8")
+        print(path)
+
+
+if __name__ == "__main__":
+    main()
+2026-11-21-rome-weekend-parade-fl1.svg
+2026-11-22-rome-week-panettone-bazar.png
+2026-11-22-rome-week-panettone-bazar.svg
+2026-11-23-rome-tram3-free-exhibitions-25nov.png
+2026-11-23-rome-tram3-free-exhibitions-25nov.svg
+2026-11-24-rome-parking-free-museums-chocolate-ensemble.png
+2026-11-24-rome-parking-free-museums-chocolate-ensemble.svg
+2026-11-25-rome-fl1-airport-borromini-ice-rink.png
+2026-11-25-rome-fl1-airport-borromini-ice-rink.svg
+2026-11-25-rome-weekend-cie-christmas-chocolate.png
+2026-11-25-rome-weekend-cie-christmas-chocolate.svg
+generate.py
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && cat content/extra/2026-11-26-rome-terme-traiano-harry-potter-strike.md | head -20 && echo "=====IT=====" && head -20 content/it/2026-11-26-rome-terme-traiano-harry-potter-strike.md && echo "=====CH=====" && cat content/channel/2026-11-26-rome-terme-traiano-harry-potter-strike-post.md
+🏛 **Рим, 26 листопада: Терми Траяна відкрили четверги, ялинка Harry Potter у центрі й страйк 4 грудня**
+
+Сьогодні — п'ять речей для тих, хто живе в Римі: як потрапити в новий музей на Колле Оппіо, куди йти в суботу на безкоштовне запалення ялинки, що буде з транспортом 4 грудня і як спланувати довгі вихідні 6–8 грудня.
+
+**🏛 Терми Траяна: з сьогодні екскурсії ще й у четвер**
+Музей у підземній галереї Терм Траяна на Колле Оппіо відкрився цього року і вже прийняв понад 3 500 відвідувачів. З 26 листопада до 31 грудня одинаки можуть приходити не лише на вихідних, а й щочетверга з 10:00 до 15:00, екскурсії кожні 30 хвилин. 24 і 31 грудня — з 10:00 до 13:00.
+
+Адреса: viale del Monte Oppio, ріг via delle Terme di Tito (Colle Oppio), поруч з Колізеєм і станцією метро Colosseo (лінія B).
+
+Як потрапити:
+• тільки з гідом, групи до 20 осіб, екскурсія італійською;
+• бронювання обов'язкове: 060608 (щодня 9:00–19:00) або онлайн на sovraintendenzaroma.it;
+• квиток: 7,50 € повний для нерезидентів, 6 € пільговий; з чинною MIC Card — безкоштовно (картку не можна активувати на місці);
+• готівку не приймають, онлайн-купівлю радять зробити заздалегідь;
+• взуття — зручне, частина маршруту просто неба.
+
+Що побачите: південно-західну екседру терм, підземну галерею з фрескою «Зображене місто» (Città Dipinta) і Великою мозаїкою. Перша неділя місяця (6 грудня) — безкоштовно, але квитки лише онлайн і з'являються в четвер перед неділею.
+
+**🎄 Субота 28 листопада: безкоштовне запалення ялинок Harry Potter**
+Galleria Alberto Sordi на via del Corso перетворюється на Хогвартс: два різдвяні дерева, гірлянда HBO Max, прапори чотирьох гуртожитків і вітрини з Гаррі, Герміоною й Роном заввишки понад 4 метри.
+=====IT=====
+🏛 **Roma, 26 novembre: le Terme di Traiano aprono il giovedì, gli alberi di Harry Potter e lo sciopero del 4 dicembre**
+
+Cinque cose utili per chi vive a Roma: come entrare nel nuovo museo sul Colle Oppio, dove andare sabato per l'accensione gratuita degli alberi, cosa succede ai trasporti il 4 dicembre e come organizzare il ponte del 6–8 dicembre.
+
+**🏛 Terme di Traiano: da oggi visite anche il giovedì**
+Il museo nella galleria sotterranea delle Terme di Traiano, sul Colle Oppio, ha aperto quest'anno e ha già accolto oltre 3.500 visitatori. Dal 26 novembre al 31 dicembre i visitatori singoli possono entrare non solo nel weekend ma anche ogni giovedì dalle 10:00 alle 15:00, con visite ogni 30 minuti. Il 24 e il 31 dicembre dalle 10:00 alle 13:00.
+
+Indirizzo: viale del Monte Oppio, angolo via delle Terme di Tito (Colle Oppio), vicino al Colosseo e alla metro Colosseo (linea B).
+
+Come partecipare:
+• solo visita guidata, gruppi fino a 20 persone, in italiano;
+• prenotazione obbligatoria: 060608 (tutti i giorni 9:00–19:00) oppure online su sovraintendenzaroma.it;
+• biglietto: 7,50 € intero per i non residenti, 6 € ridotto; gratis con la MIC Card in corso di validità (non si può attivare sul posto);
+• non si accettano contanti, l'acquisto online è fortemente consigliato;
+• scarpe comode, una parte del percorso è all'aperto.
+
+Cosa si vede: l'esedra sud-occidentale delle terme, la galleria sotterranea con l'affresco della Città Dipinta e il Grande Mosaico. La prima domenica del mese (6 dicembre) l'ingresso è gratuito, ma i biglietti si comprano solo online e compaiono il giovedì precedente.
+
+**🎄 Sabato 28 novembre: accensione gratuita degli alberi di Harry Potter**
+La Galleria Alberto Sordi, in via del Corso, si trasforma in Hogwarts: due alberi di Natale, una ghirlanda HBO Max, gli stendardi delle quattro Case e vetrofanie alte più di 4 metri con Harry, Hermione e Ron.
+=====CH=====
+cat: content/channel/2026-11-26-rome-terme-traiano-harry-potter-strike-post.md: No such file or directory
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && head -80 covers/generate.py && echo ... && grep -n "2026-11-25-rome-weekend" -A 10 covers/generate.py
+#!/usr/bin/env python3
+"""Генерує обкладинки 1080×810 для постів каналу «Рим для своїх»."""
+from pathlib import Path
+from html import escape
+
+OUT = Path(__file__).parent
+
+COVERS = [
+    {
+        "file": "2026-11-09-intro",
+        "kicker": "ЗНАЙОМСТВО",
+        "title": ["РИМ", "ДЛЯ СВОЇХ"],
+        "sub": "Щотижневий дайджест для українців",
+        "date": "СТАРТ 09.11.2026",
+        "accent": "#FFD166",
+        "icon": "home",
+    },
+    {
+        "file": "2026-11-10-transport",
+        "kicker": "ТРАНСПОРТ",
+        "title": ["ЩО ЗМІНИЛОСЯ", "ЦЬОГО ТИЖНЯ"],
+        "sub": "Roma-Lido · Lepanto · страйки 20–21.11",
+        "date": "9–15 ЛИСТОПАДА",
+        "accent": "#5FD3C4",
+        "icon": "metro",
+    },
+    {
+        "file": "2026-11-10-rent",
+        "kicker": "ЖИТЛО Й ГРОШІ",
+        "title": ["СКІЛЬКИ", "КОШТУЄ РИМ"],
+        "sub": "Оренда · ярмарок · здоров'я · культура",
+        "date": "10 ЛИСТОПАДА",
+        "accent": "#FFB86B",
+        "icon": "wallet",
+    },
+    {
+        "file": "2026-11-10-events",
+        "kicker": "КАЛЕНДАР",
+        "title": ["РИМ ПЕРЕД", "СВЯТАМИ"],
+        "sub": "Japan Days · екологічна неділя · ярмарки",
+        "date": "14.11 — 08.12",
+        "accent": "#E5C07B",
+        "icon": "pin",
+    },
+    {
+        "file": "2026-11-10-codice-fiscale",
+        "kicker": "ДОКУМЕНТИ",
+        "title": ["CODICE", "FISCALE"],
+        "sub": "16 символів, без яких нічого не оформити",
+        "date": "БЕЗКОШТОВНО",
+        "accent": "#7FB2F0",
+        "icon": "doc",
+    },
+    {
+        "file": "2026-11-10-italy-military-aid",
+        "kicker": "УКРАЇНА І СВІТ",
+        "title": ["13-Й ПАКЕТ", "ДОПОМОГИ"],
+        "sub": "Італія підтвердила нову військову підтримку",
+        "date": "10 ЛИСТОПАДА",
+        "accent": "#6EC1FF",
+        "icon": "shield",
+    },
+    {
+        "file": "2026-11-21-rome-weekend-parade-fl1",
+        "kicker": "ВИХІДНІ",
+        "title": ["ПАРАД І", "МАРКЕТИ"],
+        "sub": "Christmas Parade · Ficus · Vegan Village · FL1",
+        "date": "21–22 ЛИСТОПАДА",
+        "accent": "#FFB86B",
+        "icon": "pin",
+    },
+    {
+        "file": "2026-11-20-rome-weekend-cie-museums",
+        "kicker": "РИМ",
+        "title": ["ВИХІДНІ", "21–22 ЛИСТОПАДА"],
+        "sub": "Страйк · CIE · Ніч музеїв",
+        "date": "20 ЛИСТОПАДА",
+        "accent": "#F0A868",
+        "icon": "metro",
+    },
+...
+262:        "file": "2026-11-25-rome-weekend-cie-christmas-chocolate",
+263-        "kicker": "ВИХІДНІ В РИМІ",
+264-        "title": ["БЕЗКОШТОВНА", "НЕДІЛЯ"],
+265-        "sub": "CIE · шоколад · Christmas World",
+266-        "date": "26–29 ЛИСТОПАДА",
+267-        "accent": "#E5C07B",
+268-        "icon": "pin",
+269-    },
+270-]
+271-
+272-
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && git log --oneline -8 && echo --- && sed -n '1,80p' publish.py
+74ccc1d Пост: Рим 26–29.11 — CIE open day, Roma Chocolate, Christmas World, безкоштовний Ватикан
+916a6b0 Update morning run log for 25 Nov post
+6ae964c Add posts: Rome 24 Nov (pending) and 25 Nov - FL1 airport closure, Borromini library, free ice rink, weather (uk+it)
+ad8f1f8 Add post: Rome 23 Nov - tram 3 restored, free Riccardi 100 and Shodo exhibitions, 25 Nov city programme (uk+it)
+eae3a15 Add post: Rome 23-29 Nov - Panettone Maximo, Urban Bazar, Arché market, Christmas Garden, FL1 restored, weather
+c275cb7 Add post: Rome 21-22 Nov - Carabinieri open day, witches market, charity markets, road closures, Amazing Wonders (uk+it)
+d0e8c9b Add post: Rome weekend 21-22 Nov - Christmas Parade, Ficus al Massimo, Vegan Village, Game Vintage, FL1 works, Ama collection (uk+it)
+f683e92 Autopost: Rome-only prompts; move repo to ~/rim-dlia-svoikh so launchd can read it (macOS Documents protection); docs
+---
+#!/usr/bin/env python3
+"""
+Публікація постів у Telegram-канал «Рим для своїх» через Bot API.
+
+Підготовка (один раз):
+  1. Створіть бота в @BotFather → отримайте токен.
+  2. Додайте бота адміністратором каналу з правами:
+     Post messages, Edit messages, Change channel info.
+  3. Створіть файл .env поруч із цим скриптом:
+        TELEGRAM_BOT_TOKEN=123456:ABC...
+        TELEGRAM_CHANNEL=@rim_dlia_svoih
+     і виконайте: chmod 600 .env
+
+Команди:
+  python3 publish.py check
+  python3 publish.py setup
+  python3 publish.py pinned
+  python3 publish.py post 3
+  python3 publish.py all
+  python3 publish.py pin 123
+  python3 publish.py post 3 --dry-run
+
+Токен нікуди не надсилається, крім api.telegram.org.
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import os
+import re
+import sys
+import urllib.error
+import urllib.request
+import uuid
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+ENV_FILE = ROOT / ".env"
+DEFAULT_CHANNEL = "@rim_dlia_svoih"
+
+# 0-based індекси постів → обкладинки (тепер є в кожного поста)
+COVERS = {
+    0: ROOT / "covers/2026-11-09-intro.png",
+    1: ROOT / "covers/2026-11-10-transport.png",
+    2: ROOT / "covers/2026-11-11-kids.png",
+    3: ROOT / "covers/2026-11-12-exhibitions.png",
+    4: ROOT / "covers/2026-11-13-money.png",
+    5: ROOT / "covers/2026-11-14-weekend.png",
+    6: ROOT / "covers/2026-11-15-digest.png",
+}
+
+DESCRIPTION = (
+    "Щотижневий дайджест для українців у Римі: події, транспорт, житло, "
+    "робота, здоров'я, безпека. Без паніки, з джерелами. 🇺🇦🇮🇹"
+)
+
+
+def load_env() -> None:
+    if not ENV_FILE.exists():
+        return
+    for raw in ENV_FILE.read_text(encoding="utf-8").splitlines():
+        line = raw.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, value = line.split("=", 1)
+        os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))
+
+
+def token() -> str:
+    value = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
+    if not value:
+        sys.exit(
+            "Немає TELEGRAM_BOT_TOKEN. Створіть .env поруч зі скриптом:\n"
+            "  TELEGRAM_BOT_TOKEN=123456:ABC...\n"
+            "  TELEGRAM_CHANNEL=@rim_dlia_svoih"
+        )
+    return value
+
+
+def channel() -> str:
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && grep -n "def cmd_file" -A 40 publish.py && grep -n "1024\|caption" publish.py | head -30
+276:def cmd_file(args) -> None:
+277-    path = Path(args.file)
+278-    if not path.is_absolute():
+279-        path = ROOT / path
+280-    if not path.exists():
+281-        sys.exit(f"Немає файлу: {path}")
+282-    text = path.read_text(encoding="utf-8").strip()
+283-    cover = Path(args.cover) if args.cover else ROOT / "covers" / f"{path.stem}.png"
+284-    if not cover.is_absolute():
+285-        cover = ROOT / cover
+286-    if not cover.exists():
+287-        sys.exit(f"Немає обкладинки: {cover}")
+288-    print(f"Пост: {len(text)} символів · {path.name} · обкладинка {cover.name}")
+289-    if len(text) > 1024:
+290-        sys.exit(f"Підпис {len(text)} символів — більше ліміту 1024.")
+291-    message_id = send_photo(text, cover, args.dry_run)
+292-    print(f"  message_id={message_id}")
+293-
+294-
+295-def cmd_pin(args) -> None:
+296-    if args.dry_run:
+297-        print(f"  [dry-run] pinChatMessage · message_id={args.message_id}")
+298-        return
+299-    api(
+300-        "pinChatMessage",
+301-        {
+302-            "chat_id": channel(),
+303-            "message_id": args.message_id,
+304-            "disable_notification": True,
+305-        },
+306-    )
+307-    print(f"Закріплено message_id={args.message_id}")
+308-
+309-
+310-def main() -> None:
+311-    load_env()
+312-    parser = argparse.ArgumentParser(description="Публікація в Telegram-канал «Рим для своїх»")
+313-    sub = parser.add_subparsers(dest="command", required=True)
+314-
+315-    p_check = sub.add_parser("check", help="перевірити бота, канал і права")
+316-    p_check.set_defaults(func=cmd_check)
+148:def html_caption(text: str) -> str:
+169:            "text": html_caption(text),
+181:    if len(text) > 1024:
+182:        sys.exit(f"Підпис {len(text)} символів — більше ліміту 1024.")
+188:            "caption": html_caption(text),
+289:    if len(text) > 1024:
+290:        sys.exit(f"Підпис {len(text)} символів — більше ліміту 1024.")
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && git show --stat 74ccc1d | head -30 && echo --- && git show --stat 916a6b0 | head -20
+commit 74ccc1d5f9c7af4d48d471a4fbcaadf15ab9be9a
+Author: terkin <terkin.web@gmail.com>
+Date:   Wed Nov 25 19:59:03 2026 +0100
+
+    Пост: Рим 26–29.11 — CIE open day, Roma Chocolate, Christmas World, безкоштовний Ватикан
+
+ automation/candidates.json                         | 354 ++++++++--------
+ automation/logs/2026-11-25-0900-morning.log        |  26 ++
+ automation/logs/2026-11-25-1913-evening.log        | 466 +++++++++++++++++++++
+ ...25-rome-weekend-cie-christmas-chocolate-post.md |  13 +
+ ...6-11-25-rome-weekend-cie-christmas-chocolate.md |  47 +++
+ ...6-11-25-rome-weekend-cie-christmas-chocolate.md |  47 +++
+ ...-11-25-rome-weekend-cie-christmas-chocolate.png | Bin 0 -> 191726 bytes
+ ...-11-25-rome-weekend-cie-christmas-chocolate.svg |  35 ++
+ covers/generate.py                                 |   9 +
+ ...-11-25-rome-weekend-cie-christmas-chocolate.png | Bin 0 -> 191726 bytes
+ docs/index.html                                    |  11 +-
+ docs/it/index.html                                 |  11 +-
+ ...-11-25-rome-fl1-airport-borromini-ice-rink.html |   2 +-
+ ...11-25-rome-weekend-cie-christmas-chocolate.html | 187 +++++++++
+ ...-11-25-rome-fl1-airport-borromini-ice-rink.html |   2 +-
+ ...11-25-rome-weekend-cie-christmas-chocolate.html | 187 +++++++++
+ docs/rss.xml                                       |   7 +
+ docs/sitemap.xml                                   |   2 +
+ 18 files changed, 1225 insertions(+), 181 deletions(-)
+---
+commit 916a6b08ba1f39d77c8e5131d5b72213d52c0edc
+Author: terkin <terkin.web@gmail.com>
+Date:   Wed Nov 25 09:46:25 2026 +0100
+
+    Update morning run log for 25 Nov post
+
+ automation/logs/2026-11-25-0900-morning.log | 113 ++++++++++++++++++++++++++++
+ 1 file changed, 113 insertions(+)
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && git status --short | head -30 && echo --- && ls -la automation/logs | tail -8
+M automation/candidates.json
+ M automation/logs/2026-11-25-1913-evening.log
+?? automation/logs/2026-11-26-0900-morning.log
+?? automation/logs/2026-11-26-1944-evening.log
+?? automation/logs/2026-11-27-0900-morning.log
+?? content/extra/2026-11-26-rome-terme-traiano-harry-potter-strike.md
+?? content/it/2026-11-26-rome-terme-traiano-harry-potter-strike.md
+---
+-rw-r--r--   1 terkin  staff   40398 Nov 25 20:00 2026-11-25-1913-evening.log
+-rw-r--r--   1 terkin  staff  230331 Nov 26 09:12 2026-11-26-0900-morning.log
+-rw-r--r--   1 terkin  staff     215 Nov 26 19:44 2026-11-26-1944-evening.log
+-rw-r--r--   1 terkin  staff  156918 Nov 27 09:06 2026-11-27-0900-morning.log
+-rw-r--r--@  1 terkin  staff       0 Nov 20 09:49 launchd-evening.err
+-rw-r--r--@  1 terkin  staff       0 Nov 19 19:18 launchd-evening.out
+-rw-r--r--@  1 terkin  staff       0 Nov 20 09:49 launchd-morning.err
+-rw-r--r--@  1 terkin  staff       0 Nov 20 09:00 launchd-morning.out
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && tail -60 automation/logs/2026-11-27-0900-morning.log && echo "=====26EVENING=====" && cat automation/logs/2026-11-26-1944-evening.log
+181:    if len(text) > 1024:
+182:        sys.exit(f"Підпис {len(text)} символів — більше ліміту 1024.")
+188:            "caption": html_caption(text),
+289:    if len(text) > 1024:
+290:        sys.exit(f"Підпис {len(text)} символів — більше ліміту 1024.")
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && git show --stat 74ccc1d | head -30 && echo --- && git show --stat 916a6b0 | head -20
+commit 74ccc1d5f9c7af4d48d471a4fbcaadf15ab9be9a
+Author: terkin <terkin.web@gmail.com>
+Date:   Wed Nov 25 19:59:03 2026 +0100
+
+    Пост: Рим 26–29.11 — CIE open day, Roma Chocolate, Christmas World, безкоштовний Ватикан
+
+ automation/candidates.json                         | 354 ++++++++--------
+ automation/logs/2026-11-25-0900-morning.log        |  26 ++
+ automation/logs/2026-11-25-1913-evening.log        | 466 +++++++++++++++++++++
+ ...25-rome-weekend-cie-christmas-chocolate-post.md |  13 +
+ ...6-11-25-rome-weekend-cie-christmas-chocolate.md |  47 +++
+ ...6-11-25-rome-weekend-cie-christmas-chocolate.md |  47 +++
+ ...-11-25-rome-weekend-cie-christmas-chocolate.png | Bin 0 -> 191726 bytes
+ ...-11-25-rome-weekend-cie-christmas-chocolate.svg |  35 ++
+ covers/generate.py                                 |   9 +
+ ...-11-25-rome-weekend-cie-christmas-chocolate.png | Bin 0 -> 191726 bytes
+ docs/index.html                                    |  11 +-
+ docs/it/index.html                                 |  11 +-
+ ...-11-25-rome-fl1-airport-borromini-ice-rink.html |   2 +-
+ ...11-25-rome-weekend-cie-christmas-chocolate.html | 187 +++++++++
+ ...-11-25-rome-fl1-airport-borromini-ice-rink.html |   2 +-
+ ...11-25-rome-weekend-cie-christmas-chocolate.html | 187 +++++++++
+ docs/rss.xml                                       |   7 +
+ docs/sitemap.xml                                   |   2 +
+ 18 files changed, 1225 insertions(+), 181 deletions(-)
+---
+commit 916a6b08ba1f39d77c8e5131d5b72213d52c0edc
+Author: terkin <terkin.web@gmail.com>
+Date:   Wed Nov 25 09:46:25 2026 +0100
+
+    Update morning run log for 25 Nov post
+
+ automation/logs/2026-11-25-0900-morning.log | 113 ++++++++++++++++++++++++++++
+ 1 file changed, 113 insertions(+)
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && git status --short | head -30 && echo --- && ls -la automation/logs | tail -8
+M automation/candidates.json
+ M automation/logs/2026-11-25-1913-evening.log
+?? automation/logs/2026-11-26-0900-morning.log
+?? automation/logs/2026-11-26-1944-evening.log
+?? automation/logs/2026-11-27-0900-morning.log
+?? content/extra/2026-11-26-rome-terme-traiano-harry-potter-strike.md
+?? content/it/2026-11-26-rome-terme-traiano-harry-potter-strike.md
+---
+-rw-r--r--   1 terkin  staff   40398 Nov 25 20:00 2026-11-25-1913-evening.log
+-rw-r--r--   1 terkin  staff  230331 Nov 26 09:12 2026-11-26-0900-morning.log
+-rw-r--r--   1 terkin  staff     215 Nov 26 19:44 2026-11-26-1944-evening.log
+-rw-r--r--   1 terkin  staff  156918 Nov 27 09:06 2026-11-27-0900-morning.log
+-rw-r--r--@  1 terkin  staff       0 Nov 20 09:49 launchd-evening.err
+-rw-r--r--@  1 terkin  staff       0 Nov 19 19:18 launchd-evening.out
+-rw-r--r--@  1 terkin  staff       0 Nov 20 09:49 launchd-morning.err
+-rw-r--r--@  1 terkin  staff       0 Nov 20 09:00 launchd-morning.out
+> build · deepseek-v4.1-flash-free
+=====26EVENING=====
+=== 2026-11-26 19:44:43 slot=evening ===
+[0m
+> build · deepseek-v4.1-flash-free
+[91m[1mError: [0mFree usage limit reached. Connect a provider or subscribe to OpenCode Go to keep going, or switch models.
+exit=1
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://t.me/s/rim_dlia_svoih" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+msgs=re.findall(r'data-post=\"rim_dlia_svoih/(\d+)\"',t)
+print('posts:',msgs[:10])
+txt=re.sub(r'<[^>]+>',' ',t); txt=html.unescape(txt); txt=re.sub(r'\s+',' ',txt)
+i=txt.find('Рим')
+print(txt[-3000:])
+"
+posts: ['13', '14', '15', '16', '17', '18', '19', '20', '21', '22']
+нлайн до 28.11, діти до 12 — безкоштовно. 🎁 Arché Natale. Сб–нд 28–29.11, 10:00–19:00, via Tagliamento 4, вхід вільний: благодійний маркет. Деталі: https://ucrainiroma.it/posts/2026-11-22-rome-week-panettone-bazar.html 3 views 18:39 Рим для своїх | Українці в Римі 🚋 Рим, 23.11: трамвай 3, безкоштовні виставки, 25 листопада 🚋 Трамвай 3 знову їде від Trastevere до Valle Giulia. У будні після 21:00 — автобуси між Trastevere і Porta Maggiore. Ночами 23–24.11 (22:30–04:30) роботи на Ponte Sublicio — об'їзд. Лінія 19: трамвай лише Porta Maggiore–Valle Giulia. 📷 Riccardi 100 — безкоштовна фотоісторія Риму ХХ ст. у WeGil (largo Ascianghi 5, Trastevere) до 29.11, щодня 10–19. ✍️ Shodō — 50 робіт японської каліграфії в Istituto Giapponese (via Gramsci 74) до 4.12, пн–пт 9–12:30 і 13:30–17, вхід вільний. 🟠 25 листопада — День проти насильства над жінками: фасад Кампідолію підсвітять номером 1522 (17:30–23:00). Безкоштовна презентація книги в Palazzo Massimo о 17:00, потрібна броня. Допомога — 1522, цілодобово. Деталі: https://ucrainiroma.it/posts/2026-11-23-rome-tram3-free-exhibitions-25nov.html 3 views 08:06 Рим для своїх | Українці в Римі 🚆 Рим, 25.11: аеропорт без поїздів, Борроміні й лід безкоштовно FL1 / Leonardo Express: 26–29.11 поїзди скасовані між Roma Ostiense і Fiumicino. Замість них автобуси із зупинками на всіх станціях; Leonardo Express — автобус Termini–Fiumicino. Час у дорозі довший, місць менше. Складаний велосипед до 40×30×15 см можна, самокати — ні. Довідка: 800 892 021. ZTL/Sosta: онлайн-дозволи не працюють 27.11 17:00 — 29.11 18:00. Оформіть заздалегідь. Безкоштовно: Sala Alessandrina Борроміні (Corso del Rinascimento 40) і виставка про Колізей до 15.01, вт/ср/пт 14–18, чт 9–13. Ковзанка: Colle Oppio, 4.12–28.02, 10–20, вхід вільний, метро B Colosseo. Погода: сьогодні жовте попередження — дощ, грози, вітер. Деталі: https://ucrainiroma.it/posts/2026-11-25-rome-fl1-airport-borromini-ice-rink.html 3 views 08:38 Рим для своїх | Українці в Римі 🎄 Рим, 26–29.11: безкоштовний Ватикан, шоколад і Christmas World 🪪 CIE, open day 28–29.11: запис — з 9:00 пʼятниці 27.11 на prenotazionicie.interno.gov.it , без нього не приймають. Субота: Municipi II (Dire Daua 11, 8–13), III (Fracchia 45, 8–17), VII (Cinecittà 11 і Fortifiocca 71), XIII (Aurelia 470), XV (Bassano 10) — 8:30–16. Центр (Cinque Lune, Sonnino, Santa Maria Maggiore, Petroselli 52): сб 8:30–16:30, нд 8:30–12:30. Взяти: підтвердження, фото, картку, документ. 🍫 Roma Chocolate: 27–29.11, piazza Risorgimento, 10–23, вхід вільний, метро A. 🎄 Christmas World: з 28.11, Вілла Боргезе (вхід piazzale delle Canestre), 10–20 до 10.01. Дорослий від 12,50 €, діти 3–11 від 10,50 €, онлайн на 2 € дешевше. 🏛 Нд 29.11: Музеї Ватикану безкоштовно, 9–14, останній вхід 12:30, без бронювання — приходьте рано. 🌤 Вихідні сухі й холодні: сб 8–15 °C, нд 7–14 °C. FL1 до аеропорту — автобуси до 29.11. Деталі: https://ucrainiroma.it/posts/2026-11-25-rome-weekend-cie-christmas-chocolate.html 1 view 18:59 TWeb.init();
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -s "https://news.google.com/rss/search?q=Biciplan+Roma+1000+km+ciclabili+Patan%C3%A8&hl=it&gl=IT&ceid=IT:it" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+items=re.findall(r'<item>(.*?)</item>',t,re.S)
+for it in items[:8]:
+    ti=re.search(r'<title>(.*?)</title>',it,re.S); d=re.search(r'<pubDate>(.*?)</pubDate>',it,re.S); de=re.search(r'<description>(.*?)</description>',it,re.S)
+    print('-',html.unescape(ti.group(1)) if ti else '','|',d.group(1) if d else '')
+    print('  ',re.sub('<[^>]+>','',html.unescape(de.group(1)))[:300] if de else '')
+"
+- Roma, il nuovo Biciplan si amplia dopo la fase partecipativa - Eco dalle Città | Fri, 18 Sep 2026 07:00:00 GMT
+   Roma, il nuovo Biciplan si amplia dopo la fase partecipativa&nbsp;&nbsp;Eco dalle Città
+- Roma, ciclabile via Panama: modifiche al progetto dopo le proteste dei residenti - RaiNews | Sun, 28 Sep 2025 07:00:00 GMT
+   Roma, ciclabile via Panama: modifiche al progetto dopo le proteste dei residenti&nbsp;&nbsp;RaiNews
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && for u in "https://www.libridine.it/" "https://libridine.it/"; do echo "== $u"; curl -sL -o /dev/null -w "%{http_code}\n" "$u"; done
+== https://www.libridine.it/
+200
+== https://libridine.it/
+200
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && curl -sL "https://www.libridine.it/" | python3 -c "
+import sys,re,html
+t=sys.stdin.read()
+t=re.sub(r'<script.*?</script>','',t,flags=re.S); t=re.sub(r'<style.*?</style>','',t,flags=re.S)
+t=re.sub(r'<[^>]+>',' ',t); t=html.unescape(t); t=re.sub(r'\s+',' ',t)
+print(len(t)); print(t[:2500])
+"
+17
+ SwiteFrontendNg
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && grep -n "def icon" -A 60 covers/generate.py | head -80
+273:def icon(kind: str, accent: str) -> str:
+274-    cx, cy, r = 862, 545, 112
+275-    base = f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="{accent}" stroke-opacity="0.45" stroke-width="2"/>'
+276-    if kind == "wheel":
+277-        spokes = []
+278-        for angle in range(0, 360, 45):
+279-            import math
+280-            a = math.radians(angle)
+281-            x = cx + 74 * math.cos(a)
+282-            y = cy + 74 * math.sin(a)
+283-            spokes.append(f'<line x1="{cx}" y1="{cy}" x2="{x:.1f}" y2="{y:.1f}" stroke="{accent}" stroke-width="3" stroke-opacity="0.8"/>')
+284-            spokes.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="9" fill="{accent}"/>')
+285-        return base + f'<circle cx="{cx}" cy="{cy}" r="76" fill="none" stroke="{accent}" stroke-width="4"/>' + "".join(spokes) + f'<circle cx="{cx}" cy="{cy}" r="10" fill="{accent}"/>'
+286-    if kind == "frame":
+287-        return base + (
+288-            f'<rect x="{cx-72}" y="{cy-60}" width="144" height="120" rx="6" fill="none" stroke="{accent}" stroke-width="4"/>'
+289-            f'<circle cx="{cx-34}" cy="{cy-24}" r="10" fill="{accent}"/>'
+290-            f'<path d="M{cx-60} {cy+44} L{cx-14} {cy-4} L{cx+18} {cy+26} L{cx+46} {cy-10} L{cx+60} {cy+44} Z" fill="{accent}" opacity="0.85"/>'
+291-        )
+292-    if kind == "pin":
+293-        return base + (
+294-            f'<path d="M{cx} {cy-78} C{cx-46} {cy-78} {cx-62} {cy-34} {cx-62} {cy-8} C{cx-62} {cy+38} {cx} {cy+82} {cx} {cy+82} C{cx} {cy+82} {cx+62} {cy+38} {cx+62} {cy-8} C{cx+62} {cy-34} {cx+46} {cy-78} {cx} {cy-78} Z" fill="none" stroke="{accent}" stroke-width="4"/>'
+295-            f'<circle cx="{cx}" cy="{cy-16}" r="22" fill="{accent}"/>'
+296-        )
+297-    if kind == "home":
+298-        return base + (
+299-            f'<path d="M{cx-70} {cy+10} L{cx} {cy-62} L{cx+70} {cy+10}" fill="none" stroke="{accent}" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>'
+300-            f'<path d="M{cx-52} {cy-2} L{cx-52} {cy+66} L{cx+52} {cy+66} L{cx+52} {cy-2}" fill="none" stroke="{accent}" stroke-width="5" stroke-linejoin="round"/>'
+301-            f'<rect x="{cx-16}" y="{cy+22}" width="32" height="44" rx="4" fill="{accent}"/>'
+302-        )
+303-    if kind == "wallet":
+304-        return base + (
+305-            f'<rect x="{cx-70}" y="{cy-46}" width="140" height="92" rx="14" fill="none" stroke="{accent}" stroke-width="4"/>'
+306-            f'<path d="M{cx-70} {cy-16} L{cx+70} {cy-16}" stroke="{accent}" stroke-width="3" stroke-opacity="0.5"/>'
+307-            f'<rect x="{cx+22}" y="{cy-6}" width="48" height="32" rx="8" fill="{accent}"/>'
+308-            f'<circle cx="{cx+46}" cy="{cy+10}" r="5" fill="#0A1424"/>'
+309-        )
+310-    if kind == "doc":
+311-        return base + (
+312-            f'<path d="M{cx-52} {cy-72} L{cx+24} {cy-72} L{cx+56} {cy-40} L{cx+56} {cy+72} L{cx-52} {cy+72} Z" fill="none" stroke="{accent}" stroke-width="4" stroke-linejoin="round"/>'
+313-            f'<path d="M{cx+24} {cy-72} L{cx+24} {cy-40} L{cx+56} {cy-40}" fill="none" stroke="{accent}" stroke-width="4" stroke-linejoin="round"/>'
+314-            f'<line x1="{cx-28}" y1="{cy-16}" x2="{cx+32}" y2="{cy-16}" stroke="{accent}" stroke-width="5" stroke-linecap="round"/>'
+315-            f'<line x1="{cx-28}" y1="{cy+8}" x2="{cx+32}" y2="{cy+8}" stroke="{accent}" stroke-width="5" stroke-linecap="round"/>'
+316-            f'<line x1="{cx-28}" y1="{cy+32}" x2="{cx+12}" y2="{cy+32}" stroke="{accent}" stroke-width="5" stroke-linecap="round"/>'
+317-        )
+318-    if kind == "shield":
+319-        return base + (
+320-            f'<path d="M{cx} {cy-78} L{cx+66} {cy-48} L{cx+66} {cy+4} C{cx+66} {cy+42} {cx+28} {cy+68} {cx} {cy+84} C{cx-28} {cy+68} {cx-66} {cy+42} {cx-66} {cy+4} L{cx-66} {cy-48} Z" fill="none" stroke="{accent}" stroke-width="4" stroke-linejoin="round"/>'
+321-            f'<path d="M{cx-24} {cy} L{cx-6} {cy+20} L{cx+28} {cy-18}" fill="none" stroke="{accent}" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>'
+322-        )
+323-    if kind == "mail":
+324-        return base + (
+325-            f'<rect x="{cx-72}" y="{cy-50}" width="144" height="100" rx="12" fill="none" stroke="{accent}" stroke-width="4"/>'
+326-            f'<path d="M{cx-64} {cy-40} L{cx} {cy+8} L{cx+64} {cy-40}" fill="none" stroke="{accent}" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>'
+327-            f'<path d="M{cx-64} {cy+40} L{cx-18} {cy-2} M{cx+64} {cy+40} L{cx+18} {cy-2}" stroke="{accent}" stroke-width="3" stroke-opacity="0.6"/>'
+328-        )
+329-    # metro
+330-    return base + (
+331-        f'<rect x="{cx-64}" y="{cy-52}" width="128" height="104" rx="18" fill="none" stroke="{accent}" stroke-width="4"/>'
+332-        f'<path d="M{cx-38} {cy+30} L{cx-38} {cy-24} L{cx} {cy+10} L{cx+38} {cy-24} L{cx+38} {cy+30}" fill="none" stroke="{accent}" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>'
+333-        f'<line x1="{cx-92}" y1="{cy+78}" x2="{cx+92}" y2="{cy+78}" stroke="{accent}" stroke-width="3" stroke-dasharray="10 10" stroke-opacity="0.7"/>'
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && grep -n "def parse\|title\|extra" automation/site.py | head -40
+34:EXTRA = ROOT / "content/extra"
+138:        "title_index": "Рим для своїх — телеграм-канал для українців у Римі",
+168:        "title_index": "Ucraini a Roma — eventi, trasporti, casa e lavoro | Rim per i nostri",
+185:def extra_stems() -> set[str]:
+190:    planned = extra_stems()
+237:    Підтримує **жирний** усередині рядка (markdown-файли з content/extra).
+278:    posts.extend(extra_posts(translations))
+295:        "title": first_line(text),
+299:        "title_it": first_line(text_it) if text_it else "",
+306:def extra_posts(translations: dict[str, str] | None = None) -> list[dict]:
+307:    """Окремі пости з content/extra/<slug>.md + covers/<slug>.png."""
+313:            raise SystemExit(f"Немає обкладинки {cover.name} для content/extra/{path.name}")
+401:    title: str,
+405:    extra_head: str = "",
+429:<title>{esc(title)}</title>
+434:<meta property="og:title" content="{esc(title)}">
+440:<meta name="twitter:title" content="{esc(title)}">
+443:<link rel="alternate" type="application/rss+xml" title="{esc(SITE_NAME[lang])}" href="{SITE_URL}/rss.xml">
+446:{extra_head}
+515:  <a href="{(p['url'] if lang == 'uk' else p['url_it'])}"><img src="{SITE_URL}/covers/{p['cover'].name}" alt="{esc(p['title'] if lang == 'uk' else p['title_it'])}" loading="lazy" width="640" height="480"></a>
+518:    <h3><a href="{(p['url'] if lang == 'uk' else p['url_it'])}">{esc(p['title'] if lang == 'uk' else p['title_it'])}</a></h3>
+529:  <h3>{esc(title)}</h3>
+532:        for icon, title, text in TOPICS[lang]
+538:  <h3>{esc(title)}</h3>
+541:        for n, title, text in STEPS[lang]
+558:                "name": p["title"] if lang == "uk" else p["title_it"],
+648:    extra = (
+656:        t["title_index"],
+660:        extra,
+672:    title = post["title_it"] if it else post["title"]
+678:    post_title = lambda p: p["title_it"] if it else p["title"]
+682:        pager.append(f'<a href="{post_url(prev)}">← {esc(post_title(prev))}</a>')
+686:        pager.append(f'<a href="{post_url(nxt)}">{esc(post_title(nxt))} →</a>')
+691:        "headline": title,
+714:  <h1>{esc(title)}</h1>
+717:    <img src="{SITE_URL}/covers/{post['cover'].name}" alt="{esc(title)}" width="1080" height="810">
+725:        f"{title} — {BRAND[lang]}",
+774:      <title>{xml_escape(p['title'])}</title>
+785:    <title>{xml_escape(CHANNEL_TITLE)}</title>
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && sed -n '185,320p' automation/site.py
+def extra_stems() -> set[str]:
+    return {path.stem for path in EXTRA.glob("*.md")}
+
+
+def cover_files() -> list[Path]:
+    planned = extra_stems()
+    return [path for path in sorted(COVERS.glob("2026-*.png")) if path.stem not in planned]
+
+
+def slug_from_cover(cover: Path) -> str:
+    return cover.stem
+
+
+def post_date(cover: Path) -> datetime:
+    return datetime.strptime(cover.name[:10], "%Y-%m-%d")
+
+
+def human_date(value: datetime) -> str:
+    return f"{value.day} {MONTHS[value.month]} {value.year}"
+
+
+def first_line(text: str) -> str:
+    line = next((line.strip() for line in text.splitlines() if line.strip()), "Без назви")
+    return line.replace("**", "")
+
+
+def excerpt(text: str, limit: int = 180) -> str:
+    body = " ".join(line.strip() for line in text.splitlines() if line.strip()).replace("**", "")
+    if len(body) <= limit:
+        return body
+    cut = body[:limit].rsplit(" ", 1)[0]
+    return cut + "…"
+
+
+def body_excerpt(text: str, limit: int = 180) -> str:
+    """Опис без першого рядка-заголовка (щоб не дублювати h1)."""
+    lines = text.splitlines()
+    start = 0
+    for i, line in enumerate(lines):
+        if line.strip():
+            start = i + 1
+            break
+    return excerpt("\n".join(lines[start:]), limit)
+
+
+def esc(value: str) -> str:
+    return html.escape(value, quote=True)
+
+
+def paragraphs(text: str) -> str:
+    """Перший рядок — жирний, решта — як є, зі збереженням переносів.
+
+    Підтримує **жирний** усередині рядка (markdown-файли з content/extra).
+    """
+    lines = text.splitlines()
+    out: list[str] = []
+    first_done = False
+    for line in lines:
+        stripped = line.strip()
+        if not stripped:
+            out.append("")
+            continue
+        safe = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", esc(line))
+        if not first_done and "<strong>" not in safe:
+            out.append(f"<strong>{safe}</strong>")
+        else:
+            out.append(safe)
+        first_done = True
+    return "\n".join(out)
+
+
+def italian_texts() -> dict[str, str]:
+    """Переклади постів: content/it/<slug>.md → текст."""
+    if not IT_CONTENT.exists():
+        return {}
+    return {
+        path.stem: path.read_text(encoding="utf-8").strip()
+        for path in sorted(IT_CONTENT.glob("*.md"))
+        if path.read_text(encoding="utf-8").strip()
+    }
+
+
+def load_posts() -> list[dict]:
+    texts = code_blocks(CONTENT)
+    covers = cover_files()
+    if len(texts) != len(covers):
+        raise SystemExit(
+            f"Постів {len(texts)}, обкладинок {len(covers)} — кількість має збігатися."
+        )
+    translations = italian_texts()
+    posts = []
+    for text, cover in zip(texts, covers):
+        posts.append(make_post(text, cover, translations.get(cover.stem)))
+    posts.extend(extra_posts(translations))
+    posts.sort(key=lambda post: (post["date"], post["slug"]))
+    unknown = set(translations) - {post["slug"] for post in posts}
+    if unknown:
+        raise SystemExit(
+            "Переклад без відповідного поста: " + ", ".join(sorted(unknown))
+        )
+    return posts
+
+
+def make_post(text: str, cover: Path, text_it: str | None = None) -> dict:
+    slug = slug_from_cover(cover)
+    post = {
+        "text": text,
+        "cover": cover,
+        "slug": slug,
+        "date": post_date(cover),
+        "title": first_line(text),
+        "excerpt": body_excerpt(text),
+        "url": f"{SITE_URL}/posts/{slug}.html",
+        "text_it": text_it or "",
+        "title_it": first_line(text_it) if text_it else "",
+        "excerpt_it": body_excerpt(text_it) if text_it else "",
+        "url_it": f"{SITE_URL}/it/posts/{slug}.html",
+    }
+    return post
+
+
+def extra_posts(translations: dict[str, str] | None = None) -> list[dict]:
+    """Окремі пости з content/extra/<slug>.md + covers/<slug>.png."""
+    translations = translations or {}
+    posts = []
+    for path in sorted(EXTRA.glob("*.md")):
+        cover = COVERS / f"{path.stem}.png"
+        if not cover.exists():
+            raise SystemExit(f"Немає обкладинки {cover.name} для content/extra/{path.name}")
+        text = path.read_text(encoding="utf-8").strip()
+        if not text:
+            continue
+        posts.append(make_post(text, cover, translations.get(path.stem)))
+    return posts
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && ls covers | grep 2026-11-26; echo "exit=$?"; ls covers | grep -c '\.png$'
+exit=1
+29
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && grep -n "rsvg\|generate.py\|Error\|exit=" automation/logs/2026-11-26-0900-morning.log | tail -20
+1151: err HTTP Error 429: Too Many Requests
+1153: err HTTP Error 429: Too Many Requests
+1155: err HTTP Error 429: Too Many Requests
+1396:FileNotFoundError: [Errno 2] No such file or directory: '/tmp/dam.html'
+1569:FileNotFoundError: [Errno 2] No such file or directory: '/tmp/dam.html'
+3632:[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && sed -n '1,120p' covers/generate.py
+3814:[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && tail -80 covers/generate.py && grep -n '"icon"' covers/generate.py | tail -8 && grep -n 'ICONS\|icon ==' covers/generate.py | head -20
+3904:[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && sed -n '180,280p' covers/generate.py && grep -n 'def icon' -A 40 covers/generate.py | head -60
+4384:[91m[1mError: [0mFree usage limit reached. Connect a provider or subscribe to OpenCode Go to keep going, or switch models.
+4385:exit=1
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && mkdir -p automation/archive/2026-11-26 && mv content/extra/2026-11-26-rome-terme-traiano-harry-potter-strike.md content/it/2026-11-26-rome-terme-traiano-harry-potter-strike.md automation/archive/2026-11-26/ && ls automation/archive/2026-11-26 && git status --short | head
+2026-11-26-rome-terme-traiano-harry-potter-strike.md
+ M automation/candidates.json
+ M automation/logs/2026-11-25-1913-evening.log
+?? automation/archive/
+?? automation/logs/2026-11-26-0900-morning.log
+?? automation/logs/2026-11-26-1944-evening.log
+?? automation/logs/2026-11-27-0900-morning.log
+> build · deepseek-v4.1-flash-free
+[0m← [0mWrite content/extra/2026-11-27-rome-bus-lanes-free-weekend-terzini.md
+Created file successfully: content/extra/2026-11-27-rome-bus-lanes-free-weekend-terzini.md
+> build · deepseek-v4.1-flash-free
+[0m← [0mWrite content/it/2026-11-27-rome-bus-lanes-free-weekend-terzini.md
+Created file successfully: content/it/2026-11-27-rome-bus-lanes-free-weekend-terzini.md
+> build · deepseek-v4.1-flash-free
+[0m← [0mWrite content/channel/2026-11-27-rome-bus-lanes-free-weekend-terzini-post.md
+Created file successfully: content/channel/2026-11-27-rome-bus-lanes-free-weekend-terzini-post.md
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 -c "
+p='content/channel/2026-11-27-rome-bus-lanes-free-weekend-terzini-post.md'
+t=open(p,encoding='utf-8').read().strip()
+print('chars:',len(t))
+print('ok' if len(t)<=1024 else 'TOO LONG by '+str(len(t)-1024))
+"
+chars: 1039
+TOO LONG by 15
+> build · deepseek-v4.1-flash-free
+[0m← [0mEdit content/channel/2026-11-27-rome-bus-lanes-free-weekend-terzini-post.md
+Index: content/channel/2026-11-27-rome-bus-lanes-free-weekend-terzini-post.md
+===================================================================
+--- content/channel/2026-11-27-rome-bus-lanes-free-weekend-terzini-post.md
++++ content/channel/2026-11-27-rome-bus-lanes-free-weekend-terzini-post.md
+@@ -1,7 +1,7 @@
+ 🚌 Рим, 27.11: автобуси, безкоштовні мінерали й Терзіні
+ 
+-🚌 Транспорт: Кампідолій планує 180 км захищених смуг для автобусів (бар'єри, камери, зелене світло) і скасування зупинок, де ніхто не заходить і не виходить — за даними датчиків Atac. За 5 років швидкість автобусів упала з 16 до 9 км/год. Biciplan: 1000 км велодоріжок, зроблено 120. План ще не діє.
++🚌 Транспорт: Кампідолій планує 180 км захищених смуг для автобусів (бар'єри, камери, зелене світло) і скасування зупинок, де ніхто не заходить — за даними датчиків Atac. За 5 років швидкість автобусів упала з 16 до 9 км/год. Biciplan: 1000 км велодоріжок, зроблено 120. План ще не діє.
+ 
+ 🪨 Безкоштовно 28–29.11: Roma Mineral Show, Ergife Palace Hotel (via Aurelia 619), 9–19 — мінерали, фосилії, майстер-класи. Music Day: вініл і CD, Mercure Roma West (viale degli Eroi di Cefalonia 301), 10–20. Urban Bazar у MAXXI — лише сб 28.11, 11–19:30, via Guido Reni 4A, pet-friendly.
+ 
+ 🎨 З 27.11: Терзіні «Are you in love? Yes, I'm in Rome», Palazzo Merulana (via Merulana 121) до 10.01. Ср–пт 12–20, сб–нд 10–20, пн–вт зачинено. 13 € / 11 € / 8 € (7–25 років).
+
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 -c "
+p='content/channel/2026-11-27-rome-bus-lanes-free-weekend-terzini-post.md'
+t=open(p,encoding='utf-8').read().strip()
+print('chars:',len(t)); print('ok' if len(t)<=1024 else 'TOO LONG')
+"
+chars: 1025
+TOO LONG
+> build · deepseek-v4.1-flash-free
+[0m← [0mEdit content/channel/2026-11-27-rome-bus-lanes-free-weekend-terzini-post.md
+Index: content/channel/2026-11-27-rome-bus-lanes-free-weekend-terzini-post.md
+===================================================================
+--- content/channel/2026-11-27-rome-bus-lanes-free-weekend-terzini-post.md
++++ content/channel/2026-11-27-rome-bus-lanes-free-weekend-terzini-post.md
+@@ -1,9 +1,9 @@
+ 🚌 Рим, 27.11: автобуси, безкоштовні мінерали й Терзіні
+ 
+ 🚌 Транспорт: Кампідолій планує 180 км захищених смуг для автобусів (бар'єри, камери, зелене світло) і скасування зупинок, де ніхто не заходить — за даними датчиків Atac. За 5 років швидкість автобусів упала з 16 до 9 км/год. Biciplan: 1000 км велодоріжок, зроблено 120. План ще не діє.
+ 
+-🪨 Безкоштовно 28–29.11: Roma Mineral Show, Ergife Palace Hotel (via Aurelia 619), 9–19 — мінерали, фосилії, майстер-класи. Music Day: вініл і CD, Mercure Roma West (viale degli Eroi di Cefalonia 301), 10–20. Urban Bazar у MAXXI — лише сб 28.11, 11–19:30, via Guido Reni 4A, pet-friendly.
++🪨 Безкоштовно 28–29.11: Roma Mineral Show, Ergife Palace Hotel (via Aurelia 619), 9–19 — мінерали, фосилії, майстер-класи. Music Day: вініл, Mercure Roma West (viale degli Eroi di Cefalonia 301), 10–20. Urban Bazar у MAXXI — лише сб 28.11, 11–19:30, via Guido Reni 4A, pet-friendly.
+ 
+ 🎨 З 27.11: Терзіні «Are you in love? Yes, I'm in Rome», Palazzo Merulana (via Merulana 121) до 10.01. Ср–пт 12–20, сб–нд 10–20, пн–вт зачинено. 13 € / 11 € / 8 € (7–25 років).
+ 
+ 📚 Libridine! до 29.11: 60 книгарень, вхід вільний.
+
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 -c "
+p='content/channel/2026-11-27-rome-bus-lanes-free-weekend-terzini-post.md'
+t=open(p,encoding='utf-8').read().strip()
+print('chars:',len(t)); print('ok' if len(t)<=1024 else 'TOO LONG')
+"
+chars: 1020
+ok
+> build · deepseek-v4.1-flash-free
+[0m← [0mEdit covers/generate.py
+Index: covers/generate.py
+===================================================================
+--- covers/generate.py
++++ covers/generate.py
+@@ -266,8 +266,17 @@
+         "date": "26–29 ЛИСТОПАДА",
+         "accent": "#E5C07B",
+         "icon": "pin",
+     },
++    {
++        "file": "2026-11-27-rome-bus-lanes-free-weekend-terzini",
++        "kicker": "ВИХІДНІ В РИМІ",
++        "title": ["БЕЗКОШТОВНІ", "ВИХІДНІ"],
++        "sub": "Мінерали · вініл · Терзіні · автобуси",
++        "date": "27 ЛИСТОПАДА",
++        "accent": "#5FD3C4",
++        "icon": "frame",
++    },
+ ]
+ 
+ 
+ def icon(kind: str, accent: str) -> str:
+
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 covers/generate.py | tail -3 && /opt/homebrew/bin/rsvg-convert -w 1080 -h 810 covers/2026-11-27-rome-bus-lanes-free-weekend-terzini.svg -o covers/2026-11-27-rome-bus-lanes-free-weekend-terzini.png && ls -la covers/2026-11-27-rome-bus-lanes-free-weekend-terzini.png
+/Users/terkin/rim-dlia-svoikh/covers/2026-11-25-rome-fl1-airport-borromini-ice-rink.svg
+/Users/terkin/rim-dlia-svoikh/covers/2026-11-25-rome-weekend-cie-christmas-chocolate.svg
+/Users/terkin/rim-dlia-svoikh/covers/2026-11-27-rome-bus-lanes-free-weekend-terzini.svg
+-rw-r--r--@ 1 terkin  staff  184504 Nov 27 09:10 covers/2026-11-27-rome-bus-lanes-free-weekend-terzini.png
+> build · deepseek-v4.1-flash-free
+[0m→ [0mRead covers/2026-11-27-rome-bus-lanes-free-weekend-terzini.png 
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 automation/site.py 2>&1 | tail -20
+Сайт згенеровано → /Users/terkin/rim-dlia-svoikh/docs
+  index.html · 30 постів · sitemap.xml · robots.txt · rss.xml
+  it/: 23 перекладених постів
+  IndexNow key: 59109d96a7a1479b32410c75db6bd891 → docs/59109d96a7a1479b32410c75db6bd891.txt
+  SITE_URL: https://ucrainiroma.it
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 - <<'EOF'
+from pathlib import Path
+uk = Path('content/extra/2026-11-27-rome-bus-lanes-free-weekend-terzini.md')
+it = Path('content/it/2026-11-27-rome-bus-lanes-free-weekend-terzini.md')
+t = uk.read_text(encoding='utf-8').replace('60 незалежних книгарень Риму й метрополії', '60 книгарень Риму й метрополії')
+uk.write_text(t, encoding='utf-8')
+t2 = it.read_text(encoding='utf-8').replace('60 librerie indipendenti di Roma e dell\'area metropolitana', '60 librerie di Roma e dell\'area metropolitana')
+it.write_text(t2, encoding='utf-8')
+print('done')
+EOF
+grep -n "60 " content/extra/2026-11-27-rome-bus-lanes-free-weekend-terzini.md content/it/2026-11-27-rome-bus-lanes-free-weekend-terzini.md | head
+done
+content/extra/2026-11-27-rome-bus-lanes-free-weekend-terzini.md:18:• **Music Day — Fiera del Disco** — 28–29 листопада, 10:00–20:00, Hotel Mercure Roma West, viale degli Eroi di Cefalonia 301 (бік EUR). Понад 60 стендів із вінілом, CD і колекційними речами, автографи й зустрічі з авторами. Вхід вільний.
+content/extra/2026-11-27-rome-bus-lanes-free-weekend-terzini.md:28:**📚 Libridine!: останній вікенд у 60 книгарнях**
+content/extra/2026-11-27-rome-bus-lanes-free-weekend-terzini.md:29:До неділі 29 листопада триває третій фестиваль книгарень Libridine!: 60 книгарень Риму й метрополії, зустрічі з авторами, читання й дитячі майстерні — переважно безкоштовно.
+content/extra/2026-11-27-rome-bus-lanes-free-weekend-terzini.md:42:Джерела: Corriere Roma (27.11 — план Patanè: 180 км смуг, ревізія зупинок, 16→9 км/год, 124 загиблих, 18 тис. травмованих), RomaToday (25.11 — бар'єри, камери, зелене світло, 1,08 км/год у центрі; 20.11 — Libridine!, 60 книгарень), Leggo (26.11 — план смуг і зупинок), Il Messaggero (27.11 — Urban Bazar у MAXXI, 11–19:30, вхід вільний; Fiera del Disco, адреса й години), ANSA (26.11 — виставка Терзіні, 24 роботи, дати; 20.11 — Libridine!), Palazzo Merulana (години, квитки 13/11/8 €), Turismo Roma і Radio Roma (Roma Mineral Show, Ergife, 9–19, вхід вільний), WeGil (Bryan Adams, 6.12–24.01), Open-Meteo (27.11 — прогноз).
+content/it/2026-11-27-rome-bus-lanes-free-weekend-terzini.md:18:• **Music Day — Fiera del Disco** — 28–29 novembre, 10:00–20:00, Hotel Mercure Roma West, viale degli Eroi di Cefalonia 301 (zona EUR). Oltre 60 stand con vinili, cd e oggetti da collezione, firmacopie e incontri con gli autori. Ingresso libero.
+content/it/2026-11-27-rome-bus-lanes-free-weekend-terzini.md:28:**📚 Libridine!: l'ultimo weekend in 60 librerie**
+content/it/2026-11-27-rome-bus-lanes-free-weekend-terzini.md:29:Fino a domenica 29 novembre c'è la terza edizione di Libridine!, il festival diffuso delle librerie: 60 librerie di Roma e dell'area metropolitana, incontri con gli autori, letture e laboratori per bambini, in gran parte gratuiti.
+content/it/2026-11-27-rome-bus-lanes-free-weekend-terzini.md:42:Fonti: Corriere Roma (27.11 — piano Patanè: 180 km di corsie, revisione delle fermate, 16→9 km/h, 124 morti, 18mila feriti), RomaToday (25.11 — barriere, telecamere, semafori verdi, 1,08 km/h in centro; 20.11 — Libridine!, 60 librerie), Leggo (26.11 — corsie e fermate), Il Messaggero (27.11 — Urban Bazar al MAXXI, 11–19:30, ingresso libero; Fiera del Disco, indirizzo e orari), ANSA (26.11 — mostra Terzini, 24 opere, date; 20.11 — Libridine!), Palazzo Merulana (orari, biglietti 13/11/8 €), Turismo Roma e Radio Roma (Roma Mineral Show, Ergife, 9–19, ingresso libero), WeGil (Bryan Adams, 6.12–24.01), Open-Meteo (27.11 — previsioni).
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 automation/site.py 2>&1 | tail -5 && ls -la docs/posts/2026-11-27-rome-bus-lanes-free-weekend-terzini.html docs/it/posts/2026-11-27-rome-bus-lanes-free-weekend-terzini.html
+Сайт згенеровано → /Users/terkin/rim-dlia-svoikh/docs
+  index.html · 30 постів · sitemap.xml · robots.txt · rss.xml
+  it/: 23 перекладених постів
+  IndexNow key: 59109d96a7a1479b32410c75db6bd891 → docs/59109d96a7a1479b32410c75db6bd891.txt
+  SITE_URL: https://ucrainiroma.it
+-rw-r--r--@ 1 terkin  staff  16428 Nov 27 09:11 docs/it/posts/2026-11-27-rome-bus-lanes-free-weekend-terzini.html
+-rw-r--r--@ 1 terkin  staff  20237 Nov 27 09:11 docs/posts/2026-11-27-rome-bus-lanes-free-weekend-terzini.html
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && grep -oE '<h1>[^<]*</h1>|<title>[^<]*</title>' docs/posts/2026-11-27-rome-bus-lanes-free-weekend-terzini.html | head -3 && grep -oE '<h1>[^<]*</h1>|<title>[^<]*</title>' docs/it/posts/2026-11-27-rome-bus-lanes-free-weekend-terzini.html | head -3
+<title>🚌 Рим, 27 листопада: автобуси без порожніх зупинок, безкоштовні мінерали й Терзіні в Palazzo Merulana — Рим для своїх</title>
+<h1>🚌 Рим, 27 листопада: автобуси без порожніх зупинок, безкоштовні мінерали й Терзіні в Palazzo Merulana</h1>
+<title>🚌 Roma, 27 novembre: bus senza fermate vuote, minerali gratis e Terzini a Palazzo Merulana — Rim per i nostri</title>
+<h1>🚌 Roma, 27 novembre: bus senza fermate vuote, minerali gratis e Terzini a Palazzo Merulana</h1>
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && cat .gitignore && git status --short
+.env
+.env.local
+__pycache__/
+*.pyc
+.DS_Store
+ M automation/candidates.json
+ M automation/logs/2026-11-25-1913-evening.log
+ M covers/generate.py
+ M docs/index.html
+ M docs/it/index.html
+ M docs/it/posts/2026-11-25-rome-weekend-cie-christmas-chocolate.html
+ M docs/posts/2026-11-25-rome-weekend-cie-christmas-chocolate.html
+ M docs/rss.xml
+ M docs/sitemap.xml
+?? automation/archive/
+?? automation/logs/2026-11-26-0900-morning.log
+?? automation/logs/2026-11-26-1944-evening.log
+?? automation/logs/2026-11-27-0900-morning.log
+?? content/channel/2026-11-27-rome-bus-lanes-free-weekend-terzini-post.md
+?? content/extra/2026-11-27-rome-bus-lanes-free-weekend-terzini.md
+?? content/it/2026-11-27-rome-bus-lanes-free-weekend-terzini.md
+?? covers/2026-11-27-rome-bus-lanes-free-weekend-terzini.png
+?? covers/2026-11-27-rome-bus-lanes-free-weekend-terzini.svg
+?? docs/covers/2026-11-27-rome-bus-lanes-free-weekend-terzini.png
+?? docs/it/posts/2026-11-27-rome-bus-lanes-free-weekend-terzini.html
+?? docs/posts/2026-11-27-rome-bus-lanes-free-weekend-terzini.html
+> build · deepseek-v4.1-flash-free

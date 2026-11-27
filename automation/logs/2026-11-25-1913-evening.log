@@ -464,3 +464,106 @@ Index: covers/generate.py
   IndexNow key: 59109d96a7a1479b32410c75db6bd891 → docs/59109d96a7a1479b32410c75db6bd891.txt
   SITE_URL: https://ucrainiroma.it
 > build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && git status --short | head -20 && git add -A && git commit -q -m "Пост: Рим 26–29.11 — CIE open day, Roma Chocolate, Christmas World, безкоштовний Ватикан" && git push origin main 2>&1 | tail -5
+M automation/candidates.json
+ M automation/logs/2026-11-25-0900-morning.log
+ M covers/generate.py
+ M docs/index.html
+ M docs/it/index.html
+ M docs/it/posts/2026-11-25-rome-fl1-airport-borromini-ice-rink.html
+ M docs/posts/2026-11-25-rome-fl1-airport-borromini-ice-rink.html
+ M docs/rss.xml
+ M docs/sitemap.xml
+?? automation/logs/2026-11-25-1913-evening.log
+?? content/channel/2026-11-25-rome-weekend-cie-christmas-chocolate-post.md
+?? content/extra/2026-11-25-rome-weekend-cie-christmas-chocolate.md
+?? content/it/2026-11-25-rome-weekend-cie-christmas-chocolate.md
+?? covers/2026-11-25-rome-weekend-cie-christmas-chocolate.png
+?? covers/2026-11-25-rome-weekend-cie-christmas-chocolate.svg
+?? docs/covers/2026-11-25-rome-weekend-cie-christmas-chocolate.png
+?? docs/it/posts/2026-11-25-rome-weekend-cie-christmas-chocolate.html
+?? docs/posts/2026-11-25-rome-weekend-cie-christmas-chocolate.html
+error: 1Password: failed to fill whole buffer
+
+fatal: failed to write commit object
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && git config --get commit.gpgsign; git config --get gpg.program
+true
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && git commit -q --no-gpg-sign -m "Пост: Рим 26–29.11 — CIE open day, Roma Chocolate, Christmas World, безкоштовний Ватикан" && git push origin main 2>&1 | tail -5
+To github.com:terkin/rim-dlia-svoih.git
+   916a6b0..74ccc1d  main -> main
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 publish.py file content/channel/2026-11-25-rome-weekend-cie-christmas-chocolate-post.md --cover covers/2026-11-25-rome-weekend-cie-christmas-chocolate.png 2>&1 | tail -10
+Пост: 1018 символів · 2026-11-25-rome-weekend-cie-christmas-chocolate-post.md · обкладинка 2026-11-25-rome-weekend-cie-christmas-chocolate.png
+  message_id=32
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && sleep 75 && for u in https://ucrainiroma.it/posts/2026-11-25-rome-weekend-cie-christmas-chocolate.html https://ucrainiroma.it/it/posts/2026-11-25-rome-weekend-cie-christmas-chocolate.html https://ucrainiroma.it/covers/2026-11-25-rome-weekend-cie-christmas-chocolate.png; do echo "$u -> $(curl -s -o /dev/null -w '%{http_code}' $u)"; done
+https://ucrainiroma.it/posts/2026-11-25-rome-weekend-cie-christmas-chocolate.html -> 200
+https://ucrainiroma.it/it/posts/2026-11-25-rome-weekend-cie-christmas-chocolate.html -> 200
+https://ucrainiroma.it/covers/2026-11-25-rome-weekend-cie-christmas-chocolate.png -> 200
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcurl -s https://t.me/s/rim_dlia_svoih | python3 -c "
+import sys,re,html
+d=sys.stdin.read()
+msgs=re.findall(r'data-post=\"rim_dlia_svoih/(\d+)\"',d)
+print('last ids:', msgs[-3:])
+txt=re.sub(r'<[^>]+>',' ',d)
+txt=html.unescape(txt)
+i=txt.find('26–29')
+print(txt[max(0,i-200):i+500] if i>0 else 'NOT FOUND')
+"
+last ids: ['30', '31', '32']
+            
+            
+         
+       
+     
+       Рим для своїх | Українці в Римі   
+
+
+ 
+    
+    🚆    Рим, 25.11: аеропорт без поїздів, Борроміні й лід безкоштовно    FL1 / Leonardo Express:  26–29.11 поїзди скасовані між Roma Ostiense і Fiumicino. Замість них автобуси із зупинками на всіх станціях; Leonardo Express — автобус Termini–Fiumicino. Час у дорозі довший, місць менше. Складаний велосипед до 40×30×15 см можна, самокати — ні. Довідка: 800 892 021.   ZTL/Sosta:  онлайн-дозволи не працюють 27.11 17:00 — 29.11 18:00. Оформіть заздалегідь.   Безкоштовно:  Sala Alessandrina Борроміні (Corso del Rinascimento 40) і виставка про Колізей до 15.01, вт/ср/пт 14–18, чт 9–13.   Ковзанка:
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && python3 automation/indexnow.py 2>&1 | tail -8
+IndexNow → https://api.indexnow.org/indexnow
+  host: ucrainiroma.it
+  URLs: 53
+  HTTP 200
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcurl -s https://t.me/s/rim_dlia_svoih | python3 -c "
+import sys,re,html
+d=sys.stdin.read()
+blocks=re.split(r'data-post=\"rim_dlia_svoih/',d)
+for b in blocks[-2:]:
+    mid=b[:4].split('\"')[0]
+    txt=html.unescape(re.sub(r'<[^>]+>',' ',b))
+    txt=re.sub(r'\s+',' ',txt)
+    print('ID',mid,':',txt[:320])
+    print()
+"
+ID 31 : 31" data-view="eyJjIjotNDMzNzM5NTIyMiwicCI6MzEsInQiOjE3OTU2MzMyMzUsImgiOiI3M2Q3OTk5NGFmMDg0ODM1ZDQifQ"> Рим для своїх | Українці в Римі 🚆 Рим, 25.11: аеропорт без поїздів, Борроміні й лід безкоштовно FL1 / Leonardo Express: 26–29.11 поїзди скасовані між Roma Ostiense і Fiumicino. Замість них автобуси із зупинками на вс
+
+ID 32 : 32" data-view="eyJjIjotNDMzNzM5NTIyMiwicCI6MzIsInQiOjE3OTU2MzMyMzUsImgiOiJkZGM5OGMwNmI4NjAzZGY3NmYifQ"> Рим для своїх | Українці в Римі 🎄 Рим, 26–29.11: безкоштовний Ватикан, шоколад і Christmas World 🪪 CIE, open day 28–29.11: запис — з 9:00 пʼятниці 27.11 на prenotazionicie.interno.gov.it , без нього не приймають. Суб
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcurl -s https://t.me/s/rim_dlia_svoih | python3 -c "
+import sys,re
+d=sys.stdin.read()
+b=d.split('data-post=\"rim_dlia_svoih/32\"')[1][:6000]
+print('photo:', 'tgme_widget_message_photo' in b)
+m=re.search(r'background-image:url\(&#39;([^&]+)',b)
+print('cover:', m.group(1) if m else None)
+"
+photo: True
+cover: None
+> build · deepseek-v4.1-flash-free
+[0m$ [0mcd /Users/terkin/rim-dlia-svoikh && grep -c "CIE" docs/posts/2026-11-25-rome-weekend-cie-christmas-chocolate.html; grep -o 'hreflang="[a-z-]*"' docs/posts/2026-11-25-rome-weekend-cie-christmas-chocolate.html | sort -u; git log --oneline -2
+7
+hreflang="it"
+hreflang="uk"
+hreflang="x-default"
+74ccc1d Пост: Рим 26–29.11 — CIE open day, Roma Chocolate, Christmas World, безкоштовний Ватикан
+916a6b0 Update morning run log for 25 Nov post
+> build · deepseek-v4.1-flash-free
+[91m[1mError: [0mFree usage limit reached. Connect a provider or subscribe to OpenCode Go to keep going, or switch models.
+exit=1

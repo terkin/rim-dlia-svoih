@@ -267,6 +267,15 @@ COVERS = [
         "accent": "#E5C07B",
         "icon": "pin",
     },
+    {
+        "file": "2026-11-27-rome-bus-lanes-free-weekend-terzini",
+        "kicker": "ВИХІДНІ В РИМІ",
+        "title": ["БЕЗКОШТОВНІ", "ВИХІДНІ"],
+        "sub": "Мінерали · вініл · Терзіні · автобуси",
+        "date": "27 ЛИСТОПАДА",
+        "accent": "#5FD3C4",
+        "icon": "frame",
+    },
 ]
 
 
